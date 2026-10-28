@@ -16,8 +16,7 @@ async function ligar() {
     // a configuração vem do próprio Hosting (não fica no repositório); fora do Hosting (dev) a medição simplesmente não liga
     const r = await fetch('/__/firebase/init.json', { cache: 'no-store' });
     if (!r.ok) throw new Error('sem configuração');
-    const CONFIG = await r.json();
-    if (!CONFIG.measurementId) throw new Error('sem measurementId');
+    const CONFIG = { ...(await r.json()), appId: '1:901981990402:web:4c4e8fd911bc76c827c11b', measurementId: 'G-H2VEJXCQZ4' }; // o init.json do Hosting não traz estes dois
     const app = await import(/* @vite-ignore */ SDK + 'firebase-app.js');
     const an = await import(/* @vite-ignore */ SDK + 'firebase-analytics.js');
     const a = app.initializeApp(CONFIG);
