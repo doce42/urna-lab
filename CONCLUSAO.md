@@ -6,11 +6,12 @@
 
 A pergunta "houve fraude?" reúne hipóteses diferentes: em que fase, por qual mecanismo, em que escala, com que intenção. Esta conclusão responde só ao que os testes alcançam, em três níveis: **o que os registros disponíveis mostram de forma exata**, **o que a estatística mostra e com que alcance**, e **o que fica fora do alcance dos dados públicos**. Cada afirmação aponta para o teste do [registro](testes/registro.json) que a sustenta.
 
-## Atualização da Fase 2 (28/10/2026, depois da baseline)
+## Atualização da Fase 2 (28/10/2026, concluída na rodada 3, V1.1)
 Resultados novos, com o que significam em votos. A baseline V1.0 abaixo permanece como foi congelada (`rodadas/rodada-2/`).
 - **Crescimento de Lula entre turnos (C06, T37):** em 2026 Lula somou +10,33 mi de votos (adversário +3,69 mi) com +2,92 mi de comparecimento; em 2022, +3,07 mi e +7,11 mi, com +0,56 mi. As contas fecham exatamente. A razão "4:1 para Lula" entre abstencionistas é estimativa frágil na magnitude: sob heterogeneidade sintética varia de 1,7 a 11,8 (verdade 3 a 4), erro de ±0,5 a ±1,5 mi de votos. A ordem em 2026 e o contraste com 2022 resistem.
 - **Hipótese de enchimento para Lula (T38):** a assinatura prevista, comparecimento subindo nas seções pró-Lula atípicas, não aparece. Excesso de cerca de 740 votos (2026) e 2.600 (2022) contra a margem de 4,43 mi. A assimetria de cauda do T02 persiste, sem causa, e não exclui troca em urna sem alteração de comparecimento.
 - **Verificação de 20 seções (T39):** nenhuma divergência objetiva nova nas 19 com arquivos de urna; vale só para a amostra. Não houve confronto independente (sem material externo disponível).
+- **Fase 2 completa (V1.1):** o E02 original superestimava o agrupamento (766 e 683 locais viram 102 e 55 após corrigir a correlação dentro do local); a regra do T13 só enxerga troca a favor de Lula (10% dos válidos em 1% das urnas: 100% contra 0% no sentido contrário); a diferença de eleitorado do exterior (−495 e −525) está explicada (423 de seções não instaladas mais 72 e 30 de boletins só nos arquivos das urnas); em 200 seções e 200 certificados sorteados tudo concorda, mas a âncora de certificados e fontes externas continuam sem verificação. A assimetria de cauda do T02 é estatisticamente real, sem causa, e em 2022 concentrada na capital de São Paulo.
 
 ## Resposta curta
 

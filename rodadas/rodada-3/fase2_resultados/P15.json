@@ -1,0 +1,44 @@
+{
+ "pergunta": "P15",
+ "2026": {
+  "abstencao_1t": 32893286.0,
+  "abs_para_lula": {
+   "min": 4116.0,
+   "max": 32309726.0
+  },
+  "abs_para_adv": {
+   "min": 19.0,
+   "max": 31328875.0
+  },
+  "razao_possivel": {
+   "min": 0.00013138039588079687,
+   "max": 1700511.894736842
+  },
+  "c06_estimativa": {
+   "lula": 3180780.7561999997,
+   "adv": 792728.1926
+  },
+  "nota": "limites por seção (Fréchet) somados; a população de cada seção é o eleitorado apto do 1º turno"
+ },
+ "2022": {
+  "abstencao_1t": 32378875.0,
+  "abs_para_lula": {
+   "min": 1335.0,
+   "max": 31469747.0
+  },
+  "abs_para_adv": {
+   "min": 21.0,
+   "max": 30070838.0
+  },
+  "razao_possivel": {
+   "min": 4.43951711621738e-05,
+   "max": 1498559.380952381
+  },
+  "c06_estimativa": {
+   "lula": 741476.2375,
+   "adv": 1317820.2125
+  },
+  "nota": "limites por seção (Fréchet) somados; a população de cada seção é o eleitorado apto do 1º turno"
+ },
+ "tempo_s": 1.3
+}

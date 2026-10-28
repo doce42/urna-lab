@@ -1,0 +1,24 @@
+{
+ "pergunta": "P7",
+ "2026": {
+  "urnas_trocadas": 4432,
+  "diferenca_z": -0.028817284251151137,
+  "ic90_boot_mun": [
+   -0.053817699187965674,
+   -0.003291588084745461
+  ],
+  "margem": 0.1,
+  "equivalente": true
+ },
+ "2022": {
+  "urnas_trocadas": 12653,
+  "diferenca_z": -0.008332398504551983,
+  "ic90_boot_mun": [
+   -0.02287189154700013,
+   0.007960902565035309
+  ],
+  "margem": 0.1,
+  "equivalente": true
+ },
+ "tempo_s": 1.2
+}

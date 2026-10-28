@@ -1,0 +1,44 @@
+{
+ "pergunta": "P10",
+ "2026_1t": {
+  "urnas": 499176,
+  "original_binomial_BH": 13,
+  "beta_binomial_BH": 8,
+  "em_ambos": 8,
+  "so_no_original": 5,
+  "razao_ult30_sobre_resto": 0.9732176837538026,
+  "votos_ult30_nas_urnas_beta_binomial": 99,
+  "sem_biometria_ult30_nessas": 93
+ },
+ "2026_2t": {
+  "urnas": 499177,
+  "original_binomial_BH": 0,
+  "beta_binomial_BH": 0,
+  "em_ambos": 0,
+  "so_no_original": 0,
+  "razao_ult30_sobre_resto": 1.0024548826161996,
+  "votos_ult30_nas_urnas_beta_binomial": 0,
+  "sem_biometria_ult30_nessas": 0
+ },
+ "2022_1t": {
+  "urnas": 471851,
+  "original_binomial_BH": 23,
+  "beta_binomial_BH": 18,
+  "em_ambos": 18,
+  "so_no_original": 5,
+  "razao_ult30_sobre_resto": 0.9512079104695675,
+  "votos_ult30_nas_urnas_beta_binomial": 231,
+  "sem_biometria_ult30_nessas": 217
+ },
+ "2022_2t": {
+  "urnas": 471979,
+  "original_binomial_BH": 25,
+  "beta_binomial_BH": 21,
+  "em_ambos": 21,
+  "so_no_original": 4,
+  "razao_ult30_sobre_resto": 1.0350618673989975,
+  "votos_ult30_nas_urnas_beta_binomial": 248,
+  "sem_biometria_ult30_nessas": 238
+ },
+ "tempo_s": 14.4
+}

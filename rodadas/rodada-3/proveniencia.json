@@ -1,0 +1,48 @@
+{
+ "nota": "Rodada 3 (V1.1), congelada em 28/10/2026 ao fim da Fase 2. Resultados da Fase 2 em fase2_resultados/ com SHA-256 em resumo.json. Sementes da Fase 2: P1 1001/2002, P2 1001/2002, P14 14, P17 17, P16 e P11 2028, P5 5, P7 7, P8 8.",
+ "versao": "V1.1",
+ "estado": "Fase 2 concluída",
+ "git": {
+  "repositorio": "https://github.com/doce42/urna-lab",
+  "tag": "v1.1",
+  "commit": "ver a tag v1.1 no repositório público",
+  "data_commit": "2026-10-28"
+ },
+ "dados": {
+  "manifesto": "dados/listas/MANIFESTO.csv",
+  "manifesto_sha256": "9f5dd36db603406be017f6ec04d95b87a718a3ef751e39876205720c4ab09f5c",
+  "arquivos": 51846,
+  "gigabytes": 404.9,
+  "local": "dados fora do git (disco local do autor); o manifesto traz SHA-256 de cada arquivo e a URL oficial de origem",
+  "ressalva": "a coluna sha512_oficial_conferido do manifesto é verdadeira também quando o TSE não publicou .sha512 (achado R1-03 da revisão); não interpretar como hash oficial conferido"
+ },
+ "ambiente": {
+  "python": "3.13.15",
+  "requirements_sha256": "8c74afd289d73fe22d22b2d1f4b347a462697cfcad73e72141bf88b0ab1a1806",
+  "node": "26.8.2",
+  "site_package_json_sha256": "d964d88a02295fb1de6265becc12ced83141e2ccd56a74a530f311f0f8d1f465",
+  "site_package_lock_sha256": "fc592fed26f8e9860a27c30ee246a8d292b180ab3cb677369c9ddb989bb1eead"
+ },
+ "sementes": {
+  "analise/poder.py (T13)": 42,
+  "analise/poder_logs.py (T13b)": 2026,
+  "analise/ml_sintetico.py (T23)": 23,
+  "analise/bateria.py (T11 permutação)": 7,
+  "analise/bateria.py (T21/T22 simulação)": 11,
+  "analise/bateria.py (INC bootstrap)": 5,
+  "analise/curva.py": 7
+ },
+ "parametros_principais": {
+  "T02": "virada em logit com correção de continuidade 0,5; resíduo da mediana do município; z robusto (MAD); limiar 5; mínimo de 20 válidos por seção nos dois turnos; nulo realista t de Student",
+  "T03": "Spearman entre posição de chegada no município e resíduo da virada; municípios com 20 ou mais seções",
+  "T10": "previsto = 1º turno + virada das outras seções do município (e mediana da UF); desvio máximo depois das 19h",
+  "T13": "1 realização por cenário; 37 cenários em 4 grupos; deslocamentos sempre a favor do candidato 13",
+  "T13b": "5 repetições por cenário; frações de urnas 0,1%, 1%, 5%, 20%; frações dos votos dos últimos 30 min 10% a 100%",
+  "T28": "janela dos últimos 30 min; binomial contra a taxa da própria urna no resto do dia (suavizada); Benjamini-Hochberg q = 0,05",
+  "T30": "tolerância de 60 s em relação à abertura e ao encerramento do BU",
+  "T36": "regras E1 a E5 e D1 em analise/casos_integridade.py",
+  "E02": "estatística sqrt(k)·média(z) por local de votação, normal padrão, BH",
+  "sensibilidade": "mínimo de válidos 20/50/100; limiar 3–6; MAD × desvio-padrão; município × zona"
+ },
+ "conclusao_sha256_conferido_pela_revisao": "a revisão R1 registrou SHA-256 7e27542563567e9a459416d88703dcf45718055b0e75bd489f1b43312a92400b para o CONCLUSAO.md que leu"
+}

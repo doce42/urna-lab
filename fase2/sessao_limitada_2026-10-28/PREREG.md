@@ -38,3 +38,23 @@ Observação previa de leitura do código (antes de rodar): o T1 conta só z rob
 - P2 (poder dos testes) **fica na fila futura**: o Adendo 2 substitui a segunda investigação. `p2_poder_sentidos.py` não será escrito/rodado.
 - Investigação 2 = Adendo 2. Verificação A (até 20 seções do 1º turno 2026, pacotes brutos já baixados): 10 exceções + 10 aleatórias. **Seleção fixada agora:** das exceções do T36 (`resultado_casos_integridade_1t.json` → `casos_lista`), entram obrigatoriamente o caso "sem explicação" e o caso do tipo `d_fora_do_bu` se existir; as demais até 10 saem por `numpy.random.default_rng(2026).choice` sobre a lista ordenada por (UF, município, zona, seção) em texto; as 10 aleatórias saem de `default_rng(2027)` sobre o universo de urnas em `analise/brutos/1t` (excluídas as exceções). Verificações por seção: tamanho+SHA-512 de cada arquivo contra a lista assinada; assinatura da lista e dos arquivos; chave da seção dentro do BU e do log (UF/município/zona/seção, turno, pleito); RDV recontado = BU = imagem do BU; BU = BU na Web (`bweb_1t_*.csv`); emissor do certificado e se há cadeia até âncora (não há âncora local). Uma execução; sem validação extra a menos que haja falha técnica.
 - Verificação B (confronto independente): inventário do que existe localmente (boletins impressos de terceiros, QR, capturas externas). Se nada existir, documentar e encerrar.
+
+---
+## FASE 2 COMPLETA (decisão do responsável em 28/10/2026: finalizar todas as perguntas). Pré-registro escrito antes das execuções
+Script único `fase2/f2_completa.py <Pn>`, saída `fase2/resultados/<Pn>.json`. Critérios fixados agora:
+- **P2** (T13 nos dois sentidos): como acima (1% das urnas, 5% dos válidos; 30 réplicas; semente 1001; sensibilidade 2% e 10% com semente 2002). Resistiu se detecção A e B diferem ≤ 15 pp e o mundo de referência alarma em ≤ 5% das réplicas.
+- **P5** (T20 dentro de municípios com mais de um modelo): diferença média do resíduo da virada entre modelos, dentro do município, IC 95% por bootstrap de municípios (200). Equivalência declarada se o IC fica em ±0,02 logit.
+- **P7** (T04 equivalência): diferença de z entre urnas trocadas e demais, IC 90% por bootstrap de municípios (200); equivalência se contida em ±0,10 z.
+- **P8** (T03 por município): Spearman e IC 95% por bootstrap de municípios (200), postos fixos globais; desprezível se |r| ≤ 0,05.
+- **P9** (E02): correlação intralocal ρ pelo ANOVA, razão de variância 1+(k−1)ρ aplicada ao z do grupo, BH 5% antes e depois, 2022 e 2026 com o mesmo modelo (simples e completo sem perfil). Moran's I só se houver adjacência municipal local; senão fica registrado como não feito.
+- **P10** (T28 beta-binomial): prior beta por UF × modelo de urna (momentos, descontado o ruído binomial); preditiva beta-binomial para os últimos 30 min; BH 5%; comparar com as 13 urnas originais. Controle de horário: razão últimos 30 min / resto por grupo, apenas relatada.
+- **P12** (exterior): cadastro de eleitores por seção (perfil, ZZ) × aptos do BU, seção a seção; soma das diferenças × −495/−525.
+- **P13** (C06b): limites de Duncan-Davis por seção somados, variantes de população (aptos 1º turno, aptos 2º turno, com e sem exterior); registrar qual variante reproduz 79 e 123.
+- **P14** (assimetria do T02): concentração por município e por local de votação das seções acima de 5 desvios contra sorteio aleatório dentro da UF (1.000 sorteios), 2022 e 2026.
+- **P15** (limites Fréchet por seção para Abs→Lula e Abs→Adversário): soma, razão mínima e máxima, comparação com a estimativa do C06.
+- **P16** (verificação de 200 seções sorteadas, semente 2028, comparador do RDV corrigido).
+- **P17** (assimetria de cauda do T02, bootstrap por município, limiares 3, 4 e 5).
+- **P11** (cadeia de certificados): validar a assinatura do certificado de cada urna da amostra do P16 pela chave da AC UE2020/UE2022 do repositório DataUrnas (terceiros); relatar como verificação de elo, não de raiz.
+- **P3, P4, P6**: P3 = P16 (um canal) mais a limitação do canal único; P4 e P6 = inventário local (sem coleta).
+
+**Registro de desvios (Fase 2 completa):** P16 repetido uma vez depois de corrigir o comparador (campo ausente contra zero); P12 refeito com o total oficial do site em vez do cadastro de julho; P2 usou intervalo de Wilson próprio. Nenhum critério de decisão foi alterado depois de ver os resultados.

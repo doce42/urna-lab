@@ -1,0 +1,41 @@
+{
+ "pergunta": "P9",
+ "2026_simples": {
+  "locais": 59885,
+  "rho_intralocal": 0.18654464651535507,
+  "significativos_BH_original": 2618,
+  "significativos_BH_ajustado_rho": 39,
+  "pro_lula_ajustado": 19,
+  "pro_adversario_ajustado": 20,
+  "dp_zg": 1.4958882184706483
+ },
+ "2026_completo": {
+  "locais": 59885,
+  "rho_intralocal": 0.12957525143017548,
+  "significativos_BH_original": 1140,
+  "significativos_BH_ajustado_rho": 55,
+  "pro_lula_ajustado": 28,
+  "pro_adversario_ajustado": 27,
+  "dp_zg": 1.3649173518932092
+ },
+ "2022_simples": {
+  "locais": 56164,
+  "rho_intralocal": 0.11990222469994323,
+  "significativos_BH_original": 946,
+  "significativos_BH_ajustado_rho": 85,
+  "pro_lula_ajustado": 32,
+  "pro_adversario_ajustado": 53,
+  "dp_zg": 1.333669780605831
+ },
+ "2022_completo": {
+  "locais": 56164,
+  "rho_intralocal": 0.10933426910816284,
+  "significativos_BH_original": 766,
+  "significativos_BH_ajustado_rho": 102,
+  "pro_lula_ajustado": 30,
+  "pro_adversario_ajustado": 72,
+  "dp_zg": 1.3100429862554037
+ },
+ "moran_i": "não feito: sem arquivo de adjacência municipal no material local (fila: obter malha de vizinhança do IBGE)",
+ "tempo_s": 5.1
+}

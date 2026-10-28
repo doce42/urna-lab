@@ -1,6 +1,6 @@
 # Fase 2: investigação aprofundada
 
-**Aberta em 28/10/2026; baseline V1.0 aprovada no mesmo dia. Resultados da primeira sessão limitada em `fase2/sessao_limitada_2026-10-28/` e na tabela abaixo.** Esta lista é registrada **antes** de rodar qualquer análise nova. É o que torna as perguntas confirmatórias e as separa das exploratórias. Cada pergunta diz qual hipótese concorrente ela distingue, que afirmação do estudo pode mudar e qual é o menor conjunto de dados capaz de decidir. Esse é o critério proposto na revisão R1.
+**Aberta e concluída em 28/10/2026 (V1.1, rodada 3); baseline V1.0 aprovada no mesmo dia. Resultados da primeira sessão limitada em `fase2/sessao_limitada_2026-10-28/` e na tabela abaixo.** Esta lista é registrada **antes** de rodar qualquer análise nova. É o que torna as perguntas confirmatórias e as separa das exploratórias. Cada pergunta diz qual hipótese concorrente ela distingue, que afirmação do estudo pode mudar e qual é o menor conjunto de dados capaz de decidir. Esse é o critério proposto na revisão R1.
 
 A Fase 2 começou formalmente com a aprovação da baseline V1.0 (28/10/2026; ver [`revisoes/README.md`](revisoes/README.md)).
 
@@ -40,3 +40,6 @@ Pré-registro, scripts e resultados em `fase2/sessao_limitada_2026-10-28/`; rela
 - **P1 respondida (confirmatória):** com heterogeneidade contextual a razão Abs→Lula:Abs→Adv do C06 varia de 1,7 a 11,8 contra 3 a 4 verdadeiro; a ordem de 2026 e o contraste com 2022 resistem. Resultado vai para `provas` do C06 (ajustado).
 - **P2 adiada** (fila): a regra do T13 conta o T1 e o T3 só a favor de Lula; medir nos dois sentidos.
 - **Novas, exploratórias, não executadas:** P14 causa da assimetria de cauda do T02 em 2022; P15 C06 com covariáveis e limites por UF; P16 comparador do RDV (tipo 6) e amostra maior; P17 teste formal de assimetria da cauda.
+
+## Fase 2 completa (28/10/2026)
+As 17 perguntas (P1 a P17) foram respondidas, respondidas em parte ou inventariadas. Resumo por pergunta em [`RELATORIO_FASE2_COMPLETA.md`](RELATORIO_FASE2_COMPLETA.md); respostas estruturadas em `fase2/respostas.json`. Fila: P18 a P21.

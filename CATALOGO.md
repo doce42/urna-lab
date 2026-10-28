@@ -218,3 +218,5 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
 - P1: estimador C06 sob heterogeneidade sintética: ordem e contraste 2022×2026 resistem, a magnitude "4:1" não (ver `RELATORIO_SESSAO_LIMITADA.md`).
 - Hipótese de enchimento para Lula entre turnos: sem a assinatura de comparecimento prevista; assimetria de cauda do T02 sem causa.
 - Verificação A de 20 seções do 1º turno: 19 com arquivos conferem; nenhuma divergência objetiva nova. Verificação B não realizada (sem material independente local).
+
+- Fase 2 concluída (rodada 3, V1.1): P1 a P17 respondidas ou inventariadas; `RELATORIO_FASE2_COMPLETA.md`. Falha operacional do P16 (comparador) corrigida e repetida uma vez.

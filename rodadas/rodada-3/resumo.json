@@ -1,0 +1,72 @@
+{
+ "rodada": 3,
+ "versao": "V1.1",
+ "titulo": "Fase 2 concluída",
+ "data": "2026-10-28",
+ "placar": {
+  "testes": 51,
+  "classes": {
+   "A": 43,
+   "B": 4,
+   "G": 3,
+   "D": 1
+  },
+  "situacoes": {
+   "concluido": 50,
+   "concluido_excluido_da_conclusao": 1
+  },
+  "natureza": {
+   "confirmatório": 39,
+   "exploratório": 12
+  }
+ },
+ "arquivos_sha256": {
+  "resultados/resultado_bateria_2022.json": "82270518922d59bde565cc06808a3fd547962fc0c986ff7e3e0b4ad636eac4fe",
+  "resultados/resultado_bateria_2026.json": "5d88485ea149edfa8127bcb4a430c9946ff6befd574082f812a44955a8011e97",
+  "resultados/resultado_biometria.json": "c1c0a9408e10035463d15e29a8371cff59ee1dfa80b5324ffa6c3fa59c35e7f3",
+  "resultados/resultado_casos_integridade_1t.json": "18aef975141d9d9b651454e10d209a06ac6c27089b846cb92d4ae0005b2cfcf2",
+  "resultados/resultado_casos_integridade_2t.json": "355ba67c9ad9765d0ce314b566eeac25c000f0f0822ec7c1a872b9e650183966",
+  "resultados/resultado_comportamento_2022.json": "c782aabb975d5ac6644e5fd93a7d197a5bed6720870b76efdc16f6a03ff96943",
+  "resultados/resultado_comportamento_2026.json": "eaea104eea7940aa1de0b0ac6b197c089e656244155c04ab0200177d455cc2aa",
+  "resultados/resultado_correspondencia_1t.json": "c76434f4af6911a4cfce9c6e77defda0644477e0bd43186c191a13ba9059bad5",
+  "resultados/resultado_correspondencia_2t.json": "36d607091b83eabee56fa644f5e4c0cc2885ccafb3dc9fd8aea34ffb2cf3152b",
+  "resultados/resultado_divergencias_2022.json": "a58c181cdd932b792fd2111c5856b2ccf20bad736c33317d8cea30e41ab5f45e",
+  "resultados/resultado_divergencias_2022_completo.json": "97c4382eb7f2036f66d43a4835e3dbdff45a96a59170da97931608e86406c1f4",
+  "resultados/resultado_divergencias_2026.json": "44492348d33e95c820877edf0efc48179d45214e321408f9187870ec42401096",
+  "resultados/resultado_divergencias_2026_completo.json": "f4f722cc1ecc9bedac505f667029831e1e0e8df6b1dc5963f031673ecf5ebfdb",
+  "resultados/resultado_logs_1t.json": "a4eae0ae205507415cc75f6c2386658ce18fae6d59a349ca5357b8c5662d3ddf",
+  "resultados/resultado_logs_2022_1t.json": "070d86add1d223d73100d788836e8ff353fb91787c860ed3e48a5f19ed358111",
+  "resultados/resultado_logs_2022_2t.json": "e145c3c06e5a8cf21c450a6c8345bf3fe6e08c4e4fd0785bc3afc98f5504d278",
+  "resultados/resultado_logs_2t.json": "b0e1b0ed994c2c5c6fc60750e01bbff77650739664e0e28e460b419df259b6e4",
+  "resultados/resultado_ml_2022.json": "9a536c6d239c0e2a7aea686ad7d8e27d3888150883625699271a9ca0af160fc2",
+  "resultados/resultado_ml_2022_v1_invalido.json": "7b9cdbf2a25bb52f785fe930e6d3fcb1f064b6ae21e6ebce2f5c07d86f8f9771",
+  "resultados/resultado_ml_2026.json": "87e4e03d07a45a254130961666867aecede49b02b08b422238d0347eeeed4d7d",
+  "resultados/resultado_ml_2026_v1_invalido.json": "a7f22fb75011c830aa20c4b3dfe46e14daa054ae337190faeb76ba7ea2d9cdf2",
+  "resultados/resultado_poder.json": "130729b896a7d25c5cc33625ac351c1ceee6c259b5f4dcda58e256ae40793369",
+  "resultados/resultado_poder_logs_1t.json": "606a6522bc1d8cf14a5503a6e86d71ac2264d4b76a80c7cc651cf9ffd83a406c",
+  "resultados/resultado_poder_logs_2t.json": "643c630051237d3bd6fef8990c56e8bb83a88d11c27d6078399037b473f7619c",
+  "resultados/resultado_sensibilidade_2022.json": "242bb87ff599fd57a339d45e2a3be2e058a15661aa9b388a09b563f2f176f4a0",
+  "resultados/resultado_sensibilidade_2026.json": "4bfcec024a83d9f049adc188cc4a7ce156afcb8196fa3a06c515b7541ece7940",
+  "resultados/resultado_t01_secao.json": "9ca672db48e7c8e0882da5b006ddcf9d23179f562162165b380732383f66472b",
+  "resultados/resultado_varrer_chaves_1t.json": "2c2239a759cc930a5c9e6e54ae8656e0241b60e26da91b2bf99df35f0c70c17b",
+  "resultados/resultado_varrer_chaves_2t.json": "662ba57aaeb5932760ba5d727722cfacd111fb2e6bdf2f488efffdf8c6666bb5",
+  "registro.json": "98edf4156c597a2d9f20875ef849057d7c17a12588fb8122a678181e492e8244",
+  "fase2_resultados/P10.json": "ab827170ed0248e7945a9f8f8c3a92761601fe76863d48a77c838c0f5c518eb7",
+  "fase2_resultados/P11.json": "dd22cf35d8dcdc87762688315bfa78c123a31f0fee004b054acc0ec322db7d07",
+  "fase2_resultados/P12.json": "dc5c3e4c28fa3c2e9c60d1e7dec2989d24b99636b32bc610cd558b6bc5ee96c4",
+  "fase2_resultados/P13.json": "281c262d15db7a3e66c7f1cedb31e001268e5c72ad5ba5caf849eaaccb1f5e3b",
+  "fase2_resultados/P14.json": "a5884d6d46c156bca191d06460558402cdc57c9369a51b87daf30bcfa2025847",
+  "fase2_resultados/P15.json": "14ba98be2d8b6f84b97c71945de9ed8411038195c12462ae023b78af4039c074",
+  "fase2_resultados/P16.json": "cbec18203f3179ac836f89774344c7fec8ec36d3bf157759f29f8d96a34a8de6",
+  "fase2_resultados/P17.json": "f26e7f81a092df3fc7bd4f67dd844c3af31c10fec68a4b3ff51754476d27f944",
+  "fase2_resultados/P2_principal.json": "3d3c082e2420e65df8d594bf823c76930affa0e5806f55903f1d049bdaef1d24",
+  "fase2_resultados/P2_sensibilidade.json": "e6e33e20338d74447e05350711561380adeb67a3a1a9434573478c3f31da9c10",
+  "fase2_resultados/P5.json": "25bb961ab1b293ab633ca48629009817b41c99cd3bf50448feaace34dffbd948",
+  "fase2_resultados/P7.json": "c4432f288d15255ae96f1766db36c21bc2082cceabbe932b8b36d03f55fdeb96",
+  "fase2_resultados/P8.json": "f91b9b873fcf50f1a796aaa8db95a6e8648c680fc27b1bd8c65c5b1e05685c63",
+  "fase2_resultados/P9.json": "36d979f9425e1a2c057d651a5c1345cdb69e0ec4c9efd0482f7e4e746216f466",
+  "fase2_resultados/respostas.json": "e3f78f09f91e7d410dfe529de66e7390a7411de728533bbe3cccae91b225b317"
+ },
+ "git_tag": "v1.1",
+ "site": "https://urna-lab.web.app/#/linha-do-tempo"
+}

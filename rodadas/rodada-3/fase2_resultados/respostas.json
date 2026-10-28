@@ -1,0 +1,198 @@
+{
+ "respostas": {
+  "P1": {
+   "situacao": "respondida",
+   "resposta": "Com taxas homogêneas por UF o C06 recupera a verdade (razão Abs→Lula:Abs→Adv de 2026: 4,12 contra 4,01). Com heterogeneidade contextual a razão estimada vai de 1,7 a 11,8 contra 3 a 4 verdadeiro. A ordem de 2026 e o contraste com 2022 (razão 0,56) resistem; a magnitude '4:1' não. Em votos: ±0,5 mi (estresse moderado) a ±1,5 mi (forte) na célula Abs→Lula, contra 3,18 mi estimados.",
+   "testes": [
+    "T37",
+    "C06"
+   ]
+  },
+  "P2": {
+   "situacao": "respondida",
+   "resposta": "Com 1% das urnas e 10% dos válidos movidos (~250 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido.",
+   "testes": [
+    "T13"
+   ]
+  },
+  "P3": {
+   "situacao": "parcial",
+   "resposta": "Em 200 seções sorteadas (e nas 20 da primeira verificação), BU, imagem, RDV, log e BU na Web concordam em 100%. Só um canal e uma versão de publicação; a implementação independente (DataUrnas) e os canais alternativos não foram confrontados.",
+   "testes": [
+    "T14",
+    "T15",
+    "T16",
+    "T17"
+   ]
+  },
+  "P4": {
+   "situacao": "inventariada",
+   "resposta": "Não há, no material local, capturas históricas externas da divulgação da curva; a pergunta depende de coleta de terceiros, que não foi iniciada.",
+   "testes": []
+  },
+  "P6": {
+   "situacao": "inventariada",
+   "resposta": "Não há boletins impressos de terceiros nem QR no material local. Nada coletado. O desenho amostral e a coleta ficam como trabalho futuro e exigem dado externo.",
+   "testes": []
+  },
+  "P11": {
+   "situacao": "parcial",
+   "resposta": "O certificado de cada urna das 200 seções sorteadas tem assinatura válida pela chave da AC emissora (AC UE2020, AC UE2022 ou AC URNA). As ACs vêm de repositório de terceiros; a ligação com AC URNA v2 e AC RAIZ UE (âncora) não foi verificada por falta de canal do TSE.",
+   "testes": [
+    "T16",
+    "T14"
+   ]
+  },
+  "P5": {
+   "situacao": "respondida",
+   "resposta": "Dentro dos 1.436 municípios (2026) e 1.779 (2022) com mais de um modelo de urna, a diferença entre modelos é equivalente a zero em ±0,02 logit; o maior efeito é +0,004 logit (UE2013, 2026), cerca de 2,7 mil votos se fosse real. A associação do T20 é efeito do território, não do modelo.",
+   "testes": [
+    "T20"
+   ]
+  },
+  "P7": {
+   "situacao": "respondida",
+   "resposta": "Equivalência declarada na margem de ±0,10 z fixada antes: 2026 −0,029 (IC 90% −0,054 a −0,003, 4.432 urnas); 2022 −0,008 (−0,023 a +0,008, 12.653 urnas).",
+   "testes": [
+    "T04"
+   ]
+  },
+  "P8": {
+   "situacao": "respondida",
+   "resposta": "Com bootstrap por município, 2026 tem r = +0,004 (IC 95% −0,004 a +0,012) e 2022 r = −0,028 (−0,040 a −0,019): efeitos desprezíveis (|r| ≤ 0,05), de sinais opostos.",
+   "testes": [
+    "T03"
+   ]
+  },
+  "P9": {
+   "situacao": "parcial",
+   "resposta": "A correlação dentro do local (ρ ≈ 0,11 a 0,19) explicava quase tudo: com a correção os locais significativos caem de 1.140 para 55 em 2026 (28 pró-Lula, 27 pró-adversário) e de 766 para 102 em 2022 (30 e 72). Moran's I não foi feito por falta de adjacência municipal local.",
+   "testes": [
+    "E02"
+   ]
+  },
+  "P10": {
+   "situacao": "respondida",
+   "resposta": "Com taxa incerta (beta-binomial por UF e modelo), 8 das 13 urnas do 1º turno de 2026 continuam sinalizadas (99 votos nos últimos 30 min); 2º turno: 0. Em 2022 o método sinaliza 18 e 21: o padrão não é específico de 2026.",
+   "testes": [
+    "T28"
+   ]
+  },
+  "P12": {
+   "situacao": "respondida",
+   "resposta": "Explicada: −495 = 423 (41 seções não instaladas) + 72 (uma seção com boletim só nos arquivos das urnas); −525 = 423 + 72 + 30 (outra seção, no 2º turno). Resíduo zero. São eleitores aptos, não votos.",
+   "testes": [
+    "T32"
+   ]
+  },
+  "P13": {
+   "situacao": "respondida",
+   "resposta": "Script reproduzível reproduz exatamente 79 (Flávio→Lula) e 123 (Lula→Flávio) como mínimos garantidos, com os aptos do 2º turno, sem exterior; máximos 43,5 mi e 39,4 mi.",
+   "testes": [
+    "C06b"
+   ]
+  }
+ },
+ "novas": [
+  {
+   "id": "P14",
+   "pergunta": "Qual a causa da assimetria de cauda do T02 em 2022 (SP 32 das 90 seções pró-Lula; 46 contra 2 nas seções maiores)?",
+   "distingue": "característica da distribuição × efeito territorial × intervenção localizada",
+   "afirmacao": "leitura do T02 como anomalia exploratória",
+   "natureza": "exploratória",
+   "teste": "decompor por município e tamanho, com nulo que preserve tamanho e agrupamento",
+   "origem": "T38 (28/10)",
+   "situacao": "respondida",
+   "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido).",
+   "testes": [
+    "T02"
+   ]
+  },
+  {
+   "id": "P15",
+   "pergunta": "O C06 com covariáveis municipais e limites de Fréchet por UF estreita a razão Abs→Lula:Abs→Adv?",
+   "distingue": "fluxo estimável × não identificado",
+   "afirmacao": "intervalo do 4:1 do C06",
+   "natureza": "exploratória",
+   "teste": "C06 com efeito contextual e limites por UF, comparado ao T37",
+   "origem": "T37 (28/10)",
+   "situacao": "respondida",
+   "resposta": "Limites de Fréchet por seção para quem se absteve em 2026: para Lula entre 4.116 e 32,3 mi; para o adversário entre 19 e 31,3 mi; a razão não é identificada (de ~0 a 1,7 mi). A estimativa do C06 cai dentro dos limites, mas só o modelo a escolhe.",
+   "testes": [
+    "C06b",
+    "T37"
+   ]
+  },
+  {
+   "id": "P16",
+   "pergunta": "Repetindo a verificação de seções com o comparador do RDV corrigido (nulos por suspensão), com amostra maior, aparece alguma divergência?",
+   "distingue": "erro do verificador × divergência nos arquivos",
+   "afirmacao": "alcance do T39",
+   "natureza": "confirmatória",
+   "teste": "corrigir o comparador do RDV e rodar em 200 seções sorteadas",
+   "origem": "T39 (28/10)",
+   "situacao": "respondida",
+   "resposta": "200 seções sorteadas do 1º turno: arquivos, hashes, assinaturas, RDV, imagem, BU na Web e log concordam em 200 de 200. Na primeira execução 14 seções acusaram diferença por erro do comparador; corrigido e repetido uma vez.",
+   "testes": [
+    "T14",
+    "T15",
+    "T16",
+    "T17"
+   ]
+  },
+  {
+   "id": "P17",
+   "pergunta": "A assimetria de cauda do T02 é estatisticamente significativa quando se considera a dependência dentro do município?",
+   "distingue": "assimetria real × variação entre municípios",
+   "afirmacao": "T02",
+   "natureza": "confirmatória",
+   "teste": "bootstrap por município das contagens pró-Lula e pró-outro",
+   "origem": "T38 (28/10)",
+   "situacao": "respondida",
+   "resposta": "A assimetria de cauda do T02 é estatisticamente real com bootstrap por município (IC 95% da razão acima de 1 em 3, 4 e 5 desvios, nos dois anos). Isto confirma que a característica existe; não explica a causa.",
+   "testes": [
+    "T02"
+   ]
+  },
+  {
+   "id": "P18",
+   "pergunta": "Com o T1 e o T3 contando os dois lados, qual o poder do T13 nos dois sentidos?",
+   "distingue": "cegueira do teste × ausência de efeito",
+   "afirmacao": "poder do T13",
+   "natureza": "confirmatória",
+   "teste": "T13 com T1/T3 de duas caudas, 30 réplicas",
+   "origem": "P2 (28/10)",
+   "situacao": "aberta"
+  },
+  {
+   "id": "P19",
+   "pergunta": "O E02 corrigido mostra autocorrelação espacial entre municípios vizinhos (Moran's I)?",
+   "distingue": "agrupamento local × regional",
+   "afirmacao": "E02",
+   "natureza": "confirmatória",
+   "teste": "Moran's I com adjacência municipal do IBGE",
+   "origem": "P9 (28/10)",
+   "situacao": "aberta"
+  },
+  {
+   "id": "P20",
+   "pergunta": "O que há nos locais de votação da capital de São Paulo em 2022 com várias seções atípicas?",
+   "distingue": "característica do local × efeito de publicação × outro",
+   "afirmacao": "T02, E02",
+   "natureza": "exploratória",
+   "teste": "inspeção dos boletins e do perfil desses locais",
+   "origem": "P14 (28/10)",
+   "situacao": "aberta"
+  },
+  {
+   "id": "P21",
+   "pergunta": "Boletins impressos de terceiros e a cadeia AC URNA v2 → AC RAIZ UE, obtida por canal do TSE, concordam com os arquivos?",
+   "distingue": "coerência × autenticidade",
+   "afirmacao": "alcance de T14 a T17",
+   "natureza": "confirmatória",
+   "teste": "coleta externa em amostra e certificados do TSE",
+   "origem": "P4, P6, P11 (28/10)",
+   "situacao": "aberta"
+  }
+ ]
+}

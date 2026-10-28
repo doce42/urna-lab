@@ -91,10 +91,32 @@
    "id": "F2",
    "rodada": 3,
    "titulo": "Investigação aprofundada",
-   "status": "em_andamento",
-   "resumo": "Perguntas específicas derivadas do levantamento e da revisão, registradas antes de rodar, cada uma tentando derrubar um método ou uma conclusão; exploratório e confirmatório separados. Primeira sessão (28/10): P1 respondida (T37), hipótese de enchimento para Lula testada (T38) e 20 seções verificadas (T39).",
-   "etapas": [],
-   "inicio": "2026-10-28"
+   "status": "concluida",
+   "resumo": "Fase 2 concluída em 28/10/2026: as 13 perguntas registradas e as 4 que nasceram dos resultados foram respondidas, respondidas em parte ou inventariadas (quando dependem de dado externo que não temos). 4 novas perguntas ficam na fila (P18 a P21). Congelada na rodada 3 (V1.1).",
+   "etapas": [
+    {
+     "titulo": "Pré-registro",
+     "texto": "Critérios fixados antes de cada execução (fase2/sessao_limitada_2026-10-28/PREREG.md)."
+    },
+    {
+     "titulo": "Estimador do C06",
+     "texto": "A magnitude do \"4:1\" não é robusta a heterogeneidade; a ordem e o contraste com 2022 são (T37)."
+    },
+    {
+     "titulo": "Hipótese de enchimento",
+     "texto": "Sem a assinatura de comparecimento (T38); a assimetria de cauda do T02 é real e sem causa, concentrada em São Paulo capital em 2022."
+    },
+    {
+     "titulo": "Testes corrigidos",
+     "texto": "E02 cai de centenas para dezenas de locais após corrigir a correlação local; T13 só vê um sentido; T28 vai de 13 para 8 urnas."
+    },
+    {
+     "titulo": "Dados",
+     "texto": "Diferença do exterior explicada; 200 seções e 200 certificados conferidos; faltam fontes externas."
+    }
+   ],
+   "inicio": "2026-10-28",
+   "fim": "2026-10-28"
   }
  ],
  "marcos": [
@@ -223,6 +245,12 @@
    "hora": "",
    "titulo": "Verificação de 20 seções",
    "texto": "Nenhuma divergência objetiva nova; verificação independente indisponível (T39)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 2 concluída",
+   "texto": "17 perguntas respondidas ou inventariadas; rodada 3 (V1.1) congelada; 4 novas perguntas na fila."
   }
  ],
  "etapas_do_caminho": [
@@ -253,9 +281,9 @@
   {
    "id": "fase2",
    "titulo": "Novas investigações",
-   "status": "em_andamento",
+   "status": "concluida",
    "versao": "Fase 2",
-   "texto": "17 perguntas registradas antes dos resultados. A primeira sessão (28/10) respondeu P1, testou a hipótese de enchimento e verificou 20 seções.",
+   "texto": "As 17 perguntas da Fase 2 foram respondidas ou inventariadas. Fase congelada na rodada 3 (V1.1). Quatro novas perguntas ficam na fila.",
    "link": "#fase2"
   },
   {
@@ -278,24 +306,34 @@
  "conclusoes_recentes": [
   {
    "titulo": "O crescimento de Lula entre turnos fecha nas contas",
-   "texto": "Em 2026 Lula ganhou 10,33 mi de votos (e o adversário 3,69 mi); o comparecimento subiu 2,92 mi. Em 2022, +3,07 mi e +7,11 mi, com +0,56 mi de comparecimento. A soma cabe exatamente no que os eliminados, os brancos/nulos e a abstenção liberaram.",
+   "texto": "2026: Lula +10,33 mi e adversário +3,69 mi com +2,92 mi de comparecimento; 2022: +3,07 mi e +7,11 mi com +0,56 mi. Cabe exatamente no que eliminados, brancos/nulos e abstenção liberaram.",
    "teste": "C06"
   },
   {
-   "titulo": "O \"4:1 para Lula\" entre abstencionistas é frágil na magnitude",
-   "texto": "Num teste com dados sintéticos a razão estimada varia de 1,7 a 11,8 quando as taxas mudam entre municípios (verdade: 3 a 4), um erro de ±0,5 a ±1,5 mi de votos. A ordem em 2026 e o contraste com 2022 (onde a razão foi inversa) resistem.",
+   "titulo": "O \"4:1\" entre abstencionistas é frágil na magnitude",
+   "texto": "Sob heterogeneidade a razão estimada varia de 1,7 a 11,8 (verdade 3 a 4): erro de ±0,5 a ±1,5 mi de votos. Ordem e contraste com 2022 resistem; os limites matemáticos não identificam o fluxo.",
    "teste": "T37"
   },
   {
-   "titulo": "Sem a assinatura de enchimento de urna",
-   "texto": "As seções pró-Lula atípicas não têm comparecimento subindo junto (média −1,8 pp). Elas somam cerca de 740 votos de excesso em 2026 (2.600 em 2022), contra uma margem de 4,43 mi. A assimetria de cauda continua sem causa.",
+   "titulo": "Sem assinatura de enchimento; assimetria real e sem causa",
+   "texto": "As seções pró-Lula atípicas (~740 votos de excesso em 2026, ~2.600 em 2022, contra 4,43 mi de margem) não têm comparecimento subindo. A assimetria é estatisticamente real e em 2022 concentra-se na capital de São Paulo.",
    "teste": "T38"
   },
   {
-   "titulo": "20 seções conferidas, nenhuma divergência objetiva nova",
-   "texto": "Arquivos, hashes, assinaturas, boletim e site concordam nas 19 seções com arquivos de urna. Vale só para a amostra: o certificado não foi ligado a uma raiz do TSE e não havia material independente para confrontar.",
+   "titulo": "200 seções e 200 certificados conferidos",
+   "texto": "Arquivos, hashes, assinaturas, boletim, RDV, log e site concordam em 200 de 200; cada certificado de urna é assinado pela AC emissora. A âncora (AC RAIZ UE) e fontes externas continuam sem verificação.",
    "teste": "T39"
+  },
+  {
+   "titulo": "Dois testes ficaram menores do que pareciam",
+   "texto": "O E02 cai de 766 para 102 locais significativos (2022) e de 683 para dezenas (2026) ao corrigir a correlação local; a regra do T13 não enxerga troca no sentido Lula→Flávio.",
+   "teste": "E02"
+  },
+  {
+   "titulo": "Diferença do exterior explicada",
+   "texto": "−495 e −525 eleitores = 423 de 41 seções não instaladas + 72 (e 30) de seções com boletim só nos arquivos das urnas. Resíduo zero; não são votos.",
+   "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 aprovada em 28/10/2026 · Fase 2 em andamento"
+ "situacao_atual": "Baseline V1.0 aprovada · Fase 2 concluída (V1.1) em 28/10/2026"
 }
