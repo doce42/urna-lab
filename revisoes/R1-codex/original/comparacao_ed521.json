@@ -1,0 +1,97 @@
+[
+  {
+    "fixture": "vsc_ac_m01066_z0004_s0077.bin",
+    "sha256": "264a49b0fba78d921ddf7a48139f108b61e381a614ef2c5406efe6bd6239380e",
+    "resumo_local": {
+      "algoritmo": "Ed521",
+      "cert_urna": "UEAO02293919",
+      "cert_emissor": "AC UE2022",
+      "assin_lista_ok": true
+    },
+    "itens": [
+      {
+        "arquivo": "o03220ac0106600040077-bu.dat",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-rdv.dat",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-jufa.dat",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-imgbu.dat",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-imgze.dat",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-hash.dat",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-wsqbio.jez",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-wsqman.jez",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-wsqmes.jez",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-mr.ver",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      },
+      {
+        "arquivo": "o03220ac0106600040077-log.jez",
+        "local": true,
+        "externo": true,
+        "negativo_hash_externo": false
+      }
+    ]
+  },
+  {
+    "fixture": "vsc_am_m02550_z0001_s0645.bin",
+    "sha256": "971ee77280791ccaaf75860c68dcdcf0e3170fc89c7f979d64309aa6aa07e2b6",
+    "resumo_local": {
+      "algoritmo": "ECDSA-P521",
+      "cert_urna": "ueao01789754",
+      "cert_emissor": "AC URNA",
+      "assin_lista_ok": true
+    },
+    "nota": "ECDSA: leitura local da assinatura da lista válida; sem segundo verificador neste controle."
+  },
+  {
+    "chave_degenerada_identidade_local": true,
+    "chave_degenerada_identidade_externo": true,
+    "pub_vazia_decodifica_local": true,
+    "pub_vazia_decodifica_externo": false
+  }
+]

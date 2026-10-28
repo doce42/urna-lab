@@ -37,9 +37,18 @@ for turno in (1, 2):
     if not arqs:
         print(f"[3] cobertura {turno}º turno: sem arquivos processados")
         continue
-    u = pd.concat([pd.read_parquet(a, columns=["SG_UF"]) for a in arqs])
-    esperado = int(b[f"total_{turno}"].notna().sum())
-    print(f"[3] cobertura {turno}º turno: {len(u):,} urnas processadas de {esperado:,} no Boletim de Urna ({100*len(u)/esperado:.2f}%)")
+    K = ["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO"]
+    norm = lambda df: set(zip(*(df[c].astype(str).str.strip().str.lstrip("0") if c != "SG_UF" else df[c].astype(str) for c in K)))
+    u = pd.concat([pd.read_parquet(a, columns=K) for a in arqs])
+    esperado = b[b[f"total_{turno}"].notna()]
+    cu, cb = norm(u), norm(esperado)
+    # revisão R1, achado R1-14: compara conjuntos de chaves, não só contagens. Toda seção do Boletim de Urna tem que ter
+    # sido processada; o que estiver só nos arquivos das urnas é listado (seções sem BU: exterior, Sistema de Apuração).
+    faltam, sobram = cb - cu, cu - cb
+    print(f"[3] cobertura {turno}º turno: {len(cb & cu):,} de {len(cb):,} seções do Boletim de Urna processadas; "
+          f"{len(faltam)} sem arquivos de urna; {len(sobram)} só nos arquivos das urnas {sorted(sobram)[:5]}; {len(u) - len(cu)} linhas repetidas")
+    if faltam:
+        falhas.append(f"cobertura {turno}º turno: {len(faltam)} seções do BU sem arquivos de urna, ex.: {sorted(faltam)[:5]}")
 
 for d in ["DIRETRIZ.md", "AGENTS.md", "PROTOCOLO.md", "METODOLOGIA.md", "AUTOAUDITORIA.md", "CATALOGO.md", "PIPELINE.md", "REFERENCIAS.md", "MAPA_SKILLS.md"]:
     if not os.path.exists(f"{R}/{d}"):

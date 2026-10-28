@@ -59,7 +59,7 @@ F2r = b["v22_2"].values.astype(float)
 comp, aptos = b["QT_COMPARECIMENTO_2"].values.astype(float), b["QT_APTOS_2"].values.astype(float)
 base = testes(L2r, V2r, comp, aptos)
 lim = (base[0] + max(5, 5 * np.sqrt(base[0])), base[1] * 3, base[2] + max(5, 5 * np.sqrt(base[2])), 3.5)
-print(f"dados reais (sem fraude): T1 {base[0]}  T2 {base[1]:.2f} pp  T3 {base[2]}  T4 {base[3]:.2f}")
+print(f"referência (dados reais não modificados; não é verdade conhecida sem fraude): T1 {base[0]}  T2 {base[1]:.2f} pp  T3 {base[2]}  T4 {base[3]:.2f}")
 print(f"limiar de alarme:          T1 >{lim[0]:.0f}  T2 >{lim[1]:.2f} pp  T3 >{lim[2]:.0f}  T4 >{lim[3]}\n")
 total_val = V2r.sum()
 LINHAS = []

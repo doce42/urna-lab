@@ -3,13 +3,19 @@ export type Teste = {
   id: string; modulo: string; pergunta: string; metodo: string; modelo_nulo: string; script: string; comando: string; saida: string;
   situacao: string; referencia: string; hipotese_nula: string; pressupostos: string; limitacoes: string; afirmacao: string;
   independencia: string; natureza: string; classe_evidencia: string; resultado_atual: string; anotacoes: string[];
-  historico?: HistoricoTeste[]; provas?: Prova[];
+  versoes?: VersaoTeste[]; provas?: Prova[]; evidencia?: string; interpretacao?: string | null; metodo_versao?: number;
+  pre_especificacao?: string; revisoes?: string[]; mudancas?: Mudanca[];
 };
-export type HistoricoTeste = { rodada: number; data: string; situacao: string; classe_evidencia: string; natureza: string; resultado_atual: string };
-export type Prova = { data: string; rodada: number; tipo: string; descricao: string; resultado: 'resistiu' | 'caiu' | 'ajustado' | 'em_andamento' };
-export type Fase = { id: string; rodada: number; titulo: string; status: 'concluida' | 'em_andamento' | 'proxima' | 'planejada'; inicio?: string; fim?: string; resumo: string; etapas: { titulo: string; texto: string }[] };
-export type ResumoRodada = { rodada: number; titulo: string; data: string; placar: { testes: number; classes: Record<string, number>; situacoes: Record<string, number>; natureza: Record<string, number> }; tag: string | null; arquivos: number };
-export type LinhaDoTempo = { descricao: string; fases: Fase[]; marcos: { data: string; hora: string; titulo: string; texto: string }[]; rodadas: ResumoRodada[]; github: string };
+export type VersaoTeste = { versao: string; rodada: number; data: string; git_tag?: string; commit?: string; metodo_versao: number; situacao: string; classe_evidencia: string; natureza: string; resultado: string; evidencia?: string; interpretacao?: string | null; nota?: string; mudancas?: Mudanca[] };
+export type Mudanca = { campo: string; causa: string; origem: string; justificativa: string };
+export type Prova = { data: string; rodada: number; tipo: string; alvo?: string; descricao: string; resultado: 'resistiu' | 'caiu' | 'ajustado' | 'em_andamento' };
+export type Achado = { id: string; origem: string; secao: string; titulo: string; prioridade: string; testes: string[]; classificacao: string; verificacao_interna: string; resposta: string; acoes: string[]; fase_alvo: string; situacao: string; pendente: string };
+export type Revisao = { pasta: string; revisao: string; titulo: string; revisor: string; data: string; alvo: string; classificacoes: Record<string, string>; situacoes: Record<string, string>; achados: Achado[] };
+export type EtapaCaminho = { id: string; titulo: string; status: string; versao: string; texto: string; link: string };
+export type PerguntaF2 = { id: string; pergunta: string; distingue: string; afirmacao: string; natureza: string; teste: string; origem: string };
+export type Fase = { id: string; rodada: number | null; versao?: string; titulo: string; status: 'concluida' | 'em_andamento' | 'proxima' | 'planejada' | 'pendente'; inicio?: string; fim?: string; resumo: string; etapas: { titulo: string; texto: string }[] };
+export type ResumoRodada = { rodada: number; versao: string | null; estado: string | null; commit: string | null; titulo: string; data: string; placar: { testes: number; classes: Record<string, number>; situacoes: Record<string, number>; natureza: Record<string, number> }; tag: string | null; arquivos: number };
+export type LinhaDoTempo = { descricao: string; caminho: EtapaCaminho[]; revisoes: Revisao[]; fase2: PerguntaF2[]; fases: Fase[]; marcos: { data: string; hora: string; titulo: string; texto: string }[]; rodadas: ResumoRodada[]; github: string };
 export type Placar = { total: number; concluidos: number; parciais: number; processando: number; exploratorios: number; confirmatorios: number; classes: Record<string, number>; situacoes: Record<string, number> };
 export type Registro = { descricao: string; modelos_nulos: Record<string, string>; classes: Record<string, string>; independencia: Record<string, string>; testes: Teste[]; placar: Placar };
 

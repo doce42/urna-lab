@@ -13,7 +13,7 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 4. **Artefato antes de anomalia.** Todo sinal estranho é investigado como possível erro de leitura, teto de 0/100%, fuso, seção agregada, arquivo cortado ou voto órfão. Os já encontrados estão no `CATALOGO.md`, seção 4.
 5. **Poder e especificidade.**
    - Teste forense novo roda nos dados reais, em 2022 e com fraude sintética (`analise/poder.py`).
-   - Teste que acusa dado limpo não entra na conclusão.
+   - O critério de calibração (quando um teste é considerado inadequado para o dado) é definido **antes** de olhar o resultado. Dados reais e 2022 são referência, não verdade conhecida sem fraude: uma sinalização neles é achado a explicar, não falso positivo (revisão R1, achado R1-05).
 6. **Três tipos de afirmação, sempre separados:**
    - prova determinística (conta exata, criptografia);
    - evidência estatística (com poder medido);
@@ -60,5 +60,6 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 - **Publicar** só com `python scripts/publicar.py "mensagem"` (copia, higieniza caminhos, varre atrás de dados pessoais e segredos, aborta se achar algo, commita com o e-mail de privacidade do GitHub). Nunca dê `git push` direto do diretório de trabalho. Teste antes com `--simular`.
 
 
-## Rodadas (linha do tempo)
+## Versões, revisões e rodadas (evolução da pesquisa)
+As regras completas estão em `RODADAS.md` e `revisoes/README.md`. Em resumo: versão congelada não se edita; revisão externa fica guardada inteira em `revisoes/RN-*/`, com `achados.json`; toda contestação vai para `provas` do teste, com alvo e resultado; toda mudança vai para `mudancas`, com causa; detecção em dados reais não se chama falso positivo; pergunta nova da Fase 2 entra em `FASE2.md` antes de rodar.
 O estudo avança em rodadas congeladas (`rodadas/rodada-N/`, tag `rodada-N`). Rodada fechada não se reescreve: correção entra na rodada seguinte. Toda contestação feita a um teste vai para o campo `provas` dele (`python scripts/rodada.py prova ...`). Ao fechar uma rodada: `python scripts/rodada.py fechar N "título"`, atualizar `rodadas/linha_do_tempo.json`, regerar o site, publicar e criar a tag. Detalhes em `RODADAS.md`.

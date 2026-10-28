@@ -1,5 +1,18 @@
 {
  "turno": 2,
+ "grau_da_explicacao": {
+  "inferido": 41,
+  "declarado_oficialmente": 30,
+  "compativel": 3,
+  "demonstrado": 1
+ },
+ "graus": {
+  "demonstrado": "o próprio dado mostra a causa (D1: arquivo na lista assinada e fora da publicação; E1: a diferença é exatamente o comparecimento de outra seção)",
+  "declarado_oficialmente": "o TSE declara a ocorrência no cadastro de correspondências (E2: RED, troca de urna, divergência registrada)",
+  "compativel": "o log mostra um evento compatível, sem demonstrar que ele produziu toda a diferença (E3: urna substituída; E5: reinício)",
+  "inferido": "inferência a partir da contagem (E4: uma confirmação sem voto computado)",
+  "sem_explicacao": "nenhuma regra explica"
+ },
  "urnas_avaliadas": 499205,
  "casos": 75,
  "explicados_operacionais": 74,
@@ -36,7 +49,8 @@
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
     "E3 urna substituída no meio do dia"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "BA",
@@ -54,7 +68,8 @@
    "explicacoes": [
     "E5 queda de energia/reinício entre a confirmação e o registro do voto no log"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "compativel"
   },
   {
    "uf": "BA",
@@ -73,7 +88,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "BA",
@@ -91,7 +107,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "BA",
@@ -109,7 +126,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "BA",
@@ -128,7 +146,8 @@
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
     "E3 urna substituída no meio do dia"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "BA",
@@ -146,7 +165,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "BA",
@@ -164,7 +184,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "CE",
@@ -182,7 +203,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "CE",
@@ -200,7 +222,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "DF",
@@ -218,7 +241,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "ES",
@@ -236,7 +260,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'BU gerado por RED em urna de contingência', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "ES",
@@ -257,7 +282,8 @@
     "E2 CEFT: origem 'BU gerado por RED em urna de seção', divergência 'nan'",
     "E3 urna substituída no meio do dia"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "GO",
@@ -275,7 +301,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "GO",
@@ -293,7 +320,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MA",
@@ -312,7 +340,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MA",
@@ -332,7 +361,8 @@
     "E3 urna substituída no meio do dia",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MA",
@@ -351,7 +381,8 @@
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MG",
@@ -369,7 +400,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -388,7 +420,8 @@
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
     "E3 urna substituída no meio do dia"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MG",
@@ -406,7 +439,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MG",
@@ -424,7 +458,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -442,7 +477,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -462,7 +498,8 @@
     "E3 urna substituída no meio do dia",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MG",
@@ -480,7 +517,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -498,7 +536,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -518,7 +557,8 @@
     "E3 urna substituída no meio do dia",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MG",
@@ -536,7 +576,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -554,7 +595,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MG",
@@ -572,7 +614,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "MS",
@@ -592,7 +635,8 @@
     "E3 urna substituída no meio do dia",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "MT",
@@ -610,7 +654,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PA",
@@ -628,7 +673,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PA",
@@ -646,7 +692,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "PA",
@@ -665,7 +712,8 @@
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
     "E3 urna substituída no meio do dia"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "PA",
@@ -683,7 +731,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PB",
@@ -701,7 +750,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "PB",
@@ -719,7 +769,8 @@
    "explicacoes": [
     "E5 queda de energia/reinício entre a confirmação e o registro do voto no log"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "compativel"
   },
   {
    "uf": "PB",
@@ -737,7 +788,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PE",
@@ -755,7 +807,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PE",
@@ -773,7 +826,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PE",
@@ -791,7 +845,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PE",
@@ -809,7 +864,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "PI",
@@ -827,7 +883,8 @@
    "explicacoes": [
     "E5 queda de energia/reinício entre a confirmação e o registro do voto no log"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "compativel"
   },
   {
    "uf": "PR",
@@ -845,7 +902,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PR",
@@ -863,7 +921,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "PR",
@@ -881,7 +940,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RJ",
@@ -899,7 +959,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RJ",
@@ -917,7 +978,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'BU gerado por RED em urna de seção', divergência 'nan'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "RJ",
@@ -935,7 +997,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "RJ",
@@ -953,7 +1016,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RJ",
@@ -971,7 +1035,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RN",
@@ -989,7 +1054,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RS",
@@ -1007,7 +1073,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "RS",
@@ -1025,7 +1092,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RS",
@@ -1043,7 +1111,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RS",
@@ -1061,7 +1130,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "RS",
@@ -1081,7 +1151,8 @@
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
     "E3 urna substituída no meio do dia"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "SC",
@@ -1099,7 +1170,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1117,7 +1189,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1135,7 +1208,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'BU gerado por RED em urna de contingência', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "SP",
@@ -1153,7 +1227,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "SP",
@@ -1171,7 +1246,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1189,7 +1265,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1209,7 +1286,8 @@
     "E3 urna substituída no meio do dia",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "SP",
@@ -1227,7 +1305,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'BU gerado por RED em urna de seção', divergência 'nan'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "SP",
@@ -1245,7 +1324,8 @@
    "explicacoes": [
     "D1 arquivo(s) ['log.jez'] na lista assinada pela urna, mas ausente(s) da publicação oficial"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "demonstrado"
   },
   {
    "uf": "SP",
@@ -1263,7 +1343,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "SP",
@@ -1281,7 +1362,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1299,7 +1381,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1317,7 +1400,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "SP",
@@ -1337,7 +1421,8 @@
     "E3 urna substituída no meio do dia",
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "TO",
@@ -1355,7 +1440,8 @@
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "inferido"
   },
   {
    "uf": "ZZ",
@@ -1373,7 +1459,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Sistema de apuração', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   },
   {
    "uf": "ZZ",
@@ -1391,7 +1478,8 @@
    "explicacoes": [
     "E2 CEFT: origem 'Sistema de apuração', divergência 'C'"
    ],
-   "explicado": true
+   "explicado": true,
+   "grau": "declarado_oficialmente"
   }
  ]
 }

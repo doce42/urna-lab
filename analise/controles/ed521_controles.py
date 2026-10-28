@@ -49,3 +49,11 @@ print(f"urnas testadas (Ed521): {len(amostra)}")
 for k, v in res.items():
     esperado = len(amostra) if k == "positivo" else 0
     print(f"  {k:28} válidas: {v:4}  (esperado {esperado})  {'OK' if v == esperado else 'FALHOU'}")
+
+# controles de entradas degeneradas (revisão R1, achado R1-02): têm que falhar todos
+I = (1).to_bytes(66, "little")  # identidade (0, 1)
+h0 = os.urandom(64)
+degenerados = {"chave_e_R_identidade_S_zero": ed521.verifica(I, I + bytes(66), h0), "chave_vazia": ed521.verifica(b"", I + bytes(66), h0),
+               "chave_curta": ed521.verifica(I[:65], I + bytes(66), h0), "assinatura_curta": ed521.verifica(amostra[0][0], bytes(131), h0) if amostra else False}
+for k, v in degenerados.items():
+    print(f"  {k:28} aceita: {v}  (esperado False)  {'OK' if not v else 'FALHOU'}")

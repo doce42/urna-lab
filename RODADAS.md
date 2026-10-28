@@ -1,43 +1,62 @@
-# Rodadas e linha do tempo
+# Evolução da pesquisa: versões, revisões e rodadas
 
-O estudo avança em **rodadas**. Cada rodada termina com um **retrato congelado** de todos os testes e resultados, para que o que temos hoje possa ser comparado com o que teremos amanhã, e para que cada teste possa ser posto à prova sem apagar o que ele dizia antes.
+O Urna Lab precisa permitir que qualquer pessoa veja o que o estudo concluiu hoje e também como chegou até aí, o que mudou e por quê. **A pesquisa se corrige sem reescrever o próprio passado.**
 
-## Fases
+## O caminho
 
-| Fase | Rodada | Situação | O que é |
+| Etapa | Versão | Situação | O que é |
 |---|---|---|---|
-| F1. Levantamento inicial | 1 | **concluída em 28/10/2026** | Coleta e proveniência, análise bruta e checks padrão, validação de dados, processamento das urnas, categorização dos 48 testes e conclusão da rodada |
-| F2. Double check da metodologia | 2 | próxima | Revisar método a método, pressupostos e modelos nulos, código contra método e reprodução |
-| F3. Perguntas e provas | 3 em diante | planejada | Várias fases de perguntas que põem à prova o levantamento inicial; cada teste é contestado e o resultado fica registrado nele |
+| Estado inicial | **V1.0-rc1** | congelada em 28/10/2026 (tag `rodada-1`) | Levantamento da Fase 1: coleta, processamento, checks padrão, validação, 48 testes categorizados e a conclusão original. **Snapshot preliminar, candidato à baseline** |
+| Revisão | **R1** | respondida | Revisão independente (Codex). Ver [`revisoes/`](revisoes/) |
+| Baseline aprovada | **V1.0** | pendente | Só depois dos critérios de [`revisoes/README.md`](revisoes/README.md) e da aprovação do responsável. Tag `v1.0` e GitHub Release |
+| Novas investigações | **Fase 2** | planejada | Perguntas registradas antes dos resultados em [`FASE2.md`](FASE2.md) |
+| Comparações | rc1 → atual | disponível | O que mudou em cada teste, com a causa |
+| Estado atual | registro vivo | — | [`testes/registro.json`](testes/registro.json), com provas e mudanças ainda não congeladas |
 
-Fases, etapas e marcos ficam em [`rodadas/linha_do_tempo.json`](rodadas/linha_do_tempo.json). No site, a página **Linha do tempo** mostra tudo, e a gaveta de cada teste mostra o histórico dele rodada a rodada.
+No site, a página **Evolução da pesquisa** percorre essas etapas, e a gaveta de cada teste mostra a história científica dele.
 
-## O que uma rodada congela
+## O que uma versão congela
 
 `rodadas/rodada-N/` guarda:
-- `registro.json`: o registro completo de testes naquele momento;
-- `resultados/`: cópia de todos os resultados pequenos (`analise/resultado_*.json`);
-- `CONCLUSAO.md`: a conclusão vigente na rodada;
-- `resumo.json`: placar por classe, situação e natureza, e o SHA-256 de cada arquivo congelado.
+- `registro.json`: o registro de testes;
+- `resultados/`: os resultados pequenos;
+- `CONCLUSAO.md`: a conclusão vigente;
+- `resumo.json`: o placar e o SHA-256 de cada arquivo;
+- `proveniencia.json`: commit, SHA-256 do manifesto de dados, ambiente, sementes e parâmetros.
 
-No GitHub, cada rodada fechada tem uma **tag** (`rodada-1`, `rodada-2`…). Ela aponta para o código e os documentos exatamente como estavam.
+Os dados de cerca de 405 GB ficam fora do git, verificáveis pelo manifesto. Cada versão tem uma tag no GitHub.
 
-**Rodadas fechadas não se reescrevem.** Um erro achado depois entra na rodada seguinte, com a explicação, e o retrato antigo continua lá para comparação.
+**Versão congelada não se edita.** O `proveniencia.json` da V1.0-rc1 foi acrescentado depois do congelamento, para completar a proveniência, e diz isso no próprio arquivo. Nenhum arquivo congelado foi alterado.
 
-## Histórico e provas de cada teste
+## A história de cada teste
 
-Cada teste do [`registro`](testes/registro.json) ganhou dois campos:
-- **`historico`**: uma entrada por rodada fechada, com situação, classe de evidência, natureza e resultado naquele momento. Comparar duas entradas mostra o que mudou e quando.
-- **`provas`**: cada vez que o teste é posto à prova, registra-se a data, a rodada, o tipo e o resultado. O tipo pode ser revisão de método, replicação, dado independente, sensibilidade ou contestação externa. O resultado pode ser **resistiu**, **caiu**, **ajustado** ou **em andamento**.
+Cada teste do registro tem um identificador persistente e estes campos:
+- **`versoes`**: o estado em cada versão congelada (rótulo, commit, manifesto de dados, versão do método, situação, classe, evidência, interpretação, resultado e as mudanças daquela versão).
+- **`evidencia`** e **`interpretacao`**: separadas a partir da revisão R1. Na rc1 estavam juntas no campo `resultado`.
+- **`metodo_versao`**: sobe quando o método muda (exemplo: T01 v2 passou de soma nacional a comparação seção a seção).
+- **`pre_especificacao`**: `anterior_ao_protocolo` para os testes rodados antes do protocolo (19h55 de 27/10), que não são pré-registrados; `protocolo_ou_emenda` para os demais.
+- **`revisoes`**: os achados de revisão que tocam o teste.
+- **`provas`**: cada contestação, com o alvo (evidência, método, interpretação, redação ou rastreabilidade) e o resultado: **resistiu**, **ajustado**, **caiu** ou **em andamento**.
+- **`mudancas`**: o que mudou desde a última versão congelada, com a **causa**:
 
-Um teste que cai não é apagado. Ele muda de classe ou de situação na rodada seguinte, e a prova que o derrubou fica junto dele.
+| Causa | Quer dizer |
+|---|---|
+| `dados` | mesmo código, dados novos ou atualizados |
+| `codigo` | mesmos dados, implementação corrigida |
+| `metodo` | o procedimento mudou |
+| `nova_evidencia` | entrou informação que não existia |
+| `interpretacao` | o número é o mesmo e a leitura mudou |
+| `redacao` | o texto dizia mais (ou outra coisa) do que o teste sustenta |
+| `rastreabilidade` | script, comando ou origem registrados |
+
+Quando código e dados mudam juntos, a comparação diz isso e não atribui a mudança a uma causa só.
 
 ## Comandos
 
 ```bash
-python scripts/rodada.py fechar 2 "Double check da metodologia"   # congela a rodada 2 (recusa se já existir)
-python scripts/rodada.py comparar 1 2                             # lista os testes que mudaram entre as rodadas
-python scripts/rodada.py prova T02 "replicação" "Refeito com nulo de Student por UF" resistiu
+python scripts/rodada.py fechar 2 V1.0 "Baseline aprovada"     # congela a versão (recusa se já existir)
+python scripts/rodada.py comparar 1 2                          # o que mudou em cada teste, com as causas
+python scripts/rodada.py prova T02 "replicação" metodo "Refeito com nulo por UF" resistiu
 ```
 
-Depois de fechar uma rodada: atualizar `rodadas/linha_do_tempo.json` (fase concluída e marco), regerar o site (`cd grafico/relatorio-app && npm run build`), publicar (`python scripts/publicar.py "Rodada N"`) e criar a tag `rodada-N` no repositório público.
+Depois de congelar: atualizar `rodadas/linha_do_tempo.json`, regerar o site (`cd grafico/relatorio-app && npm run build`), publicar (`python scripts/publicar.py "V1.0"`) e criar a tag.

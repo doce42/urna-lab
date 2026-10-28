@@ -1,0 +1,171 @@
+{
+  "resultado_logs_1t.json": {
+    "urnas": 499207,
+    "urnas_com_sequencia": 499176,
+    "T28": {
+      "urnas_com_votos_nos_ultimos_30min": 499176,
+      "taxa_sem_biometria_resto_do_dia": 0.12487593727544309,
+      "taxa_sem_biometria_ultimos_30min": 0.12153147043179185,
+      "urnas_significativas_BH": 13,
+      "z28_percentis": {
+        "50": -0.23694078753039707,
+        "90": 1.412921530478502,
+        "99": 3.0522558238036335,
+        "99.9": 4.582963128804747
+      }
+    },
+    "T29": {
+      "duracao_min_global_s": 2.0,
+      "duracao_min_p01_s": 6.0,
+      "urnas_com_algum_voto_abaixo_5s": 945,
+      "votos_abaixo_5s": 1311,
+      "intervalo_min_entre_votos_s_p01": 34.0,
+      "intervalo_min_entre_votos_s_min": -39630.0
+    },
+    "T30": {
+      "urnas_avaliadas": 499176,
+      "urnas_com_voto_antes_da_abertura": 1,
+      "urnas_com_voto_depois_do_encerramento_mais_1min": 0,
+      "votos_fora_do_dia_cru_NAO_USAR": 0
+    },
+    "T31": {
+      "votos_sem_habilitacao": 2,
+      "urnas": 1
+    },
+    "T33": {
+      "versoes": {
+        "10.23.0.0 - Praia da Barra do Cahy": 499176
+      },
+      "urnas_com_verificacao_sem_sucesso": 128,
+      "verificacoes_sem_sucesso": 146,
+      "verificacoes_ok": 97525054
+    }
+  },
+  "resultado_logs_2t.json": {
+    "urnas": 499207,
+    "urnas_com_sequencia": 499177,
+    "T28": {
+      "urnas_com_votos_nos_ultimos_30min": 499177,
+      "taxa_sem_biometria_resto_do_dia": 0.12682864430886023,
+      "taxa_sem_biometria_ultimos_30min": 0.12713999374301022,
+      "urnas_significativas_BH": 0,
+      "z28_percentis": {
+        "50": -0.34073543096289577,
+        "90": 1.4531693044123355,
+        "99": 3.126664530827804,
+        "99.9": 4.681095055169235
+      }
+    },
+    "T29": {
+      "duracao_min_global_s": 2.0,
+      "duracao_min_p01_s": 3.0,
+      "urnas_com_algum_voto_abaixo_5s": 273451,
+      "votos_abaixo_5s": 1120676,
+      "intervalo_min_entre_votos_s_p01": 22.0,
+      "intervalo_min_entre_votos_s_min": -31051.0
+    },
+    "T30": {
+      "urnas_avaliadas": 499177,
+      "urnas_com_voto_antes_da_abertura": 1,
+      "urnas_com_voto_depois_do_encerramento_mais_1min": 0,
+      "votos_fora_do_dia_cru_NAO_USAR": 124885110
+    },
+    "T31": {
+      "votos_sem_habilitacao": 0,
+      "urnas": 0
+    },
+    "T33": {
+      "versoes": {
+        "10.23.0.0 - Praia da Barra do Cahy": 499177
+      },
+      "urnas_com_verificacao_sem_sucesso": 162,
+      "verificacoes_sem_sucesso": 181,
+      "verificacoes_ok": 173740011
+    }
+  },
+  "resultado_logs_2022_1t.json": {
+    "urnas": 472024,
+    "urnas_com_sequencia": 471859,
+    "T28": {
+      "urnas_com_votos_nos_ultimos_30min": 471851,
+      "taxa_sem_biometria_resto_do_dia": 0.24944409802018835,
+      "taxa_sem_biometria_ultimos_30min": 0.23727319925674936,
+      "urnas_significativas_BH": 23,
+      "z28_percentis": {
+        "50": -0.17621233172857734,
+        "90": 1.3320292863734176,
+        "99": 2.7420461281770643,
+        "99.9": 4.054644866184914
+      }
+    },
+    "T29": {
+      "duracao_min_global_s": 2.0,
+      "duracao_min_p01_s": 7.0,
+      "urnas_com_algum_voto_abaixo_5s": 574,
+      "votos_abaixo_5s": 779,
+      "intervalo_min_entre_votos_s_p01": 33.0,
+      "intervalo_min_entre_votos_s_min": -34135.0
+    },
+    "T30": {
+      "urnas_avaliadas": 471846,
+      "urnas_com_voto_antes_da_abertura": 4,
+      "urnas_com_voto_depois_do_encerramento_mais_1min": 0,
+      "votos_fora_do_dia_cru_NAO_USAR": 214
+    },
+    "T31": {
+      "votos_sem_habilitacao": 0,
+      "urnas": 0
+    },
+    "T33": {
+      "versoes": {
+        "8.26.0.0 - Onça-pintada": 471859
+      },
+      "urnas_com_verificacao_sem_sucesso": 1,
+      "verificacoes_sem_sucesso": 1,
+      "verificacoes_ok": 21564389
+    }
+  },
+  "resultado_logs_2022_2t.json": {
+    "urnas": 472027,
+    "urnas_com_sequencia": 471983,
+    "T28": {
+      "urnas_com_votos_nos_ultimos_30min": 471979,
+      "taxa_sem_biometria_resto_do_dia": 0.2429185503364197,
+      "taxa_sem_biometria_ultimos_30min": 0.25143572833707195,
+      "urnas_significativas_BH": 25,
+      "z28_percentis": {
+        "50": -0.07190885860436258,
+        "90": 1.4568337994654856,
+        "99": 2.891255425747802,
+        "99.9": 4.2008720363316225
+      }
+    },
+    "T29": {
+      "duracao_min_global_s": 2.0,
+      "duracao_min_p01_s": 3.0,
+      "urnas_com_algum_voto_abaixo_5s": 81663,
+      "votos_abaixo_5s": 306528,
+      "intervalo_min_entre_votos_s_p01": 20.0,
+      "intervalo_min_entre_votos_s_min": -32206.0
+    },
+    "T30": {
+      "urnas_avaliadas": 471975,
+      "urnas_com_voto_antes_da_abertura": 2,
+      "urnas_com_voto_depois_do_encerramento_mais_1min": 0,
+      "votos_fora_do_dia_cru_NAO_USAR": 122683885
+    },
+    "T31": {
+      "votos_sem_habilitacao": 0,
+      "urnas": 0
+    },
+    "T33": {
+      "versoes": {
+        "8.26.0.0 - Onça-pintada": 471982,
+        "8.10.0.1 - Sabiá|8.26.0.0 - Onça-pintada": 1
+      },
+      "urnas_com_verificacao_sem_sucesso": 1,
+      "verificacoes_sem_sucesso": 1,
+      "verificacoes_ok": 22138850
+    }
+  }
+}

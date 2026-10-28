@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Search, X, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { clsx } from 'clsx';
-import { HistoricoDoTeste } from '@/ui/Historico';
+import { HistoriaCientifica } from '@/ui/Historico';
 import type { Registro, Teste, TestesDados, Meta } from '@/lib/tipos';
 import { useDados } from '@/lib/dados';
 import { irPara } from '@/lib/rotas';
@@ -185,7 +185,7 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
           {t.referencia && <p className="mt-2"><b className="text-text font-medium">Referência:</b> {t.referencia}</p>}
         </Bloco>
         <Bloco titulo="O que este teste não consegue ver" aberto><p>{t.limitacoes || 'Limitação não detalhada no registro.'}</p></Bloco>
-        <Bloco titulo={`Linha do tempo deste teste${t.historico?.length ? ` (${t.historico.length} ${t.historico.length === 1 ? 'rodada' : 'rodadas'}, ${(t.provas || []).length} ${(t.provas || []).length === 1 ? 'prova' : 'provas'})` : ''}`} aberto><HistoricoDoTeste historico={t.historico} provas={t.provas} /><a className="mt-3 inline-flex items-center gap-1 h-9 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">Linha do tempo do estudo</a></Bloco>
+        <Bloco titulo={`História científica (${(t.versoes || []).length} ${(t.versoes || []).length === 1 ? 'versão' : 'versões'}, ${(t.provas || []).length} ${(t.provas || []).length === 1 ? 'contestação' : 'contestações'})`} aberto><HistoriaCientifica t={t} /><a className="mt-4 inline-flex items-center gap-1 h-9 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">Evolução da pesquisa</a></Bloco>
         <Bloco titulo={`Anotações${anots.length ? ` (${anots.length})` : ''}`}>
           {anots.length ? <ul className="grid gap-2">{anots.map((a, i) => <li key={i} className={clsx('pl-3 border-l-[3px] rounded-r-md py-1', AVISO_RE.test(a) ? 'border-warn' : 'border-border')} style={AVISO_RE.test(a) ? { background: 'var(--warn-soft)' } : undefined}>{AVISO_RE.test(a) ? '⚠ ' : ''}{a}</li>)}</ul> : <p>Sem anotações adicionais no registro.</p>}
         </Bloco>

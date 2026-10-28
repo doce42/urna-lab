@@ -101,3 +101,10 @@ Só dados oficiais do TSE (lista e conferências em CATALOGO, seção 2). Nada e
   - O critério de anomalia (seção 4c), "repete em pelo menos dois testes independentes", passa a exigir **dados de origem diferente** (tabelas de votação × arquivos das urnas × assinatura), e não dois testes sobre o mesmo resíduo.
   - Achados exploratórios do módulo E só sobem de classe após confirmação em dados não usados na descoberta (logs das urnas, 2022 ou metade aleatória de municípios com semente fixa).
   - Lacunas e melhorias em AUTOAUDITORIA, seção 5.
+- **28/10/2026, emenda 4, resposta à revisão independente R1 (Codex).** Não muda nenhum resultado congelado da V1.0-rc1.
+  - **Pré-registro, de forma honesta:** os testes rodados antes deste protocolo (19h55 de 27/10) são marcados `anterior_ao_protocolo` no registro e não são tratados como pré-registrados, mesmo que tenham o rótulo "confirmatório".
+  - **Moran's I:** citado acima, nunca foi implementado. O E02 mede agrupamento por local de votação, não autocorrelação espacial. A implementação com vizinhança é a pergunta P9 da Fase 2.
+  - **Independência:** "dados de origem diferente" não garante erros independentes. Tabelas, BU, RDV e log vêm do mesmo equipamento ou da mesma cadeia de publicação. No 2º turno, testes sobre os dois candidatos são matematicamente dependentes (T21, T22). A conclusão não soma testes favoráveis, e a regra conjunta passa a ser avaliada por simulação (P2).
+  - **Calibração:** o critério que torna um teste inadequado para o dado é fixado antes de olhar o resultado. Detecções em dados reais são achados, não falsos positivos.
+  - **Não detecção:** não demonstra equivalência. Afirmações de "igual" exigem margem de equivalência definida antes (P7).
+  - **Perguntas novas:** a partir daqui, só entram pelo [`FASE2.md`](FASE2.md), registradas antes de rodar.

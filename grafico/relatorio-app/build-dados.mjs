@@ -61,9 +61,25 @@ gravar('registro.json', { descricao: registro.descricao, modelos_nulos: registro
   const lt = ler(path.join(dirR, 'linha_do_tempo.json'));
   const rodadas = fs.readdirSync(dirR).filter((d) => /^rodada-\d+$/.test(d)).map((d) => {
     const r = ler(path.join(dirR, d, 'resumo.json'));
-    return { rodada: r.rodada, titulo: r.titulo, data: r.data, placar: r.placar, tag: r.git_tag || null, arquivos: Object.keys(r.arquivos_sha256 || {}).length };
+    const pv = path.join(dirR, d, 'proveniencia.json');
+    const prov = fs.existsSync(pv) ? ler(pv) : null;
+    return { rodada: r.rodada, versao: r.versao || prov?.versao || null, estado: prov?.estado || null, commit: prov?.git?.commit || null, titulo: r.titulo, data: r.data, placar: r.placar, tag: r.git_tag || null, arquivos: Object.keys(r.arquivos_sha256 || {}).length };
   }).sort((a, b) => a.rodada - b.rodada);
-  gravar('linha-do-tempo.json', { descricao: lt.descricao, fases: lt.fases, marcos: lt.marcos, rodadas, github: 'https://github.com/doce42/urna-lab' });
+  // revisões independentes (revisoes/RN-*/achados.json) e perguntas da Fase 2 (tabela do FASE2.md)
+  const dirRev = path.join(RAIZ, 'revisoes');
+  const revisoes = fs.readdirSync(dirRev).filter((d) => fs.existsSync(path.join(dirRev, d, 'achados.json'))).map((d) => {
+    const r = ler(path.join(dirRev, d, 'achados.json'));
+    return { pasta: d, revisao: r.revisao, titulo: r.titulo, revisor: r.revisor, data: r.data, alvo: r.alvo, classificacoes: r.classificacoes, situacoes: r.situacoes,
+      achados: r.achados.map((a) => ({ id: a.id, origem: a.origem, secao: a.secao, titulo: sanear(a.titulo), prioridade: a.prioridade, testes: a.testes, classificacao: a.classificacao,
+        verificacao_interna: sanear(a.verificacao_interna), resposta: sanear(a.resposta), acoes: a.acoes, fase_alvo: a.fase_alvo, situacao: a.situacao, pendente: sanear(a.pendente || '') })) };
+  });
+  const fase2 = [];
+  const f2 = path.join(RAIZ, 'FASE2.md');
+  if (fs.existsSync(f2)) for (const l of fs.readFileSync(f2, 'utf8').split('\n')) {
+    const m = l.match(/^\| (P\d+) \| (.+) \|\s*$/);
+    if (m) { const c = m[2].split(' | '); fase2.push({ id: m[1], pergunta: c[0], distingue: c[1], afirmacao: c[2], natureza: c[3], teste: c[4], origem: c[5] }); }
+  }
+  gravar('linha-do-tempo.json', { descricao: lt.descricao, caminho: lt.etapas_do_caminho || [], fases: lt.fases, marcos: lt.marcos, rodadas, revisoes, fase2, github: 'https://github.com/doce42/urna-lab' });
 }
 
 // ---------- dados do relatório (118 MB local) → testes.json (enxuto) ----------
@@ -192,7 +208,10 @@ gravar('geo.json', topo);
 const DOCS = [
   ['visao-geral', 'README.md', 'Visão geral', 'O que é o estudo, o que tem no repositório e como reproduzir.'],
   ['conclusao', 'CONCLUSAO.md', 'Conclusão', 'A resposta do estudo em três níveis: provado, estatística com poder medido e limites dos dados públicos.'],
-  ['rodadas', 'RODADAS.md', 'Rodadas e linha do tempo', 'Como o estudo avança em rodadas congeladas e como cada teste é posto à prova.'],
+  ['rodadas', 'RODADAS.md', 'Evolução da pesquisa', 'Versões congeladas, revisões, história de cada teste e a causa de cada mudança.'],
+  ['revisoes', 'revisoes/README.md', 'Revisões independentes', 'Como cada revisão é guardada e respondida; critérios para aprovar a baseline.'],
+  ['revisao-r1', 'revisoes/R1-codex/README.md', 'Revisão R1 (Codex)', 'A primeira auditoria externa da Fase 1 e o que conferimos antes de responder.'],
+  ['fase2', 'FASE2.md', 'Fase 2', 'Perguntas registradas antes dos resultados, com a hipótese concorrente que cada uma distingue.'],
   ['diretriz', 'DIRETRIZ.md', 'Diretriz científica', 'Princípios, cinco níveis de investigação e classes de evidência A–G.'],
   ['protocolo', 'PROTOCOLO.md', 'Protocolo', 'Perguntas, modelos nulos, critérios fixados antes de rodar e emendas datadas.'],
   ['metodologia', 'METODOLOGIA.md', 'Metodologia matemática', 'A matemática de cada teste, camada por camada.'],

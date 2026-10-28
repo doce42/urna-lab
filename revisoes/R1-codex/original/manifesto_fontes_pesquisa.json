@@ -1,0 +1,965 @@
+{
+  "gerado_em": "2026-10-28T03:14:02.810843-03:00",
+  "arquivos": [
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/README.md",
+      "bytes": 52380,
+      "sha256": "2805d139726449822006287e96f7f46fdad986427e70e13bf6fdc6cad476989c"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/data/certificados/README.md",
+      "bytes": 7027,
+      "sha256": "962b1bc51f971cfe1b2026da6aeb777a3675836b36be3f74b26c0447542f7fc3"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/docs/confronto-fontes-externas.md",
+      "bytes": 15263,
+      "sha256": "b2068b81f863565793957511328853536af852462c4a509db119c57d76134822"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/docs/dados-2026.md",
+      "bytes": 18613,
+      "sha256": "396e9cb4cef24758b85ba5daacd31a4d24af9aa34465cdfbf4f4ec68cc8a9223"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/docs/integridade-2022.md",
+      "bytes": 41065,
+      "sha256": "1561243c26314506951c0c165bf6347c9916fe9eb83c7717e53b07e59808faa9"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/docs/metodologia.md",
+      "bytes": 22566,
+      "sha256": "34f6ff32cce76c1959edc8bba86b21fb04541dbd8b18261229dca612b37dd8f7"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/docs/relatorio-integridade-2026.md",
+      "bytes": 25480,
+      "sha256": "08c7cd1d9c4452048020dbe0ef38dbdf0c00d06be5b732bbc50fda71234ac60e"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/repo.json",
+      "bytes": 6888,
+      "sha256": "5409659be5a827004fa154badf0cf62401e517110ad6a3fd5eaf7421839400c7"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/scripts/ele2022/analisar_certificados.py",
+      "bytes": 27242,
+      "sha256": "d3705d1f8fbf023049adba6fcca1d9cb1735c0837a19630dca2871be90de72b5"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/scripts/ele2026/analisar_certificados.py",
+      "bytes": 51849,
+      "sha256": "b596e0b5e6fdc0979be1cdb66b656883815d367b5e668983e117633c1a41d629"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/scripts/externo/confrontar_bu_externo.py",
+      "bytes": 36170,
+      "sha256": "428925f0d19c5bddb7f53fc0b9301db5f02b50d57dfba20c73f0adabee09c5de"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/spec/v2/bu.asn1",
+      "bytes": 24353,
+      "sha256": "e53e28e9812bb7e19cc4bcc77b6ce48f25c413f62a60369a91c4f269e19b7ed6"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/src/dataurnas/analyzer/statistical.py",
+      "bytes": 11867,
+      "sha256": "8d62fd7cf0104bccca931d7cf3f35b83bd8a9bcbead9d656414d68e7abb10f6f"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/src/dataurnas/parsers/bu.py",
+      "bytes": 11394,
+      "sha256": "65b4ef6d31bf053355a2867fbbfd31f390ee8cd8cd8d652194b41380a9e8724d"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/src/dataurnas/parsers/ed521.py",
+      "bytes": 5160,
+      "sha256": "bff76f54e789b2a9ffc3167eedc36a20bd0c42c2cc7ebea1fbaf4801fd739e69"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/src/dataurnas/parsers/rdv.py",
+      "bytes": 14149,
+      "sha256": "4346592afdf2d6e736bfe01c78f78f89d0458d98a57d63b92e0e97dc2536f7f7"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/src/dataurnas/parsers/signature.py",
+      "bytes": 22428,
+      "sha256": "56281cb52ae75d7988fea5b02e809118dc674de50db557876665339a02dac36b"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/tests/ele2026/fixtures/vsc_ac_m01066_z0004_s0077.bin",
+      "bytes": 62605,
+      "sha256": "264a49b0fba78d921ddf7a48139f108b61e381a614ef2c5406efe6bd6239380e"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/tests/ele2026/fixtures/vsc_am_m02550_z0001_s0645.bin",
+      "bytes": 62609,
+      "sha256": "971ee77280791ccaaf75860c68dcdcf0e3170fc89c7f979d64309aa6aa07e2b6"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/tests/ele2026/test_certificados.py",
+      "bytes": 24747,
+      "sha256": "7b70c5a28b83b93ff2a06f64108033b45f738bb79a0cbdbbb9e59bb85839c968"
+    },
+    {
+      "arquivo": "fontes/alissonlinneker__DataUrnas-BR/tree.json",
+      "bytes": 85583,
+      "sha256": "82c0fdc6edce3b1de3ca8c47ccf44dc2cd05f2ec0ea3dd6535f2719d99df1ce5"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/README.md",
+      "bytes": 4862,
+      "sha256": "d0cb0161b97c01272c675a7d9967128ae9a5a558a1a453daafd5b5e9c22c65b5"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/apps/web/app/api/v1/results/history/route.ts",
+      "bytes": 650,
+      "sha256": "a7d0ae9a71dba526c47542a66083403903d40543c192994ba12dc75239a30382"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/apps/web/lib/server/archive.ts",
+      "bytes": 4691,
+      "sha256": "772f5c4d8ca7d1dffd8cc6891b52af3b00f3ffd68df65087713796d5bac671b7"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/apps/web/lib/server/ingestor.ts",
+      "bytes": 23917,
+      "sha256": "7a5b8b05f30bc05fb8e4204f90298e8e5aeee3e676a5d5be0ea813e906958096"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/apps/web/lib/server/round-series.ts",
+      "bytes": 1819,
+      "sha256": "86984a0e49ab5fd3bd88c5b5b325acd6b53593e858e9468ccab9de584ad29ed3"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/apps/web/lib/server/urna-files.ts",
+      "bytes": 4113,
+      "sha256": "3d74489a793131682cbd32e499292e3a4df13e8e98211278efb87033f5ee6f68"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/docs/arquitetura.md",
+      "bytes": 2857,
+      "sha256": "97a8ac5ecc3da166d831c27546e8a6c37713ba2733627dc218ffa9425aa5318e"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/packages/core/src/tse.ts",
+      "bytes": 18907,
+      "sha256": "9871f66bdeaa095e4dbf8bb7816729394d0020107e90ce2b72c65fb4d549f6b8"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/repo.json",
+      "bytes": 6150,
+      "sha256": "37a2a6d2aa47cf820e7c1167cf2dd2719291676caf2c47bb15f9817a8fa49b47"
+    },
+    {
+      "arquivo": "fontes/marcal1981__apuracao-eleicoes-2026/tree.json",
+      "bytes": 73664,
+      "sha256": "67b6159ec92828898bb49cc0dcf5892dced33004fa63a0be2c213efb3010bcf9"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/AUDITORIA_METODOLOGICA.md",
+      "bytes": 66045,
+      "sha256": "8a5bdc51e5ef5ec0af67beda27c085a1800faf6ca2229462e33e4acf29aec1fd"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/README.md",
+      "bytes": 9236,
+      "sha256": "a2e8bd19605a6ff4dcb1aaabca56b7209529f5d8f528dd35dd26a7805db6d294"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/RELATORIO.md",
+      "bytes": 49993,
+      "sha256": "5391e8a9a522ba9c27fb44d12aa390b62a0bf37bd459313f3aaa40388f0a7938"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/repo.json",
+      "bytes": 6261,
+      "sha256": "470174403010b64566c0407ae9db67b52f7988ed3944a1d47cafded5b96bd261"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/analise_03_inferencia_ecologica.py",
+      "bytes": 13206,
+      "sha256": "74eaf57a549f0b453868e0502f97abf5d23354a9aef3428f435f931c0338a607"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/auditoria_01_identificacao.py",
+      "bytes": 19809,
+      "sha256": "c3020132dcd9c7593e0d8dd9e2d1d639939c2153b6ec010ed9eb82b9fdfcfef6"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/auditoria_02_sintetico.py",
+      "bytes": 17579,
+      "sha256": "52fb2764b101e873f377b573be79f1781a54b71e173f8deccb56484868ce276e"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/auditoria_03_estabilidade.py",
+      "bytes": 12828,
+      "sha256": "ecd608ec118cff255a158c1016a6021e5bba4be355141ae1d6b27851a73377a1"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/auditoria_08_validacao_cruzada.py",
+      "bytes": 7788,
+      "sha256": "4e97da90f62a9084c7e31ef54e4bd048bfa3936e2850b431d555f79969f019ee"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/ei.py",
+      "bytes": 5730,
+      "sha256": "85cd17383eb6da82a9e1695a9b48950d520df8fb6d897f7c0cde99b4f84a8aae"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/ei_cov.py",
+      "bytes": 5701,
+      "sha256": "71f0157c34372574572c8c25be36a6728505915c91280269a2c2bf076731ea1e"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/src/fluxos.py",
+      "bytes": 3099,
+      "sha256": "b97048395ec57e159c6884249fd5394d8fc903603d4f06f1a1dcced7f0beb521"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/tests/test_auditoria.py",
+      "bytes": 5597,
+      "sha256": "0c3286fa971719ab083feb871b1ebb5b4905b9846b5e47e5c599f39898290271"
+    },
+    {
+      "arquivo": "fontes/ricardomaia__eleicoes_2026/tree.json",
+      "bytes": 100153,
+      "sha256": "b1fcfdadcfa5666998573b2d69c647fb7498afe2ff0e156fbbee37fb4aa2f24f"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/AGENTS.md",
+      "bytes": 9930,
+      "sha256": "248ee859e41d9f0e4422dd29759d846a17a419e2189d918aca229ac3bf07225a"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/README.md",
+      "bytes": 8903,
+      "sha256": "705114972c7d78963e2b174627f4b7ca858910ab7e23a8185a806362d3b10551"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/apuracao/apuracao.py",
+      "bytes": 8109,
+      "sha256": "e225a57335fdc107f18cb9e4f01588c69639e6728e13b5912e017049729caf19"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/extractors.py",
+      "bytes": 44253,
+      "sha256": "e981d8bb37ca178740e9f6b4e5886a522239522450a8eebcc1bc19de56e67f75"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/fix_quotes.py",
+      "bytes": 8452,
+      "sha256": "27658206d1a0655ae50e9a3414a638d2b7b72ddb1552149ff9c746856f03e5bf"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/headers/votacao_zona_final.csv",
+      "bytes": 6008,
+      "sha256": "91587e4fb0732e69f3a0119e3a5de01026b7f836a3eb23de07d8983d03e5dc06"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/mirror.sh",
+      "bytes": 24104,
+      "sha256": "38c2cc13f106fce0b5fa8372e47598132d2aba102d79ea682690c4fb4b5155fa"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/repo.json",
+      "bytes": 6131,
+      "sha256": "d2954ce4bd41dec4e6d2c0e1aadb20759c982a9dec962766b2a2f6173bd60b25"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/schema/votacao_zona.csv",
+      "bytes": 1002,
+      "sha256": "8600ef6b458487e59281e8a0b0888746dff708ed75c3a070d577bdd9ed5af541"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/tests/test_download.py",
+      "bytes": 14698,
+      "sha256": "bee4c7b595c9b7a088a99171bba63eb937e37f23c129963d1934c2b410e0284a"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/tree.json",
+      "bytes": 38527,
+      "sha256": "b828788cb091a2aabc68dcb68d4d21ae76a4e73d2358703a646c2df81e678d36"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/tse.py",
+      "bytes": 9347,
+      "sha256": "c29f5b163d8a727126f3f228380a4be97db1706819edbabb6e1212b8fd0c0960"
+    },
+    {
+      "arquivo": "fontes/turicas__eleicoes-brasil/utils.py",
+      "bytes": 4120,
+      "sha256": "11ef8ddcd925bc04480551445db58e877daa553a815a276037dcc172688146cf"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/.agents/skills/apuracao-comportamento/SKILL.md",
+      "bytes": 1958,
+      "sha256": "af148b50fbb44539f44a4c5013cb2b573df0c5c50bbf2417c672d08eeed5ed40"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/.agents/skills/apuracao-dados/SKILL.md",
+      "bytes": 2394,
+      "sha256": "80ab63123733ece1846afe6c0b8b56e0b30da6026635ffa2fcccd9b602831344"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/.agents/skills/apuracao-forense/SKILL.md",
+      "bytes": 2226,
+      "sha256": "8bf9cad7e5113d1c9db5c8d3fddb824d017e63d8bd65c7747c711b72df416a65"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/.agents/skills/apuracao-integridade/SKILL.md",
+      "bytes": 3020,
+      "sha256": "f0a942fb1cb6d9ac01efbd30f78ee9c4e48d8be31aa1def209eec03552e5c031"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/.agents/skills/apuracao-metodologia/SKILL.md",
+      "bytes": 2128,
+      "sha256": "5b46cb69e5b55b2782a103be789470d5077fa22703c2375d460d9fd731314991"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/.agents/skills/apuracao-relatorio/SKILL.md",
+      "bytes": 1797,
+      "sha256": "38068161b5ec1b92d896a3f474e783752e7c5776f5b94cf2b7c33da49a85a3cc"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/AGENTS.md",
+      "bytes": 5812,
+      "sha256": "a28b025a7625f5d5de2cfb62c05dd160830857fdea2f55a14a41bc2271151257"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/AUTOAUDITORIA.md",
+      "bytes": 14816,
+      "sha256": "5bc8439ccc663e65e3547fd9d1814de28059669312b6618c90e2459e1ee5b120"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/CATALOGO.md",
+      "bytes": 33824,
+      "sha256": "7e0ec5983a5075f4cad2a4621eb89ab1fd1aa3b0c818a57c3a7eab23b3bba8c0"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/CLAUDE.md",
+      "bytes": 5812,
+      "sha256": "a28b025a7625f5d5de2cfb62c05dd160830857fdea2f55a14a41bc2271151257"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/CONCLUSAO.md",
+      "bytes": 9265,
+      "sha256": "7e27542563567e9a459416d88703dcf45718055b0e75bd489f1b43312a92400b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/CONSUMO_IA.md",
+      "bytes": 6139,
+      "sha256": "e18923b4b697c10e35e7c8f83a9bb7d1a1bf9c579b11692e9a21edd21840bad1"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/CONTRIBUTING.md",
+      "bytes": 1981,
+      "sha256": "516183e4c294fd2b982b7b509c540418915d0bdcdc33541916c63f5274c1adf6"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/DIRETRIZ.md",
+      "bytes": 8673,
+      "sha256": "3819a0369c3272be7238d117b9d7b47c16c2d1c2ae11c0cde654fbf47271f5a0"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/MAPA_SKILLS.md",
+      "bytes": 3376,
+      "sha256": "5d1c83e702a9897c5f760dddf67f320d052a75d21eb59185245a7f70e4840e63"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/METODOLOGIA.md",
+      "bytes": 22490,
+      "sha256": "c7af7d2b287dd3c31e5ab842836ea3529bf78dcee0a16501207d96fdb121ac8b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/Makefile",
+      "bytes": 2505,
+      "sha256": "e111003de639117417a0cfd843a0c3e01ce3a5cd62304cf60846e429a0ca7fc5"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/PIPELINE.md",
+      "bytes": 8410,
+      "sha256": "72ddcbe477fd89b606240d5ca708daaacde495f0701fceddf7c702723b064a5c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/PROTOCOLO.md",
+      "bytes": 8668,
+      "sha256": "d3d81503742598dd08f6bb0a63332afd45749824079d7fa7c426f4c4700234ca"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/README.md",
+      "bytes": 3107,
+      "sha256": "ea3739e58953187b95047b6beff2d1112017d4fe8d70877b4d183b4ef20638ce"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/REFERENCIAS.md",
+      "bytes": 8968,
+      "sha256": "a643ba105872f09952d40f157b44460ba28c978ddb148a004243ede663f996e1"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/THIRD_PARTY.md",
+      "bytes": 1950,
+      "sha256": "39d7d1f6fd835f4cad5b50f6f97e396b4674b2cf862c808ea44f07b31d8f2a2b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/analise_logs.py",
+      "bytes": 9388,
+      "sha256": "3cc5eb0b5c7c746a4852da7b2f7b47417cbf969ae3aeab55460184c2459372f6"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/bateria.py",
+      "bytes": 11236,
+      "sha256": "9c29fe15da737d8aa0c60c8eef5b2e85b33b1fc80d061b3935c41b31b269f83c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/biometria.py",
+      "bytes": 3039,
+      "sha256": "4261fcb1a16b0b86766ce158453c25123f3cd597929de7d062951503dae4a85c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/casos_integridade.py",
+      "bytes": 8424,
+      "sha256": "615b298b2d34cd937871dcef556f5d8518dac4e19b2bdd903e3e26f6e5e0f425"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/comportamento.py",
+      "bytes": 11132,
+      "sha256": "6a3c9c73392fb0dfc448cb943ec903e707eea9ebeebdb47495557e706f0703b3"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/controles/ed521_controles.py",
+      "bytes": 2629,
+      "sha256": "be31caeec25520592d81acb20a8a8d928f596cd81546bd201fdc6d43d34e17ed"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/correspondencia.py",
+      "bytes": 5609,
+      "sha256": "e5501c5288d2fc58f3ccb8d0579e19c07b4f60617f0d6295150e61782899a817"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/curva.py",
+      "bytes": 7599,
+      "sha256": "5912cc159ec37793befb5b4342da94c930f729f8fa2454635a5f44c63ff37eea"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/der.py",
+      "bytes": 1341,
+      "sha256": "3df92730ab5d98d54178d6ecd9f9044febc0c5185e3c789a625144e8f510593f"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/divergencias.py",
+      "bytes": 7446,
+      "sha256": "e539c269422bc9358b90d53fed601d9c1dc49f1fca3ff182064bcccfecf3a404"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/ed521.py",
+      "bytes": 2908,
+      "sha256": "fdeb30eebf77ddcf4e7dee432e174e3b49906207ac3cfa1639563dbe7b80f2c8"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/investigar.py",
+      "bytes": 5667,
+      "sha256": "cf589a6e8ccaa05da9dc69057852a170cc67a6a4fd26f786242e6d1f613506bc"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/mapas_dados.py",
+      "bytes": 6160,
+      "sha256": "7db01f4d1ab3c5cd9bb4fc7408fe5e7b084ca49a7f0dda768321f2ab1229dc79"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/ml_sintetico.py",
+      "bytes": 7117,
+      "sha256": "e35f4bbce45d18f14c071f1d015992ff317afd4fa64b5cda52abbba21aa7f25f"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/ml_sintetico_v1_invalido.py",
+      "bytes": 5967,
+      "sha256": "94d9070c19d949e881288f4fef7535b156850bf8e23476f10f9735663e5366b3"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/montar_base.py",
+      "bytes": 2598,
+      "sha256": "ec55ff92a49d6d6639431b9d044312423579c4c17c79a6e90452c24f2ef0bc27"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/perfil.py",
+      "bytes": 2539,
+      "sha256": "dea232488ee35ed9b9abbf2e83f1e09784b7a4463c3c328a945d0f714a219569"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/poder.py",
+      "bytes": 6021,
+      "sha256": "65a467021cb5f41d026383a6a68bc0a53e7af16c46ad01e9131cdbc7935e7a6c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/poder_logs.py",
+      "bytes": 3008,
+      "sha256": "4ee8261e2871f91c926683635a53e1c368adfbc1da706f8d66047858712873a7"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/processar_brutos.py",
+      "bytes": 23336,
+      "sha256": "4bfd3518785991d2b7993b9c646dccbc3be121b6399ec29a70c7168b54873d71"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/relatorio_dados.py",
+      "bytes": 12120,
+      "sha256": "40a48133edb6c9af4460792446b9256ed505d98f6239483b2987318f66807ea6"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_bateria_2022.json",
+      "bytes": 92303,
+      "sha256": "82270518922d59bde565cc06808a3fd547962fc0c986ff7e3e0b4ad636eac4fe"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_bateria_2022.txt",
+      "bytes": 92304,
+      "sha256": "db6b504b5cc7ae2eb2d21b21039fec8538e64c69ba5ee91f32a08ada2c64b519"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_bateria_2026.json",
+      "bytes": 92163,
+      "sha256": "5d88485ea149edfa8127bcb4a430c9946ff6befd574082f812a44955a8011e97"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_bateria_2026.txt",
+      "bytes": 92164,
+      "sha256": "5459639088e1a2735f1c8ff62ce5c3e4957c7655925ee75bab8bcc8556e1eb34"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_biometria.json",
+      "bytes": 676,
+      "sha256": "c1c0a9408e10035463d15e29a8371cff59ee1dfa80b5324ffa6c3fa59c35e7f3"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_biometria.txt",
+      "bytes": 593,
+      "sha256": "95b2464fc297842048944330bfc910c411799b1c7f9dfdbdd4717c5dd1c2b362"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_casos_integridade_1t.json",
+      "bytes": 72541,
+      "sha256": "4692697b35a43daed941af0fd48559ba4943e6e857712736357f20832c3acae3"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_casos_integridade_2t.json",
+      "bytes": 30213,
+      "sha256": "986a4649be5d3a67a84d6e8a34204048312b8c414a3090f8d711fce46590ead5"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_comportamento_2022.json",
+      "bytes": 30051,
+      "sha256": "c782aabb975d5ac6644e5fd93a7d197a5bed6720870b76efdc16f6a03ff96943"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_comportamento_2022.txt",
+      "bytes": 1729,
+      "sha256": "d3829b03c8d9032ac09c8e640f224b6f4d96bf85d0d0d1f8e774a0a90546403b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_comportamento_2026.json",
+      "bytes": 32874,
+      "sha256": "eaea104eea7940aa1de0b0ac6b197c089e656244155c04ab0200177d455cc2aa"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_comportamento_2026.txt",
+      "bytes": 3104,
+      "sha256": "a861bf13a642613bf5dbe102349a86acf5ec7c9cb504765b0c3ccbd0df0701cf"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_correspondencia_1t.json",
+      "bytes": 4681,
+      "sha256": "c76434f4af6911a4cfce9c6e77defda0644477e0bd43186c191a13ba9059bad5"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_correspondencia_2t.json",
+      "bytes": 4347,
+      "sha256": "36d607091b83eabee56fa644f5e4c0cc2885ccafb3dc9fd8aea34ffb2cf3152b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_curva.txt",
+      "bytes": 3883,
+      "sha256": "5d0f06e7f316eccf269721ea511c9e5130fe2e1c9c3ef237aaf7f7e0cd1cf028"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_divergencias_2022.json",
+      "bytes": 32375,
+      "sha256": "a58c181cdd932b792fd2111c5856b2ccf20bad736c33317d8cea30e41ab5f45e"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_divergencias_2022_completo.json",
+      "bytes": 32365,
+      "sha256": "97c4382eb7f2036f66d43a4835e3dbdff45a96a59170da97931608e86406c1f4"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_divergencias_2022_completo.txt",
+      "bytes": 4452,
+      "sha256": "3b4c21b7a7fe1da6c42fba191445422ad1db17a70ca075df1bc7d24310abc6f9"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_divergencias_2026.json",
+      "bytes": 32547,
+      "sha256": "44492348d33e95c820877edf0efc48179d45214e321408f9187870ec42401096"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_divergencias_2026_completo.json",
+      "bytes": 32549,
+      "sha256": "f4f722cc1ecc9bedac505f667029831e1e0e8df6b1dc5963f031673ecf5ebfdb"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_divergencias_2026_completo.txt",
+      "bytes": 4450,
+      "sha256": "680f1fb29c5bc782f08682af6e5fafca961d0df8bc3877c88810959918303f15"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_logs_1t.json",
+      "bytes": 15225,
+      "sha256": "a4eae0ae205507415cc75f6c2386658ce18fae6d59a349ca5357b8c5662d3ddf"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_logs_2022_1t.json",
+      "bytes": 18249,
+      "sha256": "070d86add1d223d73100d788836e8ff353fb91787c860ed3e48a5f19ed358111"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_logs_2022_2t.json",
+      "bytes": 18887,
+      "sha256": "e145c3c06e5a8cf21c450a6c8345bf3fe6e08c4e4fd0785bc3afc98f5504d278"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_logs_2t.json",
+      "bytes": 12471,
+      "sha256": "b0e1b0ed994c2c5c6fc60750e01bbff77650739664e0e28e460b419df259b6e4"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_ml_2022.json",
+      "bytes": 758,
+      "sha256": "9a536c6d239c0e2a7aea686ad7d8e27d3888150883625699271a9ca0af160fc2"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_ml_2022.txt",
+      "bytes": 759,
+      "sha256": "c31c70d76d8edd7a67907bd88881e4a4788115c0153f8aa21aff29a2697412ce"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_ml_2022_v1_invalido.json",
+      "bytes": 766,
+      "sha256": "7b9cdbf2a25bb52f785fe930e6d3fcb1f064b6ae21e6ebce2f5c07d86f8f9771"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_ml_2026.json",
+      "bytes": 760,
+      "sha256": "87e4e03d07a45a254130961666867aecede49b02b08b422238d0347eeeed4d7d"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_ml_2026.txt",
+      "bytes": 761,
+      "sha256": "97712212859c15ad42d18a381ad905c08cbfda342658be3499ab977c78025b3e"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_ml_2026_v1_invalido.json",
+      "bytes": 769,
+      "sha256": "a7f22fb75011c830aa20c4b3dfe46e14daa054ae337190faeb76ba7ea2d9cdf2"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_poder.json",
+      "bytes": 11567,
+      "sha256": "130729b896a7d25c5cc33625ac351c1ceee6c259b5f4dcda58e256ae40793369"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_poder.txt",
+      "bytes": 6308,
+      "sha256": "66626fefa0b29923112fb68414776fdd22abb19a60f7c740b5f2bb1ac7c407fa"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_poder_logs_1t.json",
+      "bytes": 2986,
+      "sha256": "16ee75663544234c4e66491fa7d87fd0a9fe200442089ddc0bbd6654c83c2227"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_poder_logs_2t.json",
+      "bytes": 2965,
+      "sha256": "5701d5654851a657670e1adb9b440c5b9aa0422b4e0a093a63ef360bcfca8cee"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_sensibilidade_2022.json",
+      "bytes": 4204,
+      "sha256": "242bb87ff599fd57a339d45e2a3be2e058a15661aa9b388a09b563f2f176f4a0"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_sensibilidade_2022.txt",
+      "bytes": 1105,
+      "sha256": "3866aca1745394687ef39fe098a67656b8ad5d2f384fd16d3fbfe695f64af1f1"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_sensibilidade_2026.json",
+      "bytes": 4182,
+      "sha256": "4bfcec024a83d9f049adc188cc4a7ce156afcb8196fa3a06c515b7541ece7940"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_sensibilidade_2026.txt",
+      "bytes": 1105,
+      "sha256": "01398abf80ed2bd1e46f6a1f3876a967cc95bd4823cb9c1d6857603101d6e744"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_testes.txt",
+      "bytes": 5343,
+      "sha256": "85130397293d333242a4ffc82280d639e2dc4810a8cb080fd35e3438a8c0af45"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_testes_corrigidos.txt",
+      "bytes": 1832,
+      "sha256": "38e6da86d3b7787d5107b914188e10547f610659dc45dc59199150fd84e42095"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/resultado_totalizacao.csv",
+      "bytes": 20568,
+      "sha256": "56238405c2edd01a2417dca8af11a33881f121bab78e42ad754d52ee60ce55a2"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/sensibilidade.py",
+      "bytes": 2269,
+      "sha256": "ef118560784cd51247b6d7f6bf914960c52051ebb333cfc7060223857b6a37bf"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/seqlog.py",
+      "bytes": 5012,
+      "sha256": "ac17164e30b30988787e1e5dd0c7a78ac5b2d8e1a8d9f40d02553966f2af9a5f"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/testes.py",
+      "bytes": 10037,
+      "sha256": "a1620b15e450015fd1fd74a4593815b7fff9841aeaf9987b5145d48f8598a513"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/testes_corrigidos.py",
+      "bytes": 4427,
+      "sha256": "6b609a40410a227b654f3a1a3295b14f4aeb5b94c2a53160e13ca034b07818e3"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/analise/totalizacao.py",
+      "bytes": 3480,
+      "sha256": "0aab3c112375a1d3f54fc77fb3aeb3f7a11827cf990eb39163c0e1726d90b1d1"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/dados/listas/pos_manifesto.log",
+      "bytes": 104,
+      "sha256": "14166ccaedcd14af5f5cedfd66f9d595fa56e04751414ae146bbf371e021b495"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/dados/listas/pos_verificar_final.log",
+      "bytes": 320,
+      "sha256": "488f420e2b1f902631cd87e6ae56824c0d0b763c34a3ac54fcb652b33501d51f"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/firebase.json",
+      "bytes": 421,
+      "sha256": "5aeb4a140c160cee0522e50cef83aecf0f4e5d2feee336c2a6f88496f7639f4d"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/grafico/montar_dados.py",
+      "bytes": 5799,
+      "sha256": "9644025408d3512abb78ae3cc458c47d52a947798c98be8ed1d64770bc7adb8b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/grafico/prever.py",
+      "bytes": 3099,
+      "sha256": "0a6999316a1047c8b8096d4348ced39e1dc0c95b522d59ff1e07ae5bb380395a"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/grafico/web/relatorio_dados.json",
+      "bytes": 225083,
+      "sha256": "ecc3921678fb5e71eff2184ca27252f3413526b6943f4b5f98371165d5cee49d"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/requirements.txt",
+      "bytes": 169,
+      "sha256": "8c74afd289d73fe22d22b2d1f4b347a462697cfcad73e72141bf88b0ab1a1806"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/baixar_brutos_2t.py",
+      "bytes": 4800,
+      "sha256": "7cf0059a02022c56d8c20d3025a4c442d136516de2e2484cafab1a9e635c911d"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/baixar_lista.sh",
+      "bytes": 902,
+      "sha256": "2eeffccca539af608644d68cb6d3bd2656ffeaf213a7354ca3578ffdfa7fdd6b"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/baixar_paralelo.sh",
+      "bytes": 1102,
+      "sha256": "4803e708c7caa0b86ee0916a281308e82edbb66dbf854ff178c22491ebf3065a"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/baixar_sp_2t.sh",
+      "bytes": 2354,
+      "sha256": "87322f97c10d23ffff271433b9e3e1ca9aa6f7c9c2ef84ba07fd94689495eaff"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/baixar_sp_2t_ate_completar.sh",
+      "bytes": 631,
+      "sha256": "cf6c4ed1fb10bf2a83ba7ac3b4d3f232f37d2a0139b34ac0853a909e4edd1488"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/baixar_sp_2t_educado.py",
+      "bytes": 6722,
+      "sha256": "4c919c379cac02529f777050263a4107fb7142e9e89b98ae7ecc5c4f19156993"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/filtrar_presidente.py",
+      "bytes": 578,
+      "sha256": "d53b47538eef95ffc3f5c14c0c0813d15f48d8df323fbb8fc6d0649577a9b9aa"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/listas_tse.py",
+      "bytes": 2671,
+      "sha256": "98a9a943f6f230a0d1f1c0d890220d30cc4dc907cd0ff495962b5e0b306000db"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/manifesto.py",
+      "bytes": 2194,
+      "sha256": "6108961e7ca4f127c829decffc24256bfce663af5a10962dbac4d5e0cd1e70b5"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/monitorar.sh",
+      "bytes": 726,
+      "sha256": "a22403d8fffab410cb3ffe24720a689ba2951d715453ad9d6240a57e0109bd1c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/pos2.sh",
+      "bytes": 664,
+      "sha256": "c4aeab62af15a202c05a021d25576b651d3c76c0b1f1480ea42c2f5b421ad153"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/pos3.sh",
+      "bytes": 740,
+      "sha256": "1ff49c103c27e1f41bec6b5452eae7bec22b982ae63ef2185330ecad5cbe3107"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/pos_processamento.sh",
+      "bytes": 1871,
+      "sha256": "fed6b560b9fe8e2280c6bb3427f98d3eb76416756b862503753f1cfd2bd122cf"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/preparar_dados.sh",
+      "bytes": 2218,
+      "sha256": "af435f007b01d350429aa8099efe067ed9f1c7649cb56c7fb05e454b8f72e750"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/processar_2022_quando_pronto.sh",
+      "bytes": 649,
+      "sha256": "ec855c3f3f41be3d07bee67a5bb56f08a2cf2f942c694acf47b6666b6615c0c0"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/processar_2t_quando_pronto.sh",
+      "bytes": 852,
+      "sha256": "9386f9d18a4c715f27526f0728fd0052d231bcfc44b08f083b00e6a63994862d"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/publicar.py",
+      "bytes": 6807,
+      "sha256": "5629a7c36542c3c9e6528ce252a26181462798067f6add4102ba68db55b7cf89"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/refazer_bu_1t.sh",
+      "bytes": 904,
+      "sha256": "4a85351ef02451873db2f6cddc9806530044bd21d46a80565fc66b86e045ed3c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/refazer_bu_2t.sh",
+      "bytes": 904,
+      "sha256": "8f5ae2a37d60167132482c67c1e4a663618741905c9332628e42fc7b4a95933e"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/refazer_tudo.sh",
+      "bytes": 1126,
+      "sha256": "e4c4c8913e138d8cd392b15bacf4239de659f371284e46da9a6d83d60665cc73"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/reprocessar_1t_quando_pronto.sh",
+      "bytes": 432,
+      "sha256": "4c274ccd63ff41939a999134af3bb365750203cf590d2cd69cd43699377a512d"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/rodar_teste.py",
+      "bytes": 1504,
+      "sha256": "34b2215dceac083c1da96cf6fc17246c53992135124646dd52c53327f2660d4c"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/secao_presidente.py",
+      "bytes": 880,
+      "sha256": "c2b3799961e456eb413bbd30e6c54f05af18d4829df9f8aef4d4b8e859bbfa3e"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/scripts/verificar.py",
+      "bytes": 2214,
+      "sha256": "18ad81e50344d82e3d145ef52fe53bc5c99c74afe71621d1bfaa2bb0a67eecce"
+    },
+    {
+      "arquivo": "fontes/urna-lab-local/testes/registro.json",
+      "bytes": 55307,
+      "sha256": "d79772521dec4bed6af57210ebebc12595069e4285519d3578a946cd3f172ed9"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/METODOLOGIA.md",
+      "bytes": 6933,
+      "sha256": "5cc7341d91707ef1e2630786bfd4dc922c9650f07bdd4a116e47f5200fb9610d"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/README.md",
+      "bytes": 4369,
+      "sha256": "2d23a8e00de2acd0a8ededb3192dd4b8af49de8f3b8732cd13c4bcfc81c67c2d"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/docs/HORARIOS.md",
+      "bytes": 10591,
+      "sha256": "82b4ad16afbaa1dbd7abf5a78bcf0a55b766738f1ca1d555858036525dd7e910"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/docs/REVISAO_DOIS_TURNOS_SECAO.md",
+      "bytes": 11317,
+      "sha256": "e93f18ecc55f1740076f859c6a4091a7cfdd3f7e2815a768e5caeeefbc083488"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/docs/REVISAO_INDEPENDENTE.md",
+      "bytes": 10693,
+      "sha256": "dedb5db2e00f4eb2a3a780d5b46690e5cde7484f87464674a490d7a26c5d615a"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/repo.json",
+      "bytes": 6268,
+      "sha256": "6d07cc6234f29aaabd0047e8d2311ef2b82b8561045bbadd95edcc69592c9f3c"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/reports/RELATORIO.md",
+      "bytes": 11588,
+      "sha256": "f9d557caa1fa564292a39468735a2abf88ed820d8c9acf820e111abcf34bc0fa"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/reports/pareamento_secoes.csv",
+      "bytes": 1501,
+      "sha256": "c395cb8963837019c25dc944e29ed7e9c382afaf9b49c241bc5c72c80ac3ddd1"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/scripts/analyze.py",
+      "bytes": 21344,
+      "sha256": "361784694c2ec7f3e5ec23671779e8a0a3ff38687051697adfa281b92ac6e742"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/scripts/ingest.py",
+      "bytes": 35724,
+      "sha256": "74a71b9cfa0a52e07b4f69b896fa882d6b3af5aab9e103af858919d04350245c"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/tests/test_review.py",
+      "bytes": 25870,
+      "sha256": "d39df080593b133249be1bb423e6f56ef7036a8741254efadc4395f65db2bcfb"
+    },
+    {
+      "arquivo": "fontes/viniciusazeved__tse-eleicoes-2026/tree.json",
+      "bytes": 19955,
+      "sha256": "7e6227e583a36c2c1f1148fbc343e1d402cc603d7efc306471c42fd9eeae4dea"
+    }
+  ]
+}

@@ -2,48 +2,236 @@
  "descricao": "Linha do tempo do urna lab: fases do estudo, rodadas congeladas e marcos. Cada rodada fechada é um retrato fixo (rodadas/rodada-N/) para comparar os resultados de hoje com os de amanhã.",
  "fases": [
   {
-   "id": "F1", "rodada": 1, "titulo": "Levantamento inicial", "status": "concluida", "inicio": "2026-10-27", "fim": "2026-10-28",
-   "resumo": "Primeira rodada grossa: coleta de todos os dados oficiais, processamento das urnas, verificações padrão da literatura, validação criptográfica e de totais, e categorização de cada teste com classe de evidência.",
+   "id": "F1",
+   "rodada": 1,
+   "titulo": "Levantamento inicial",
+   "status": "concluida",
+   "inicio": "2026-10-27",
+   "fim": "2026-10-28",
+   "resumo": "Primeira rodada grossa: coleta de todos os dados oficiais, processamento das urnas, verificações padrão da literatura, validação criptográfica e de totais, e categorização de cada teste com classe de evidência. Congelada como snapshot preliminar (candidato à baseline).",
    "etapas": [
-    {"titulo": "Coleta e proveniência", "texto": "51.846 arquivos oficiais do TSE (≈ 405 GB) com SHA-256 no manifesto: tabelas de resultado, Boletim de Urna na Web, perfil do eleitorado e os arquivos de cada urna de 2026 e 2022."},
-    {"titulo": "Análise bruta e checks padrão", "texto": "Bateria forense da literatura (dígitos, impressão digital de Klimek, percentuais inteiros, fraude incremental), curva da apuração minuto a minuto e comparação com 2022."},
-    {"titulo": "Validação de dados", "texto": "Boletim = votação por seção voto a voto (T01), soma das urnas = total oficial (T32, 638/638), assinaturas e hashes de todas as urnas (T14, T16), recontagem pelo RDV (T17)."},
-    {"titulo": "Processamento das urnas", "texto": "≈ 499 mil urnas por turno, 4 combinações (2026 e 2022, 1º e 2º turno): log eleitor a eleitor, boletim digital, RDV, imagem do boletim e assinatura. Dois erros de leitura achados e corrigidos."},
-    {"titulo": "Categorização dos testes", "texto": "48 testes no registro, cada um com hipótese nula, pressupostos, limitações, natureza (confirmatório ou exploratório) e classe de evidência A–G; poder medido com fraude simulada."},
-    {"titulo": "Conclusão da rodada 1", "texto": "Conclusão em três níveis (CONCLUSAO.md): provado, evidência estatística com poder medido e limites dos dados públicos."}
+    {
+     "titulo": "Coleta e proveniência",
+     "texto": "51.846 arquivos oficiais do TSE (≈ 405 GB) com SHA-256 no manifesto: tabelas de resultado, Boletim de Urna na Web, perfil do eleitorado e os arquivos de cada urna de 2026 e 2022."
+    },
+    {
+     "titulo": "Análise bruta e checks padrão",
+     "texto": "Bateria forense da literatura (dígitos, impressão digital de Klimek, percentuais inteiros, fraude incremental), curva da apuração minuto a minuto e comparação com 2022."
+    },
+    {
+     "titulo": "Validação de dados",
+     "texto": "Boletim × votação por seção (T01; na rc1 só a soma nacional, refeito seção a seção na R1), soma das urnas = total oficial (T32, 638/638), assinaturas e hashes (T14, T16), recontagem pelo RDV (T17)."
+    },
+    {
+     "titulo": "Processamento das urnas",
+     "texto": "≈ 499 mil urnas por turno, 4 combinações (2026 e 2022, 1º e 2º turno): log eleitor a eleitor, boletim digital, RDV, imagem do boletim e assinatura. Dois erros de leitura achados e corrigidos."
+    },
+    {
+     "titulo": "Categorização dos testes",
+     "texto": "48 testes no registro, cada um com hipótese nula, pressupostos, limitações, natureza (confirmatório ou exploratório) e classe de evidência A–G; poder medido com fraude simulada."
+    },
+    {
+     "titulo": "Snapshot preliminar V1.0-rc1",
+     "texto": "Retrato congelado (tag rodada-1) com a conclusão original; não é a baseline aprovada."
+    }
+   ],
+   "versao": "V1.0-rc1"
+  },
+  {
+   "id": "R1",
+   "rodada": null,
+   "titulo": "Revisão independente R1",
+   "status": "concluida",
+   "inicio": "2026-10-28",
+   "resumo": "Auditoria externa da V1.0-rc1 por outro agente (Codex). Preservada inteira; 28 achados classificados (16 confirmados por nós, 11 questões metodológicas, 1 pendente de reprodução) e respondidos no registro vivo.",
+   "etapas": [
+    {
+     "titulo": "Preservar o relatório",
+     "texto": "Original com SHA-256 em revisoes/R1-codex/."
+    },
+    {
+     "titulo": "Classificar e verificar",
+     "texto": "Cada achado conferido no código, nas saídas ou por reprodução."
+    },
+    {
+     "titulo": "Responder",
+     "texto": "41 provas nos testes: 1 resistiu, 29 ajustadas, 9 em andamento, 2 caíram."
+    },
+    {
+     "titulo": "Corrigir sem reescrever o passado",
+     "texto": "Correções no registro vivo e na conclusão em revisão; a rc1 fica congelada."
+    }
    ]
   },
   {
-   "id": "F2", "rodada": 2, "titulo": "Double check da metodologia", "status": "proxima",
-   "resumo": "Revisar cada teste da rodada 1 antes de acreditar nele: o método é o adequado, os pressupostos valem, o código faz o que o método diz, o resultado se reproduz.",
-   "etapas": [
-    {"titulo": "Revisão método a método", "texto": "Para cada teste: o método é o recomendado pela literatura para este tipo de dado? Há alternativa melhor?"},
-    {"titulo": "Pressupostos e modelos nulos", "texto": "Conferir se cada modelo nulo e cada pressuposto valem nos dados reais; registrar onde não valem."},
-    {"titulo": "Código contra método", "texto": "Ler o código de cada teste contra a descrição da METODOLOGIA; testes de unidade com casos conhecidos."},
-    {"titulo": "Reprodução", "texto": "Rodar de novo e comparar com o retrato da rodada 1 (SHA-256 dos resultados)."}
-   ]
+   "id": "V1.0",
+   "rodada": 2,
+   "titulo": "Baseline aprovada",
+   "status": "pendente",
+   "resumo": "Aprovação formal com critérios explícitos: achados respondidos, ações de prioridade alta concluídas, verificador passando, conclusão coerente, proveniência completa e aprovação do responsável.",
+   "etapas": []
   },
   {
-   "id": "F3", "rodada": 3, "titulo": "Perguntas e provas", "status": "planejada",
-   "resumo": "Várias fases de perguntas para pôr à prova o levantamento inicial: cada teste é contestado (refutação, replicação, dado independente, sensibilidade) e o resultado da prova fica registrado no próprio teste: resistiu, caiu ou foi ajustado.",
+   "id": "F2",
+   "rodada": 3,
+   "titulo": "Investigação aprofundada",
+   "status": "planejada",
+   "resumo": "Perguntas específicas derivadas do levantamento e da revisão (FASE2.md), cada uma tentando derrubar um método ou uma conclusão; exploratório e confirmatório separados.",
    "etapas": []
   }
  ],
  "marcos": [
-  {"data": "2026-10-27", "hora": "18:03", "titulo": "Início do estudo", "texto": "Mapeamento do site de resultados do TSE e primeiros downloads."},
-  {"data": "2026-10-27", "hora": "18:26", "titulo": "Boletim = votação por seção", "texto": "Conferência voto a voto nos dois turnos (T01)."},
-  {"data": "2026-10-27", "hora": "18:39", "titulo": "Primeiros falsos sinais derrubados", "texto": "Três sinais suspeitos da primeira bateria eram artefatos de método; registrados e corrigidos."},
-  {"data": "2026-10-27", "hora": "19:29", "titulo": "Assinaturas das urnas decodificadas", "texto": "Ed521 (UE2020/UE2022) e ECDSA P-521 (UE2013/UE2015) verificados sem a especificação oficial."},
-  {"data": "2026-10-27", "hora": "19:55", "titulo": "Protocolo pré-registrado", "texto": "Perguntas, modelos nulos e critérios fixados antes de rodar (PROTOCOLO.md)."},
-  {"data": "2026-10-27", "hora": "20:15", "titulo": "Totalização conferida", "texto": "Soma das urnas = total oficial em 638 de 638 itens (T32)."},
-  {"data": "2026-10-27", "hora": "20:31", "titulo": "Diretriz científica e classes A–G", "texto": "Cada teste passa a ter classe de evidência, natureza e independência."},
-  {"data": "2026-10-27", "hora": "21:59", "titulo": "Repositório público", "texto": "Código MIT e documentos CC BY 4.0 no GitHub."},
-  {"data": "2026-10-27", "hora": "22:12", "titulo": "2026 processado por inteiro", "texto": "499.207 urnas por turno, 100% de cobertura."},
-  {"data": "2026-10-27", "hora": "23:27", "titulo": "Erro de leitura do log achado", "texto": "Linhas repetidas entre partes do log contadas duas vezes; corrigido e tudo reprocessado."},
-  {"data": "2026-10-28", "hora": "01:42", "titulo": "Reprocessamento completo", "texto": "4 combinações em ≈ 2 h 15 min, sem uso de IA."},
-  {"data": "2026-10-28", "hora": "02:02", "titulo": "Erro de leitura do bu.dat achado", "texto": "Lista de eleições com governador antes de Presidente; 757 casos falsos sumiram com a correção."},
-  {"data": "2026-10-28", "hora": "03:00", "titulo": "Documentação oficial do TSE", "texto": "Especificação de 2022 confere com os leitores; poder do T28 medido (T13b)."},
-  {"data": "2026-10-28", "hora": "", "titulo": "Site urna lab no ar", "texto": "urna-lab.web.app: início, testes, mapas, docs e PDF."},
-  {"data": "2026-10-28", "hora": "", "titulo": "Rodada 1 fechada", "texto": "Retrato congelado de todos os testes e resultados; conclusão da rodada 1."}
+  {
+   "data": "2026-10-27",
+   "hora": "18:03",
+   "titulo": "Início do estudo",
+   "texto": "Mapeamento do site de resultados do TSE e primeiros downloads."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "18:26",
+   "titulo": "Boletim = votação por seção",
+   "texto": "Conferência voto a voto nos dois turnos (T01)."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "18:39",
+   "titulo": "Primeiros falsos sinais derrubados",
+   "texto": "Três sinais suspeitos da primeira bateria eram artefatos de método; registrados e corrigidos."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "19:29",
+   "titulo": "Assinaturas das urnas decodificadas",
+   "texto": "Ed521 (UE2020/UE2022) e ECDSA P-521 (UE2013/UE2015) verificados sem a especificação oficial."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "19:55",
+   "titulo": "Protocolo pré-registrado",
+   "texto": "Perguntas, modelos nulos e critérios fixados antes de rodar (PROTOCOLO.md)."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "20:15",
+   "titulo": "Totalização conferida",
+   "texto": "Soma das urnas = total oficial em 638 de 638 itens (T32)."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "20:31",
+   "titulo": "Diretriz científica e classes A–G",
+   "texto": "Cada teste passa a ter classe de evidência, natureza e independência."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "21:59",
+   "titulo": "Repositório público",
+   "texto": "Código MIT e documentos CC BY 4.0 no GitHub."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "22:12",
+   "titulo": "2026 processado por inteiro",
+   "texto": "499.207 urnas por turno, 100% de cobertura."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "23:27",
+   "titulo": "Erro de leitura do log achado",
+   "texto": "Linhas repetidas entre partes do log contadas duas vezes; corrigido e tudo reprocessado."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "01:42",
+   "titulo": "Reprocessamento completo",
+   "texto": "4 combinações em ≈ 2 h 15 min, sem uso de IA."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "02:02",
+   "titulo": "Erro de leitura do bu.dat achado",
+   "texto": "Lista de eleições com governador antes de Presidente; 757 casos falsos sumiram com a correção."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "03:00",
+   "titulo": "Documentação oficial do TSE",
+   "texto": "Especificação de 2022 confere com os leitores; poder do T28 medido (T13b)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Site urna lab no ar",
+   "texto": "urna-lab.web.app: início, testes, mapas, docs e PDF."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Snapshot preliminar V1.0-rc1",
+   "texto": "Retrato congelado de todos os testes e resultados com a conclusão original (tag rodada-1); candidato à baseline, não aprovado."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "03:24",
+   "titulo": "Revisão independente R1 entregue",
+   "texto": "Relatório do Codex sobre a V1.0-rc1: 20 achados e 6 perguntas novas."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "R1 respondida no registro",
+   "texto": "T01 refeito seção a seção (0 diferenças); verificador Ed521 endurecido; manifesto com hash oficial real (331 conferidos); T36 com graus; conclusão em revisão. Duas afirmações caíram."
+  }
+ ],
+ "etapas_do_caminho": [
+  {
+   "id": "inicial",
+   "titulo": "Estado inicial",
+   "status": "concluida",
+   "versao": "V1.0-rc1",
+   "texto": "Levantamento da Fase 1 congelado como snapshot preliminar, candidato à baseline.",
+   "link": "#fases"
+  },
+  {
+   "id": "revisao",
+   "titulo": "Revisão",
+   "status": "concluida",
+   "versao": "R1",
+   "texto": "Revisão independente (Codex): 28 achados classificados e respondidos; 20 respondidos, 8 viram Fase 2; contestações registradas nos testes.",
+   "link": "#revisao"
+  },
+  {
+   "id": "baseline",
+   "titulo": "Baseline aprovada",
+   "status": "pendente",
+   "versao": "V1.0",
+   "texto": "Só depois de cumprir os critérios explícitos e da aprovação do responsável. Tag v1.0 e GitHub Release.",
+   "link": "#baseline"
+  },
+  {
+   "id": "fase2",
+   "titulo": "Novas investigações",
+   "status": "planejada",
+   "versao": "Fase 2",
+   "texto": "13 perguntas registradas antes de qualquer resultado, com a hipótese concorrente que cada uma distingue.",
+   "link": "#fase2"
+  },
+  {
+   "id": "comparacoes",
+   "titulo": "Comparações",
+   "status": "disponivel",
+   "versao": "rc1 → atual",
+   "texto": "O que mudou em cada teste, com a causa: dados, código, método, nova evidência, interpretação ou redação.",
+   "link": "#comparar"
+  },
+  {
+   "id": "atual",
+   "titulo": "Estado atual",
+   "status": "vivo",
+   "versao": "registro vivo",
+   "texto": "O registro de testes como está hoje, com provas e mudanças pendentes de congelamento.",
+   "link": "#/testes"
+  }
  ]
 }

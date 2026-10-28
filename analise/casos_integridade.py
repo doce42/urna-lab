@@ -90,6 +90,22 @@ def explica_publicacao(r, T):
     return [f"D1 arquivo(s) {faltam} na lista assinada pela urna, mas ausente(s) da publicação oficial"] if faltam else []
 
 
+# grau da explicação (revisão R1, achado R1-12): "explicado" só dizia que alguma regra casou; as regras têm forças diferentes.
+GRAUS = {"demonstrado": "o próprio dado mostra a causa (D1: arquivo na lista assinada e fora da publicação; E1: a diferença é exatamente o comparecimento de outra seção)",
+         "declarado_oficialmente": "o TSE declara a ocorrência no cadastro de correspondências (E2: RED, troca de urna, divergência registrada)",
+         "compativel": "o log mostra um evento compatível, sem demonstrar que ele produziu toda a diferença (E3: urna substituída; E5: reinício)",
+         "inferido": "inferência a partir da contagem (E4: uma confirmação sem voto computado)",
+         "sem_explicacao": "nenhuma regra explica"}
+
+
+def grau(exp):
+    cod = {e.split(" ")[0] for e in exp}
+    for g, cs in (("demonstrado", {"D1", "E1"}), ("declarado_oficialmente", {"E2"}), ("compativel", {"E3", "E5"}), ("inferido", {"E4"})):
+        if cod & cs:
+            return g
+    return "sem_explicacao"
+
+
 for i, r in x.iterrows():
     tipos = []
     if r["_merge"] == "left_only":
@@ -124,8 +140,9 @@ for i, r in x.iterrows():
     casos.append({"uf": r.SG_UF, "municipio": r.CD_MUNICIPIO, "zona": r.NR_ZONA, "secao": r.NR_SECAO, "tipos": tipos,
                   "log": None if pd.isna(r.get("computado")) else int(r["computado"]), "comparecimento": None if pd.isna(comp[i]) else int(comp[i]),
                   "cert": r.get("cert_urna"), "urnas_log": r.get("ids_urna_log"), "origem_ceft": r.get("DS_ORIGEM_VOTO"),
-                  "explicacoes": exp, "explicado": bool(exp)})
-R = {"turno": T, "urnas_avaliadas": int((x["_merge"] == "both").sum()), "casos": len(casos),
+                  "explicacoes": exp, "explicado": bool(exp), "grau": grau(exp)})
+R = {"turno": T, "grau_da_explicacao": pd.Series([c_["grau"] for c_ in casos]).value_counts().to_dict(),
+     "graus": GRAUS, "urnas_avaliadas": int((x["_merge"] == "both").sum()), "casos": len(casos),
      "explicados_operacionais": sum(c_["explicado"] and not any(e.startswith("D1") for e in c_["explicacoes"]) for c_ in casos),
      "inconsistencias_de_publicacao_D1": sum(any(e.startswith("D1") for e in c_["explicacoes"]) for c_ in casos),
      "sem_explicacao": sum(not c_["explicado"] for c_ in casos),

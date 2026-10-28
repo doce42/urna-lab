@@ -29,3 +29,7 @@ grafico/web/relatorio_v1_backup.html
 dados/brutos/*
 !dados/brutos/doc/
 dados/brutos/doc/*.zip
+
+# revisão R1: cópias de repositórios de terceiros e do próprio projeto ficam só locais (há manifesto com SHA-256 no relatório)
+revisoes/*/original/fontes/
+!dados/listas/MANIFESTO_hash_oficial.csv

@@ -76,7 +76,8 @@ def copia():
         except (UnicodeDecodeError, OSError):
             shutil.copy2(src, dst)  # binário: copiado como está
         else:
-            codigo = rel.endswith((".py", ".sh")) or os.path.basename(rel) == "Makefile"
+            # material de revisão externa (revisoes/*/original) não roda aqui: higieniza como documento (caminhos viram ~)
+            codigo = (rel.endswith((".py", ".sh")) or os.path.basename(rel) == "Makefile") and not rel.startswith("revisoes/")
             open(dst, "w", encoding="utf-8").write(higieniza(texto, codigo))
         n += 1
     return n

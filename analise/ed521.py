@@ -75,14 +75,23 @@ def mult_base(k):
     return R
 
 
+def degenerado(P):
+    """Ponto de ordem pequena (identidade ou divisor do cofator 4): não serve como chave nem como R."""
+    return igual(mult(4, P), ZERO)
+
+
 def verifica(pub, assinatura, h):
-    """True se a assinatura Ed521 da urna sobre o hash SHA-512 h (64 bytes) é válida para a chave pública pub."""
+    """True se a assinatura Ed521 da urna sobre o hash SHA-512 h (64 bytes) é válida para a chave pública pub.
+    Rejeita entradas malformadas e pontos degenerados (revisão R1, achado R1-02): sem isso, chave e R iguais à
+    identidade com S = 0 passavam."""
+    if len(pub) != 66 or len(assinatura) != 132:
+        return False
     A = decodifica(pub)
-    if A is None or len(assinatura) != 132:
+    if A is None or degenerado(A):
         return False
     Rb = assinatura[:66]
     Rp = decodifica(Rb)
-    if Rp is None:
+    if Rp is None or degenerado(Rp):
         return False
     S = mpz(int.from_bytes(assinatura[66:], "little"))
     if S >= L:

@@ -2,7 +2,9 @@
 
 Para cada cenário (fração de urnas alteradas x fração dos votos dos últimos 30 min convertidos em "sem biometria") sorteia
 as urnas, altera as contagens e aplica o MESMO teste do T28 (binomial contra a taxa da própria urna no resto do dia,
-Benjamini-Hochberg a 5% sobre todas as urnas). Mede: recall (urnas alteradas que o teste acusa) e falsos positivos.
+Benjamini-Hochberg a 5% sobre todas as urnas). Mede: recall (urnas alteradas que o teste acusa) e detecções nas urnas
+não alteradas. A referência são os dados reais NÃO MODIFICADOS, cujo estado verdadeiro é desconhecido: detecções nela não
+são "falsos positivos" demonstrados (revisão R1, achado R1-05).
 Limite assumido: só mede o que deixa rastro "sem biometria" no log; um voto lançado com habilitação biométrica forjada no
 log não é visto por este teste. Uso: python poder_logs.py <turno> ; saída resultado_poder_logs_<turno>t.json
 """
@@ -38,7 +40,7 @@ def t28(ult, ult_sb, res, res_sb):
 
 ult, usb, res, rsb = (u[c].to_numpy() for c in cols)
 base = t28(ult, usb, res, rsb)
-R = {"turno": int(T), "urnas": int(len(u)), "urnas_com_votos_ult30": int((ult > 0).sum()), "falsos_positivos_sem_fraude": int(base.sum()), "cenarios": []}
+R = {"turno": int(T), "urnas": int(len(u)), "urnas_com_votos_ult30": int((ult > 0).sum()), "deteccoes_na_referencia_nao_modificada": int(base.sum()), "cenarios": []}
 elig = np.where(ult > 0)[0]
 for frac_urnas in (0.001, 0.01, 0.05, 0.2):
     for frac_votos in (0.1, 0.2, 0.3, 0.5, 1.0):
@@ -51,8 +53,8 @@ for frac_urnas in (0.001, 0.01, 0.05, 0.2):
             sig = t28(ult, sb2, res, rsb)
             rec.append((sig[idx].mean(), sig.sum() - sig[idx].sum()))
         R["cenarios"].append({"frac_urnas_alteradas": frac_urnas, "frac_votos_ult30_convertidos": frac_votos,
-                              "recall_medio": round(float(np.mean([r[0] for r in rec])), 4), "falsos_positivos_medio": round(float(np.mean([r[1] for r in rec])), 2)})
+                              "recall_medio": round(float(np.mean([r[0] for r in rec])), 4), "deteccoes_em_urnas_nao_alteradas_medio": round(float(np.mean([r[1] for r in rec])), 2)})
 json.dump(R, open(os.path.join(AQUI, f"resultado_poder_logs_{T}t.json"), "w"), indent=1)
 for c in R["cenarios"]:
     print(c)
-print("sem fraude: falsos positivos", R["falsos_positivos_sem_fraude"], "de", R["urnas_com_votos_ult30"], "urnas")
+print("referência não modificada: detecções", R["deteccoes_na_referencia_nao_modificada"], "de", R["urnas_com_votos_ult30"], "urnas")

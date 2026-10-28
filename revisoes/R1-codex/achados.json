@@ -1,0 +1,591 @@
+{
+ "revisao": "R1",
+ "titulo": "Revisão científica e técnica comparativa do Urna Lab",
+ "revisor": "Codex (agente de IA externo, sessão separada; o projeto foi conduzido por Claude)",
+ "data": "2026-10-28",
+ "alvo": "V1.0-rc1 (tag rodada-1, commit 78bef1e); a revisão leu o CONCLUSAO.md com o mesmo SHA-256 do snapshot congelado",
+ "original": "revisoes/R1-codex/original/RELATORIO.md",
+ "classificacoes": {
+  "confirmado": "verificado por nós no código, nas saídas ou por reprodução",
+  "pendente_de_reproducao": "plausível, ainda não reproduzido por nós",
+  "questao_metodologica": "questão de método ou de alcance da afirmação, a decidir por critério explícito"
+ },
+ "situacoes": {
+  "aberto": "registrado, ação pendente",
+  "respondido": "ação feita na versão em revisão",
+  "aceito_como_limite": "fica como limite declarado",
+  "rejeitado": "não procede, com justificativa",
+  "em_andamento": "ação começada, não concluída",
+  "adiado_fase2": "aceito, vira trabalho da Fase 2"
+ },
+ "achados": [
+  {
+   "id": "R1-01",
+   "origem": "R1-codex",
+   "secao": "3.1",
+   "titulo": "A autenticidade não fecha a cadeia de confiança: o leitor extrai a chave do certificado da urna, mas não valida o certificado até uma raiz autenticada",
+   "prioridade": "alta",
+   "testes": [
+    "T14",
+    "T16",
+    "T17b",
+    "T34"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido no código (_verificador e ler_vsc): não há validação de cadeia. Já constava como limite (AUTOAUDITORIA §6).",
+   "resposta": "Procede. A assinatura demonstra coerência com a chave apresentada pela própria urna, não que a chave pertença a uma urna autorizada. As frases sobre assinatura passam a dizer isso.",
+   "acoes": [
+    "corrigir_texto: CONCLUSAO e T14/T16 com alcance condicionado",
+    "fase2: comparar certificados intermediários disponíveis (DataUrnas, documentação oficial) e validar caminho, validade e identidade"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Validação da cadeia de certificados: fica como limite até haver âncora autenticada (Fase 2 tenta)."
+  },
+  {
+   "id": "R1-02",
+   "origem": "R1-codex",
+   "secao": "3.2",
+   "titulo": "O verificador Ed521 aceita entradas degeneradas (chave e ponto R iguais à identidade; chave vazia)",
+   "prioridade": "alta",
+   "testes": [
+    "T16",
+    "T16c"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Reproduzido em 28/10: verifica(I, I||0, h) = True e decodifica(b'') aceito.",
+   "resposta": "Procede como lacuna de validação de entradas. Não indica que alguma chave real seja degenerada, mas isso precisa ser varrido.",
+   "acoes": [
+    "corrigir_codigo: rejeitar identidade, comprimento errado e pontos de ordem pequena; incluir no T16c",
+    "fase2: varrer todas as chaves Ed521 reais (2026, dois turnos) atrás de chaves degeneradas"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Concluído: todas as listas reverificadas com o verificador endurecido (499.176 e 499.178 válidas)."
+  },
+  {
+   "id": "R1-03",
+   "origem": "R1-codex",
+   "secao": "3.3",
+   "titulo": "O manifesto marca 'sha512_oficial_conferido' também quando o TSE não publicou .sha512",
+   "prioridade": "alta",
+   "testes": [],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido: baixar_lista.sh cria .ok nos dois ramos ('ok hash' e 'ok sem-hash'); manifesto.py usa só a existência do .ok.",
+   "resposta": "Procede. O SHA-256 local continua válido como identificador do conteúdo; o erro é a afirmação de conferência oficial.",
+   "acoes": [
+    "corrigir_texto: ressalva no manifesto e na proveniência",
+    "corrigir_codigo: separar download concluído, hash oficial disponível e hash oficial conferido; reconstruir pelos logs de download"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Gerador do manifesto corrigido; estado real reconstruído dos logs: 331 conferidos, 173 sem hash publicado."
+  },
+  {
+   "id": "R1-04",
+   "origem": "R1-codex",
+   "secao": "3.4",
+   "titulo": "T13 é uma grade de 37 cenários com uma realização cada; não autoriza probabilidade geral de detecção nem 'muito provavelmente apareceria'",
+   "prioridade": "alta",
+   "testes": [
+    "T13",
+    "T13b",
+    "T23"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido: uma realização por cenário; deslocamentos só a favor do candidato 13.",
+   "resposta": "Procede. '25 de 37' descreve a grade executada, não um poder geral; o maior cenário não detectado não é teto universal.",
+   "acoes": [
+    "corrigir_texto: CONCLUSAO (nível 2) e T13",
+    "fase2: poder replicado em poucos mecanismos prioritários, nos dois sentidos, com erro Monte Carlo e regra conjunta"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Texto corrigido. Poder replicado com mecanismos especificados: Fase 2 (P2)."
+  },
+  {
+   "id": "R1-05",
+   "origem": "R1-codex",
+   "secao": "3.5",
+   "titulo": "A referência histórica não é verdade conhecida sem fraude: as 13 sinalizações basais do T28 não são falsos positivos demonstrados",
+   "prioridade": "alta",
+   "testes": [
+    "T13",
+    "T13b",
+    "T28",
+    "T26"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido: 'dados reais (sem fraude)' em poder.py e 'falsos positivos' em poder_logs.py, no registro e na CONCLUSAO. A mesma observação estava na nossa autorrevisão (A-01).",
+   "resposta": "Procede. Passa a se chamar 'detecções na condição de referência não modificada'. A regra 'teste que acusa dado limpo não entra' será reescrita como critério de calibração definido antes.",
+   "acoes": [
+    "corrigir_texto: T13, T13b, T28, CONCLUSAO, AGENTS",
+    "corrigir_codigo: renomear a chave de saída em poder_logs.py"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Terminologia corrigida no registro, na conclusão e nos scripts."
+  },
+  {
+   "id": "R1-06",
+   "origem": "R1-codex",
+   "secao": "3.6",
+   "titulo": "A identificação ecológica do C06 não se resolve pelo ajuste dos totais; a função goodman com efeito fixo municipal não é a usada",
+   "prioridade": "alta",
+   "testes": [
+    "C06",
+    "C06b"
+   ],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Conferido que o ajuste usado é 'restrito' por UF.",
+   "resposta": "Procede. '4:1' passa a ser apresentado sempre como estimativa sob o pressuposto de taxas homogêneas por UF.",
+   "acoes": [
+    "corrigir_texto: C06, CONCLUSAO, site",
+    "fase2: P1, desafio adversarial do C06 (quanto a estimativa depende da homogeneidade)"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "respondido",
+   "pendente": "Texto corrigido. Desafio adversarial do C06: Fase 2 (P1)."
+  },
+  {
+   "id": "R1-07",
+   "origem": "R1-codex",
+   "secao": "3.7",
+   "titulo": "Não detecção não demonstra equivalência (T04, T20); intervalos do T03 sem ajuste de agrupamento; '2022 igual' substitui comparação quantitativa",
+   "prioridade": "alta",
+   "testes": [
+    "T03",
+    "T04",
+    "T20",
+    "INC"
+   ],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Conferido: T04 com Mann-Whitney e bootstrap municipal, sem margem de equivalência pré-definida.",
+   "resposta": "Procede. 'Urnas trocadas votaram igual' vira estimativa com intervalo; '2022 igual' vira os números lado a lado.",
+   "acoes": [
+    "corrigir_texto: T03, T04, CONCLUSAO",
+    "fase2: teste de equivalência com margem definida antes; IC do T03 com dependência municipal"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "respondido",
+   "pendente": "Texto corrigido. Equivalência e intervalo com dependência municipal: Fase 2."
+  },
+  {
+   "id": "R1-08",
+   "origem": "R1-codex",
+   "secao": "3.8",
+   "titulo": "E02 supõe independência entre seções do mesmo local; Moran's I citado no protocolo não está implementado; 2022 e 2026 com modelos diferentes",
+   "prioridade": "media_alta",
+   "testes": [
+    "E01",
+    "E02",
+    "E03"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido: nenhuma ocorrência de Moran no código; perfil entra só em 2026.",
+   "resposta": "Procede. O registro passa a descrever o que foi feito (agrupamento por local de votação), não autocorrelação espacial.",
+   "acoes": [
+    "corrigir_texto: E02 e PROTOCOLO (emenda)",
+    "fase2: calibrar E02 sob correlação intralocal; comparar 2022 × 2026 com o mesmo modelo"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "respondido",
+   "pendente": "Texto corrigido. Calibração do E02 e Moran's I: Fase 2."
+  },
+  {
+   "id": "R1-09",
+   "origem": "R1-codex",
+   "secao": "3.9",
+   "titulo": "Independência entre testes é mais que formato diferente; T21/T22 têm dependências matemáticas exatas no 2º turno",
+   "prioridade": "media_alta",
+   "testes": [
+    "T21",
+    "T22"
+   ],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Conferido: no 2º turno as participações somam 1 entre válidos.",
+   "resposta": "Procede. Testes complementares não contam como evidências independentes; a conclusão não soma testes favoráveis.",
+   "acoes": [
+    "corrigir_texto: DIRETRIZ (emenda) e T21/T22",
+    "fase2: mapa de fontes e pressupostos compartilhados; avaliar a regra conjunta em simulação"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "respondido",
+   "pendente": "Texto corrigido. Mapa de dependências e regra conjunta: Fase 2 (P2)."
+  },
+  {
+   "id": "R1-10",
+   "origem": "R1-codex",
+   "secao": "3.10",
+   "titulo": "T10 e T11 usam ajuste retrospectivo (virada do 2º turno do próprio município/UF); permutação nacional no T11",
+   "prioridade": "media_alta",
+   "testes": [
+    "T10",
+    "T11"
+   ],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Conferido no código de bateria.py.",
+   "resposta": "Procede. A curva 'prevista' é reconstrução com informação do próprio 2º turno, não previsão ex ante; uma intervenção comum ao município pode ser absorvida.",
+   "acoes": [
+    "corrigir_texto: T10, T11, site",
+    "fase2: P4, reconstrução da curva pública com snapshots externos, se existirem"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "respondido",
+   "pendente": "Texto corrigido. Reconstrução com snapshots externos: Fase 2 (P4)."
+  },
+  {
+   "id": "R1-11",
+   "origem": "R1-codex",
+   "secao": "3.11",
+   "titulo": "Linguagem estrita para log, preparação e software (T33 versão declarada; T35 com 2 máquinas sem log no 2º turno; T30 com tolerância de 60 s; T28 com taxa fixa)",
+   "prioridade": "media",
+   "testes": [
+    "T28",
+    "T30",
+    "T33",
+    "T35"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido: o 2º turno tem 2 de 2.479 máquinas sem log do GEDAI, omitidas no texto.",
+   "resposta": "Procede.",
+   "acoes": [
+    "corrigir_texto: T30, T33, T35, CONCLUSAO"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": ""
+  },
+  {
+   "id": "R1-12",
+   "origem": "R1-codex",
+   "secao": "3.12",
+   "titulo": "No T36, 'explicado' mistura graus de demonstração (E4 é inferência; E5 não exige confirmação entre habilitação e reinício)",
+   "prioridade": "media",
+   "testes": [
+    "T36"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido em casos_integridade.py: qualquer explicação não vazia marca 'explicado'.",
+   "resposta": "Procede. Separar contagem demonstrada, classificação operacional compatível e causa documentalmente confirmada.",
+   "acoes": [
+    "corrigir_texto: T36, CONCLUSAO",
+    "corrigir_codigo: grau da explicação por caso"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Código grava o grau de cada caso."
+  },
+  {
+   "id": "R1-13",
+   "origem": "R1-codex",
+   "secao": "3.13",
+   "titulo": "T27 só rodou com comparecimento; o protocolo foi escrito depois da primeira bateria; T23 reaproveita dados na calibração",
+   "prioridade": "media",
+   "testes": [
+    "T27",
+    "T23",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T07"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido: T27 só tem QT_COMPARECIMENTO nas saídas; protocolo às 19h55 e primeira bateria às 18h37 (CATALOGO).",
+   "resposta": "Procede. Testes executados antes do protocolo deixam de ser chamados de pré-registrados.",
+   "acoes": [
+    "corrigir_texto: T27, T23, rótulo de pré-especificação no registro"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Campo pre_especificacao no registro."
+  },
+  {
+   "id": "R1-14",
+   "origem": "R1-codex",
+   "secao": "1.2",
+   "titulo": "'100%' precisa dizer o universo; o verificador imprime contagens sem validar igualdade de conjuntos de chaves",
+   "prioridade": "media",
+   "testes": [
+    "T14",
+    "T16",
+    "T17"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido em scripts/verificar.py.",
+   "resposta": "Procede.",
+   "acoes": [
+    "corrigir_texto: universos explícitos",
+    "corrigir_codigo: verificar.py falha se os conjuntos de chaves não coincidirem"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "verificar.py compara conjuntos de chaves."
+  },
+  {
+   "id": "R1-15",
+   "origem": "R1-codex",
+   "secao": "1.2 / 6.1",
+   "titulo": "A CONCLUSAO diz log válido em todas as 499.178 urnas do 2º turno; a verificação gravada cobre 499.177 (1 log não publicado)",
+   "prioridade": "media",
+   "testes": [
+    "T14",
+    "T36"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido.",
+   "resposta": "Procede. Erro de redação meu.",
+   "acoes": [
+    "corrigir_texto: CONCLUSAO"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": ""
+  },
+  {
+   "id": "R1-16",
+   "origem": "R1-codex",
+   "secao": "1.2",
+   "titulo": "T32: 4 diferenças de eleitorado (BR/ZZ, −495 e −525) sem explicação; o verificador exclui eleitorado",
+   "prioridade": "media",
+   "testes": [
+    "T32"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido no CSV: diferenças só no exterior (ZZ), propagadas ao BR.",
+   "resposta": "Procede. Não são divergências de votos; a causa cadastral fica registrada como pendente.",
+   "acoes": [
+    "corrigir_texto: T32",
+    "fase2: investigar o eleitorado do exterior nas tabelas oficiais"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Diferença de eleitorado do exterior: investigar nas tabelas oficiais."
+  },
+  {
+   "id": "R1-17",
+   "origem": "R1-codex",
+   "secao": "1.3",
+   "titulo": "Rastreabilidade: sete testes concluídos apontam script '(a fazer)'; o cálculo do C06b não está num script",
+   "prioridade": "media",
+   "testes": [
+    "T17b",
+    "T20",
+    "T34",
+    "T35",
+    "E01",
+    "E02",
+    "E03",
+    "C06b"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido no registro.",
+   "resposta": "Procede.",
+   "acoes": [
+    "corrigir_registro: scripts e comandos reais",
+    "fase2: incorporar o C06b a um script"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "Scripts registrados; C06b ainda sem script: Fase 2."
+  },
+  {
+   "id": "R1-18",
+   "origem": "R1-codex",
+   "secao": "6.1",
+   "titulo": "T01 'voto a voto' compara só a soma nacional por votável, não cada seção",
+   "prioridade": "media",
+   "testes": [
+    "T01"
+   ],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Conferido em grafico/montar_dados.py.",
+   "resposta": "Procede. Erro de redação meu; a comparação seção a seção é barata e entra antes da baseline.",
+   "acoes": [
+    "corrigir_texto: T01, CONCLUSAO",
+    "fase2: comparação seção a seção entre as duas fontes"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "T01 refeito seção a seção: 0 diferenças."
+  },
+  {
+   "id": "R1-19",
+   "origem": "R1-codex",
+   "secao": "6 / 6.1",
+   "titulo": "Formulações da CONCLUSAO mais fortes que as verificações ('não foi encontrada evidência', 'exatamente o que as urnas gravaram', 'o software foi o mesmo', 'muito provavelmente apareceria')",
+   "prioridade": "alta",
+   "testes": [
+    "T01",
+    "T13",
+    "T14",
+    "T30",
+    "T33",
+    "C06"
+   ],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Conferido frase a frase contra a tabela 6.1.",
+   "resposta": "Procede. A conclusão viva é reescrita com universos e pressupostos; a da rc1 fica congelada para comparação.",
+   "acoes": [
+    "corrigir_texto: CONCLUSAO (versão em revisão)"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": "CONCLUSAO reescrita (versão em revisão)."
+  },
+  {
+   "id": "R1-20",
+   "origem": "R1-codex",
+   "secao": "2",
+   "titulo": "Comparação com projetos externos (DataUrnas-BR, Ricardo Maia, Turicas, Vinícius Azevedo, Marçal, gabrielandr)",
+   "prioridade": "informativo",
+   "testes": [],
+   "classificacao": "pendente_de_reproducao",
+   "verificacao_interna": "Não reproduzido por nós; o relatório traz manifesto e hashes das fontes.",
+   "resposta": "Útil como validação independente parcial (implementação diferente).",
+   "acoes": [
+    "fase2: reconciliação por chaves e arquivos com o DataUrnas em amostra"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Reconciliação com o DataUrnas em amostra."
+  },
+  {
+   "id": "R1-21",
+   "origem": "R1-codex",
+   "secao": "4 P1",
+   "titulo": "Quanto das estimativas de fluxo depende de hipóteses de homogeneidade?",
+   "prioridade": "pergunta",
+   "testes": [],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Proposta da revisão, não implementada.",
+   "resposta": "Aceita como pergunta da Fase 2.",
+   "acoes": [
+    "fase2: pergunta P1"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Pergunta aberta na Fase 2."
+  },
+  {
+   "id": "R1-22",
+   "origem": "R1-codex",
+   "secao": "4 P2",
+   "titulo": "Qual é a sensibilidade da regra completa sob mundos legítimos e intervenções especificadas?",
+   "prioridade": "pergunta",
+   "testes": [],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Proposta da revisão, não implementada.",
+   "resposta": "Aceita como pergunta da Fase 2.",
+   "acoes": [
+    "fase2: pergunta P2"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Pergunta aberta na Fase 2."
+  },
+  {
+   "id": "R1-23",
+   "origem": "R1-codex",
+   "secao": "4 P3",
+   "titulo": "As inconsistências aparentes dependem do canal e da versão de publicação?",
+   "prioridade": "pergunta",
+   "testes": [],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Proposta da revisão, não implementada.",
+   "resposta": "Aceita como pergunta da Fase 2.",
+   "acoes": [
+    "fase2: pergunta P3"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Pergunta aberta na Fase 2."
+  },
+  {
+   "id": "R1-24",
+   "origem": "R1-codex",
+   "secao": "4 P4",
+   "titulo": "A curva pública pode ser reconstruída pelos BUs recebidos, dentro da latência esperada?",
+   "prioridade": "pergunta",
+   "testes": [],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Proposta da revisão, não implementada.",
+   "resposta": "Aceita como pergunta da Fase 2.",
+   "acoes": [
+    "fase2: pergunta P4"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Pergunta aberta na Fase 2."
+  },
+  {
+   "id": "R1-25",
+   "origem": "R1-codex",
+   "secao": "4 P5",
+   "titulo": "As associações por modelo de urna sobrevivem a comparações com suporte territorial comum?",
+   "prioridade": "pergunta",
+   "testes": [],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Proposta da revisão, não implementada.",
+   "resposta": "Aceita como pergunta da Fase 2.",
+   "acoes": [
+    "fase2: pergunta P5"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Pergunta aberta na Fase 2."
+  },
+  {
+   "id": "R1-26",
+   "origem": "R1-codex",
+   "secao": "4 P6",
+   "titulo": "O que uma coleta externa de BU permitiria validar sobre publicação e impacto agregado?",
+   "prioridade": "pergunta",
+   "testes": [],
+   "classificacao": "questao_metodologica",
+   "verificacao_interna": "Proposta da revisão, não implementada.",
+   "resposta": "Aceita como pergunta da Fase 2.",
+   "acoes": [
+    "fase2: pergunta P6"
+   ],
+   "fase_alvo": "Fase 2",
+   "situacao": "adiado_fase2",
+   "pendente": "Pergunta aberta na Fase 2."
+  },
+  {
+   "id": "A-01",
+   "origem": "autorrevisao",
+   "secao": "autorrevisão",
+   "titulo": "O registro mistura evidência observada, interpretação e conclusão no campo resultado_atual",
+   "prioridade": "media",
+   "testes": [],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Nossa observação de 28/10, antes do relatório.",
+   "resposta": "Separar os campos a partir da versão em revisão.",
+   "acoes": [
+    "corrigir_registro: campos evidencia, interpretacao, conclusao"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": ""
+  },
+  {
+   "id": "A-02",
+   "origem": "autorrevisao",
+   "secao": "autorrevisão",
+   "titulo": "A rodada 1 foi rotulada 'fechada' e 'conclusão', o que se lê como baseline aprovada antes da revisão independente",
+   "prioridade": "media",
+   "testes": [],
+   "classificacao": "confirmado",
+   "verificacao_interna": "Nossa observação de 28/10.",
+   "resposta": "Rebaixada a V1.0-rc1 (snapshot preliminar); a tag e os arquivos ficam como estão.",
+   "acoes": [
+    "corrigir_texto: RODADAS, README, site, linha do tempo"
+   ],
+   "fase_alvo": "V1.0",
+   "situacao": "respondido",
+   "pendente": ""
+  }
+ ]
+}

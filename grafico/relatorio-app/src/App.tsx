@@ -38,7 +38,7 @@ export default function App() {
     return () => { vivo = false; };
   }, [tentativa]);
   useEffect(() => { if (!rota.hash.includes('/')) scrollTo({ top: 0 }); }, [rota.pagina]);
-  useEffect(() => { document.title = { home: 'urna lab · apuração presidencial 2026, verificada com dados oficiais', testes: 'Testes · urna lab', mapas: 'Mapas · urna lab', linha: 'Linha do tempo · urna lab', docs: 'Docs e ajuda · urna lab' }[rota.pagina]; }, [rota.pagina]);
+  useEffect(() => { document.title = { home: 'urna lab · apuração presidencial 2026, verificada com dados oficiais', testes: 'Testes · urna lab', mapas: 'Mapas · urna lab', linha: 'Evolução da pesquisa · urna lab', docs: 'Docs e ajuda · urna lab' }[rota.pagina]; }, [rota.pagina]);
   const pronto = !!reg && !erro && (rota.pagina !== 'home' || progresso?.etapa === 'Montando');
   return (
     <>

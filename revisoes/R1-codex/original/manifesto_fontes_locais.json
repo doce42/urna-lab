@@ -1,0 +1,731 @@
+{
+  "capturado_em": "2026-10-28T03:08:36.886134-03:00",
+  "arquivos": [
+    {
+      "path": "REFERENCIAS.md",
+      "size": 8968,
+      "sha256": "a643ba105872f09952d40f157b44460ba28c978ddb148a004243ede663f996e1",
+      "mtime": "2026-10-27T21:12:24.225889"
+    },
+    {
+      "path": "PIPELINE.md",
+      "size": 8410,
+      "sha256": "72ddcbe477fd89b606240d5ca708daaacde495f0701fceddf7c702723b064a5c",
+      "mtime": "2026-10-27T19:46:03.038730"
+    },
+    {
+      "path": "AUTOAUDITORIA.md",
+      "size": 14816,
+      "sha256": "5bc8439ccc663e65e3547fd9d1814de28059669312b6618c90e2459e1ee5b120",
+      "mtime": "2026-10-28T03:04:35.488415"
+    },
+    {
+      "path": "PROTOCOLO.md",
+      "size": 8668,
+      "sha256": "d3d81503742598dd08f6bb0a63332afd45749824079d7fa7c426f4c4700234ca",
+      "mtime": "2026-10-27T20:32:20.740015"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 169,
+      "sha256": "8c74afd289d73fe22d22b2d1f4b347a462697cfcad73e72141bf88b0ab1a1806",
+      "mtime": "2026-10-27T20:17:29.004337"
+    },
+    {
+      "path": "Makefile",
+      "size": 2505,
+      "sha256": "e111003de639117417a0cfd843a0c3e01ce3a5cd62304cf60846e429a0ca7fc5",
+      "mtime": "2026-10-27T20:18:58.291813"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 5812,
+      "sha256": "a28b025a7625f5d5de2cfb62c05dd160830857fdea2f55a14a41bc2271151257",
+      "mtime": "2026-10-27T21:57:51.381407"
+    },
+    {
+      "path": "CLAUDE.md",
+      "size": 5812,
+      "sha256": "a28b025a7625f5d5de2cfb62c05dd160830857fdea2f55a14a41bc2271151257",
+      "mtime": "2026-10-27T21:57:51.381407"
+    },
+    {
+      "path": "MAPA_SKILLS.md",
+      "size": 3376,
+      "sha256": "5d1c83e702a9897c5f760dddf67f320d052a75d21eb59185245a7f70e4840e63",
+      "mtime": "2026-10-27T20:21:00.079831"
+    },
+    {
+      "path": "DIRETRIZ.md",
+      "size": 8673,
+      "sha256": "3819a0369c3272be7238d117b9d7b47c16c2d1c2ae11c0cde654fbf47271f5a0",
+      "mtime": "2026-10-27T20:31:55.077669"
+    },
+    {
+      "path": "METODOLOGIA.md",
+      "size": 22490,
+      "sha256": "c7af7d2b287dd3c31e5ab842836ea3529bf78dcee0a16501207d96fdb121ac8b",
+      "mtime": "2026-10-27T20:49:33.947109"
+    },
+    {
+      "path": "CATALOGO.md",
+      "size": 33824,
+      "sha256": "7e0ec5983a5075f4cad2a4621eb89ab1fd1aa3b0c818a57c3a7eab23b3bba8c0",
+      "mtime": "2026-10-28T03:04:48.075618"
+    },
+    {
+      "path": "README.md",
+      "size": 3107,
+      "sha256": "ea3739e58953187b95047b6beff2d1112017d4fe8d70877b4d183b4ef20638ce",
+      "mtime": "2026-10-28T03:08:23.957285"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "size": 1950,
+      "sha256": "39d7d1f6fd835f4cad5b50f6f97e396b4674b2cf862c808ea44f07b31d8f2a2b",
+      "mtime": "2026-10-28T03:04:48.067618"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size": 1981,
+      "sha256": "516183e4c294fd2b982b7b509c540418915d0bdcdc33541916c63f5274c1adf6",
+      "mtime": "2026-10-27T22:02:37.662266"
+    },
+    {
+      "path": "CONSUMO_IA.md",
+      "size": 6139,
+      "sha256": "e18923b4b697c10e35e7c8f83a9bb7d1a1bf9c579b11692e9a21edd21840bad1",
+      "mtime": "2026-10-28T02:24:52.222345"
+    },
+    {
+      "path": "firebase.json",
+      "size": 421,
+      "sha256": "5aeb4a140c160cee0522e50cef83aecf0f4e5d2feee336c2a6f88496f7639f4d",
+      "mtime": "2026-10-28T00:28:09.537955"
+    },
+    {
+      "path": "CONCLUSAO.md",
+      "size": 9265,
+      "sha256": "7e27542563567e9a459416d88703dcf45718055b0e75bd489f1b43312a92400b",
+      "mtime": "2026-10-28T03:08:23.956859"
+    },
+    {
+      "path": "analise/montar_base.py",
+      "size": 2598,
+      "sha256": "ec55ff92a49d6d6639431b9d044312423579c4c17c79a6e90452c24f2ef0bc27",
+      "mtime": "2026-10-27T19:23:06.507340"
+    },
+    {
+      "path": "analise/testes.py",
+      "size": 10037,
+      "sha256": "a1620b15e450015fd1fd74a4593815b7fff9841aeaf9987b5145d48f8598a513",
+      "mtime": "2026-10-27T18:37:40.551008"
+    },
+    {
+      "path": "analise/resultado_testes.txt",
+      "size": 5343,
+      "sha256": "85130397293d333242a4ffc82280d639e2dc4810a8cb080fd35e3438a8c0af45",
+      "mtime": "2026-10-27T18:37:55.328675"
+    },
+    {
+      "path": "analise/investigar.py",
+      "size": 5667,
+      "sha256": "cf589a6e8ccaa05da9dc69057852a170cc67a6a4fd26f786242e6d1f613506bc",
+      "mtime": "2026-10-27T18:38:50.466063"
+    },
+    {
+      "path": "analise/testes_corrigidos.py",
+      "size": 4427,
+      "sha256": "6b609a40410a227b654f3a1a3295b14f4aeb5b94c2a53160e13ca034b07818e3",
+      "mtime": "2026-10-27T18:39:42.176716"
+    },
+    {
+      "path": "analise/resultado_testes_corrigidos.txt",
+      "size": 1832,
+      "sha256": "38e6da86d3b7787d5107b914188e10547f610659dc45dc59199150fd84e42095",
+      "mtime": "2026-10-27T18:39:44.481782"
+    },
+    {
+      "path": "analise/curva.py",
+      "size": 7599,
+      "sha256": "5912cc159ec37793befb5b4342da94c930f729f8fa2454635a5f44c63ff37eea",
+      "mtime": "2026-10-27T18:49:19.102395"
+    },
+    {
+      "path": "analise/resultado_curva.txt",
+      "size": 3883,
+      "sha256": "5d0f06e7f316eccf269721ea511c9e5130fe2e1c9c3ef237aaf7f7e0cd1cf028",
+      "mtime": "2026-10-27T18:49:21.941324"
+    },
+    {
+      "path": "analise/poder.py",
+      "size": 6021,
+      "sha256": "65a467021cb5f41d026383a6a68bc0a53e7af16c46ad01e9131cdbc7935e7a6c",
+      "mtime": "2026-10-27T19:13:34.346182"
+    },
+    {
+      "path": "analise/resultado_poder.txt",
+      "size": 6308,
+      "sha256": "66626fefa0b29923112fb68414776fdd22abb19a60f7c740b5f2bb1ac7c407fa",
+      "mtime": "2026-10-27T19:13:40.160046"
+    },
+    {
+      "path": "analise/perfil.py",
+      "size": 2539,
+      "sha256": "dea232488ee35ed9b9abbf2e83f1e09784b7a4463c3c328a945d0f714a219569",
+      "mtime": "2026-10-27T21:04:22.362489"
+    },
+    {
+      "path": "analise/biometria.py",
+      "size": 3039,
+      "sha256": "4261fcb1a16b0b86766ce158453c25123f3cd597929de7d062951503dae4a85c",
+      "mtime": "2026-10-27T19:13:34.362309"
+    },
+    {
+      "path": "analise/resultado_biometria.txt",
+      "size": 593,
+      "sha256": "95b2464fc297842048944330bfc910c411799b1c7f9dfdbdd4717c5dd1c2b362",
+      "mtime": "2026-10-27T19:13:41.744040"
+    },
+    {
+      "path": "analise/resultado_poder.json",
+      "size": 11567,
+      "sha256": "130729b896a7d25c5cc33625ac351c1ceee6c259b5f4dcda58e256ae40793369",
+      "mtime": "2026-10-27T19:13:40.160046"
+    },
+    {
+      "path": "analise/resultado_biometria.json",
+      "size": 676,
+      "sha256": "c1c0a9408e10035463d15e29a8371cff59ee1dfa80b5324ffa6c3fa59c35e7f3",
+      "mtime": "2026-10-27T19:13:41.744038"
+    },
+    {
+      "path": "analise/relatorio_dados.py",
+      "size": 12120,
+      "sha256": "40a48133edb6c9af4460792446b9256ed505d98f6239483b2987318f66807ea6",
+      "mtime": "2026-10-27T23:21:58.094827"
+    },
+    {
+      "path": "analise/der.py",
+      "size": 1341,
+      "sha256": "3df92730ab5d98d54178d6ecd9f9044febc0c5185e3c789a625144e8f510593f",
+      "mtime": "2026-10-27T19:19:27.175006"
+    },
+    {
+      "path": "analise/bateria.py",
+      "size": 11236,
+      "sha256": "9c29fe15da737d8aa0c60c8eef5b2e85b33b1fc80d061b3935c41b31b269f83c",
+      "mtime": "2026-10-27T20:38:47.478936"
+    },
+    {
+      "path": "analise/resultado_bateria_2026.txt",
+      "size": 92164,
+      "sha256": "5459639088e1a2735f1c8ff62ce5c3e4957c7655925ee75bab8bcc8556e1eb34",
+      "mtime": "2026-10-27T22:10:38.035032"
+    },
+    {
+      "path": "analise/resultado_bateria_2022.txt",
+      "size": 92304,
+      "sha256": "db6b504b5cc7ae2eb2d21b21039fec8538e64c69ba5ee91f32a08ada2c64b519",
+      "mtime": "2026-10-27T22:11:32.541198"
+    },
+    {
+      "path": "analise/resultado_bateria_2022.json",
+      "size": 92303,
+      "sha256": "82270518922d59bde565cc06808a3fd547962fc0c986ff7e3e0b4ad636eac4fe",
+      "mtime": "2026-10-27T22:11:32.540198"
+    },
+    {
+      "path": "analise/resultado_bateria_2026.json",
+      "size": 92163,
+      "sha256": "5d88485ea149edfa8127bcb4a430c9946ff6befd574082f812a44955a8011e97",
+      "mtime": "2026-10-27T22:10:38.035032"
+    },
+    {
+      "path": "analise/ed521.py",
+      "size": 2908,
+      "sha256": "fdeb30eebf77ddcf4e7dee432e174e3b49906207ac3cfa1639563dbe7b80f2c8",
+      "mtime": "2026-10-27T19:27:34.231629"
+    },
+    {
+      "path": "analise/comportamento.py",
+      "size": 11132,
+      "sha256": "6a3c9c73392fb0dfc448cb943ec903e707eea9ebeebdb47495557e706f0703b3",
+      "mtime": "2026-10-27T21:08:56.590270"
+    },
+    {
+      "path": "analise/seqlog.py",
+      "size": 5012,
+      "sha256": "ac17164e30b30988787e1e5dd0c7a78ac5b2d8e1a8d9f40d02553966f2af9a5f",
+      "mtime": "2026-10-27T22:14:22.895782"
+    },
+    {
+      "path": "analise/resultado_comportamento_2026.json",
+      "size": 32874,
+      "sha256": "eaea104eea7940aa1de0b0ac6b197c089e656244155c04ab0200177d455cc2aa",
+      "mtime": "2026-10-27T21:10:25.545491"
+    },
+    {
+      "path": "analise/resultado_comportamento_2022.json",
+      "size": 30051,
+      "sha256": "c782aabb975d5ac6644e5fd93a7d197a5bed6720870b76efdc16f6a03ff96943",
+      "mtime": "2026-10-27T21:11:25.269217"
+    },
+    {
+      "path": "analise/totalizacao.py",
+      "size": 3480,
+      "sha256": "0aab3c112375a1d3f54fc77fb3aeb3f7a11827cf990eb39163c0e1726d90b1d1",
+      "mtime": "2026-10-27T20:16:52.515876"
+    },
+    {
+      "path": "analise/resultado_divergencias_2026.json",
+      "size": 32547,
+      "sha256": "44492348d33e95c820877edf0efc48179d45214e321408f9187870ec42401096",
+      "mtime": "2026-10-27T20:27:04.728961"
+    },
+    {
+      "path": "analise/resultado_divergencias_2022.json",
+      "size": 32375,
+      "sha256": "a58c181cdd932b792fd2111c5856b2ccf20bad736c33317d8cea30e41ab5f45e",
+      "mtime": "2026-10-27T20:27:21.490177"
+    },
+    {
+      "path": "analise/divergencias.py",
+      "size": 7446,
+      "sha256": "e539c269422bc9358b90d53fed601d9c1dc49f1fca3ff182064bcccfecf3a404",
+      "mtime": "2026-10-27T21:08:56.590903"
+    },
+    {
+      "path": "analise/resultado_divergencias_2026_completo.txt",
+      "size": 4450,
+      "sha256": "680f1fb29c5bc782f08682af6e5fafca961d0df8bc3877c88810959918303f15",
+      "mtime": "2026-10-27T21:10:29.376537"
+    },
+    {
+      "path": "analise/resultado_divergencias_2022_completo.txt",
+      "size": 4452,
+      "sha256": "3b4c21b7a7fe1da6c42fba191445422ad1db17a70ca075df1bc7d24310abc6f9",
+      "mtime": "2026-10-27T21:11:27.541244"
+    },
+    {
+      "path": "analise/resultado_divergencias_2022_completo.json",
+      "size": 32365,
+      "sha256": "97c4382eb7f2036f66d43a4835e3dbdff45a96a59170da97931608e86406c1f4",
+      "mtime": "2026-10-27T21:11:27.540900"
+    },
+    {
+      "path": "analise/resultado_divergencias_2026_completo.json",
+      "size": 32549,
+      "sha256": "f4f722cc1ecc9bedac505f667029831e1e0e8df6b1dc5963f031673ecf5ebfdb",
+      "mtime": "2026-10-27T21:10:29.376537"
+    },
+    {
+      "path": "analise/correspondencia.py",
+      "size": 5609,
+      "sha256": "e5501c5288d2fc58f3ccb8d0579e19c07b4f60617f0d6295150e61782899a817",
+      "mtime": "2026-10-27T20:34:18.771580"
+    },
+    {
+      "path": "analise/resultado_correspondencia_1t.json",
+      "size": 4681,
+      "sha256": "c76434f4af6911a4cfce9c6e77defda0644477e0bd43186c191a13ba9059bad5",
+      "mtime": "2026-10-28T02:22:14.882427"
+    },
+    {
+      "path": "analise/analise_logs.py",
+      "size": 9388,
+      "sha256": "3cc5eb0b5c7c746a4852da7b2f7b47417cbf969ae3aeab55460184c2459372f6",
+      "mtime": "2026-10-27T22:23:50.095031"
+    },
+    {
+      "path": "analise/ml_sintetico.py",
+      "size": 7117,
+      "sha256": "e35f4bbce45d18f14c071f1d015992ff317afd4fa64b5cda52abbba21aa7f25f",
+      "mtime": "2026-10-27T20:46:17.482512"
+    },
+    {
+      "path": "analise/resultado_ml_2026.txt",
+      "size": 761,
+      "sha256": "97712212859c15ad42d18a381ad905c08cbfda342658be3499ab977c78025b3e",
+      "mtime": "2026-10-27T20:47:07.293721"
+    },
+    {
+      "path": "analise/resultado_ml_2022.txt",
+      "size": 759,
+      "sha256": "c31c70d76d8edd7a67907bd88881e4a4788115c0153f8aa21aff29a2697412ce",
+      "mtime": "2026-10-27T20:47:03.920691"
+    },
+    {
+      "path": "analise/ml_sintetico_v1_invalido.py",
+      "size": 5967,
+      "sha256": "94d9070c19d949e881288f4fef7535b156850bf8e23476f10f9735663e5366b3",
+      "mtime": "2026-10-27T20:46:17.454282"
+    },
+    {
+      "path": "analise/resultado_ml_2026_v1_invalido.json",
+      "size": 769,
+      "sha256": "a7f22fb75011c830aa20c4b3dfe46e14daa054ae337190faeb76ba7ea2d9cdf2",
+      "mtime": "2026-10-27T20:45:40.954518"
+    },
+    {
+      "path": "analise/resultado_ml_2022_v1_invalido.json",
+      "size": 766,
+      "sha256": "7b9cdbf2a25bb52f785fe930e6d3fcb1f064b6ae21e6ebce2f5c07d86f8f9771",
+      "mtime": "2026-10-27T20:45:39.250785"
+    },
+    {
+      "path": "analise/resultado_ml_2022.json",
+      "size": 758,
+      "sha256": "9a536c6d239c0e2a7aea686ad7d8e27d3888150883625699271a9ca0af160fc2",
+      "mtime": "2026-10-27T20:47:03.449686"
+    },
+    {
+      "path": "analise/resultado_ml_2026.json",
+      "size": 760,
+      "sha256": "87e4e03d07a45a254130961666867aecede49b02b08b422238d0347eeeed4d7d",
+      "mtime": "2026-10-27T20:47:06.923320"
+    },
+    {
+      "path": "analise/resultado_comportamento_2026.txt",
+      "size": 3104,
+      "sha256": "a861bf13a642613bf5dbe102349a86acf5ec7c9cb504765b0c3ccbd0df0701cf",
+      "mtime": "2026-10-27T21:10:25.547491"
+    },
+    {
+      "path": "analise/mapas_dados.py",
+      "size": 6160,
+      "sha256": "7db01f4d1ab3c5cd9bb4fc7408fe5e7b084ca49a7f0dda768321f2ab1229dc79",
+      "mtime": "2026-10-27T21:17:41.481840"
+    },
+    {
+      "path": "analise/resultado_comportamento_2022.txt",
+      "size": 1729,
+      "sha256": "d3829b03c8d9032ac09c8e640f224b6f4d96bf85d0d0d1f8e774a0a90546403b",
+      "mtime": "2026-10-27T21:11:25.271217"
+    },
+    {
+      "path": "analise/casos_integridade.py",
+      "size": 8424,
+      "sha256": "615b298b2d34cd937871dcef556f5d8518dac4e19b2bdd903e3e26f6e5e0f425",
+      "mtime": "2026-10-27T23:23:39.139907"
+    },
+    {
+      "path": "analise/resultado_casos_integridade_2t.json",
+      "size": 30213,
+      "sha256": "986a4649be5d3a67a84d6e8a34204048312b8c414a3090f8d711fce46590ead5",
+      "mtime": "2026-10-28T02:03:19.078387"
+    },
+    {
+      "path": "analise/resultado_logs_2t.json",
+      "size": 12471,
+      "sha256": "b0e1b0ed994c2c5c6fc60750e01bbff77650739664e0e28e460b419df259b6e4",
+      "mtime": "2026-10-28T02:02:47.676979"
+    },
+    {
+      "path": "analise/sensibilidade.py",
+      "size": 2269,
+      "sha256": "ef118560784cd51247b6d7f6bf914960c52051ebb333cfc7060223857b6a37bf",
+      "mtime": "2026-10-27T21:43:06.130967"
+    },
+    {
+      "path": "analise/resultado_logs_1t.json",
+      "size": 15225,
+      "sha256": "a4eae0ae205507415cc75f6c2386658ce18fae6d59a349ca5357b8c5662d3ddf",
+      "mtime": "2026-10-28T02:21:30.571580"
+    },
+    {
+      "path": "analise/resultado_casos_integridade_1t.json",
+      "size": 72541,
+      "sha256": "4692697b35a43daed941af0fd48559ba4943e6e857712736357f20832c3acae3",
+      "mtime": "2026-10-28T02:22:05.760516"
+    },
+    {
+      "path": "analise/resultado_correspondencia_2t.json",
+      "size": 4347,
+      "sha256": "36d607091b83eabee56fa644f5e4c0cc2885ccafb3dc9fd8aea34ffb2cf3152b",
+      "mtime": "2026-10-28T02:03:29.186029"
+    },
+    {
+      "path": "analise/resultado_sensibilidade_2026.txt",
+      "size": 1105,
+      "sha256": "01398abf80ed2bd1e46f6a1f3876a967cc95bd4823cb9c1d6857603101d6e744",
+      "mtime": "2026-10-27T22:12:11.180094"
+    },
+    {
+      "path": "analise/resultado_sensibilidade_2026.json",
+      "size": 4182,
+      "sha256": "4bfcec024a83d9f049adc188cc4a7ce156afcb8196fa3a06c515b7541ece7940",
+      "mtime": "2026-10-27T22:12:11.174094"
+    },
+    {
+      "path": "analise/resultado_sensibilidade_2022.txt",
+      "size": 1105,
+      "sha256": "3866aca1745394687ef39fe098a67656b8ad5d2f384fd16d3fbfe695f64af1f1",
+      "mtime": "2026-10-27T22:12:15.631085"
+    },
+    {
+      "path": "analise/resultado_sensibilidade_2022.json",
+      "size": 4204,
+      "sha256": "242bb87ff599fd57a339d45e2a3be2e058a15661aa9b388a09b563f2f176f4a0",
+      "mtime": "2026-10-27T22:12:15.630641"
+    },
+    {
+      "path": "analise/processar_brutos.py",
+      "size": 23336,
+      "sha256": "4bfd3518785991d2b7993b9c646dccbc3be121b6399ec29a70c7168b54873d71",
+      "mtime": "2026-10-28T01:46:42.971589"
+    },
+    {
+      "path": "analise/resultado_logs_2022_1t.json",
+      "size": 18249,
+      "sha256": "070d86add1d223d73100d788836e8ff353fb91787c860ed3e48a5f19ed358111",
+      "mtime": "2026-10-28T01:41:03.026507"
+    },
+    {
+      "path": "analise/resultado_logs_2022_2t.json",
+      "size": 18887,
+      "sha256": "e145c3c06e5a8cf21c450a6c8345bf3fe6e08c4e4fd0785bc3afc98f5504d278",
+      "mtime": "2026-10-28T01:41:05.805061"
+    },
+    {
+      "path": "analise/poder_logs.py",
+      "size": 3008,
+      "sha256": "4ee8261e2871f91c926683635a53e1c368adfbc1da706f8d66047858712873a7",
+      "mtime": "2026-10-28T02:59:47.346387"
+    },
+    {
+      "path": "analise/resultado_poder_logs_2t.json",
+      "size": 2965,
+      "sha256": "5701d5654851a657670e1adb9b440c5b9aa0422b4e0a093a63ef360bcfca8cee",
+      "mtime": "2026-10-28T02:59:51.415922"
+    },
+    {
+      "path": "analise/resultado_poder_logs_1t.json",
+      "size": 2986,
+      "sha256": "16ee75663544234c4e66491fa7d87fd0a9fe200442089ddc0bbd6654c83c2227",
+      "mtime": "2026-10-28T03:04:15.281412"
+    },
+    {
+      "path": "scripts/filtrar_presidente.py",
+      "size": 578,
+      "sha256": "d53b47538eef95ffc3f5c14c0c0813d15f48d8df323fbb8fc6d0649577a9b9aa",
+      "mtime": "2026-10-27T18:17:21.317485"
+    },
+    {
+      "path": "scripts/baixar_lista.sh",
+      "size": 902,
+      "sha256": "2eeffccca539af608644d68cb6d3bd2656ffeaf213a7354ca3578ffdfa7fdd6b",
+      "mtime": "2026-10-27T18:55:37.084169"
+    },
+    {
+      "path": "scripts/monitorar.sh",
+      "size": 726,
+      "sha256": "a22403d8fffab410cb3ffe24720a689ba2951d715453ad9d6240a57e0109bd1c",
+      "mtime": "2026-10-27T19:11:08.051123"
+    },
+    {
+      "path": "scripts/baixar_brutos_2t.py",
+      "size": 4800,
+      "sha256": "7cf0059a02022c56d8c20d3025a4c442d136516de2e2484cafab1a9e635c911d",
+      "mtime": "2026-10-27T19:39:19.805820"
+    },
+    {
+      "path": "scripts/baixar_sp_2t.sh",
+      "size": 2354,
+      "sha256": "87322f97c10d23ffff271433b9e3e1ca9aa6f7c9c2ef84ba07fd94689495eaff",
+      "mtime": "2026-10-27T19:46:39.408300"
+    },
+    {
+      "path": "scripts/baixar_sp_2t_ate_completar.sh",
+      "size": 631,
+      "sha256": "cf6c4ed1fb10bf2a83ba7ac3b4d3f232f37d2a0139b34ac0853a909e4edd1488",
+      "mtime": "2026-10-27T19:46:54.514538"
+    },
+    {
+      "path": "scripts/processar_2t_quando_pronto.sh",
+      "size": 852,
+      "sha256": "9386f9d18a4c715f27526f0728fd0052d231bcfc44b08f083b00e6a63994862d",
+      "mtime": "2026-10-27T20:14:06.764296"
+    },
+    {
+      "path": "scripts/baixar_sp_2t_educado.py",
+      "size": 6722,
+      "sha256": "4c919c379cac02529f777050263a4107fb7142e9e89b98ae7ecc5c4f19156993",
+      "mtime": "2026-10-27T19:49:58.971499"
+    },
+    {
+      "path": "scripts/listas_tse.py",
+      "size": 2671,
+      "sha256": "98a9a943f6f230a0d1f1c0d890220d30cc4dc907cd0ff495962b5e0b306000db",
+      "mtime": "2026-10-27T21:04:01.036675"
+    },
+    {
+      "path": "scripts/preparar_dados.sh",
+      "size": 2218,
+      "sha256": "af435f007b01d350429aa8099efe067ed9f1c7649cb56c7fb05e454b8f72e750",
+      "mtime": "2026-10-27T21:04:01.056472"
+    },
+    {
+      "path": "scripts/secao_presidente.py",
+      "size": 880,
+      "sha256": "c2b3799961e456eb413bbd30e6c54f05af18d4829df9f8aef4d4b8e859bbfa3e",
+      "mtime": "2026-10-27T20:18:42.926718"
+    },
+    {
+      "path": "scripts/rodar_teste.py",
+      "size": 1504,
+      "sha256": "34b2215dceac083c1da96cf6fc17246c53992135124646dd52c53327f2660d4c",
+      "mtime": "2026-10-27T20:19:17.032123"
+    },
+    {
+      "path": "scripts/verificar.py",
+      "size": 2214,
+      "sha256": "18ad81e50344d82e3d145ef52fe53bc5c99c74afe71621d1bfaa2bb0a67eecce",
+      "mtime": "2026-10-27T20:32:20.740648"
+    },
+    {
+      "path": "scripts/reprocessar_1t_quando_pronto.sh",
+      "size": 432,
+      "sha256": "4c274ccd63ff41939a999134af3bb365750203cf590d2cd69cd43699377a512d",
+      "mtime": "2026-10-27T20:25:17.712114"
+    },
+    {
+      "path": "scripts/baixar_paralelo.sh",
+      "size": 1102,
+      "sha256": "4803e708c7caa0b86ee0916a281308e82edbb66dbf854ff178c22491ebf3065a",
+      "mtime": "2026-10-27T20:25:52.521694"
+    },
+    {
+      "path": "scripts/processar_2022_quando_pronto.sh",
+      "size": 649,
+      "sha256": "ec855c3f3f41be3d07bee67a5bb56f08a2cf2f942c694acf47b6666b6615c0c0",
+      "mtime": "2026-10-27T21:04:01.059904"
+    },
+    {
+      "path": "scripts/pos_processamento.sh",
+      "size": 1871,
+      "sha256": "fed6b560b9fe8e2280c6bb3427f98d3eb76416756b862503753f1cfd2bd122cf",
+      "mtime": "2026-10-27T21:39:53.494214"
+    },
+    {
+      "path": "scripts/manifesto.py",
+      "size": 2194,
+      "sha256": "6108961e7ca4f127c829decffc24256bfce663af5a10962dbac4d5e0cd1e70b5",
+      "mtime": "2026-10-27T21:43:06.185968"
+    },
+    {
+      "path": "scripts/pos2.sh",
+      "size": 664,
+      "sha256": "c4aeab62af15a202c05a021d25576b651d3c76c0b1f1480ea42c2f5b421ad153",
+      "mtime": "2026-10-27T21:43:06.493974"
+    },
+    {
+      "path": "scripts/publicar.py",
+      "size": 6807,
+      "sha256": "5629a7c36542c3c9e6528ce252a26181462798067f6add4102ba68db55b7cf89",
+      "mtime": "2026-10-28T03:08:23.957035"
+    },
+    {
+      "path": "scripts/pos3.sh",
+      "size": 740,
+      "sha256": "1ff49c103c27e1f41bec6b5452eae7bec22b982ae63ef2185330ecad5cbe3107",
+      "mtime": "2026-10-27T22:12:42.271038"
+    },
+    {
+      "path": "scripts/refazer_tudo.sh",
+      "size": 1126,
+      "sha256": "e4c4c8913e138d8cd392b15bacf4239de659f371284e46da9a6d83d60665cc73",
+      "mtime": "2026-10-27T23:27:24.821355"
+    },
+    {
+      "path": "scripts/refazer_bu_2t.sh",
+      "size": 904,
+      "sha256": "8f5ae2a37d60167132482c67c1e4a663618741905c9332628e42fc7b4a95933e",
+      "mtime": "2026-10-28T01:46:53.257114"
+    },
+    {
+      "path": "scripts/refazer_bu_1t.sh",
+      "size": 904,
+      "sha256": "4a85351ef02451873db2f6cddc9806530044bd21d46a80565fc66b86e045ed3c",
+      "mtime": "2026-10-28T02:04:18.883164"
+    },
+    {
+      "path": "testes/registro.json",
+      "size": 55307,
+      "sha256": "d79772521dec4bed6af57210ebebc12595069e4285519d3578a946cd3f172ed9",
+      "mtime": "2026-10-28T03:07:19.022184"
+    },
+    {
+      "path": ".agents/skills/apuracao-dados/SKILL.md",
+      "size": 2394,
+      "sha256": "80ab63123733ece1846afe6c0b8b56e0b30da6026635ffa2fcccd9b602831344",
+      "mtime": "2026-10-27T20:20:40.912543"
+    },
+    {
+      "path": ".agents/skills/apuracao-integridade/SKILL.md",
+      "size": 3020,
+      "sha256": "f0a942fb1cb6d9ac01efbd30f78ee9c4e48d8be31aa1def209eec03552e5c031",
+      "mtime": "2026-10-27T20:20:40.913666"
+    },
+    {
+      "path": ".agents/skills/apuracao-forense/SKILL.md",
+      "size": 2226,
+      "sha256": "8bf9cad7e5113d1c9db5c8d3fddb824d017e63d8bd65c7747c711b72df416a65",
+      "mtime": "2026-10-27T20:20:40.914375"
+    },
+    {
+      "path": ".agents/skills/apuracao-comportamento/SKILL.md",
+      "size": 1958,
+      "sha256": "af148b50fbb44539f44a4c5013cb2b573df0c5c50bbf2417c672d08eeed5ed40",
+      "mtime": "2026-10-27T20:20:40.914513"
+    },
+    {
+      "path": ".agents/skills/apuracao-relatorio/SKILL.md",
+      "size": 1797,
+      "sha256": "38068161b5ec1b92d896a3f474e783752e7c5776f5b94cf2b7c33da49a85a3cc",
+      "mtime": "2026-10-27T20:20:40.915785"
+    },
+    {
+      "path": ".agents/skills/apuracao-metodologia/SKILL.md",
+      "size": 2128,
+      "sha256": "5b46cb69e5b55b2782a103be789470d5077fa22703c2375d460d9fd731314991",
+      "mtime": "2026-10-27T20:35:43.597816"
+    },
+    {
+      "path": "analise/controles/ed521_controles.py",
+      "sha256": "be31caeec25520592d81acb20a8a8d928f596cd81546bd201fdc6d43d34e17ed"
+    },
+    {
+      "path": "analise/resultado_totalizacao.csv",
+      "sha256": "56238405c2edd01a2417dca8af11a33881f121bab78e42ad754d52ee60ce55a2"
+    },
+    {
+      "path": "dados/listas/pos_manifesto.log",
+      "sha256": "14166ccaedcd14af5f5cedfd66f9d595fa56e04751414ae146bbf371e021b495"
+    },
+    {
+      "path": "dados/listas/pos_verificar_final.log",
+      "sha256": "488f420e2b1f902631cd87e6ae56824c0d0b763c34a3ac54fcb652b33501d51f"
+    },
+    {
+      "path": "grafico/montar_dados.py",
+      "size": 5799,
+      "sha256": "9644025408d3512abb78ae3cc458c47d52a947798c98be8ed1d64770bc7adb8b"
+    },
+    {
+      "path": "grafico/prever.py",
+      "size": 3099,
+      "sha256": "0a6999316a1047c8b8096d4348ced39e1dc0c95b522d59ff1e07ae5bb380395a"
+    },
+    {
+      "path": "grafico/web/relatorio_dados.json",
+      "size": 225083,
+      "sha256": "ecc3921678fb5e71eff2184ca27252f3413526b6943f4b5f98371165d5cee49d"
+    }
+  ],
+  "releitura_conclusao": {
+    "em": "2026-10-28T03:14:02.795445-03:00",
+    "sha256": "7e27542563567e9a459416d88703dcf45718055b0e75bd489f1b43312a92400b",
+    "igual_instantaneo": true
+  }
+}
