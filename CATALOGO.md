@@ -148,6 +148,10 @@ Desde 19h10, o consumo é medido a cada 30 s por `scripts/monitorar.sh` → `dad
 | T16 | 547 urnas com erro de leitura (MS) | Certificado DER com bytes de preenchimento depois do fim | Recorte no tamanho declarado |
 | T16 | Certificado ≠ urna do log | Urna substituída: o log traz votos de duas urnas | Conferir se o certificado está entre as urnas do log |
 | T13 | Goiás acusando no teste estadual (dados reais) | Voto órfão do Caiado | Voto órfão no modelo |
+| Leitor de 2022 | Seção MG 49050/196/173 "sem BU lido" | Seção do Sistema de Apuração (`.busa`, `.imgbusa`, `.logsajez`, `.vscsa`); o leitor de 2022 só reconhecia `bu`, `imgbu`, `logjez`, `rdv`, `vscmr`. Ao todo, 159 seções-turno ficaram fora das verificações por arquivo de 2022 | Leitura dirigida (`fase3/ver_sa22.py`); o leitor geral de 2022 ainda não foi alterado |
+| E3 (zeros) | 1 seção 2022 com BU ≠ tabela | Valor ausente (BU não lido) contado como diferença por `fillna(0)` | Reclassificada como não verificada; verificada depois (BU1) |
+| P18 | Falso alarme 0/30 no limiar calibrado | Medido nos mesmos mundos usados para calibrar | I1 com mundos separados |
+| R1-20 | Script lia o DataUrnas-BR de pasta temporária, sem commit nem hash | Rastreabilidade incompleta | Commit 12f0433 e SHA-256 conferidos no script; pasta permanente |
 
 ## 5. Consumo
 
@@ -220,3 +224,20 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
 - Verificação A de 20 seções do 1º turno: 19 com arquivos conferem; nenhuma divergência objetiva nova. Verificação B não realizada (sem material independente local).
 
 - Fase 2 concluída (rodada 3, V1.1): P1 a P17 respondidas ou inventariadas; `RELATORIO_FASE2_COMPLETA.md`. Falha operacional do P16 (comparador) corrigida e repetida uma vez.
+
+## Fase 3 (28/10/2026, em revisão)
+- **Sessões 1 e 2:** inventário (27 itens), curvas (T40), zeros (T41), Moran's I (T42), poder bilateral do T13 (P18), São Paulo 2022 (P20) e reconciliação com o DataUrnas-BR (T43). Congelada como V1.2 (rodada 4, tag `v1.2`) **antes** de auditoria. Desvios em `rodadas/rodada-4-desvio.md`.
+- **Auditoria** (`fase3/AUDITORIA_F3.md`): estados acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19). Com aprovação do responsável, a F3 voltou a "em revisão" e a V1.2 ficou preservada.
+- **Revisão I1 a I3** (`fase3/PREREG_REVISAO.md`):
+  - **I1:** o T02 é cego a troca em município ou região inteiros; o E02 vê ~62 mil votos concentrados; ~25 mil não é detectável.
+  - **I2:** o modelo de zeros não calibrou, e o resultado não é interpretável.
+  - **I3:** a lista de locais atípicos depende do método; os locais de SP 2022 não são atípicos contra a própria zona.
+- **Verificações documentais de 2022** (`fase3/RELATORIO_ACEITACAO_F3.md`):
+  - **A173:** os 173 arquivos assinados faltam também no pacote baixado pelo projeto; os votos das 64 seções conferem.
+  - **BU1:** boletim do Sistema de Apuração, confere.
+  - **SA22:** as 159 seções-turno do Sistema de Apuração foram lidas; boletim, texto impresso e assinatura conferem em todas. Em todas, a lista assinada cita `.hash`, `.ver` e `.chvtp` ausentes do pacote, e em 8 também `.jufa`.
+- **Correções de redação com histórico:** zeros ("sem evidência de excesso" retirado), Moran ("não indica manipulação" retirado), SP ("zonas vizinhas" virou o que foi medido) e R1-20 ("exterior e agregadas" não verificado).
+- **Cobertura por arquivo de 2022, revista:**
+  - As verificações gerais do projeto não incluíam as 159 seções-turno do Sistema de Apuração. Agora estão cobertas por leitura dirigida.
+  - 173 arquivos assinados (RDV, log, imagem) não estão publicados no pacote de dados abertos.
+  - Nas seções do Sistema de Apuração, 485 arquivos auxiliares listados também não estão.

@@ -155,7 +155,7 @@ O modelo é uma beta-binomial com média pelo local de votação sem a própria 
 - **Sensibilidade (prior pela zona):** também falha.
 
 Pelo critério fixado antes, o resultado confirmatório é **não interpretável**: não se conclui excesso nem ausência de excesso. Descritivo, sem valor confirmatório:
-- **Cauda baixa:** o excesso dos finalistas sobre o modelo não é só no zero. Em Flávio 2026, 1º turno, as seções com 0, 1, 2 e 3 a 5 votos ficam cerca de 20, 12, 7 e 4 vezes acima do modelo; em Bolsonaro 2022, 14, 8, 5 e 3 vezes. O zero faz parte de uma cauda baixa mais pesada que o modelo, com o mesmo formato nos dois anos.
+- **Cauda baixa:** o modelo subestima toda a cauda baixa dos finalistas, não só o zero, o que indica falha do modelo e não excesso demonstrado. Em Flávio 2026, 1º turno, as seções com 0, 1, 2 e 3 a 5 votos ficam cerca de 20, 12, 7 e 4 vezes acima do modelo; em Bolsonaro 2022, 14, 8, 5 e 3 vezes. O zero faz parte de uma cauda baixa mais pesada que o modelo, com o mesmo formato nos dois anos.
 - **Comparação 2026 × 2022:** a razão das razões vai de 1,35 a 1,46, com IC que inclui 1, pelo prior de local, e de 2,4 a 3,4 pelo prior de zona. Depende do modelo, então também não é interpretável.
 - **Votos:** os esperados nessas seções vão de ~44 a ~4.800 votos, conforme o modelo.
 
@@ -174,7 +174,7 @@ Cada local foi comparado com a própria zona, sem o local, com escala robusta po
   - Contra a própria zona, os z vão de −1,3 a 2,9, e nenhum é significativo.
   - Sem as seções que os selecionaram, ficam entre −1,7 e 1,5.
   - O local 251/1074, com 10 das 29 seções, fica no nível da sua zona (z −0,3).
-  - O deslocamento é da região (zonas 251, 259 e vizinhas), não de locais isolados. A causa continua desconhecida.
+  - O deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). A causa continua desconhecida.
   - Em 2026, 1 dos 15 tem z acima de 2 contra a zona (2,03), e nenhum contra o município.
 
 ### Pendências mantidas
@@ -189,3 +189,12 @@ Cada local foi comparado com a própria zona, sem o local, com escala robusta po
 - **Não executados:** A173 e BU1.
 
 Nenhuma dessas pendências foi declarada refutada ou comprovada pela falha de um modelo. A F3 não está concluída.
+
+## Verificação documental e auditoria de aceitação (28/10/2026)
+Em [`fase3/RELATORIO_ACEITACAO_F3.md`](fase3/RELATORIO_ACEITACAO_F3.md).
+- **A173:** os 173 arquivos também faltam no pacote baixado pelo projeto; os boletins das 64 seções conferem.
+- **BU1:** era um boletim do Sistema de Apuração e confere com a tabela publicada.
+- **Lacuna nova (SA22):** 159 seções-turno de 2022 não foram verificadas pelos arquivos.
+- **Revisão de I1 a I3 e matriz completa:** no mesmo relatório.
+- **Parecer:** a F3 continua em revisão.
+- **SA22:** 159 de 159 seções-turno do Sistema de Apuração de 2022 lidas, com boletim, texto impresso e assinatura conferindo com a tabela (conferência interna). Detalhe no adendo do relatório de aceitação.

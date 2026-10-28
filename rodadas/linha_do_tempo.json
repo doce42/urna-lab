@@ -287,6 +287,18 @@
    "hora": "",
    "titulo": "Fase 3 volta para revisão",
    "texto": "Auditoria encontrou estados acima da evidência e falhas de registro; a V1.2 fica preservada e a F3 é reaberta. Investigações I1 a I3 executadas."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Verificação dos 173 arquivos e do BU não lido",
+   "texto": "Os 173 arquivos também faltam no pacote baixado pelo projeto; os boletins das 64 seções conferem. O BU não lido era do Sistema de Apuração e confere. 159 seções-turno de 2022 desse tipo ficaram fora das verificações por arquivo."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "As 159 seções do Sistema de Apuração de 2022 conferem",
+   "texto": "Boletim, texto impresso e assinatura conferem com a tabela publicada em 159 de 159 seções-turno (conferência interna). Documentação da F3 consolidada no PROTOCOLO, METODOLOGIA e CATALOGO. A F3 segue em revisão."
   }
  ],
  "etapas_do_caminho": [
@@ -347,7 +359,7 @@
   },
   {
    "titulo": "Os locais de São Paulo de 2022 não são atípicos contra a própria zona",
-   "texto": "O deslocamento é regional (zonas 251, 259 e vizinhas), não de locais isolados. A causa continua desconhecida.",
+   "texto": "o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). A causa continua desconhecida.",
    "teste": "E02"
   },
   {
@@ -362,7 +374,7 @@
   },
   {
    "titulo": "Zeros de votos: nada demonstrado",
-   "texto": "Arquivos das seções com zero conferem (1 seção de 2022 não verificada). Nenhum modelo de frequência de zeros passou na calibração: nem excesso nem ausência de excesso foram demonstrados.",
+   "texto": "Arquivos das seções com zero conferem (inclusive a seção de 2022 cujo BU não tinha sido lido). Nenhum modelo de frequência de zeros passou na calibração: nem excesso nem ausência de excesso foram demonstrados.",
    "teste": "T41"
   },
   {

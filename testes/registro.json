@@ -1856,6 +1856,14 @@
      "alvo": "evidencia",
      "resultado": "ajustado",
      "descricao": "O certificado de cada urna das 200 seções (79 emitidos pela AC UE2020, 85 pela AC UE2022, 36 pela AC URNA) tem assinatura válida pela chave pública da AC emissora (164 Ed521, 36 ECDSA P-521). Os certificados das ACs vêm de repositório de terceiros (DataUrnas), não de canal do TSE; o elo AC → AC URNA v2 → AC RAIZ UE não foi verificado. Isto fecha um elo da cadeia, não a âncora."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Cobertura de 2022 (SA22, A173)",
+     "alvo": "rastreabilidade",
+     "descricao": "As verificações por arquivo de 2022 não incluíam 159 seções-turno do Sistema de Apuração (o leitor de 2022 não reconhecia .busa/.vscsa). Lidas à parte: 159 de 159 com assinatura válida (156 ECDSA P-521, AC URNA; 3 Ed521, AC UE2020) e boletim igual à tabela. Ainda em 2022: 173 arquivos assinados (RDV, log, imagem; 64 seções) ausentes do pacote de dados abertos, e 485 arquivos auxiliares listados e ausentes nas seções do Sistema de Apuração. Conferência interna (mesma origem).",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -5484,6 +5492,14 @@
      "alvo": "interpretacao",
      "descricao": "A beta-binomial com ρ ajustado sem a célula zero não passou na calibração pré-registrada (controles fora do intervalo: Lula 2026 1º turno 8 contra 0,4; candidatos menores com erro de 10 a 22%). Resultado não interpretável. A redação anterior ('sem evidência de excesso') excedia o teste; nem excesso nem ausência de excesso foram demonstrados.",
      "resultado": "caiu"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Verificação BU1",
+     "alvo": "evidencia",
+     "descricao": "A seção MG 49050/196/173 (2022, 1º turno), contada como 'BU diferente da tabela' por valor ausente, foi apurada pelo Sistema de Apuração (.busa). O leitor de 2022 não reconhecia a extensão. Decodificado: 16 votos para Lula, 0 para os demais; o texto impresso (.imgbusa) dá o mesmo; assinatura (.vscsa, AC URNA) válida. Igual à tabela: as 301 seções-turno de 2022 com zero estão verificadas.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -5510,6 +5526,12 @@
      "causa": "interpretacao",
      "origem": "revisão F3",
      "justificativa": "Auditoria e I2: 'sem evidência de excesso' excedia o teste; o modelo de local não tinha calibração e o modelo calibrado da revisão falhou nos controles."
+    },
+    {
+     "campo": "resultado_atual",
+     "causa": "nova_evidencia",
+     "origem": "BU1",
+     "justificativa": "A seção MG 49050/196/173 foi decodificada (boletim do Sistema de Apuração) e confere com a tabela."
     }
    ],
    "origem_fase3": "sessão F3 de 28/10/2026",
@@ -5526,8 +5548,8 @@
    "hipotese_nula": "A contagem de zeros é a esperada sob heterogeneidade local",
    "limitacoes": "O modelo com prior de local subestima também os zeros do controle (Lula) por cerca de 2 vezes; excesso modesto não excluível",
    "evidencia": "Flávio 2026: 79 seções (1º turno) e 106 (2º) com zero votos e comparecimento positivo; Bolsonaro 2022: 160 e 141. Com prior municipal o esperado é 1 a 8 (modelo refutado); com prior de local, 65 a 83 (2026) e 85 a 95 (2022), razão 1,2 a 1,7 (controle de Lula 2026: 2,1). 0 divergências entre BU, RDV, imagem e tabela publicada nas 486 seções-turno (1 seção de 2022 sem BU lido). Concentradas em AM, PA, MA e BA. Revisão F3 (I2, fase3/rev_i2_zeros.py): beta-binomial com ρ ajustado sem a célula zero; controles fora do intervalo de predição (Lula 2026 1º turno: 8 contra 0,4; candidato 14: 30.724 contra 39.452); resultado pré-registrado: não interpretável.",
-   "resultado_atual": "Não decidido. Os arquivos das seções com zero conferem (0 divergências; 1 seção de 2022 com BU não lido, não verificada). Nenhum modelo de frequência de zeros passou na calibração: nem excesso nem ausência de excesso foram demonstrados.",
-   "interpretacao": "Zero votos isolado não é irregularidade. Os modelos testados dão esperados muito diferentes (de 1 a 95 seções) e o modelo pré-registrado da revisão (I2) falhou nos controles. Descritivo: o excesso sobre o modelo aparece também em seções com 1, 2 e 3 a 5 votos, com o mesmo formato em 2022 e 2026.",
+   "resultado_atual": "Não decidido. Os arquivos das seções com zero conferem (0 divergências em todas; a seção de 2022 com BU não lido foi verificada depois). Nenhum modelo de frequência de zeros passou na calibração: nem excesso nem ausência de excesso foram demonstrados.",
+   "interpretacao": "Zero votos isolado não é irregularidade. Os modelos testados dão esperados muito diferentes (de 1 a 95 seções) e o modelo pré-registrado da revisão (I2) falhou nos controles. Descritivo: o modelo subestima também as seções com 1, 2 e 3 a 5 votos, com o mesmo formato em 2022 e 2026 (falha do modelo, não excesso demonstrado).",
    "impacto_votos": "2026, 2º turno: 106 seções com 14.860 válidos; o esperado para Flávio nelas vai de ~44 votos (modelo de local do E3) a ~3.100 (modelo da revisão I2), conforme o modelo: no máximo 0,07% da margem de 4,43 mi. 2022, 2º turno: 141 seções, 16.418 válidos, ~66 a ~3.000 votos esperados."
   },
   {
@@ -5605,6 +5627,14 @@
      "tipo": "Auditoria F3: rastreabilidade",
      "alvo": "rastreabilidade",
      "descricao": "A execução original não registrou commit nem hashes do DataUrnas-BR e lia uma pasta temporária. Corrigido: script confere commit 12f0433 e SHA-256; reexecução idêntica. Lacuna registrada em fase3/externos/DATAURNAS.md.",
+     "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Verificação A173",
+     "alvo": "rastreabilidade",
+     "descricao": "Os 173 arquivos que o DataUrnas-BR aponta como ausentes do pacote do TSE de 2022 também faltam no pacote baixado pelo projeto (27/10/2026), com o mesmo SHA-512 assinado no .vscmr local; os BUs das 64 seções conferem com a tabela. Das seções de 2022 fora do exterior que só a base do projeto tem, as do Sistema de Apuração explicam 17 de 191 (1º turno) e 10 de 176 (2º); as demais não foram explicadas nesta verificação (por exemplo, BA 36390/37/157 a 195, numeração consecutiva).",
      "resultado": "ajustado"
     }
    ],

@@ -141,7 +141,7 @@
    "teste": "decompor por município e tamanho, com nulo que preserve tamanho e agrupamento",
    "origem": "T38 (28/10)",
    "situacao": "parcial",
-   "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido). Revisão F3: a pergunta é a causa, que não foi demonstrada; a classificação 'respondida' excedia a evidência. I3: contra a própria zona, nenhum dos 15 locais de São Paulo é atípico; o deslocamento é regional (zonas 251, 259 e vizinhas).",
+   "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido). Revisão F3: a pergunta é a causa, que não foi demonstrada; a classificação 'respondida' excedia a evidência. I3: contra a própria zona, nenhum dos 15 locais de São Paulo é atípico; o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida).",
    "testes": [
     "T02"
    ],
@@ -259,7 +259,7 @@
      "resposta": ""
     }
    ],
-   "resposta": "As 29 seções estão em 15 locais; contra a própria zona nenhum local é atípico: o deslocamento é regional (zonas 251, 259 e vizinhas). Arquivos conferem. Causa não identificada."
+   "resposta": "As 29 seções estão em 15 locais; contra a própria zona nenhum local é atípico: o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). Arquivos conferem. Causa não identificada."
   },
   {
    "id": "P21",

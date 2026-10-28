@@ -112,3 +112,12 @@ Só dados oficiais do TSE (lista e conferências em CATALOGO, seção 2). Nada e
   - **T37:** o C06 sob heterogeneidade sintética (P1);
   - **T38:** assinatura de comparecimento nas seções pró-Lula atípicas (hipótese de enchimento, derivada do T02, exploratória);
   - **T39:** verificação de 20 seções do 1º turno (seleção fixada antes).
+- **28/10/2026, emenda 6, Fase 3 e sua revisão (registrada depois das execuções).** O AGENTS.md exige emenda aqui **antes** de um teste novo. Na F3 os pré-registros foram escritos fora deste arquivo, antes de rodar: `fase3/PREREG.md` (T40 a T43) e `fase3/PREREG_REVISAO.md` (I1 a I3). Esta emenda só registra o que já foi feito, com data, e não deve ser lida como pré-registro. Testes e verificações:
+  - **T40 (curvas de apuração):** nulos de permutação da ordem de chegada (irrestrito, por UF, por município, UF × hora de encerramento, UF × hora × tamanho). Nenhum é calibrado, nem em 2022, e o T40 é descritivo. A ordem usada é a hora de recebimento do boletim (reconstrução retrospectiva), não a curva divulgada.
+  - **T41 (zeros de votos):** exploratório. Nenhum modelo de frequência de zeros passou na calibração, e não se afirma excesso nem ausência de excesso.
+  - **T42 (Moran's I):** mede dependência espacial entre municípios; não distingue causa.
+  - **T43 (reconciliação com decodificação de terceiro):** interna quanto à origem (TSE), independente quanto à implementação.
+  - **I1 (poder contra trocas concentradas):** mundos de calibração e de avaliação separados. Alarme estatístico ≠ detecção correta: a regra conta alarme em qualquer sentido. Municípios maiores que 1% das seções (São Paulo, Rio, Brasília, Fortaleza, Salvador) não entram no mecanismo por município.
+  - **I2 (zeros com modelo calibrado):** o critério de calibração fixado antes não foi cumprido. O critério para controles com dezenas de milhares de zeros era quase impossível de cumprir e precisa ser refeito antes de nova tentativa.
+  - **I3 (locais contra o entorno):** a referência é a zona eleitoral (divisão administrativa), não uma vizinhança geográfica.
+  - **A173, BU1, SA22:** verificações documentais dos arquivos de 2022 (sem estatística).

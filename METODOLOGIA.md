@@ -343,3 +343,36 @@ Bibliografia completa e classificada em `REFERENCIAS.md`. Principais:
 - **T37:** X = frações reais por seção; taxa da seção B_i = softmax(log B0 + γ·s·z_m·d), com d = (+1 Lula, −1 adversário, 0, 0), B0 = matriz C06 gravada, z_m = ruído por município (S1) ou z-score do % de Lula do município dentro da UF (S2±). Y ~ Multinomial(aptos_2, X_i B_i). Verdade nacional T_jk = Σ X_ij w_i B_i,jk / Σ X_ij w_i. Erro = estimado − verdadeiro nas células Abs→Lula, Abs→Adversário e na razão.
 - **T38:** z robusto do T02 por seção; mudança de comparecimento relativa à mediana do município; fração de valores positivos nas seções acima de 5 desvios, contra 50% no conjunto; votos excedentes = L2 − p_esperado·V2.
 - **T39:** para cada seção, SHA-512 e tamanho de cada arquivo contra a lista assinada; assinatura da lista e de cada arquivo com a chave do certificado da urna; inteiros do `bu.dat` contêm seção, zona e município; RDV, imagem do BU e BU na Web comparados voto a voto (nulos por suspensão somados).
+
+## Fase 3 (T40 a T43, revisão I1 a I3, verificações de 2022)
+Situação e resultados ficam no registro e no `CATALOGO.md`; aqui só método e limite. Os pré-registros estão em `fase3/PREREG.md` e `fase3/PREREG_REVISAO.md`.
+
+- **T40, curvas (`fase3/f3_curvas.py`, `f3_curvas2.py`).**
+  - **Curva:** as urnas são ordenadas por `DT_BU_RECEBIDO` (hora de recebimento do boletim na tabela do TSE), e a margem relativa acumulada é (Lula − adversário)/válidos.
+  - **Estatísticas:** S1 trocas de sinal depois de 10% das urnas; S2 fração na última troca; S3 maior vale em pontos percentuais; S4 oscilações; S5 maior trecho linear (desvio ≤ 0,02 pp), numa grade de 1%.
+  - **Nulos:** permutação das urnas sem restrição, dentro de UF, dentro de município, dentro de UF × faixa de 30 min do encerramento e dentro de UF × hora × tercil de aptos, com 200 permutações.
+  - **Limites:** é reconstrução retrospectiva, não a curva divulgada (que exigiria snapshots datados). S1 conta ruído no cruzamento. São 100 comparações sem correção. Nenhum nulo é calibrado, inclusive em 2022, então o teste é **descritivo**.
+- **T41, zeros (`fase3/f3_zeros.py`; revisão `rev_i2_zeros.py`).**
+  - **Exploratório (E3):** beta-binomial com prior municipal (refutado: esperado 1 a 8 contra 79 a 160 observados) e com prior de local de votação (esperado 65 a 95). O prior de local foi escolhido depois de ver o municipal falhar.
+  - **Calibrado (I2):** média μ = proporção do candidato nas outras seções do local, encolhida para o município com peso 50. ρ é estimado por máxima verossimilhança da beta-binomial **truncada em zero**, para a célula alvo não entrar no ajuste. O intervalo de predição é a soma de Bernoulli(P0), e o intervalo da razão vem de bootstrap de municípios.
+  - **Critério de calibração (fixado antes):** controles com esperado ≥ 5 dentro do intervalo. **Não cumprido.** O controle Lula 2026 tem 8 zeros contra 0,4 esperados.
+  - **Leitura:** a cauda baixa dos finalistas (0, 1, 2 e 3 a 5 votos) fica acima do modelo, o que é falha do modelo e não excesso demonstrado. Não se afirma excesso nem ausência de excesso.
+- **T42, Moran's I (`fase3/f3_pendencias.py p19`).** I = n/S₀ · zᵀWz/zᵀz sobre o z médio municipal do modelo de virada por UF, com W por linha. A vizinhança é rainha por arco compartilhado na malha do IBGE, com sensibilidade de 5 vizinhos por centróide, e 999 permutações. Mede dependência, não causa.
+- **T43, reconciliação (`fase3/f3_reconcilia.py`).**
+  - **Comparação:** por chave (UF, município, zona, seção) dos votos de Presidente da tabela `bweb` contra os votos decodificados do BU pelo DataUrnas-BR (commit 12f0433, SHA-256 conferidos pelo script).
+  - **Cobertura:** 2026 1º turno e 2022. Em 2022 a base tem seções sem par: 1.018 do exterior, 17 e 10 do Sistema de Apuração e 174 e 166 não explicadas.
+- **I1, poder (`fase3/rev_i1_poder.py`).**
+  - **Mundos:** votos de Lula no 2º turno ~ Binomial(válidos, proporção real), com 20 mundos de calibração e 30 de avaliação.
+  - **Mecanismos (~1% das seções):** disperso, locais inteiros, municípios inteiros (sem os maiores que 1%) e região de centróides próximos.
+  - **Troca:** m de 2%, 5% e 10% dos válidos, nos dois sentidos.
+  - **Estatísticas:** T1 a T4 do T13 e o E02 "simples" com ρ reestimado.
+  - **Limiares:** "ancorado no real" (regra do P18) e "calibrado" (máximo dos 20 mundos + margem).
+  - **Votos sintéticos:** os votos movidos não são votos encontrados nos dados.
+  - **Alarme × detecção:** "detecção" é alarme em qualquer estatística, em qualquer sentido. Isso não é detecção correta da intervenção, e a direção não foi conferida.
+- **I3, locais contra o entorno (`fase3/rev_i3_espacial.py`).**
+  - **Estatística:** d = média do resíduo zz do local − média das demais seções da zona eleitoral (município se a zona tem menos de 3 outras seções). A escala é a mediana e o MAD de d por faixa de tamanho (3 a 5, 6 a 9, 10 a 14, 15 ou mais), seguida de BH com q = 0,05.
+  - **Referência administrativa:** zona eleitoral não é vizinhança geográfica, e não há coordenadas de locais no material. Um desvio que cobre a zona inteira some nesse teste; isso não mostra que ele não existe.
+- **A173, BU1, SA22 (`fase3/ver_a173.py`, `ver_bu1.py`, `ver_sa22.py`).** Leitura dirigida dos pacotes oficiais locais de 2022.
+  - **Assinatura:** a lista assinada (`.vscmr` da urna ou `.vscsa` do Sistema de Apuração) é decodificada, e se conferem tamanho, SHA-512 e assinatura de cada arquivo presente.
+  - **Votos:** o boletim (`.bu` ou `.busa`) é decodificado e comparado com a tabela publicada.
+  - **Texto impresso:** é lido como segunda leitura independente da implementação, mas da mesma origem.

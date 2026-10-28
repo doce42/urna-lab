@@ -100,7 +100,7 @@
    "menor_experimento": "T13 de duas caudas, 30 réplicas, dois sentidos.",
    "criterio_de_encerramento": "Taxas simétricas com falsos alarmes controlados.",
    "alcance_em_votos": "125 mil votos (1% das urnas, 10% dos válidos) são detectados; 62 mil (5%) não.",
-   "estado_inicial_f3": "aberta",
+   "estado_inicial_f3": "parcial",
    "trabalho_na_f3": "E4 (f3_pendencias.py p18), 2026 e sensibilidade 2022.",
    "estado_final": "respondida parcialmente",
    "resposta_ou_motivo": "Duas caudas: detecção simétrica para troca dispersa (P18). I1 (rev_i1_poder.py, 30 mundos de avaliação separados dos 20 de calibração): em 2026, 10% dos válidos em 1% das seções sorteadas (~123 mil votos) é detectado em 30 de 30 nos dois sentidos; 5% (~62 mil), em 0 a 2 de 30. Em locais ou municípios inteiros, 5% (~62 mil) é detectado em 30 de 30 pelo E02; em região contígua, 27 a 29 de 30 com limiar calibrado (16 a 19 de 30 com o limiar ancorado no real). 2% (~25 mil) não é detectado em nenhuma forma (no máximo 4 de 30). O T02 sozinho não vê troca em município ou região inteiros (0 de 30 a 10%), porque a mediana municipal absorve o deslocamento. Falso alarme: 0 de 30 (ancorado) e 1 de 30 (calibrado) em 2026; em 2022 o limiar ancorado no real dá 7 de 30 falsos alarmes e o calibrado 3 de 30. Correção da auditoria: no P18 os falsos alarmes do limiar calibrado foram medidos nos mesmos mundos da calibração (0 por construção).",
@@ -124,7 +124,7 @@
    "menor_experimento": "Moran's I com adjacência da malha e vizinhança por distância.",
    "criterio_de_encerramento": "Estatística com p por permutação nos dois anos.",
    "alcance_em_votos": "n/a",
-   "estado_inicial_f3": "aberta",
+   "estado_inicial_f3": "respondida",
    "trabalho_na_f3": "E6 (f3_pendencias.py p19): 5.570 municípios; adjacência por arco compartilhado da malha e 5 vizinhos mais próximos.",
    "estado_final": "respondida",
    "resposta_ou_motivo": "Moran's I = 0,161 (2026) e 0,179 (2022) pela vizinhança por arco; 0,172 e 0,198 por 5 vizinhos; p = 0,001 (piso de 999 permutações); sem os 5% mais extremos, 0,157 e 0,170. Variável: z médio municipal do modelo de virada por UF (divergencias_municipios_*_completo.csv). Há dependência espacial nos dois anos. O teste não distingue a causa (estrutura regional legítima ou não).",
@@ -136,7 +136,8 @@
      "resposta": "Moran's I = 0,161 (2026) e 0,179 (2022) pela vizinhança por arco; 0,172 e 0,198 por 5 vizinhos; p = 0,001 (piso de 999 permutações); sem os 5% mais extremos: 0,157 e 0,170. Há autocorrelação espacial real; ela mede estrutura regional não modelada, não manipulação."
     }
    ],
-   "revisao": "auditoria: redação 'não manipulação' excedia o teste"
+   "revisao": "auditoria: redação 'não manipulação' excedia o teste",
+   "reaberta_na_revisao": true
   },
   {
    "id": "P20",
@@ -148,10 +149,10 @@
    "menor_experimento": "Decompor por local, controlar tamanho e histórico, ver 2026 e arquivos.",
    "criterio_de_encerramento": "Efeito de local mensurado e arquivos verificados.",
    "alcance_em_votos": "excesso das 90 seções pró-Lula de 2022 ≈ 2.600 votos (F2)",
-   "estado_inicial_f3": "aberta",
+   "estado_inicial_f3": "parcial",
    "trabalho_na_f3": "E5 (f3_pendencias.py p20).",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "29 seções em 15 locais (10 em SP 251/1074); as outras seções desses locais têm z médio +3,6 contra a mediana municipal. I3: contra a própria zona, nenhum dos 15 locais é atípico (todos com z entre −1,3 e 2,9; sem as seções selecionadas, entre −1,7 e 1,5): o deslocamento é regional (zonas 251, 259 e vizinhas). Arquivos 29/29 conferem. Causa não identificada.",
+   "resposta_ou_motivo": "29 seções em 15 locais (10 em SP 251/1074); as outras seções desses locais têm z médio +3,6 contra a mediana municipal. I3: contra a própria zona, nenhum dos 15 locais é atípico (todos com z entre −1,3 e 2,9; sem as seções selecionadas, entre −1,7 e 1,5): o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). Arquivos 29/29 conferem. Causa não identificada.",
    "proxima_evidencia": "Causa regional (perfil de eleitores por zona em 2022).",
    "historico": [
     {
@@ -172,7 +173,7 @@
    "menor_experimento": "Tentativa controlada de obter certificados e inventário de boletins externos.",
    "criterio_de_encerramento": "Fonte encontrada e comparada, ou bloqueio registrado.",
    "alcance_em_votos": "n/a",
-   "estado_inicial_f3": "aberta",
+   "estado_inicial_f3": "inventariada",
    "trabalho_na_f3": "Ver P4, P6 e P11: sem acesso a canal oficial (403) e sem dados primários externos.",
    "estado_final": "bloqueada por evidência externa",
    "resposta_ou_motivo": "Bloqueada.",
@@ -191,16 +192,21 @@
    "estado_inicial_f3": "nova na F3",
    "trabalho_na_f3": "Sessão 2 (f3_reconcilia.py): o repositório DataUrnas-BR traz os votos por seção já decodificados dos BUs (clone raso, sem baixar arquivos do TSE). Comparados 499.206 seções do 1º turno de 2026 e ~470.8 mil seções por turno de 2022: 0 seções com diferença em votos nominais, brancos e nulos (119,3 mi e 6,0 mi de votos em 2026). Só nossas: 1.209 seções em 2022 (1.018 do exterior e seções agregadas), 334 mil votos, que o DataUrnas não traz.",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "Execução original sem commit e hashes registrados (lacuna em fase3/externos/DATAURNAS.md). Corrigido: f3_reconcilia.py confere o commit 12f0433 e os SHA-256 das entradas; a reexecução a partir do clone guardado deu resultado idêntico (0 diferenças em 499.206 seções de 2026, 1º turno, e ~470,8 mil por turno de 2022). Continua sem cobrir o 2º turno de 2026 e 1.194 a 1.292 seções de 2022 (334 mil votos, exterior e agregadas).",
-   "proxima_evidencia": "2º turno de 2026 por decodificação independente; seções de 2022 sem par.",
+   "resposta_ou_motivo": "Execução original sem commit e hashes registrados (lacuna em fase3/externos/DATAURNAS.md). Corrigido: f3_reconcilia.py confere o commit 12f0433 e os SHA-256 das entradas; a reexecução deu resultado idêntico (0 diferenças em 499.206 seções de 2026, 1º turno, e ~470,8 mil por turno de 2022). Sem cobertura: o 2º turno de 2026 e as seções de 2022 que só a base tem. Destas, 1.018 (1º turno) são do exterior; das 191 do Brasil no 1º turno (176 no 2º), 17 (10) são do Sistema de Apuração, que nenhum dos dois leitores decodificava, e 174 (166) não foram explicadas (a frase anterior 'exterior e agregadas' não tinha sido verificada).",
+   "proxima_evidencia": "2º turno de 2026 por decodificação independente; explicar as 174 e 166 seções de 2022 sem par.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
      "estado": "respondida",
      "resposta": "Concordância total com decodificação independente de terceiro em todas as seções comuns; diferença só de cobertura em 2022. Não cobre o 2º turno de 2026 (o repositório não o inclui)."
+    },
+    {
+     "etapa": "auditoria da F3",
+     "estado": "respondida parcialmente",
+     "resposta": "Execução original sem commit e hashes registrados (lacuna em fase3/externos/DATAURNAS.md). Corrigido: f3_reconcilia.py confere o commit 12f0433 e os SHA-256 das entradas; a reexecução a partir do clone guardado deu resultado idêntico (0 diferenças em 499.206 seções de 2026, 1º turno, e ~470,8 mil por turno de 2022). Continua sem cobrir o 2º turno de 2026 e 1.194 a 1.292 seções de 2022 (334 mil votos, exterior e agregadas)."
     }
    ],
-   "revisao": "auditoria: rastreabilidade incompleta; corrigida, com lacuna registrada"
+   "revisao": "verificação A173/BU1"
   },
   {
    "id": "C1",
@@ -271,7 +277,7 @@
    "estado_inicial_f3": "nova na F3",
    "trabalho_na_f3": "E3 (f3_zeros.py).",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "Arquivos: 0 divergências de votos entre BU, RDV, imagem e tabela nas 185 seções-turno de 2026 e 300 das 301 de 2022; 1 seção de 2022 com BU não lido (item BU1), não verificada. Estatística: I2 (rev_i2_zeros.py, beta-binomial com ρ ajustado sem a célula zero) não passou na calibração pré-registrada: os controles (Lula e candidatos menores) caem fora do intervalo de predição (ex.: Lula 2026 1º turno, 8 observados contra 0,4 esperados; candidato 14, 30.724 contra 39.452), então o resultado é não interpretável. Descritivo: o excesso nos finalistas não é só no zero; seções com 1, 2 e 3 a 5 votos também excedem o modelo, decrescendo (Flávio 2026 1º turno: 20, 12, 7 e 4 vezes), com o mesmo formato em Bolsonaro 2022 (14, 8, 5 e 3 vezes). Nem excesso nem ausência de excesso de zeros foram demonstrados.",
+   "resposta_ou_motivo": "Arquivos: 0 divergências de votos entre BU, RDV, imagem e tabela nas 185 seções-turno de 2026 e nas 301 de 2022 (a seção com BU não lido foi verificada no BU1). Estatística: I2 (rev_i2_zeros.py, beta-binomial com ρ ajustado sem a célula zero) não passou na calibração pré-registrada: os controles (Lula e candidatos menores) caem fora do intervalo de predição (ex.: Lula 2026 1º turno, 8 observados contra 0,4 esperados; candidato 14, 30.724 contra 39.452), então o resultado é não interpretável. Descritivo: o modelo subestima toda a cauda baixa dos finalistas, não só o zero: seções com 1, 2 e 3 a 5 votos também ficam acima do previsto, decrescendo (Flávio 2026 1º turno: 20, 12, 7 e 4 vezes), com o mesmo formato em Bolsonaro 2022 (14, 8, 5 e 3 vezes). Nem excesso nem ausência de excesso de zeros foram demonstrados.",
    "proxima_evidencia": "Modelo de mistura para a cauda baixa (subpopulações de seções), validado em controles antes do teste.",
    "historico": [
     {
@@ -318,9 +324,17 @@
    "alcance_em_votos": "a apurar",
    "estado_inicial_f3": "nova na F3",
    "trabalho_na_f3": "Identificado na auditoria (README do DataUrnas-BR, commit 12f0433); não confrontado.",
-   "estado_final": "não executada nesta sessão",
-   "resposta_ou_motivo": "Não confrontado.",
-   "proxima_evidencia": "Cruzamento por seção (sem coleta nova)."
+   "estado_final": "respondida parcialmente",
+   "resposta_ou_motivo": "Os 173 arquivos (61 .logjez, 56 .rdv, 56 .imgbu) em 64 seções (54 do exterior, 1º turno, cada uma sem .imgbu, .logjez e .rdv; 10 no Brasil, sem 1 ou 2 arquivos) estão listados no .vscmr do pacote local com o mesmo SHA-512 informado pelo DataUrnas-BR, com assinatura da lista válida, e também faltam no pacote oficial baixado pelo projeto em 27/10/2026 (o DataUrnas-BR baixou em 14/10). Não é diferença de nome, de coleta nem de processamento: nenhum outro arquivo da seção tem o mesmo SHA-512. São registros únicos (RDV voto a voto, log, imagem) sem substituto no pacote. O BU está presente nas 64 seções, e os votos do BU são iguais aos da tabela publicada em todas (0 diferenças; 44.983 aptos, 21.112 comparecimentos). O outro canal do TSE (arquivos por urna no site de resultados de 2022) devolveu 404 em duas consultas; não se sabe se esses arquivos estão publicados em outro lugar.",
+   "proxima_evidencia": "Consulta ao TSE sobre os 173 arquivos; site de resultados de 2022 acessível.",
+   "historico": [
+    {
+     "etapa": "auditoria da F3",
+     "estado": "não executada nesta sessão",
+     "resposta": "Não confrontado."
+    }
+   ],
+   "revisao": "verificação documental (fase3/ver_a173.py)"
   },
   {
    "id": "BU1",
@@ -334,9 +348,41 @@
    "alcance_em_votos": "1 seção",
    "estado_inicial_f3": "nova na F3",
    "trabalho_na_f3": "Contada no E3 como 'BU diferente da tabela' por valor ausente; na auditoria reclassificada como não verificada.",
-   "estado_final": "não executada nesta sessão",
-   "resposta_ou_motivo": "Não verificada: não é divergência demonstrada nem concordância.",
-   "proxima_evidencia": "Leitura do BU dessa seção."
+   "estado_final": "respondida",
+   "resposta_ou_motivo": "Arquivos da seção no pacote local: .busa, .imgbusa, .logsajez, .rdv e .vscsa (seção apurada pelo Sistema de Apuração, BU emitido às 23:47). A falha era do leitor de 2022, que não reconhece essas extensões; o arquivo não está danificado. Lista .vscsa assinada (ECDSA P-521, certificado ueao01293146 emitido pela AC URNA) com hash e assinatura válidos para os 4 arquivos. Boletim decodificado: 109 aptos, 16 comparecimentos, 16 votos para Lula, 0 para os demais; leitura independente do texto impresso (.imgbusa): 16 para Lula, 0 brancos, 0 nulos. Igual à tabela publicada (0 diferenças). Com isso as 301 seções-turno de 2022 com zero votos para Bolsonaro estão verificadas.",
+   "proxima_evidencia": "—",
+   "historico": [
+    {
+     "etapa": "auditoria da F3",
+     "estado": "não executada nesta sessão",
+     "resposta": "Não verificada: não é divergência demonstrada nem concordância."
+    }
+   ],
+   "revisao": "verificação documental (fase3/ver_bu1.py)"
+  },
+  {
+   "id": "SA22",
+   "origem": "BU1",
+   "pergunta": "As 159 seções-turno de 2022 apuradas pelo Sistema de Apuração (arquivos .busa, .imgbusa, .logsajez, .vscsa) foram verificadas pelos arquivos de urna do projeto?",
+   "o_que_a_f2_demonstrou": "—",
+   "o_que_falta": "Ler os arquivos do Sistema de Apuração de 2022 e repetir hash, assinatura e comparação de votos.",
+   "hipoteses_concorrentes": "cobertura completa × lacuna do leitor",
+   "menor_experimento": "Estender o leitor de 2022 às extensões do Sistema de Apuração e rodar só nessas seções.",
+   "criterio_de_encerramento": "159 seções-turno verificadas ou listadas com motivo.",
+   "alcance_em_votos": "159 seções-turno (116 no 1º turno, 99 do exterior; 43 no 2º, 33 do exterior)",
+   "estado_inicial_f3": "nova na F3",
+   "trabalho_na_f3": "Achado do BU1: o leitor de 2022 só reconhece bu, imgbu, logjez, rdv e vscmr; seções com boletim só do Sistema de Apuração ficaram fora de toda análise por arquivo de urna em 2022 (os votos delas estão na tabela publicada usada nos testes estatísticos). Uma delas (BU1) foi verificada à parte.",
+   "estado_final": "respondida",
+   "resposta_ou_motivo": "fase3/ver_sa22.py leu as 159 seções-turno de 2022 apuradas pelo Sistema de Apuração (116 no 1º turno, 99 do exterior; 43 no 2º, 33 do exterior; 27 no Brasil), uma por uma (lista em fase3/resultados/sa22.csv). Em todas há .busa, .imgbusa, .logsajez, .rdv e .vscsa (11 também com log da urna, .logjez). Motivo da falha: o leitor de 2022 não reconhecia essas extensões. Resultado: 159 de 159 com boletim decodificado igual à tabela publicada (votos e comparecimento; 27.692 votos no total), texto impresso (.imgbusa, segunda leitura) igual e lista .vscsa com assinatura válida (156 ECDSA P-521 pela AC URNA, 3 Ed521 pela AC UE2020), conferindo tamanho, SHA-512 e assinatura de todos os arquivos presentes. 0 divergências objetivas; 0 seções sem leitura. Limites: comparação interna (mesma origem, TSE; o texto impresso é outra leitura, não outra fonte); cadeia de certificados só até a AC emissora (ver P11); as listas assinadas citam arquivos ausentes do pacote: .hash, .ver e .chvtp nas 159 e .jufa em 8 (485 arquivos), sem efeito sobre votos, sem explicação verificada.",
+   "proxima_evidencia": "Saber se os auxiliares .hash, .ver, .chvtp e .jufa ficam fora do pacote por regra de publicação.",
+   "historico": [
+    {
+     "etapa": "auditoria da F3",
+     "estado": "não executada nesta sessão",
+     "resposta": "Registrada para análise futura; não executada (fora do escopo autorizado)."
+    }
+   ],
+   "revisao": "verificação documental (fase3/ver_sa22.py)"
   },
   {
    "id": "P1",
@@ -361,7 +407,7 @@
     {
      "etapa": "V1.2 (rodada 4, congelada)",
      "estado": "respondida (revisada pelo P18)",
-     "resposta": "Com 1% das urnas e 10% dos válidos movidos (~125 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido."
+     "resposta": "Com 1% das urnas e 10% dos válidos movidos (~125 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido. Revisado pelo P18 e pelo I1: com duas caudas, a troca dispersa de ~123 mil votos é vista nos dois sentidos; ~62 mil concentrados em locais ou municípios só pelo E02; ~25 mil em nenhuma forma testada."
     }
    ],
    "revisao": "I1",
@@ -431,20 +477,19 @@
    "id": "P14",
    "origem": "P14",
    "pergunta": "P14 (respondida na F2)",
-   "estado_inicial_f3": "respondida",
+   "estado_inicial_f3": "parcial",
    "trabalho_na_f3": "não reaberta",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "Localização feita na F2 e no P20; causa não demonstrada. I3: os 15 locais de São Paulo capital com seções atípicas em 2022 não resistem ao entorno: nenhum é significativo contra a própria zona (z de −1,3 a 2,9) e, sem as seções que os selecionaram, ficam entre −1,7 e 1,5. O local SP 251/1074 (10 das 29 seções) está no nível da sua zona (z −0,3). O deslocamento é da região (zonas 251, 259 e vizinhas), não de locais isolados. Em 2026, 1 dos 15 (o mesmo 251/1074) tem z acima de 2 com a zona como referência (2,03) e nenhum com o município.",
+   "resposta_ou_motivo": "Localização feita na F2 e no P20; causa não demonstrada. I3: os 15 locais de São Paulo capital com seções atípicas em 2022 não resistem ao entorno: nenhum é significativo contra a própria zona (z de −1,3 a 2,9) e, sem as seções que os selecionaram, ficam entre −1,7 e 1,5. O local SP 251/1074 (10 das 29 seções) está no nível da sua zona (z −0,3). o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). Em 2026, 1 dos 15 (o mesmo 251/1074) tem z acima de 2 com a zona como referência (2,03) e nenhum com o município.",
    "proxima_evidencia": "Causa: covariáveis das zonas e dos eleitores (perfil) para 2022, que o material não tem por seção.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
      "estado": "respondida",
-     "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido)."
+     "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido). Revisão F3: a pergunta é a causa, que não foi demonstrada; a classificação 'respondida' excedia a evidência. I3: contra a própria zona, nenhum dos 15 locais de São Paulo é atípico; o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida)."
     }
    ],
-   "revisao": "auditoria: 'respondida' na F2 excedia a evidência (a pergunta é a causa)",
-   "reaberta_na_revisao": true
+   "revisao": "auditoria: 'respondida' na F2 excedia a evidência (a pergunta é a causa)"
   },
   {
    "id": "P15",
