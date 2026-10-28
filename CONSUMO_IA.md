@@ -6,6 +6,20 @@ Registro de quantos tokens e quanto custo de IA foram gastos para fazer este est
 
 ## Sessões
 
+### Sessão 2: 28/10/2026 (Fase 3: auditoria, respostas, adversarial, veredito, V1.3, página do GitHub), medição final
+Medida pelo `/usage` ao fim da sessão. Tempo: **12 h 12 min de relógio**, 2 h 37 min de tempo de API. Código: 3.597 linhas acrescentadas e 29 removidas. Houve compactação automática do contexto. O `/usage` não separa subagentes da sessão principal; o custo de cada um está somado na linha do modelo que usou.
+
+| Modelo | Para quê | Entrada | Saída | Cache lido | Cache gravado | Custo (US$) |
+|---|---|---|---|---|---|---|
+| Claude Opus 5.5 | Sessão principal depois da troca de modelo: auditoria da F3, investigações R1 a R4, adversarial, fila F1 a F4, veredito, Z1 a Z4, congelamento V1.3, dados leves, README | 48,4 mil | 672,0 mil | 224,5 mi | 1,6 mi | 69,41 |
+| Claude Sonnet 5.5 | Sessão principal antes da troca de modelo (fim da F3 original e publicação) | 3,7 mil | 263,5 mil | 46,6 mi | 536,6 mil | 9,44 |
+| Claude Haiku 5.5 | Buscas na web do próprio Claude Code (4 buscas) | 60,6 mil | 5,1 mil | 0 | 0 | 0,05 |
+| **Total da sessão** | | **112,7 mil** | **940,6 mil** | **271,1 mi** | **2,1 mi** | **78,90** |
+
+**Tokens processados: ≈ 274,3 milhões.** Por modelo: Opus ≈ 226,8 mi, Sonnet ≈ 47,4 mi e Haiku ≈ 0,07 mi. O contexto relido ou gravado é ≈ 273,2 mi (99,6%). Segundo o `/usage`, 99% da entrada da sessão principal veio de cache, em 575 chamadas.
+
+Comparada com a sessão 1, custou 43% menos com mais horas de relógio: sem construir o site do zero e com o trabalho pesado (leitura dos logs, testes, capturas do Internet Archive) rodando em scripts locais.
+
 ### Sessão 1: 27 e 28/10/2026 (rodada 1, site, revisão R1), medição final
 Medida pelo `/usage` ao fim da sessão. Tempo: **9 h 47 min de relógio**, 4 h 3 min de tempo de API. Código: 9.257 linhas acrescentadas e 923 removidas. Houve uma compactação automática do contexto no meio da sessão.
 
@@ -21,7 +35,7 @@ Medida pelo `/usage` ao fim da sessão. Tempo: **9 h 47 min de relógio**, 4 h 3
 
 Fora desta conta: a revisão independente R1 foi feita pelo Codex, de outro fornecedor, em sessão separada, e o consumo dela não foi medido aqui. O instantâneo parcial das 23h30 de 27/10 (US$ 74,58) está incluído nestes totais.
 
-## Tokens de contexto (o histórico da conversa relido a cada chamada)
+## Tokens de contexto da sessão 1 (o histórico da conversa relido a cada chamada)
 
 "Cache lido" e "cache gravado" são os tokens de contexto: tudo o que já estava na conversa (mensagens, arquivos lidos, resultados de comandos) e que o modelo relê a cada nova chamada.
 
@@ -39,13 +53,13 @@ Os tokens que não são contexto somam ≈ 2,0 mi: 594,5 mil de entrada nova e 1
 
 | Modelo | Tokens processados | Custo (US$) |
 |---|---|---|
-| Claude Opus 5.5 | ≈ 253,0 mi | 78,48 |
-| Claude Sonnet 5.5 | ≈ 99,0 mi | 18,92 |
+| Claude Opus 5.5 | ≈ 479,8 mi | 147,89 |
+| Claude Sonnet 5.5 | ≈ 146,4 mi | 28,36 |
 | Claude Fable 5.1 | ≈ 42,3 mi | 40,17 |
-| Claude Haiku 5.5 | ≈ 0,3 mi | 0,24 |
-| **Total** | **≈ 394,6 mi** | **137,81** |
+| Claude Haiku 5.5 | ≈ 0,4 mi | 0,29 |
+| **Total (2 sessões)** | **≈ 668,9 mi** | **216,71** |
 
-**Como registrar a próxima sessão:** rode `/usage`, copie "Usage by model" e acrescente uma seção "Sessão 2" acima, somando nesta tabela. Registre só tokens, custo e tempo. Os percentuais de limite da conta ficam de fora, porque este arquivo é público.
+**Como registrar a próxima sessão:** rode `/usage`, copie "Usage by model" e acrescente uma seção "Sessão 3" acima, somando nesta tabela. Registre só tokens, custo e tempo. Os percentuais de limite da conta ficam de fora, porque este arquivo é público.
 
 
 ## Consumo de máquina, rede, disco e tempo (o que a IA não gastou)
