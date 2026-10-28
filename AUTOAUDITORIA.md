@@ -99,3 +99,25 @@ Feita sem interromper os processos em andamento e sem alterar resultados já obt
 | Falácia ecológica na transferência de votos (C06) | Ler média de grupo como comportamento individual | Já rotulado; reforçar no relatório | Parcial |
 | Fonte externa ao TSE | Toda verificação depende do sistema avaliado | Citar teste de integridade, TCU e observadores como externos (sem dados abertos); declarar como limite | Limite |
 | Resultados intermediários sobrescritos ao reprocessar | Perder versões anteriores | Resultados com data/hora no CATALOGO; o git versiona os resultados pequenos | Parcial |
+
+## 6. Limites que os dados públicos não permitem fechar (registrado em 28/10/2026)
+
+Regra do estudo: só se resolve o que os dados públicos permitem. O que depende de material que o TSE não publica, ou de acesso à urna, fica registrado aqui como **limite**, não como pendência a ser contornada. Nenhum deles foi tratado como indício de problema: são fronteiras do que este estudo consegue afirmar.
+
+| Limite | Por que não se resolve com dados públicos | O que o estudo diz sobre isso |
+|---|---|---|
+| Software da urna | O código-fonte e o binário rodando na urna não são auditáveis a partir dos arquivos de saída. Os testes veem o que a urna gravou, não o que ela executou | Não se afirma nada sobre o código. Verifica-se que as saídas são consistentes entre si e assinadas (T14, T16, T17) |
+| Cadeia de certificados até a raiz do TSE | A raiz e as autoridades intermediárias não estão nos pacotes de dados abertos; confere-se a assinatura contra o certificado da própria urna, não contra a raiz | A autenticidade vale "dentro do que o pacote declara". Fica registrado como lacuna de confiança |
+| Especificação oficial dos formatos (bu, RDV, log, vsc) | O TSE não publica a especificação completa junto dos dados; os leitores foram feitos por engenharia reversa e validados contra os totais oficiais (638/638) e contra controles | A leitura é validada por resultado, não por especificação. Se a especificação for obtida, compara-se |
+| 3 máquinas de carga sem log do GEDAI publicado (T35) | O log não está entre os arquivos abertos | Registrado como ausência de dado; não se infere nada |
+| Troca uniforme nacional | Uma alteração igual em todas as urnas e seções não deixa assinatura estatística nos testes de comparação entre seções | Só testes com referência externa (pesquisa de boca de urna, comparação com 2022) poderiam sugerir, e não é prova |
+| Voto individual | O voto é secreto por desenho; nenhum arquivo liga eleitor a voto | Fora do alcance, por construção |
+| Reprodução a partir de clone limpo | Exige ~250 GB e horas de download; não foi executada ponta a ponta | Os comandos estão no `Makefile` e no `AGENTS.md`; marcado como "não testado" |
+| Seções sem arquivos de urna (exterior, Sistema de Apuração) | 2026: 31 (1º) e 29 (2º) seções; 2022: 116 e 43 | Entram só pelo boletim publicado e por totais; contadas à parte em todos os testes |
+
+### Atualização de 28/10/2026: documentação oficial obtida
+O usuário baixou do portal do TSE (Eleições 2022, "Documentação técnica do software da urna eletrônica"), e o material foi guardado em `dados/brutos/doc/`: especificação ASN.1 de BU, RDV e assinatura (com scripts de exemplo em Python e arquivos de exemplo simulados), especificação do formato do log (PDF, 17 páginas), o leia-me dos arquivos da urna e a lista de hashes SHA-512 das chaves públicas do QR Code por UF (2022). Não foi possível baixar o manual do QR Code do BU (PDF).
+- **BU (2022):** a estrutura dos arquivos de exemplo confere com a especificação: cabeçalho, fase, urna, seção, data de emissão, `dadosSecao [0]` (abertura e encerramento), `qtdEleitoresLibCodigo [1]`, `qtdEleitoresCompBiometrico [2]`, `resultadosVotacaoPorEleicao [3]` (**uma lista de eleições**, o que confirma a causa do erro de leitura corrigido em 28/10: o bu.dat pode trazer mais de uma eleição) e a chave pública das tuplas. Tipos de voto 1 nominal, 2 branco, 3 nulo e 4 legenda, iguais aos usados no leitor.
+- **BU (2026):** os arquivos de 2026 trazem campos que a especificação de 2022 não descreve (habilitação em três contagens: sem biometria, biométrica, biográfica; campos extras na eleição). A versão de 2026 da especificação não está publicada; o leitor de 2026 segue validado por resultado (totais 638/638, assinatura e RDV), não por especificação.
+- **Lista de hashes do QR Code:** são hashes das chaves públicas do QR Code por UF, não da chave por urna que está no BU (testado em 3 BU do AC de 2022: nenhum bate, como esperado). Só serviriam para validar o QR Code impresso, que este estudo não lê. Sem uso por ora.
+- **Cadeia de certificados até a raiz:** continua não publicada nesse material; segue como limite.

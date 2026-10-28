@@ -295,19 +295,19 @@
    "pergunta": "Poder dos testes de log (eleitor fantasma sintético)",
    "metodo": "Rajadas sintéticas de habilitação sem biometria com tempos reais",
    "modelo_nulo": "—",
-   "script": "(a fazer)",
-   "comando": "—",
-   "saida": "—",
-   "situacao": "a_fazer",
+   "script": "analise/poder_logs.py",
+   "comando": "python analise/poder_logs.py 2",
+   "saida": "analise/resultado_poder_logs_{1,2}t.json",
+   "situacao": "concluido",
    "referencia": "",
-   "hipotese_nula": "(poder dos testes de log)",
-   "pressupostos": "",
-   "limitacoes": "",
+   "hipotese_nula": "O T28 (binomial por urna contra a taxa da própria urna no resto do dia, BH a 5%) não acusa nada quando não há fraude e acusa urnas alteradas quando há.",
+   "pressupostos": "Fraude sintética = converter fração dos votos dos últimos 30 min em 'sem biometria'; urnas alteradas sorteadas (semente fixa, 5 repetições por cenário) sobre as contagens reais de cada turno.",
+   "limitacoes": "Só mede fraude que deixa rastro 'sem biometria' no log. Um voto lançado com habilitação biométrica coerente no log não é visto por este teste. Vale para o T28 apenas, não para os demais testes de log.",
    "afirmacao": "estatística",
    "independencia": "—",
    "natureza": "confirmatório",
    "classe_evidencia": "G",
-   "resultado_atual": "a fazer"
+   "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui)."
   },
   {
    "id": "T14",
@@ -825,7 +825,7 @@
    "independencia": "interna",
    "natureza": "confirmatório",
    "classe_evidencia": "G",
-   "resultado_atual": "1º turno: 2.450 de 2.453 máquinas de carga com log do GEDAI publicado; versão 8.23 e fase OFICIAL; 3 sem log a investigar.",
+   "resultado_atual": "1º turno: 2.450 de 2.453 máquinas de carga com log do GEDAI publicado; versão 8.23 e fase OFICIAL; 3 sem log: limite dos dados públicos (o log não está entre os arquivos abertos; ver AUTOAUDITORIA §6), nada se infere.",
    "anotacoes": [
     "2.450 de 2.453 máquinas de carga têm log do GEDAI publicado; versão 8.23 e fase OFICIAL em todos. 3 sem log, a investigar."
    ]

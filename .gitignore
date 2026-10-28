@@ -23,3 +23,9 @@ scripts/.privado.txt
 grafico/web/relatorio_dados.json
 analise/historico_v1_log_duplicado/
 grafico/web/relatorio_v1_backup.html
+
+# documentação oficial do TSE (leve; guardada junto do projeto)
+!dados/brutos/
+dados/brutos/*
+!dados/brutos/doc/
+dados/brutos/doc/*.zip
