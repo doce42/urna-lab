@@ -1,0 +1,27 @@
+2026 real {'T1_pro': np.float64(32.0), 'T1_contra': np.float64(13.0), 'T2': np.float64(0.301), 'T3_pro': np.float64(116.0), 'T3_contra': np.float64(9.0), 'T4': np.float64(2.047), 'E02_pro': np.float64(19.0), 'E02_contra': np.float64(20.0), 'E02rf_pro': np.float64(19.0), 'E02rf_contra': np.float64(20.0)} rho 0.1865 1 s
+calibração 4 s
+nulo {'ancorado_no_real': {'T13': {'taxa': 0.0, 'ic95': [0.0, 0.113517091390478]}, 'E02': {'taxa': 0.0, 'ic95': [0.0, 0.113517091390478]}, 'bateria': {'taxa': 0.0, 'ic95': [0.0, 0.113517091390478]}}, 'calibrado': {'T13': {'taxa': 0.03333333333333333, 'ic95': [0.0059084379948573795, 0.16670751396958874]}, 'E02': {'taxa': 0.0, 'ic95': [0.0, 0.113517091390478]}, 'bateria': {'taxa': 0.03333333333333333, 'ic95': [0.0059084379948573795, 0.16670751396958874]}}} 8 s
+M0_disperso|2pct|A_adv_para_Lula 24767 {'T13': 0.03333333333333333, 'E02': 0.0, 'bateria': 0.03333333333333333} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 12 s
+M0_disperso|2pct|B_Lula_para_adv 24777 {'T13': 0.03333333333333333, 'E02': 0.0, 'bateria': 0.03333333333333333} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 15 s
+M0_disperso|5pct|A_adv_para_Lula 61837 {'T13': 0.06666666666666667, 'E02': 0.0, 'bateria': 0.06666666666666667} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 19 s
+M0_disperso|5pct|B_Lula_para_adv 61911 {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 22 s
+M0_disperso|10pct|A_adv_para_Lula 123334 {'T13': 1.0, 'E02': 0.2, 'bateria': 1.0} real: {'T13': 1.0, 'E02': 0.0, 'bateria': 1.0} 26 s
+M0_disperso|10pct|B_Lula_para_adv 123822 {'T13': 1.0, 'E02': 0.1, 'bateria': 1.0} real: {'T13': 1.0, 'E02': 0.0, 'bateria': 1.0} 29 s
+M1_locais|2pct|A_adv_para_Lula 24787 {'T13': 0.06666666666666667, 'E02': 0.0, 'bateria': 0.06666666666666667} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 33 s
+M1_locais|2pct|B_Lula_para_adv 24796 {'T13': 0.03333333333333333, 'E02': 0.0, 'bateria': 0.03333333333333333} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 36 s
+M1_locais|5pct|A_adv_para_Lula 61904 {'T13': 0.06666666666666667, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.0, 'E02': 1.0, 'bateria': 1.0} 40 s
+M1_locais|5pct|B_Lula_para_adv 61975 {'T13': 0.03333333333333333, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.0, 'E02': 1.0, 'bateria': 1.0} 43 s
+M1_locais|10pct|A_adv_para_Lula 123470 {'T13': 1.0, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 1.0, 'E02': 1.0, 'bateria': 1.0} 47 s
+M1_locais|10pct|B_Lula_para_adv 123947 {'T13': 1.0, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 1.0, 'E02': 1.0, 'bateria': 1.0} 51 s
+M2_municipios|2pct|A_adv_para_Lula 25674 {'T13': 0.06666666666666667, 'E02': 0.0, 'bateria': 0.06666666666666667} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 55 s
+M2_municipios|2pct|B_Lula_para_adv 25686 {'T13': 0.03333333333333333, 'E02': 0.0, 'bateria': 0.03333333333333333} real: {'T13': 0.0, 'E02': 0.0, 'bateria': 0.0} 59 s
+M2_municipios|5pct|A_adv_para_Lula 64090 {'T13': 0.2, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.06666666666666667, 'E02': 0.9666666666666667, 'bateria': 0.9666666666666667} 63 s
+M2_municipios|5pct|B_Lula_para_adv 64180 {'T13': 0.16666666666666666, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.06666666666666667, 'E02': 0.9666666666666667, 'bateria': 0.9666666666666667} 67 s
+M2_municipios|10pct|A_adv_para_Lula 127733 {'T13': 0.6333333333333333, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.2, 'E02': 1.0, 'bateria': 1.0} 71 s
+M2_municipios|10pct|B_Lula_para_adv 128351 {'T13': 0.2, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.1, 'E02': 1.0, 'bateria': 1.0} 76 s
+M3_regiao|2pct|A_adv_para_Lula 25344 {'T13': 0.1, 'E02': 0.03333333333333333, 'bateria': 0.13333333333333333} real: {'T13': 0.03333333333333333, 'E02': 0.0, 'bateria': 0.03333333333333333} 79 s
+M3_regiao|2pct|B_Lula_para_adv 25363 {'T13': 0.06666666666666667, 'E02': 0.0, 'bateria': 0.06666666666666667} real: {'T13': 0.06666666666666667, 'E02': 0.0, 'bateria': 0.06666666666666667} 83 s
+M3_regiao|5pct|A_adv_para_Lula 63189 {'T13': 0.3333333333333333, 'E02': 0.8666666666666667, 'bateria': 0.9666666666666667} real: {'T13': 0.26666666666666666, 'E02': 0.43333333333333335, 'bateria': 0.6333333333333333} 86 s
+M3_regiao|5pct|B_Lula_para_adv 63331 {'T13': 0.2, 'E02': 0.7666666666666667, 'bateria': 0.9} real: {'T13': 0.16666666666666666, 'E02': 0.36666666666666664, 'bateria': 0.5333333333333333} 89 s
+M3_regiao|10pct|A_adv_para_Lula 125685 {'T13': 0.5, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.4666666666666667, 'E02': 0.9666666666666667, 'bateria': 1.0} 93 s
+M3_regiao|10pct|B_Lula_para_adv 126632 {'T13': 0.3333333333333333, 'E02': 1.0, 'bateria': 1.0} real: {'T13': 0.3333333333333333, 'E02': 0.9666666666666667, 'bateria': 1.0} 97 s

@@ -124,11 +124,17 @@
    "rodada": 4,
    "versao": "V1.2",
    "titulo": "Pendências, curvas e zeros",
-   "status": "concluida",
+   "status": "em_revisao",
    "inicio": "2026-10-28",
-   "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, em duas sessões. 27 itens inventariados: 0 diferenças contra a decodificação independente do DataUrnas-BR (R1-20); curvas de apuração sem nulo que discrimine (inclusive 2022); zeros de votos sem evidência de excesso; regra do T13 simétrica; dependência espacial medida. P4, P6, P11 e P21 ficam bloqueadas por fonte externa (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos, boletins de terceiros). Congelada na rodada 4 (V1.2).",
+   "resumo": "A F3 foi encerrada e congelada (V1.2, rodada 4) antes de uma auditoria científica. A auditoria de 28/10/2026 encontrou classificações acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19) e falhas de registro; com aprovação do responsável a fase voltou a 'em revisão'. A V1.2 e a tag v1.2 ficam como registro do que foi publicado. A revisão executou três investigações (poder contra trocas concentradas, zeros com modelo calibrado, locais com nulo espacial). Não há nova conclusão definitiva: o encerramento depende de aprovação.",
    "etapas": [],
-   "fim": "2026-10-28"
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4)",
+     "status": "concluida",
+     "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, em duas sessões. 27 itens inventariados: 0 diferenças contra a decodificação independente do DataUrnas-BR (R1-20); curvas de apuração sem nulo que discrimine (inclusive 2022); zeros de votos sem evidência de excesso; regra do T13 simétrica; dependência espacial medida. P4, P6, P11 e P21 ficam bloqueadas por fonte externa (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos, boletins de terceiros). Congelada na rodada 4 (V1.2)."
+    }
+   ]
   }
  ],
  "marcos": [
@@ -275,6 +281,12 @@
    "hora": "",
    "titulo": "Fase 3 concluída",
    "texto": "Sessão 2: 0 diferenças contra a decodificação independente do DataUrnas-BR e curvas sem nulo que discrimine; rodada 4 (V1.2) congelada; P4, P6, P11 e P21 bloqueadas por fonte externa."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 3 volta para revisão",
+   "texto": "Auditoria encontrou estados acima da evidência e falhas de registro; a V1.2 fica preservada e a F3 é reaberta. Investigações I1 a I3 executadas."
   }
  ],
  "etapas_do_caminho": [
@@ -329,6 +341,16 @@
  ],
  "conclusoes_recentes": [
   {
+   "titulo": "O T02 não vê troca em município inteiro",
+   "texto": "A mediana municipal absorve uma troca aplicada ao município ou à região inteira; só o E02 (referência estadual) a detecta a partir de ~62 mil votos.",
+   "teste": "T02"
+  },
+  {
+   "titulo": "Os locais de São Paulo de 2022 não são atípicos contra a própria zona",
+   "texto": "O deslocamento é regional (zonas 251, 259 e vizinhas), não de locais isolados. A causa continua desconhecida.",
+   "teste": "E02"
+  },
+  {
    "titulo": "Votos da base = decodificação independente de terceiro",
    "texto": "0 diferenças em 119,3 mi de votos (2026, 1º turno) e ~118 mi por turno (2022), seção a seção. Origem comum (TSE) e uma só versão de publicação seguem como limite.",
    "teste": "T43"
@@ -339,13 +361,13 @@
    "teste": "T40"
   },
   {
-   "titulo": "Zeros de votos: sem evidência de excesso",
-   "texto": "1,2 a 1,7 vez o esperado por local de votação, contra erro de 2 vezes no controle. Dezenas de votos em jogo e 0 divergências entre BU, RDV, imagem e tabela.",
+   "titulo": "Zeros de votos: nada demonstrado",
+   "texto": "Arquivos das seções com zero conferem (1 seção de 2022 não verificada). Nenhum modelo de frequência de zeros passou na calibração: nem excesso nem ausência de excesso foram demonstrados.",
    "teste": "T41"
   },
   {
    "titulo": "Regra do T13 vê os dois sentidos",
-   "texto": "10% dos válidos em 1% das urnas (~125 mil votos): 30 de 30 nos dois sentidos; 5% (~62 mil), 0 de 30.",
+   "texto": "Troca dispersa de ~123 mil votos (10% em 1% das seções): 30 de 30 nos dois sentidos; ~62 mil dispersos não. Concentrada em locais ou municípios, ~62 mil é vista pelo E02; ~25 mil em nenhuma forma.",
    "teste": "T13"
   },
   {
@@ -379,5 +401,5 @@
    "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 aprovada · Fases 2 e 3 concluídas (V1.2) em 28/10/2026"
+ "situacao_atual": "Baseline V1.0 aprovada · Fase 2 concluída (V1.1) · Fase 3 em revisão (V1.2 congelada antes da auditoria)"
 }

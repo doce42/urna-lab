@@ -1,8 +1,24 @@
 """F3 / R1-20: reconciliação seção a seção dos votos de Presidente da base do projeto com o DataUrnas-BR (decodificação independente, terceiro)."""
 import json, re
 import numpy as np, pandas as pd
-RAIZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); P = "/tmp/claude-1000/-home-doce/ce101f10-44d9-4203-8bbb-3031b9388995/scratchpad/dtu/data/parquet/"
-R = {"pergunta": "R1-20 reconciliação com DataUrnas-BR", "fonte": "github.com/alissonlinneker/DataUrnas-BR (terceiro; clone raso, sem baixar arquivos do TSE)", "resultados": {}}
+import hashlib, os, subprocess, sys
+RAIZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+# clone do DataUrnas-BR fora do repositório (355 MB); caminho por variável de ambiente
+DU = os.environ.get("DATAURNAS_DIR", "./externos/DataUrnas-BR"); P = DU + "/data/parquet/"
+COMMIT = "12f0433bd20882d305dd7b9e4987d6dcf3b321a9"   # commit usado na execução original (28/10/2026)
+SHA = {"2026/votos_presidente_2026.parquet": "b5654e7b692e2cf2eddb818be2365affd99b613ad17757c3b88f88430114d422",
+       "2026/secoes_2026.parquet": "cb0e3ecfdc13e14de77be40b87040983d55b26675f2c497474b4543473b30916",
+       "votos_t1_a.parquet": "fcb78b9c6be25ea78bbb208175d4242ff4bbc3598507759a6e7726fffe418176",
+       "votos_t1_b.parquet": "d4cb49542cd65c11d916a348d4aaedc8d19f2db24cbc421c4a35d7a945aca303",
+       "votos_t2.parquet": "97fe1abcdbd88c30de14e2d5f47076de119a8c7c980ab863dc69111aeae6fc80",
+       "totais_cargo.parquet": "d63b224cb9645dc2c68598e513e40b677c303e207f15839fc6fbcba39846db61"}
+head = subprocess.run(["git", "-C", DU, "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+if head != COMMIT: sys.exit(f"DataUrnas-BR em {head}, esperado {COMMIT}: git -C {DU} checkout {COMMIT}")
+for f, h in SHA.items():
+    if hashlib.sha256(open(P + f, "rb").read()).hexdigest() != h: sys.exit(f"SHA-256 diferente em {f}")
+SAIDA = sys.argv[1] if len(sys.argv) > 1 else "R1_20_dataurnas.json"
+R = {"pergunta": "R1-20 reconciliação com DataUrnas-BR", "fonte": "github.com/alissonlinneker/DataUrnas-BR (terceiro; clone raso, sem baixar arquivos do TSE)",
+     "commit": COMMIT, "sha256_entradas": SHA, "resultados": {}}
 
 
 def compara(nome, ours, theirs, cols):
@@ -65,4 +81,4 @@ for t in (1, 2):
     tc["k"] = sp[1].str.upper() + "/" + sp[2].astype(int).astype(str) + "/" + sp[3].astype(int).astype(str) + "/" + sp[4].astype(int).astype(str)
     tc = tc.rename(columns={"brancos": f"branco_{t}", "nulos": f"nulo_{t}"})
     compara(f"2022_{t}T_brancos_nulos", bb[["k", f"branco_{t}", f"nulo_{t}"]].drop_duplicates("k"), tc[["k", f"branco_{t}", f"nulo_{t}"]].drop_duplicates("k"), [f"branco_{t}", f"nulo_{t}"])
-json.dump(R, open(f"{RAIZ}/fase3/resultados/R1_20_dataurnas.json", "w"), ensure_ascii=False, indent=1, default=str)
+json.dump(R, open(f"{RAIZ}/fase3/resultados/{SAIDA}", "w"), ensure_ascii=False, indent=1, default=str)

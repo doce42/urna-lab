@@ -25,22 +25,22 @@ const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: st
 );
 
 // Estado da pesquisa: lê a linha do tempo (rodadas/linha_do_tempo.json), então acompanha sozinha a progressão das fases.
-const ST_ROT: Record<string, string> = { concluida: 'concluída', em_andamento: 'em andamento', proxima: 'próxima', pendente: 'pendente', planejada: 'planejada' };
+const ST_ROT: Record<string, string> = { concluida: 'concluída', em_andamento: 'em andamento', em_revisao: 'em revisão', proxima: 'próxima', pendente: 'pendente', planejada: 'planejada' };
 const F2_ROT: Record<string, string> = { respondida: 'respondida', parcial: 'em parte', inventariada: 'inventariada', adiada: 'adiada', 'sem_avanço': 'sem avanço', aberta: 'aberta' };
 function EstadoPesquisa() {
   const { dados: lt } = useDados<LT>('linha-do-tempo');
   if (!lt) return null;
-  const atual = lt.fases.find((f) => f.status === 'em_andamento') || [...lt.fases].reverse().find((f) => f.status === 'concluida');
+  const atual = lt.fases.find((f) => f.status === 'em_andamento' || f.status === 'em_revisao') || [...lt.fases].reverse().find((f) => f.status === 'concluida');
   const cont: Record<string, number> = {};
   lt.fase2.forEach((q) => { const k = q.situacao || 'aberta'; cont[k] = (cont[k] || 0) + 1; });
   const filaF3 = lt.fase2.filter((q) => (q.situacao || 'aberta') === 'aberta' && q.f3).length;
   // Fase 3: inventário (fase3/inventario.json), contado pelo estado final dos itens trabalhados na F3
   const f3 = lt.fases.find((f) => f.id === 'F3');
   const f3Itens = lt.fase3 || [];
-  const f3Ativos = f3Itens.filter((i) => i.estado_inicial_f3 !== 'respondida');
+  const f3Ativos = f3Itens.filter((i) => i.estado_inicial_f3 !== 'respondida' || i.reaberta_na_revisao);
   const f3Bloq = f3Ativos.filter((i) => /bloquead/.test(i.estado_final));
   const nF3 = (re: RegExp) => f3Ativos.filter((i) => re.test(i.estado_final)).length;
-  const f3Partes = [[nF3(/^respondida$/), 'respondida', 'respondidas'], [nF3(/parcialmente/), 'em parte', 'em parte'], [nF3(/identific/), 'não identificável com estes dados', 'não identificáveis com estes dados']] as const;
+  const f3Partes = [[nF3(/^respondida$/), 'respondida', 'respondidas'], [nF3(/parcialmente/), 'em parte', 'em parte'], [nF3(/identific/), 'não identificável com estes dados', 'não identificáveis com estes dados'], [nF3(/decidível/), 'não decidível com os modelos disponíveis', 'não decidíveis com os modelos disponíveis'], [nF3(/não executada/), 'não executada', 'não executadas']] as const;
   return (
     <section id="estado" className="container mt-12 md:mt-16 scroll-mt-20">
       <div className="cartao p-5 md:p-6">
@@ -52,7 +52,7 @@ function EstadoPesquisa() {
           ))}
         </ol>
         {lt.fase2.length > 0 && <p className="mt-3 text-[14px] text-muted"><b className="font-medium text-text">Fase 2:</b> {lt.fase2.length - (cont.aberta || 0)} perguntas tratadas · {Object.keys(F2_ROT).filter((k) => k !== 'aberta' && cont[k]).map((k) => `${cont[k]} ${cont[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2_ROT[k] + 's' : F2_ROT[k]}`).join(' · ')}{cont.aberta ? (filaF3 === cont.aberta ? ` · ${cont.aberta} novas levadas à Fase 3` : ` · ${cont.aberta} novas na fila`) : ''}.</p>}
-        {f3Itens.length > 0 && <p className="mt-1.5 text-[14px] text-muted"><b className="font-medium text-text">Fase 3{f3?.versao ? ` (${f3.versao})` : ''}:</b> {f3Itens.length} itens inventariados · {f3Partes.filter(([n]) => n).map(([n, um, varios]) => `${n} ${n > 1 ? varios : um}`).join(' · ')}{f3Bloq.length ? <> · <b className="font-medium text-text">{f3Bloq.length} {f3Bloq.length > 1 ? 'pendências bloqueadas' : 'pendência bloqueada'} por fonte externa</b> ({f3Bloq.map((i) => i.id).join(', ')})</> : null}{f3Itens.length > f3Ativos.length ? ` · ${f3Itens.length - f3Ativos.length} da Fase 2, não reabertas` : ''}.</p>}
+        {f3Itens.length > 0 && <p className="mt-1.5 text-[14px] text-muted"><b className="font-medium text-text">Fase 3{f3?.versao ? ` (${f3.versao})` : ''}:</b> {f3Itens.length} itens inventariados · {f3Partes.filter(([n]) => n).map(([n, um, varios]) => `${n} ${n > 1 ? varios : um}`).join(' · ')}{f3Bloq.length ? <> · <b className="font-medium text-text">{f3Bloq.length} {f3Bloq.length > 1 ? 'pendências bloqueadas' : 'pendência bloqueada'} por fonte externa</b> ({f3Bloq.map((i) => i.id).join(', ')})</> : null}{f3Itens.length > f3Ativos.length ? ` · ${f3Itens.length - f3Ativos.length} da Fase 2, não reabertas` : ''}{f3?.status === 'em_revisao' ? ' · em revisão depois da auditoria; os estados podem mudar' : ''}.</p>}
         {(lt.conclusoes_recentes || []).length > 0 && (
           <div className="mt-5">
             <div className="text-[11px] font-mono uppercase tracking-wider text-muted">{f3Itens.length ? 'Conclusões das Fases 2 e 3' : 'Conclusões da Fase 2'}</div>

@@ -109,3 +109,83 @@ Em 2022 a base tem 1.194 a 1.292 seções que o DataUrnas não traz (334 mil vot
 **Nulos de ordem com hora de fechamento e tamanho (C1, MET).** Condicionando em UF × faixa de 30 min do encerramento (D) e também no tercil de eleitores aptos (F), o η² da ordem de chegada sobe pouco (2026, 1º turno: 0,34 → 0,36; 2022, 2º turno: 0,24 → 0,25). Ainda rejeitam a fração da última inversão (S2) em todos os anos e turnos, inclusive o 2º turno de 2022, e o maior vale (S3) em 2026 (p ≈ 0,01). Como o ano de referência também é rejeitado, os nulos não discriminam. C1 passa a **não identificável com estes dados**; T10 e T11 ficam como descrições, não como testes.
 
 **Estado final da fila.** Respondidas: P1, P2, P5, P7, P8, P10, P12 a P19, R1-20. Respondidas parcialmente: P3 (falta a dimensão de versão), P9, P20, C2, M1, Z1, MET. Não identificável com estes dados: C1. Bloqueadas por evidência externa: P4, P6, P11, P21 (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos e boletins de terceiros com dados primários). Nada disso muda a conclusão do estudo: nenhum teste chegou às classes E ou F.
+
+## Revisão da F3 (28/10/2026): auditoria e investigações I1 a I3
+A F3 foi encerrada e congelada como V1.2 antes de uma auditoria científica. A auditoria ([`fase3/AUDITORIA_F3.md`](fase3/AUDITORIA_F3.md)) encontrou estados acima da evidência e falhas de registro. Com aprovação do responsável, a fase voltou a **em revisão**. A V1.2 e a tag `v1.2` ficam preservadas, e os desvios do congelamento estão em [`rodadas/rodada-4-desvio.md`](rodadas/rodada-4-desvio.md). As seções anteriores deste relatório ficam como estavam; o que a revisão mudou está aqui e no inventário (campo `historico` de cada item).
+
+**Orçamento:**
+- 3 investigações, cada uma com um script principal (`fase3/rev_i1_poder.py`, `rev_i2_zeros.py`, `rev_i3_espacial.py`) e uma etapa de validação ou sensibilidade.
+- Nenhuma correção nem repetição por falha técnica, nenhum subagente, nenhum download.
+- Pré-registro escrito antes de rodar: [`fase3/PREREG_REVISAO.md`](fase3/PREREG_REVISAO.md).
+- Desvio menor: o I1 grava um arquivo por ano (`rev_i1_2026.json`, `rev_i1_2022.json`), e não um só.
+- Detalhe de implementação não previsto no pré-registro: no M2, municípios maiores que o alvo de 1% são pulados, o que exclui São Paulo capital.
+
+### Correções de registro
+- **R1-20:** o script agora confere o commit 12f0433 do DataUrnas-BR e os SHA-256 das entradas, lendo de uma pasta permanente. A reexecução deu resultado idêntico. A falta de registro na execução original está documentada em `fase3/externos/DATAURNAS.md`, sem reconstruir nada que não pudesse ser verificado.
+- **Estados revistos com histórico:** P9, P14, P18, P2, R1-20, C1 (agora "não decidível com os modelos disponíveis"), Z1, P19, P20 e MET.
+- **Itens novos:** A173 (173 arquivos de 2022 apontados como ausentes) e BU1 (seção de 2022 com BU não lido), ambos não executados.
+- **`fase2/respostas.json`:** atualizado, com histórico.
+- **Registro de testes:** provas em T13, T02, E02, T40, T41, T42 e T43, e textos vivos de T41 e T42 corrigidos.
+
+### I1. Poder contra trocas concentradas
+Mundos legítimos: binomial em torno dos dados reais, com 20 mundos de calibração e 30 de avaliação separados. Cada mecanismo afeta cerca de 1% das seções (4.9 mil em 2026). Taxa de detecção do conjunto (T13 + E02) com limiar calibrado, em 2026, 2º turno:
+
+| Mecanismo | 2% dos válidos (~25 mil votos) | 5% (~62 mil) | 10% (~123 mil) |
+|---|---|---|---|
+| Disperso (seções sorteadas) | 1/30 nos dois sentidos | 2/30 e 0/30 | 30/30 nos dois sentidos (pelo T02/T1) |
+| Locais de votação inteiros | 2/30 e 1/30 | 30/30 (pelo E02) | 30/30 |
+| Municípios inteiros | 2/30 e 1/30 | 30/30 (pelo E02) | 30/30 |
+| Região contígua | 4/30 e 2/30 | 29/30 e 27/30 | 30/30 |
+
+- **Falso alarme:** em 2026, o conjunto dá 0/30 com o limiar ancorado no real e 1/30 com o calibrado (IC 95% de 0,6% a 17%).
+- **Validação em 2022:** o mesmo padrão aparece com o limiar calibrado (falso alarme 3/30). O limiar ancorado no real dá 7/30 falsos alarmes, e com ele a troca dispersa de 10% a favor de Lula é vista só em 7/30, ou seja, no nível do falso alarme. Esse limiar é inadequado para 2022.
+- **T02 e T13 contra troca concentrada:** com a mediana municipal como referência, o T02 não vê troca de 10% aplicada a município ou região inteiros (0/30 no lado afetado), porque a mediana absorve o deslocamento. A regra do T13 sozinha vê essa troca em só 1/30 a 19/30. Quem detecta as trocas concentradas é o E02 (referência estadual), com ρ reestimado em cada mundo.
+- **Correção do P18:** os falsos alarmes do limiar calibrado tinham sido medidos nos mesmos mundos da calibração, logo eram 0 por construção.
+
+**Leitura pelo critério pré-registrado, em 2026:**
+- **Detectáveis:** troca dispersa de 10%; locais e municípios inteiros a 5% e 10%; região a 10%; região a 5% no sentido para Lula (29/30).
+- **Detecção incerta:** região a 5% no sentido contrário (27/30, limite inferior do IC de 74%).
+- **Não detectáveis:** toda troca de 2%, exceto região contígua no sentido para Lula (4/30, incerta); troca dispersa de 5%.
+
+**Conclusão permitida:** as conclusões anteriores sobre ausência de sinal valem só acima desses tamanhos e para esses mecanismos. Não excluem trocas de até ~25 mil votos em 1% das seções, trocas dispersas de ~62 mil votos, nem mecanismos que preservem as medianas municipal e estadual. Também não alcançam alterações anteriores à geração do boletim.
+
+### I2. Zeros de votos com modelo calibrado
+O modelo é uma beta-binomial com média pelo local de votação sem a própria seção, encolhida para o município, e ρ ajustado sem a célula zero. **Não passou na calibração pré-registrada**:
+- **Controles:** Lula 2026 tem 8 zeros contra 0,4 esperados no 1º turno e 4 contra 0,2 no 2º. Os candidatos menores, com dezenas de milhares de zeros, ficam 10% a 22% abaixo do esperado, fora do intervalo.
+- **Sensibilidade (prior pela zona):** também falha.
+
+Pelo critério fixado antes, o resultado confirmatório é **não interpretável**: não se conclui excesso nem ausência de excesso. Descritivo, sem valor confirmatório:
+- **Cauda baixa:** o excesso dos finalistas sobre o modelo não é só no zero. Em Flávio 2026, 1º turno, as seções com 0, 1, 2 e 3 a 5 votos ficam cerca de 20, 12, 7 e 4 vezes acima do modelo; em Bolsonaro 2022, 14, 8, 5 e 3 vezes. O zero faz parte de uma cauda baixa mais pesada que o modelo, com o mesmo formato nos dois anos.
+- **Comparação 2026 × 2022:** a razão das razões vai de 1,35 a 1,46, com IC que inclui 1, pelo prior de local, e de 2,4 a 3,4 pelo prior de zona. Depende do modelo, então também não é interpretável.
+- **Votos:** os esperados nessas seções vão de ~44 a ~4.800 votos, conforme o modelo.
+
+### I3. Locais de votação com nulo espacial
+Cada local foi comparado com a própria zona, sem o local, com escala robusta por faixa de tamanho e BH.
+
+| Ano | Locais significativos (nulo espacial) | Pró-Lula / pró-adversário | Correção só por ρ (P9) | Coincidentes |
+|---|---|---|---|---|
+| 2026 | 61 de 59.885 | 36 / 25 | 55 (28 / 27) | 28 |
+| 2022 | 84 de 56.164 | 46 / 38 | 102 (30 / 72) | 41 |
+
+- **Sensibilidade (município como referência):** 63 locais em 2026 e 80 em 2022.
+- **O que resiste:** a ordem de grandeza, cerca de 0,1% dos locais, e o equilíbrio de sentidos em 2026.
+- **O que não resiste:** a lista específica de locais e o sentido de 2022, que passa de 72 para 38 pró-adversário.
+- **São Paulo capital, 2022:** nenhum dos 15 locais com seções atípicas resiste.
+  - Contra a própria zona, os z vão de −1,3 a 2,9, e nenhum é significativo.
+  - Sem as seções que os selecionaram, ficam entre −1,7 e 1,5.
+  - O local 251/1074, com 10 das 29 seções, fica no nível da sua zona (z −0,3).
+  - O deslocamento é da região (zonas 251, 259 e vizinhas), não de locais isolados. A causa continua desconhecida.
+  - Em 2026, 1 dos 15 tem z acima de 2 contra a zona (2,03), e nenhum contra o município.
+
+### Pendências mantidas
+- **Fonte externa:** P3 (versões de publicação; 2º turno de 2026), P4 (curva histórica), P6 e P21 (boletins de terceiros), P11 (âncora AC URNA v2 e AC RAIZ UE).
+- **Investigação incompleta:**
+  - P9: nulo geográfico no nível do local e causa dos locais.
+  - P14 e P20: causa do deslocamento regional em São Paulo.
+  - P18 e P2: mecanismos não testados e coberturas diferentes de 1%.
+  - Z1: modelo de cauda baixa validado.
+  - C1 e C2: viradas, periodicidade, mudanças de regime e diferenças entre 2022 e 2026, que exigem snapshots ou um modelo de chegada adequado.
+  - M1: nada novo.
+- **Não executados:** A173 e BU1.
+
+Nenhuma dessas pendências foi declarada refutada ou comprovada pela falha de um modelo. A F3 não está concluída.

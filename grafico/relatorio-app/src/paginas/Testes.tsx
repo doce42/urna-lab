@@ -121,7 +121,7 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
           <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Resultado</div>
           <p className="text-[15px] font-medium leading-snug mt-0.5">{proc ? 'Ainda sem resultado desta versão.' : s || 'Sem resultado registrado.'}</p>
         </div>
-        {f2 && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><span className="inline-flex align-middle mr-1.5"><SeloProva r={f2.resultado} /></span><b className="font-medium text-text">Fase {f2.rodada - 1} ({vRod(t, f2.rodada)}):</b> {f2.texto}</p>}
+        {f2 && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><span className="inline-flex align-middle mr-1.5"><SeloProva r={f2.resultado} /></span><b className="font-medium text-text">{(t.versoes || []).some((v) => v.rodada === f2.rodada) ? `Fase ${f2.rodada - 1} (${vRod(t, f2.rodada)})` : 'Revisão em curso (depois da última versão congelada)'}:</b> {f2.texto}</p>}
         {t.impacto_votos && !proc && <p className="mt-2 text-[13.5px] text-muted leading-snug line-clamp-3"><b className="font-medium text-text">Em votos:</b> {t.impacto_votos}</p>}
       </a>
       <div className="px-5 pb-5 relative">

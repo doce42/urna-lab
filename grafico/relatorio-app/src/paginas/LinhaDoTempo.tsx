@@ -12,6 +12,7 @@ import { SeloProva, SeloCausa, CAUSA_ROT, PROVA_ROT } from '@/ui/Historico';
 const ST: Record<string, { rot: string; cor: string; Ic: typeof Check }> = {
   concluida: { rot: 'concluída', cor: 'var(--ok)', Ic: Check },
   em_andamento: { rot: 'em andamento', cor: 'var(--accent)', Ic: CircleDot },
+  em_revisao: { rot: 'em revisão', cor: 'var(--warn)', Ic: Clock },
   proxima: { rot: 'próxima', cor: 'var(--accent)', Ic: CircleDot },
   pendente: { rot: 'pendente', cor: 'var(--warn)', Ic: Clock },
   planejada: { rot: 'planejada', cor: 'var(--text-subtle)', Ic: Circle },
@@ -32,6 +33,8 @@ const F3: Record<string, { rot: string; cor: string }> = {
   respondida: { rot: 'respondida', cor: 'var(--ok)' }, 'respondida (revisada pelo P18)': { rot: 'respondida (revisada)', cor: 'var(--ok)' },
   'respondida parcialmente': { rot: 'em parte', cor: 'var(--accent)' }, 'não identificável com estes dados': { rot: 'não identificável', cor: 'var(--text-subtle)' },
   'bloqueada por evidência externa': { rot: 'bloqueada (fonte externa)', cor: 'var(--warn)' },
+  'não executada nesta sessão': { rot: 'não executada', cor: 'var(--erro)' }, 'em revisão': { rot: 'em revisão', cor: 'var(--warn)' },
+  'não decidível com os modelos disponíveis': { rot: 'não decidível', cor: 'var(--text-subtle)' },
 };
 const f3st = (e: string) => F3[e] || { rot: e, cor: 'var(--text-subtle)' };
 const PRIO: Record<string, string> = { alta: 'alta', media_alta: 'média/alta', media: 'média', informativo: 'informativo', pergunta: 'pergunta' };
@@ -85,15 +88,15 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
   const v0 = lt.rodadas[0];
   const fase3 = lt.fase3 || [];
   const f3 = lt.fases.find((f) => f.id === 'F3');
-  const f3Ativos = fase3.filter((i) => i.estado_inicial_f3 !== 'respondida');
-  const f3Herdados = fase3.filter((i) => i.estado_inicial_f3 === 'respondida');
+  const f3Ativos = fase3.filter((i) => i.estado_inicial_f3 !== 'respondida' || i.reaberta_na_revisao);
+  const f3Herdados = fase3.filter((i) => i.estado_inicial_f3 === 'respondida' && !i.reaberta_na_revisao);
   const contF3: Record<string, number> = {};
   f3Ativos.forEach((i) => { const k = f3st(i.estado_final).rot; contF3[k] = (contF3[k] || 0) + 1; });
   const corF3 = (rot: string) => Object.values(F3).find((x) => x.rot === rot)?.cor || 'var(--text-subtle)';
   const bloqueadas = f3Ativos.filter((i) => /bloquead/.test(i.estado_final));
   const pergF2 = (id: string) => lt.fase2.find((q) => q.id === id)?.pergunta;
   const concluidas = lt.fases.filter((f) => /^F\d+$/.test(f.id) && f.status === 'concluida' && f.id !== 'F1');
-  const emAndamento = lt.fases.find((f) => f.status === 'em_andamento');
+  const emAndamento = lt.fases.find((f) => f.status === 'em_andamento' || f.status === 'em_revisao');
 
   return (
     <div className="container pb-24">
@@ -211,7 +214,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </Sec>
 
       {/* fase 3 */}
-      {fase3.length > 0 && <Sec id="fase3" eyebrow={`Fase 3 · ${f3?.versao || ''} · ${ST[f3?.status || 'em_andamento']?.rot || ''}`} titulo="O que a Fase 3 resolveu" lead={`${fase3.length} itens inventariados: as pendências da Fase 2, a fila P18 a P21 e perguntas novas sobre curvas, zeros e reconciliação externa. Cada item tem o estado final e a resposta, ou o motivo de não ter resposta.`}>
+      {fase3.length > 0 && <Sec id="fase3" eyebrow={`Fase 3 · ${f3?.versao || ''} · ${ST[f3?.status || 'em_andamento']?.rot || ''}`} titulo={f3?.status === 'em_revisao' ? 'Fase 3 em revisão: o estado de cada item' : 'O que a Fase 3 resolveu'} lead={`${fase3.length} itens inventariados: as pendências da Fase 2, a fila P18 a P21 e perguntas novas sobre curvas, zeros e reconciliação externa. Cada item tem o estado final e a resposta, ou o motivo de não ter resposta.`}>
         <div className="mb-3 flex flex-wrap gap-1.5">{Object.keys(contF3).map((k) => <Selo key={k} cor={corF3(k)}>{contF3[k]} {k}</Selo>)}<Selo cor="var(--text-subtle)">{f3Herdados.length} da Fase 2, não reabertas</Selo></div>
         {bloqueadas.length > 0 && <div className="mb-3 rounded-lg border-l-4 p-3 md:p-4 text-[14px] text-muted" style={{ borderColor: 'var(--warn)', background: 'var(--warn-soft)' }}><b className="font-medium text-text">{bloqueadas.length} pendências bloqueadas por fonte externa ({bloqueadas.map((i) => i.id).join(', ')}).</b> Só andam com dado que o estudo não tem: {[...new Set(bloqueadas.map((i) => i.proxima_evidencia.replace(/\.$/, '')))].join('; ')}.</div>}
         <ul className="cartao divide-y divide-border">
@@ -224,6 +227,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-start gap-x-3 gap-y-1.5"><span className="text-[15px] text-text font-medium leading-snug flex-1 min-w-[14rem]">{i.pergunta}</span><Selo cor={st.cor}>{st.rot}</Selo></div>
                     <p className="mt-1.5 text-[14.5px] text-muted leading-relaxed">{i.resposta_ou_motivo}</p>
+                    {i.historico?.map((h) => <div key={h.etapa} className="mt-1.5 text-[13px] text-subtle"><b className="font-medium text-muted">Antes da revisão ({h.etapa}):</b> {h.estado}{i.revisao ? <> · motivo da mudança: {i.revisao}</> : null}</div>)}
                     {i.alcance_em_votos && i.alcance_em_votos !== 'n/a' && <div className="mt-1.5 text-[13px]"><b className="font-medium text-text">Em votos:</b> <span className="text-muted">{i.alcance_em_votos}</span></div>}
                     <details className="mt-1.5 group/q">
                       <summary className="cursor-pointer list-none text-[12.5px] text-subtle hover:text-text"><span className="group-open/q:hidden">detalhe técnico</span><span className="hidden group-open/q:inline">recolher</span></summary>
