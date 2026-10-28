@@ -11,6 +11,7 @@ import { Testes } from '@/paginas/Testes';
 import { Mapas } from '@/paginas/Mapas';
 import { Docs } from '@/paginas/Docs';
 import { LinhaDoTempo } from '@/paginas/LinhaDoTempo';
+import { Respostas } from '@/paginas/Respostas';
 
 export default function App() {
   const rota = useRota();
@@ -38,7 +39,7 @@ export default function App() {
     return () => { vivo = false; };
   }, [tentativa]);
   useEffect(() => { if (!rota.hash.includes('/')) scrollTo({ top: 0 }); }, [rota.pagina]);
-  useEffect(() => { document.title = { home: 'urna lab · apuração presidencial 2026, verificada com dados oficiais', testes: 'Testes · urna lab', mapas: 'Mapas · urna lab', linha: 'Evolução da pesquisa · urna lab', docs: 'Docs e ajuda · urna lab' }[rota.pagina]; }, [rota.pagina]);
+  useEffect(() => { document.title = { home: 'urna lab · apuração presidencial 2026, verificada com dados oficiais', testes: 'Testes · urna lab', mapas: 'Mapas · urna lab', linha: 'Evolução da pesquisa · urna lab', respostas: 'Perguntas e respostas científicas · urna lab', docs: 'Docs e ajuda · urna lab' }[rota.pagina]; }, [rota.pagina]);
   const pronto = !!reg && !erro && (rota.pagina !== 'home' || progresso?.etapa === 'Montando');
   return (
     <>
@@ -49,7 +50,7 @@ export default function App() {
         {reg && (
           rota.pagina === 'home' ? <HomeCarregada reg={reg} meta={meta} /> :
           rota.pagina === 'testes' ? <Testes reg={reg} meta={meta} partes={rota.partes} /> :
-          rota.pagina === 'mapas' ? <Mapas /> : rota.pagina === 'linha' ? <LinhaDoTempo reg={reg} /> : <Docs partes={rota.partes} meta={meta} />
+          rota.pagina === 'mapas' ? <Mapas /> : rota.pagina === 'linha' ? <LinhaDoTempo reg={reg} /> : rota.pagina === 'respostas' ? <Respostas /> : <Docs partes={rota.partes} meta={meta} />
         )}
       </main>
       <Rodape meta={meta} />

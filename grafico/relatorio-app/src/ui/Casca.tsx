@@ -9,7 +9,7 @@ import { href, type Rota } from '@/lib/rotas';
 import type { Meta } from '@/lib/tipos';
 
 const ITENS: { rota: Rota['pagina']; rotulo: string; h: string }[] = [
-  { rota: 'home', rotulo: 'Início', h: '/' }, { rota: 'testes', rotulo: 'Testes', h: '/testes' }, { rota: 'mapas', rotulo: 'Mapas', h: '/mapas' }, { rota: 'linha', rotulo: 'Evolução', h: '/linha-do-tempo' }, { rota: 'docs', rotulo: 'Docs e ajuda', h: '/docs' },
+  { rota: 'home', rotulo: 'Início', h: '/' }, { rota: 'respostas', rotulo: 'Respostas', h: '/respostas' }, { rota: 'testes', rotulo: 'Testes', h: '/testes' }, { rota: 'mapas', rotulo: 'Mapas', h: '/mapas' }, { rota: 'linha', rotulo: 'Evolução', h: '/linha-do-tempo' }, { rota: 'docs', rotulo: 'Docs e ajuda', h: '/docs' },
 ];
 export function Cabecalho({ rota, meta }: { rota: Rota; meta: Meta | null }) {
   const { efetivo, alternar } = useTema();

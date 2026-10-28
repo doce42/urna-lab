@@ -153,6 +153,9 @@ Desde 19h10, o consumo é medido a cada 30 s por `scripts/monitorar.sh` → `dad
 | P18 | Falso alarme 0/30 no limiar calibrado | Medido nos mesmos mundos usados para calibrar | I1 com mundos separados |
 | I1 | "Detecção" de troca concentrada | Regra contava alarme em qualquer sentido e de T2/T4; a 10% concentrado o E02 também acusa o lado oposto | A2: regra no sentido correto |
 | I1 | Poder "em municípios inteiros" | As 5 maiores cidades estavam fora do sorteio; nelas a troca não é detectada com confiabilidade | A2 (M2G) |
+| 2022, certificado × log | "Certificado ≠ urna do log" como sinal de troca de urna | Ocorre em 59% das seções de 2022: não indica contingência nesse ano | Retirado como apoio (auditoria adversarial) |
+| 2022, log × comparecimento | Não conferido em 2022 | 70 e 36 seções com log menor que o comparecimento (5.287 votos sem registro no log), 34 e 13 com log maior | Registrado como achado objetivo; classificação na fila |
+| 2026, Sistema de Apuração | Arquivos `-sa.vsc` não lidos pelo leitor de 2026 | Hash e assinatura das seções do Sistema de Apuração de 2026 não conferidos | Na fila |
 | T28 2022 | Denominador "urnas" 472.024 | Inclui 148 seções do Sistema de Apuração sem log | A4: denominador efetivo 471.851 e 471.979 |
 | R1-20 | Script lia o DataUrnas-BR de pasta temporária, sem commit nem hash | Rastreabilidade incompleta | Commit 12f0433 e SHA-256 conferidos no script; pasta permanente |
 
@@ -248,3 +251,15 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
   - **A1:** as 367 seções de 2022 sem par no DataUrnas-BR estão explicadas (27 do Sistema de Apuração, 333 numa lacuna do terceiro na Bahia, 7 fora do banco dele), e os boletins conferem.
   - **A2:** a detecção no sentido correto confirma o I1, exceto a região a 5%. Grandes municípios inteiros ficam fora do alcance da bateria.
   - **A4:** denominador do T28 de 2022 corrigido.
+- **Auditoria adversarial** (`fase3/RELATORIO_ADVERSARIAL.md`): compatibilidade com o log não é verificação independente.
+  - **H3 nacional contrariada:** os totais divulgados ao vivo (39 capturas do Internet Archive) batem com a base publicada.
+  - **T36 e contingências:** sem deslocamento de votos.
+  - **Explicações rebaixadas:** "explicado" passa a "compatível".
+  - **2022:** "certificado ≠ log" retirado como indício. 153 seções-turno com log diferente do comparecimento, nunca vistas antes.
+  - **Leitura de testes:** T01, T14 a T17b, T32, R1, SA22 e outros passam a ser lidos como consistência interna.
+- **Missão de resolução** (`fase3/RESPOSTAS_F3.md`, `fase3/respostas_f3.json`, página "Perguntas e respostas científicas" no site): respostas explícitas para 26 perguntas e para os 33 itens do inventário.
+  - **R1, integridade:** tabela = bu.dat = RDV em 2022 e 2026, como consistência interna.
+  - **R2, curva divulgada:** o Internet Archive confirma em 39 instantes a base publicada.
+  - **R3, zeros:** sem excesso agregado fora da amostra; o critério formal não foi cumprido.
+  - **R4, zona 251:** o desvio persiste depois do perfil do eleitorado.
+  - Desvios em `fase3/PREREG_RESPOSTAS.md`.

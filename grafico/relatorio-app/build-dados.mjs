@@ -93,6 +93,9 @@ gravar('registro.json', { descricao: registro.descricao, modelos_nulos: registro
     const pos = caminho.findIndex((e) => e.status === 'disponivel' || e.status === 'vivo');
     caminho.splice(pos < 0 ? caminho.length : pos, 0, { id: f.id.toLowerCase(), titulo: f.titulo, status: f.status, versao: f.versao || f.id, texto: f.resumo.split(/(?<=\.)\s/)[0], link: '#fase' + f.id.slice(1) });
   }
+  // Perguntas e respostas científicas (fase3/f3_respostas.py)
+  const rf3 = path.join(RAIZ, 'fase3', 'respostas_f3.json');
+  if (fs.existsSync(rf3)) gravar('respostas.json', ler(rf3));
   gravar('linha-do-tempo.json', { descricao: lt.descricao, situacao_atual: lt.situacao_atual || null, caminho, fases: lt.fases, marcos: lt.marcos, conclusoes_recentes: lt.conclusoes_recentes || [], rodadas, revisoes, fase2, fase3, github: 'https://github.com/doce42/urna-lab' });
 }
 
@@ -228,6 +231,8 @@ const DOCS = [
   ['fase2', 'FASE2.md', 'Fase 2', 'Perguntas registradas antes dos resultados, com a hipótese concorrente que cada uma distingue.'],
   ['fase3', 'RELATORIO_F3.md', 'Fase 3', 'Pendências, curvas e zeros: o que foi feito, o estado final de cada item e o que ficou bloqueado.'],
   ['fase3-auditoria', 'fase3/AUDITORIA_F3.md', 'Auditoria da Fase 3', 'Revisão crítica da F3: o que foi executado, documentado, publicado e validado, e o que excedia a evidência.'],
+  ['fase3-respostas', 'fase3/RESPOSTAS_F3.md', 'Respostas científicas da Fase 3', 'Resposta explícita por pergunta: integridade, curvas, zeros, mudança entre turnos e os 33 itens do inventário.'],
+  ['fase3-adversarial', 'fase3/RELATORIO_ADVERSARIAL.md', 'Auditoria adversarial', 'Explicações baseadas em registros oficiais confrontadas com hipóteses concorrentes; o que resistiu, o que enfraqueceu e o que depende só da confiança nos registros.'],
   ['fase3-verificacoes-finais', 'fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md', 'Verificações finais da Fase 3', 'A1 (seções de 2022 sem par), A2 (poder no sentido correto e grandes municípios), A4 (universo do T28) e parecer.'],
   ['fase3-parecer', 'fase3/PARECER_CONSOLIDACAO_F3.md', 'Parecer de consolidação da Fase 3', 'Impacto do SA22, matriz por pergunta, pendências por natureza e recomendação.'],
   ['fase3-aceitacao', 'fase3/RELATORIO_ACEITACAO_F3.md', 'Aceitação da Fase 3', 'Verificação dos 173 arquivos e do BU não lido, revisão de I1 a I3, matriz completa e parecer.'],

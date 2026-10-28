@@ -1,14 +1,14 @@
 // Roteamento por hash: #/ , #/testes , #/testes/T02 , #/mapas , #/linha-do-tempo , #/docs/metodologia/secao
 import { useEffect, useState } from 'react';
 
-export type Rota = { pagina: 'home' | 'testes' | 'mapas' | 'docs' | 'linha'; partes: string[]; hash: string; query: string };
+export type Rota = { pagina: 'home' | 'testes' | 'mapas' | 'docs' | 'linha' | 'respostas'; partes: string[]; hash: string; query: string };
 
 export function lerRota(): Rota {
   const h = location.hash.replace(/^#\/?/, '');
   const [caminho, query = ''] = h.split('?');
   const partes = caminho.split('/').filter(Boolean).map(decodeURIComponent);
   const p = partes[0] || '';
-  const pagina: Rota['pagina'] = p === 'testes' ? 'testes' : p === 'mapas' ? 'mapas' : p === 'docs' ? 'docs' : p === 'linha-do-tempo' ? 'linha' : 'home';
+  const pagina: Rota['pagina'] = p === 'testes' ? 'testes' : p === 'mapas' ? 'mapas' : p === 'docs' ? 'docs' : p === 'linha-do-tempo' ? 'linha' : p === 'respostas' ? 'respostas' : 'home';
   return { pagina, partes: partes.slice(1), hash: h, query };
 }
 export function useRota() {

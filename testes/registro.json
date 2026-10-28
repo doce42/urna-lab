@@ -42,6 +42,14 @@
      "alvo": "metodo",
      "resultado": "resistiu",
      "descricao": "A versão da rodada 1 só comparava a soma nacional por votável e o texto dizia 'voto a voto'. Refeito seção a seção: nenhuma diferença."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "R1: integridade 2022 e 2026",
+     "alvo": "evidencia",
+     "descricao": "Tabela = bu.dat em 471.907 e 471.980 seções de 2022 e 499.198 e 499.201 de 2026 (0 diferenças); RDV = tabela em todas as lidas (duas correções do comparador declaradas); releitura direta 100/100. Consistência interna (mesma urna e mesma chave), não verificação independente.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -1591,6 +1599,14 @@
      "alvo": "evidencia",
      "resultado": "resistiu",
      "descricao": "Nas 200 seções do 1º turno: tamanho, SHA-512 e assinatura de BU, log, RDV e imagem do BU conferem com a lista assinada em 200; lista assinada válida em 200; RDV = BU em 200 (nulo por suspensão somado); imagem = BU em 200; BU na Web = BU em 200; comparecimento do site = BU em 200; log = comparecimento em 200. Na primeira execução 14 seções acusaram diferença de imagem por erro do comparador (campo ausente contra zero); corrigido e repetido uma vez. Amostra aleatória de 0,04% das seções, do 1º turno."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Auditoria adversarial: log × comparecimento em 2022",
+     "alvo": "evidencia",
+     "descricao": "Nunca examinado em 2022: em 70 seções (1º turno) e 36 (2º) o log publicado registra menos votos que o comparecimento do boletim (3.618 e 1.669 votos sem registro no log), e em 34 e 13 registra mais. Exemplo: RS 88013/2/199, log da urna 2215062 com 196 votos (último às 13:53) contra 288 no boletim assinado pela urna 2228407. Divergência objetiva de cobertura; causa não determinada; exploratório: sem deslocamento de votos nesses grupos.",
+     "resultado": "em_andamento"
     }
    ],
    "versoes": [
@@ -1716,6 +1732,14 @@
      "alvo": "evidencia",
      "resultado": "resistiu",
      "descricao": "Nas 200 seções do 1º turno: tamanho, SHA-512 e assinatura de BU, log, RDV e imagem do BU conferem com a lista assinada em 200; lista assinada válida em 200; RDV = BU em 200 (nulo por suspensão somado); imagem = BU em 200; BU na Web = BU em 200; comparecimento do site = BU em 200; log = comparecimento em 200. Na primeira execução 14 seções acusaram diferença de imagem por erro do comparador (campo ausente contra zero); corrigido e repetido uma vez. Amostra aleatória de 0,04% das seções, do 1º turno."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Auditoria adversarial: imagem do boletim",
+     "alvo": "evidencia",
+     "descricao": "RS 88013/2/199 (2022): imagem do boletim assinada com 196 votos contra boletim digital e tabela com 288; divergência objetiva preservada, troca de urna compatível e não verificada. MG 50075/47/41 (2026): imagem da urna 258, imagem do Sistema de Apuração 278 = tabela; compatível com contingência registrada; a assinatura dos arquivos do Sistema de Apuração de 2026 não foi conferida pelo leitor.",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -2214,6 +2238,14 @@
      "alvo": "rastreabilidade",
      "resultado": "ajustado",
      "descricao": "Script e comando registrados."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Auditoria adversarial: independência das fontes",
+     "alvo": "interpretacao",
+     "descricao": "BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; a igualdade entre eles é consistência interna, não verificação independente do que foi votado. Evidência de custódia independente (R2): os totais nacionais divulgados ao vivo, capturados pelo Internet Archive em 39 instantes, batem com a base publicada (diferença ≤ 0,083 pp), o que contraria alteração posterior que mude esses totais; não distingue comprometimento anterior à geração (H2).",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -3868,6 +3900,14 @@
      "alvo": "rastreabilidade",
      "resultado": "ajustado",
      "descricao": "Script e comando registrados."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Auditoria adversarial: contingências",
+     "alvo": "interpretacao",
+     "descricao": "Contingências (troca de urna, RED, Sistema de Apuração) são registradas pelo próprio sistema: compatíveis, não verificadas. 2026: 1.448 seções sem deslocamento da virada (−0,039 z, p = 0,16). Em 2022, 'certificado ≠ urna do log' ocorre em 59% das seções e não indica troca de urna; inferências baseadas nisso perdem apoio.",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -4882,6 +4922,14 @@
      "alvo": "metodo",
      "descricao": "Nos mesmos mundos, o E02 completo e o simples dão o mesmo resultado nos mecanismos do I1 (locais e municípios de até ~5 mil seções: 30/30 a 5%), mas o completo detecta menos quando a troca cobre um município grande inteiro (a 5%: 0 a 1 de 30 contra 13 a 21 de 30 do simples), porque a regressão por UF e o tamanho do município absorvem o deslocamento. A 10% concentrado, alarmes no sentido oposto em 10% a 80% das réplicas: o sinal do E02 não identifica sozinho o beneficiário.",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "R4: zona 251 com perfil do eleitorado",
+     "alvo": "evidencia",
+     "descricao": "O desvio da zona 251 de SP (2022) persiste depois de controlar escolaridade, idade, sexo e estado civil por seção: 0,58 → 0,42 z (IC 95% 0,23 a 0,62; 26% explicado). Zona 259 explicada em parte. Causa não demonstrada.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -5203,6 +5251,14 @@
      "alvo": "interpretacao",
      "resultado": "ajustado",
      "descricao": "'Explicado' desdobrado em graus (demonstrado, declarado, compatível, inferido); a maioria é inferência."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Auditoria adversarial: explicações por log e declaração",
+     "alvo": "interpretacao",
+     "descricao": "As explicações do T36 (declarado pelo TSE, evento no log, inferência) passam a 'compatíveis com os registros': vêm do próprio sistema e não verificam a causa. Teste de votação (adv_casos.py): sem deslocamento da virada nessas seções (1º turno: +0,039 z, p = 0,60; 2º: +0,040, p = 0,73); alteração de votos concentrada nelas, com 0,3 desvio ou mais, foi contrariada; H1 sem efeito em votos e H2 global não são distinguíveis.",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -5481,6 +5537,14 @@
      "alvo": "interpretacao",
      "descricao": "'Não identificável' trocado por 'não decidível com os modelos disponíveis': a curva usada é reconstrução pela hora de recebimento do boletim, não a divulgada; S1 conta ruído no cruzamento. Viradas, periodicidade e diferenças 2022 × 2026 continuam abertas.",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "R2: curva divulgada × reconstruída",
+     "alvo": "evidencia",
+     "descricao": "Capturas do Internet Archive dos totais nacionais divulgados durante a apuração (2022: 2 e 27; 2026: 6 e 4) coincidem com a recomposição pela base final na ordem de recebimento (diferença ≤ 0,083 pp, mesmo líder, sem defasagem); viradas divulgadas: 2022 2º turno 1 (entre 18:22 e 19:43), 2026 2º turno ≥ 2. Nenhuma divergência objetiva entre sequência publicada e base nos instantes capturados.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -5543,6 +5607,14 @@
      "alvo": "evidencia",
      "descricao": "A seção MG 49050/196/173 (2022, 1º turno), contada como 'BU diferente da tabela' por valor ausente, foi apurada pelo Sistema de Apuração (.busa). O leitor de 2022 não reconhecia a extensão. Decodificado: 16 votos para Lula, 0 para os demais; o texto impresso (.imgbusa) dá o mesmo; assinatura (.vscsa, AC URNA) válida. Igual à tabela: as 301 seções-turno de 2022 com zero estão verificadas.",
      "resultado": "resistiu"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "R3: zeros fora da amostra",
+     "alvo": "metodo",
+     "descricao": "Regressão logística por metades de municípios: previstos 79,1 e 101,5 (Flávio) contra 79 e 106 observados; 162,9 e 136,5 (Bolsonaro 2022) contra 160 e 141. Critério pré-registrado não cumprido (Hosmer–Lemeshow com n grande; razões por decil 1,25 a 1,27; controles com 1 a 8 zeros): excepcionalidade não determinada formalmente; sem excesso agregado na descrição.",
+     "resultado": "em_andamento"
     }
    ],
    "versoes": [

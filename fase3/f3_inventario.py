@@ -91,20 +91,37 @@ for x in ITENS:
         x["estado_final"] = ESTADOS[e]; x["resposta_ou_motivo"] = resp; x["proxima_evidencia"] = prox; x["revisao"] = motivo
         if x.get("estado_inicial_f3") == "respondida" and x["id"] in ("P10", "P16"): x["reaberta_na_revisao"] = True
     if x["id"] == "P18": x["alcance_em_votos"] = "Simulação, sentido certo: ~123 mil dispersos e ~62 mil concentrados em municípios de até ~5 mil seções são vistos; ~25 mil não; município inteiro das 5 maiores cidades não, até ~700 mil."
+# ---- Missão de resolução (R1 a R4) e auditoria adversarial (fase3/PREREG_RESPOSTAS.md, PREREG_ADVERSARIAL.md) ----
+REV4 = {
+ "P4": ("RP", "R2: 39 capturas do Internet Archive dos totais nacionais divulgados durante a apuração (2022: 2 e 27; 2026: 6 e 4). A recomposição pela base final, na ordem de recebimento, reproduz cada captura com diferença máxima de 0,083 ponto percentual, mesmo líder, sem defasagem; votos nunca diminuem; a última captura é igual ao total oficial. A curva pública pode ser reconstruída a partir dos boletins recebidos nos instantes capturados.", "Capturas por UF e mais instantes (o Internet Archive limitou o acesso durante a coleta).", "R2"),
+ "P3": ("RP", "Canais comparados: tabela × bu.dat × RDV × imagem (R1: 0 diferenças de votos nos dois anos), decodificação de terceiro (T43), divulgação ao vivo × base final (R2: consistente em 39 instantes). Versões datadas dos arquivos: só uma cópia local. Concordância entre arquivos da mesma urna é consistência interna.", "Versões datadas dos arquivos.", "R1, R2"),
+ "P21": ("RP", "Fonte externa de custódia independente obtida: capturas do Internet Archive dos totais divulgados (R2), consistentes com a base. Boletins de terceiros e certificados raiz continuam não obtidos.", "Boletins de terceiros; AC URNA v2 e AC RAIZ UE.", "R2"),
+ "Z1": ("RP", "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística (R3): fora da amostra, um modelo de covariáveis locais prevê 79,1 e 101,5 zeros para Flávio (observados 79 e 106) e 162,9 e 136,5 para Bolsonaro 2022 (160 e 141), dentro dos intervalos; pelo critério pré-registrado o modelo não foi validado (teste de Hosmer–Lemeshow com n muito grande, razões por decil 1,25 a 1,27, controles de Lula com 1 a 8 zeros). Excepcionalidade não determinada formalmente; sem excesso agregado na descrição.", "Critério de calibração refeito e modelo validado.", "R3"),
+ "P14": ("RP", "Causa não demonstrada. R4: o desvio da zona 251 (0,58 z) persiste depois de controlar escolaridade, idade, sexo e estado civil da seção (0,42 z, IC 95% 0,23 a 0,62; 26% explicado); zona 259 explicada em parte.", "Covariáveis de campanha, renda, migração; dados externos.", "R4"),
+ "P20": ("RP", "29 seções em 15 locais; os locais não se destacam da própria zona; a zona 251 mantém desvio após o perfil do eleitorado (R4); arquivos conferem (consistência interna); causa não demonstrada.", "Ver P14.", "R4"),
+ "AUT": ("RP", "R1: tabela = bu.dat = RDV = imagem em todas as seções lidas de 2022 e 2026, com hash e assinatura válidos até a AC emissora. Auditoria adversarial: isso é consistência interna (mesma urna, mesma chave); a única custódia independente é o R2 (agregado nacional). Divergências documentais preservadas: RS 88013/2/199 (imagem 196 × boletim 288; log só com 196 votos) e 153 seções-turno de 2022 com log diferente do comparecimento (5.287 votos sem registro no log publicado).", "Âncora do TSE; boletins de terceiros; logs das urnas substitutas.", "R1, auditoria adversarial"),
+ "MET": ("RP", "T10/T11 descritivos; T02 cego a município inteiro; E02 dependente do método; zeros sem modelo validado; regra de detecção válida é a do sentido correto; 'explicado pelo log' passa a 'compatível com os registros'; concordância BU/RDV/imagem/log é consistência interna; 'certificado ≠ log' não indica troca de urna em 2022.", "Modelos de chegada e de cauda baixa.", "auditoria adversarial"),
+ "C1": ("NDM", "Nenhum modelo de chegada validado (cinco nulos rejeitam também 2022). R2: a curva divulgada é reproduzida pelos dados por seção nos 39 instantes capturados; viradas observadas na divulgação coincidem com a reconstrução.", "Modelo de chegada validado contra as capturas do R2.", "R2"),
+}
+for x in ITENS:
+    if x["id"] in REV4:
+        e, resp, prox, motivo = REV4[x["id"]]
+        x.setdefault("historico", []).append({"etapa": "missão de resolução e auditoria adversarial", "estado": x["estado_final"], "resposta": x["resposta_ou_motivo"]})
+        x["estado_final"] = ESTADOS[e]; x["resposta_ou_motivo"] = resp; x["proxima_evidencia"] = prox; x["revisao"] = motivo
 # ---- Evidência rastreável por item (arquivos que sustentam o estado atual) ----
 F2R, F3R, SL = "fase2/resultados/", "fase3/resultados/", "fase2/sessao_limitada_2026-10-28/"
 EVID = {
  "P1": [SL + "p1_c06_adversarial.py", SL + "p1_resultado_principal.json", SL + "p1_resultado_sensibilidade.json"],
  "P2": ["fase2/f2_completa.py", F2R + "P2_principal.json", F2R + "P2_sensibilidade.json", F3R + "p18.json", F3R + "rev_i1_2026.json", F3R + "rev_a2_2026.json"],
  "P3": ["fase3/f3_reconcilia.py", F3R + "R1_20_dataurnas.json", F3R + "E3_zeros.json", F2R + "P16.json"],
- "P4": ["RELATORIO_F3.md (E7: tentativas de fonte externa)"],
+ "P4": ["fase3/inv_r2_curva_publica.py", "fase3/resultados/r2_curva_publica.json", "fase3/externos/wayback_capturas/"],
  "P5": [F2R + "P5.json"], "P7": [F2R + "P7.json"], "P8": [F2R + "P8.json"],
  "P6": ["RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"],
  "P9": [F2R + "P9.json", F3R + "p19.json", "fase3/rev_i3_espacial.py", F3R + "rev_i3.json"],
  "P10": [F2R + "P10.json", "analise/resultado_logs_2022_1t.json", "analise/resultado_logs_2022_2t.json", F3R + "a4_t28.json"],
  "P11": [F2R + "P11.json", "fase2/externos/certificados/"],
  "P12": [F2R + "P12.json"], "P13": [F2R + "P13.json"], "P15": [F2R + "P15.json"], "P16": [F2R + "P16.json"], "P17": [F2R + "P17.json"],
- "P14": [F2R + "P14.json", F3R + "p20.json", F3R + "rev_i3.json"],
+ "P14": [F2R + "P14.json", F3R + "p20.json", F3R + "rev_i3.json", "fase3/inv_r4_zona251.py", F3R + "r4_zona251.json"],
  "P18": ["fase3/f3_pendencias.py", F3R + "p18.json", "fase3/rev_i1_poder.py", F3R + "rev_i1_2026.json", F3R + "rev_i1_2022.json", "fase3/rev_a2_poder.py", F3R + "rev_a2_2026.json", F3R + "rev_a2_2022.json"],
  "P19": [F3R + "p19.json"], "P20": [F3R + "p20.json", F3R + "rev_i3.json"],
  "P21": ["RELATORIO_F3.md (E7)", "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"],
@@ -112,9 +129,9 @@ EVID = {
  "C1": ["fase3/f3_curvas.py", "fase3/f3_curvas2.py", F3R + "E2_curvas.json", F3R + "E2b_curvas.json"],
  "C1a": [F3R + "E2_curvas.json"], "C1b": [F3R + "E2_curvas.json", F3R + "E2b_curvas.json"], "C2": [F3R + "E2_curvas.json"],
  "M1": [SL + "p1_resultado_principal.json", F2R + "P13.json", F2R + "P15.json", SL + "h1_resultado.json"],
- "Z1": ["fase3/f3_zeros.py", F3R + "E3_zeros.json", "fase3/rev_i2_zeros.py", F3R + "rev_i2.json", F3R + "bu1.json"],
+ "Z1": ["fase3/f3_zeros.py", F3R + "E3_zeros.json", "fase3/rev_i2_zeros.py", F3R + "rev_i2.json", F3R + "bu1.json", "fase3/inv_r3_zeros.py", F3R + "r3_zeros.json"],
  "MET": ["fase3/AUDITORIA_F3.md", "fase3/RELATORIO_ACEITACAO_F3.md", "fase3/PARECER_CONSOLIDACAO_F3.md", "fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md"],
- "AUT": ["testes/registro.json (T14 a T17b)", F2R + "P16.json", F2R + "P11.json", F3R + "a173.json", F3R + "sa22.json"],
+ "AUT": ["testes/registro.json (T14 a T17b)", "fase3/inv_r1_integridade.py", F3R + "r1_integridade.json", "fase3/RELATORIO_ADVERSARIAL.md", F3R + "adv_casos.json", F3R + "adv_log_x_comparecimento.json", F2R + "P16.json", F2R + "P11.json", F3R + "a173.json", F3R + "sa22.json"],
  "A173": ["fase3/ver_a173.py", F3R + "a173.csv", F3R + "a173.json"], "BU1": ["fase3/ver_bu1.py", F3R + "bu1.json"], "SA22": ["fase3/ver_sa22.py", F3R + "sa22.csv", F3R + "sa22.json"],
 }
 for x in ITENS: x["evidencia_arquivos"] = EVID.get(x["id"], [])
