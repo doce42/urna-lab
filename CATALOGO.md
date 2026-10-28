@@ -290,3 +290,6 @@ Pré-registro `fase3/PREREG_LIVE_2022.md` (emenda 7), script `fase3/live_2022.py
 - **T46:** 51,0508% reproduzido; subconjunto geográfico; contrafactual dentro do município: Bolsonaro 49,25%.
 - **T47:** diferença bruta (50,3% × 46,0%) e dentro do município (fora de ±0,02); dentro do local de votação equivalente a zero nos dois turnos → S1.
 - **T48:** software 8.26.0.0 em todos os modelos; unanimidades proporcionais à presença do modelo; 1 seção UE2015 em SC com 8.10.0.1 Sabiá no log (não investigada).
+- **T49 (zeros de Flávio, emenda 8):** 106 seções e 14.860 votos reproduzidos; 141 em 2022; contínuas com 2022 e 1º turno; 106/106 íntegras; 211 viradas em 2026 contra 251 no sentido oposto em 2022; "644 mil" no Rio não reproduzido (cidade: Lula +113 mil).
+- **T50 (thread de concentração, emenda 9):** todas as contagens reproduzidas; Lula > 80% em 35.591 seções (40.046 em 2022).
+- **T51 (crescimento entre turnos, emenda 10):** 2026 Lula cresceu mais em 93,8% dos municípios e 27 UFs; 2022 Bolsonaro em 87,1% e 27 UFs (agregado); em proporção 97,1% × 98,0%. Gráfico do "candidato de trás" reproduzido (2026 +2,80 de 1,02 necessários; 2022 +1,95 de 2,85).

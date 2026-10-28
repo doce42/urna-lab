@@ -41,6 +41,9 @@ SINAL = {
  "T46": S("S1", "O 51,05% de Bolsonaro só nas UE2020 (2022) se reproduz; é o voto das cidades que tinham UE2020. Dentro do município, Lula continua vencendo (Bolsonaro 49,25%)."),
  "T47": S("S1", "Lula teve mais votos nas urnas antigas (50,3% × 46,0%, 1º turno de 2022), também dentro do município; dentro do mesmo local de votação a diferença é equivalente a zero nos dois turnos: é localização, não modelo."),
  "T48": S("S0", "Mesmo software (8.26.0.0) em todos os modelos em 2022; seções unânimes proporcionais à presença de cada modelo."),
+ "T49": S("S0", "106 seções com zero para Flávio (14.860 votos de Lula) reproduzidas; eram 141 em 2022; mesmas regiões e seções que já votavam quase só em Lula; arquivos íntegros."),
+ "T50": S("S0", "Contagens da thread reproduzidas; voto de Lula menos concentrado em 2026 (35.591 seções > 80%) que em 2022 (40.046)."),
+ "T51": S("S0", "Lula cresceu mais que Flávio em 93,8% dos municípios e nas 27 UFs; em 2022 Bolsonaro cresceu mais em 87,1% e nas 27 UFs; em proporção, 2022 foi até mais uniforme."),
  "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."),
 }
 H = lambda id, mec, deixaria, escala, testes, resultado, status, votos: {"id": id, "mecanismo": mec, "o_que_deixaria": deixaria, "escala_necessaria": escala, "testes": testes, "resultado": resultado, "status": status, "em_votos": votos}

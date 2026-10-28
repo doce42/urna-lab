@@ -126,3 +126,6 @@ Só dados oficiais do TSE (lista e conferências em CATALOGO, seção 2). Nada e
   - **T46:** reprodução dos 51,05% "só UE2020" e contrafactual dentro do município.
   - **T47:** voto em Lula por modelo de urna no nível (1º e 2º turno), dentro do município e do local de votação, margem ±0,02 logit, calibração por permutação e poder com fraude sintética.
   - **T48:** versão do software e seções unânimes por modelo.
+- **28/10/2026, emenda 8, seções com zero voto para Flávio no 2º turno (antes de rodar).** Pré-registro em `fase3/PREREG_ZEROS_FLAVIO.md`. Entra o **T49:** reprodução da alegação de 106 seções e 211 municípios virados, comparação com 2022, continuidade seção a seção e integridade dos arquivos.
+- **28/10/2026, emenda 9, thread "concentração do voto no PT" (antes de rodar).** Pré-registro em `fase3/PREREG_THREAD_CONCENTRACAO.md`. Entra o **T50:** reprodução descritiva de seções acima de 80% por candidato (2022 e 2026), região, continuidade e saldo por seções vencidas.
+- **28/10/2026, emenda 10, crescimento entre turnos por município (antes de rodar).** Pré-registro em `fase3/PREREG_CRESCIMENTO_ENTRE_TURNOS.md`. Entra o **T51:** fração de municípios e UFs em que cada candidato cresceu mais que o rival entre os turnos, 2022 e 2026.
