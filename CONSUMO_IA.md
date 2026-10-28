@@ -46,6 +46,8 @@ Esta sessão passou por compactação do contexto (resumo automático) quando a 
 | Claude Haiku 5.5 | ≈ 0,27 mi | 0,22 |
 | **Total** | **≈ 279,9 mi** | **74,58** |
 
+**Continuação da sessão 1 (28/10/2026, madrugada), consumo ainda não medido:** reprocessamento e correções, site React com a identidade visual, rodada 1, revisão R1 respondida. Modelos: Sonnet 5.5 na sessão principal até ≈ 03h00 e Opus 5.5 depois. Subagentes: Fable 5.1 (site, ≈ 518 mil tokens) e Opus 5.5 (identidade, ≈ 113 mil tokens). A revisão R1 foi feita pelo Codex, de outro fornecedor, em sessão separada, e o consumo dela não está aqui. **Para completar:** colar o `/usage` final desta sessão e somar na tabela.
+
 Marcos que ainda não entraram (somar quando a sessão terminar ou em sessões novas): reprocessamento completo após a correção do log duplicado, conferência final, relatório, PDF e conclusão.
 
 ## Consumo de máquina, rede, disco e tempo (o que a IA não gastou)
