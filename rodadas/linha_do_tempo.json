@@ -280,7 +280,7 @@
    "data": "2026-10-28",
    "hora": "",
    "titulo": "Fase 3 concluída",
-   "texto": "Sessão 2: 0 diferenças contra a decodificação independente do DataUrnas-BR e curvas sem nulo que discrimine; rodada 4 (V1.2) congelada; P4, P6, P11 e P21 bloqueadas por fonte externa."
+   "texto": "Sessão 2: 0 diferenças contra a decodificação independente do DataUrnas-BR e curvas sem nulo que discrimine; rodada 4 (V1.2) congelada; P4, P6, P11 e P21 bloqueadas por fonte externa. (Encerramento revertido no mesmo dia: a F3 voltou a 'em revisão' depois da auditoria.)"
   },
   {
    "data": "2026-10-28",
@@ -299,6 +299,12 @@
    "hora": "",
    "titulo": "As 159 seções do Sistema de Apuração de 2022 conferem",
    "texto": "Boletim, texto impresso e assinatura conferem com a tabela publicada em 159 de 159 seções-turno (conferência interna). Documentação da F3 consolidada no PROTOCOLO, METODOLOGIA e CATALOGO. A F3 segue em revisão."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Verificações finais da F3 (A1, A2, A4)",
+   "texto": "Seções de 2022 sem par explicadas e conferidas; poder recontado no sentido correto: grandes municípios inteiros fora do alcance da bateria; denominador do T28 de 2022 corrigido. F3 segue em revisão."
   }
  ],
  "etapas_do_caminho": [
@@ -354,7 +360,7 @@
  "conclusoes_recentes": [
   {
    "titulo": "O T02 não vê troca em município inteiro",
-   "texto": "A mediana municipal absorve uma troca aplicada ao município ou à região inteira; só o E02 (referência estadual) a detecta a partir de ~62 mil votos.",
+   "texto": "A mediana municipal absorve uma troca aplicada ao município ou à região inteira. O E02 a detecta a partir de ~62 mil votos em municípios de até ~5 mil seções, mas não no município inteiro das 5 maiores cidades (simulação, A2).",
    "teste": "T02"
   },
   {
@@ -379,7 +385,7 @@
   },
   {
    "titulo": "Regra do T13 vê os dois sentidos",
-   "texto": "Troca dispersa de ~123 mil votos (10% em 1% das seções): 30 de 30 nos dois sentidos; ~62 mil dispersos não. Concentrada em locais ou municípios, ~62 mil é vista pelo E02; ~25 mil em nenhuma forma.",
+   "texto": "Sentido correto: troca dispersa de ~123 mil votos vista em 30 de 30; ~62 mil concentrados em locais ou municípios de até ~5 mil seções vistos pelo E02; ~25 mil em nenhuma forma; troca no município inteiro das 5 maiores cidades não vista com confiabilidade nem a 10% (até ~700 mil votos). Votos simulados.",
    "teste": "T13"
   },
   {

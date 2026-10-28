@@ -90,3 +90,47 @@ Achado da auditoria que motiva o I1: no P18, os falsos alarmes do limiar "calibr
 ## Registro
 
 Resultados em `fase3/resultados/rev_i1.json`, `rev_i2.json` e `rev_i3.json`. Relatório da revisão no fim de `RELATORIO_F3.md`, com o estado de cada pergunta revisado em `fase3/inventario.json`, preservando os estados anteriores. Nada é publicado nem congelado sem aprovação.
+
+## Adendo de 28/10/2026: verificações finais A1, A2 e checagem A4 (escrito antes de rodar)
+Autorizadas pelo responsável depois do parecer `fase3/PARECER_CONSOLIDACAO_F3.md`. Limites:
+- **Investigações:** duas (A1 e A2), mais uma checagem determinística (A4).
+- **Execuções:** uma principal e uma validação por investigação; uma correção e uma repetição por erro operacional.
+- **Proibido:** subagentes, downloads, família nova de modelos e mecanismo novo.
+
+### A1. Seções de 2022 sem par no DataUrnas-BR (`fase3/ver_a1.py`)
+**Universo:** seções do Brasil (fora o exterior) que estão na base do projeto e não têm votos de Presidente no DataUrnas-BR (commit 12f0433): 191 no 1º turno e 176 no 2º. As 17 e 10 do Sistema de Apuração entram para conferir a sobreposição.
+
+**Para cada seção:**
+- **Na base:** tipo de urna, seções agregadas, aptos e votos.
+- **No pacote local:** quais arquivos existem.
+- **No DataUrnas-BR:** se está na tabela de seções (`secoes.parquet`) e nas ocorrências (`issues.parquet`, `ocorrencias_publicacao.jsonl`).
+- **Votos:** decodificação do boletim local (`.bu` ou `.busa`) e comparação com a tabela.
+
+**Categorias,** atribuídas por regra fixa na ordem abaixo:
+1. Sistema de Apuração (SA22).
+2. Seção agregada a outra (a base a lista como agregada e o pacote não tem arquivos próprios dela).
+3. Está no DataUrnas-BR sem votos de Presidente (com o código de ocorrência).
+4. Não está no DataUrnas-BR, mas tem arquivos no pacote local.
+5. Sem arquivos no pacote local.
+6. Outra.
+
+**Validação:** recontagem das categorias por um segundo critério independente do primeiro, cruzando a lista de seções do pacote com a de seções do DataUrnas-BR. Divergência de votos só conta quando o boletim foi lido e difere da tabela.
+
+### A2. Poder com sentido correto, grandes municípios e E02 completo (`fase3/rev_a2_poder.py`)
+**Mesmos mundos e mesmos cenários do I1:** M0 a M3, 2%, 5% e 10%, dois sentidos, 20 mundos de calibração e 30 de avaliação, mesmas sementes. Três mudanças, fixadas antes:
+1. **Regra no sentido correto:** há detecção correta se o lado certo de T1, T3 ou E02 passar do limiar. T2 e T4 não têm sentido e entram só na regra "qualquer alarme", reportada à parte. Os alarmes do lado oposto são reportados separadamente.
+2. **E02 completo:** mesmas covariáveis do P9 (proporções do 1º turno dos candidatos eliminados, brancos e nulos, variação de comparecimento, log dos aptos do município), calculado ao lado do E02 simples nos mesmos mundos.
+3. **Grandes municípios (M2G):** troca no município inteiro de cada um dos 5 municípios antes excluídos (São Paulo, Rio de Janeiro, Brasília, Fortaleza, Salvador), 6 réplicas cada, cobrindo os 30 mundos, com as mesmas três magnitudes e os dois sentidos. A cobertura é maior que 1% das seções, e por isso os votos movidos vão em cada resultado.
+
+**Leitura,** pelo mesmo critério do I1, aplicado à regra no sentido correto com o limiar calibrado:
+- **Detectável:** pelo menos 90% e limite inferior do IC de Wilson acima de 75%, com falso alarme de até 10%.
+- **Não detectável:** limite superior abaixo de 25%.
+- **Incerta:** o resto.
+
+**Validação:** o mesmo desenho em 2022.
+
+### A4. Universo do T28 de 2022 (checagem determinística)
+- **Reproduzir a regra:** as mesmas linhas de `analise/analise_logs.py`, aplicadas às colunas já gravadas de `analise/brutos/2022_{t}t/urnas_*.parquet`, devem dar 23 e 25 urnas sinalizadas.
+- **Se reproduzir:** listar todas as sinalizadas e cruzar com o SA22, informando os denominadores (linhas, com sequência do log, com votos nos últimos 30 min).
+- **Se não reproduzir:** registrar e parar.
+- **Sem classificação de falso positivo.**

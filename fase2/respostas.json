@@ -12,7 +12,7 @@
   },
   "P2": {
    "situacao": "respondida",
-   "resposta": "Com 1% das urnas e 10% dos válidos movidos (~125 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido. Revisado pelo P18 e pelo I1: com duas caudas, a troca dispersa de ~123 mil votos é vista nos dois sentidos; ~62 mil concentrados em locais ou municípios só pelo E02; ~25 mil em nenhuma forma testada.",
+   "resposta": "Com 1% das urnas e 10% dos válidos movidos (~125 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido. Revisado pelo P18, I1 e A2: ver P18 (no sentido certo, ~123 mil dispersos e ~62 mil concentrados em municípios de até ~5 mil seções são vistos; ~25 mil e municípios inteiros das 5 maiores cidades não).",
    "testes": [
     "T13"
    ],
@@ -223,7 +223,7 @@
      "resposta": ""
     }
    ],
-   "resposta": "Com duas caudas, troca dispersa de 10% dos válidos em 1% das seções (~123 mil votos) é vista em 30 de 30 nos dois sentidos; 5% (~62 mil) não. I1: concentrada em locais ou municípios, 5% é vista pelo E02 (30 de 30); 2% (~25 mil) em nenhuma forma. O limiar ancorado no real dá 23% de falso alarme em 2022."
+   "resposta": "Com duas caudas e contando só alarmes no sentido certo (A2, simulação): troca dispersa de 10% dos válidos em 1% das seções (~123 mil votos) vista em 30 de 30 nos dois sentidos; 5% dispersos (~62 mil) não; concentrada em locais ou municípios de até ~5 mil seções, ~62 mil vista pelo E02; região a 5% incerta; ~25 mil em nenhuma forma; município inteiro das 5 maiores cidades não visto com confiabilidade nem a 10% (até ~700 mil votos). O sinal do E02 não identifica sozinho o beneficiário."
   },
   {
    "id": "P19",

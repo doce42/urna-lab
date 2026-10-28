@@ -69,6 +69,55 @@ for x in ITENS:
         x["estado_final"] = ESTADOS[e]; x["resposta_ou_motivo"] = resp; x["proxima_evidencia"] = prox; x["revisao"] = motivo
     if x["id"] == "Z1":
         x["resposta_ou_motivo"] = x["resposta_ou_motivo"].replace("0 divergências de votos entre BU, RDV, imagem e tabela nas 185 seções-turno de 2026 e 300 das 301 de 2022; 1 seção de 2022 com BU não lido (item BU1), não verificada.", "0 divergências de votos entre BU, RDV, imagem e tabela nas 185 seções-turno de 2026 e nas 301 de 2022 (a seção com BU não lido foi verificada no BU1).")
+# ---- Verificações finais A1, A2 e A4 (fase3/PREREG_REVISAO.md, adendo) ----
+NOVOS3 = [
+ it("AUT", "Os arquivos publicados (BU, RDV, log, imagem) são íntegros e autênticos, e até onde vai essa verificação?", "—", "Âncora do TSE e fonte externa.", "íntegro e autêntico × apenas coerente", "—", "Cadeia até a raiz e confronto externo.", "toda a votação", "RP", "Consolidação dos testes T14 a T17, T17b, P16, P11, A173 e SA22.", "2026: hash, assinatura, RDV e BU conferem nacionalmente nos dois turnos (T14 a T17b; T17b cobre o 2º turno). 2022: arquivos presentes conferem; as 159 seções-turno do Sistema de Apuração conferem à parte (SA22); 173 arquivos assinados e 485 auxiliares não estão no pacote de dados abertos. Origem autenticada só até a AC emissora (P11). Não alcança alteração anterior à geração do boletim: BU, RDV e log saem do mesmo equipamento.", "Certificados AC URNA v2 e AC RAIZ UE do TSE; confronto com fonte externa.", origem="consolidação F3"),
+ it("C1a", "Quando e em que contexto ocorreram as viradas de liderança durante a apuração, em 2022 e 2026?", "—", "Ordem de divulgação observada.", "ordem de recebimento × ordem de divulgação", "—", "Snapshots datados.", "margem final 4,43 mi (2026) e 2,1 mi (2022)", "RP", "E2 (f3_curvas.py).", "Na reconstrução pela hora de recebimento do boletim: 2º turno de 2026, Lula lidera aos 10% apurados, perde aos 13,5% e retoma aos 47,2%; 2º turno de 2022, o adversário lidera até 67,6%. A última troca vem mais tarde do que nos nulos nos dois anos. É descrição da ordem de recebimento; não explica nem refuta nada.", "Snapshots datados da divulgação.", origem="C1"),
+ it("C1b", "As curvas têm periodicidade, vales ou trechos lineares anômalos?", "—", "Modelo de chegada validado.", "processo de recebimento × processamento próprio", "—", "Nulo calibrado.", "n/a", "NDM", "E2 e E2b (estatísticas S3 a S5).", "Estatísticas calculadas, sem leitura possível: nenhum dos 5 nulos é calibrado, nem em 2022; S1 mede ruído no cruzamento.", "Modelo de chegada por lote de recepção ou snapshots.", origem="C1"),
+]
+ITENS[len(ITENS) - 12:len(ITENS) - 12] = NOVOS3
+REV3 = {
+ "R1-20": ("RP", "0 diferenças em 499.206 seções (2026, 1º turno) e nas seções comuns de 2022, com reprodução idêntica e commit e hashes conferidos. A1 (fase3/ver_a1.py, a1.csv): as 191 (1º turno) e 176 (2º) seções do Brasil sem par em 2022 são: 17 e 10 do Sistema de Apuração (SA22); 167 e 166 em 5 zonas da Bahia (as mesmas nos dois turnos) que estão na tabela de seções do DataUrnas-BR sem nenhum voto (167 das 769 seções dessas zonas; lacuna do acervo do terceiro, motivo não identificado); 7 (1º turno) que o DataUrnas-BR registra como 'seção fora do banco'. Os 367 boletins locais foram lidos e conferem com a tabela (0 divergências). Cobertura da comparação com implementação independente em 2022: 470.819 de 471.010 seções do Brasil (1º turno) e 470.834 de 471.010 (2º), 99,96%; as demais só com o leitor do projeto. Sem cobertura independente: o 2º turno de 2026.", "Decodificação independente do 2º turno de 2026.", "A1"),
+ "P18": ("RP", "A2 (rev_a2_poder.py; mesmos mundos e cenários do I1), detecção só no sentido correto, limiar calibrado, 2026: troca dispersa de 10% dos válidos em 1% das seções (~123 mil votos) 30/30; locais ou municípios de até ~5 mil seções a 5% (~62 mil) 30/30, com E02 simples e completo; região a 5% 26/30 e 23/30 (simples) ou 27/30 e 25/30 (completo): detecção incerta; 2% (~25 mil) 0/30 em todas as formas; dispersa a 5% 0/30. Falso alarme no sentido correto 0/30 (IC até 11%). Município inteiro das 5 maiores cidades (antes excluídas): a 5% (77 mil a 348 mil votos) o E02 completo detecta 0 a 1 de 30 e o simples 13 a 21 de 30; a 10% (155 mil a 696 mil votos) 10 a 13 de 30 (completo) e 24 de 30 (simples), pelo completo, 0 de 12 em Brasília e Fortaleza e 1 de 12 em São Paulo (6 réplicas por cidade e sentido; Brasília é o único município da UF, e o modelo por UF absorve a troca). A 10% concentrado, o E02 também acusa locais no sentido oposto em 10% a 80% das réplicas. 2022 (validação): padrão semelhante; região a 5% detectável no sentido para Lula (30/30) e 27/30 (simples) ou 28/30 (completo) no outro.", "Mecanismos não simulados (preservar medianas, mexer no comparecimento, anteriores ao BU) e outras coberturas não testados.", "A2: sentido correto, E02 completo, grandes municípios"),
+ "P2": ("RP", "Revisado pelo P18, pelo I1 e pelo A2: no sentido correto, a bateria não detecta troca de até ~25 mil votos (2% em 1% das seções) em nenhuma forma testada, nem troca dispersa de ~62 mil votos, nem troca no município inteiro das 5 maiores cidades com confiabilidade (até ~700 mil votos em São Paulo a 10%); detecta ~123 mil dispersos e ~62 mil concentrados em locais ou municípios de até ~5 mil seções.", "Ver P18.", "A2"),
+ "P10": ("R", "8 de 13 urnas do 1º turno de 2026 seguem sinalizadas (99 votos); 2022 sinaliza 18 e 21. A4: a regra do T28 de 2022 reproduz exatamente 23 e 25 urnas sinalizadas; nenhuma é do Sistema de Apuração. Denominador efetivo do T28 em 2022: 471.851 e 471.979 urnas com votos nos últimos 30 min; o total declarado 'urnas' (472.024 e 472.027) inclui 109 e 39 seções do Sistema de Apuração sem sequência de log (148).", "—", "A4"),
+ "P16": ("R", "200 de 200 seções sorteadas do 1º turno de 2026 concordam em todos os arquivos. A amostra é só do 1º turno; o 2º turno é coberto nacionalmente pelo T17b (BU = RDV = publicado em todas as urnas eletrônicas), não por amostra com todos os arquivos.", "—", "ressalva metodológica"),
+ "MET": ("RP", "T10/T11 descritivos. T02 só vê trocas dentro do município. E02: lista de locais depende do método; sinal do E02 não identifica sozinho o beneficiário (alarmes opostos frequentes a 10% concentrado); E02 completo detecta menos que o simples quando a troca cobre um município grande inteiro. Zeros sem modelo calibrado. Regra 'qualquer alarme' superestima a detecção; a regra válida é a do sentido correto (A2).", "Modelos de chegada e de cauda baixa.", "A2"),
+}
+for x in ITENS:
+    if x["id"] in REV3:
+        e, resp, prox, motivo = REV3[x["id"]]
+        x.setdefault("historico", []).append({"etapa": "verificações finais (A1, A2, A4)", "estado": x["estado_final"], "resposta": x["resposta_ou_motivo"]})
+        x["estado_final"] = ESTADOS[e]; x["resposta_ou_motivo"] = resp; x["proxima_evidencia"] = prox; x["revisao"] = motivo
+        if x.get("estado_inicial_f3") == "respondida" and x["id"] in ("P10", "P16"): x["reaberta_na_revisao"] = True
+    if x["id"] == "P18": x["alcance_em_votos"] = "Simulação, sentido certo: ~123 mil dispersos e ~62 mil concentrados em municípios de até ~5 mil seções são vistos; ~25 mil não; município inteiro das 5 maiores cidades não, até ~700 mil."
+# ---- Evidência rastreável por item (arquivos que sustentam o estado atual) ----
+F2R, F3R, SL = "fase2/resultados/", "fase3/resultados/", "fase2/sessao_limitada_2026-10-28/"
+EVID = {
+ "P1": [SL + "p1_c06_adversarial.py", SL + "p1_resultado_principal.json", SL + "p1_resultado_sensibilidade.json"],
+ "P2": ["fase2/f2_completa.py", F2R + "P2_principal.json", F2R + "P2_sensibilidade.json", F3R + "p18.json", F3R + "rev_i1_2026.json", F3R + "rev_a2_2026.json"],
+ "P3": ["fase3/f3_reconcilia.py", F3R + "R1_20_dataurnas.json", F3R + "E3_zeros.json", F2R + "P16.json"],
+ "P4": ["RELATORIO_F3.md (E7: tentativas de fonte externa)"],
+ "P5": [F2R + "P5.json"], "P7": [F2R + "P7.json"], "P8": [F2R + "P8.json"],
+ "P6": ["RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"],
+ "P9": [F2R + "P9.json", F3R + "p19.json", "fase3/rev_i3_espacial.py", F3R + "rev_i3.json"],
+ "P10": [F2R + "P10.json", "analise/resultado_logs_2022_1t.json", "analise/resultado_logs_2022_2t.json", F3R + "a4_t28.json"],
+ "P11": [F2R + "P11.json", "fase2/externos/certificados/"],
+ "P12": [F2R + "P12.json"], "P13": [F2R + "P13.json"], "P15": [F2R + "P15.json"], "P16": [F2R + "P16.json"], "P17": [F2R + "P17.json"],
+ "P14": [F2R + "P14.json", F3R + "p20.json", F3R + "rev_i3.json"],
+ "P18": ["fase3/f3_pendencias.py", F3R + "p18.json", "fase3/rev_i1_poder.py", F3R + "rev_i1_2026.json", F3R + "rev_i1_2022.json", "fase3/rev_a2_poder.py", F3R + "rev_a2_2026.json", F3R + "rev_a2_2022.json"],
+ "P19": [F3R + "p19.json"], "P20": [F3R + "p20.json", F3R + "rev_i3.json"],
+ "P21": ["RELATORIO_F3.md (E7)", "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"],
+ "R1-20": ["fase3/f3_reconcilia.py", F3R + "R1_20_dataurnas.json", F3R + "R1_20_dataurnas_reproducao.json", "fase3/externos/DATAURNAS.md", "fase3/ver_a1.py", F3R + "a1.csv", F3R + "a1.json"],
+ "C1": ["fase3/f3_curvas.py", "fase3/f3_curvas2.py", F3R + "E2_curvas.json", F3R + "E2b_curvas.json"],
+ "C1a": [F3R + "E2_curvas.json"], "C1b": [F3R + "E2_curvas.json", F3R + "E2b_curvas.json"], "C2": [F3R + "E2_curvas.json"],
+ "M1": [SL + "p1_resultado_principal.json", F2R + "P13.json", F2R + "P15.json", SL + "h1_resultado.json"],
+ "Z1": ["fase3/f3_zeros.py", F3R + "E3_zeros.json", "fase3/rev_i2_zeros.py", F3R + "rev_i2.json", F3R + "bu1.json"],
+ "MET": ["fase3/AUDITORIA_F3.md", "fase3/RELATORIO_ACEITACAO_F3.md", "fase3/PARECER_CONSOLIDACAO_F3.md", "fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md"],
+ "AUT": ["testes/registro.json (T14 a T17b)", F2R + "P16.json", F2R + "P11.json", F3R + "a173.json", F3R + "sa22.json"],
+ "A173": ["fase3/ver_a173.py", F3R + "a173.csv", F3R + "a173.json"], "BU1": ["fase3/ver_bu1.py", F3R + "bu1.json"], "SA22": ["fase3/ver_sa22.py", F3R + "sa22.csv", F3R + "sa22.json"],
+}
+for x in ITENS: x["evidencia_arquivos"] = EVID.get(x["id"], [])
 json.dump({"gerado": "2026-10-28", "situacao": "em revisão (auditoria e I1 a I3)", "itens": ITENS}, open(f"{R}/fase3/inventario.json", "w"), ensure_ascii=False, indent=1)
 L = ["# Inventário mestre da F3 (28/10/2026; em revisão)", "", "Gerado por `fase3/f3_inventario.py`. Estados: respondida, respondida parcialmente, não identificável com estes dados, bloqueada por evidência externa, não executada nesta sessão, em revisão, refutada.", "",
      "| Id | Pergunta | Estado inicial | Estado final | Resposta ou motivo | Próxima evidência |", "|---|---|---|---|---|---|"]

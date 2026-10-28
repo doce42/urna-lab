@@ -228,6 +228,8 @@ const DOCS = [
   ['fase2', 'FASE2.md', 'Fase 2', 'Perguntas registradas antes dos resultados, com a hipótese concorrente que cada uma distingue.'],
   ['fase3', 'RELATORIO_F3.md', 'Fase 3', 'Pendências, curvas e zeros: o que foi feito, o estado final de cada item e o que ficou bloqueado.'],
   ['fase3-auditoria', 'fase3/AUDITORIA_F3.md', 'Auditoria da Fase 3', 'Revisão crítica da F3: o que foi executado, documentado, publicado e validado, e o que excedia a evidência.'],
+  ['fase3-verificacoes-finais', 'fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md', 'Verificações finais da Fase 3', 'A1 (seções de 2022 sem par), A2 (poder no sentido correto e grandes municípios), A4 (universo do T28) e parecer.'],
+  ['fase3-parecer', 'fase3/PARECER_CONSOLIDACAO_F3.md', 'Parecer de consolidação da Fase 3', 'Impacto do SA22, matriz por pergunta, pendências por natureza e recomendação.'],
   ['fase3-aceitacao', 'fase3/RELATORIO_ACEITACAO_F3.md', 'Aceitação da Fase 3', 'Verificação dos 173 arquivos e do BU não lido, revisão de I1 a I3, matriz completa e parecer.'],
   ['fase3-prereg-revisao', 'fase3/PREREG_REVISAO.md', 'Pré-registro da revisão da Fase 3', 'Investigações I1 a I3, escritas antes de rodar: poder contra trocas concentradas, zeros e nulo espacial.'],
   ['fase3-inventario', 'fase3/INVENTARIO.md', 'Inventário da Fase 3', 'Os 27 itens da Fase 3, com estado inicial, trabalho feito, estado final e a próxima evidência.'],

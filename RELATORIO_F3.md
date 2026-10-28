@@ -143,7 +143,7 @@ Mundos legítimos: binomial em torno dos dados reais, com 20 mundos de calibraç
 - **Correção do P18:** os falsos alarmes do limiar calibrado tinham sido medidos nos mesmos mundos da calibração, logo eram 0 por construção.
 
 **Leitura pelo critério pré-registrado, em 2026:**
-- **Detectáveis:** troca dispersa de 10%; locais e municípios inteiros a 5% e 10%; região a 10%; região a 5% no sentido para Lula (29/30).
+- **Detectáveis:** troca dispersa de 10%; locais e municípios inteiros a 5% e 10%; região a 10%; região a 5% no sentido para Lula (29/30). *(Corrigido pelo A2: contando só o sentido correto, a região a 5% dá 26/30 e 23/30, detecção incerta. A tabela acima conta alarmes em qualquer sentido.)*
 - **Detecção incerta:** região a 5% no sentido contrário (27/30, limite inferior do IC de 74%).
 - **Não detectáveis:** toda troca de 2%, exceto região contígua no sentido para Lula (4/30, incerta); troca dispersa de 5%.
 
@@ -198,3 +198,9 @@ Em [`fase3/RELATORIO_ACEITACAO_F3.md`](fase3/RELATORIO_ACEITACAO_F3.md).
 - **Revisão de I1 a I3 e matriz completa:** no mesmo relatório.
 - **Parecer:** a F3 continua em revisão.
 - **SA22:** 159 de 159 seções-turno do Sistema de Apuração de 2022 lidas, com boletim, texto impresso e assinatura conferindo com a tabela (conferência interna). Detalhe no adendo do relatório de aceitação.
+
+## Verificações finais A1, A2 e A4 (28/10/2026)
+Detalhes em [`fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md`](fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md).
+- **A1:** as seções de 2022 sem par no DataUrnas-BR são do Sistema de Apuração (27), de 5 zonas da Bahia que o terceiro traz sem votos (333) e 7 que ele registra fora do banco. Os 367 boletins conferem com a tabela, e a cobertura independente de 2022 é de 99,96%.
+- **A2:** no sentido correto, o I1 se mantém, exceto a região a 5% (incerta). A troca no município inteiro das 5 maiores cidades não é detectada com confiabilidade nem a 10% (até ~700 mil votos). O E02 completo detecta menos que o simples nesse caso.
+- **A4:** o T28 de 2022 reproduz 23 e 25 sinalizadas, nenhuma do Sistema de Apuração. O denominador declarado incluía 148 seções sem log.

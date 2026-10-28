@@ -151,6 +151,9 @@ Desde 19h10, o consumo é medido a cada 30 s por `scripts/monitorar.sh` → `dad
 | Leitor de 2022 | Seção MG 49050/196/173 "sem BU lido" | Seção do Sistema de Apuração (`.busa`, `.imgbusa`, `.logsajez`, `.vscsa`); o leitor de 2022 só reconhecia `bu`, `imgbu`, `logjez`, `rdv`, `vscmr`. Ao todo, 159 seções-turno ficaram fora das verificações por arquivo de 2022 | Leitura dirigida (`fase3/ver_sa22.py`); o leitor geral de 2022 ainda não foi alterado |
 | E3 (zeros) | 1 seção 2022 com BU ≠ tabela | Valor ausente (BU não lido) contado como diferença por `fillna(0)` | Reclassificada como não verificada; verificada depois (BU1) |
 | P18 | Falso alarme 0/30 no limiar calibrado | Medido nos mesmos mundos usados para calibrar | I1 com mundos separados |
+| I1 | "Detecção" de troca concentrada | Regra contava alarme em qualquer sentido e de T2/T4; a 10% concentrado o E02 também acusa o lado oposto | A2: regra no sentido correto |
+| I1 | Poder "em municípios inteiros" | As 5 maiores cidades estavam fora do sorteio; nelas a troca não é detectada com confiabilidade | A2 (M2G) |
+| T28 2022 | Denominador "urnas" 472.024 | Inclui 148 seções do Sistema de Apuração sem log | A4: denominador efetivo 471.851 e 471.979 |
 | R1-20 | Script lia o DataUrnas-BR de pasta temporária, sem commit nem hash | Rastreabilidade incompleta | Commit 12f0433 e SHA-256 conferidos no script; pasta permanente |
 
 ## 5. Consumo
@@ -229,7 +232,7 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
 - **Sessões 1 e 2:** inventário (27 itens), curvas (T40), zeros (T41), Moran's I (T42), poder bilateral do T13 (P18), São Paulo 2022 (P20) e reconciliação com o DataUrnas-BR (T43). Congelada como V1.2 (rodada 4, tag `v1.2`) **antes** de auditoria. Desvios em `rodadas/rodada-4-desvio.md`.
 - **Auditoria** (`fase3/AUDITORIA_F3.md`): estados acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19). Com aprovação do responsável, a F3 voltou a "em revisão" e a V1.2 ficou preservada.
 - **Revisão I1 a I3** (`fase3/PREREG_REVISAO.md`):
-  - **I1:** o T02 é cego a troca em município ou região inteiros; o E02 vê ~62 mil votos concentrados; ~25 mil não é detectável.
+  - **I1:** o T02 é cego a troca em município ou região inteiros; o E02 vê ~62 mil votos concentrados (restrito pelo A2 a municípios de até ~5 mil seções e ao sentido certo); ~25 mil não é detectável.
   - **I2:** o modelo de zeros não calibrou, e o resultado não é interpretável.
   - **I3:** a lista de locais atípicos depende do método; os locais de SP 2022 não são atípicos contra a própria zona.
 - **Verificações documentais de 2022** (`fase3/RELATORIO_ACEITACAO_F3.md`):
@@ -241,3 +244,7 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
   - As verificações gerais do projeto não incluíam as 159 seções-turno do Sistema de Apuração. Agora estão cobertas por leitura dirigida.
   - 173 arquivos assinados (RDV, log, imagem) não estão publicados no pacote de dados abertos.
   - Nas seções do Sistema de Apuração, 485 arquivos auxiliares listados também não estão.
+- **Verificações finais (A1, A2, A4):**
+  - **A1:** as 367 seções de 2022 sem par no DataUrnas-BR estão explicadas (27 do Sistema de Apuração, 333 numa lacuna do terceiro na Bahia, 7 fora do banco dele), e os boletins conferem.
+  - **A2:** a detecção no sentido correto confirma o I1, exceto a região a 5%. Grandes municípios inteiros ficam fora do alcance da bateria.
+  - **A4:** denominador do T28 de 2022 corrigido.

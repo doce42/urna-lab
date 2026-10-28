@@ -1325,6 +1325,14 @@
      "alvo": "metodo",
      "descricao": "Em 2026, 10% dos válidos em 1% das seções sorteadas (~123 mil votos) é detectado em 30 de 30 nos dois sentidos; 5% (~62 mil), em 0 a 2 de 30; concentrado em locais ou municípios, 5% é detectado pelo E02, não pelo T13 (T13: 1 a 6 de 30); 2% (~25 mil) não é detectado em nenhuma forma. O limiar ancorado no real dá 7 de 30 falsos alarmes em 2022 (calibrado: 3 de 30). No P18 os falsos alarmes do limiar calibrado tinham sido medidos nos mesmos mundos da calibração (0 por construção).",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "A2: sentido correto e grandes municípios",
+     "alvo": "metodo",
+     "descricao": "Com detecção contada só no sentido correto (lado certo de T1, T3 ou E02; falso alarme 0/30), os resultados do I1 se mantêm, exceto região a 5% (26/30 e 23/30: incerta). Troca no município inteiro das 5 maiores cidades (antes excluídas) não é detectada com confiabilidade: a 10% (155 mil a 696 mil votos) 10 a 13 de 30 pelo E02 completo e 24 de 30 pelo simples; Brasília e Fortaleza 0 de 12, São Paulo 1 de 12 (completo). A regra 'qualquer alarme' superestimava a detecção.",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -1411,7 +1419,7 @@
    "metodo_versao": 1,
    "pre_especificacao": "anterior_ao_protocolo",
    "evidencia": "Grade de 37 cenários em 4 grupos, uma realização cada, deslocamentos sempre a favor do candidato 13: 25 cenários sinalizados por pelo menos um teste; os 3 de troca uniforme nacional, nenhum.",
-   "interpretacao": "Descreve a grade executada. Não estima probabilidade geral de detecção, e o maior cenário não sinalizado não é limite para alterações possíveis. A referência são os dados reais não modificados, não um mundo sabidamente sem fraude. Fase 2 (P2): a regra do T13 só enxerga o sentido a favor de Lula (T1 e T3 contam um lado): troca de 10% dos válidos em 1% das urnas é vista em 100% das réplicas no sentido Flávio→Lula e em 0% no sentido contrário. A detecção do T13 a 5% não se repete em mundo com ruído só binomial. Revisão F3 (I1): com mundos de calibração separados dos de avaliação, 10% dos válidos em 1% das seções sorteadas é visto em 30 de 30 nos dois sentidos; trocas concentradas em locais ou municípios só são vistas pelo E02 (5% dos válidos, ~62 mil votos, em 30 de 30); 2% (~25 mil) não é visto em nenhuma forma. O limiar ancorado no real dá 23% de falso alarme em 2022.",
+   "interpretacao": "Descreve a grade executada. Não estima probabilidade geral de detecção, e o maior cenário não sinalizado não é limite para alterações possíveis. A referência são os dados reais não modificados, não um mundo sabidamente sem fraude. Fase 2 (P2): a regra do T13 só enxerga o sentido a favor de Lula (T1 e T3 contam um lado): troca de 10% dos válidos em 1% das urnas é vista em 100% das réplicas no sentido Flávio→Lula e em 0% no sentido contrário. A detecção do T13 a 5% não se repete em mundo com ruído só binomial. Revisão F3 (I1): com mundos de calibração separados dos de avaliação, 10% dos válidos em 1% das seções sorteadas é visto em 30 de 30 nos dois sentidos; trocas concentradas em locais ou municípios só são vistas pelo E02 (5% dos válidos, ~62 mil votos, em 30 de 30); 2% (~25 mil) não é visto em nenhuma forma. O limiar ancorado no real dá 23% de falso alarme em 2022. A2: contando só o sentido correto, a região a 5% passa a 'detecção incerta' (26/30 e 23/30); a troca no município inteiro das 5 maiores cidades não é detectada com confiabilidade nem a 10% (até ~700 mil votos em São Paulo). Os votos das simulações são sintéticos.",
    "revisoes": [
     "R1-04",
     "R1-05",
@@ -1423,9 +1431,15 @@
      "causa": "nova_evidencia",
      "origem": "revisão F3",
      "justificativa": "I1: poder contra trocas concentradas e falso alarme medido em mundos independentes da calibração."
+    },
+    {
+     "campo": "interpretacao",
+     "causa": "metodo",
+     "origem": "A2/A4",
+     "justificativa": "Regra de detecção no sentido correto e grandes municípios (A2)."
     }
    ],
-   "impacto_votos": "Menor alteração detectada na grade original: 11.677 votos movidos. Revisão F3 (I1, 2026): troca dispersa de ~123 mil votos (10% dos válidos em 1% das seções) é vista nos dois sentidos em 30 de 30; ~62 mil dispersos, em até 2 de 30; ~62 mil concentrados em locais ou municípios só pelo E02 (30 de 30); ~25 mil em nenhuma forma (até 4 de 30). Troca uniforme de 2,48 mi de votos não foi vista."
+   "impacto_votos": "Menor alteração detectada na grade original: 11.677 votos movidos. Sentido correto (A2, 2026): troca dispersa de ~123 mil votos vista em 30 de 30; ~62 mil concentrados em locais ou municípios de até ~5 mil seções, 30 de 30 pelo E02; ~25 mil em nenhuma forma; troca no município inteiro das 5 maiores cidades não é vista com confiabilidade nem a 10% (155 mil a 696 mil votos). Votos simulados, não encontrados nos dados. Troca uniforme de 2,48 mi de votos não foi vista."
   },
   {
    "id": "T13b",
@@ -3192,7 +3206,7 @@
    "referencia": "",
    "hipotese_nula": "Sem rajada de habilitações sem biometria no fim do dia",
    "pressupostos": "taxa de habilitação sem biometria estável no dia",
-   "limitacoes": "fila e idosos no fim do dia podem elevar legitimamente",
+   "limitacoes": "fila e idosos no fim do dia podem elevar legitimamente 2022: o total 'urnas' declarado (472.024 e 472.027) inclui 109 e 39 seções do Sistema de Apuração sem log; o denominador efetivo é 471.851 e 471.979 (A4).",
    "afirmacao": "estatística",
    "independencia": "criptográfica",
    "natureza": "confirmatório",
@@ -3225,6 +3239,14 @@
      "alvo": "metodo",
      "resultado": "ajustado",
      "descricao": "Com taxa incerta (prior beta por UF e modelo), 8 das 13 urnas do 1º turno de 2026 permanecem sinalizadas (5 saem); 2º turno: 0. Essas 8 urnas somam 99 votos nos últimos 30 min, 93 sem biometria. Em 2022 o mesmo método sinaliza 18 (1º turno) e 21 (2º): o padrão não é específico de 2026. Razão últimos 30 min / resto: 0,97 (1º turno) e 1,00 (2º)."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "A4: universo de 2022",
+     "alvo": "rastreabilidade",
+     "descricao": "A regra reproduz exatamente 23 e 25 urnas sinalizadas em 2022; nenhuma é do Sistema de Apuração. Denominador efetivo: 471.851 e 471.979 urnas com votos nos últimos 30 min. O total declarado 'urnas' (472.024 e 472.027) inclui 109 e 39 seções do Sistema de Apuração sem sequência de log.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -3304,7 +3326,14 @@
     "R1-05",
     "R1-11"
    ],
-   "mudancas": [],
+   "mudancas": [
+    {
+     "campo": "limitacoes",
+     "causa": "rastreabilidade",
+     "origem": "A2/A4",
+     "justificativa": "Denominador de 2022 (A4)."
+    }
+   ],
    "impacto_votos": "2º turno: 0 urnas, 0 votos. 1º turno: 13 urnas pelo método original (≈140 votos) e 8 pelo beta-binomial (99 votos nos últimos 30 min, 93 sem biometria); 2022 tem 23 e 18. Perto de 0,0001% dos votos."
   },
   {
@@ -4845,6 +4874,14 @@
      "alvo": "metodo",
      "descricao": "Com o entorno (zona sem o local) como referência e nulo empírico por tamanho, 61 locais significativos em 2026 (36 pró-Lula, 25 pró-adversário) e 84 em 2022 (46 e 38), contra 55 e 102 com a correção só por ρ; só 28 e 41 coincidem. A lista de locais depende do método. No I1, o E02 detecta 5% dos válidos (~62 mil votos) concentrados em locais ou municípios em 30 de 30.",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "A2: E02 completo × simples",
+     "alvo": "metodo",
+     "descricao": "Nos mesmos mundos, o E02 completo e o simples dão o mesmo resultado nos mecanismos do I1 (locais e municípios de até ~5 mil seções: 30/30 a 5%), mas o completo detecta menos quando a troca cobre um município grande inteiro (a 5%: 0 a 1 de 30 contra 13 a 21 de 30 do simples), porque a regressão por UF e o tamanho do município absorvem o deslocamento. A 10% concentrado, alarmes no sentido oposto em 10% a 80% das réplicas: o sinal do E02 não identifica sozinho o beneficiário.",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -4925,7 +4962,7 @@
    "metodo_versao": 1,
    "pre_especificacao": "protocolo_ou_emenda",
    "evidencia": "Modelo completo: 683 locais significativos em 2026 contra 766 em 2022; lados equilibrados (390 × 293 e 458 × 308).",
-   "interpretacao": "Mede agrupamento por local de votação, não autocorrelação espacial (Moran's I, citado no protocolo, não foi implementado). Os p-valores supõem independência entre seções do mesmo local; com correlação positiva ficam otimistas. 2022 e 2026 usam modelos diferentes (perfil só em 2026). Fase 2 (P9): com a correção por ρ intralocal os locais significativos caem para 55 (2026) e 102 (2022), com os dois lados presentes; o número anterior superestimava o agrupamento. Revisão F3 (I3): com o entorno (zona) como referência, 61 locais em 2026 (36 pró-Lula, 25 pró-adversário) e 84 em 2022 (46 e 38); só 28 e 41 coincidem com a lista da correção por ρ. Os 15 locais de São Paulo capital de 2022 não são atípicos contra a própria zona.",
+   "interpretacao": "Mede agrupamento por local de votação, não autocorrelação espacial (Moran's I, citado no protocolo, não foi implementado). Os p-valores supõem independência entre seções do mesmo local; com correlação positiva ficam otimistas. 2022 e 2026 usam modelos diferentes (perfil só em 2026). Fase 2 (P9): com a correção por ρ intralocal os locais significativos caem para 55 (2026) e 102 (2022), com os dois lados presentes; o número anterior superestimava o agrupamento. Revisão F3 (I3): com o entorno (zona) como referência, 61 locais em 2026 (36 pró-Lula, 25 pró-adversário) e 84 em 2022 (46 e 38); só 28 e 41 coincidem com a lista da correção por ρ. Os 15 locais de São Paulo capital de 2022 não são atípicos contra a própria zona. A2: E02 completo e simples equivalem nos mecanismos do I1, mas o completo detecta menos troca no município inteiro de uma grande cidade; alarmes opostos frequentes a 10% concentrado.",
    "revisoes": [
     "R1-08",
     "R1-17"
@@ -4936,6 +4973,12 @@
      "causa": "nova_evidencia",
      "origem": "revisão F3",
      "justificativa": "I3: nulo espacial; lista de locais depende do método."
+    },
+    {
+     "campo": "interpretacao",
+     "causa": "metodo",
+     "origem": "A2/A4",
+     "justificativa": "E02 completo × simples e alarmes opostos (A2)."
     }
    ],
    "impacto_votos": "Depois de corrigir a correlação dentro do local: 55 locais significativos em 2026 (28 pró-Lula, 27 pró-adversário) e 102 em 2022 (30 e 72); cada local tem de dezenas a poucas centenas de votos de diferença, sem soma que se aproxime da margem de 4,43 mi."
@@ -5636,6 +5679,14 @@
      "alvo": "rastreabilidade",
      "descricao": "Os 173 arquivos que o DataUrnas-BR aponta como ausentes do pacote do TSE de 2022 também faltam no pacote baixado pelo projeto (27/10/2026), com o mesmo SHA-512 assinado no .vscmr local; os BUs das 64 seções conferem com a tabela. Das seções de 2022 fora do exterior que só a base do projeto tem, as do Sistema de Apuração explicam 17 de 191 (1º turno) e 10 de 176 (2º); as demais não foram explicadas nesta verificação (por exemplo, BA 36390/37/157 a 195, numeração consecutiva).",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "A1: seções de 2022 sem par",
+     "alvo": "rastreabilidade",
+     "descricao": "As 191 e 176 seções do Brasil sem par são: 17 e 10 do Sistema de Apuração; 167 e 166 de 5 zonas da Bahia que o DataUrnas-BR traz sem votos (lacuna do terceiro, motivo não identificado); 7 registradas por ele como fora do banco. Os 367 boletins locais conferem com a tabela. Cobertura independente em 2022: 99,96% das seções do Brasil.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [

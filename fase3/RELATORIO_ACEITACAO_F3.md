@@ -185,7 +185,7 @@ Nenhuma pergunta saiu do inventário. As perguntas abertas por falta de dado ou 
 - Votos das 64 seções do A173 iguais aos publicados.
 - Dependência espacial (Moran's I).
 - Simetria do T13 para troca dispersa.
-- O E02 detecta troca concentrada a partir de ~62 mil votos.
+- O E02 detecta troca concentrada a partir de ~62 mil votos. *(Restrito pelo A2: só em locais ou municípios de até ~5 mil seções; não no município inteiro das 5 maiores cidades.)*
 - A assimetria de cauda do T02 existe (P17).
 - O desvio de SP 2022 é no nível da zona, não do local.
 

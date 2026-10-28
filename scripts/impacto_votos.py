@@ -15,7 +15,7 @@ I = {
 "T10": "Desvio máximo da curva de 0,08 pp (município) e 0,25 a 0,32 pp (estado). Sobre 124 mi de votos válidos, 0,32 pp equivale a ~400 mil votos num instante da curva; é distância entre a curva e a reconstrução, não votos alterados.",
 "T11": "Não se traduz em votos: conta oscilações da curva (23 contra 22 ± 1).",
 "T12": "Efeito de −14,7 para +0,3 (t) depois de controlar a idade: sem efeito residual; nenhum voto atribuível à liberação sem biometria (12,7% das habilitações).",
-"T13": "Menor alteração detectada na grade original: 11.677 votos movidos. Revisão F3 (I1, 2026): troca dispersa de ~123 mil votos (10% dos válidos em 1% das seções) é vista nos dois sentidos em 30 de 30; ~62 mil dispersos, em até 2 de 30; ~62 mil concentrados em locais ou municípios só pelo E02 (30 de 30); ~25 mil em nenhuma forma (até 4 de 30). Troca uniforme de 2,48 mi de votos não foi vista.",
+"T13": "Menor alteração detectada na grade original: 11.677 votos movidos. Sentido correto (A2, 2026): troca dispersa de ~123 mil votos vista em 30 de 30; ~62 mil concentrados em locais ou municípios de até ~5 mil seções, 30 de 30 pelo E02; ~25 mil em nenhuma forma; troca no município inteiro das 5 maiores cidades não é vista com confiabilidade nem a 10% (155 mil a 696 mil votos). Votos simulados, não encontrados nos dados. Troca uniforme de 2,48 mi de votos não foi vista.",
 "T13b": "Rajada convertendo 100% dos votos dos últimos 30 min em 'sem biometria' é vista em 76% a 98% das urnas alteradas; a 10% não é vista (recall ≈ 0%). As 13 urnas do 1º turno têm ≈140 votos no total.",
 "T14": "0 votos de diferença entre log e comparecimento nas 200 seções sorteadas e nas urnas sem exceção; nas exceções documentadas (T36) a soma é 59 votos no 1º turno e 358 no 2º.",
 "T15": ZERO,

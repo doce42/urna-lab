@@ -369,6 +369,12 @@ Situação e resultados ficam no registro e no `CATALOGO.md`; aqui só método e
   - **Limiares:** "ancorado no real" (regra do P18) e "calibrado" (máximo dos 20 mundos + margem).
   - **Votos sintéticos:** os votos movidos não são votos encontrados nos dados.
   - **Alarme × detecção:** "detecção" é alarme em qualquer estatística, em qualquer sentido. Isso não é detecção correta da intervenção, e a direção não foi conferida.
+- **A2, poder no sentido correto (`fase3/rev_a2_poder.py`).** Mesmos mundos, sementes e cenários do I1, com três mudanças:
+  - **Sentido:** "detecção correta" é o lado certo de T1, T3 ou E02 passar do limiar calibrado. T2 e T4, que não têm sentido, ficam só na regra "qualquer alarme", reportada à parte.
+  - **E02:** o completo (covariáveis do P9) é calculado ao lado do simples.
+  - **M2G:** troca no município inteiro de cada um dos 5 municípios antes excluídos, com 6 réplicas por cidade.
+  - **Limite:** a regressão por UF é ajustada com as seções alteradas. Uma troca que domina a UF (Brasília é o único município do DF; São Paulo é ~25% das seções do estado) é absorvida pelo modelo.
+- **A1, A4 (`fase3/ver_a1.py`; checagem do T28):** leitura determinística. O A1 classifica, por regra fixa, as seções de 2022 sem par no DataUrnas-BR e compara o boletim local com a tabela. O A4 reaplica as linhas do T28 às colunas gravadas e confere denominador e sinalizadas.
 - **I3, locais contra o entorno (`fase3/rev_i3_espacial.py`).**
   - **Estatística:** d = média do resíduo zz do local − média das demais seções da zona eleitoral (município se a zona tem menos de 3 outras seções). A escala é a mediana e o MAD de d por faixa de tamanho (3 a 5, 6 a 9, 10 a 14, 15 ou mais), seguida de BH com q = 0,05.
   - **Referência administrativa:** zona eleitoral não é vizinhança geográfica, e não há coordenadas de locais no material. Um desvio que cobre a zona inteira some nesse teste; isso não mostra que ele não existe.
