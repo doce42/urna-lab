@@ -5,7 +5,9 @@ import type { Docs as DocsDados, Doc, Meta } from '@/lib/tipos';
 import { useDados } from '@/lib/dados';
 import { Eyebrow, BotaoLink, SkeletonBloco, Skeleton, Erro, Nota } from '@/ui/base';
 
-const GRUPOS: [string, string[]][] = [['Começar', ['visao-geral', 'diretriz']], ['Operação Veracidade Geral', ['ov-geral', 'ov-impacto', 'ov-simulacoes', 'ov-criptografia', 'ov-confianca', 'ov-estado', 'ov-curvas', 'ov-zeros', 'ov-anomalias', 'ov-respostas', 'ov-check', 'ov-video', 'ov-protocolo', 'ov-reproducao', 'ov-recomendacoes']], ['Método', ['protocolo', 'metodologia', 'autoauditoria']], ['Dados e reprodução', ['catalogo', 'pipeline', 'referencias']], ['Projeto', ['consumo', 'contribuir']]];
+const GRUPOS_FIXOS: [string, string[]][] = [['Começar', ['visao-geral', 'relatorios', 'veredito-2026', 'fase3-respostas', 'conclusao']], ['Rodada 8 (em andamento): relatório pericial', ['rp-prereg']], ['Operação Veracidade Geral (rodada 7)', ['ov-geral', 'ov-impacto', 'ov-simulacoes', 'ov-criptografia', 'ov-confianca', 'ov-estado', 'ov-curvas', 'ov-zeros', 'ov-anomalias', 'ov-respostas', 'ov-check', 'ov-video', 'ov-protocolo', 'ov-reproducao', 'ov-recomendacoes']], ['Fase 3 e alegações públicas', ['fase3', 'fase3-inventario', 'fase3-adversarial', 'fase3-auditoria', 'fase3-verificacoes-finais', 'fase3-parecer', 'fase3-aceitacao', 'fase3-prereg-revisao', 'prereg-alegacoes']], ['Evolução, Fase 2 e revisões', ['rodadas', 'fase2', 'revisoes', 'revisao-r1']], ['Método', ['diretriz', 'protocolo', 'metodologia', 'autoauditoria']], ['Dados e reprodução', ['catalogo', 'pipeline', 'referencias']], ['Projeto', ['consumo', 'contribuir', 'privacidade']]];
+// todo documento gerado pelo build aparece em algum grupo: o que não estiver nos grupos fixos vai para "Outros documentos"
+const gruposDe = (docs?: Doc[]): [string, string[]][] => { const fixos = new Set(GRUPOS_FIXOS.flatMap(([, s]) => s)); const resto = (docs || []).map((d) => d.slug).filter((s) => !fixos.has(s)); return resto.length ? [...GRUPOS_FIXOS, ['Outros documentos', resto]] : GRUPOS_FIXOS; };
 
 export function Docs({ partes, meta }: { partes: string[]; meta: Meta | null }) {
   const { dados, erro, recarregar } = useDados<DocsDados>('docs');
@@ -15,6 +17,7 @@ export function Docs({ partes, meta }: { partes: string[]; meta: Meta | null }) 
   const [busca, setBusca] = useState(q.get('busca') || '');
   useEffect(() => { setBusca(q.get('busca') || ''); }, [partes.join('/'), location.hash.split('?')[1]]);
   const doc = dados?.docs.find((d) => d.slug === slug) || null;
+  const GRUPOS = gruposDe(dados?.docs);
   const github = dados?.github || meta?.github || 'https://github.com/doce42/urna-lab';
   useEffect(() => {
     if (!doc) return;

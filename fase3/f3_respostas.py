@@ -315,6 +315,9 @@ ALE_VOTOS = {"Q51": "A prorrogação de fato (depois das 17:30) deu +228.095 vot
  "Q34": "34.327 votos depois das 17h (0,8% da margem); a pausa não altera votos.", "Q35": "Sem votos suspeitos no agregado; rajadas do T28: 99 votos.",
  "Q36": "133.852 votos perdidos por Flávio (3% da margem), contra 114.916 de Lula em 2022.", "Q37": "Não se traduz em votos.", "Q39": "Queda de brancos e nulos de 1,82 mi entre os turnos de 2026, explicada em grande parte por erro de campo (número de governador no campo de presidente) e por haver menos 2º turno de governador; resto uniforme.", "Q40": "698 mil nulos com número de governador no 1º turno de 2026; 143 mil digitando 14 no 2º turno.", "Q41": "Não se traduz em votos; muda a leitura das magnitudes de fluxo.", "Q38": "Cabo Frio: 9.169 votos ganhos por Lula (0,2% da margem), todos cobertos pelos 9.511 disponíveis."}
 for p in ALE: p["em_votos"] = ALE_VOTOS[p["id"]]
+# Q51 a Q56 (rodada 8, relatório pericial, em aberto) ficam em capítulo próprio, depois da Operação Veracidade: os ids não mudam (há links), só a ordem de leitura
+PER = [p for p in ALE if p["id"] in {"Q51", "Q52", "Q53", "Q54", "Q55", "Q56"}]
+ALE = [p for p in ALE if p not in PER]
 
 # Operação Veracidade Geral (28/10/2026): perguntas Q42 a Q50 vêm de operacao_veracidade/resultados/respostas_novas.json (N9 vira Q42; N1 a N8 viram Q43 a Q50)
 _NOV = {n["id"]: n for n in json.load(open(R + "/operacao_veracidade/resultados/respostas_novas.json"))}
@@ -336,15 +339,16 @@ for k, (resp, classe, qs) in INV.items():
     itens.append({"id": k, "pergunta": i.get("pergunta", ""), "resposta": resp, "classificacao": classe, "fechamento": fech, "perguntas_relacionadas": qs, "estado_inventario": i.get("estado_final"),
                   "evidencias": i.get("evidencia_arquivos", []), "limitacao": i.get("proxima_evidencia", ""), "em_votos": EMV_INV[k], "historico": i.get("historico", []), "detalhe": i.get("resposta_ou_motivo", "")})
 assert len(itens) == 33, len(itens)
-OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026",
+OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) congelada em 28/10/2026; Q51 a Q56 da rodada 8, em aberto",
        "margem": MARGEM,
        "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
-       "capitulos": [{"id": "integridade", "titulo": "Integridade dos resultados oficiais", "perguntas": INT},
-                     {"id": "curvas", "titulo": "Curvas, viradas e periodicidade", "perguntas": CUR},
-                     {"id": "zeros", "titulo": "Zeros de votos", "perguntas": ZER},
-                     {"id": "turnos", "titulo": "Mudança entre o primeiro e o segundo turno", "perguntas": TUR},
-                     {"id": "alegacoes", "titulo": "Alegações públicas testadas", "perguntas": ALE},
-                     {"id": "operacao", "titulo": "Operação Veracidade: os dados são fiéis ao que aconteceu?", "perguntas": OPV}],
+       "capitulos": [{"id": "integridade", "titulo": "Integridade dos resultados oficiais", "perguntas": INT, "descricao": "Q1 a Q7 (Fase 3): os votos publicados batem com os arquivos das urnas, a assinatura e a soma oficial?"},
+                     {"id": "curvas", "titulo": "Curvas, viradas e periodicidade", "perguntas": CUR, "descricao": "Q8 a Q14 (Fase 3): a ordem em que os boletins chegaram e a curva divulgada na noite da apuração."},
+                     {"id": "zeros", "titulo": "Zeros de votos", "perguntas": ZER, "descricao": "Q15 a Q20 (Fase 3): seções com zero voto para um finalista."},
+                     {"id": "turnos", "titulo": "Mudança entre o primeiro e o segundo turno", "perguntas": TUR, "descricao": "Q21 a Q26 (Fase 3): de onde vieram os votos que cada finalista ganhou ou perdeu."},
+                     {"id": "alegacoes", "titulo": "Alegações públicas testadas", "perguntas": ALE, "descricao": "Q27 a Q39 (rodada 6, V1.4): a live de 2022, o pedido do PL, matérias e posts; Q40 e Q41 (rodada 7, V1.5): o que foi digitado nos nulos e se o estimador de fluxos acerta."},
+                     {"id": "operacao", "titulo": "Operação Veracidade: os dados são fiéis ao que aconteceu?", "perguntas": OPV, "descricao": "Q42 a Q50 (rodada 7, V1.5): auditoria adversarial dos dados e do próprio veredito, inclusive o vídeo dos \"votos extras\" (Q42)."},
+                     {"id": "pericial", "titulo": "Relatório pericial: hora de encerramento, biometria, unanimidade, Benford", "perguntas": PER, "descricao": "Q51 a Q56 (rodada 8, em aberto, ainda não congelada): as alegações de um relatório divulgado em imagens, testadas com pré-registro."}],
        "inventario": itens,
        "achados_sem_causa": ["Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as zonas, única entre as 27 capitais, não explicada pelo perfil do eleitorado (T44, final_salvador.json); sem 2º turno estadual na Bahia; Fortaleza com desvio parecido no sentido oposto.", "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
                              "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
@@ -362,9 +366,9 @@ OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7, Operação Veracidad
                    "Registros coerentes gerados por fonte comprometida passam por todas as verificações internas (T62).",
                    "Fluxos individuais entre turnos não identificáveis.", "Sem modelo de chegada validado (curvas) e sem modelo de cauda baixa validado (zeros)."]}
 json.dump(OUT, open(R + "/fase3/respostas_f3.json", "w"), ensure_ascii=False, indent=1)
-L = ["# Respostas científicas da F3 (28/10/2026)", "", "> " + OUT["aviso"], "> " + MARGEM, "> V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026.", ""]
+L = ["# Respostas científicas da F3 (28/10/2026)", "", "> " + OUT["aviso"], "> " + MARGEM, "> V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026. Q51 a Q56 são da rodada 8, em aberto (registro vivo, não congelado).", ""]
 for c in OUT["capitulos"]:
-    L += [f"## {c['titulo']}", ""]
+    L += [f"## {c['titulo']}", "", f"_{c['descricao']}_", ""]
     for p in c["perguntas"]:
         L += [f"### {p['id']}. {p['pergunta']}", f"**Resposta:** {p['resposta']}", f"**Classificação:** {p['classificacao']}"]
         L.append(f"**Em votos:** {p['em_votos']}")

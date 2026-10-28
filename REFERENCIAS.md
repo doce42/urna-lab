@@ -81,3 +81,6 @@ Consultadas em 27/10/2026.
 - [I] Notícia do teste de integridade do TSE de 2026 (26 capitais e DF): resultado numérico não obtido (página com HTTP 403).
 - [P/T] Estudo sobre o ecossistema da urna eletrônica (SBSeg, SBC): encontrado, não lido.
 - [G] Posts, vídeos, matérias e relatórios sobre a apuração de 2022 e 2026 (X, YouTube): **origem de perguntas, nunca fonte**; cada alegação foi testada com dados do TSE (`fase3/PREREG_*.md` e `operacao_veracidade/`).
+
+## 8. Rodada 8 (aberta)
+- [G] Relatório divulgado em 8 imagens por uma conta no X, transcrito por terceiro (alegações não verificadas por quem transcreveu): **origem de perguntas, não fonte**. Cada alegação testada com dados do TSE em `fase3/PREREG_RELATORIO_PERICIAL.md`; as que não são dado do TSE ficam fora do escopo.

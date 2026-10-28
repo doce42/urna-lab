@@ -44,3 +44,7 @@ Montar os dados do zero, acrescentar outra eleição (ex.: 2018), refazer um dow
 - **Cobertura de hash oficial no manifesto:** 331 de 51.883 arquivos; o resto só tem hash local.
 - **Fuso:** emissão e encerramento em hora local; recebimento em hora de Brasília.
 - **Extração do RDV com o número digitado** (`fase3/rdv_nulos.py <ano> <turno>`): ~8 min por conjunto com 12 processos.
+
+## Atualização da rodada 8 (aberta, 28/10/2026)
+- **Hora de encerramento e de abertura estão em hora local.** MT, AM, MS, RO e RR: 7h a 16h; AC: 6h a 15h; os demais, 8h a 17h de Brasília. O fuso do município = 8 menos a hora de abertura (aberturas de 6h a 8h15). **Converta para Brasília antes de cortar em "17h"** (as 32.025 seções "antes das 17h locais" são desses estados). `DT_BU_RECEBIDO` já é Brasília.
+- O encerramento de rotina cai de 17:00 a 17:15 (98%; mediana 17:01); a prorrogação de fato é depois de ~17:30.

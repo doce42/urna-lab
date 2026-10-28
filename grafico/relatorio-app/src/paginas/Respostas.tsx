@@ -2,7 +2,7 @@
 // demonstra, validação, histórico e condições de reabertura. Lê fase3/respostas_f3.json (via dados/respostas.json).
 import { useEffect, useMemo, useState } from 'react';
 import type { Registro } from '@/lib/tipos';
-import { RespostaCentral, SeloSinal, useVeredito, type Veredito, type Operacao } from '@/ui/Sinal';
+import { RespostaCentral, AlegacoesResumo, SeloSinal, useVeredito, type Veredito, type Operacao } from '@/ui/Sinal';
 import { Eyebrow, SkeletonBloco, Erro } from '@/ui/base';
 import { useDados } from '@/lib/dados';
 
@@ -10,7 +10,7 @@ type Pergunta = { id: string; pergunta: string; resposta: string; classificacao:
   robustez: string; causa: string; alcance: string; mudaria: string; validacao: string; por_ano: Record<string, string>; reabertura: string; em_votos: string };
 type Item = { id: string; pergunta: string; resposta: string; classificacao: string; perguntas_relacionadas: string[]; evidencias: string[]; limitacao: string;
   historico: { etapa: string; estado: string; resposta: string }[]; detalhe: string; em_votos: string; fechamento?: string };
-type Dados = { gerado: string; situacao: string; aviso: string; margem: string; capitulos: { id: string; titulo: string; perguntas: Pergunta[] }[]; inventario: Item[]; achados_sem_causa: string[]; limites: string[] };
+type Dados = { gerado: string; situacao: string; aviso: string; margem: string; capitulos: { id: string; titulo: string; descricao?: string; perguntas: Pergunta[] }[]; inventario: Item[]; achados_sem_causa: string[]; limites: string[] };
 
 const COR = (c: string) => c.startsWith('Demonstrado') ? 'var(--ok)' : c.startsWith('Refutado') ? 'var(--accent)' : c.startsWith('Parcialmente') ? 'var(--warn)' : c.startsWith('Não executado') ? 'var(--erro)' : 'var(--text-subtle)';
 const Selo = ({ c }: { c: string }) => (
@@ -125,13 +125,13 @@ export function Respostas({ reg, partes = [] }: { reg?: Registro; partes?: strin
   return (
     <div className="container pb-24">
       <header className="pt-10 md:pt-16 max-w-[54rem]">
-        <Eyebrow>Fase 3 · {d.situacao}</Eyebrow>
+        <Eyebrow>Respostas · {d.situacao}</Eyebrow>
         <h1 className="t-h1 mt-2">Perguntas e respostas científicas</h1>
-        <p className="t-lead mt-4 text-[17px]">Uma resposta explícita para cada pergunta que motivou a pesquisa: o que foi demonstrado, o que foi refutado, o que ficou em parte e o que não pôde ser determinado com os dados disponíveis, e por quê.</p>
+        <p className="t-lead mt-4 text-[17px]">Uma resposta explícita para cada pergunta que motivou a pesquisa: o que foi demonstrado, o que foi refutado, o que ficou em parte e o que não pôde ser determinado com os dados disponíveis, e por quê. São {todas.length} perguntas em {d.capitulos.length} capítulos, na ordem em que a pesquisa as respondeu; o número de cada pergunta não muda.</p>
         <p className="mt-3 text-[14px] text-muted leading-relaxed border-l-2 border-border pl-3">{d.aviso} <b className="font-medium text-text">{d.margem}</b></p>
         <div className="mt-4 flex flex-wrap gap-1.5">{Object.entries(cont).map(([k, v]) => <Selo key={k} c={`${k}: ${v}`} />)}</div>
-        <nav className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[14px]">{d.capitulos.map((c) => <a key={c.id} href={`#${c.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(c.id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-4">{c.titulo}</a>)}
-          <a href="#inventario" onClick={(e) => { e.preventDefault(); document.getElementById('inventario')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-4">Os 33 itens do inventário</a></nav>
+        <nav aria-label="Capítulos" className="mt-5"><ol className="grid gap-1.5 text-[14px] sm:grid-cols-2">{d.capitulos.map((c, k) => <li key={c.id}><a href={`#${c.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(c.id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-4">{k + 1}. {c.titulo}</a> <span className="text-subtle font-mono text-[12px]">{c.perguntas[0]?.id}–{c.perguntas[c.perguntas.length - 1]?.id}</span></li>)}
+          <li><a href="#inventario" onClick={(e) => { e.preventDefault(); document.getElementById('inventario')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-4">Os {d.inventario.length} itens do inventário</a></li></ol></nav>
       </header>
       <section className="mt-8"><Busca d={d} reg={reg} v={v} /></section>
       {v && <section id="hipoteses" className="mt-12 scroll-mt-20"><RespostaCentral v={v} /></section>}
@@ -142,6 +142,8 @@ export function Respostas({ reg, partes = [] }: { reg?: Registro; partes?: strin
       {capitulos.map((c) => (
         <section key={c.id} id={c.id} className="mt-10 md:mt-12 scroll-mt-20">
           <h2 className="t-h2">{c.titulo}</h2>
+          {c.descricao && <p className="mt-2 text-[15px] text-muted max-w-[52rem]">{c.descricao}</p>}
+          {c.id === 'alegacoes' && v?.resposta_central.alegacoes && <div className="mt-5"><AlegacoesResumo a={v.resposta_central.alegacoes} titulo={false} /></div>}
           {v?.resposta_central.operacao && c.id === v.resposta_central.operacao.capitulo && <OperacaoResumo o={v.resposta_central.operacao} />}
           {c.perguntas.length ? <ul className="mt-5 grid gap-3">{c.perguntas.map((p) => <CartaoPergunta key={p.id} p={p} />)}</ul> : <p className="mt-3 text-[14px] text-muted">Nenhuma pergunta deste capítulo com essa classificação.</p>}
         </section>
@@ -153,7 +155,7 @@ export function Respostas({ reg, partes = [] }: { reg?: Registro; partes?: strin
         <ul className="mt-4 grid gap-2 text-[15px] text-muted list-disc pl-5">{d.limites.map((a) => <li key={a}>{a}</li>)}</ul>
       </section>
       <section id="inventario" className="mt-14 scroll-mt-20">
-        <h2 className="t-h2">Os 33 itens do inventário</h2>
+        <h2 className="t-h2">Os {d.inventario.length} itens do inventário</h2>
         <p className="text-muted text-[15px] mt-2 max-w-[48rem]">Cada pergunta herdada da Fase 2 e cada pergunta nova da Fase 3, com a resposta direta, a ligação com as perguntas acima e o histórico de correções.</p>
         <Chips atual={filtro} mudar={setFiltro} />
         <ul className="mt-4 grid gap-2">{inv.map((i) => (

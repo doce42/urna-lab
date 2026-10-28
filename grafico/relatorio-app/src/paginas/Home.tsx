@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react';
-import { ArrowRight, BookOpen, FlaskConical, Map as MapIcon, Github } from 'lucide-react';
+import { ArrowRight, BookOpen, FlaskConical, Map as MapIcon, Github, FileDown } from 'lucide-react';
 import { sum } from 'd3-array';
 import { N, P, PP, milhoes, votosMil, minutoHora, nomeCurto, dataBR, REG, UF } from '@/lib/formato';
 import type { Home as HomeDados, Registro, Meta } from '@/lib/tipos';
-import { Botao, BotaoLink, Eyebrow, SeloClasse, CLASSE_COR, Nota } from '@/ui/base';
+import { Botao, BotaoLink, Eyebrow, CLASSE_COR, Nota } from '@/ui/base';
 import { Urna } from '@/ui/Marca';
 import { COR, Grafico, Tabela, Legenda } from '@/graficos/comum';
 import { Linhas } from '@/graficos/Linhas';
 import { Sankey, Cascata, BarrasUF, rotFluxo } from '@/graficos/especiais';
 import { dica, esc } from '@/ui/Dica';
 import { emProc } from '@/viz/testes';
-import { RespostaCentral, useVeredito, COR_SINAL } from '@/ui/Sinal';
+import { RespostaCentral, AlegacoesResumo, useVeredito, COR_SINAL } from '@/ui/Sinal';
 
 const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: string; eyebrow: string; titulo: string; lead?: string; children: React.ReactNode; className?: string }) => (
   <section id={id} className={`container mt-20 md:mt-28 scroll-mt-20 ${className}`}>
@@ -24,13 +24,33 @@ const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: st
 );
 
 
-function RespostaHome() {
+function RespostaHome({ meta }: { meta: Meta | null }) {
   const v = useVeredito();
   if (!v) return null;
   return (
     <section id="resposta" className="container mt-12 md:mt-16 scroll-mt-20">
-      <RespostaCentral v={v} />
-      <p className="mt-5 text-[14.5px]"><a href="#/respostas" className="text-accent-text underline underline-offset-4">Todas as perguntas, com a resposta, os números e o que cada uma significa em votos</a></p>
+      <RespostaCentral v={v} recolher />
+      <div className="mt-5 flex flex-wrap gap-3">
+        <BotaoLink href="#/respostas" variante="primario"><ArrowRight size={17} />Todas as perguntas, com o que cada uma significa em votos</BotaoLink>
+        {meta?.pdf && <BotaoLink href="/relatorio.pdf" download><FileDown size={17} />Relatório em PDF (resumo nas primeiras páginas)</BotaoLink>}
+      </div>
+    </section>
+  );
+}
+
+// Alegações públicas mais comuns, com a resposta curta (fase3/veredito_2026.json → resposta_central.alegacoes)
+function AlegacoesHome() {
+  const v = useVeredito();
+  const a = v?.resposta_central.alegacoes;
+  if (!a) return null;
+  return (
+    <section id="alegacoes" className="container mt-14 md:mt-20 scroll-mt-20">
+      <Eyebrow>O que circulou nas redes · rodadas 6 a 8</Eyebrow>
+      <div className="mt-2"><AlegacoesResumo a={a} max={4} /></div>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <BotaoLink href="#/respostas/alegacoes"><ArrowRight size={17} />Alegações de 2022 e posts (Q27 a Q41)</BotaoLink>
+        <BotaoLink href="#/respostas/pericial"><ArrowRight size={17} />Relatório pericial (Q51 a Q56, rodada 8)</BotaoLink>
+      </div>
     </section>
   );
 }
@@ -76,6 +96,10 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
   const placar = h.placar;
   const [modoApur, setModoApur] = useState<'t2' | 't1'>('t2');
   const falta = reg.testes.filter(emProc);
+  // textos do veredito (fase3/veredito_2026.json), para o placar não ter número escrito à mão
+  const op = verPlacar?.resposta_central.operacao;
+  const t63 = op?.achados.find((a) => a.teste === 'T63')?.texto;
+  const cegoEscala = op?.pontos_cegos[0] || '';
 
   // 1º x 2º turno: votos por candidato
   const barras1 = useMemo(() => {
@@ -191,7 +215,10 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       </section>
 
       {/* ---------- a pergunta e a resposta (fase3/veredito_2026.json) ---------- */}
-      <RespostaHome />
+      <RespostaHome meta={meta} />
+
+      {/* ---------- alegações públicas: a resposta curta das mais comuns ---------- */}
+      <AlegacoesHome />
 
       {/* ---------- Operação Veracidade Geral ---------- */}
       <OperacaoHome />
@@ -236,8 +263,8 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
           <div className="grid gap-3 lg:grid-cols-3">
             {[
               { t: '1. Prova determinística', cor: 'var(--cA)', p: r2 ? <>Assinatura da lista de arquivos válida em <b>{N(r2.assin_lista_ok)}</b> das <b>{N(base2)}</b> urnas do 2º turno com arquivos; recontagem do RDV igual ao boletim em <b>{N(r2.rdv_igual_boletim)}</b> de <b>{N(r2.urnas_com_rdv)}</b>; log fecha com o comparecimento em <b>{N(r2.log_igual_comparecimento)}</b> de <b>{N(r2.urnas)}</b>. Boletim de Urna e votação por seção iguais voto a voto nos dois turnos (T01). Cadeia de certificados até a autoridade emissora em <b>100%</b> das urnas de 2022 e 2026 (T60a), sem a raiz do TSE; 404 boletins impressos lidos por terceiros iguais ao TSE, amostra de conveniência (T61).</> : 'Processamento dos arquivos do 2º turno ainda não terminou.', ids: ['T01', 'T16', 'T17', 'T60a', 'T61'] },
-              { t: '2. Evidência estatística, com poder medido', cor: 'var(--cB)', p: <>{N(h.z_hist.acima5_lula + h.z_hist.acima5_flavio)} seções de {N(h.z_hist.n)} ficaram além de 5 desvios ({h.z_hist.acima5_lula} pró-Lula, {h.z_hist.acima5_flavio} pró-Flávio): anomalia estatística registrada (classe B), com excesso pró-Lula que também aparece em 2022, sem prova de causa. A curva reconstruída pela hora de recebimento dos boletins difere da prevista em no máximo {P(h.curva_max_desvio.depois_19h, 2)} pp depois das 19h (descrição, não teste calibrado; não é a curva divulgada). Dos {h.poder.cenarios} cenários de fraude simulada, {h.poder.detectados} foram detectados; o maior que passou despercebido move {N(h.poder.maior_passou_votos)} votos, contra uma margem de {N(h.margem_votos)}. Esses cenários só deslocam votos a favor de Lula; na Fase 2, o mesmo teste não via o deslocamento no sentido contrário, e na Fase 3, com a regra de duas caudas e contando só alarmes no sentido certo, vê troca dispersa de ~123 mil votos e troca concentrada de ~62 mil em locais ou municípios de até ~5 mil seções; não vê ~25 mil votos em nenhuma forma, nem troca no município inteiro das 5 maiores cidades (até ~700 mil votos). Na grade adversarial do T63 (15 mecanismos, dois sentidos), seções, locais, zonas e municípios são vistos a partir de 25 a 50 mil votos; UFs, os cinco grandes juntos, região, lote e deslocamento uniforme só a partir de ~0,5 a 2,2 milhões, ou nunca, e o poder é assimétrico entre os sentidos. São simulações, não votos encontrados nos dados, e mecanismos não simulados ficam fora desse alcance (P18, A2, T63).</>, ids: ['T02', 'T10', 'T13', 'T63'] },
-              { t: '3. Limite dos dados públicos', cor: 'var(--cG)', p: <>Uma troca pequena e uniforme no país inteiro, ou qualquer falha no software da urna que gere arquivos consistentes e assinados, não deixa rastro nos dados públicos: registros coerentes gerados pela própria fonte passam em todas as verificações internas (T62). Alterações em escala de UF, região ou lote passam sem alarme até centenas de milhares de votos (T63). Resultados nulos não provam ausência. {falta.length ? <>{falta.length === 1 ? 'Falta 1 teste' : `Faltam ${falta.length} testes`} ({falta.map((t) => t.id).join(', ')}).</> : null}</>, ids: ['C06b', 'T13b', 'T62'] },
+              { t: '2. Evidência estatística, com poder medido', cor: 'var(--cB)', p: <>{N(h.z_hist.acima5_lula + h.z_hist.acima5_flavio)} seções de {N(h.z_hist.n)} ficaram além de 5 desvios do esperado ({h.z_hist.acima5_lula} pró-Lula, {h.z_hist.acima5_flavio} pró-Flávio). O excesso pró-Lula é anomalia sem causa (sinal S3, T02) e também aparece em 2022. A curva reconstruída pela hora de recebimento dos boletins difere da prevista em no máximo {P(h.curva_max_desvio.depois_19h, 2)} pp depois das 19h (descrição, não teste calibrado; não é a curva divulgada). {t63 ? <>Poder medido com fraude simulada (T63): {t63}</> : null} São simulações, não votos encontrados nos dados; mecanismos não simulados ficam fora desse alcance.</>, ids: ['T02', 'T10', 'T13', 'T63'] },
+              { t: '3. Limite dos dados públicos', cor: 'var(--cG)', p: <>Uma troca pequena e uniforme no país inteiro, ou qualquer falha no software da urna que gere arquivos consistentes e assinados, não deixa rastro nos dados públicos: registros coerentes gerados pela própria fonte passam em todas as verificações internas (T62). {cegoEscala} Resultados nulos não provam ausência. {falta.length ? <>{falta.length === 1 ? 'Falta 1 teste' : `Faltam ${falta.length} testes`} ({falta.map((t) => t.id).join(', ')}).</> : null}</>, ids: ['C06b', 'T13b', 'T62'] },
             ].map((f) => (
               <div key={f.t} className="cartao p-5 border-l-4" style={{ borderLeftColor: f.cor }}>
                 <h3 className="t-h3">{f.t}</h3>
@@ -334,10 +361,10 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
             <a key={s} href={`#/docs/${s}`} className="cartao cartao-hover p-5 flex items-center justify-between gap-3"><div><div className="font-medium">{t}</div><div className="text-[13px] text-muted mt-0.5">{r}</div></div><ArrowRight size={18} className="text-subtle shrink-0" /></a>
           ))}
         </div>
-        <div className="mt-4 flex flex-wrap gap-2 items-center text-[13px] text-muted">
-          <SeloClasse classe="A" nome="regularidade" /> <SeloClasse classe="B" nome="anomalia estatística" /> <SeloClasse classe="D" nome="inconsistência verificável" /> <SeloClasse classe="G" nome="inconclusivo" />
-          <span>Classes de evidência substituem o binário “fraude / sem fraude”. Não é uma escada: uma anomalia robusta não vira evidência de manipulação só por ser muito significativa.</span>
-        </div>
+        {verPlacar && <div className="mt-4 flex flex-wrap gap-2 items-center text-[13px] text-muted">
+          {verPlacar.niveis.map((n) => <a key={n.id} href={`#/testes?sinal=${n.id}`} title={n.o_que_e} className="inline-flex items-center gap-1.5 h-7 pl-0.5 pr-2.5 rounded-full border border-border bg-surface text-xs font-medium text-text hover:border-border-strong"><b className="grid place-items-center min-w-6 h-6 px-1 rounded-full text-white text-[11px]" style={{ background: COR_SINAL[n.id] || 'var(--text-subtle)' }}>{n.id}</b>{n.nome}</a>)}
+          <span className="basis-full">A escala de sinal substitui o binário “fraude / sem fraude”. Não é uma escada: uma anomalia robusta não vira evidência de manipulação só por ser muito significativa. As classes de evidência A a G, da Fase 1, continuam no detalhe de cada teste como escala histórica.</span>
+        </div>}
       </Secao>
     </div>
   );

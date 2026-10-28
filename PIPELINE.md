@@ -10,7 +10,7 @@ apuracao-analise/
   .venv/           Python 3.13: numpy pandas scipy pyarrow aiohttp httpx[http2] asn1crypto cryptography gmpy2
   scripts/         download e preparação
   analise/         testes e leitura dos arquivos das urnas (+ resultados *.txt / *.json / *.parquet)
-  grafico/         montar_dados.py, prever.py e web/ (index.html, relatorio.html, dados JSON)
+  grafico/         montar_dados.py, prever.py, montar_relatorio_pdf.py (PDF), web/ (index.html, relatorio.html, dados JSON, relatorio.pdf) e relatorio-app/ (site)
   dados/
     originais/           votação por seção BR 2026 (zip oficial) + leiame do TSE
     1turno/ 2turno/      BU na Web 2026 filtrado (só Presidente) + votação por seção por turno
@@ -38,7 +38,7 @@ Na coluna "Tempo", os valores medidos em 27/10/2026, numa máquina com 16 núcle
 | 8 | `.venv/bin/python analise/processar_brutos.py <turno> [UF…]` | arquivos das urnas | `analise/brutos/<t>t/urnas_<UF>.parquet` e `minutos_<UF>.parquet` | ~16 ms/urna/núcleo; 12 processos |
 | 9 | `.venv/bin/python analise/relatorio_dados.py` | tudo acima | `grafico/web/relatorio_dados.json`, `grafico/web/logs.json` | ~1 min |
 | 10 | `cd grafico/web && python3 -m http.server 8765 --bind 127.0.0.1` | — | http://localhost:8765 (gráfico) e /relatorio.html | — |
-| 11 | `chromium --headless --print-to-pdf=relatorio.pdf http://127.0.0.1:8765/relatorio.html` | página | `grafico/web/relatorio.pdf` | segundos |
+| 11 | `make pdf` (`python3 -I grafico/montar_relatorio_pdf.py`) | `fase3/veredito_2026.json`, `fase3/respostas_f3.json`, `testes/registro.json`, `rodadas/linha_do_tempo.json` (mais `operacao_veracidade/resultados/tabelas_sim.md` e `fase3/resultados/relatorio_pericial_r2b.json`) | `grafico/web/relatorio_impresso.html` → Chromium headless (sem servidor) → `grafico/web/relatorio.pdf`, copiado para `grafico/relatorio-app/public/relatorio.pdf` | ~1 s |
 
 Rode tudo que é pesado com `nice -n 10 ionice -c3` para não travar o computador.
 
@@ -137,3 +137,17 @@ Rode tudo que é pesado com `nice -n 10 ionice -c3` para não travar o computado
 - **A verificação de lista (`assin_lista_ok`) usa o certificado embutido no mesmo arquivo:** é autoconsistência. Só a cadeia (`cert_extrai.py`) autentica até a AC emissora. `assin_ok_<tipo>` assina o **hash da lista**, não o arquivo: use sempre junto com `hash_ok_<tipo>`.
 - **A página oficial de certificados do TSE responde HTTP 403 a este ambiente:** não contornar.
 - **`rodada.py fechar --incluir` agora ignora arquivos que o git ignora** (antes copiou por engano `scripts/.privado.txt` e 43 logs na rodada 6).
+
+## 8. Rodada 8 (aberta)
+1. `fase3/relatorio_pericial.py` (R1 a R9, ~1 min), depois `fase3/relatorio_pericial_r2b.py` (exploratório). Saídas: `fase3/resultados/relatorio_pericial.json` e `relatorio_pericial_r2b.json`.
+2. Regerar `f3_veredito.py`, `f3_inventario.py`, `f3_respostas.py`, `scripts/verificar.py`, build do site.
+**Armadilhas novas:**
+- **`DT_ENCERRAMENTO` e `DT_ABERTURA` estão em hora local.** Em MT, AM, MS, RO e RR o horário legal local é 7h a 16h e no AC 6h a 15h, que são 8h a 17h de Brasília. Dividir por "17h" em hora local manda as 32.025 seções desses estados para "antes do prazo". **Converta para Brasília antes de cortar.**
+- **O encerramento de rotina cai entre 17:00 e 17:15 (98% das seções; mediana 17:01).** Um corte em 17:00:59 chama esse bloco de "depois do prazo". A prorrogação de fato é depois de ~17:30 (7.604 seções em 2026).
+- **Compare grupos dentro do município.** Diferenças entre grupos de seções (hora, liberação manual, tarde × cedo) quase sempre são composição geográfica.
+
+
+## Relatórios por fase e privacidade (28/10/2026)
+
+- `relatorios/` tem um relatório por fase ou rodada (`fase1.md` a `rodada-8.md`, com `README.md` de índice), gerado por `python scripts/gerar_relatorios.py` a partir de `rodadas/linha_do_tempo.json`. Regerar sempre que a linha do tempo mudar; a rodada 8 aparece como em aberto.
+- Medição de acessos: Google Analytics (Firebase) carregado **só depois do aceite** na faixa de privacidade (`grafico/relatorio-app/src/ui/Consentimento.tsx`); sem aceite ou com Do Not Track nada do Google é baixado. Texto em `PRIVACIDADE.md` (aba Docs). Não gravar o aceite em arquivo versionado; qualquer novo rastreador passa pelo mesmo consentimento.

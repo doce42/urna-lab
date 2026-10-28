@@ -22,6 +22,12 @@ Auditoria adversarial dos dados e do próprio veredito. Pergunta: **os dados ofi
 
 Relatório executivo: [`operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md`](operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md). Simulações: [`03_SIMULACOES_ADVERSARIAIS.md`](operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md). Criptografia: [`02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md`](operacao_veracidade/02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md).
 
+## Rodada 8 (aberta, 28/10/2026): relatório pericial e alegações públicas
+Rodada **em andamento, não congelada**: testes T66 a T70, perguntas Q51 a Q56, pré-registro `fase3/PREREG_RELATORIO_PERICIAL.md`. Não muda a resposta central nem os pontos cegos.
+- **Alegações públicas testadas** (a live de 2022, o vídeo dos "votos extras" e o relatório pericial): reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q56).
+- **Prorrogação (T66, T09, T52):** o corte das 17h00 do relatório mistura fusos (as 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR) e conta o encerramento de rotina (17:01 a 17:15) como prorrogação. A prorrogação de fato (encerramento depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228.095 votos de vantagem, 5,1% da margem de 4.430.191; sem essas seções, Lula lidera por 4.202.096.
+- **Biometria, unanimidade, Benford, microdados (T67 a T70):** liberação sem biometria menor que em 2022 e sem relação com Lula dentro do município; razão de unanimidade menor que em 2022; Benford do primeiro dígito sem poder neste dado; arquivos por urna publicados na noite de 25/10 (o CSV BWeb não é testável aqui).
+
 ## A pergunta e a resposta (28/10/2026, revista na V1.5)
 **A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?** Não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um.
 - **Escala:** inverter o resultado exigiria trocar ~2,2 milhões de votos de lado.

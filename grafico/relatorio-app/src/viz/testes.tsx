@@ -171,9 +171,12 @@ export const VIZ: Record<string, (c: Ctx) => Viz> = {
     el: <div className="grid gap-3">{m && <Figuras itens={[{ n: `< ${m[1]}%`, r: 'erro da conferência previsto × observado', estado: 'ok' }]} />}<a href="#/mapas" className="text-sm font-medium text-accent-text underline underline-offset-4">Ver o fluxo de votos entre os turnos na página Mapas →</a></div> }; },
 };
 
+// o selo de sinal já diz S0, S1...: o texto do resultado não repete o prefixo e começa com maiúscula
+export const semPrefixo = (x: string) => { const r = x.replace(/^(S\d|PC|M):\s*/, ''); return r.charAt(0).toUpperCase() + r.slice(1); };
+
 export function generico(c: Ctx): Viz {
   const t = c.t;
-  return { ler: 'Se não houver nada anormal, vale a hipótese nula à esquerda; o resultado observado está à direita.', el: <Dupla a="Hipótese nula (nada anormal)" ta={t.hipotese_nula || t.pressupostos || t.metodo} b="Observado" tb={t.resultado_atual || 'sem resultado registrado'} /> };
+  return { ler: 'Se não houver nada anormal, vale a hipótese nula à esquerda; o resultado observado está à direita.', el: <Dupla a="Hipótese nula (nada anormal)" ta={t.hipotese_nula || t.pressupostos || t.metodo} b="Observado" tb={semPrefixo(t.resultado_atual || '') || 'sem resultado registrado'} /> };
 }
 export const MET: Record<string, string> = { T01: '2.5', T32: '2.5', T14: '2.2', T15: '2.2', T16: '2.2', T16c: '2.3', T17: '2.2', T17b: '2.2', T24: '2.2', T34: '2.4', T35: '2.4', T02: '3.1', T10: '3.2', T11: '3.2', C06: '3.3', C06b: '3.3', E01: '3.4', E02: '3.4', E03: '3.4', T03: '3.5', T04: '3.5', T05: '4.1', T27: '4.1', T26: '4.2', T21: '4.3', T07: '4.4', T22: '4.4', T25: '4.4', T13: '4.5', T13b: '4.5', T23: '4.6', T28: '4.7', T29: '4.7', T30: '4.7', T31: '4.7', T33: '4.7', T20: '4.8', T12: '4.9', T36: '2.2' };
 export const MODS: Record<string, [string, string]> = {
@@ -183,9 +186,11 @@ export const MODS: Record<string, [string, string]> = {
   D: ['Forense estatística', 'Testes clássicos de padrões em números de votos, sempre com a medida de quanto cada teste consegue (ou não) enxergar.'],
   E: ['Divergências e agrupamento', 'Seções ou locais que fogem do esperado, se se agrupam no espaço e que explicações existem.'],
   F: ['Referência: 2022', 'A mesma bateria no pleito de 2022, para saber se um número de 2026 é incomum.'],
-  H: ['Fase 3, alegações públicas e Operação Veracidade', 'Investigações da F3, alegações públicas testadas e a auditoria adversarial (T60a a T65), com nulos explícitos e o que significam em votos.'],
+  H: ['Fase 3, alegações públicas, Operação Veracidade e relatório pericial', 'Investigações da Fase 3 (T40 a T44), alegações públicas testadas e seus desdobramentos (T45 a T59), a Operação Veracidade Geral (T60a a T65) e o relatório pericial da rodada 8, em aberto (T66 a T70), com nulos explícitos e o que significam em votos.'],
   G: ['Fase 2: investigações aprofundadas', 'Testes novos, com pré-registro, que tentam derrubar métodos e conclusões anteriores. Cada um traz o que significa em número de votos.'],
 };
+// rótulo curto do módulo para filtros e selos
+export const MOD_CURTO: Record<string, string> = { A: 'integridade', B: 'comportamento', C: 'entre turnos', D: 'forense', E: 'divergências', F: 'referência 2022', G: 'Fase 2', H: 'Fase 3, alegações e veracidade' };
 export const ESTADO_TXT: Record<string, string> = { concluido: 'concluído', em_andamento: 'em andamento', a_fazer: 'a fazer', concluido_excluido_da_conclusao: 'concluído, excluído da conclusão', concluido_2t: 'concluído (2º turno)', concluido_1t: 'concluído (1º turno)', concluido_2026: 'concluído (2026)' };
 // testes baseados nos logs das urnas: em reprocessamento (resultado preliminar) enquanto o reprocessamento não termina
 export const EM_REPROCESSAMENTO = new Set<string>(); // reprocessamento dos logs concluído em 28/10/2026; use para marcar testes de novo se algo voltar a ser reprocessado

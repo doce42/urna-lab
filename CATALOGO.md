@@ -316,3 +316,19 @@ Documentos em `operacao_veracidade/` (protocolo, relatórios 00 a 10, executivo)
 - **Artefatos e erros meus:** contagem de eventos de logs de outras seções (ES 57932/9/85); "antes das 19h" de qualquer dia (216 em vez de 77); cache de zip reabrindo o arquivo; fabricante calibrado com a direção errada; `pkill -f` auto-casado.
 - **Dados derivados grandes fora do git** (`.gitignore`): parquets de certificados e de nulos do RDV (reproduzíveis por script) e arquivos estáticos de terceiros (licença não verificada).
 - **Documentação e skills da rodada 7, atualizadas depois do congelamento (28/10/2026):** METODOLOGIA, PIPELINE, MAPA_SKILLS, REFERENCIAS, AUTOAUDITORIA, DADOS_PRESERVACAO, DIRETRIZ, CONTRIBUTING, AGENTS (regras), Makefile e as 8 skills (`.agents/skills/`). A cópia congelada desses arquivos em `rodadas/rodada-7/arquivos/` é a anterior a esta atualização; a raiz tem a vigente, e a rodada 8 congelará a vigente. Rodada fechada não se reescreve.
+
+## Rodada 8 (aberta, 28/10/2026): Relatório Pericial Independente
+Pré-registro `fase3/PREREG_RELATORIO_PERICIAL.md` (emenda 17), script `fase3/relatorio_pericial.py`, R2b exploratório. Testes T66 a T70, perguntas Q51 a Q56. **Não congelada.**
+- **T66:** números do relatório reproduzidos (150.771 seções até 17:00:59 com Lula 47,61%; 339.593 de 17:01 a 17:15 com 53,46%; +6.177.738 depois). O corte mistura fusos (as 32.025 seções antes das 17h locais estão em MT, AM, MS, RO, AC e RR), chama a rotina de prorrogação e depende do minuto; em hora de Brasília, até 17:00:59 Flávio tem 50,99% e 0,61 mi; prorrogação de fato (> 17:30): 7.604 seções, +228.095 para Lula (5,1% da margem). Dentro do município, +0,2 ponto.
+- **T67:** 8.632.488 liberações (6,73%; 8,06% em 2022); relação com Lula igual no 1º turno e em 2022, nula dentro do município.
+- **T68:** 106 contra 4 reproduzido; razões menores que em 2022 (70,5 : 1 e 47 : 1); 94% no Norte e Nordeste.
+- **T69:** Benford do primeiro dígito: desvio dentro das referências simuladas; sem poder neste dado.
+- **T70:** arquivos por urna publicados na noite de 25/10; CSV BWeb não testável aqui.
+- **Documentação, skills, selo do rodapé e placar da Home pelo Sinal atualizados na mesma data;** classes de T60a (A para D) e T53 (B para A) alinhadas ao sinal, com `mudancas`.
+- **Revisão do site e PDF refeito (28/10/2026, rodada 8 ainda aberta):** veredito com a prorrogação de fato (+228.095, 5,1% da margem; H8) e a síntese das alegações públicas (`resposta_central.alegacoes`, com resposta curta das mais comuns na Home); Q51 a Q56 em capítulo próprio das Respostas (ids mantidos); classe de evidência alinhada ao sinal em T05, T10, T11 (A → G), T14, T15, T31 (A → D), T35 (G → D) e E02 (A → B), com `mudancas`; comandos de reprodução sem abreviação (T60b, T63, T64, T65); regras que ignoravam dados novos corrigidas (lead da Evolução só via F2 e F3; grupos da página Docs deixavam de fora 15 documentos); PDF montado por script a partir dos JSON (`grafico/montar_relatorio_pdf.py`, `make pdf`), com resumo de 2 a 3 páginas e a parte densa.
+
+
+## Relatórios por fase e privacidade (28/10/2026)
+
+- `relatorios/` tem um relatório por fase ou rodada (`fase1.md` a `rodada-8.md`, com `README.md` de índice), gerado por `python scripts/gerar_relatorios.py` a partir de `rodadas/linha_do_tempo.json`. Regerar sempre que a linha do tempo mudar; a rodada 8 aparece como em aberto.
+- Medição de acessos: Google Analytics (Firebase) carregado **só depois do aceite** na faixa de privacidade (`grafico/relatorio-app/src/ui/Consentimento.tsx`); sem aceite ou com Do Not Track nada do Google é baixado. Texto em `PRIVACIDADE.md` (aba Docs). Não gravar o aceite em arquivo versionado; qualquer novo rastreador passa pelo mesmo consentimento.

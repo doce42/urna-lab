@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 // Cabeçalho, navegação e rodapé.
+import { abrirPrivacidade } from '@/ui/Consentimento';
 import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { Github, Menu, Moon, Sun, X, FileDown } from 'lucide-react';
@@ -92,6 +93,7 @@ export function Rodape({ meta }: { meta: Meta | null }) {
             <li><a className="text-muted hover:text-text" href="#/docs/pipeline">Como reproduzir</a></li>
             <li><a className="text-muted hover:text-text" href="#/docs/contribuir">Como contribuir e discordar</a></li>
             <li><a className="text-muted hover:text-text" href="#/docs/consumo">Consumo de IA do estudo</a></li>
+            <li><a className="text-muted hover:text-text" href="#/docs/privacidade">Privacidade</a> · <button type="button" className="text-muted hover:text-text underline" onClick={abrirPrivacidade}>Preferências</button></li>
           </ul>
         </div>
       </div>

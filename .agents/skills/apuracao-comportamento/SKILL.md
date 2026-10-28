@@ -39,3 +39,6 @@ Comportamento esperado = modelos N2 (persistência), N3 (transferência) e N4 (p
 - **Brancos e nulos:** a queda de 1,82 mi tem causa estrutural medida: erro de campo com número de governador no campo de presidente (698 mil no 1º turno de 2026) e menos 2º turno de governador (8% dos votos contra 53% em 2022) (T56 a T58).
 - **Controle proporcional (T65 M6):** dividir eliminados e extras na proporção do 1º turno em cada município; o resíduo (+3,68 mi para Lula em 2026, +1,99 mi para Bolsonaro em 2022, 27 de 27 UFs) é o que passou do proporcional. Exploratório, sem causa demonstrada.
 - Regressão ecológica por município é associação; leia só como direção (T37, T59).
+
+## Atualização da rodada 8 (aberta, 28/10/2026)
+- **Liberação sem biometria:** 8.632.488 (6,73%) em 2026, 10.011.346 (8,06%) em 2022; a razão com a margem só informa porque a margem muda. A relação com o voto em Lula tem a mesma forma no 1º turno e em 2022 e é nula dentro do município (T67); idade no T12.

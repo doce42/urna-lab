@@ -40,3 +40,8 @@ Troca uniforme no país inteiro não deixa diferença entre urnas: nenhum teste 
 - **Resultados que valem para qualquer teste futuro:** poder ≥ 80% a partir de 25 a 50 mil votos em seções, locais, zonas e municípios; só de 0,5 a 2,2 mi, ou nunca, em UF, cinco grandes juntos, região, lote, conversão e uniforme em logit; **poder assimétrico entre os sentidos** (a base real já tem cauda pró-Lula); o dígito final (D5) só reage a alterações escancaradas.
 - **Para acrescentar um mecanismo:** função em `escolhe`/`aplica` do script, entrada em `MEC` (e em `DET` se aleatório), emenda no protocolo antes de rodar. Fabricação: `ingênua`, `calibrada` e de `estrutura completa` (efeitos centrados, total municipal corrigido; `sim_fabricacao_v2.py`).
 - **T64 (zeros):** três famílias beta-binomiais (município, zona, local) com UF retida falham o critério; modelo que falha não é usado como prova. Descrição: zeros são locais de uma seção só com menos de 1% do total.
+
+## Atualização da rodada 8 (aberta, 28/10/2026)
+- **Corte arbitrário:** quando uma alegação divide a apuração em dois grupos (hora, liberação manual, tarde × cedo), mostre a **sensibilidade do corte** (17:00:59 a 19:00:00) e a diferença **dentro do município**; quase sempre a diferença é composição geográfica. No T66, mover o corte em dois minutos inverte o resultado do grupo "de antes".
+- **Benford do primeiro dígito** não vale para contagens limitadas (o dígito 1 aparece em ~61% das seções, contra 30%): compare com referências simuladas sem manipulação (binomial e beta-binomial) e diga que o teste não discrimina neste dado (T69).
+- **Unanimidade e liberação manual:** compare sempre com 2022 e com o 1º turno antes de ler como efeito do 2º turno de 2026 (T67, T68).

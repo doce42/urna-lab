@@ -61,3 +61,6 @@ Um resultado abaixo de 100% é, primeiro, suspeita de erro de leitura (aconteceu
 - **T61:** boletim de terceiros pelo QR Code: `hash_final` = SHA-512 do conteúdo; mesma assinatura da urna, cadeia de obtenção diferente; amostra de conveniência não se extrapola; relógio do servidor de terceiros não é auditado.
 - **T62:** verificações de consistência não separam registros coerentes assinados pela fonte dos genuínos; mede o limite, não a possibilidade operacional.
 - A página oficial de certificados do TSE responde HTTP 403 a este ambiente: não contornar.
+
+## Atualização da rodada 8 (aberta, 28/10/2026)
+- **Disponibilidade dos arquivos:** a primeira conferência de terceiro contra o arquivo publicado pelo TSE (19:10 de 25/10) mostra que os arquivos por urna estavam disponíveis na noite da eleição; o CSV BWeb não tem registro de primeira publicação no projeto (T70).

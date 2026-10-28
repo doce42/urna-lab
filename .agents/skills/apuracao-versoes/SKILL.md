@@ -36,3 +36,6 @@ Não use `pgrep` ou `pkill -f` com padrão que apareça na própria linha. Mate 
 - **Publicar:** `publicar.py` recusa arquivo > 20 MB e total > 120 MB; derivados grandes estão no `.gitignore`. Depois: tag `v1.5` no clone público, `gh release create`, `firebase deploy --only hosting`, `carimbo.py criar rodadas/rodada-7/resumo.json` (e `atualizar` horas depois).
 - **Rodada 8 permanece aberta**: nada de `rodada.py fechar 8` sem aprovação explícita do responsável.
 - Nunca `pkill -f` com padrão presente na própria linha de comando; mate por PID em comando separado.
+
+## Atualização da rodada 8 (aberta, 28/10/2026)
+- **Rodada 8 aberta e publicada como registro vivo** (GitHub e site, sem tag e sem `rodada.py fechar 8`). A V1.5 (rodada 7) continua a última versão congelada.

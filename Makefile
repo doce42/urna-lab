@@ -20,7 +20,8 @@ ajuda:
 	@echo "make integridade     arquivos das urnas: assinatura, hash, RDV, log, sequência (NPROC=...)"
 	@echo "make totalizacao     T32: soma das urnas x totais oficiais"
 	@echo "make teste T=<id>    roda um teste do registro (testes/registro.json)"
-	@echo "make relatorio       dados do relatório; make pdf gera o PDF; make servir abre em localhost:8765"
+	@echo "make relatorio       dados do relatório interativo; make servir abre em localhost:8765"
+	@echo "make pdf             relatório em PDF montado dos JSON (veredito, respostas, registro) → grafico/web/relatorio.pdf e o site"
 	@echo "make verificar       conferências rápidas (totais, registro, cobertura)"
 	@echo "make registro        lista os testes e a situação de cada um"
 	@echo "make veracidade-certs   T60a: cadeia de certificados de todas as urnas (4 combinações, ~1 h)"
@@ -63,9 +64,10 @@ relatorio:
 servir:
 	cd grafico/web && python3 -m http.server 8765 --bind 127.0.0.1
 
+# PDF: monta grafico/web/relatorio_impresso.html a partir de fase3/veredito_2026.json, fase3/respostas_f3.json e
+# testes/registro.json e imprime com o Chromium headless (não precisa de servidor). Rode depois de regerar os JSON.
 pdf:
-	chromium --headless=new --disable-gpu --no-pdf-header-footer --virtual-time-budget=20000 \
-	  --print-to-pdf=grafico/web/relatorio.pdf http://127.0.0.1:8765/relatorio.html
+	python3 -I grafico/montar_relatorio_pdf.py
 
 verificar:
 	$(PY) scripts/verificar.py

@@ -41,6 +41,10 @@ const testes = registro.testes.map((t) => {
   const o = {};
   const san = (v) => (typeof v === 'string' ? sanear(v) : Array.isArray(v) ? v.map(san) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, san(x)])) : v);
   for (const k of Object.keys(t)) o[k] = san(t[k]);
+  // mudanças registradas em duas formas ({campo, causa, origem, justificativa} e {data, causa, descricao}): o site lê só a primeira
+  const norm = (ms) => (ms || []).map((m) => (m.justificativa ? m : { campo: m.campo || '', causa: m.causa, origem: m.origem || m.data || '', justificativa: m.descricao || '' }));
+  if (o.mudancas) o.mudancas = norm(o.mudancas);
+  if (o.versoes) o.versoes = o.versoes.map((v) => (v.mudancas ? { ...v, mudancas: norm(v.mudancas) } : v));
   return o;
 });
 const emProc = (t) => t.situacao === 'a_fazer' || /^(a fazer|em processamento)/i.test(t.resultado_atual || '');
@@ -226,6 +230,8 @@ gravar('geo.json', topo);
 
 // ---------- documentos (markdown → seções HTML) ----------
 const DOCS = [
+  ['relatorios', 'relatorios/README.md', 'Relatórios por fase', 'Um relatório por fase e rodada, com remissão ao detalhe; a rodada 8 aparece em aberto.'],
+  ['privacidade', 'PRIVACIDADE.md', 'Privacidade', 'O que o site mede, só com o seu aceite, e como recusar ou revogar.'],
   ['visao-geral', 'README.md', 'Visão geral', 'O que é o estudo, o que tem no repositório e como reproduzir.'],
   ['conclusao', 'CONCLUSAO.md', 'Conclusão', 'A resposta do estudo em três níveis: provado, estatística com poder medido e limites dos dados públicos.'],
   ['rodadas', 'RODADAS.md', 'Evolução da pesquisa', 'Versões congeladas, revisões, história de cada teste e a causa de cada mudança.'],
@@ -235,13 +241,15 @@ const DOCS = [
   ['fase3', 'RELATORIO_F3.md', 'Fase 3', 'Pendências, curvas e zeros: o que foi feito, o estado final de cada item e o que ficou bloqueado.'],
   ['fase3-auditoria', 'fase3/AUDITORIA_F3.md', 'Auditoria da Fase 3', 'Revisão crítica da F3: o que foi executado, documentado, publicado e validado, e o que excedia a evidência.'],
   ['veredito-2026', 'fase3/VEREDITO_2026.md', 'Veredito de 2026', 'A pergunta central, a dedução, as hipóteses de fraude examinadas e o sinal de cada teste.'],
-  ['fase3-respostas', 'fase3/RESPOSTAS_F3.md', 'Respostas científicas da Fase 3', 'Resposta explícita por pergunta: integridade, curvas, zeros, mudança entre turnos e os 33 itens do inventário.'],
+  ['fase3-respostas', 'fase3/RESPOSTAS_F3.md', 'Respostas científicas', 'Resposta explícita por pergunta (Q1 a Q56): integridade, curvas, zeros, mudança entre turnos, alegações públicas, Operação Veracidade, relatório pericial e os 33 itens do inventário.'],
   ['fase3-adversarial', 'fase3/RELATORIO_ADVERSARIAL.md', 'Auditoria adversarial', 'Explicações baseadas em registros oficiais confrontadas com hipóteses concorrentes; o que resistiu, o que enfraqueceu e o que depende só da confiança nos registros.'],
   ['fase3-verificacoes-finais', 'fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md', 'Verificações finais da Fase 3', 'A1 (seções de 2022 sem par), A2 (poder no sentido correto e grandes municípios), A4 (universo do T28) e parecer.'],
   ['fase3-parecer', 'fase3/PARECER_CONSOLIDACAO_F3.md', 'Parecer de consolidação da Fase 3', 'Impacto do SA22, matriz por pergunta, pendências por natureza e recomendação.'],
   ['fase3-aceitacao', 'fase3/RELATORIO_ACEITACAO_F3.md', 'Aceitação da Fase 3', 'Verificação dos 173 arquivos e do BU não lido, revisão de I1 a I3, matriz completa e parecer.'],
   ['fase3-prereg-revisao', 'fase3/PREREG_REVISAO.md', 'Pré-registro da revisão da Fase 3', 'Investigações I1 a I3, escritas antes de rodar: poder contra trocas concentradas, zeros e nulo espacial.'],
-  ['fase3-inventario', 'fase3/INVENTARIO.md', 'Inventário da Fase 3', 'Os 27 itens da Fase 3, com estado inicial, trabalho feito, estado final e a próxima evidência.'],
+  ['fase3-inventario', 'fase3/INVENTARIO.md', 'Inventário da Fase 3', 'Os itens da Fase 3, com estado inicial, trabalho feito, estado final e a próxima evidência.'],
+  ['rp-prereg', 'fase3/PREREG_RELATORIO_PERICIAL.md', 'Pré-registro do relatório pericial (rodada 8)', 'Alegações do relatório em imagens (hora de encerramento, biometria, unanimidade, Benford, microdados), como cada uma seria medida e a leitura fixada antes de rodar. Rodada em aberto.'],
+  ['prereg-alegacoes', 'fase3/PREREG_LIVE_2022.md', 'Pré-registro da live de 2022', 'Urnas anteriores a 2020, ID fixo no log e os 51,05% das UE2020: critérios fixados antes de rodar (rodada 6).'],
   ['ov-geral', 'operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md', 'Operação Veracidade Geral', 'Relatório executivo da auditoria adversarial: os dados oficiais usados pelo estudo são fiéis ao que aconteceu? O que foi testado, os achados e os pontos cegos.'],
   ['ov-impacto', 'operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md', 'Impacto nos vereditos anteriores', 'As 22 afirmações do veredito confrontadas com os resultados novos: preservadas, reforçadas, enfraquecidas ou refutadas como redigidas.'],
   ['ov-recomendacoes', 'operacao_veracidade/RECOMENDACOES_SITE.md', 'Recomendações para o site', 'O que mudar no texto público e quais avisos mostrar ao lado dos resultados.'],

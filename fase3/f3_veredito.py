@@ -19,7 +19,7 @@ S = lambda n, m: {"nivel": n, "motivo": m}
 SINAL = {
  "T01": S("S0", "Tabelas do TSE iguais voto a voto (consistência interna)."), "T02": S("S3", "Excesso de seções com virada pró-Lula muito acima do esperado: em 2026, 33 seções em 33 locais diferentes, com comparecimento caindo (−3,0 pp; contrário de enchimento), ~773 votos; em 2022, 90 seções, ~2.600 votos. Real, sem causa."),
  "T03": S("S0", "Efeito desprezível da hora de chegada."), "T04": S("S0", "Urna trocada vota igual (equivalência)."), "T05": S("PC", "Dígitos uniformes, mas o teste não tinha poder para quase nenhum mecanismo: na grade do T63 o dígito final só reage a alterações escancaradas (21% a 27% das réplicas de 'poucas seções' com 250 mil votos ou mais, onde os outros detectores já têm 100%) e é nulo nos demais."), "T07": S("S0", "Sem assinatura de enchimento."),
- "T08": S("S0", "Nenhum boletim antes do fim da votação."), "T09": S("S1", "Prorrogação em 6.748 seções; virada igual com e sem."), "T10": S("PC", "Curva sem modelo de chegada validado; não decide."),
+ "T08": S("S0", "Nenhum boletim antes do fim da votação."), "T09": S("S1", "Prorrogação em 6.748 seções pelo critério deste teste; virada igual com e sem. Pelo horário de encerramento depois das 17:30 (T66), a prorrogação de fato tem 7.604 seções e deu +228.095 votos de vantagem a Lula (5,1% da margem)."), "T10": S("PC", "Curva sem modelo de chegada validado; não decide."),
  "T11": S("PC", "Idem."), "T12": S("S1", "Associação some ao controlar idade."), "T13": S("M", "Poder dos testes (simulação)."), "T13b": S("M", "Poder dos testes de log."),
  "T14": S("S4", "Log com contagem diferente do comparecimento: 16 seções-turno em 2026 (113 votos); 153 em 2022 (5.287 votos sem registro)."),
  "T15": S("S4", "Imagem do boletim diferente do boletim digital em RS 88013/2/199 (2022, 92 votos); em 2026, 1 caso compatível com contingência registrada."),
@@ -84,8 +84,8 @@ HIP = [
    ["T38", "T07", "T14", "T28", "T31", "T63"], "Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido. Enchimento abaixo de 250 mil votos não é excluído pela bateria estatística (T63).", SINALC, "~100 votos com sinal."),
  H("H7", "Apagar votos do adversário em seções inteiras (zeros)", "Mais seções com zero votos do que o perfil local prevê", "Dezenas a milhares de votos", ["T41", "T64", "R3", "E3"],
    "Não determinado: nenhum modelo de cauda baixa passou na calibração (T41, R3). As três famílias novas do T64 também falham: o modelo por município prevê 1,3 zeros contra 106 observados (2022: 4,3 contra 141); o por local de votação, 66,7 contra 106. Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total, em 2022 (141) e em 2026 (106); os registros dessas seções conferem.", NDPC, "Se fossem anomalia, de ~44 a ~4.800 votos conforme o modelo (no máximo 0,11% da margem); nenhum modelo calibrou."),
- H("H8", "Manipular a ordem ou o ritmo da divulgação (virada 'fabricada')", "Sequência divulgada diferente da base; curva impossível de reproduzir", "Não muda votos", ["R2", "T40", "F4", "T52", "T61"],
-   "A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada, e a curva continua não determinada. Fato medido: o TSE não registrou recebimento de boletins das 17:07 às 19:03 (116 minutos) no 2º turno de 2026, só em 2026; 77 boletins de terceiros estavam registrados fora do TSE entre 18:10 e 18:47 (T52, T61). Isso não altera votos; a causa não está nos dados.", SEMS, "A ordem não altera nenhum voto."),
+ H("H8", "Manipular a ordem ou o ritmo da divulgação (virada 'fabricada')", "Sequência divulgada diferente da base; curva impossível de reproduzir", "Não muda votos", ["R2", "T40", "F4", "T52", "T61", "T09", "T66"],
+   "A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada, e a curva continua não determinada. Fato medido: o TSE não registrou recebimento de boletins das 17:07 às 19:03 (116 minutos) no 2º turno de 2026, só em 2026; 77 boletins de terceiros estavam registrados fora do TSE entre 18:10 e 18:47 (T52, T61). Isso não altera votos; a causa não está nos dados. A prorrogação de fato (encerramento depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228.095 votos de vantagem, 5,1% da margem de 4.430.191; sem essas seções, Lula lidera por 4.202.096 (T66, T09, T52).", SEMS, "A ordem não altera nenhum voto. As seções da prorrogação de fato somam +228.095 votos de vantagem para Lula (5,1% da margem); sem elas, Lula lidera por 4.202.096."),
  H("H9", "Deslocar um pouco de votos em quase todas as urnas (uniforme)", "Nada estatístico: um deslocamento pequeno e uniforme é indistinguível de uma mudança real de opinião",
    "~4 a 5 votos por urna bastariam para inverter", ["T13", "T63"], "Não testável com dados agregados. Quantificado no T63: um deslocamento uniforme em logit nunca é visto, em nenhuma magnitude, nos dois anos; em fatia de voto, só a partir de 1 a 2,22 mi votos, e nunca no sentido contrário. Só boletins impressos coletados em amostra sorteada ou auditoria independente da urna examinam isto.", CEGO, "Até ~2,2 mi votos sem rastro estatístico (em logit, nunca visto)."),
  H("H10", "Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes)", "Nada nos arquivos: tudo concorda entre si", "Qualquer escala",
@@ -113,7 +113,7 @@ RESPOSTA = {
    "Encher urnas só é visto pela bateria a partir de 250 mil votos (T63); abaixo disso, o rastro que aparece não passa de ~100 votos com sinal (H6). Os zeros de votos ficam não determinados: nenhum modelo de cauda baixa calibrou (H7).",
    "Ficam fora do alcance: deslocamento uniforme (H9; em logit, nunca visto), alteração da urna antes dos registros (H10; registros coerentes assinados pela própria fonte passam por todas as verificações internas, T62) e alterações em UFs inteiras, nos cinco grandes municípios juntos, numa macrorregião, num lote tardio ou por conversão de brancos e nulos, vistas só a partir de ~0,5 a 2,2 mi votos, ou nunca (T63). Não podemos excluí-las nem confirmá-las com estes dados.",
  ],
- "o_que_seria_preciso": "Para fechar o que resta: boletins impressos afixados nas seções, de uma amostra sorteada (os 404 de terceiros são amostra de conveniência); auditoria independente do software e da urna; a raiz da cadeia de certificados do TSE (a cadeia já fecha até a AC emissora em 100% das urnas); e o resultado do teste de integridade com votos conhecidos, que não foi obtido.",
+ "o_que_seria_preciso": "Boletins impressos afixados nas seções, de uma amostra sorteada (os 404 de terceiros são amostra de conveniência); auditoria independente do software e da urna; a raiz da cadeia de certificados do TSE (a cadeia já fecha até a AC emissora em 100% das urnas); e o resultado do teste de integridade com votos conhecidos, que não foi obtido.",
  "avisos": [
    "O poder de detecção é medido sobre uma base real que pode já conter alteração; o experimento não consegue dizer que a base está limpa.",
    "O poder é assimétrico entre os sentidos, por causa da cauda pró-Lula presente na base nos dois anos.",
@@ -164,12 +164,66 @@ OPERACAO = {
    {"slug": "ov-video", "titulo": "A hipótese do vídeo (T65)"},
  ],
 }
+# Alegações públicas testadas (rodadas 6 a 8): uma frase de síntese e a resposta curta das mais comuns. Números de fase3/RESPOSTAS_F3.md
+# (Q27 a Q30, Q34, Q35, Q42, Q51 a Q56) e de testes/registro.json (T45 a T47, T52, T53, T65 a T70). Usado na Home, em Respostas, no VEREDITO e no PDF.
+ALEGACOES = {
+ "titulo": "Alegações públicas testadas",
+ "frase": "As alegações públicas testadas (a live de 2022, o vídeo dos \"votos extras\" e o relatório pericial) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q56).",
+ "situacao": "Q51 a Q56 e T66 a T70 são da rodada 8, em aberto: registro vivo, ainda não congelado.",
+ "itens": [
+   {"alegacao": "Houve duas eleições no mesmo dia: Flávio venceu até as 17h00 e Lula virou na prorrogação.",
+    "resposta": "Os números se reproduzem, mas o corte das 17h00 mistura fusos (as 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h) e conta como prorrogação o encerramento de rotina (17:01 a 17:15; 98% das seções fecham até 17:15). A prorrogação de fato (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228.095 votos de vantagem, 5,1% da margem de 4.430.191; sem essas seções, Lula lidera por 4.202.096.",
+    "perguntas": ["Q51", "Q52"], "testes": ["T66", "T09", "T52"]},
+   {"alegacao": "98,12% dos \"votos extras\" do 2º turno foram para Lula, o que não fecha.",
+    "resposta": "A aritmética está certa, mas o 98% é a premissa de 60% devolvida: é o mínimo possível e deixa Flávio sem nenhum voto dos extras. O mesmo método dá 370% para Bolsonaro em 2022.",
+    "perguntas": ["Q42"], "testes": ["T65"]},
+   {"alegacao": "A liberação sem biometria (8,6 milhões, quase o dobro da margem) mostra fraude, e Lula \"dispara\" onde ela é maior.",
+    "resposta": "Foi menor que em 2022 (6,73% contra 8,06% do comparecimento). A relação com o voto em Lula tem a mesma forma no 1º turno de 2026 e em 2022 e é nula dentro do mesmo município.",
+    "perguntas": ["Q53", "Q35"], "testes": ["T67", "T53"]},
+   {"alegacao": "Unanimidades pró-Lula: 106 seções com 100% contra 4 de Flávio.",
+    "resposta": "Os números se reproduzem; a razão é menor que em 2022 (141 contra 2). As seções com mais de 90% para Lula ficam onde ele é forte e as seções são menores (94% no Norte e Nordeste).",
+    "perguntas": ["Q54", "Q31"], "testes": ["T68", "T49"]},
+   {"alegacao": "O teste de Benford do primeiro dígito acusa manipulação.",
+    "resposta": "Em contagens de poucas centenas por seção, o primeiro dígito não segue Benford; o desvio observado cabe nas referências simuladas sem manipulação. O teste não discrimina neste dado.",
+    "perguntas": ["Q55"], "testes": ["T69"]},
+   {"alegacao": "Urnas anteriores a 2020 deram mais votos a Lula em 2022 (live de 4/11/2022).",
+    "resposta": "Deram mais (50,3% contra 46,0% no 1º turno de 2022), também dentro do município; dentro do mesmo local de votação a diferença é equivalente a zero: é localização, não modelo de urna. O 51,05% de Bolsonaro só nas UE2020 é o voto das cidades que tinham UE2020.",
+    "perguntas": ["Q27", "Q29"], "testes": ["T47", "T46"]},
+   {"alegacao": "Os boletins ficaram parados duas horas antes de chegar ao TSE no 2º turno de 2026.",
+    "resposta": "É fato medido: nenhum recebimento das 17:07 às 19:03 (116 minutos), só em 2026, coincidindo com a prorrogação. O conteúdo do boletim é assinado na emissão e confere; a causa da pausa não está nos dados.",
+    "perguntas": ["Q34"], "testes": ["T52"]},
+   {"alegacao": "Os microdados das urnas ficaram trancados por 72 horas.",
+    "resposta": "Para os arquivos por urna, não: estavam publicados na noite de 25/10. Para o CSV BWeb, este projeto não tem registro da primeira publicação; não é testável aqui.",
+    "perguntas": ["Q56"], "testes": ["T70"]},
+ ],
+}
+RESPOSTA["alegacoes"] = ALEGACOES
+# Resumo curto (PDF, primeiras páginas): a resposta em quatro partes e os achados principais, com as frases e números do veredito e do registro.
+RESUMO = {
+ "observado": "As anomalias encontradas somam dezenas de milhares de votos e não têm causa demonstrada; a maior é Salvador, com ~30 mil votos de Lula acima do previsto (0,7% da margem). Isso descreve o que foi achado e não limita o que pode ter passado sem alarme.",
+ "excluido": "No alcance testado não encontramos sinal de fraude: alteração depois da publicação e troca na totalização foram contrariadas (H1, H2), e troca em seções, locais, zonas ou municípios (fora os 5 maiores) seria vista a partir de 25 a 50 mil votos (T63). Inverter o resultado exigiria trocar ~2,2 milhões de votos.",
+ "sem_resposta": "Ficam sem resposta: um deslocamento pequeno e uniforme em quase todas as urnas (H9), uma alteração da urna antes de gerar os registros (H10), alterações de UF, região, lote ou uniformes abaixo de ~0,5 a 2,2 milhões de votos (T63) e os zeros de votos, porque nenhum modelo calibrou (H7).",
+ "faltaria": "Para fechar: boletins impressos de uma amostra sorteada de seções, auditoria independente do software e da urna, a raiz da cadeia de certificados do TSE e o teste de integridade com votos conhecidos.",
+ "achados": [
+   {"titulo": "A soma confere", "texto": "Soma das urnas igual ao total oficial em 638 de 638 itens; tabela igual ao boletim de urna em todas as seções com boletim lido, nos dois anos.", "teste": "T32"},
+   {"titulo": "Cadeia de certificados em 100% das urnas", "texto": "1.942.246 pares seção × turno de 2022 e 2026, 0 falhas. Reforça a integridade dos arquivos, não a veracidade dos votos; a raiz do TSE não é pública.", "teste": "T60a"},
+   {"titulo": "404 boletins de terceiros iguais ao TSE", "texto": "Boletins impressos lidos por terceiros no 2º turno de 2026: assinatura, cadeia e votos iguais em 404 de 404. Amostra de conveniência (0,08%).", "teste": "T61"},
+   {"titulo": "Pontos cegos medidos", "texto": "A bateria vê troca em seções, locais, zonas e municípios a partir de 25 a 50 mil votos; UFs, os cinco grandes juntos, região, lote e deslocamento uniforme só a partir de ~0,5 a 2,2 milhões, ou nunca. O poder é assimétrico entre os sentidos.", "teste": "T63"},
+   {"titulo": "Salvador: anomalia sem causa", "texto": "Virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27; o perfil do eleitorado não explica (sinal S3).", "teste": "T44"},
+   {"titulo": "Prorrogação de fato: 5,1% da margem", "texto": "Encerramento depois das 17:30: 7.604 seções e 2,21 mi de votantes, +228.095 votos de vantagem a Lula; sem essas seções, Lula lidera por 4.202.096.", "teste": "T66"},
+   {"titulo": "Recebimento parado por 116 minutos", "texto": "O TSE não registrou recebimento de boletins das 17:07 às 19:03 no 2º turno de 2026, só em 2026. O boletim é assinado na emissão e confere; a causa da pausa não está nos dados.", "teste": "T52"},
+   {"titulo": "Zeros de votos: não determinado", "texto": "106 seções com zero voto para Flávio (141 em 2022 com zero para Bolsonaro), locais de uma seção só; nenhum modelo de cauda baixa calibrou.", "teste": "T64"},
+ ],
+}
+RESPOSTA["resumo"] = RESUMO
 RESPOSTA["operacao"] = OPERACAO
-OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) em preparação; não congelado", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
+OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) congelada; rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56)", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
 json.dump(OUT, open(R + "/fase3/veredito_2026.json", "w"), ensure_ascii=False, indent=1)
 L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Nota do autor:** {AVISO['nota_autor']}", "", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "**Leia junto com os resultados:**", ""] + [f"- {x}" for x in RESPOSTA["avisos"]] + ["", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
      "## Hipóteses de fraude examinadas", "", "| Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |", "|---|---|---|---|---|---|"]
 L += [f"| {h['id']} | {h['mecanismo']} | {h['o_que_deixaria']} | {h['resultado']} | **{h['status']}** | {h['em_votos']} |" for h in HIP]
+L += ["", f"## {ALEGACOES['titulo']}", "", ALEGACOES["frase"], "", f"_{ALEGACOES['situacao']}_", ""]
+L += [f"- **{x['alegacao']}** {x['resposta']} ({', '.join(x['perguntas'] + x['testes'])})" for x in ALEGACOES["itens"]]
 L += ["", "## Anomalias reais em 2026", "", "| O que | Votos | Sinal | Teste |", "|---|---|---|---|"] + [f"| {a['o_que']} | {a['votos']} | {a['sinal']} | {a['teste']} |" for a in RESPOSTA["anomalias_2026"]]
 L += ["", f"_{RESPOSTA['nota_anomalias']}_", "", f"## {OPERACAO['titulo']} ({OPERACAO['versao']}, 28/10/2026)", "", f"**{OPERACAO['pergunta']}** {OPERACAO['resposta']}", ""]
 L += [f"- **{x['titulo']} ({x['teste']}):** {x['texto']}" for x in OPERACAO["achados"]] + ["", "**Pontos cegos:**", ""] + [f"- {x}" for x in OPERACAO["pontos_cegos"]]

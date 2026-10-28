@@ -6,8 +6,9 @@ export type Hipotese = { id: string; mecanismo: string; o_que_deixaria: string; 
 export type Veredito = {
   margem_2026: number; votos_para_inverter: number; niveis: Nivel[]; sinal_por_teste: Record<string, { nivel: string; motivo: string }>; hipoteses: Hipotese[];
   resposta_central: { aviso?: { titulo: string; itens: string[]; nota_autor?: string }; pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[];
-    avisos?: string[]; nota_anomalias?: string; operacao?: Operacao };
+    avisos?: string[]; nota_anomalias?: string; operacao?: Operacao; alegacoes?: Alegacoes };
 };
+export type Alegacoes = { titulo: string; frase: string; situacao: string; itens: { alegacao: string; resposta: string; perguntas: string[]; testes: string[] }[] };
 export type Operacao = { titulo: string; data: string; versao: string; pergunta: string; resposta: string; achados: { titulo: string; texto: string; teste: string }[]; pontos_cegos: string[]; perguntas: string[]; capitulo: string; documentos: { slug: string; titulo: string }[] };
 
 // Avisos que acompanham os resultados (Operação Veracidade Geral, RECOMENDACOES_SITE.md seção 3)
@@ -55,7 +56,8 @@ export function AvisoEstudo({ aviso }: { aviso: { titulo: string; itens: string[
 }
 
 // Bloco da resposta central: pergunta, resposta, dedução, hipóteses e anomalias reais. Usado na Home e em Respostas.
-export function RespostaCentral({ v, compacto }: { v: Veredito; compacto?: boolean }) {
+// recolher: hipóteses e anomalias ficam em <details> (Home), para a resposta e os avisos virem primeiro
+export function RespostaCentral({ v, compacto, recolher }: { v: Veredito; compacto?: boolean; recolher?: boolean }) {
   const r = v.resposta_central; const nivel = (id: string) => v.niveis.find((n) => n.id === id)?.nome || id;
   return (
     <div className="grid gap-6">
@@ -66,8 +68,10 @@ export function RespostaCentral({ v, compacto }: { v: Veredito; compacto?: boole
         <p className="mt-3 text-[17px] leading-relaxed text-text">{r.resposta}</p>
         {!compacto && <ol className="mt-4 grid gap-1.5 text-[15px] text-muted list-decimal pl-5">{r.deducao.map((d) => <li key={d}>{d}</li>)}</ol>}
         <p className="mt-4 text-[14px] text-muted"><b className="font-medium text-text">O que fecharia o que resta: </b>{r.o_que_seria_preciso}</p>
+        {r.alegacoes && <p className="mt-3 text-[14px] text-muted"><b className="font-medium text-text">Alegações públicas: </b>{r.alegacoes.frase} <a href="#/respostas/alegacoes" className="text-accent-text underline underline-offset-2">Ver as respostas</a></p>}
       </div>
       {r.avisos && r.avisos.length > 0 && <AvisosAlcance avisos={r.avisos} />}
+      <Recolhivel recolher={recolher} titulo={`As ${v.hipoteses.length} hipóteses de fraude examinadas e as anomalias reais de 2026`}>
       <div>
         <h3 className="t-h3">As hipóteses de fraude examinadas</h3>
         <p className="text-muted text-[14.5px] mt-1">Cada mecanismo concreto, o que ele deixaria nos dados e o que encontramos. Inverter 2026 exigiria trocar ~{(v.votos_para_inverter / 1e6).toFixed(2).replace('.', ',')} mi votos de lado.</p>
@@ -92,6 +96,44 @@ export function RespostaCentral({ v, compacto }: { v: Veredito; compacto?: boole
           </li>
         ))}</ul>
       </div>
+      </Recolhivel>
+    </div>
+  );
+}
+
+function Recolhivel({ recolher, titulo, children }: { recolher?: boolean; titulo: string; children: React.ReactNode }) {
+  if (!recolher) return <>{children}</>;
+  return (
+    <details className="cartao group/r">
+      <summary className="cursor-pointer list-none p-4 md:p-5 flex items-center gap-3 [&::-webkit-details-marker]:hidden"><span className="w-6 h-6 grid place-items-center rounded-full bg-surface-2 text-subtle text-xs transition-transform group-open/r:rotate-90" aria-hidden="true">▸</span><span className="t-h3">{titulo}</span><span className="ml-auto text-xs text-subtle group-open/r:hidden">abrir</span><span className="ml-auto text-xs text-subtle hidden group-open/r:inline">fechar</span></summary>
+      <div className="px-4 md:px-5 pb-5 grid gap-6">{children}</div>
+    </details>
+  );
+}
+
+// Alegações públicas mais comuns e a resposta curta de cada uma (fase3/veredito_2026.json → resposta_central.alegacoes)
+export function AlegacoesResumo({ a, titulo = true, max }: { a: Alegacoes; titulo?: boolean; max?: number }) {
+  const cartao = (x: Alegacoes['itens'][number]) => (
+        <li key={x.alegacao} className="cartao p-4 md:p-5 flex flex-col gap-2">
+          <div className="text-[12px] font-mono uppercase tracking-wider text-muted">Alegação</div>
+          <h3 className="text-[15.5px] font-medium text-text leading-snug">{x.alegacao}</h3>
+          <p className="text-[14.5px] text-muted leading-relaxed"><b className="font-medium text-text">Resposta curta: </b>{x.resposta}</p>
+          <div className="mt-auto pt-1 flex flex-wrap gap-1.5">
+            {x.perguntas.map((q) => <a key={q} href={`#/respostas/${q}`} className="font-mono text-xs h-7 px-2.5 inline-flex items-center rounded-md border border-border hover:border-border-strong">{q}</a>)}
+            {x.testes.map((t) => <a key={t} href={`#/testes/${t}`} className="font-mono text-xs h-7 px-2.5 inline-flex items-center rounded-md border border-border bg-surface-2 hover:border-border-strong">{t}</a>)}
+          </div>
+        </li>
+      );
+  const vis = max ? a.itens.slice(0, max) : a.itens, resto = max ? a.itens.slice(max) : [];
+  return (
+    <div className="grid gap-3">
+      {titulo && <div className="max-w-[46rem]"><h2 className="t-h2">{a.titulo}</h2><p className="t-lead mt-3 text-[17px]">{a.frase}</p></div>}
+      <ul className="grid gap-3 md:grid-cols-2">{vis.map(cartao)}</ul>
+      {resto.length > 0 && <details className="group/al">
+        <summary className="cursor-pointer list-none inline-flex items-center gap-2 min-h-10 text-[14px] font-medium text-accent-text [&::-webkit-details-marker]:hidden"><span className="transition-transform group-open/al:rotate-90" aria-hidden="true">▸</span><span className="group-open/al:hidden">Mais {resto.length} alegações com resposta curta</span><span className="hidden group-open/al:inline">Recolher</span></summary>
+        <ul className="mt-2 grid gap-3 md:grid-cols-2">{resto.map(cartao)}</ul>
+      </details>}
+      <p className="text-[13px] text-muted">{a.situacao}</p>
     </div>
   );
 }

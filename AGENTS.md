@@ -24,7 +24,7 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 
 ## Estado atual e por onde continuar
 - **Rodada 8 (ABERTA, não congelar sem aprovação):** "Relatório Pericial Independente" (hora de encerramento, liberação sem biometria, unanimidade, Benford, disponibilidade dos arquivos): pré-registro em `fase3/PREREG_RELATORIO_PERICIAL.md` (emenda 17), T66 a T70, Q51 a Q56; o R2b e a conferência de fuso são exploratórios.
-- **Estado:** Fase 3 concluída (V1.3, rodada 5); alegações públicas testadas (V1.4, rodada 6: T45–T57, Q27–Q39); **Operação Veracidade Geral (V1.5, rodada 7: T58–T65, Q40–Q50)**, integrada ao registro vivo (78 testes, 50 perguntas).
+- **Estado:** Fase 3 concluída (V1.3, rodada 5); alegações públicas testadas (V1.4, rodada 6: T45–T57, Q27–Q39); **Operação Veracidade Geral (V1.5, rodada 7: T58–T65, Q40–Q50)**, congelada com 78 testes e 50 perguntas; a rodada 8, aberta, leva o registro vivo a 83 testes e 56 perguntas (conte em `testes/registro.json` e `fase3/respostas_f3.json` antes de escrever um número).
   - Operação Veracidade Geral: `operacao_veracidade/` (somente leitura; comece por `OPERACAO_VERACIDADE_GERAL.md` e `09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`). Resultados novos: cadeia de certificados verificada em 100% das urnas (T60a); 404 boletins de terceiros iguais ao TSE (T61, amostra de conveniência). Pontos cegos: escala de UF, região, lote ou uniforme abaixo de ~0,5 a 2,2 mi votos (T63); registros coerentes de fonte comprometida passam em todas as verificações internas (T62); poder assimétrico entre os sentidos.
   - Resposta central atual: "não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um". Não escreva "deixariam sinais muito maiores" nem "restam dois caminhos" sem o alcance por mecanismo (T63).
   - Pergunta central e resposta: `fase3/VEREDITO_2026.md`.
@@ -51,7 +51,7 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 2. `make dados-do-zero`: baixa e prepara tudo do TSE. São ~250 GB e horas; precisa de disco grande.
 3. `make base`, `make base ANO=2022`, `make dados`, `make bateria`, `make bateria ANO=2022`, `make comportamento`, `make integridade`, `make totalizacao`, `make relatorio`.
 4. `make verificar`: conferências de sanidade. Rode **sempre** depois de mudar qualquer coisa.
-5. `make servir` e abra http://localhost:8765 (gráfico) e /relatorio.html; `make pdf` gera o PDF.
+5. `make servir` e abra http://localhost:8765 (gráfico) e /relatorio.html; `make pdf` gera o PDF a partir dos JSON do veredito, das respostas e do registro (`grafico/montar_relatorio_pdf.py`; rode depois de regerar os JSON).
 
 ## Como acrescentar um teste (o fluxo que todo agente deve seguir)
 1. Escreva a hipótese, o modelo nulo e o limiar no `PROTOCOLO.md` (emenda datada).
@@ -76,6 +76,14 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 
 - **Rodada 7 (28/10/2026):** `rodada.py fechar --incluir` ignora arquivos fora do git; dados derivados grandes (parquets de certificados e de nulos do RDV) e arquivos de terceiros ficam fora do git (`.gitignore`); `publicar.py` recusa arquivo > 20 MB e total > 120 MB. Contar eventos de log por data, ID de urna e seção (o log de um pacote traz logs de outras urnas). Verificação de lista é autoconsistência: só a cadeia autentica. Poder medido sobre a base real não diz que ela está limpa. Alegação pública vira pré-registro antes de contar.
 
+- **Rodada 8 (aberta):** converta `DT_ENCERRAMENTO` para hora de Brasília antes de cortar em "17h" (MT, AM, MS, RO, RR e AC têm fuso diferente); compare grupos de seções dentro do município; mostre a sensibilidade do corte; reproduza primeiro os números da alegação e só depois teste o que ela conclui.
+
 ## Versões, revisões e rodadas (evolução da pesquisa)
 As regras completas estão em `RODADAS.md` e `revisoes/README.md`. Em resumo: versão congelada não se edita; revisão externa fica guardada inteira em `revisoes/RN-*/`, com `achados.json`; toda contestação vai para `provas` do teste, com alvo e resultado; toda mudança vai para `mudancas`, com causa; detecção em dados reais não se chama falso positivo; pergunta nova da Fase 2 entra em `FASE2.md` antes de rodar.
 O estudo avança em rodadas congeladas (`rodadas/rodada-N/`, tag `rodada-N`). Rodada fechada não se reescreve: correção entra na rodada seguinte. Toda contestação feita a um teste vai para o campo `provas` dele (`python scripts/rodada.py prova ...`). Ao fechar uma rodada: `python scripts/rodada.py fechar N "título"`, atualizar `rodadas/linha_do_tempo.json`, regerar o site, publicar e criar a tag. Detalhes em `RODADAS.md`.
+
+
+## Relatórios por fase e privacidade (28/10/2026)
+
+- `relatorios/` tem um relatório por fase ou rodada (`fase1.md` a `rodada-8.md`, com `README.md` de índice), gerado por `python scripts/gerar_relatorios.py` a partir de `rodadas/linha_do_tempo.json`. Regerar sempre que a linha do tempo mudar; a rodada 8 aparece como em aberto.
+- Medição de acessos: Google Analytics (Firebase) carregado **só depois do aceite** na faixa de privacidade (`grafico/relatorio-app/src/ui/Consentimento.tsx`); sem aceite ou com Do Not Track nada do Google é baixado. Texto em `PRIVACIDADE.md` (aba Docs). Não gravar o aceite em arquivo versionado; qualquer novo rastreador passa pelo mesmo consentimento.

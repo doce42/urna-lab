@@ -202,7 +202,24 @@
    "status": "em_andamento",
    "inicio": "2026-10-28",
    "resumo": "Rodada 8, aberta em 28/10/2026 e não congelada: análise de um relatório divulgado em imagens (divisão dos votos por hora de encerramento das urnas, liberação sem biometria, unanimidade e Benford). As alegações viram pré-registro (fase3/PREREG_RELATORIO_PERICIAL.md, emenda 17) e são testadas só com dados do TSE; o que não é dado do TSE fica fora do escopo e é dito. Nada é congelado sem aprovação explícita do responsável.",
-   "etapas": [],
+   "etapas": [
+    {
+     "titulo": "Pré-registro",
+     "texto": "Alegações R1 a R10 e a leitura fixada antes de rodar (fase3/PREREG_RELATORIO_PERICIAL.md, emenda 17)."
+    },
+    {
+     "titulo": "Testes T66 a T70",
+     "texto": "Hora de encerramento, liberação sem biometria, unanimidade, Benford e disponibilidade dos microdados; R2b e a conferência de fuso são exploratórios."
+    },
+    {
+     "titulo": "Perguntas Q51 a Q56",
+     "texto": "Respostas no site, capítulo próprio em Respostas; a prorrogação de fato (depois das 17:30) deu +228.095 votos de vantagem a Lula (5,1% da margem)."
+    },
+    {
+     "titulo": "Revisão do site e novo PDF",
+     "texto": "Home, Respostas, Testes, Evolução e Docs revistos; relatório em PDF refeito por script a partir dos JSON do estudo, com o resumo nas primeiras páginas."
+    }
+   ],
    "historico": []
   }
  ],
@@ -397,13 +414,19 @@
    "data": "2026-10-28",
    "hora": "",
    "titulo": "Operação Veracidade Geral (V1.5)",
-   "texto": "7 testes novos (T60a a T65) e 9 perguntas (Q42 a Q50); cadeia de certificados em 100% das urnas e 404 boletins de terceiros iguais ao TSE; veredito revisto: H7 e T05 viram ponto cego, a resposta central passa a dizer o alcance por mecanismo. Rodada 7 a congelar."
+   "texto": "7 testes novos (T60a a T65) e 9 perguntas (Q42 a Q50); cadeia de certificados em 100% das urnas e 404 boletins de terceiros iguais ao TSE; veredito revisto: H7 e T05 viram ponto cego, a resposta central passa a dizer o alcance por mecanismo. Congelada na rodada 7 com aprovação do responsável."
   },
   {
    "data": "2026-10-28",
    "hora": "",
    "titulo": "Rodada 8 aberta: Relatório Pericial Independente",
    "texto": "Pré-registro das alegações (emenda 17); rodada em aberto, sem congelamento."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Revisão do site e relatório em PDF refeito (rodada 8, em aberto)",
+   "texto": "Alegações públicas com resposta curta na Home e no veredito; Q51 a Q56 em capítulo próprio; classe de evidência alinhada ao sinal em 8 testes (T05, T10, T11, T14, T15, T31, T35, E02); PDF montado por script a partir de veredito_2026.json, respostas_f3.json e registro.json (grafico/montar_relatorio_pdf.py). Nada congelado."
   }
  ],
  "etapas_do_caminho": [
@@ -453,7 +476,7 @@
    "status": "concluida",
    "versao": "V1.4",
    "texto": "Live de 2022, pedido do PL, matérias e posts testados com pré-registro (T45–T57, Q27–Q39). Rodada 6.",
-   "link": "#/respostas"
+   "link": "#/respostas/alegacoes"
   },
   {
    "id": "veracidade",
@@ -461,15 +484,15 @@
    "status": "concluida",
    "versao": "V1.5",
    "texto": "Auditoria adversarial dos dados e do veredito: cadeia em 100% das urnas, 404 boletins de terceiros, pontos cegos medidos (T60a a T65, Q42 a Q50). Rodada 7.",
-   "link": "#/respostas"
+   "link": "#/respostas/operacao"
   },
   {
    "id": "rodada8",
    "titulo": "Relatório Pericial",
    "status": "em_andamento",
    "versao": "rodada 8, em aberto",
-   "texto": "Análise das alegações de um relatório em imagens (hora de encerramento, biometria, unanimidade, Benford) com pré-registro; rodada aberta, não congelada.",
-   "link": "#/respostas"
+   "texto": "Análise das alegações de um relatório em imagens (hora de encerramento, biometria, unanimidade, Benford) com pré-registro (T66 a T70, Q51 a Q56); rodada aberta, não congelada.",
+   "link": "#/respostas/pericial"
   },
   {
    "id": "comparacoes",
@@ -489,6 +512,11 @@
   }
  ],
  "conclusoes_recentes": [
+  {
+   "titulo": "A prorrogação de fato deu 5,1% da margem",
+   "texto": "Encerramento depois das 17:30: 7.604 seções e 2,21 mi de votantes, +228.095 votos de vantagem a Lula; sem essas seções, Lula lidera por 4.202.096. O corte das 17h00 do relatório mistura fusos e o encerramento de rotina (rodada 8, em aberto).",
+   "teste": "T66"
+  },
   {
    "titulo": "Cadeia de certificados fecha em 100% das urnas",
    "texto": "1.942.246 pares seção × turno de 2022 e 2026, 0 falhas, todos válidos no dia, nenhuma chave repetida (antes, 200 seções). Reforça a integridade dos arquivos, não a veracidade dos votos; a raiz do TSE não é pública.",

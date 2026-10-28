@@ -95,8 +95,10 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
   const corF3 = (rot: string) => Object.values(F3).find((x) => x.rot === rot)?.cor || 'var(--text-subtle)';
   const bloqueadas = f3Ativos.filter((i) => /bloquead/.test(i.estado_final));
   const pergF2 = (id: string) => lt.fase2.find((q) => q.id === id)?.pergunta;
-  const concluidas = lt.fases.filter((f) => /^F\d+$/.test(f.id) && f.status === 'concluida' && f.id !== 'F1');
-  const emAndamento = lt.fases.find((f) => f.status === 'em_andamento' || f.status === 'em_revisao');
+  // todas as fases com rodada e versão congelada depois da baseline (F2, F3 e as rodadas 6, 7...), não só as numeradas como F2, F3
+  const concluidas = lt.fases.filter((f) => f.rodada != null && f.rodada >= 3 && f.status === 'concluida' && /^V\d/.test(f.versao || ''));
+  const emAndamento = [...lt.fases].reverse().find((f) => f.status === 'em_andamento' || f.status === 'em_revisao');
+  const nomeFase = (f: Fase) => (/^F\d+$/.test(f.id) ? `a ${f.id.replace('F', 'Fase ')}` : `a rodada ${f.rodada} (${f.titulo})`);
 
   return (
     <div className="container pb-24">
@@ -126,7 +128,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </nav>
 
       {/* fases */}
-      <Sec id="fases" eyebrow="Fases" titulo="Onde a pesquisa está" lead={`O levantamento da Fase 1 foi congelado como V1.0-rc1, revisado (R1) e aprovado como baseline V1.0. ${concluidas.map((f) => `A ${f.id.replace('F', 'Fase ')} foi concluída e congelada como ${f.versao}.`).join(' ')}${emAndamento ? ` ${emAndamento.titulo}: em andamento.` : ''}`}>
+      <Sec id="fases" eyebrow="Fases" titulo="Onde a pesquisa está" lead={`O levantamento da Fase 1 foi congelado como V1.0-rc1, revisado (R1) e aprovado como baseline V1.0. Depois, ${concluidas.map((f) => `${nomeFase(f)} foi concluída e congelada como ${f.versao}`).join('; ')}.${emAndamento ? ` ${emAndamento.titulo}: ${ST[emAndamento.status]?.rot || 'em andamento'}, ainda não congelada.` : ''}`}>
         <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {lt.fases.map((f: Fase) => {
             const s = ST[f.status] || ST.planejada;
@@ -147,12 +149,18 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
           })}
         </ol>
         <div className="mt-4 cartao divide-y divide-border">
+          {emAndamento && emAndamento.rodada != null && !lt.rodadas.some((r) => r.rodada === emAndamento.rodada) && (
+            <div className="p-4 md:p-5">
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1"><span className="text-xl font-semibold tracking-tight">Rodada {emAndamento.rodada}</span><span className="text-[13px] text-subtle">{emAndamento.titulo.replace(/\s*\(rodada \d+\)/, "")} · aberta, não congelada</span><Selo cor="var(--accent)">{ST[emAndamento.status]?.rot || 'em andamento'}</Selo></div>
+              <p className="mt-1.5 text-[13.5px] text-muted">Está no registro vivo dos testes e nas respostas; ganha hash, tag e conclusão própria só quando for congelada, com aprovação do responsável.</p>
+            </div>
+          )}
           {[...lt.rodadas].reverse().map((r) => (
             <div key={r.rodada} className="p-4 md:p-5 grid gap-3 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1"><span className="text-xl font-semibold tracking-tight">{r.versao || `Rodada ${r.rodada}`}</span><span className="text-[13px] text-subtle">rodada {r.rodada} · congelada em {dataBR(r.data)}{r.tag ? ` · tag ${r.tag}` : ''}</span>{r === ultima ? <Selo cor="var(--ok)">versão vigente</Selo> : <Selo cor="var(--text-subtle)">histórico</Selo>}</div>
                 <div className="mt-2 flex h-2.5 rounded-full overflow-hidden gap-[2px] max-w-[420px]">{'ABCDEFG'.split('').filter((k) => r.placar.classes[k]).map((k) => <div key={k} title={`${k}: ${r.placar.classes[k]}`} style={{ width: `${(100 * r.placar.classes[k]) / r.placar.testes}%`, background: CLASSE_COR[k] }} />)}</div>
-                <div className="mt-1.5 text-[13px] text-muted">{N(r.placar.testes)} testes · {'ABCDEFG'.split('').filter((k) => r.placar.classes[k]).map((k) => `${k} ${r.placar.classes[k]}`).join(' · ')} · {r.arquivos} arquivos com SHA-256</div>
+                <div className="mt-1.5 text-[13px] text-muted">{N(r.placar.testes)} testes · classes da Fase 1: {'ABCDEFG'.split('').filter((k) => r.placar.classes[k]).map((k) => `${k} ${r.placar.classes[k]}`).join(' · ')} · {r.arquivos} arquivos com SHA-256</div>
               </div>
               {r.tag && <div className="flex flex-wrap gap-2">
                 <a className="inline-flex items-center gap-1.5 min-h-10 py-2 px-4 rounded-full border border-border text-sm font-medium hover:border-border-strong" href={`${lt.github}/tree/${r.tag}/rodadas/rodada-${r.rodada}`} target="_blank" rel="noopener"><GitBranch size={15} />Arquivos congelados <ExternalLink size={13} /></a>

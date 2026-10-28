@@ -716,7 +716,7 @@
       "afirmacao": "estatística",
       "independencia": "interna",
       "natureza": "confirmatório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "G",
       "resultado_atual": "p de 0,05 a 0,84",
       "anotacoes": [
         "1ª rodada comparou com o uniforme puro e deu p = 0 em tudo: era a inclinação natural da distribuição (seções pequenas são mais comuns). Corrigido com o esperado local; 1 de 4 testes ficou em p = 0,05, esperado ao acaso."
@@ -830,7 +830,15 @@
       "revisoes": [
         "R1-13"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para G (inconclusivo / ainda sem resultado): o sinal do teste é PC; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "Não se traduz em votos: teste de padrão de dígitos; nenhum conjunto de seções sinalizado (p de 0,05 a 0,84)."
     },
     {
@@ -1252,7 +1260,7 @@
       "afirmacao": "estatística",
       "independencia": "interna",
       "natureza": "confirmatório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "G",
       "resultado_atual": "desvio máx 0,08 pp (município) e 0,25–0,32 pp (estado); 2022 igual",
       "anotacoes": [
         "Desvio máximo de 0,08 pp (previsão pelo município) e 0,25 a 0,32 pp (pela UF, mais independente). A previsão pelo município usa dados do próprio 2º turno de outras seções: é a menos independente."
@@ -1398,7 +1406,15 @@
         "R1-10",
         "R1-13"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para G (inconclusivo / ainda sem resultado): o sinal do teste é PC; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "Desvio máximo da curva de 0,08 pp (município) e 0,25 a 0,32 pp (estado). Sobre 124 mi de votos válidos, 0,32 pp equivale a ~400 mil votos num instante da curva; é distância entre a curva e a reconstrução, não votos alterados."
     },
     {
@@ -1418,7 +1434,7 @@
       "afirmacao": "estatística",
       "independencia": "interna",
       "natureza": "confirmatório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "G",
       "resultado_atual": "23 x 22 ± 1 (2026); 38 x 34 ± 2 (2022)",
       "provas": [
         {
@@ -1561,7 +1577,15 @@
         "R1-10",
         "R1-13"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para G (inconclusivo / ainda sem resultado): o sinal do teste é PC; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "Não se traduz em votos: conta oscilações da curva (23 contra 22 ± 1)."
     },
     {
@@ -2083,7 +2107,7 @@
       "afirmacao": "determinística",
       "independencia": "criptográfica",
       "natureza": "confirmatório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "D",
       "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista conferem em todas; RDV no pacote e conferindo em 499.175, e o que faltava (MA 7846/74/228) baixado do site de resultados e conferido; recontagem do RDV = boletim em 499.176. 2º turno 2026: 499.178 urnas eletrônicas; BU, RDV, imagem do BU e lista conferem em todas; log conferido em 499.177 (1 log de SP na lista assinada e não publicado); RDV = boletim em 499.180 (inclui recuperação de dados). Seções do exterior por Sistema de Apuração (31 e 29) não têm arquivos de urna. Verificador Ed521 endurecido em 28/10 (rejeita chaves e pontos degenerados).",
       "anotacoes": [
         "No 2º turno o log.jez de cada urna traz o log do 1º turno arquivado dentro: as contagens passaram a usar só o dia da eleição (RJ dava 19,9 mi antes da correção).",
@@ -2248,7 +2272,15 @@
         "R1-14",
         "R1-15"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para D (inconsistência verificável): o sinal do teste é S4; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "0 votos de diferença entre log e comparecimento nas 200 seções sorteadas e nas urnas sem exceção; nas exceções documentadas (T36) a soma é 59 votos no 1º turno e 358 no 2º."
     },
     {
@@ -2268,7 +2300,7 @@
       "afirmacao": "determinística",
       "independencia": "criptográfica",
       "natureza": "confirmatório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "D",
       "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista conferem em todas; RDV no pacote e conferindo em 499.175, e o que faltava (MA 7846/74/228) baixado do site de resultados e conferido; recontagem do RDV = boletim em 499.176. 2º turno 2026: 499.178 urnas eletrônicas; BU, RDV, imagem do BU e lista conferem em todas; log conferido em 499.177 (1 log de SP na lista assinada e não publicado); RDV = boletim em 499.180 (inclui recuperação de dados). Seções do exterior por Sistema de Apuração (31 e 29) não têm arquivos de urna. Verificador Ed521 endurecido em 28/10 (rejeita chaves e pontos degenerados).",
       "provas": [
         {
@@ -2428,7 +2460,15 @@
         "R1-14",
         "R1-15"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para D (inconsistência verificável): o sinal do teste é S4; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "Zero votos de diferença nas comparações feitas; não há valor a converter."
     },
     {
@@ -4825,7 +4865,7 @@
       "afirmacao": "determinística",
       "independencia": "criptográfica",
       "natureza": "confirmatório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "D",
       "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado.",
       "anotacoes": [
         "Nenhum voto computado sem habilitação anterior no 2º turno."
@@ -4930,7 +4970,15 @@
       "evidencia": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado.",
       "interpretacao": null,
       "revisoes": [],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para D (inconsistência verificável): o sinal do teste é S4; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "2º turno: 0 votos. 1º turno: 2 votos em 1 urna (RJ 60011/8/61, log corrompido pela própria urna; totais e assinatura conferem)."
     },
     {
@@ -5412,7 +5460,7 @@
       "afirmacao": "determinística",
       "independencia": "interna",
       "natureza": "confirmatório",
-      "classe_evidencia": "G",
+      "classe_evidencia": "D",
       "resultado_atual": "Máquinas de geração de mídia com log do GEDAI publicado: 2.450 de 2.453 (1º turno) e 2.477 de 2.479 (2º); versão 8.23 e fase OFICIAL nos logs lidos.",
       "anotacoes": [
         "2.450 de 2.453 máquinas de carga têm log do GEDAI publicado; versão 8.23 e fase OFICIAL em todos. 3 sem log, a investigar."
@@ -5542,7 +5590,15 @@
         "R1-11",
         "R1-17"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de G para D (inconsistência verificável): o sinal do teste é S4; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "Sem votos atribuíveis: 3 máquinas de geração de mídia (1º turno) e 2 (2º) sem log GEDAI publicado."
     },
     {
@@ -6641,7 +6697,7 @@
       "afirmacao": "estatística",
       "independencia": "interna",
       "natureza": "exploratório",
-      "classe_evidencia": "A",
+      "classe_evidencia": "B",
       "resultado_atual": "Modelo completo: 683 locais significativos em 2026 contra 766 em 2022; lados equilibrados (390 × 293 e 458 × 308).",
       "anotacoes": [
         "Com modelo simples: 2.618 locais de votação significativos em 2026 contra 946 em 2022. Com o modelo completo (cada candidato eliminado, perfil, porte): 683 contra 766. O excesso era o voto de Cury e Zema, não anomalia."
@@ -6839,7 +6895,15 @@
         "R1-08",
         "R1-17"
       ],
-      "mudancas": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "campo": "classe_evidencia",
+          "causa": "interpretacao",
+          "origem": "revisão do site (rodada 8, em aberto)",
+          "justificativa": "Classe de A para B (anomalia estatística): o sinal do teste é S3; classe e sinal diziam coisas diferentes. O resultado do teste não mudou."
+        }
+      ],
       "impacto_votos": "Depois de corrigir a correlação dentro do local: 55 locais significativos em 2026 (28 pró-Lula, 27 pró-adversário) e 102 em 2022 (30 e 72); cada local tem de dezenas a poucas centenas de votos de diferença, sem soma que se aproxime da margem de 4,43 mi."
     },
     {
@@ -8603,7 +8667,9 @@
         {
           "data": "2026-10-28",
           "causa": "interpretacao",
-          "descricao": "Classe de B para A (regularidade observada): o sinal do teste é S0; classe e sinal estavam em desacordo na V1.5."
+          "campo": "classe_evidencia",
+          "origem": "alinhamento classe × sinal (rodada 8, em aberto)",
+          "justificativa": "Classe de B para A (regularidade observada): o sinal do teste é S0; classe e sinal estavam em desacordo na V1.5."
         }
       ],
       "provas": [],
@@ -9003,7 +9069,9 @@
         {
           "data": "2026-10-28",
           "causa": "interpretacao",
-          "descricao": "Classe de A para D (inconsistência verificável): o sinal do teste é S4 (lacuna objetiva); classe e sinal estavam em desacordo na V1.5. A verificação da cadeia em si continua 100%."
+          "campo": "classe_evidencia",
+          "origem": "alinhamento classe × sinal (rodada 8, em aberto)",
+          "justificativa": "Classe de A para D (inconsistência verificável): o sinal do teste é S4 (lacuna objetiva); classe e sinal estavam em desacordo na V1.5. A verificação da cadeia em si continua 100%."
         }
       ],
       "natureza": "confirmatório",
@@ -9038,7 +9106,7 @@
       "afirmacao": "determinística",
       "anotacoes": [],
       "classe_evidencia": "A",
-      "comando": ".venv/bin/python operacao_veracidade/scripts/controles_mutacao.py 2026 AC; ... 2022 AL; .../ed521_unitarios.py",
+      "comando": ".venv/bin/python operacao_veracidade/scripts/controles_mutacao.py 2026 AC; .venv/bin/python operacao_veracidade/scripts/controles_mutacao.py 2022 AL; .venv/bin/python operacao_veracidade/scripts/ed521_unitarios.py",
       "evidencia": "Em 40 seções reais por ano: 0 genuínos rejeitados; 40 de 40 rejeitados em cada mutação (byte no BU, BU truncado, byte na lista, byte na assinatura, certificado de outra urna, arquivo fora da lista, nome trocado); a assinatura do arquivo sozinha não detecta alteração do arquivo, o hash detecta; 9 de 9 testes unitários do Ed521 (chave e R neutros, S + L, truncada). Controle sintético: certificado autoassinado passa pela verificação de lista, e só a cadeia o rejeita.",
       "hipotese_nula": "verificador rejeita as adulterações e aceita os genuínos",
       "id": "T60b",
@@ -9173,7 +9241,7 @@
       "afirmacao": "estatística",
       "anotacoes": [],
       "classe_evidencia": "A",
-      "comando": ".venv/bin/python operacao_veracidade/scripts/sim_adversarial.py <ano> 6 20; .../sim_fabricacao_v2.py <ano> 20",
+      "comando": ".venv/bin/python operacao_veracidade/scripts/sim_adversarial.py <ano> 6 20; .venv/bin/python operacao_veracidade/scripts/sim_fabricacao_v2.py <ano> 20 (ou make veracidade-sim ANO=<ano>)",
       "evidencia": "15 mecanismos × 2 sentidos × 7 magnitudes × 20 réplicas, 2026 e 2022. Poder ≥ 80% a partir de 25 a 50 mil votos: seções dispersas, poucas seções, locais, zonas, municípios (fora os 5 maiores), redutos. Só a partir de 0,5 a 2,2 mi, ou nunca: UFs, os cinco grandes juntos, macrorregião Nordeste, lote tardio, conversão de brancos e nulos, enchimento (250 mil), deslocamento uniforme (em logit, nunca). Poder assimétrico entre os sentidos. Falso alarme da união de 4% a 14,5%. D5 (dígito) só reage a alterações escancaradas. Fabricante de estrutura completa passa D1 a D7 em 2026 e é flagrado por D2z em 2022.",
       "hipotese_nula": "a bateria vê todos os mecanismos em magnitude ≤ 2,22 mi",
       "id": "T63",
@@ -9218,7 +9286,7 @@
       "afirmacao": "estatística",
       "anotacoes": [],
       "classe_evidencia": "G",
-      "comando": ".venv/bin/python operacao_veracidade/scripts/zeros_contagens.py; .../zeros_locais.py",
+      "comando": ".venv/bin/python operacao_veracidade/scripts/zeros_contagens.py; .venv/bin/python operacao_veracidade/scripts/zeros_locais.py (ou make veracidade-zeros)",
       "evidencia": "Zeros no 2º turno: Bolsonaro 141 (2022) e Flávio 106 (2026); Lula 2 e 4; com 1, 2 e 3 a 5 votos nas tabelas do relatório 05. Três famílias beta-binomiais com UF retida (município, zona, local) falham o critério fixado antes: esperados 4,3 e 1,3 (município), 2,9 e 0,9 (zona), 63,3 e 66,7 (local) contra 141 e 106. Descrição (exploratória): 121 de 141 e 84 de 106 zeros estão em locais onde todas as seções são zero; 131 e 104 em locais com menos de 1% do total.",
       "hipotese_nula": "o número de zeros cabe no modelo",
       "id": "T64",
@@ -9263,7 +9331,7 @@
       "afirmacao": "determinística",
       "anotacoes": [],
       "classe_evidencia": "A",
-      "comando": ".venv/bin/python operacao_veracidade/scripts/hipotese_video.py; .../hipotese_video_m6.py",
+      "comando": ".venv/bin/python operacao_veracidade/scripts/hipotese_video.py; .venv/bin/python operacao_veracidade/scripts/hipotese_video_m6.py",
       "evidencia": "A aritmética do vídeo confere (outros 9.321.993; extras 4.776.239; ganho de Lula 10.376.694); com 60% dos outros faltam 4.783.498, 100,15% dos extras (98,12% é arredondamento). Os 60% deixam para Flávio 3.728.797, igual ao ganho real dele (3.721.538), logo nenhum voto dos extras: o 98% é a premissa devolvida; 60,08% é o mínimo possível. Com 85% dos outros indo a Lula, os extras se dividem 51/49. Mesmo método em 2022 para Bolsonaro: 370% (impossível); parcela mínima 68,8%. A abstenção também caiu em 2022 (20,95% → 20,58%) e em 2026 (21,08% → 19,22%). Regressão ecológica 2026: extras para Lula 0,72 (0,69 a 0,80), para Flávio 0,28 (0,20 a 0,31); 2022: 0,47 e 0,53. Controle proporcional (exploratório): resíduo de +3,68 mi para Lula em 2026 (26,2% do disponível) e +1,99 mi para Bolsonaro em 2022 (19,6%), no mesmo sentido em 27 de 27 UFs nos dois anos.",
       "hipotese_nula": "O crescimento cabe nos totais com partilhas plausíveis",
       "id": "T65",

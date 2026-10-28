@@ -7,7 +7,7 @@ import type { Registro, Teste, TestesDados, Meta } from '@/lib/tipos';
 import { useDados } from '@/lib/dados';
 import { irPara } from '@/lib/rotas';
 import { Botao, Chip, Eyebrow, SeloClasse, SeloEstado, SkeletonBloco, Erro, Nota, CLASSE_COR, CLASSE_EXPL } from '@/ui/base';
-import { VIZ, generico, categoria, emProc, preliminar, MODS, ESTADO_TXT, AVISO_RE, MET, type Ctx, type Viz } from '@/viz/testes';
+import { VIZ, generico, categoria, emProc, preliminar, semPrefixo, MODS, MOD_CURTO, ESTADO_TXT, AVISO_RE, MET, type Ctx, type Viz } from '@/viz/testes';
 import { Processando } from '@/graficos/primitivos';
 import { SeloSinal, useVeredito, COR_SINAL } from '@/ui/Sinal';
 
@@ -18,7 +18,8 @@ function vizDe(c: Ctx): NonNullable<Viz> {
   if (!v || !v.el) v = proc ? { ler: 'Este teste ainda não tem resultado para exibir.', el: null } : generico(c);
   return v || { ler: '', el: null };
 }
-const sentencaDe = (t: Teste) => { const s = (t.resultado_atual || '').split(/(?<=\.)\s/)[0]; return { s, longo: (t.resultado_atual || '').length > s.length + 3 || s.length > 240 }; };
+
+const sentencaDe = (t: Teste) => { const r = semPrefixo(t.resultado_atual || ''); const s = r.split(/(?<=\.)\s/)[0]; return { s, longo: r.length > s.length + 3 || s.length > 240 }; };
 
 export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null; partes: string[] }) {
   const { dados: d, erro, recarregar } = useDados<TestesDados>('testes');
@@ -68,11 +69,11 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
         {ver && <div className="mt-3 flex flex-wrap gap-1.5 items-center"><span className="text-xs text-muted mr-1">Sinal:</span>
           {ver.niveis.map((n) => { const c = reg.testes.filter((t) => sinalDe(t) === n.id).length; return c ? <Chip key={n.id} ativo={sinais.has(n.id)} onClick={() => alternar(sinais, n.id, setSinais)} cor={COR_SINAL[n.id]} title={n.o_que_e}>{n.nome} · {c}</Chip> : null; })}
         </div>}
-        <details className="mt-2 group/f"><summary className="cursor-pointer list-none text-xs text-subtle hover:text-text">mais filtros: classe de evidência (Fase 1), módulo, natureza</summary>
+        <details className="mt-2 group/f" open={classes.size > 0 || modulos.size > 0 || !!natureza || undefined}><summary className="cursor-pointer list-none text-xs text-subtle hover:text-text">mais filtros: classe de evidência (escala histórica da Fase 1), módulo e natureza</summary>
         <div className="mt-2 flex flex-wrap gap-1.5">
           {'ABCDEFG'.split('').map((k) => <Chip key={k} ativo={classes.has(k)} onClick={() => alternar(classes, k, setClasses)} cor={CLASSE_COR[k]} title={CLASSE_EXPL[k]}><b className="font-semibold">{k}</b> <span className="hidden sm:inline">{reg.classes[k].split(' / ')[0]}</span> · {contClasse[k] || 0}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
-          {'ABCDEFGH'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)}>módulo {m} · {contMod[m]}</Chip>)}
+          {'ABCDEFGH'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)} title={MODS[m]?.[1]}>módulo {m}: {MOD_CURTO[m] || MODS[m]?.[0]} · {contMod[m]}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
           {['confirmatório', 'exploratório'].map((n) => <Chip key={n} ativo={natureza === n} onClick={() => setNatureza(natureza === n ? null : n)}>{n}</Chip>)}
         </div></details>
@@ -181,6 +182,7 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
   const idx = reg.testes.findIndex((x) => x.id === t.id), ant = reg.testes[idx - 1], prox = reg.testes[idx + 1];
   useEffect(() => { document.querySelector('.gaveta')?.scrollTo({ top: 0 }); }, [t.id]);
   const met = MET[t.id];
+  const ver = useVeredito(); const sinal = ver?.sinal_por_teste[t.id];
   return (
     <div className="p-5 md:p-8">
       <div className="flex items-center gap-2 flex-wrap">
@@ -195,11 +197,13 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
         {preliminar(t) && !proc && <span className="inline-flex items-center h-7 px-2.5 rounded-full text-xs font-medium border border-warn/50 text-warn" style={{ background: 'var(--warn-soft)' }}>preliminar · em reprocessamento</span>}
         {[t.natureza, t.afirmacao, t.independencia ? `independência: ${t.independencia}` : '', t.modelo_nulo && t.modelo_nulo !== '—' ? `nulo ${t.modelo_nulo}` : ''].filter(Boolean).map((x) => <span key={x} className="inline-flex items-center h-7 px-2.5 rounded-full text-xs border border-border text-muted" title={x.startsWith('independência') ? reg.independencia[t.independencia] : x.startsWith('nulo') ? reg.modelos_nulos[t.modelo_nulo] : undefined}>{x}</span>)}
       </div>
-      <div className="mt-6 rounded-lg border-l-4 pl-4 py-1" style={{ borderColor: CLASSE_COR[t.classe_evidencia] }}>
+      {sinal && <p className="mt-3 text-[14px] text-muted leading-relaxed"><b className="font-medium text-text">Por que este sinal: </b>{sinal.motivo}</p>}
+      <div className="mt-6 rounded-lg border-l-4 pl-4 py-1" style={{ borderColor: COR_SINAL[sinal?.nivel || 'M'] }}>
         <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Resultado</div>
         <p className="text-lg font-medium leading-snug mt-1">{proc ? 'Ainda sem resultado desta versão.' : s || 'Sem resultado registrado.'}</p>
         {proc && t.resultado_atual && !/^(a fazer|em processamento)/i.test(t.resultado_atual) && <Nota className="mt-2">Registro anterior (não reexecutado): {t.resultado_atual}</Nota>}
-        {longo && !proc && <p className="text-[15px] text-muted mt-2 leading-relaxed">{t.resultado_atual}</p>}
+        {longo && !proc && <p className="text-[15px] text-muted mt-2 leading-relaxed">{semPrefixo(t.resultado_atual)}</p>}
+        {t.interpretacao && !proc && <p className="text-[15px] mt-2 leading-relaxed text-text"><b className="font-medium">O que isso quer dizer: </b><span className="text-muted">{t.interpretacao}</span></p>}
         {t.impacto_votos && !proc && <p className="text-[14px] mt-2 text-text"><b className="font-medium">Em votos:</b> <span className="text-muted">{t.impacto_votos}</span></p>}
       </div>
       <div className="mt-6 cartao p-4 md:p-5">
@@ -219,9 +223,13 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
         <Bloco titulo={`Anotações${anots.length ? ` (${anots.length})` : ''}`}>
           {anots.length ? <ul className="grid gap-2">{anots.map((a, i) => <li key={i} className={clsx('pl-3 border-l-[3px] rounded-r-md py-1', AVISO_RE.test(a) ? 'border-warn' : 'border-border')} style={AVISO_RE.test(a) ? { background: 'var(--warn-soft)' } : undefined}>{AVISO_RE.test(a) ? '⚠ ' : ''}{a}</li>)}</ul> : <p>Sem anotações adicionais no registro.</p>}
         </Bloco>
-        <Bloco titulo={`Classe ${t.classe_evidencia} e como reproduzir`}>
-          <p><b className="text-text font-medium">Classe {t.classe_evidencia}, {reg.classes[t.classe_evidencia]}:</b> {CLASSE_EXPL[t.classe_evidencia]}</p>
-          <p className="mt-2 text-[13.5px]">Reproduzir: <code>{t.comando}</code> (<code>{t.script}</code>){t.saida ? <> → <code>{t.saida}</code></> : null}</p>
+        {t.evidencia && t.evidencia !== t.resultado_atual && <Bloco titulo="Números do resultado"><p>{t.evidencia}</p></Bloco>}
+        <Bloco titulo="Como reproduzir">
+          <p className="text-[14px]">Na pasta do projeto, com o ambiente criado (<code>make ambiente</code>) e os dados preparados:</p>
+          <p className="mt-2 text-[13.5px]"><b className="text-text font-medium">Comando:</b> <code>{t.comando}</code></p>
+          <p className="mt-1 text-[13.5px]"><b className="text-text font-medium">Script:</b> <code>{t.script}</code>{t.saida ? <> · <b className="text-text font-medium">resultado em:</b> <code>{t.saida}</code></> : null}</p>
+          {t.pre_especificacao && t.pre_especificacao !== 'anterior_ao_protocolo' && <p className="mt-1 text-[13.5px]"><b className="text-text font-medium">Critério fixado antes em:</b> <code>{t.pre_especificacao}</code></p>}
+          <p className="mt-3 text-[13.5px]"><b className="text-text font-medium">Classe de evidência (escala histórica da Fase 1): {t.classe_evidencia}, {reg.classes[t.classe_evidencia]}.</b> {CLASSE_EXPL[t.classe_evidencia]} O sinal acima é a leitura atual.</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {met && <a className="inline-flex items-center gap-1 h-9 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href={`#/docs/metodologia?busca=${encodeURIComponent(met)}`}>Método completo (METODOLOGIA, seção {met})</a>}
             <a className="inline-flex items-center gap-1 h-9 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href={`${meta?.github || 'https://github.com/doce42/urna-lab'}/blob/main/${t.script}`} target="_blank" rel="noopener">Código no GitHub <ExternalLink size={13} /></a>

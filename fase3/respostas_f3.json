@@ -1,6 +1,6 @@
 {
  "gerado": "2026-10-28",
- "situacao": "V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026",
+ "situacao": "V1.5 (rodada 7) congelada em 28/10/2026; Q51 a Q56 da rodada 8, em aberto",
  "margem": "Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022.",
  "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
  "capitulos": [
@@ -194,7 +194,8 @@
      "reabertura": "",
      "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). No T63, UFs, região, lote e deslocamento uniforme passam sem alarme até ~0,5 a 2,2 mi votos, ou sempre (uniforme em logit). Inverter 2026 exigiria trocar ~2,22 mi votos de lado."
     }
-   ]
+   ],
+   "descricao": "Q1 a Q7 (Fase 3): os votos publicados batem com os arquivos das urnas, a assinatura e a soma oficial?"
   },
   {
    "id": "curvas",
@@ -350,7 +351,8 @@
      "reabertura": "",
      "em_votos": "0 voto de diferença entre a sequência divulgada e a base nas capturas finais."
     }
-   ]
+   ],
+   "descricao": "Q8 a Q14 (Fase 3): a ordem em que os boletins chegaram e a curva divulgada na noite da apuração."
   },
   {
    "id": "zeros",
@@ -483,7 +485,8 @@
      "reabertura": "",
      "em_votos": "0 voto de diferença nos registros dessas seções."
     }
-   ]
+   ],
+   "descricao": "Q15 a Q20 (Fase 3): seções com zero voto para um finalista."
   },
   {
    "id": "turnos",
@@ -621,7 +624,8 @@
      "reabertura": "",
      "em_votos": "Não se traduz em votos: limite de identificabilidade (os limites estão na Q24)."
     }
-   ]
+   ],
+   "descricao": "Q21 a Q26 (Fase 3): de onde vieram os votos que cada finalista ganhou ou perdeu."
   },
   {
    "id": "alegacoes",
@@ -962,152 +966,9 @@
      "por_ano": {},
      "reabertura": "",
      "em_votos": "Não se traduz em votos; muda a leitura das magnitudes de fluxo."
-    },
-    {
-     "id": "Q51",
-     "pergunta": "A eleição de 2026 teve duas eleições no mesmo dia, uma vencida por Flávio até as 17h00 e outra por Lula depois, na prorrogação?",
-     "resposta": "Os números do relatório se reproduzem, mas a divisão não separa o que ele diz. Em hora local, até 17:00:59 Flávio teve 52,39% e 1,75 mi de frente (150.771 seções), e depois Lula teve +6,18 mi. Só que 98% das seções fecham até 17:15 (mediana 17:01), e o grupo 'depois das 17h00' inclui 339.593 seções de encerramento de rotina (88 mi de votantes). Com o corte em 17:02:59, Lula já lidera o grupo de antes (+0,82 mi). As 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h, as 17h de Brasília; em hora de Brasília, até 17:00:59 Flávio tem 50,99% e 0,61 mi de frente. A prorrogação de fato (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228 mil, 5% da margem; sem elas, Lula lidera por 4,20 mi. Dentro do mesmo município, seções que fecharam depois e antes diferem em 0,2 ponto.",
-     "classificacao": "Refutado no escopo definido",
-     "evidencias": [
-      "fase3/PREREG_RELATORIO_PERICIAL.md",
-      "fase3/relatorio_pericial.py",
-      "fase3/relatorio_pericial_r2b.py",
-      "fase3/resultados/relatorio_pericial.json",
-      "fase3/resultados/relatorio_pericial_r2b.json"
-     ],
-     "numeros": "Reproduzido: 150.771 seções (até 17:00:59), 339.593 (17:01 a 17:15), 2.472 (17:16 a 18:59); sensibilidade do corte de 17:00:59 a 19:00:00; em hora de Brasília, até 17:00:59: 125.652 seções, Flávio 50,99%.",
-     "demonstra": "Que os números do relatório se reproduzem, que o resultado depende do minuto do corte e do relógio usado, e o tamanho real da prorrogação em votos.",
-     "nao_demonstra": "Decisões judiciais, reações internacionais e fiscalização partidária citadas no relatório não são dado do TSE e não foram testadas (nem afirmadas).",
-     "robustez": "Reprodução exata; conferência de fuso; comparação dentro do município (exploratória).",
-     "causa": "—",
-     "alcance": "2º turno de 2026, todas as seções com encerramento registrado.",
-     "mudaria": "Corte que separe grupos comparáveis dentro do município com diferença persistente.",
-     "validacao": "T66 (rodada 8, aberta; R2b exploratório)",
-     "por_ano": {},
-     "reabertura": "",
-     "em_votos": "A prorrogação de fato (depois das 17:30) deu +228.095 votos de vantagem a Lula, 5,1% da margem; sem essas seções, Lula lidera por 4.202.096."
-    },
-    {
-     "id": "Q52",
-     "pergunta": "As seções que passaram das 19h, com 57% a 83% para Lula, mostram favorecimento a Lula?",
-     "resposta": "Os números se reproduzem (BA 936 seções, 72,31%; PE 657, 65,70%; SP 1.571, 57,46%; MA tem só 3 seções, 83,31%; no total, 6.342 seções e 1,86 mi de votantes depois das 19h), mas a comparação certa é com as demais seções do mesmo município. Nos 144 municípios com seções tardias e demais, as tardias têm 2,09 pontos de Lula a menos, e a virada entre turnos é igual (−0,2 ponto). Em PE as tardias (65,70%) têm menos Lula que o resto do estado (69,32%). A diferença de SP (57,46% contra 45,98% no resto do estado) vem de onde estão as seções, não de serem tardias. As tardias somam +187 mil de vantagem para Lula.",
-     "classificacao": "Refutado no escopo definido",
-     "evidencias": [
-      "fase3/PREREG_RELATORIO_PERICIAL.md",
-      "fase3/relatorio_pericial.py",
-      "fase3/relatorio_pericial_r2b.py",
-      "fase3/resultados/relatorio_pericial.json",
-      "fase3/resultados/relatorio_pericial_r2b.json"
-     ],
-     "numeros": "144 municípios com os dois grupos; diferença média ponderada de −2,09 pontos no % de Lula e −0,2 na virada.",
-     "demonstra": "Que 'contrariar o restante do estado' é diferença de composição, não de horário.",
-     "nao_demonstra": "Causa da demora no encerramento de cada seção.",
-     "robustez": "Comparação dentro do município.",
-     "causa": "—",
-     "alcance": "2º turno de 2026, seções com encerramento a partir de 19h.",
-     "mudaria": "Diferença de Lula dentro do município que persista.",
-     "validacao": "T66 (rodada 8, aberta)",
-     "por_ano": {},
-     "reabertura": "",
-     "em_votos": "As seções a partir das 19h somam 1,86 mi de votantes e +187 mil de vantagem de Lula; dentro do município, menos Lula (−2,09 pontos)."
-    },
-    {
-     "id": "Q53",
-     "pergunta": "A liberação sem biometria (8,6 milhões, quase o dobro da margem) mostra fraude, e o voto em Lula 'dispara' onde ela é maior?",
-     "resposta": "Os números se reproduzem (8.632.488 liberações, 6,73% do comparecimento; Lula chega a 61,5% nas 96 seções com mais de 50% de liberação). Mas em 2022 foram 10.011.346 (8,06%), com razão de 4,7 vezes a margem (em 2026, 1,9); no 1º turno de 2026, 8.342.249 (6,66%). A relação com Lula tem a mesma forma no 1º turno de 2026 (de 45,1% a 52,4%) e em 2022. A correlação é de +0,07 entre seções, −0,03 entre municípios e +0,01 dentro do município: onde há mais liberação são lugares diferentes, e no mesmo município não há relação.",
-     "classificacao": "Refutado no escopo definido",
-     "evidencias": [
-      "fase3/PREREG_RELATORIO_PERICIAL.md",
-      "fase3/relatorio_pericial.py",
-      "fase3/relatorio_pericial_r2b.py",
-      "fase3/resultados/relatorio_pericial.json",
-      "fase3/resultados/relatorio_pericial_r2b.json"
-     ],
-     "numeros": "Seções, municípios e, dentro do município, 2026 (1º e 2º turnos) e 2022 (1º e 2º turnos).",
-     "demonstra": "Que o volume de liberação é menor que em 2022 e que a relação com Lula é estrutural.",
-     "nao_demonstra": "Quem foi liberado e em quem votou (voto secreto); o controle de idade está no T12.",
-     "robustez": "Mesma conta em outras rodadas e anos; dentro do município.",
-     "causa": "—",
-     "alcance": "Todas as seções com 50 ou mais votantes e 20 ou mais votos válidos.",
-     "mudaria": "Relação específica do 2º turno de 2026 que persista dentro do município.",
-     "validacao": "T67 (rodada 8, aberta); T12, T53",
-     "por_ano": {},
-     "reabertura": "",
-     "em_votos": "Não se traduz em votos: a liberação não indica o voto; dentro do município a relação com Lula é nula."
-    },
-    {
-     "id": "Q54",
-     "pergunta": "Existem aberrações de unanimidade pró-Lula (106 contra 4 seções com 100%; 18 para 1 com mais de 90%)?",
-     "resposta": "Os números se reproduzem (106 e 4 seções com 100%; com mais de 90%, 6.802 e 368 sem o exterior, 18,5 para 1). Em 2022 as razões eram maiores: 141 contra 2 (70,5 : 1) e 9.424 contra 199 (47 : 1); no 1º turno de 2022, 120 : 1. Em 2026, 94% das seções com mais de 90% de Lula estão no Norte e Nordeste (MA 1.549, BA 1.345, PI 870, PE 667, CE 662), com mediana de 198 votos válidos contra 255. Os zeros de votos seguem sem modelo calibrado (Q48).",
-     "classificacao": "Refutado no escopo definido",
-     "evidencias": [
-      "fase3/PREREG_RELATORIO_PERICIAL.md",
-      "fase3/relatorio_pericial.py",
-      "fase3/relatorio_pericial_r2b.py",
-      "fase3/resultados/relatorio_pericial.json",
-      "fase3/resultados/relatorio_pericial_r2b.json"
-     ],
-     "numeros": "2026 e 2022, 1º e 2º turnos, sem o exterior.",
-     "demonstra": "Que a razão é menor que em 2022 e concentrada onde Lula é forte e as seções são menores.",
-     "nao_demonstra": "Fiscalização partidária e 'zona rural' citadas no relatório não são dado do TSE.",
-     "robustez": "Reprodução exata e comparação com 2022.",
-     "causa": "—",
-     "alcance": "Todas as seções com votos válidos.",
-     "mudaria": "Razão maior que a de 2022 depois de controlar a geografia.",
-     "validacao": "T68 (rodada 8, aberta); T49, T64",
-     "por_ano": {},
-     "reabertura": "",
-     "em_votos": "Escala descrita (106 seções com 100% para Lula; 141 em 2022); não é limite de fraude."
-    },
-    {
-     "id": "Q55",
-     "pergunta": "O teste de Benford do primeiro dígito acusa manipulação?",
-     "resposta": "Não. O primeiro dígito dos votos por seção não segue Benford nos dois anos (o dígito 1 aparece em ~61% das seções de cada candidato, contra 30% do esperado), mas isso ocorre porque as contagens são limitadas, de poucas centenas por seção. O desvio observado (MAD de 0,071 a 0,081) fica entre duas referências simuladas sem manipulação (beta-binomial e binomial) nas quatro combinações de ano e candidato. O teste não discrimina neste dado.",
-     "classificacao": "Refutado no escopo definido",
-     "evidencias": [
-      "fase3/PREREG_RELATORIO_PERICIAL.md",
-      "fase3/relatorio_pericial.py",
-      "fase3/relatorio_pericial_r2b.py",
-      "fase3/resultados/relatorio_pericial.json",
-      "fase3/resultados/relatorio_pericial_r2b.json"
-     ],
-     "numeros": "2026 e 2022, Lula e direita, 2º turno; 40 sorteios por referência.",
-     "demonstra": "Que o desvio de Benford é esperado em contagens limitadas e cabe nas referências sem manipulação.",
-     "nao_demonstra": "Que o teste detectaria uma alteração real: neste dado ele não tem poder.",
-     "robustez": "Duas referências simuladas.",
-     "causa": "—",
-     "alcance": "Todas as seções com votos do candidato.",
-     "mudaria": "Desvio fora das duas referências.",
-     "validacao": "T69 (rodada 8, aberta)",
-     "por_ano": {},
-     "reabertura": "",
-     "em_votos": "Não se traduz em votos."
-    },
-    {
-     "id": "Q56",
-     "pergunta": "Os microdados das urnas ficaram trancados por 72 horas, até a manhã de 28/10?",
-     "resposta": "Para os arquivos por urna, não: a primeira conferência de um terceiro contra o arquivo publicado pelo TSE foi às 19:10 de 25/10, e 177 dos 404 boletins foram conferidos ainda em 25/10. Para o CSV BWeb de dados abertos, este projeto não tem registro da primeira publicação (baixou em 27 e 28/10), então essa parte não é testável aqui.",
-     "classificacao": "Parcialmente demonstrado",
-     "evidencias": [
-      "fase3/PREREG_RELATORIO_PERICIAL.md",
-      "fase3/relatorio_pericial.py",
-      "fase3/relatorio_pericial_r2b.py",
-      "fase3/resultados/relatorio_pericial.json",
-      "fase3/resultados/relatorio_pericial_r2b.json"
-     ],
-     "numeros": "404 conferências de terceiro entre 25/10 e 28/10.",
-     "demonstra": "Disponibilidade dos arquivos por urna na noite da eleição.",
-     "nao_demonstra": "Quando o CSV BWeb foi publicado.",
-     "robustez": "Hora da primeira conferência de terceiro.",
-     "causa": "—",
-     "alcance": "404 boletins de terceiros.",
-     "mudaria": "Registro de primeira publicação do CSV.",
-     "validacao": "T70 (rodada 8, aberta)",
-     "por_ano": {},
-     "reabertura": "",
-     "em_votos": "Não se traduz em votos."
     }
-   ]
+   ],
+   "descricao": "Q27 a Q39 (rodada 6, V1.4): a live de 2022, o pedido do PL, matérias e posts; Q40 e Q41 (rodada 7, V1.5): o que foi digitado nos nulos e se o estimador de fluxos acerta."
   },
   {
    "id": "operacao",
@@ -1317,7 +1178,159 @@
      "reabertura": "",
      "em_votos": "Menos de 30 mil votos válidos nas seções dos tipos A e D (cerca de 0,6% da margem de 2026)."
     }
-   ]
+   ],
+   "descricao": "Q42 a Q50 (rodada 7, V1.5): auditoria adversarial dos dados e do próprio veredito, inclusive o vídeo dos \"votos extras\" (Q42)."
+  },
+  {
+   "id": "pericial",
+   "titulo": "Relatório pericial: hora de encerramento, biometria, unanimidade, Benford",
+   "perguntas": [
+    {
+     "id": "Q51",
+     "pergunta": "A eleição de 2026 teve duas eleições no mesmo dia, uma vencida por Flávio até as 17h00 e outra por Lula depois, na prorrogação?",
+     "resposta": "Os números do relatório se reproduzem, mas a divisão não separa o que ele diz. Em hora local, até 17:00:59 Flávio teve 52,39% e 1,75 mi de frente (150.771 seções), e depois Lula teve +6,18 mi. Só que 98% das seções fecham até 17:15 (mediana 17:01), e o grupo 'depois das 17h00' inclui 339.593 seções de encerramento de rotina (88 mi de votantes). Com o corte em 17:02:59, Lula já lidera o grupo de antes (+0,82 mi). As 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h, as 17h de Brasília; em hora de Brasília, até 17:00:59 Flávio tem 50,99% e 0,61 mi de frente. A prorrogação de fato (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228 mil, 5% da margem; sem elas, Lula lidera por 4,20 mi. Dentro do mesmo município, seções que fecharam depois e antes diferem em 0,2 ponto.",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_RELATORIO_PERICIAL.md",
+      "fase3/relatorio_pericial.py",
+      "fase3/relatorio_pericial_r2b.py",
+      "fase3/resultados/relatorio_pericial.json",
+      "fase3/resultados/relatorio_pericial_r2b.json"
+     ],
+     "numeros": "Reproduzido: 150.771 seções (até 17:00:59), 339.593 (17:01 a 17:15), 2.472 (17:16 a 18:59); sensibilidade do corte de 17:00:59 a 19:00:00; em hora de Brasília, até 17:00:59: 125.652 seções, Flávio 50,99%.",
+     "demonstra": "Que os números do relatório se reproduzem, que o resultado depende do minuto do corte e do relógio usado, e o tamanho real da prorrogação em votos.",
+     "nao_demonstra": "Decisões judiciais, reações internacionais e fiscalização partidária citadas no relatório não são dado do TSE e não foram testadas (nem afirmadas).",
+     "robustez": "Reprodução exata; conferência de fuso; comparação dentro do município (exploratória).",
+     "causa": "—",
+     "alcance": "2º turno de 2026, todas as seções com encerramento registrado.",
+     "mudaria": "Corte que separe grupos comparáveis dentro do município com diferença persistente.",
+     "validacao": "T66 (rodada 8, aberta; R2b exploratório)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "A prorrogação de fato (depois das 17:30) deu +228.095 votos de vantagem a Lula, 5,1% da margem; sem essas seções, Lula lidera por 4.202.096."
+    },
+    {
+     "id": "Q52",
+     "pergunta": "As seções que passaram das 19h, com 57% a 83% para Lula, mostram favorecimento a Lula?",
+     "resposta": "Os números se reproduzem (BA 936 seções, 72,31%; PE 657, 65,70%; SP 1.571, 57,46%; MA tem só 3 seções, 83,31%; no total, 6.342 seções e 1,86 mi de votantes depois das 19h), mas a comparação certa é com as demais seções do mesmo município. Nos 144 municípios com seções tardias e demais, as tardias têm 2,09 pontos de Lula a menos, e a virada entre turnos é igual (−0,2 ponto). Em PE as tardias (65,70%) têm menos Lula que o resto do estado (69,32%). A diferença de SP (57,46% contra 45,98% no resto do estado) vem de onde estão as seções, não de serem tardias. As tardias somam +187 mil de vantagem para Lula.",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_RELATORIO_PERICIAL.md",
+      "fase3/relatorio_pericial.py",
+      "fase3/relatorio_pericial_r2b.py",
+      "fase3/resultados/relatorio_pericial.json",
+      "fase3/resultados/relatorio_pericial_r2b.json"
+     ],
+     "numeros": "144 municípios com os dois grupos; diferença média ponderada de −2,09 pontos no % de Lula e −0,2 na virada.",
+     "demonstra": "Que 'contrariar o restante do estado' é diferença de composição, não de horário.",
+     "nao_demonstra": "Causa da demora no encerramento de cada seção.",
+     "robustez": "Comparação dentro do município.",
+     "causa": "—",
+     "alcance": "2º turno de 2026, seções com encerramento a partir de 19h.",
+     "mudaria": "Diferença de Lula dentro do município que persista.",
+     "validacao": "T66 (rodada 8, aberta)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "As seções a partir das 19h somam 1,86 mi de votantes e +187 mil de vantagem de Lula; dentro do município, menos Lula (−2,09 pontos)."
+    },
+    {
+     "id": "Q53",
+     "pergunta": "A liberação sem biometria (8,6 milhões, quase o dobro da margem) mostra fraude, e o voto em Lula 'dispara' onde ela é maior?",
+     "resposta": "Os números se reproduzem (8.632.488 liberações, 6,73% do comparecimento; Lula chega a 61,5% nas 96 seções com mais de 50% de liberação). Mas em 2022 foram 10.011.346 (8,06%), com razão de 4,7 vezes a margem (em 2026, 1,9); no 1º turno de 2026, 8.342.249 (6,66%). A relação com Lula tem a mesma forma no 1º turno de 2026 (de 45,1% a 52,4%) e em 2022. A correlação é de +0,07 entre seções, −0,03 entre municípios e +0,01 dentro do município: onde há mais liberação são lugares diferentes, e no mesmo município não há relação.",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_RELATORIO_PERICIAL.md",
+      "fase3/relatorio_pericial.py",
+      "fase3/relatorio_pericial_r2b.py",
+      "fase3/resultados/relatorio_pericial.json",
+      "fase3/resultados/relatorio_pericial_r2b.json"
+     ],
+     "numeros": "Seções, municípios e, dentro do município, 2026 (1º e 2º turnos) e 2022 (1º e 2º turnos).",
+     "demonstra": "Que o volume de liberação é menor que em 2022 e que a relação com Lula é estrutural.",
+     "nao_demonstra": "Quem foi liberado e em quem votou (voto secreto); o controle de idade está no T12.",
+     "robustez": "Mesma conta em outras rodadas e anos; dentro do município.",
+     "causa": "—",
+     "alcance": "Todas as seções com 50 ou mais votantes e 20 ou mais votos válidos.",
+     "mudaria": "Relação específica do 2º turno de 2026 que persista dentro do município.",
+     "validacao": "T67 (rodada 8, aberta); T12, T53",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: a liberação não indica o voto; dentro do município a relação com Lula é nula."
+    },
+    {
+     "id": "Q54",
+     "pergunta": "Existem aberrações de unanimidade pró-Lula (106 contra 4 seções com 100%; 18 para 1 com mais de 90%)?",
+     "resposta": "Os números se reproduzem (106 e 4 seções com 100%; com mais de 90%, 6.802 e 368 sem o exterior, 18,5 para 1). Em 2022 as razões eram maiores: 141 contra 2 (70,5 : 1) e 9.424 contra 199 (47 : 1); no 1º turno de 2022, 120 : 1. Em 2026, 94% das seções com mais de 90% de Lula estão no Norte e Nordeste (MA 1.549, BA 1.345, PI 870, PE 667, CE 662), com mediana de 198 votos válidos contra 255. Os zeros de votos seguem sem modelo calibrado (Q48).",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_RELATORIO_PERICIAL.md",
+      "fase3/relatorio_pericial.py",
+      "fase3/relatorio_pericial_r2b.py",
+      "fase3/resultados/relatorio_pericial.json",
+      "fase3/resultados/relatorio_pericial_r2b.json"
+     ],
+     "numeros": "2026 e 2022, 1º e 2º turnos, sem o exterior.",
+     "demonstra": "Que a razão é menor que em 2022 e concentrada onde Lula é forte e as seções são menores.",
+     "nao_demonstra": "Fiscalização partidária e 'zona rural' citadas no relatório não são dado do TSE.",
+     "robustez": "Reprodução exata e comparação com 2022.",
+     "causa": "—",
+     "alcance": "Todas as seções com votos válidos.",
+     "mudaria": "Razão maior que a de 2022 depois de controlar a geografia.",
+     "validacao": "T68 (rodada 8, aberta); T49, T64",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Escala descrita (106 seções com 100% para Lula; 141 em 2022); não é limite de fraude."
+    },
+    {
+     "id": "Q55",
+     "pergunta": "O teste de Benford do primeiro dígito acusa manipulação?",
+     "resposta": "Não. O primeiro dígito dos votos por seção não segue Benford nos dois anos (o dígito 1 aparece em ~61% das seções de cada candidato, contra 30% do esperado), mas isso ocorre porque as contagens são limitadas, de poucas centenas por seção. O desvio observado (MAD de 0,071 a 0,081) fica entre duas referências simuladas sem manipulação (beta-binomial e binomial) nas quatro combinações de ano e candidato. O teste não discrimina neste dado.",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_RELATORIO_PERICIAL.md",
+      "fase3/relatorio_pericial.py",
+      "fase3/relatorio_pericial_r2b.py",
+      "fase3/resultados/relatorio_pericial.json",
+      "fase3/resultados/relatorio_pericial_r2b.json"
+     ],
+     "numeros": "2026 e 2022, Lula e direita, 2º turno; 40 sorteios por referência.",
+     "demonstra": "Que o desvio de Benford é esperado em contagens limitadas e cabe nas referências sem manipulação.",
+     "nao_demonstra": "Que o teste detectaria uma alteração real: neste dado ele não tem poder.",
+     "robustez": "Duas referências simuladas.",
+     "causa": "—",
+     "alcance": "Todas as seções com votos do candidato.",
+     "mudaria": "Desvio fora das duas referências.",
+     "validacao": "T69 (rodada 8, aberta)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q56",
+     "pergunta": "Os microdados das urnas ficaram trancados por 72 horas, até a manhã de 28/10?",
+     "resposta": "Para os arquivos por urna, não: a primeira conferência de um terceiro contra o arquivo publicado pelo TSE foi às 19:10 de 25/10, e 177 dos 404 boletins foram conferidos ainda em 25/10. Para o CSV BWeb de dados abertos, este projeto não tem registro da primeira publicação (baixou em 27 e 28/10), então essa parte não é testável aqui.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/PREREG_RELATORIO_PERICIAL.md",
+      "fase3/relatorio_pericial.py",
+      "fase3/relatorio_pericial_r2b.py",
+      "fase3/resultados/relatorio_pericial.json",
+      "fase3/resultados/relatorio_pericial_r2b.json"
+     ],
+     "numeros": "404 conferências de terceiro entre 25/10 e 28/10.",
+     "demonstra": "Disponibilidade dos arquivos por urna na noite da eleição.",
+     "nao_demonstra": "Quando o CSV BWeb foi publicado.",
+     "robustez": "Hora da primeira conferência de terceiro.",
+     "causa": "—",
+     "alcance": "404 boletins de terceiros.",
+     "mudaria": "Registro de primeira publicação do CSV.",
+     "validacao": "T70 (rodada 8, aberta)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    }
+   ],
+   "descricao": "Q51 a Q56 (rodada 8, em aberto, ainda não congelada): as alegações de um relatório divulgado em imagens, testadas com pré-registro."
   }
  ],
  "inventario": [

@@ -5,6 +5,7 @@ import type { Registro, Home as HomeDados, Meta } from '@/lib/tipos';
 import { Carregando, BarraTopo } from '@/ui/Carregando';
 import { Cabecalho, Rodape } from '@/ui/Casca';
 import { DicaGlobal } from '@/ui/Dica';
+import { Consentimento } from '@/ui/Consentimento';
 import { Erro, SkeletonBloco } from '@/ui/base';
 import { Home } from '@/paginas/Home';
 import { Testes } from '@/paginas/Testes';
@@ -55,6 +56,7 @@ export default function App() {
       </main>
       <Rodape meta={meta} />
       <DicaGlobal />
+      <Consentimento />
     </>
   );
 }

@@ -14,7 +14,7 @@
 >
 > Não quero provar nem refutar nada. Também não afirmo nem nego que os dados oficiais sejam verdadeiros: peguei o que está disponível publicamente e analisei o que dava para analisar. A gente vê muita coisa sobre urna na internet e quase ninguém para e analisa os dados de verdade. Então eu fiz essa análise até onde os dados públicos permitiram ir. Daqui em diante é com vocês: em vez de reclamar, usem o projeto, rodem os dados, coloquem nos seus agentes de IA, contribuam com o que encontrarem e tirem as suas próprias conclusões.
 
-**Site:** [urna-lab.web.app](https://urna-lab.web.app) · **Versão:** V1.5, rodada 7, Operação Veracidade Geral (28/10/2026); antes, V1.4 com as alegações públicas (tag [`v1.4`](https://github.com/doce42/urna-lab/releases/tag/v1.4)) e Fase 3 em V1.3
+**Site:** [urna-lab.web.app](https://urna-lab.web.app) · **Relatório em PDF:** [urna-lab.web.app/relatorio.pdf](https://urna-lab.web.app/relatorio.pdf) (resumo nas primeiras páginas; `make pdf` regera a partir dos JSON) · **Versão:** V1.5, rodada 7, Operação Veracidade Geral (28/10/2026, tag `v1.5`); **rodada 8 (relatório pericial) em andamento, não congelada**; antes, V1.4 com as alegações públicas (tag [`v1.4`](https://github.com/doce42/urna-lab/releases/tag/v1.4)) e Fase 3 em V1.3
 
 ![Página inicial do site](docs/img/home_topo.jpg)
 
@@ -69,6 +69,16 @@ Uma auditoria adversarial do próprio estudo perguntou: **os dados oficiais usad
 - **Fato novo:** no 2º turno de 2026 o TSE não registrou recebimento de boletins das 17:07 às 19:03 (116 minutos). Não altera votos; a causa não está nos dados.
 
 O que mudou no veredito por causa disso está em [`operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`](operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md). O relatório executivo é [`operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md`](operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md); as simulações, [`03_SIMULACOES_ADVERSARIAIS.md`](operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md); a criptografia, [`02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md`](operacao_veracidade/02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md); e a conta do vídeo dos "98% dos votos extras", [`10_HIPOTESE_DO_VIDEO.md`](operacao_veracidade/10_HIPOTESE_DO_VIDEO.md).
+
+## Alegações públicas testadas (rodadas 6 a 8)
+
+As alegações públicas testadas (a live de 2022, o vídeo dos "votos extras" e o relatório pericial) **reproduzem quase todos os números, mas as conclusões não se sustentam**. As três mais comuns:
+
+- **"Duas eleições": Flávio até as 17h00, Lula na prorrogação (T66, Q51).** O corte das 17h00 mistura fusos (as 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h) e conta como prorrogação o encerramento de rotina (17:01 a 17:15; 98% das seções fecham até 17:15). A **prorrogação de fato** (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula **+228.095 votos de vantagem, 5,1% da margem**; sem essas seções, Lula lidera por 4.202.096.
+- **"98,12% dos votos extras foram para Lula" (T65, Q42).** A aritmética está certa, mas o 98% é a premissa de 60% devolvida; o mesmo método dá 370% para Bolsonaro em 2022.
+- **Liberação sem biometria de 8,6 milhões (T67, Q53).** Foi menor que em 2022 (6,73% contra 8,06% do comparecimento); a relação com o voto em Lula tem a mesma forma no 1º turno e em 2022 e é nula dentro do mesmo município.
+
+As demais (unanimidades, Benford, microdados, urnas antigas de 2022, boletins parados) estão em [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md#alegações-públicas-testadas) e nas perguntas Q27 a Q41 e Q51 a Q56 de [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md). Q51 a Q56 e T66 a T70 são da rodada 8, ainda não congelada.
 
 ## O que você encontra no site
 
@@ -165,6 +175,7 @@ Tudo roda na máquina local: o projeto **não usa GitHub Actions nem Git LFS**.
 | [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md) | Cada pergunta respondida, com o impacto em votos |
 | [`operacao_veracidade/`](operacao_veracidade/) | Operação Veracidade Geral: auditoria adversarial dos dados e do próprio veredito (comece por `OPERACAO_VERACIDADE_GERAL.md`) |
 | [`CONCLUSAO.md`](CONCLUSAO.md) | A conclusão em três níveis: provado, mostrado pela estatística, fora do alcance dos dados |
+| `grafico/web/relatorio.pdf` ([no site](https://urna-lab.web.app/relatorio.pdf)) | Relatório em PDF: resumo de 2 a 3 páginas e a parte densa (hipóteses, testes, perguntas, reprodutibilidade), montado dos JSON por `make pdf` |
 | [`RODADAS.md`](RODADAS.md) | Evolução da pesquisa: versões congeladas, revisões e a história de cada teste |
 | [`fase3/RELATORIO_ADVERSARIAL.md`](fase3/RELATORIO_ADVERSARIAL.md) | Por que coerência com o log não é verificação |
 | [`revisoes/`](revisoes/) | Revisões independentes, com achados classificados e respondidos |
@@ -184,3 +195,6 @@ Projeto **livre**: pode baixar, reproduzir, fazer fork, alterar e contradizer.
 - **Componentes e dados de terceiros:** [THIRD_PARTY.md](THIRD_PARTY.md)
 
 Para propor mudanças: fork e pull request, validado por quem mantém. Detalhes em [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
+Relatórios por fase e rodada: [`relatorios/`](relatorios/README.md). Privacidade e medição de acessos: [`PRIVACIDADE.md`](PRIVACIDADE.md).

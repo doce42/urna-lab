@@ -132,3 +132,12 @@ O usuário baixou do portal do TSE (Eleições 2022, "Documentação técnica do
 | Zeros | T64: três famílias de modelo falham | Nenhum modelo de cauda baixa calibrado |
 | **Artefato do leitor de log** | Log de pacote traz logs arquivados de outras urnas e seções (ES 57932/9/85) | Reler os 16 casos do T14 por data, ID de urna e seção |
 | Frases do próprio projeto acima da evidência | `operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md` (22 itens): H7, T05, "sinais muito maiores", "dois caminhos", Q5, Q7 corrigidos | A soma das anomalias **não** é teto; a base de referência pode estar alterada |
+
+### Atualização de 28/10/2026 (rodada 8, aberta)
+| Ameaça ou limite | O que foi feito | O que continua aberto |
+|---|---|---|
+| Alegação que usa a hora de encerramento | T66: números reproduzidos; o corte das 17h mistura fusos, trata a rotina como prorrogação e depende do minuto; prorrogação de fato = +228 mil para Lula | A causa da demora de cada seção não está nos dados |
+| Alegação de que a liberação manual favorece Lula | T67: mesma relação no 1º turno e em 2022; nula dentro do município | Liberação não indica o voto |
+| Benford sobre contagens limitadas | T69: desvio cabe nas referências simuladas sem manipulação | O teste não tem poder neste dado |
+| Disponibilidade dos microdados | T70: arquivos por urna na noite de 25/10 | O CSV BWeb: sem registro de primeira publicação |
+| Itens não testáveis com dado do TSE | Declarados fora do escopo (decisões judiciais, política externa, fiscalização partidária) | — |
