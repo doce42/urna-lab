@@ -1607,6 +1607,14 @@
      "alvo": "evidencia",
      "descricao": "Nunca examinado em 2022: em 70 seções (1º turno) e 36 (2º) o log publicado registra menos votos que o comparecimento do boletim (3.618 e 1.669 votos sem registro no log), e em 34 e 13 registra mais. Exemplo: RS 88013/2/199, log da urna 2215062 com 196 votos (último às 13:53) contra 288 no boletim assinado pela urna 2228407. Divergência objetiva de cobertura; causa não determinada; exploratório: sem deslocamento de votos nesses grupos.",
      "resultado": "em_andamento"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Fila F1: log × comparecimento em 2022",
+     "alvo": "evidencia",
+     "descricao": "Recontagem direta do .logjez confirma as 153 seções-turno (igual ao leitor). 106 com log menor (5.287 votos sem registro no log publicado), 47 com log maior (2.503 votos a mais); em 29 das 47, um subconjunto exato das partes arquivadas soma o comparecimento (compatível com partes de outra sessão). Em 2022 o terceiro campo da linha do log não é o número da urna em parte dos logs: 'urnas com voto no log' não é válido em 2022.",
+     "resultado": "em_andamento"
     }
    ],
    "versoes": [
@@ -1739,6 +1747,14 @@
      "tipo": "Auditoria adversarial: imagem do boletim",
      "alvo": "evidencia",
      "descricao": "RS 88013/2/199 (2022): imagem do boletim assinada com 196 votos contra boletim digital e tabela com 288; divergência objetiva preservada, troca de urna compatível e não verificada. MG 50075/47/41 (2026): imagem da urna 258, imagem do Sistema de Apuração 278 = tabela; compatível com contingência registrada; a assinatura dos arquivos do Sistema de Apuração de 2026 não foi conferida pelo leitor.",
+     "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Fila F2: Sistema de Apuração 2026",
+     "alvo": "evidencia",
+     "descricao": "60 seções-turno do Sistema de Apuração de 2026 (31 e 29): lista assinada válida em 60/60, boletim = tabela, texto impresso = tabela em 56 (3 fora da tabela com comparecimento 0, P12; 1 com imagem parcial da urna fora de lista assinada publicada). Corrige 'seções do exterior por Sistema de Apuração não têm arquivos de urna': têm os arquivos do Sistema de Apuração.",
      "resultado": "ajustado"
     }
    ],
@@ -5545,6 +5561,14 @@
      "alvo": "evidencia",
      "descricao": "Capturas do Internet Archive dos totais nacionais divulgados durante a apuração (2022: 2 e 27; 2026: 6 e 4) coincidem com a recomposição pela base final na ordem de recebimento (diferença ≤ 0,083 pp, mesmo líder, sem defasagem); viradas divulgadas: 2022 2º turno 1 (entre 18:22 e 19:43), 2026 2º turno ≥ 2. Nenhuma divergência objetiva entre sequência publicada e base nos instantes capturados.",
      "resultado": "resistiu"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Fila F4: modelo de chegada",
+     "alvo": "metodo",
+     "descricao": "Modelo com horas reais de emissão e atraso de transmissão sorteado dentro da UF (R² do atraso 0,27 a 0,35): não validado em 2022 (última troca observada aos 68% contra 39% a 42% simulados no 2º turno; maior vale fora da faixa; 0 de 27 capturas na faixa). Número de trocas compatível nos quatro casos. Q10 e Q12 continuam não determinados; nenhum outro modelo nesta sessão.",
+     "resultado": "em_andamento"
     }
    ],
    "versoes": [

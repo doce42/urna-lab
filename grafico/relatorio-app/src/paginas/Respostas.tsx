@@ -5,15 +5,16 @@ import { Eyebrow, SkeletonBloco, Erro } from '@/ui/base';
 import { useDados } from '@/lib/dados';
 
 type Pergunta = { id: string; pergunta: string; resposta: string; classificacao: string; evidencias: string[]; numeros: string; demonstra: string; nao_demonstra: string;
-  robustez: string; causa: string; alcance: string; mudaria: string; validacao: string; por_ano: Record<string, string>; reabertura: string };
+  robustez: string; causa: string; alcance: string; mudaria: string; validacao: string; por_ano: Record<string, string>; reabertura: string; em_votos: string };
 type Item = { id: string; pergunta: string; resposta: string; classificacao: string; perguntas_relacionadas: string[]; evidencias: string[]; limitacao: string;
-  historico: { etapa: string; estado: string; resposta: string }[]; detalhe: string };
-type Dados = { gerado: string; situacao: string; aviso: string; capitulos: { id: string; titulo: string; perguntas: Pergunta[] }[]; inventario: Item[]; achados_sem_causa: string[]; limites: string[] };
+  historico: { etapa: string; estado: string; resposta: string }[]; detalhe: string; em_votos: string };
+type Dados = { gerado: string; situacao: string; aviso: string; margem: string; capitulos: { id: string; titulo: string; perguntas: Pergunta[] }[]; inventario: Item[]; achados_sem_causa: string[]; limites: string[] };
 
 const COR = (c: string) => c.startsWith('Demonstrado') ? 'var(--ok)' : c.startsWith('Refutado') ? 'var(--accent)' : c.startsWith('Parcialmente') ? 'var(--warn)' : c.startsWith('Não executado') ? 'var(--erro)' : 'var(--text-subtle)';
 const Selo = ({ c }: { c: string }) => (
   <span className="inline-flex items-center gap-1.5 min-h-6 px-2 rounded-full text-xs font-medium border shrink-0" style={{ color: COR(c), borderColor: COR(c) }}><i className="w-1.5 h-1.5 rounded-full" style={{ background: COR(c) }} />{c}</span>
 );
+const EmVotos = ({ t }: { t: string }) => t && t !== '—' ? <p className="mt-2 text-[14.5px] leading-relaxed rounded-lg px-3 py-2" style={{ background: 'color-mix(in srgb, var(--accent) 8%, transparent)' }}><b className="font-medium text-text">Em votos: </b><span className="text-text">{t}</span></p> : null;
 const Linha = ({ r, t }: { r: string; t: string }) => t ? <div><b className="font-medium text-text">{r}: </b>{t}</div> : null;
 
 function CartaoPergunta({ p }: { p: Pergunta }) {
@@ -21,6 +22,7 @@ function CartaoPergunta({ p }: { p: Pergunta }) {
     <li id={p.id} className="cartao p-4 md:p-5 scroll-mt-20">
       <div className="flex flex-wrap items-start gap-x-3 gap-y-2"><span className="font-mono text-sm font-semibold w-10 shrink-0 pt-0.5">{p.id}</span><h3 className="text-[16px] font-medium text-text leading-snug flex-1 min-w-[14rem]">{p.pergunta}</h3><Selo c={p.classificacao} /></div>
       <p className="mt-2 text-[15px] text-text leading-relaxed">{p.resposta}</p>
+      <EmVotos t={p.em_votos} />
       {Object.keys(p.por_ano).length > 0 && <div className="mt-2 grid gap-1 text-[14px] text-muted">{Object.entries(p.por_ano).map(([a, t]) => <div key={a}><b className="font-medium text-text">{a}: </b>{t}</div>)}</div>}
       <details className="mt-2 group/q">
         <summary className="cursor-pointer list-none text-[13px] text-accent-text hover:underline"><span className="group-open/q:hidden">números, evidências e limites</span><span className="hidden group-open/q:inline">recolher</span></summary>
@@ -50,7 +52,7 @@ export function Respostas() {
         <Eyebrow>Fase 3 · {d.situacao}</Eyebrow>
         <h1 className="t-h1 mt-2">Perguntas e respostas científicas</h1>
         <p className="t-lead mt-4 text-[17px]">Uma resposta explícita para cada pergunta que motivou a pesquisa: o que foi demonstrado, o que foi refutado, o que ficou em parte e o que não pôde ser determinado com os dados disponíveis, e por quê.</p>
-        <p className="mt-3 text-[14px] text-muted leading-relaxed border-l-2 border-border pl-3">{d.aviso}</p>
+        <p className="mt-3 text-[14px] text-muted leading-relaxed border-l-2 border-border pl-3">{d.aviso} <b className="font-medium text-text">{d.margem}</b></p>
         <div className="mt-4 flex flex-wrap gap-1.5">{Object.entries(cont).map(([k, v]) => <Selo key={k} c={`${k}: ${v}`} />)}</div>
         <nav className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[14px]">{d.capitulos.map((c) => <a key={c.id} href={`#${c.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(c.id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-4">{c.titulo}</a>)}
           <a href="#inventario" onClick={(e) => { e.preventDefault(); document.getElementById('inventario')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-4">Os 33 itens do inventário</a></nav>
@@ -75,6 +77,7 @@ export function Respostas() {
           <li key={i.id} className="cartao p-4">
             <div className="flex flex-wrap items-start gap-x-3 gap-y-2"><span className="font-mono text-sm font-semibold w-12 shrink-0 pt-0.5">{i.id}</span><span className="text-[15px] text-text font-medium leading-snug flex-1 min-w-[14rem]">{i.pergunta}</span><Selo c={i.classificacao} /></div>
             <p className="mt-1.5 text-[14.5px] text-muted leading-relaxed">{i.resposta}</p>
+            <EmVotos t={i.em_votos} />
             {i.perguntas_relacionadas.length > 0 && <div className="mt-1 text-[13px] text-subtle">Ver {i.perguntas_relacionadas.map((q, k) => <span key={q}>{k ? ', ' : ''}<a href={`#${q}`} onClick={(e) => { e.preventDefault(); document.getElementById(q)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-2">{q}</a></span>)}</div>}
             <details className="mt-1.5 group/q">
               <summary className="cursor-pointer list-none text-[12.5px] text-subtle hover:text-text"><span className="group-open/q:hidden">detalhe, evidências e histórico</span><span className="hidden group-open/q:inline">recolher</span></summary>

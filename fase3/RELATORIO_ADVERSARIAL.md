@@ -62,3 +62,14 @@ No registro, as seguintes afirmações do tipo "passou" passam a ser lidas como 
 - **Classificar as 153 seções-turno de 2022** com log diferente do comparecimento, como o T36 faz para 2026, e procurar os logs das urnas substitutas no pacote.
 - **Conferir a assinatura das seções do Sistema de Apuração de 2026** (`.vsc` de SA), lacuna do leitor de 2026.
 - **Ampliar o R2:** capturas por UF e outras janelas, quando o Internet Archive voltar a responder.
+
+## Adendo da execução da fila (28/10/2026)
+- **Campo "urna" do log em 2022:** em parte dos logs de 2022, o terceiro campo da linha não é o número da urna. O valor 67305985 aparece em seções de vários estados. A contagem "urnas com voto no log" de 2022 não é válida, e o subconjunto "duas urnas no log" da validação de 2022 do caso C também não (resultado retirado). A conclusão de 2026 não muda, porque em 2026 o certificado e o log identificam a urna.
+- **Log × comparecimento em 2022 (fila F1):**
+  - **Recontagem:** confirmada em 153/153.
+  - **Log com mais votos que o comparecimento (47 seções):** em 29, um subconjunto exato das partes arquivadas soma o comparecimento. Isso é compatível com partes de outra sessão incluídas no log publicado, não verificado.
+  - **Log com menos votos (106 seções):** 5.287 votos sem registro no log publicado.
+  - **Causa:** não demonstrada em nenhum dos casos.
+- **Sistema de Apuração de 2026 (fila F2):**
+  - lista assinada válida em 60/60 e boletim igual à tabela, como consistência interna;
+  - a imagem parcial da urna em MG 50075/47/41 não consta de nenhuma lista assinada publicada.

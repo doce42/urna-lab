@@ -33,7 +33,7 @@ INT = [
  q("Q3", "Existem divergências verificáveis entre boletins, RDV, logs, tabelas e totalização?",
    "Nos votos, não. Entre arquivos e entre log e comparecimento, sim: há divergências objetivas pontuais, preservadas como achados, sem efeito demonstrado sobre votos.",
    PAR, ["fase3/resultados/r1_integridade.json", "fase3/resultados/adv_log_x_comparecimento.json", "fase3/RELATORIO_ADVERSARIAL.md", "analise/resultado_casos_integridade_1t.json", "testes/registro.json (T32, T36)"],
-   "Totalização: 638 de 638 itens iguais ao total oficial (T32). Log × comparecimento: 2022, log com menos votos em 70 (1º) e 36 (2º) seções (3.618 e 1.669 votos sem registro no log publicado) e com mais em 34 e 13; 2026, 9 e 7 seções (59 e 54 votos), no T36. Imagem × boletim: RS 88013/2/199 (2022): imagem assinada com 196 votos, boletim e tabela com 288; log da urna 2215062 com 196 votos (último às 13:53). T36 (2026): 186 e 75 casos de contas que não fecham, compatíveis com registros (troca de urna, RED, reinício), 1 sem explicação (RJ 60011/8/61).",
+   "Totalização: 638 de 638 itens iguais ao total oficial (T32). Log × comparecimento: 2022, log com menos votos em 70 (1º) e 36 (2º) seções (3.618 e 1.669 votos sem registro no log publicado) e com mais em 34 e 13 (fila F1: recontagem confirmada em 153/153; em 29 das 47 com log maior, um subconjunto exato das partes arquivadas do log soma o comparecimento, compatível com partes de outra sessão no log publicado); 2026, 9 e 7 seções (59 e 54 votos), no T36. Imagem × boletim: RS 88013/2/199 (2022): imagem assinada com 196 votos, boletim e tabela com 288; log da urna 2215062 com 196 votos (último às 13:53). T36 (2026): 186 e 75 casos de contas que não fecham, compatíveis com registros (troca de urna, RED, reinício), 1 sem explicação (RJ 60011/8/61).",
    "Há divergências documentais objetivas, todas pequenas e sem deslocamento de votos detectável nas seções envolvidas.", "A causa de cada divergência. As explicações operacionais vêm do próprio sistema (compatíveis, não verificadas).",
    "Teste de votação nas seções com explicação registrada (T36, contingências): sem deslocamento (adv_casos.json). Exploratório em 2022 (log ≠ comparecimento): sem deslocamento, poder baixo.",
    "não demonstrada", "Seções com arquivos; Presidente.", "Logs das urnas substitutas; boletins impressos da seção; esclarecimento do TSE por seção.", "Executado (R1, auditoria adversarial).",
@@ -41,7 +41,7 @@ INT = [
  q("Q4", "Existem arquivos ausentes, seções não cobertas ou versões conflitantes? Qual o alcance?",
    "Sim, arquivos ausentes e algumas seções não cobertas; versões conflitantes não foram encontradas no que foi possível comparar.",
    PAR, ["fase3/resultados/a173.json", "fase3/resultados/sa22.json", "fase3/resultados/a1.json", "fase3/resultados/r1_integridade.json", "fase3/resultados/r2_curva_publica.json"],
-   "2022: 173 arquivos assinados (RDV, log, imagem; 64 seções, 54 do exterior) e 485 auxiliares fora do pacote de dados abertos; 10 seções sem boletim lido pelo projeto. 2026: 1 log assinado e não publicado (SP, 2º turno); arquivos do Sistema de Apuração sem conferência de assinatura pelo leitor. Versões: uma só captura de cada arquivo; os totais divulgados ao vivo (39 capturas) batem com a base final.",
+   "2022: 173 arquivos assinados (RDV, log, imagem; 64 seções, 54 do exterior) e 485 auxiliares fora do pacote de dados abertos; das 10 seções sem boletim lido, 5 foram lidas na fila F3 (conferem) e 5 do exterior não têm arquivo nenhum no pacote. 2026: 1 log assinado e não publicado (SP, 2º turno); seções do Sistema de Apuração (31 e 29) conferidas na fila F2: lista assinada válida em 60/60, boletim = tabela; 3 seções do exterior fora da tabela com comparecimento 0 (P12); a imagem parcial da urna em MG 50075/47/41 não consta de lista assinada publicada. Versões: uma só captura de cada arquivo; os totais divulgados ao vivo (39 capturas) batem com a base final.",
    "Ausências de publicação objetivas e de alcance pequeno; os boletins dessas seções coincidem com a tabela.", "O conteúdo dos arquivos ausentes; republicação de arquivos entre datas (só há uma versão local).",
    "Duas cópias do pacote de 2022 (14/10 e 27/10/2026) com as mesmas ausências.", "não demonstrada", "Pacotes de dados abertos do TSE.", "Os 173 arquivos por outro canal; versões datadas dos pacotes.", "Executado (A173, SA22, R1, R2).",
    {"2022": "173 + 485 arquivos ausentes; 10 seções sem boletim lido.", "2026": "1 log ausente; assinatura do Sistema de Apuração não conferida pelo leitor."}),
@@ -84,11 +84,11 @@ CUR = [
    "Mesmo resultado por número de seções e por horário (defasagem de 0 minuto).", "não aplicável", "Totais nacionais divulgados.", "Mais capturas (por UF, outras janelas).", "Executado (R2).",
    {"2022": "1º turno ≥ 1; 2º turno 1.", "2026": "1º turno 0; 2º turno ≥ 2."}),
  q("Q10", "Uma quantidade pequena de viradas é incomum sob modelos realistas de chegada dos boletins?",
-   "Não determinado: nenhum dos cinco modelos de chegada testados é calibrado (todos rejeitam também 2022), e nenhum modelo foi validado nesta fase.",
+   "Não determinado: nenhum dos cinco nulos de permutação é calibrado, e o modelo de chegada com as horas reais de emissão e atraso de transmissão sorteado (fila F4) não foi validado em 2022 (última troca e maior vale fora da faixa; 0 de 27 capturas na faixa). O número de trocas observado cabe no modelo nos quatro casos, mas isso não é confirmatório.",
    ND, ["fase3/resultados/E2_curvas.json", "fase3/resultados/E2b_curvas.json"],
    "Nulos: irrestrito, por UF, por município, UF × hora de encerramento, UF × hora × tamanho; 200 permutações cada.",
    "—", "Que as viradas sejam comuns ou incomuns.", "—", "não aplicável", "—",
-   "Um modelo de chegada validado contra a sequência divulgada do R2 (fila).", "Tentado (E2, E2b); modelo validado não construído.", reabre="Construir modelo de chegada por lotes e validá-lo com as 27 capturas do 2º turno de 2022."),
+   "Um modelo de chegada que reproduza 2022 e as capturas.", "Tentado (E2, E2b, F4); nenhum validado. Parado pelo critério.", reabre="Construir modelo de chegada por lotes e validá-lo com as 27 capturas do 2º turno de 2022."),
  q("Q11", "Os vales aparentemente periódicos e os trechos lineares são reproduzíveis com os dados brutos?",
    "A curva divulgada é reproduzível com os dados por seção nos 39 instantes capturados (diferença ≤ 0,083 pp); periodicidade não foi testada com estatística validada.",
    PAR, ["fase3/resultados/r2_curva_publica.json", "fase3/resultados/E2_curvas.json"],
@@ -98,7 +98,7 @@ CUR = [
    "Não determinado: com controles por UF, município, hora de encerramento e tamanho, os nulos continuam rejeitando também em 2022, então não discriminam.",
    ND, ["fase3/resultados/E2b_curvas.json"], "η² da ordem por UF × hora × tamanho: 0,36 (2026 1º turno).", "—", "Anomalia ou normalidade da curva.", "—", "não aplicável", "—", "Modelo de chegada validado (fila).", "Tentado."),
  q("Q13", "2022 e 2026 apresentam semelhanças estatisticamente relevantes depois desses controles?",
-   "Não determinado estatisticamente. Descritivamente: nos dois anos a última troca de liderança vem mais tarde do que nos modelos nulos; em 2026 a ordem de chegada é mais territorial (η² por UF 0,39 contra 0,24).",
+   "Não determinado estatisticamente. Descritivamente: nos dois anos a última troca de liderança vem mais tarde do que nos modelos nulos e do que o modelo de atraso de transmissão prevê (2022 2º turno: 68% contra 39% a 42%; 2026 2º turno: 48% contra 30% a 34%); em 2026 a ordem de chegada é mais territorial (η² por UF 0,39 contra 0,24).",
    ND, ["fase3/resultados/E2_curvas.json"], "—", "Semelhanças descritivas.", "Semelhança estatística após controles.", "—", "não aplicável", "—", "Depende de Q10.", "Parcial."),
  q("Q14", "Há divergência objetiva entre a sequência publicada e os registros históricos disponíveis?",
    "Não: nas 39 capturas históricas, a sequência divulgada é igual à recomposta pela base final (≤ 0,083 pp, mesmo líder, votos que nunca diminuem, total final igual).",
@@ -152,6 +152,47 @@ TUR = [
    ["fase2/resultados/P15.json"], "Limites de Fréchet: razão entre abstencionistas de ~0 a 1,7 mi.", "A não identificabilidade com estes dados.", "—", "—", "não aplicável", "—", "Só dados individuais (inexistentes por sigilo).", "Encerrada no escopo."),
 ]
 
+# O que cada resposta significa em número de votos. Referências: margem do 2º turno de 2026 = 4.430.191 votos (Lula 64.256.232 ×
+# Flávio 59.826.041); de 2022 = 2.139.645 (Lula 60.345.999 × Bolsonaro 58.206.354). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.
+MARGEM = "Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022."
+EMV = {
+ "Q1": "0 voto de diferença entre a tabela e os boletins em todos os ~128 milhões de votos de 2026 (2º turno) e ~124 milhões de 2022 conferidos. As 5 seções de 2022 sem arquivo somam 5 votos de comparecimento.",
+ "Q2": "0 voto de diferença entre a recontagem pelo RDV e a tabela, nos dois anos.",
+ "Q3": "Nenhuma divergência muda um voto da tabela. Divergências de registro: 2022, 5.287 votos sem registro no log publicado e 2.503 a mais no log (0,25% e 0,12% da margem de 2022); RS 88013/2/199, 92 votos entre a imagem do boletim (196) e o boletim digital (288); 2026, 113 votos em 16 seções-turno do T36 (0,003% da margem).",
+ "Q4": "Seções com arquivos ausentes: 64 seções com 21.112 comparecimentos em 2022 (boletim presente e igual à tabela); o Sistema de Apuração soma 27.692 votos em 2022 e as seções de 2026 também conferem; as 5 seções sem arquivo somam 5 votos.",
+ "Q5": "Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora.",
+ "Q6": "Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder.",
+ "Q7": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+ "Q8": "A ordem de apuração não muda nenhum voto: a mesma soma final em qualquer ordem. A virada do 2º turno de 2022 ocorreu com 67,6% das urnas; a de 2026, com 47,2%.",
+ "Q9": "Idem: a sequência divulgada é a soma parcial dos mesmos votos; 0 voto de diferença no total final.",
+ "Q10": "Não se traduz em votos: trata da ordem de chegada, não do total.",
+ "Q11": "Não se traduz em votos: forma da curva.",
+ "Q12": "Não se traduz em votos: forma da curva.",
+ "Q13": "Não se traduz em votos: comparação da forma das curvas.",
+ "Q14": "0 voto de diferença entre a sequência divulgada e a base nas capturas finais.",
+ "Q15": "Nas 79 seções do 1º turno, 9.542 votos foram para Lula; nas 106 do 2º turno, 14.860 (todos os válidos dessas seções). São 0,34% da margem de 2026.",
+ "Q16": "Os votos dessas seções conferem nos registros: 0 voto de diferença.",
+ "Q17": "Não se traduz em votos: transições entre turnos.",
+ "Q18": "Se os zeros fossem anomalia, os votos em jogo seriam os que o candidato teria nessas seções: de ~44 a ~4.800 votos conforme o modelo (2026, 2º turno), no máximo 0,11% da margem de 4,43 mi.",
+ "Q19": "2022: de ~66 a ~4.300 votos esperados para Bolsonaro nessas seções, no máximo 0,2% da margem de 2,14 mi.",
+ "Q20": "0 voto de diferença nos registros dessas seções.",
+ "Q21": "2022: Lula +3,09 mi, Bolsonaro +7,13 mi. 2026: Lula +10,38 mi, Flávio +3,72 mi.",
+ "Q22": "2026: os finalistas somaram +14,10 mi = 9,32 mi dos eliminados + 2,96 mi de comparecimento + 1,82 mi de brancos e nulos a menos. 2022: +10,22 mi = 9,90 mi + 0,57 mi − 0,25 mi.",
+ "Q23": "0 voto inconsistente: nenhuma seção com mais votos que comparecimento.",
+ "Q24": "Trocas diretas entre finalistas em 2026: mínimo garantido de 79 e 123 votos, máximo de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi. A razão do C06 erra de ±0,5 a ±1,5 mi votos.",
+ "Q25": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
+ "Q26": "Não se traduz em votos: limite de identificabilidade (os limites estão na Q24).",
+}
+EMV_INV = {"P1": "Erro de ±0,5 a ±1,5 mi votos na razão estimada.", "P2": EMV["Q7"], "P3": "0 voto de diferença entre os canais comparados.", "P4": EMV["Q6"],
+ "P5": "Maior efeito +0,004 logit, ~2,7 mil votos se fosse real.", "P6": "—", "P7": "Diferença de −0,029 z, desprezível; não convertida em votos.", "P8": "Efeito desprezível.",
+ "P9": "Cada local atípico: dezenas a poucas centenas de votos.", "P10": "99 votos nos últimos 30 min das 8 urnas (2026, 1º turno).", "P11": EMV["Q5"],
+ "P12": "Eleitores aptos do exterior (−495 e −525), não votos.", "P13": EMV["Q24"], "P14": EMV["Q25"], "P15": "Abstencionistas para Lula entre 4.116 e 32,3 mi votos.",
+ "P16": "0 voto de diferença nas 200 seções.", "P17": "~740 votos (2026) e ~2.600 (2022) na cauda pró-Lula.", "P18": EMV["Q7"], "P19": "Não se traduz em votos.",
+ "P20": EMV["Q25"], "P21": EMV["Q6"], "R1-20": "0 voto de diferença nas seções comuns (~119 mi em 2026, 1º turno; ~118 mi por turno em 2022).",
+ "C1": EMV["Q10"], "C1a": EMV["Q8"], "C1b": EMV["Q11"], "C2": EMV["Q13"], "M1": EMV["Q22"], "Z1": EMV["Q18"], "MET": EMV["Q7"],
+ "AUT": EMV["Q1"] + " " + EMV["Q5"], "A173": "64 seções com 21.112 comparecimentos; votos do boletim iguais à tabela.", "BU1": "16 votos, iguais à tabela.", "SA22": "27.692 votos, iguais à tabela."}
+for lista in (INT, CUR, ZER, TUR):
+    for p in lista: p["em_votos"] = EMV[p["id"]]
 # 33 itens do inventário: resposta direta + classificação + ligação com as perguntas acima
 INV = {
  "P1": ("O estimador de fluxos C06 recupera a verdade? Em parte: a ordem dos fluxos e o contraste com 2022 resistem; a magnitude '4:1' não (erro de ±0,5 a ±1,5 mi votos).", PAR, ["Q24"]),
@@ -194,9 +235,10 @@ itens = []
 for k, (resp, classe, qs) in INV.items():
     i = inv.get(k, {})
     itens.append({"id": k, "pergunta": i.get("pergunta", ""), "resposta": resp, "classificacao": classe, "perguntas_relacionadas": qs, "estado_inventario": i.get("estado_final"),
-                  "evidencias": i.get("evidencia_arquivos", []), "limitacao": i.get("proxima_evidencia", ""), "historico": i.get("historico", []), "detalhe": i.get("resposta_ou_motivo", "")})
+                  "evidencias": i.get("evidencia_arquivos", []), "limitacao": i.get("proxima_evidencia", ""), "em_votos": EMV_INV[k], "historico": i.get("historico", []), "detalhe": i.get("resposta_ou_motivo", "")})
 assert len(itens) == 33, len(itens)
 OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; respostas não congeladas",
+       "margem": MARGEM,
        "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
        "capitulos": [{"id": "integridade", "titulo": "Integridade dos resultados oficiais", "perguntas": INT},
                      {"id": "curvas", "titulo": "Curvas, viradas e periodicidade", "perguntas": CUR},
@@ -205,26 +247,27 @@ OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; respostas não conge
        "inventario": itens,
        "achados_sem_causa": ["Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
                              "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
-                             "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado).",
+                             "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).",
                              "173 arquivos assinados e 485 auxiliares fora do pacote de dados abertos de 2022.",
                              "8 urnas com rajada sem biometria no fim do dia (2026, 1º turno; 99 votos), padrão também presente em 2022.",
-                             "Última troca de liderança mais tardia que nos modelos nulos, nos dois anos."],
+                             "Última troca de liderança mais tardia que nos modelos nulos e que o modelo de atraso de transmissão prevê, nos dois anos (fila F4)."],
        "limites": ["Autenticidade só até a AC emissora (sem âncora do TSE).", "BU, RDV, imagem e log não são testemunhas independentes entre si.",
                    "Comprometimento anterior à geração dos registros (H2) não é distinguível com dados públicos.",
                    "Única fonte externa de custódia: capturas do Internet Archive (agregado nacional, instantes amostrados).",
                    "Fluxos individuais entre turnos não identificáveis.", "Sem modelo de chegada validado (curvas) e sem modelo de cauda baixa validado (zeros)."]}
 json.dump(OUT, open(R + "/fase3/respostas_f3.json", "w"), ensure_ascii=False, indent=1)
-L = ["# Respostas científicas da F3 (28/10/2026)", "", "> " + OUT["aviso"], "> A F3 está em revisão; estas respostas não são versão congelada.", ""]
+L = ["# Respostas científicas da F3 (28/10/2026)", "", "> " + OUT["aviso"], "> " + MARGEM, "> A F3 está em revisão; estas respostas não são versão congelada.", ""]
 for c in OUT["capitulos"]:
     L += [f"## {c['titulo']}", ""]
     for p in c["perguntas"]:
         L += [f"### {p['id']}. {p['pergunta']}", f"**Resposta:** {p['resposta']}", f"**Classificação:** {p['classificacao']}"]
+        L.append(f"**Em votos:** {p['em_votos']}")
         for a, txt in p["por_ano"].items(): L.append(f"- **{a}:** {txt}")
         L += [f"- **Números:** {p['numeros']}", f"- **Demonstra:** {p['demonstra']}", f"- **Não demonstra:** {p['nao_demonstra']}", f"- **Robustez:** {p['robustez']}",
               f"- **Causa:** {p['causa']} · **Alcance:** {p['alcance']}", f"- **O que mudaria a resposta:** {p['mudaria']}", f"- **Validação:** {p['validacao']}",
               f"- **Evidências:** " + ", ".join(f"`{e}`" for e in p["evidencias"])] + ([f"- **Reabertura:** {p['reabertura']}"] if p["reabertura"] else []) + [""]
-L += ["## Matriz dos 33 itens do inventário", "", "| Id | Resposta direta | Classificação | Perguntas |", "|---|---|---|---|"]
-for i in itens: L.append(f"| {i['id']} | {i['resposta']} | {i['classificacao']} | {', '.join(i['perguntas_relacionadas'])} |")
+L += ["## Matriz dos 33 itens do inventário", "", "| Id | Resposta direta | Em votos | Classificação | Perguntas |", "|---|---|---|---|---|"]
+for i in itens: L.append(f"| {i['id']} | {i['resposta']} | {i['em_votos']} | {i['classificacao']} | {', '.join(i['perguntas_relacionadas'])} |")
 L += ["", "## Achados que persistem sem causa demonstrada", ""] + [f"- {x}" for x in OUT["achados_sem_causa"]] + ["", "## Limites das fontes e dos métodos", ""] + [f"- {x}" for x in OUT["limites"]]
 open(R + "/fase3/RESPOSTAS_F3.md", "w").write("\n".join(L) + "\n")
 print("ok", len(itens), sum(len(c["perguntas"]) for c in OUT["capitulos"]))

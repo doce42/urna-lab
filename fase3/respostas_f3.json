@@ -1,6 +1,7 @@
 {
  "gerado": "2026-10-28",
  "situacao": "F3 em revisão; respostas não congeladas",
+ "margem": "Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022.",
  "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
  "capitulos": [
   {
@@ -30,7 +31,8 @@
       "2022": "0 diferenças em 471.907 + 471.980 seções + 159 do Sistema de Apuração; 10 sem boletim lido.",
       "2026": "0 diferenças em 499.198 + 499.201 seções."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "0 voto de diferença entre a tabela e os boletins em todos os ~128 milhões de votos de 2026 (2º turno) e ~124 milhões de 2022 conferidos. As 5 seções de 2022 sem arquivo somam 5 votos de comparecimento."
     },
     {
      "id": "Q2",
@@ -53,7 +55,8 @@
       "2022": "0 diferenças em 471.851 + 471.980 seções.",
       "2026": "0 diferenças em 499.167 + 499.174 seções."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "0 voto de diferença entre a recontagem pelo RDV e a tabela, nos dois anos."
     },
     {
      "id": "Q3",
@@ -67,7 +70,7 @@
       "analise/resultado_casos_integridade_1t.json",
       "testes/registro.json (T32, T36)"
      ],
-     "numeros": "Totalização: 638 de 638 itens iguais ao total oficial (T32). Log × comparecimento: 2022, log com menos votos em 70 (1º) e 36 (2º) seções (3.618 e 1.669 votos sem registro no log publicado) e com mais em 34 e 13; 2026, 9 e 7 seções (59 e 54 votos), no T36. Imagem × boletim: RS 88013/2/199 (2022): imagem assinada com 196 votos, boletim e tabela com 288; log da urna 2215062 com 196 votos (último às 13:53). T36 (2026): 186 e 75 casos de contas que não fecham, compatíveis com registros (troca de urna, RED, reinício), 1 sem explicação (RJ 60011/8/61).",
+     "numeros": "Totalização: 638 de 638 itens iguais ao total oficial (T32). Log × comparecimento: 2022, log com menos votos em 70 (1º) e 36 (2º) seções (3.618 e 1.669 votos sem registro no log publicado) e com mais em 34 e 13 (fila F1: recontagem confirmada em 153/153; em 29 das 47 com log maior, um subconjunto exato das partes arquivadas do log soma o comparecimento, compatível com partes de outra sessão no log publicado); 2026, 9 e 7 seções (59 e 54 votos), no T36. Imagem × boletim: RS 88013/2/199 (2022): imagem assinada com 196 votos, boletim e tabela com 288; log da urna 2215062 com 196 votos (último às 13:53). T36 (2026): 186 e 75 casos de contas que não fecham, compatíveis com registros (troca de urna, RED, reinício), 1 sem explicação (RJ 60011/8/61).",
      "demonstra": "Há divergências documentais objetivas, todas pequenas e sem deslocamento de votos detectável nas seções envolvidas.",
      "nao_demonstra": "A causa de cada divergência. As explicações operacionais vêm do próprio sistema (compatíveis, não verificadas).",
      "robustez": "Teste de votação nas seções com explicação registrada (T36, contingências): sem deslocamento (adv_casos.json). Exploratório em 2022 (log ≠ comparecimento): sem deslocamento, poder baixo.",
@@ -79,7 +82,8 @@
       "2022": "Votos: 0. Log × comparecimento: 153 seções-turno; imagem × boletim: 1 seção.",
       "2026": "Votos: 0. Log × comparecimento: 16 seções-turno (T36); imagem da urna × tabela: 1 seção explicada como contingência registrada (Sistema de Apuração), compatível, não verificada."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Nenhuma divergência muda um voto da tabela. Divergências de registro: 2022, 5.287 votos sem registro no log publicado e 2.503 a mais no log (0,25% e 0,12% da margem de 2022); RS 88013/2/199, 92 votos entre a imagem do boletim (196) e o boletim digital (288); 2026, 113 votos em 16 seções-turno do T36 (0,003% da margem)."
     },
     {
      "id": "Q4",
@@ -93,7 +97,7 @@
       "fase3/resultados/r1_integridade.json",
       "fase3/resultados/r2_curva_publica.json"
      ],
-     "numeros": "2022: 173 arquivos assinados (RDV, log, imagem; 64 seções, 54 do exterior) e 485 auxiliares fora do pacote de dados abertos; 10 seções sem boletim lido pelo projeto. 2026: 1 log assinado e não publicado (SP, 2º turno); arquivos do Sistema de Apuração sem conferência de assinatura pelo leitor. Versões: uma só captura de cada arquivo; os totais divulgados ao vivo (39 capturas) batem com a base final.",
+     "numeros": "2022: 173 arquivos assinados (RDV, log, imagem; 64 seções, 54 do exterior) e 485 auxiliares fora do pacote de dados abertos; das 10 seções sem boletim lido, 5 foram lidas na fila F3 (conferem) e 5 do exterior não têm arquivo nenhum no pacote. 2026: 1 log assinado e não publicado (SP, 2º turno); seções do Sistema de Apuração (31 e 29) conferidas na fila F2: lista assinada válida em 60/60, boletim = tabela; 3 seções do exterior fora da tabela com comparecimento 0 (P12); a imagem parcial da urna em MG 50075/47/41 não consta de lista assinada publicada. Versões: uma só captura de cada arquivo; os totais divulgados ao vivo (39 capturas) batem com a base final.",
      "demonstra": "Ausências de publicação objetivas e de alcance pequeno; os boletins dessas seções coincidem com a tabela.",
      "nao_demonstra": "O conteúdo dos arquivos ausentes; republicação de arquivos entre datas (só há uma versão local).",
      "robustez": "Duas cópias do pacote de 2022 (14/10 e 27/10/2026) com as mesmas ausências.",
@@ -105,7 +109,8 @@
       "2022": "173 + 485 arquivos ausentes; 10 seções sem boletim lido.",
       "2026": "1 log ausente; assinatura do Sistema de Apuração não conferida pelo leitor."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Seções com arquivos ausentes: 64 seções com 21.112 comparecimentos em 2022 (boletim presente e igual à tabela); o Sistema de Apuração soma 27.692 votos em 2022 e as seções de 2026 também conferem; as 5 seções sem arquivo somam 5 votos."
     },
     {
      "id": "Q5",
@@ -130,7 +135,8 @@
       "2022": "Assinatura válida até a AC emissora nos arquivos presentes.",
       "2026": "Idem."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora."
     },
     {
      "id": "Q6",
@@ -154,7 +160,8 @@
       "2022": "29 capturas consistentes.",
       "2026": "10 capturas consistentes."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder."
     },
     {
      "id": "Q7",
@@ -179,7 +186,8 @@
       "2022": "Mesmo padrão; limiar ancorado no real com 23% de falso alarme.",
       "2026": "Ver números."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado."
     }
    ]
   },
@@ -208,7 +216,8 @@
       "2022": "1 e 1.",
       "2026": "0 e 2."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "A ordem de apuração não muda nenhum voto: a mesma soma final em qualquer ordem. A virada do 2º turno de 2022 ocorreu com 67,6% das urnas; a de 2026, com 47,2%."
     },
     {
      "id": "Q9",
@@ -231,12 +240,13 @@
       "2022": "1º turno ≥ 1; 2º turno 1.",
       "2026": "1º turno 0; 2º turno ≥ 2."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Idem: a sequência divulgada é a soma parcial dos mesmos votos; 0 voto de diferença no total final."
     },
     {
      "id": "Q10",
      "pergunta": "Uma quantidade pequena de viradas é incomum sob modelos realistas de chegada dos boletins?",
-     "resposta": "Não determinado: nenhum dos cinco modelos de chegada testados é calibrado (todos rejeitam também 2022), e nenhum modelo foi validado nesta fase.",
+     "resposta": "Não determinado: nenhum dos cinco nulos de permutação é calibrado, e o modelo de chegada com as horas reais de emissão e atraso de transmissão sorteado (fila F4) não foi validado em 2022 (última troca e maior vale fora da faixa; 0 de 27 capturas na faixa). O número de trocas observado cabe no modelo nos quatro casos, mas isso não é confirmatório.",
      "classificacao": "Não determinado com as evidências disponíveis",
      "evidencias": [
       "fase3/resultados/E2_curvas.json",
@@ -248,10 +258,11 @@
      "robustez": "—",
      "causa": "não aplicável",
      "alcance": "—",
-     "mudaria": "Um modelo de chegada validado contra a sequência divulgada do R2 (fila).",
-     "validacao": "Tentado (E2, E2b); modelo validado não construído.",
+     "mudaria": "Um modelo de chegada que reproduza 2022 e as capturas.",
+     "validacao": "Tentado (E2, E2b, F4); nenhum validado. Parado pelo critério.",
      "por_ano": {},
-     "reabertura": "Construir modelo de chegada por lotes e validá-lo com as 27 capturas do 2º turno de 2022."
+     "reabertura": "Construir modelo de chegada por lotes e validá-lo com as 27 capturas do 2º turno de 2022.",
+     "em_votos": "Não se traduz em votos: trata da ordem de chegada, não do total."
     },
     {
      "id": "Q11",
@@ -271,7 +282,8 @@
      "mudaria": "Modelo de chegada validado; teste espectral pré-registrado.",
      "validacao": "Parcial.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: forma da curva."
     },
     {
      "id": "Q12",
@@ -290,12 +302,13 @@
      "mudaria": "Modelo de chegada validado (fila).",
      "validacao": "Tentado.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: forma da curva."
     },
     {
      "id": "Q13",
      "pergunta": "2022 e 2026 apresentam semelhanças estatisticamente relevantes depois desses controles?",
-     "resposta": "Não determinado estatisticamente. Descritivamente: nos dois anos a última troca de liderança vem mais tarde do que nos modelos nulos; em 2026 a ordem de chegada é mais territorial (η² por UF 0,39 contra 0,24).",
+     "resposta": "Não determinado estatisticamente. Descritivamente: nos dois anos a última troca de liderança vem mais tarde do que nos modelos nulos e do que o modelo de atraso de transmissão prevê (2022 2º turno: 68% contra 39% a 42%; 2026 2º turno: 48% contra 30% a 34%); em 2026 a ordem de chegada é mais territorial (η² por UF 0,39 contra 0,24).",
      "classificacao": "Não determinado com as evidências disponíveis",
      "evidencias": [
       "fase3/resultados/E2_curvas.json"
@@ -309,7 +322,8 @@
      "mudaria": "Depende de Q10.",
      "validacao": "Parcial.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: comparação da forma das curvas."
     },
     {
      "id": "Q14",
@@ -328,7 +342,8 @@
      "mudaria": "Captura histórica com valor incompatível.",
      "validacao": "Executado (R2).",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "0 voto de diferença entre a sequência divulgada e a base nas capturas finais."
     }
    ]
   },
@@ -353,7 +368,8 @@
      "mudaria": "—",
      "validacao": "Executado (E3).",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Nas 79 seções do 1º turno, 9.542 votos foram para Lula; nas 106 do 2º turno, 14.860 (todos os válidos dessas seções). São 0,34% da margem de 2026."
     },
     {
      "id": "Q16",
@@ -373,7 +389,8 @@
      "mudaria": "—",
      "validacao": "Executado.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Os votos dessas seções conferem nos registros: 0 voto de diferença."
     },
     {
      "id": "Q17",
@@ -392,7 +409,8 @@
      "mudaria": "—",
      "validacao": "Executado.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: transições entre turnos."
     },
     {
      "id": "Q18",
@@ -413,7 +431,8 @@
      "mudaria": "Modelo que passe em critério de calibração adequado a controles grandes e pequenos.",
      "validacao": "Executado (R3); validação formal falhou.",
      "por_ano": {},
-     "reabertura": "Refazer o critério de calibração (controles com esperado ≥ 20; tolerância por decil adequada a n grande) antes de nova tentativa."
+     "reabertura": "Refazer o critério de calibração (controles com esperado ≥ 20; tolerância por decil adequada a n grande) antes de nova tentativa.",
+     "em_votos": "Se os zeros fossem anomalia, os votos em jogo seriam os que o candidato teria nessas seções: de ~44 a ~4.800 votos conforme o modelo (2026, 2º turno), no máximo 0,11% da margem de 4,43 mi."
     },
     {
      "id": "Q19",
@@ -432,7 +451,8 @@
      "mudaria": "Ver Q18.",
      "validacao": "Executado (R3).",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "2022: de ~66 a ~4.300 votos esperados para Bolsonaro nessas seções, no máximo 0,2% da margem de 2,14 mi."
     },
     {
      "id": "Q20",
@@ -452,7 +472,8 @@
      "mudaria": "Boletim impresso de terceiro diferente.",
      "validacao": "Executado.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "0 voto de diferença nos registros dessas seções."
     }
    ]
   },
@@ -480,7 +501,8 @@
       "2022": "Lula +3,09 mi; Bolsonaro +7,13 mi.",
       "2026": "Lula +10,38 mi; Flávio +3,72 mi."
      },
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "2022: Lula +3,09 mi, Bolsonaro +7,13 mi. 2026: Lula +10,38 mi, Flávio +3,72 mi."
     },
     {
      "id": "Q22",
@@ -499,7 +521,8 @@
      "mudaria": "—",
      "validacao": "Executado.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "2026: os finalistas somaram +14,10 mi = 9,32 mi dos eliminados + 2,96 mi de comparecimento + 1,82 mi de brancos e nulos a menos. 2022: +10,22 mi = 9,90 mi + 0,57 mi − 0,25 mi."
     },
     {
      "id": "Q23",
@@ -519,7 +542,8 @@
      "mudaria": "Seção com contagem impossível.",
      "validacao": "Executado.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "0 voto inconsistente: nenhuma seção com mais votos que comparecimento."
     },
     {
      "id": "Q24",
@@ -540,7 +564,8 @@
      "mudaria": "—",
      "validacao": "Executado (F2).",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Trocas diretas entre finalistas em 2026: mínimo garantido de 79 e 123 votos, máximo de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi. A razão do C06 erra de ±0,5 a ±1,5 mi votos."
     },
     {
      "id": "Q25",
@@ -563,7 +588,8 @@
      "mudaria": "Covariáveis de campanha, renda, migração; dados externos da zona.",
      "validacao": "Executado (R4, I3, P17, P19).",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos."
     },
     {
      "id": "Q26",
@@ -582,7 +608,8 @@
      "mudaria": "Só dados individuais (inexistentes por sigilo).",
      "validacao": "Encerrada no escopo.",
      "por_ano": {},
-     "reabertura": ""
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: limite de identificabilidade (os limites estão na Q24)."
     }
    ]
   }
@@ -603,6 +630,7 @@
     "fase2/sessao_limitada_2026-10-28/p1_resultado_sensibilidade.json"
    ],
    "limitacao": "—",
+   "em_votos": "Erro de ±0,5 a ±1,5 mi votos na razão estimada.",
    "historico": [],
    "detalhe": "Com taxas homogêneas por UF o C06 recupera a verdade (razão Abs→Lula:Abs→Adv de 2026: 4,12 contra 4,01). Com heterogeneidade contextual a razão estimada vai de 1,7 a 11,8 contra 3 a 4 verdadeiro. A ordem de 2026 e o contraste com 2022 (razão 0,56) resistem; a magnitude '4:1' não. Em votos: ±0,5 mi (estresse moderado) a ±1,5 mi (forte) na célula Abs→Lula, contra 3,18 mi estimados."
   },
@@ -624,6 +652,7 @@
     "fase3/resultados/rev_a2_2026.json"
    ],
    "limitacao": "Ver P18.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -657,6 +686,7 @@
     "fase2/resultados/P16.json"
    ],
    "limitacao": "Versões datadas dos arquivos.",
+   "em_votos": "0 voto de diferença entre os canais comparados.",
    "historico": [
     {
      "etapa": "missão de resolução e auditoria adversarial",
@@ -683,6 +713,7 @@
     "fase3/externos/wayback_capturas/"
    ],
    "limitacao": "Capturas por UF e mais instantes (o Internet Archive limitou o acesso durante a coleta).",
+   "em_votos": "Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder.",
    "historico": [
     {
      "etapa": "missão de resolução e auditoria adversarial",
@@ -703,6 +734,7 @@
     "fase2/resultados/P5.json"
    ],
    "limitacao": "—",
+   "em_votos": "Maior efeito +0,004 logit, ~2,7 mil votos se fosse real.",
    "historico": [],
    "detalhe": "Dentro dos 1.436 municípios (2026) e 1.779 (2022) com mais de um modelo de urna, a diferença entre modelos é equivalente a zero em ±0,02 logit; o maior efeito é +0,004 logit (UE2013, 2026), cerca de 2,7 mil votos se fosse real. A associação do T20 é efeito do território, não do modelo."
   },
@@ -719,6 +751,7 @@
     "RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"
    ],
    "limitacao": "Dados primários dessas comparações (relatórios completos e listas de seções).",
+   "em_votos": "—",
    "historico": [],
    "detalhe": "Bloqueada: fontes secundárias, sem dados."
   },
@@ -733,6 +766,7 @@
     "fase2/resultados/P7.json"
    ],
    "limitacao": "—",
+   "em_votos": "Diferença de −0,029 z, desprezível; não convertida em votos.",
    "historico": [],
    "detalhe": "Equivalência declarada na margem de ±0,10 z fixada antes: 2026 −0,029 (IC 90% −0,054 a −0,003, 4.432 urnas); 2022 −0,008 (−0,023 a +0,008, 12.653 urnas)."
   },
@@ -747,6 +781,7 @@
     "fase2/resultados/P8.json"
    ],
    "limitacao": "—",
+   "em_votos": "Efeito desprezível.",
    "historico": [],
    "detalhe": "Com bootstrap por município, 2026 tem r = +0,004 (IC 95% −0,004 a +0,012) e 2022 r = −0,028 (−0,040 a −0,019): efeitos desprezíveis (|r| ≤ 0,05), de sinais opostos."
   },
@@ -766,6 +801,7 @@
     "fase3/resultados/rev_i3.json"
    ],
    "limitacao": "Nulo geográfico no nível do local (sem coordenadas de locais no material); causa dos locais significativos.",
+   "em_votos": "Cada local atípico: dezenas a poucas centenas de votos.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -789,6 +825,7 @@
     "fase3/resultados/a4_t28.json"
    ],
    "limitacao": "—",
+   "em_votos": "99 votos nos últimos 30 min das 8 urnas (2026, 1º turno).",
    "historico": [
     {
      "etapa": "verificações finais (A1, A2, A4)",
@@ -812,6 +849,7 @@
     "fase2/externos/certificados/"
    ],
    "limitacao": "Certificados da AC URNA v2 e da AC RAIZ UE publicados pelo TSE.",
+   "em_votos": "Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora.",
    "historico": [],
    "detalhe": "Bloqueada para o elo final; o elo urna → AC segue verificado."
   },
@@ -826,6 +864,7 @@
     "fase2/resultados/P12.json"
    ],
    "limitacao": "—",
+   "em_votos": "Eleitores aptos do exterior (−495 e −525), não votos.",
    "historico": [],
    "detalhe": "Explicada: −495 = 423 (41 seções não instaladas) + 72 (uma seção com boletim só nos arquivos das urnas); −525 = 423 + 72 + 30 (outra seção, no 2º turno). Resíduo zero. São eleitores aptos, não votos."
   },
@@ -842,6 +881,7 @@
     "fase2/resultados/P13.json"
    ],
    "limitacao": "—",
+   "em_votos": "Trocas diretas entre finalistas em 2026: mínimo garantido de 79 e 123 votos, máximo de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi. A razão do C06 erra de ±0,5 a ±1,5 mi votos.",
    "historico": [],
    "detalhe": "Script reproduzível reproduz exatamente 79 (Flávio→Lula) e 123 (Lula→Flávio) como mínimos garantidos, com os aptos do 2º turno, sem exterior; máximos 43,5 mi e 39,4 mi."
   },
@@ -862,6 +902,7 @@
     "fase3/resultados/r4_zona251.json"
    ],
    "limitacao": "Covariáveis de campanha, renda, migração; dados externos.",
+   "em_votos": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -890,6 +931,7 @@
     "fase2/resultados/P15.json"
    ],
    "limitacao": "—",
+   "em_votos": "Abstencionistas para Lula entre 4.116 e 32,3 mi votos.",
    "historico": [],
    "detalhe": "Limites de Fréchet por seção para quem se absteve em 2026: para Lula entre 4.116 e 32,3 mi; para o adversário entre 19 e 31,3 mi; a razão não é identificada (de ~0 a 1,7 mi). A estimativa do C06 cai dentro dos limites, mas só o modelo a escolhe."
   },
@@ -907,6 +949,7 @@
     "fase2/resultados/P16.json"
    ],
    "limitacao": "—",
+   "em_votos": "0 voto de diferença nas 200 seções.",
    "historico": [
     {
      "etapa": "verificações finais (A1, A2, A4)",
@@ -929,6 +972,7 @@
     "fase2/resultados/P17.json"
    ],
    "limitacao": "—",
+   "em_votos": "~740 votos (2026) e ~2.600 (2022) na cauda pró-Lula.",
    "historico": [],
    "detalhe": "A assimetria de cauda do T02 é estatisticamente real com bootstrap por município (IC 95% da razão acima de 1 em 3, 4 e 5 desvios, nos dois anos). Isto confirma que a característica existe; não explica a causa."
   },
@@ -952,6 +996,7 @@
     "fase3/resultados/rev_a2_2022.json"
    ],
    "limitacao": "Mecanismos não simulados (preservar medianas, mexer no comparecimento, anteriores ao BU) e outras coberturas não testados.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -979,6 +1024,7 @@
     "fase3/resultados/p19.json"
    ],
    "limitacao": "—",
+   "em_votos": "Não se traduz em votos.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1002,6 +1048,7 @@
     "fase3/resultados/rev_i3.json"
    ],
    "limitacao": "Ver P14.",
+   "em_votos": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1031,6 +1078,7 @@
     "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"
    ],
    "limitacao": "Boletins de terceiros; AC URNA v2 e AC RAIZ UE.",
+   "em_votos": "Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder.",
    "historico": [
     {
      "etapa": "missão de resolução e auditoria adversarial",
@@ -1059,6 +1107,7 @@
     "fase3/resultados/a1.json"
    ],
    "limitacao": "Decodificação independente do 2º turno de 2026.",
+   "em_votos": "0 voto de diferença nas seções comuns (~119 mi em 2026, 1º turno; ~118 mi por turno em 2022).",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1096,6 +1145,7 @@
     "fase3/resultados/E2b_curvas.json"
    ],
    "limitacao": "Modelo de chegada validado contra as capturas do R2.",
+   "em_votos": "Não se traduz em votos: trata da ordem de chegada, não do total.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1124,6 +1174,7 @@
     "fase3/resultados/E2_curvas.json"
    ],
    "limitacao": "Snapshots datados da divulgação.",
+   "em_votos": "A ordem de apuração não muda nenhum voto: a mesma soma final em qualquer ordem. A virada do 2º turno de 2022 ocorreu com 67,6% das urnas; a de 2026, com 47,2%.",
    "historico": [],
    "detalhe": "Na reconstrução pela hora de recebimento do boletim: 2º turno de 2026, Lula lidera aos 10% apurados, perde aos 13,5% e retoma aos 47,2%; 2º turno de 2022, o adversário lidera até 67,6%. A última troca vem mais tarde do que nos nulos nos dois anos. É descrição da ordem de recebimento; não explica nem refuta nada."
   },
@@ -1142,6 +1193,7 @@
     "fase3/resultados/E2b_curvas.json"
    ],
    "limitacao": "Modelo de chegada por lote de recepção ou snapshots.",
+   "em_votos": "Não se traduz em votos: forma da curva.",
    "historico": [],
    "detalhe": "Estatísticas calculadas, sem leitura possível: nenhum dos 5 nulos é calibrado, nem em 2022; S1 mede ruído no cruzamento."
   },
@@ -1158,6 +1210,7 @@
     "fase3/resultados/E2_curvas.json"
    ],
    "limitacao": "Mais anos ou snapshots externos.",
+   "em_votos": "Não se traduz em votos: comparação da forma das curvas.",
    "historico": [],
    "detalhe": "Diferem: no 2º turno de 2026 a liderança muda duas vezes (Lula 10%, perde aos 13,5%, retoma aos 47,2%); em 2022 o adversário lidera até 67,6% apurado e Lula assume. A ordem de chegada é mais territorial em 2026 (η² por UF 0,39 contra 0,24; por município 0,71 contra 0,59). 1º turno parecido. Semelhança visual não é estatística."
   },
@@ -1181,6 +1234,7 @@
     "fase2/sessao_limitada_2026-10-28/h1_resultado.json"
    ],
    "limitacao": "Dados individuais (não existem).",
+   "em_votos": "2026: os finalistas somaram +14,10 mi = 9,32 mi dos eliminados + 2,96 mi de comparecimento + 1,82 mi de brancos e nulos a menos. 2022: +10,22 mi = 9,90 mi + 0,57 mi − 0,25 mi.",
    "historico": [],
    "detalhe": "A identidade contábil fecha em 2022 e 2026 e nenhuma combinação observada é matematicamente impossível; quais transferências ocorreram não é identificável."
   },
@@ -1208,6 +1262,7 @@
     "fase3/resultados/r3_zeros.json"
    ],
    "limitacao": "Critério de calibração refeito e modelo validado.",
+   "em_votos": "Se os zeros fossem anomalia, os votos em jogo seriam os que o candidato teria nessas seções: de ~44 a ~4.800 votos conforme o modelo (2026, 2º turno), no máximo 0,11% da margem de 4,43 mi.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1238,6 +1293,7 @@
     "fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md"
    ],
    "limitacao": "Modelos de chegada e de cauda baixa.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1283,6 +1339,7 @@
     "fase3/resultados/sa22.json"
    ],
    "limitacao": "Âncora do TSE; boletins de terceiros; logs das urnas substitutas.",
+   "em_votos": "0 voto de diferença entre a tabela e os boletins em todos os ~128 milhões de votos de 2026 (2º turno) e ~124 milhões de 2022 conferidos. As 5 seções de 2022 sem arquivo somam 5 votos de comparecimento. Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora.",
    "historico": [
     {
      "etapa": "missão de resolução e auditoria adversarial",
@@ -1307,6 +1364,7 @@
     "fase3/resultados/a173.json"
    ],
    "limitacao": "Consulta ao TSE sobre os 173 arquivos; site de resultados de 2022 acessível.",
+   "em_votos": "64 seções com 21.112 comparecimentos; votos do boletim iguais à tabela.",
    "historico": [
     {
      "etapa": "auditoria da F3",
@@ -1330,6 +1388,7 @@
     "fase3/resultados/bu1.json"
    ],
    "limitacao": "—",
+   "em_votos": "16 votos, iguais à tabela.",
    "historico": [
     {
      "etapa": "auditoria da F3",
@@ -1354,6 +1413,7 @@
     "fase3/resultados/sa22.json"
    ],
    "limitacao": "Saber se os auxiliares .hash, .ver, .chvtp e .jufa ficam fora do pacote por regra de publicação.",
+   "em_votos": "27.692 votos, iguais à tabela.",
    "historico": [
     {
      "etapa": "auditoria da F3",
@@ -1367,10 +1427,10 @@
  "achados_sem_causa": [
   "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
   "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
-  "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado).",
+  "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).",
   "173 arquivos assinados e 485 auxiliares fora do pacote de dados abertos de 2022.",
   "8 urnas com rajada sem biometria no fim do dia (2026, 1º turno; 99 votos), padrão também presente em 2022.",
-  "Última troca de liderança mais tardia que nos modelos nulos, nos dois anos."
+  "Última troca de liderança mais tardia que nos modelos nulos e que o modelo de atraso de transmissão prevê, nos dois anos (fila F4)."
  ],
  "limites": [
   "Autenticidade só até a AC emissora (sem âncora do TSE).",

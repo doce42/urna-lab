@@ -155,7 +155,9 @@ Desde 19h10, o consumo é medido a cada 30 s por `scripts/monitorar.sh` → `dad
 | I1 | Poder "em municípios inteiros" | As 5 maiores cidades estavam fora do sorteio; nelas a troca não é detectada com confiabilidade | A2 (M2G) |
 | 2022, certificado × log | "Certificado ≠ urna do log" como sinal de troca de urna | Ocorre em 59% das seções de 2022: não indica contingência nesse ano | Retirado como apoio (auditoria adversarial) |
 | 2022, log × comparecimento | Não conferido em 2022 | 70 e 36 seções com log menor que o comparecimento (5.287 votos sem registro no log), 34 e 13 com log maior | Registrado como achado objetivo; classificação na fila |
-| 2026, Sistema de Apuração | Arquivos `-sa.vsc` não lidos pelo leitor de 2026 | Hash e assinatura das seções do Sistema de Apuração de 2026 não conferidos | Na fila |
+| Leitor de log 2022 | "Urnas com voto no log" | Em parte dos logs de 2022 o 3º campo da linha não é o número da urna (67305985 em vários estados) | Coluna não usada para 2022; classificação da fila F1 refeita por partes do log |
+| Parquet de 2022 | 5 seções "sem boletim lido" | Parquet gerado com versão anterior do leitor de boletim; o leitor atual lê os 5 e conferem | Registrado (fila F3) |
+| 2026, Sistema de Apuração | Arquivos `-sa.vsc` não lidos pelo leitor de 2026 | Hash e assinatura das seções do Sistema de Apuração de 2026 não conferidos | Conferidos à parte (fila F2): 60/60 válidos |
 | T28 2022 | Denominador "urnas" 472.024 | Inclui 148 seções do Sistema de Apuração sem log | A4: denominador efetivo 471.851 e 471.979 |
 | R1-20 | Script lia o DataUrnas-BR de pasta temporária, sem commit nem hash | Rastreabilidade incompleta | Commit 12f0433 e SHA-256 conferidos no script; pasta permanente |
 
@@ -263,3 +265,8 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
   - **R3, zeros:** sem excesso agregado fora da amostra; o critério formal não foi cumprido.
   - **R4, zona 251:** o desvio persiste depois do perfil do eleitorado.
   - Desvios em `fase3/PREREG_RESPOSTAS.md`.
+- **Fila executada** (`fase3/PREREG_FILA.md`):
+  - **F1:** log × comparecimento de 2022, recontagem confirmada; o campo "urna" do log de 2022 é inválido.
+  - **F2:** Sistema de Apuração de 2026, 60/60 assinaturas válidas.
+  - **F3:** das 10 seções sem boletim lido, 5 conferem e 5 não têm arquivos.
+  - **F4:** modelo de chegada não validado; Q10 e Q12 seguem não determinados.
