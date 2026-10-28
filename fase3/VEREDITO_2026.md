@@ -77,7 +77,7 @@ _Q51 a Q56 e T66 a T70 são da rodada 8, em aberto: registro vivo, ainda não co
 
 _Nenhuma tem causa demonstrada. A soma descreve o que foi achado e não limita o que pode ter passado sem alarme: há mecanismos em que centenas de milhares de votos passam sem alarme (T63)._
 
-## Operação Veracidade Geral (V1.5, rodada 7, 28/10/2026)
+## Operação Veracidade Geral (V1.5 · atualizada na rodada 8 (em aberto), 28/10/2026)
 
 **Os dados oficiais usados pelo estudo são fiéis ao que aconteceu?** O que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta.
 

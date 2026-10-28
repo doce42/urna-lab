@@ -2,7 +2,7 @@
 
 > Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.
 > Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022.
-> V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026. Q51 a Q56 são da rodada 8, em aberto (registro vivo, não congelado).
+> Rodada 8 em aberto (relatório pericial, Q51 a Q56), sobre a V1.5 (rodada 7, Operação Veracidade Geral) congelada em 28/10/2026. A rodada 8 está em aberto (registro vivo, não congelado).
 
 ## Integridade dos resultados oficiais
 
@@ -606,7 +606,7 @@ _Q42 a Q50 (rodada 7, V1.5): auditoria adversarial dos dados e do próprio vered
 - **Robustez:** Ed521 só com M = TBS (sem busca de variantes); ECDSA por biblioteca padrão; controles positivos e negativos em T60b; testes unitários do Ed521 (9 de 9)
 - **Causa:** — · **Alcance:** 499.176 + 499.178 seções (2026) e 471.908 + 471.984 (2022), 0 erros de leitura; exterior e Sistema de Apuração sem vota.vsc ficam fora
 - **O que mudaria a resposta:** AC RAIZ UE e AC URNA v2 obtidas por canal oficial verificável
-- **Validação:** Interna (certificados e lista vêm da mesma urna) com ACs obtidas de terceiro; **externa quanto à AC só por cópia de terceiro**
+- **Validação:** Interna (certificados e lista vêm da mesma urna) com ACs obtidas de terceiro; externa quanto à AC só por cópia de terceiro
 - **Evidências:** `operacao_veracidade/scripts/cert_extrai.py`, `operacao_veracidade/resultados/cert_analise.json`, `operacao_veracidade/resultados/certs_2026_1t.parquet`, `operacao_veracidade/resultados/certs_2022_2t.parquet`
 
 ### Q44. O verificador de assinaturas rejeita arquivos adulterados, e o que cada degrau (hash, assinatura do arquivo, assinatura da lista, cadeia) prova?
@@ -632,11 +632,11 @@ _Q42 a Q50 (rodada 7, V1.5): auditoria adversarial dos dados e do próprio vered
 - **Robustez:** verificador próprio da assinatura; `hash_final` = SHA-512 do conteúdo em 404; comparação com tabela, BU do pacote e certificado do vota.vsc
 - **Causa:** — · **Alcance:** 404 de 499.207 seções (0,08%), 22 UFs, 167 de SP, só 2º turno de 2026
 - **O que mudaria a resposta:** Boletins impressos de amostra probabilística, com lista de seções sorteada antes da eleição
-- **Validação:** **Externa parcial**: cadeia de obtenção diferente (QR do boletim impresso), mas a assinatura é da mesma urna; coletor e publicador são o mesmo projeto
+- **Validação:** Externa parcial: cadeia de obtenção diferente (QR do boletim impresso), mas a assinatura é da mesma urna; coletor e publicador são o mesmo projeto
 - **Evidências:** `operacao_veracidade/scripts/terceiros_qr.py`, `operacao_veracidade/resultados/terceiros_qr.json`, `operacao_veracidade/externo/arvor_totalizacao/SHA256SUMS.txt`
 
 ### Q46. Que alterações cada verificação de consistência consegue ver, e um registro coerente gerado por fonte comprometida seria distinguível de um genuíno?
-**Resposta:** Alterar só a tabela é visto pela comparação com o BU; BU e tabela, pelo RDV, pela imagem e pelo hash; tudo sem reassinar, só pelo hash da lista assinada; registros coerentes assinados pelo próprio gerador **não são vistos por nenhuma verificação interna**. (no relatório da operação: N4)
+**Resposta:** Alterar só a tabela é visto pela comparação com o BU; BU e tabela, pelo RDV, pela imagem e pelo hash; tudo sem reassinar, só pelo hash da lista assinada; registros coerentes assinados pelo próprio gerador não são vistos por nenhuma verificação interna. (no relatório da operação: N4)
 **Classificação:** Demonstrado no escopo definido
 **Em votos:** Não se traduz em votos.
 - **Números:** 52.062 seções reais de MG, 2º turno de 2026, 2.497 alteradas (59.499 votos); 6 cenários e 6 verificações

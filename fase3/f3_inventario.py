@@ -148,7 +148,7 @@ EVID = {
  "A173": ["fase3/ver_a173.py", F3R + "a173.csv", F3R + "a173.json"], "BU1": ["fase3/ver_bu1.py", F3R + "bu1.json"], "SA22": ["fase3/ver_sa22.py", F3R + "sa22.csv", F3R + "sa22.json"],
 }
 for x in ITENS: x["evidencia_arquivos"] = EVID.get(x["id"], [])
-json.dump({"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) em preparação; Operação Veracidade Geral integrada", "itens": ITENS}, open(f"{R}/fase3/inventario.json", "w"), ensure_ascii=False, indent=1)
+json.dump({"gerado": "2026-10-28", "situacao": "Rodada 8 em aberto, sobre a V1.5 congelada; Operação Veracidade Geral integrada", "itens": ITENS}, open(f"{R}/fase3/inventario.json", "w"), ensure_ascii=False, indent=1)
 L = ["# Inventário mestre da F3 (28/10/2026; atualizado pela Operação Veracidade Geral)", "", "Gerado por `fase3/f3_inventario.py`. Estados: respondida, respondida parcialmente, não identificável com estes dados, bloqueada por evidência externa, não executada nesta sessão, em revisão, refutada.", "",
      "| Id | Pergunta | Estado inicial | Estado final | Resposta ou motivo | Próxima evidência |", "|---|---|---|---|---|---|"]
 for x in ITENS:

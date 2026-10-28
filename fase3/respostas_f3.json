@@ -1,6 +1,6 @@
 {
  "gerado": "2026-10-28",
- "situacao": "V1.5 (rodada 7) congelada em 28/10/2026; Q51 a Q56 da rodada 8, em aberto",
+ "situacao": "Rodada 8 em aberto (registro vivo), sobre a V1.5 congelada em 28/10/2026",
  "margem": "Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022.",
  "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
  "capitulos": [
@@ -1016,7 +1016,7 @@
      "causa": "—",
      "alcance": "499.176 + 499.178 seções (2026) e 471.908 + 471.984 (2022), 0 erros de leitura; exterior e Sistema de Apuração sem vota.vsc ficam fora",
      "mudaria": "AC RAIZ UE e AC URNA v2 obtidas por canal oficial verificável",
-     "validacao": "Interna (certificados e lista vêm da mesma urna) com ACs obtidas de terceiro; **externa quanto à AC só por cópia de terceiro**",
+     "validacao": "Interna (certificados e lista vêm da mesma urna) com ACs obtidas de terceiro; externa quanto à AC só por cópia de terceiro",
      "por_ano": {},
      "reabertura": "",
      "em_votos": "Não se traduz em votos."
@@ -1061,7 +1061,7 @@
      "causa": "—",
      "alcance": "404 de 499.207 seções (0,08%), 22 UFs, 167 de SP, só 2º turno de 2026",
      "mudaria": "Boletins impressos de amostra probabilística, com lista de seções sorteada antes da eleição",
-     "validacao": "**Externa parcial**: cadeia de obtenção diferente (QR do boletim impresso), mas a assinatura é da mesma urna; coletor e publicador são o mesmo projeto",
+     "validacao": "Externa parcial: cadeia de obtenção diferente (QR do boletim impresso), mas a assinatura é da mesma urna; coletor e publicador são o mesmo projeto",
      "por_ano": {},
      "reabertura": "",
      "em_votos": "Não se traduz em votos: 404 seções sem diferença."
@@ -1069,7 +1069,7 @@
     {
      "id": "Q46",
      "pergunta": "Que alterações cada verificação de consistência consegue ver, e um registro coerente gerado por fonte comprometida seria distinguível de um genuíno?",
-     "resposta": "Alterar só a tabela é visto pela comparação com o BU; BU e tabela, pelo RDV, pela imagem e pelo hash; tudo sem reassinar, só pelo hash da lista assinada; registros coerentes assinados pelo próprio gerador **não são vistos por nenhuma verificação interna**. (no relatório da operação: N4)",
+     "resposta": "Alterar só a tabela é visto pela comparação com o BU; BU e tabela, pelo RDV, pela imagem e pelo hash; tudo sem reassinar, só pelo hash da lista assinada; registros coerentes assinados pelo próprio gerador não são vistos por nenhuma verificação interna. (no relatório da operação: N4)",
      "classificacao": "Demonstrado no escopo definido",
      "evidencias": [
       "operacao_veracidade/scripts/identificabilidade.py",

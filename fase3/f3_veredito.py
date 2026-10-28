@@ -138,7 +138,7 @@ RESPOSTA = {
 OPERACAO = {
  "titulo": "Operação Veracidade Geral",
  "data": "2026-10-28",
- "versao": "V1.5, rodada 7",
+ "versao": "V1.5 · atualizada na rodada 8 (em aberto)",
  "pergunta": "Os dados oficiais usados pelo estudo são fiéis ao que aconteceu?",
  "resposta": "O que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta.",
  "achados": [
@@ -217,7 +217,7 @@ RESUMO = {
 }
 RESPOSTA["resumo"] = RESUMO
 RESPOSTA["operacao"] = OPERACAO
-OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) congelada; rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56)", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
+OUT = {"gerado": "2026-10-28", "situacao": "Rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56), sobre a V1.5 congelada", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
 json.dump(OUT, open(R + "/fase3/veredito_2026.json", "w"), ensure_ascii=False, indent=1)
 L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Nota do autor:** {AVISO['nota_autor']}", "", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "**Leia junto com os resultados:**", ""] + [f"- {x}" for x in RESPOSTA["avisos"]] + ["", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
      "## Hipóteses de fraude examinadas", "", "| Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |", "|---|---|---|---|---|---|"]

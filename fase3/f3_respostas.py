@@ -320,7 +320,8 @@ PER = [p for p in ALE if p["id"] in {"Q51", "Q52", "Q53", "Q54", "Q55", "Q56"}]
 ALE = [p for p in ALE if p not in PER]
 
 # Operação Veracidade Geral (28/10/2026): perguntas Q42 a Q50 vêm de operacao_veracidade/resultados/respostas_novas.json (N9 vira Q42; N1 a N8 viram Q43 a Q50)
-_NOV = {n["id"]: n for n in json.load(open(R + "/operacao_veracidade/resultados/respostas_novas.json"))}
+_limpa = lambda o: {k: (_limpa(v) if isinstance(v, dict) else [x.replace("**", "") if isinstance(x, str) else x for x in v] if isinstance(v, list) else v.replace("**", "") if isinstance(v, str) else v) for k, v in o.items()}  # a fonte congelada traz **negrito** em texto simples
+_NOV = {n["id"]: _limpa(n) for n in json.load(open(R + "/operacao_veracidade/resultados/respostas_novas.json"))}
 _MAPA = [("N9", "Q42", REF), ("N1", "Q43", DEM), ("N2", "Q44", DEM), ("N3", "Q45", PAR), ("N4", "Q46", DEM), ("N5", "Q47", PAR), ("N6", "Q48", ND), ("N7", "Q49", DEM), ("N8", "Q50", PAR)]
 OPV = []
 for _n, _q, _cl in _MAPA:
@@ -339,7 +340,7 @@ for k, (resp, classe, qs) in INV.items():
     itens.append({"id": k, "pergunta": i.get("pergunta", ""), "resposta": resp, "classificacao": classe, "fechamento": fech, "perguntas_relacionadas": qs, "estado_inventario": i.get("estado_final"),
                   "evidencias": i.get("evidencia_arquivos", []), "limitacao": i.get("proxima_evidencia", ""), "em_votos": EMV_INV[k], "historico": i.get("historico", []), "detalhe": i.get("resposta_ou_motivo", "")})
 assert len(itens) == 33, len(itens)
-OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) congelada em 28/10/2026; Q51 a Q56 da rodada 8, em aberto",
+OUT = {"gerado": "2026-10-28", "situacao": "Rodada 8 em aberto (registro vivo), sobre a V1.5 congelada em 28/10/2026",
        "margem": MARGEM,
        "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
        "capitulos": [{"id": "integridade", "titulo": "Integridade dos resultados oficiais", "perguntas": INT, "descricao": "Q1 a Q7 (Fase 3): os votos publicados batem com os arquivos das urnas, a assinatura e a soma oficial?"},
@@ -366,7 +367,7 @@ OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) congelada em 28/10/2
                    "Registros coerentes gerados por fonte comprometida passam por todas as verificações internas (T62).",
                    "Fluxos individuais entre turnos não identificáveis.", "Sem modelo de chegada validado (curvas) e sem modelo de cauda baixa validado (zeros)."]}
 json.dump(OUT, open(R + "/fase3/respostas_f3.json", "w"), ensure_ascii=False, indent=1)
-L = ["# Respostas científicas da F3 (28/10/2026)", "", "> " + OUT["aviso"], "> " + MARGEM, "> V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026. Q51 a Q56 são da rodada 8, em aberto (registro vivo, não congelado).", ""]
+L = ["# Respostas científicas da F3 (28/10/2026)", "", "> " + OUT["aviso"], "> " + MARGEM, "> Rodada 8 em aberto (relatório pericial, Q51 a Q56), sobre a V1.5 (rodada 7, Operação Veracidade Geral) congelada em 28/10/2026. A rodada 8 está em aberto (registro vivo, não congelado).", ""]
 for c in OUT["capitulos"]:
     L += [f"## {c['titulo']}", "", f"_{c['descricao']}_", ""]
     for p in c["perguntas"]:

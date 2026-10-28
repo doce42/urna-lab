@@ -1,6 +1,6 @@
 {
  "gerado": "2026-10-28",
- "situacao": "V1.5 (rodada 7) congelada; rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56)",
+ "situacao": "Rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56), sobre a V1.5 congelada",
  "margem_2026": 4430191,
  "votos_para_inverter": 2215096,
  "niveis": [
@@ -780,7 +780,7 @@
   "operacao": {
    "titulo": "Operação Veracidade Geral",
    "data": "2026-10-28",
-   "versao": "V1.5, rodada 7",
+   "versao": "V1.5 · atualizada na rodada 8 (em aberto)",
    "pergunta": "Os dados oficiais usados pelo estudo são fiéis ao que aconteceu?",
    "resposta": "O que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta.",
    "achados": [

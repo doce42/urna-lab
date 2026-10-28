@@ -28,14 +28,14 @@ export function Cabecalho({ rota, meta }: { rota: Rota; meta: Meta | null }) {
         <nav className="hidden lg:flex items-center gap-1 ml-6" aria-label="Principal">
           {ITENS.map((i) => (
             <a key={i.rota} href={href(i.h)} aria-current={rota.pagina === i.rota ? 'page' : undefined}
-              className={clsx('h-10 px-3.5 inline-flex items-center rounded-full text-[15px] font-medium transition-colors', rota.pagina === i.rota ? 'text-text bg-surface-2' : 'text-muted hover:text-text hover:bg-surface-2/70')}>
+              className={clsx('h-10 px-3.5 inline-flex items-center whitespace-nowrap rounded-full text-[15px] font-medium transition-colors', rota.pagina === i.rota ? 'text-text bg-surface-2' : 'text-muted hover:text-text hover:bg-surface-2/70')}>
               {i.rotulo}
             </a>
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
-          {meta?.pdf && <BotaoLink href="/relatorio.pdf" tamanho="sm" className="hidden lg:inline-flex" download><FileDown size={16} />Relatório em PDF</BotaoLink>}
-          <BotaoLink href={github} target="_blank" rel="noopener" tamanho="sm" variante="secundario" className="hidden sm:inline-flex"><Github size={16} />GitHub</BotaoLink>
+          {meta?.pdf && <BotaoLink href="/relatorio.pdf" tamanho="sm" className="hidden xl:inline-flex" download><FileDown size={16} />Relatório em PDF</BotaoLink>}
+          <BotaoLink href={github} target="_blank" rel="noopener" tamanho="sm" variante="secundario" className="hidden sm:inline-flex lg:hidden xl:inline-flex"><Github size={16} />GitHub</BotaoLink>
           <Botao icone tamanho="sm" variante="secundario" onClick={alternar} aria-label={efetivo === 'dark' ? 'Usar tema claro' : 'Usar tema escuro'} title="Alternar tema">
             {efetivo === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
           </Botao>
