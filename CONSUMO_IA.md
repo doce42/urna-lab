@@ -6,49 +6,47 @@ Registro de quantos tokens e quanto custo de IA foram gastos para fazer este est
 
 ## Sessões
 
-### Sessão 1: 27/10/2026 (construção do estudo, instantâneo às 23h30; a sessão continuava)
-Tempo: 5 h 49 min de relógio, 2 h 19 min de tempo de API. Código: 4.560 linhas acrescentadas, 648 removidas.
+### Sessão 1: 27 e 28/10/2026 (rodada 1, site, revisão R1), medição final
+Medida pelo `/usage` ao fim da sessão. Tempo: **9 h 47 min de relógio**, 4 h 3 min de tempo de API. Código: 9.257 linhas acrescentadas e 923 removidas. Houve uma compactação automática do contexto no meio da sessão.
 
 | Modelo | Para quê | Entrada | Saída | Cache lido | Cache gravado | Custo (US$) |
 |---|---|---|---|---|---|---|
-| Claude Opus 5.5 | Condução do estudo, código, análises e documentação, até ~21h40 | 1,6 mil | 619,5 mil | 202,3 mi | 916,8 mil | 60,18 |
-| Claude Sonnet 5.5 | Sessão principal depois de ~21h40 e 3 subagentes (relatório visual em 2 rodadas, leitor de 2022) | 25,5 mil | 222,6 mil | 74,3 mi | 1,2 mi | 14,18 |
-| Claude Haiku 5.5 | Busca na web feita pelo próprio Claude Code (18 buscas; não foi escolha nossa) | 252,9 mil | 19,9 mil | 0 | 0 | 0,22 |
-| **Total da sessão** | | **280,0 mil** | **862,0 mil** | **276,6 mi** | **2,1 mi** | **74,58** |
+| Claude Opus 5.5 | Sessão principal até ≈ 21h40 de 27/10 e depois de ≈ 03h00 de 28/10 (rodada 1, revisão R1, migração do registro); subagente de identidade visual | 12,7 mil | 824,2 mil | 250,7 mi | 1,5 mi | 78,48 |
+| Claude Sonnet 5.5 | Sessão principal de ≈ 21h40 a 03h00 (reprocessamento, correções de leitura, publicação); subagentes do relatório visual e do leitor de 2022 | 29,3 mil | 318,4 mil | 97,0 mi | 1,6 mi | 18,92 |
+| Claude Fable 5.1 | Subagente que construiu o site (React, páginas, gráficos, tela de carregamento) | 271,7 mil | 287,1 mil | 40,7 mi | 1,0 mi | 40,17 |
+| Claude Haiku 5.5 | Buscas na web do próprio Claude Code (20 buscas) | 280,8 mil | 22,0 mil | 0 | 0 | 0,24 |
+| **Total da sessão** | | **594,5 mil** | **1,45 mi** | **388,4 mi** | **4,1 mi** | **137,81** |
 
-**Total de tokens processados na sessão: ≈ 279,9 milhões**, dos quais:
-- ≈ **3,3 milhões** são tokens "novos" (entrada, saída e gravação de cache);
-- ≈ **276,6 milhões** são leituras de cache, isto é, o mesmo contexto relido a cada chamada;
-- **862 mil** são tokens que os modelos efetivamente escreveram (saída).
+**Tokens processados: ≈ 394,6 milhões.** Por modelo: Opus ≈ 253,0 mi, Sonnet ≈ 99,0 mi, Fable ≈ 42,3 mi e Haiku ≈ 0,3 mi.
 
-Os tokens dos 3 subagentes (≈ 278 mil no total: 158,9 mil no relatório visual em duas rodadas e 119,4 mil no leitor de 2022) estão dentro da linha do Sonnet.
+Fora desta conta: a revisão independente R1 foi feita pelo Codex, de outro fornecedor, em sessão separada, e o consumo dela não foi medido aqui. O instantâneo parcial das 23h30 de 27/10 (US$ 74,58) está incluído nestes totais.
 
 ## Tokens de contexto (o histórico da conversa relido a cada chamada)
 
-Na tabela acima, "Cache lido" e "Cache gravado" são os tokens de contexto: tudo o que já estava na conversa (mensagens, arquivos lidos, resultados de comandos) e que o modelo relê a cada nova chamada. O "Cache gravado" é o contexto novo que entrou, e o "Cache lido" é o mesmo contexto relido muitas vezes.
+"Cache lido" e "cache gravado" são os tokens de contexto: tudo o que já estava na conversa (mensagens, arquivos lidos, resultados de comandos) e que o modelo relê a cada nova chamada.
 
-| Modelo | Contexto gravado (novo) | Contexto relido (cache lido) | Contexto total | Parte do total do modelo |
-|---|---|---|---|---|
-| Claude Opus 5.5 | 916,8 mil | 202,3 mi | ≈ 203,2 mi | 99,7% |
-| Claude Sonnet 5.5 | 1,2 mi | 74,3 mi | ≈ 75,5 mi | 99,7% |
-| Claude Haiku 5.5 | 0 | 0 | 0 | 0% |
-| **Total** | **≈ 2,1 mi** | **276,6 mi** | **≈ 278,7 mi** | **99,6% dos 279,9 mi** |
+| Modelo | Contexto gravado (novo) | Contexto relido | Contexto total |
+|---|---|---|---|
+| Claude Opus 5.5 | 1,5 mi | 250,7 mi | ≈ 252,2 mi |
+| Claude Sonnet 5.5 | 1,6 mi | 97,0 mi | ≈ 98,6 mi |
+| Claude Fable 5.1 | 1,0 mi | 40,7 mi | ≈ 41,7 mi |
+| Claude Haiku 5.5 | 0 | 0 | 0 |
+| **Total** | **4,1 mi** | **388,4 mi** | **≈ 392,5 mi (99,5% de tudo)** |
 
-Tokens que não são contexto: entrada nova ≈ 280 mil e saída (escrita pelos modelos) ≈ 862 mil, somando ≈ 1,1 mi.
-Esta sessão passou por compactação do contexto (resumo automático) quando a janela encheu; os números acima já incluem isso.
+Os tokens que não são contexto somam ≈ 2,0 mi: 594,5 mil de entrada nova e 1,45 mi escritos pelos modelos. Segundo o próprio `/usage`, 99% da entrada da sessão principal veio de cache, em 734 chamadas.
 
 ## Totais acumulados do estudo
 
 | Modelo | Tokens processados | Custo (US$) |
 |---|---|---|
-| Claude Opus 5.5 | ≈ 203,8 mi | 60,18 |
-| Claude Sonnet 5.5 | ≈ 75,7 mi | 14,18 |
-| Claude Haiku 5.5 | ≈ 0,27 mi | 0,22 |
-| **Total** | **≈ 279,9 mi** | **74,58** |
+| Claude Opus 5.5 | ≈ 253,0 mi | 78,48 |
+| Claude Sonnet 5.5 | ≈ 99,0 mi | 18,92 |
+| Claude Fable 5.1 | ≈ 42,3 mi | 40,17 |
+| Claude Haiku 5.5 | ≈ 0,3 mi | 0,24 |
+| **Total** | **≈ 394,6 mi** | **137,81** |
 
-**Continuação da sessão 1 (28/10/2026, madrugada), consumo ainda não medido:** reprocessamento e correções, site React com a identidade visual, rodada 1, revisão R1 respondida. Modelos: Sonnet 5.5 na sessão principal até ≈ 03h00 e Opus 5.5 depois. Subagentes: Fable 5.1 (site, ≈ 518 mil tokens) e Opus 5.5 (identidade, ≈ 113 mil tokens). A revisão R1 foi feita pelo Codex, de outro fornecedor, em sessão separada, e o consumo dela não está aqui. **Para completar:** colar o `/usage` final desta sessão e somar na tabela.
+**Como registrar a próxima sessão:** rode `/usage`, copie "Usage by model" e acrescente uma seção "Sessão 2" acima, somando nesta tabela. Registre só tokens, custo e tempo. Os percentuais de limite da conta ficam de fora, porque este arquivo é público.
 
-Marcos que ainda não entraram (somar quando a sessão terminar ou em sessões novas): reprocessamento completo após a correção do log duplicado, conferência final, relatório, PDF e conclusão.
 
 ## Consumo de máquina, rede, disco e tempo (o que a IA não gastou)
 
@@ -72,7 +70,7 @@ Medido por `scripts/monitorar.sh` (a cada 30 s, `dados/listas/recursos.csv`, 565
 **Reprocessamento completo (28/10/2026, `scripts/refazer_tudo.sh`)**, 15 processos em paralelo, ~2 h 15 min no total: 2026 1º turno 35 min, 2026 2º turno 37 min, 2022 1º turno 30 min, 2022 2º turno ≈ 31 min, análises ≈ 2 min. Correção do leitor do bu.dat: 2º turno (7 UFs) 16 min e 1º turno (7 UFs) 17 min. Volume lido nesse reprocessamento: ≈ 400 GB de pacotes oficiais, 4 × ≈ 499 mil urnas. Site publicado: `dist` de 5,0 MB (inclui o PDF de 2,5 MB, 85 páginas); `relatorio_dados.json` caiu de 118 MB para 225 KB depois de remover uma lista redundante.
 
 ## Leitura do consumo e lições
-- O custo dominante foi **reler o contexto muito longo** a cada chamada (99% da entrada veio de cache), e não escrever código.
-- Os **subagentes de contexto pequeno** saíram bem mais baratos por tarefa do que a sessão principal.
+- O custo dominante foi **reler o contexto muito longo** a cada chamada (99,5% dos tokens são contexto relido), e não escrever código. Uma sessão de quase 10 horas sem recomeçar acumula isso.
+- Os **subagentes de contexto pequeno** saíram bem mais baratos por tarefa do que a sessão principal. O do site (Fable) foi a maior tarefa delegada (US$ 40), e valeu pelo tamanho do trabalho.
 - A **computação pesada não usa IA**: processamento das urnas, testes estatísticos, mapas e relatórios rodam em scripts na máquina local (ver `Makefile` e `scripts/`). A IA só conduziu, escreveu código e documentou.
 - Para a próxima sessão: usar modelo mais barato para execução desde o início, abrir sessão nova (`/clear`) a cada mudança de tarefa e retomar por `AGENTS.md`, `CATALOGO.md` e `testes/registro.json`.
