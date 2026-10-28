@@ -34,3 +34,6 @@ A V1.0-rc1 só vira **V1.0 (baseline aprovada)** quando todos estes critérios f
 6. **O responsável pelo estudo aprova explicitamente.** A aprovação significa que o levantamento está documentado e auditado conforme estes critérios, não que todos os resultados sejam infalíveis.
 
 Aprovada, a V1.0 recebe uma tag `v1.0` e um GitHub Release, e abre oficialmente a Fase 2.
+
+
+**Situação (28/10/2026):** os seis critérios foram cumpridos e a baseline **V1.0 foi aprovada pelo responsável**. Congelada em `rodadas/rodada-2/` (tag `v1.0`). A Fase 2 está aberta.

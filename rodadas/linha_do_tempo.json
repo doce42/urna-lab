@@ -67,17 +67,34 @@
    "id": "V1.0",
    "rodada": 2,
    "titulo": "Baseline aprovada",
-   "status": "pendente",
-   "resumo": "Aprovação formal com critérios explícitos: achados respondidos, ações de prioridade alta concluídas, verificador passando, conclusão coerente, proveniência completa e aprovação do responsável.",
-   "etapas": []
+   "status": "concluida",
+   "resumo": "Baseline aprovada em 28/10/2026 pelo responsável, com os critérios cumpridos: achados da R1 respondidos ou adiados, ações de prioridade alta concluídas, verificador passando, conclusão coerente com o registro e proveniência completa. Congelada na rodada 2 (tag v1.0).",
+   "etapas": [
+    {
+     "titulo": "Critérios conferidos",
+     "texto": "20 achados respondidos e 8 adiados para a Fase 2, nenhum aberto; make verificar passa; proveniência em rodadas/rodada-2."
+    },
+    {
+     "titulo": "Aprovação do responsável",
+     "texto": "Dada em 28/10/2026. Significa que o levantamento está documentado e auditado conforme os critérios, não que todos os resultados sejam infalíveis."
+    },
+    {
+     "titulo": "Congelamento",
+     "texto": "Rodada 2: registro, resultados, conclusão e SHA-256 de cada arquivo; cada teste ganha a versão V1.0 na sua história."
+    }
+   ],
+   "inicio": "2026-10-28",
+   "fim": "2026-10-28",
+   "versao": "V1.0"
   },
   {
    "id": "F2",
    "rodada": 3,
    "titulo": "Investigação aprofundada",
-   "status": "planejada",
-   "resumo": "Perguntas específicas derivadas do levantamento e da revisão (FASE2.md), cada uma tentando derrubar um método ou uma conclusão; exploratório e confirmatório separados.",
-   "etapas": []
+   "status": "em_andamento",
+   "resumo": "Perguntas específicas derivadas do levantamento e da revisão (FASE2.md), cada uma tentando derrubar um método ou uma conclusão; exploratório e confirmatório separados. Primeira sessão limitada (28/10): P1 (C06 sob heterogeneidade), hipótese de enchimento para Lula entre turnos e verificação de 20 seções.",
+   "etapas": [],
+   "inicio": "2026-10-28"
   }
  ],
  "marcos": [
@@ -182,6 +199,12 @@
    "hora": "",
    "titulo": "R1 respondida no registro",
    "texto": "T01 refeito seção a seção (0 diferenças); verificador Ed521 endurecido; manifesto com hash oficial real (331 conferidos); T36 com graus; conclusão em revisão. Duas afirmações caíram."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Baseline V1.0 aprovada",
+   "texto": "Critérios cumpridos e aprovação do responsável; rodada 2 congelada (tag v1.0). A Fase 2 começa."
   }
  ],
  "etapas_do_caminho": [
@@ -204,17 +227,17 @@
   {
    "id": "baseline",
    "titulo": "Baseline aprovada",
-   "status": "pendente",
+   "status": "concluida",
    "versao": "V1.0",
-   "texto": "Só depois de cumprir os critérios explícitos e da aprovação do responsável. Tag v1.0 e GitHub Release.",
+   "texto": "Aprovada em 28/10/2026 pelo responsável, depois de cumpridos os critérios. Tag v1.0 e GitHub Release.",
    "link": "#baseline"
   },
   {
    "id": "fase2",
    "titulo": "Novas investigações",
-   "status": "planejada",
+   "status": "em_andamento",
    "versao": "Fase 2",
-   "texto": "13 perguntas registradas antes de qualquer resultado, com a hipótese concorrente que cada uma distingue.",
+   "texto": "13 perguntas registradas antes de qualquer resultado; a primeira sessão limitada (28/10) já respondeu P1 e verificou 20 seções.",
    "link": "#fase2"
   },
   {

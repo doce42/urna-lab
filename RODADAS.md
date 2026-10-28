@@ -8,8 +8,8 @@ O Urna Lab precisa permitir que qualquer pessoa veja o que o estudo concluiu hoj
 |---|---|---|---|
 | Estado inicial | **V1.0-rc1** | congelada em 28/10/2026 (tag `rodada-1`) | Levantamento da Fase 1: coleta, processamento, checks padrão, validação, 48 testes categorizados e a conclusão original. **Snapshot preliminar, candidato à baseline** |
 | Revisão | **R1** | respondida | Revisão independente (Codex). Ver [`revisoes/`](revisoes/) |
-| Baseline aprovada | **V1.0** | pendente | Só depois dos critérios de [`revisoes/README.md`](revisoes/README.md) e da aprovação do responsável. Tag `v1.0` e GitHub Release |
-| Novas investigações | **Fase 2** | planejada | Perguntas registradas antes dos resultados em [`FASE2.md`](FASE2.md) |
+| Baseline aprovada | **V1.0** | **aprovada em 28/10/2026** (rodada 2, tag `v1.0`) | Critérios de [`revisoes/README.md`](revisoes/README.md) cumpridos e aprovação do responsável |
+| Novas investigações | **Fase 2** | em andamento (rodada 3) | Perguntas registradas antes dos resultados em [`FASE2.md`](FASE2.md) |
 | Comparações | rc1 → atual | disponível | O que mudou em cada teste, com a causa |
 | Estado atual | registro vivo | — | [`testes/registro.json`](testes/registro.json), com provas e mudanças ainda não congeladas |
 

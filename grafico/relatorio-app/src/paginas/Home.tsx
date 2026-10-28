@@ -10,6 +10,8 @@ import { Linhas } from '@/graficos/Linhas';
 import { Sankey, Cascata, BarrasUF, rotFluxo } from '@/graficos/especiais';
 import { dica, esc } from '@/ui/Dica';
 import { emProc } from '@/viz/testes';
+import { useDados } from '@/lib/dados';
+import type { LinhaDoTempo as LT } from '@/lib/tipos';
 
 const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: string; eyebrow: string; titulo: string; lead?: string; children: React.ReactNode; className?: string }) => (
   <section id={id} className={`container mt-20 md:mt-28 scroll-mt-20 ${className}`}>
@@ -21,6 +23,37 @@ const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: st
     <div className="mt-8">{children}</div>
   </section>
 );
+
+// Estado da pesquisa: lê a linha do tempo (rodadas/linha_do_tempo.json), então acompanha sozinha a progressão das fases.
+const ST_ROT: Record<string, string> = { concluida: 'concluída', em_andamento: 'em andamento', proxima: 'próxima', pendente: 'pendente', planejada: 'planejada' };
+function EstadoPesquisa() {
+  const { dados: lt } = useDados<LT>('linha-do-tempo');
+  if (!lt) return null;
+  const atual = lt.fases.find((f) => f.status === 'em_andamento') || [...lt.fases].reverse().find((f) => f.status === 'concluida');
+  const ult = lt.rodadas[lt.rodadas.length - 1];
+  const marcos = [...lt.marcos].slice(-3).reverse();
+  return (
+    <section id="estado" className="container mt-12 md:mt-16 scroll-mt-20">
+      <div className="cartao p-5 md:p-6">
+        <Eyebrow>Estado da pesquisa</Eyebrow>
+        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h2 className="t-h3">{atual?.titulo}</h2>
+          <span className="text-sm text-muted">{atual ? ST_ROT[atual.status] : ''}{ult ? ` · última versão congelada: ${ult.versao || 'rodada ' + ult.rodada} (${dataBR(ult.data)})` : ''}</span>
+        </div>
+        {atual && <p className="mt-2 text-[15px] text-muted max-w-[52rem]">{atual.resumo}</p>}
+        <ol className="mt-4 flex flex-wrap gap-2">
+          {lt.fases.map((f) => (
+            <li key={f.id} className={`h-7 px-3 rounded-full border text-xs font-medium inline-flex items-center ${f.status === 'em_andamento' ? 'border-accent text-accent' : f.status === 'concluida' ? 'border-border-strong text-text' : 'border-border text-subtle'}`}>{f.versao || f.id} · {f.titulo} · {ST_ROT[f.status]}</li>
+          ))}
+        </ol>
+        <ul className="mt-4 grid gap-1.5 text-[14px]">
+          {marcos.map((m) => <li key={m.titulo}><span className="text-subtle t-num">{dataBR(m.data)}</span> · <b className="font-medium">{m.titulo}</b>: <span className="text-muted">{m.texto}</span></li>)}
+        </ul>
+        <a className="mt-4 inline-flex items-center gap-1 h-9 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">Evolução da pesquisa, versões e história de cada teste</a>
+      </div>
+    </section>
+  );
+}
 
 export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta | null }) {
   const n26 = h.nacional['2026'], n22 = h.nacional['2022'];
@@ -145,6 +178,8 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       </section>
 
       {/* ---------- placar ---------- */}
+      <EstadoPesquisa />
+
       <Secao id="validado" eyebrow="O que já foi verificado" titulo="Placar da verificação" lead={`${placar.total} testes registrados, cada um com classe de evidência e grau de certeza. Nenhum número aqui é escrito à mão: tudo sai do código e do registro de testes.`}>
         <div className="grid gap-4">
           <div className="cartao p-5 md:p-6 grid gap-5 lg:grid-cols-[auto_1fr] lg:items-center">
@@ -231,7 +266,7 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
 
       {/* ---------- de onde vieram os votos ---------- */}
       {fluxo && fluxoResumo && (
-        <Secao id="fluxo" eyebrow="De onde vieram os votos" titulo={`Lula somou cerca de ${P(fluxoResumo.novosL / 1e6, 1)} milhões de votos novos no 2º turno; Flávio Bolsonaro, ${P(fluxoResumo.novosA / 1e6, 1)} milhões`} lead="Estimativa por grupos (inferência ecológica, teste C06): o que fez no 2º turno quem votou em cada opção no 1º. Reproduz o total real do 2º turno com erro abaixo de 0,1%. O voto individual é secreto.">
+        <Secao id="fluxo" eyebrow="De onde vieram os votos" titulo={`Lula somou cerca de ${P(fluxoResumo.novosL / 1e6, 1)} milhões de votos novos no 2º turno; Flávio Bolsonaro, ${P(fluxoResumo.novosA / 1e6, 1)} milhões`} lead="Estimativa por grupos (inferência ecológica, teste C06): o que fez no 2º turno quem votou em cada opção no 1º. Reproduz o total real do 2º turno com erro abaixo de 0,1%. O voto individual é secreto. Na Fase 2, um teste com dados sintéticos mostrou que a proporção entre destinos depende do pressuposto de taxas homogêneas dentro do estado; a ordem entre eles se manteve.">
           <div className="grid gap-3 sm:grid-cols-3 mb-4">
             {[[fluxoResumo.gL.elim, fluxoResumo.gA.elim, 'vindos de eleitores de candidatos eliminados'], [fluxoResumo.gL.bn, fluxoResumo.gA.bn, 'vindos de quem votou branco ou nulo no 1º turno'], [fluxoResumo.gL.abst, fluxoResumo.gA.abst, 'vindos de quem não votou no 1º turno']].map(([a, b, r], i) => (
               <div key={i} className="cartao p-5"><div className="text-2xl font-semibold tracking-tight t-num"><span style={{ color: COR.lula }}>{milhoes(a as number)}</span> <span className="text-subtle text-lg">×</span> <span style={{ color: COR.adv }}>{milhoes(b as number, (b as number) < 5e5 ? 2 : 1)}</span></div><div className="text-[13px] text-muted mt-1">{r as string} (Lula × Flávio)</div></div>

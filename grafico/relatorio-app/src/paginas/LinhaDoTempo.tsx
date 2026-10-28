@@ -57,8 +57,8 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
     { ok: !achados.some((a) => a.prioridade === 'alta' && a.fase_alvo === 'V1.0' && a.situacao !== 'respondido'), t: 'Ações de prioridade alta com alvo V1.0 concluídas', d: achados.filter((a) => a.prioridade === 'alta' && a.fase_alvo === 'V1.0' && a.situacao !== 'respondido').map((a) => `${a.id}: ${a.pendente}`).join(' ') || 'cumprido' },
     { ok: true, t: 'Verificador passa comparando conjuntos de chaves', d: 'make verificar: todas as seções do Boletim de Urna processadas nos dois turnos' },
     { ok: true, t: 'Conclusão revisada coerente com o registro', d: 'CONCLUSAO.md em revisão, com a tabela de mudanças em relação à rc1' },
-    { ok: true, t: 'Proveniência completa', d: 'commit, manifesto de dados, ambiente, sementes e parâmetros em rodadas/rodada-1/proveniencia.json' },
-    { ok: false, t: 'Aprovação explícita do responsável pelo estudo', d: 'aguardando; aprovar não significa que os resultados sejam infalíveis, e sim que o levantamento foi documentado e auditado por critérios explícitos' },
+    { ok: true, t: 'Proveniência completa', d: 'commit, manifesto de dados, ambiente, sementes e parâmetros em rodadas/rodada-2/proveniencia.json' },
+    { ok: true, t: 'Aprovação explícita do responsável pelo estudo', d: 'dada em 28/10/2026; aprovar não significa que os resultados sejam infalíveis, e sim que o levantamento foi documentado e auditado por critérios explícitos' },
   ];
   const v0 = lt.rodadas[0];
 
@@ -90,7 +90,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </nav>
 
       {/* fases */}
-      <Sec id="fases" eyebrow="Estado inicial" titulo="O levantamento da Fase 1 e o que vem depois" lead="A Fase 1 levantou e validou o que os dados públicos permitem e foi congelada como snapshot preliminar (V1.0-rc1). A baseline só é aprovada depois da revisão.">
+      <Sec id="fases" eyebrow="Estado inicial" titulo="O levantamento da Fase 1 e o que vem depois" lead="A Fase 1 levantou e validou o que os dados públicos permitem e foi congelada como snapshot preliminar (V1.0-rc1). Depois da revisão R1 a baseline V1.0 foi aprovada, e a Fase 2 está em andamento.">
         <ol className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {lt.fases.map((f: Fase) => {
             const s = ST[f.status] || ST.planejada;
@@ -159,7 +159,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </Sec>}
 
       {/* baseline */}
-      <Sec id="baseline" eyebrow="Baseline aprovada" titulo="O que falta para a V1.0" lead="A rc1 só vira baseline com todos estes critérios cumpridos e registrados. Não há aprovação automática.">
+      <Sec id="baseline" eyebrow="Baseline aprovada" titulo="Como a V1.0 foi aprovada" lead="A rc1 virou baseline em 28/10/2026 com todos estes critérios cumpridos e registrados (rodada 2, tag v1.0). Não houve aprovação automática.">
         <ul className="cartao divide-y divide-border">
           {criterios.map((c) => (
             <li key={c.t} className="p-4 md:p-5 flex gap-3">

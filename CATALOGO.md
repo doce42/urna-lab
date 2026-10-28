@@ -212,3 +212,9 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
 3. **Perfil do eleitorado por seção** (idade, escolaridade, publicado pelo TSE) para controlar a biometria e outros grupos.
 4. **Rodar a mesma bateria em 2022** como comparação: mesma metodologia numa eleição já auditada.
 
+
+## Sessão limitada de 28/10/2026 (Fase 2, rodada 3)
+- Baseline V1.0 aprovada pelo responsável e congelada (rodada 2, tag `v1.0`).
+- P1: estimador C06 sob heterogeneidade sintética: ordem e contraste 2022×2026 resistem, a magnitude "4:1" não (ver `RELATORIO_SESSAO_LIMITADA.md`).
+- Hipótese de enchimento para Lula entre turnos: sem a assinatura de comparecimento prevista; assimetria de cauda do T02 sem causa.
+- Verificação A de 20 seções do 1º turno: 19 com arquivos conferem; nenhuma divergência objetiva nova. Verificação B não realizada (sem material independente local).

@@ -1,0 +1,166 @@
+{
+ "2026": {
+  "n": 497830,
+  "cauda": {
+   "2": {
+    "pro_lula": 15826,
+    "pro_outro": 10495
+   },
+   "3": {
+    "pro_lula": 1997,
+    "pro_outro": 692
+   },
+   "4": {
+    "pro_lula": 190,
+    "pro_outro": 53
+   },
+   "5": {
+    "pro_lula": 32,
+    "pro_outro": 13
+   },
+   "6": {
+    "pro_lula": 11,
+    "pro_outro": 6
+   },
+   "8": {
+    "pro_lula": 4,
+    "pro_outro": 2
+   }
+  },
+  "assimetria_corpo": {
+   "mediana_zr": 0.0,
+   "q01": -2.295260474822701,
+   "q99": 2.579112339533688,
+   "razao_q99_q01": 1.1236686937385236
+  },
+  "pro_lula": {
+   "n": 32,
+   "validos_2_mediana": 189.0,
+   "dcomp_res_media_pp": -1.7826318477521803,
+   "dcomp_res_mediana_pp": -0.6067756536962815,
+   "votos_extra_lula_aprox": 0.0,
+   "votos_excedentes_total": 741.2535436177986,
+   "uf_top": {
+    "AM": 6,
+    "CE": 4,
+    "PA": 4,
+    "AC": 3,
+    "MA": 2,
+    "MG": 2
+   },
+   "frac_dcomp_res_positivo": 0.4375
+  },
+  "pro_outro": {
+   "n": 13,
+   "validos_2_mediana": 273.0,
+   "dcomp_res_media_pp": 2.3503589273349648,
+   "dcomp_res_mediana_pp": 7.106670419363914,
+   "votos_extra_lula_aprox": 0.0,
+   "votos_excedentes_total_lula": -414.6915540665683,
+   "uf_top": {
+    "SP": 6,
+    "PA": 2,
+    "PI": 2,
+    "AC": 1,
+    "MG": 1,
+    "PR": 1
+   },
+   "frac_dcomp_res_positivo": 0.5384615384615384
+  },
+  "todas": {
+   "n": 497830,
+   "validos_2_mediana": 254.0,
+   "dcomp_res_media_pp": 0.005000742195422769,
+   "dcomp_res_mediana_pp": 0.0,
+   "votos_extra_lula_aprox": 0.0,
+   "frac_dcomp_res_positivo": 0.49626579354398087
+  },
+  "saldo_lula_total_2t_menos_1t": 10334057.0,
+  "cauda5_so_secoes_acima_da_mediana_de_tamanho": {
+   "pro_lula": 6,
+   "pro_outro": 8
+  }
+ },
+ "2022": {
+  "n": 470964,
+  "cauda": {
+   "2": {
+    "pro_lula": 15230,
+    "pro_outro": 12382
+   },
+   "3": {
+    "pro_lula": 2460,
+    "pro_outro": 1163
+   },
+   "4": {
+    "pro_lula": 429,
+    "pro_outro": 105
+   },
+   "5": {
+    "pro_lula": 90,
+    "pro_outro": 13
+   },
+   "6": {
+    "pro_lula": 30,
+    "pro_outro": 5
+   },
+   "8": {
+    "pro_lula": 6,
+    "pro_outro": 1
+   }
+  },
+  "assimetria_corpo": {
+   "mediana_zr": 0.0,
+   "q01": -2.435764650542624,
+   "q99": 2.644659666197748,
+   "razao_q99_q01": 1.0857615761886468
+  },
+  "pro_lula": {
+   "n": 90,
+   "validos_2_mediana": 260.0,
+   "dcomp_res_media_pp": -0.6470585549750145,
+   "dcomp_res_mediana_pp": -0.15031648086949456,
+   "votos_extra_lula_aprox": 0.0,
+   "votos_excedentes_total": 2610.6648599708883,
+   "uf_top": {
+    "SP": 32,
+    "CE": 13,
+    "AM": 9,
+    "PA": 9,
+    "MA": 8,
+    "AC": 6
+   },
+   "frac_dcomp_res_positivo": 0.4777777777777778
+  },
+  "pro_outro": {
+   "n": 13,
+   "validos_2_mediana": 122.0,
+   "dcomp_res_media_pp": 1.0580252568315474,
+   "dcomp_res_mediana_pp": 1.2631511927923111,
+   "votos_extra_lula_aprox": 0.0,
+   "votos_excedentes_total_lula": -346.9439420035245,
+   "uf_top": {
+    "PR": 3,
+    "CE": 2,
+    "MA": 2,
+    "PI": 2,
+    "AC": 1,
+    "BA": 1
+   },
+   "frac_dcomp_res_positivo": 0.6153846153846154
+  },
+  "todas": {
+   "n": 470964,
+   "validos_2_mediana": 257.0,
+   "dcomp_res_media_pp": -0.0015262729635032355,
+   "dcomp_res_mediana_pp": 0.0,
+   "votos_extra_lula_aprox": 0.0,
+   "frac_dcomp_res_positivo": 0.494753314478389
+  },
+  "saldo_lula_total_2t_menos_1t": 3072541.0,
+  "cauda5_so_secoes_acima_da_mediana_de_tamanho": {
+   "pro_lula": 46,
+   "pro_outro": 2
+  }
+ }
+}
