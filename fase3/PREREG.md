@@ -16,3 +16,8 @@ Seções com zero votos para o adversário (Flávio 2026; Bolsonaro 2022) e, em 
 ## E7 (p21): tentativa controlada de obter AC URNA v2 / AC RAIZ UE por canal do TSE (no máximo 3 URLs/consultas); inventário de boletins de terceiros: sem coleta massiva.
 ## E8: síntese e revisão metodológica (sem execução nova).
 Critério de resposta: fixado em PREREG de cada experimento acima; "respondida" só se as quatro condições do prompt (fenômeno definido, evidências verificadas, pressupostos, alcance) forem cumpridas.
+
+## Adendo da sessão 2 (28/10/2026, escrito antes das execuções; autorizado pelo responsável: "terminar a F3 inteira")
+Escopo: só o que a sessão 1 deixou sem executar e é executável sem coleta massiva. Limites: 2 scripts novos (f3_reconcilia.py, f3_curvas2.py), sem subagente, sem nova correção de modelo.
+- **R1-20 (f3_reconcilia.py):** clone raso do repositório DataUrnas-BR (terceiro), que traz os votos por seção já decodificados dos BUs. Comparação por chave (UF, município, zona, seção) de votos por candidato, brancos e nulos com a base do projeto, em 2026 1º turno e 2022 nos dois turnos. Critério: seção com qualquer diferença de votos conta como divergência; seções que só um lado tem são contadas à parte. Sem sensibilidade.
+- **C1/MET (f3_curvas2.py):** os mesmos S1 a S5 e 200 permutações, com dois nulos novos: D (permutar dentro de UF × faixa de 30 min do encerramento) e F (D × tercil de eleitores aptos). Critério: se os nulos continuarem rejeitando no 2º turno de 2022 e no 1º turno de 2026, nenhum nulo disponível discrimina, e C1 fica "não identificável com estes dados".

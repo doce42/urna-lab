@@ -2,7 +2,7 @@
 
 Estudo independente, imparcial e reproduzível da apuração presidencial brasileira de **2026** (1º e 2º turno), com **2022** como referência. Usa **somente dados oficiais do TSE** (dados abertos e arquivos gravados por cada urna).
 
-> **Status: Fase 2 concluída (V1.1, 28/10/2026, tag `v1.1`, `rodadas/rodada-3/`).** A baseline V1.0 (tag `v1.0`, `rodadas/rodada-2/`) e o levantamento inicial V1.0-rc1 (`rodada-1`) seguem congelados. A revisão independente [R1 (Codex)](revisoes/R1-codex/) foi respondida. Resultados da Fase 2 em [`RELATORIO_FASE2_COMPLETA.md`](RELATORIO_FASE2_COMPLETA.md) (e a primeira sessão em [`RELATORIO_SESSAO_LIMITADA.md`](RELATORIO_SESSAO_LIMITADA.md)); quatro perguntas novas (P18 a P21) ficaram na fila.
+> **Status: Fase 3 concluída (V1.2, 28/10/2026, tag `v1.2`, `rodadas/rodada-4/`; resultados em [`RELATORIO_F3.md`](RELATORIO_F3.md)). Fase 2 concluída (V1.1, tag `v1.1`, `rodadas/rodada-3/`).** A baseline V1.0 (tag `v1.0`, `rodadas/rodada-2/`) e o levantamento inicial V1.0-rc1 (`rodada-1`) seguem congelados. A revisão independente [R1 (Codex)](revisoes/R1-codex/) foi respondida. Resultados da Fase 2 em [`RELATORIO_FASE2_COMPLETA.md`](RELATORIO_FASE2_COMPLETA.md) (e a primeira sessão em [`RELATORIO_SESSAO_LIMITADA.md`](RELATORIO_SESSAO_LIMITADA.md)); quatro perguntas novas (P18 a P21) ficaram na fila.
 
 ## O que tem aqui
 
@@ -11,6 +11,7 @@ Estudo independente, imparcial e reproduzível da apuração presidencial brasil
 | [`CONCLUSAO.md`](CONCLUSAO.md) | **A conclusão** em três níveis: o que foi provado, o que a estatística mostra (com poder medido) e o que os dados públicos não alcançam |
 | [`RODADAS.md`](RODADAS.md) | **Evolução da pesquisa**: versões congeladas, revisões, história de cada teste e causa de cada mudança |
 | [`revisoes/`](revisoes/) | Revisões independentes guardadas inteiras, com achados classificados e respondidos; critérios da baseline |
+| [`RELATORIO_F3.md`](RELATORIO_F3.md) | Fase 3: inventário, curvas, zeros, reconciliação independente |
 | [`FASE2.md`](FASE2.md) | Perguntas da Fase 2, registradas antes dos resultados |
 | [`DIRETRIZ.md`](DIRETRIZ.md) | Princípios do estudo, classes de evidência A–G, ficha de resultado |
 | [`PROTOCOLO.md`](PROTOCOLO.md) | Perguntas, modelos nulos, critérios fixados **antes** de rodar, emendas datadas |

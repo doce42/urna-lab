@@ -1,0 +1,710 @@
+{
+ "pergunta": "E3 zeros",
+ "anos": {
+  "2026": {
+   "secoes_com_votos_validos_nos_2_turnos": 497897,
+   "Flávio Bolsonaro": {
+    "1t": {
+     "rho_sobredispersao": 0.018334594798751935,
+     "zeros_observados": 79,
+     "esperado_beta_binomial": 1.1638320103881692,
+     "esperado_binomial_homogeneo": 0.37610997684987885,
+     "por_faixa": [
+      {
+       "faixa_validos": "(7.999, 175.0]",
+       "secoes": 51231,
+       "zeros_observados": 58,
+       "zeros_esperados_beta_binomial": 1.0738686420612815,
+       "zeros_esperados_binomial": 0.3761089372708728
+      },
+      {
+       "faixa_validos": "(175.0, 210.0]",
+       "secoes": 73644,
+       "zeros_observados": 6,
+       "zeros_esperados_beta_binomial": 0.041181275007965035,
+       "zeros_esperados_binomial": 1.0037170987160846e-06
+      },
+      {
+       "faixa_validos": "(210.0, 245.0]",
+       "secoes": 128150,
+       "zeros_observados": 7,
+       "zeros_esperados_beta_binomial": 0.027082611831806228,
+       "zeros_esperados_binomial": 3.4046261454079275e-08
+      },
+      {
+       "faixa_validos": "(245.0, 273.0]",
+       "secoes": 123555,
+       "zeros_observados": 3,
+       "zeros_esperados_beta_binomial": 0.012753425082019888,
+       "zeros_esperados_binomial": 1.679538896175946e-09
+      },
+      {
+       "faixa_validos": "(273.0, 296.0]",
+       "secoes": 72695,
+       "zeros_observados": 2,
+       "zeros_esperados_beta_binomial": 0.0048769914170346245,
+       "zeros_esperados_binomial": 1.0958285643469926e-10
+      },
+      {
+       "faixa_validos": "(296.0, 332.0]",
+       "secoes": 43908,
+       "zeros_observados": 2,
+       "zeros_esperados_beta_binomial": 0.004014058622064052,
+       "zeros_esperados_binomial": 2.6509836991812735e-11
+      },
+      {
+       "faixa_validos": "(332.0, 473.0]",
+       "secoes": 4714,
+       "zeros_observados": 1,
+       "zeros_esperados_beta_binomial": 5.5006365997774685e-05,
+       "zeros_esperados_binomial": 1.4330555185098138e-14
+      }
+     ],
+     "validos_mediana_nas_zero": 102.0,
+     "validos_mediana_geral": 245.0,
+     "comparecimento_positivo_nas_zero": 79,
+     "votos_do_outro_finalista_nessas_secoes": 9542,
+     "ufs_top": {
+      "AM": 19,
+      "PA": 13,
+      "MA": 12,
+      "BA": 6,
+      "MG": 5,
+      "TO": 5
+     },
+     "municipios_distintos": 62,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 0.9498091442198497,
+      "rho": 0.05038906786469698
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 64.47430102335568,
+      "rho": 0.008195922691973903
+     },
+     "correcao_previsor_proprio_1t": null
+    },
+    "2t": {
+     "rho_sobredispersao": 0.021222701627588093,
+     "zeros_observados": 106,
+     "esperado_beta_binomial": 1.5677073725676545,
+     "esperado_binomial_homogeneo": 0.3249371726505086,
+     "por_faixa": [
+      {
+       "faixa_validos": "(8.999, 179.0]",
+       "secoes": 49961,
+       "zeros_observados": 74,
+       "zeros_esperados_beta_binomial": 1.356776421951655,
+       "zeros_esperados_binomial": 0.3249355244486929
+      },
+      {
+       "faixa_validos": "(179.0, 218.0]",
+       "secoes": 76364,
+       "zeros_observados": 8,
+       "zeros_esperados_beta_binomial": 0.100830512699863,
+       "zeros_esperados_binomial": 1.6257027379741601e-06
+      },
+      {
+       "faixa_validos": "(218.0, 254.0]",
+       "secoes": 122735,
+       "zeros_observados": 10,
+       "zeros_esperados_beta_binomial": 0.05582949099848811,
+       "zeros_esperados_binomial": 1.9502691403986405e-08
+      },
+      {
+       "faixa_validos": "(254.0, 285.0]",
+       "secoes": 127832,
+       "zeros_observados": 3,
+       "zeros_esperados_beta_binomial": 0.02746134585537454,
+       "zeros_esperados_binomial": 2.293082932398588e-09
+      },
+      {
+       "faixa_validos": "(285.0, 309.0]",
+       "secoes": 72230,
+       "zeros_observados": 4,
+       "zeros_esperados_beta_binomial": 0.017865447833525498,
+       "zeros_esperados_binomial": 5.32132582336071e-10
+      },
+      {
+       "faixa_validos": "(309.0, 349.0]",
+       "secoes": 44015,
+       "zeros_observados": 6,
+       "zeros_esperados_beta_binomial": 0.008939922165874352,
+       "zeros_esperados_binomial": 1.7117082638027324e-10
+      },
+      {
+       "faixa_validos": "(349.0, 474.0]",
+       "secoes": 4760,
+       "zeros_observados": 1,
+       "zeros_esperados_beta_binomial": 4.231062874154797e-06,
+       "zeros_esperados_binomial": 3.4656756401824847e-22
+      }
+     ],
+     "validos_mediana_nas_zero": 124.5,
+     "validos_mediana_geral": 254.0,
+     "comparecimento_positivo_nas_zero": 106,
+     "votos_do_outro_finalista_nessas_secoes": 14860,
+     "ufs_top": {
+      "AM": 30,
+      "MA": 20,
+      "PA": 16,
+      "RR": 8,
+      "TO": 7,
+      "MT": 5
+     },
+     "municipios_distintos": 67,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 1.1497838584573612,
+      "rho": 0.054411263217720315
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 82.82753713175529,
+      "rho": 0.008592257231889583
+     },
+     "correcao_previsor_proprio_1t": {
+      "esperado_beta_binomial": 62.31368175583308,
+      "rho": 0.00023536761494709476
+     }
+    },
+    "transicao_entre_turnos": {
+     "0_para_positivo": 29,
+     "positivo_para_0": 56,
+     "0_nos_dois": 50
+    }
+   },
+   "Lula (controle)": {
+    "1t": {
+     "rho_sobredispersao": 0.021161386458348246,
+     "zeros_observados": 8,
+     "esperado_beta_binomial": 0.5885585179955872,
+     "esperado_binomial_homogeneo": 0.20371352021472205,
+     "por_faixa": [
+      {
+       "faixa_validos": "(7.999, 175.0]",
+       "secoes": 51231,
+       "zeros_observados": 8,
+       "zeros_esperados_beta_binomial": 0.5697046070468573,
+       "zeros_esperados_binomial": 0.20371351730097909
+      },
+      {
+       "faixa_validos": "(175.0, 210.0]",
+       "secoes": 73644,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.003566651006801131,
+       "zeros_esperados_binomial": 4.64668690726274e-10
+      },
+      {
+       "faixa_validos": "(210.0, 245.0]",
+       "secoes": 128150,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.0031874054765470396,
+       "zeros_esperados_binomial": 8.381476962177168e-11
+      },
+      {
+       "faixa_validos": "(245.0, 273.0]",
+       "secoes": 123555,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.0032077048705365352,
+       "zeros_esperados_binomial": 2.7339555142208013e-11
+      },
+      {
+       "faixa_validos": "(273.0, 296.0]",
+       "secoes": 72695,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.006367046873250119,
+       "zeros_esperados_binomial": 2.100625814812445e-09
+      },
+      {
+       "faixa_validos": "(296.0, 332.0]",
+       "secoes": 43908,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.0024684421264637426,
+       "zeros_esperados_binomial": 2.372941350018892e-10
+      },
+      {
+       "faixa_validos": "(332.0, 473.0]",
+       "secoes": 4714,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 5.666059513141149e-05,
+       "zeros_esperados_binomial": 2.9626797951620364e-17
+      }
+     ],
+     "validos_mediana_nas_zero": 64.5,
+     "validos_mediana_geral": 245.0,
+     "comparecimento_positivo_nas_zero": 8,
+     "votos_do_outro_finalista_nessas_secoes": 507,
+     "ufs_top": {
+      "RS": 3,
+      "PA": 2,
+      "MG": 1,
+      "PR": 1,
+      "SP": 1
+     },
+     "municipios_distintos": 8,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 0.9897363498223661,
+      "rho": 0.05507697987778469
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 3.7645379773620924,
+      "rho": 0.009330151537173216
+     },
+     "correcao_previsor_proprio_1t": null
+    },
+    "2t": {
+     "rho_sobredispersao": 0.021222701627588096,
+     "zeros_observados": 4,
+     "esperado_beta_binomial": 0.23559486897013882,
+     "esperado_binomial_homogeneo": 0.08878051030296102,
+     "por_faixa": [
+      {
+       "faixa_validos": "(8.999, 179.0]",
+       "secoes": 49961,
+       "zeros_observados": 4,
+       "zeros_esperados_beta_binomial": 0.23380853803196652,
+       "zeros_esperados_binomial": 0.08878051029631605
+      },
+      {
+       "faixa_validos": "(179.0, 218.0]",
+       "secoes": 76364,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00040981729190851134,
+       "zeros_esperados_binomial": 3.9918482307417276e-12
+      },
+      {
+       "faixa_validos": "(218.0, 254.0]",
+       "secoes": 122735,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00018611080480069057,
+       "zeros_esperados_binomial": 1.3166068270713687e-14
+      },
+      {
+       "faixa_validos": "(254.0, 285.0]",
+       "secoes": 127832,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00041225850098756945,
+       "zeros_esperados_binomial": 1.7387089084695222e-12
+      },
+      {
+       "faixa_validos": "(285.0, 309.0]",
+       "secoes": 72230,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.0006036694210446891,
+       "zeros_esperados_binomial": 8.154878977838387e-13
+      },
+      {
+       "faixa_validos": "(309.0, 349.0]",
+       "secoes": 44015,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00017421558682843087,
+       "zeros_esperados_binomial": 8.57944796278635e-14
+      },
+      {
+       "faixa_validos": "(349.0, 474.0]",
+       "secoes": 4760,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 2.593326023925539e-07,
+       "zeros_esperados_binomial": 8.421314514685884e-27
+      }
+     ],
+     "validos_mediana_nas_zero": 66.0,
+     "validos_mediana_geral": 254.0,
+     "comparecimento_positivo_nas_zero": 4,
+     "votos_do_outro_finalista_nessas_secoes": 296,
+     "ufs_top": {
+      "PA": 2,
+      "RS": 2
+     },
+     "municipios_distintos": 4,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 0.3367623319576919,
+      "rho": 0.054411263217720315
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 2.374561143400524,
+      "rho": 0.008592257231889585
+     },
+     "correcao_previsor_proprio_1t": {
+      "esperado_beta_binomial": 13.313403781050049,
+      "rho": 0.018460114002581927
+     }
+    },
+    "transicao_entre_turnos": {
+     "0_para_positivo": 4,
+     "positivo_para_0": 0,
+     "0_nos_dois": 4
+    }
+   },
+   "arquivos_das_urnas_nas_zeros_1t": {
+    "secoes": 79,
+    "sem_linha_de_urna": 0,
+    "bu_v22_diferente_de_0": 0,
+    "rdv_v22_diferente_de_0": 0,
+    "imagem_v22_diferente_de_0": 0,
+    "bu_v13_diferente_da_tabela_publicada": 0,
+    "origem_nao_urna": {
+     "NaN": 79
+    }
+   },
+   "arquivos_das_urnas_nas_zeros_2t": {
+    "secoes": 106,
+    "sem_linha_de_urna": 0,
+    "bu_v22_diferente_de_0": 0,
+    "rdv_v22_diferente_de_0": 0,
+    "imagem_v22_diferente_de_0": 0,
+    "bu_v13_diferente_da_tabela_publicada": 0,
+    "origem_nao_urna": {
+     "NaN": 106
+    }
+   }
+  },
+  "2022": {
+   "secoes_com_votos_validos_nos_2_turnos": 471010,
+   "Bolsonaro": {
+    "1t": {
+     "rho_sobredispersao": 0.019072642690775445,
+     "zeros_observados": 160,
+     "esperado_beta_binomial": 8.309212311001811,
+     "esperado_binomial_homogeneo": 1.0442208761200962,
+     "por_faixa": [
+      {
+       "faixa_validos": "(5.999, 180.0]",
+       "secoes": 47939,
+       "zeros_observados": 135,
+       "zeros_esperados_beta_binomial": 6.585688699321898,
+       "zeros_esperados_binomial": 1.0440354466645212
+      },
+      {
+       "faixa_validos": "(180.0, 218.0]",
+       "secoes": 70621,
+       "zeros_observados": 5,
+       "zeros_esperados_beta_binomial": 0.9053919614152708,
+       "zeros_esperados_binomial": 0.00016706724492703413
+      },
+      {
+       "faixa_validos": "(218.0, 256.0]",
+       "secoes": 117823,
+       "zeros_observados": 7,
+       "zeros_esperados_beta_binomial": 0.5485138217604903,
+       "zeros_esperados_binomial": 1.7523028326514807e-05
+      },
+      {
+       "faixa_validos": "(256.0, 288.0]",
+       "secoes": 120195,
+       "zeros_observados": 6,
+       "zeros_esperados_beta_binomial": 0.18472381970781976,
+       "zeros_esperados_binomial": 7.791738301740462e-07
+      },
+      {
+       "faixa_validos": "(288.0, 312.0]",
+       "secoes": 68579,
+       "zeros_observados": 2,
+       "zeros_esperados_beta_binomial": 0.05567683361530426,
+       "zeros_esperados_binomial": 3.439380638761929e-08
+      },
+      {
+       "faixa_validos": "(312.0, 364.0]",
+       "secoes": 41217,
+       "zeros_observados": 4,
+       "zeros_esperados_beta_binomial": 0.028895172754399047,
+       "zeros_esperados_binomial": 2.5614528465868118e-08
+      },
+      {
+       "faixa_validos": "(364.0, 492.0]",
+       "secoes": 4636,
+       "zeros_observados": 1,
+       "zeros_esperados_beta_binomial": 0.00032200242663040917,
+       "zeros_esperados_binomial": 1.5658449992090027e-13
+      }
+     ],
+     "validos_mediana_nas_zero": 87.5,
+     "validos_mediana_geral": 256.0,
+     "comparecimento_positivo_nas_zero": 160,
+     "votos_do_outro_finalista_nessas_secoes": 17527,
+     "ufs_top": {
+      "MA": 51,
+      "AM": 27,
+      "BA": 27,
+      "CE": 11,
+      "MG": 10,
+      "PA": 9
+     },
+     "municipios_distintos": 114,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 3.4407839688430366,
+      "rho": 0.053314757270765595
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 95.20999934485269,
+      "rho": 0.008606501323171145
+     },
+     "correcao_previsor_proprio_1t": null
+    },
+    "2t": {
+     "rho_sobredispersao": 0.021573271272998313,
+     "zeros_observados": 141,
+     "esperado_beta_binomial": 5.21215233208785,
+     "esperado_binomial_homogeneo": 0.6200052929319924,
+     "por_faixa": [
+      {
+       "faixa_validos": "(5.999, 179.0]",
+       "secoes": 48059,
+       "zeros_observados": 115,
+       "zeros_esperados_beta_binomial": 4.271741355440916,
+       "zeros_esperados_binomial": 0.6199745600618004
+      },
+      {
+       "faixa_validos": "(179.0, 218.0]",
+       "secoes": 71251,
+       "zeros_observados": 9,
+       "zeros_esperados_beta_binomial": 0.49225586285247547,
+       "zeros_esperados_binomial": 2.8069352604144005e-05
+      },
+      {
+       "faixa_validos": "(218.0, 257.0]",
+       "secoes": 118164,
+       "zeros_observados": 4,
+       "zeros_esperados_beta_binomial": 0.3122685882576306,
+       "zeros_esperados_binomial": 2.5590212163479313e-06
+      },
+      {
+       "faixa_validos": "(257.0, 289.0]",
+       "secoes": 117409,
+       "zeros_observados": 6,
+       "zeros_esperados_beta_binomial": 0.09508335345787769,
+       "zeros_esperados_binomial": 9.46660012487773e-08
+      },
+      {
+       "faixa_validos": "(289.0, 313.0]",
+       "secoes": 69263,
+       "zeros_observados": 4,
+       "zeros_esperados_beta_binomial": 0.025019258109027248,
+       "zeros_esperados_binomial": 3.1264954226853643e-09
+      },
+      {
+       "faixa_validos": "(313.0, 372.0]",
+       "secoes": 42276,
+       "zeros_observados": 2,
+       "zeros_esperados_beta_binomial": 0.015780180046697814,
+       "zeros_esperados_binomial": 6.70387482460191e-09
+      },
+      {
+       "faixa_validos": "(372.0, 484.0]",
+       "secoes": 4588,
+       "zeros_observados": 1,
+       "zeros_esperados_beta_binomial": 3.7339232242310726e-06,
+       "zeros_esperados_binomial": 6.668114736558767e-22
+      }
+     ],
+     "validos_mediana_nas_zero": 92.0,
+     "validos_mediana_geral": 257.0,
+     "comparecimento_positivo_nas_zero": 141,
+     "votos_do_outro_finalista_nessas_secoes": 16418,
+     "ufs_top": {
+      "MA": 47,
+      "AM": 23,
+      "BA": 19,
+      "MG": 9,
+      "CE": 8,
+      "PA": 8
+     },
+     "municipios_distintos": 102,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 1.9222396300363052,
+      "rho": 0.05921753535559148
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 84.8921876696989,
+      "rho": 0.00967439020112775
+     },
+     "correcao_previsor_proprio_1t": {
+      "esperado_beta_binomial": 362.46850244729205,
+      "rho": 0.014848335506806367
+     }
+    },
+    "transicao_entre_turnos": {
+     "0_para_positivo": 76,
+     "positivo_para_0": 57,
+     "0_nos_dois": 84
+    }
+   },
+   "Lula": {
+    "1t": {
+     "rho_sobredispersao": 0.023378773086525518,
+     "zeros_observados": 1,
+     "esperado_beta_binomial": 0.4491617906290197,
+     "esperado_binomial_homogeneo": 0.27361127655958645,
+     "por_faixa": [
+      {
+       "faixa_validos": "(5.999, 180.0]",
+       "secoes": 47939,
+       "zeros_observados": 1,
+       "zeros_esperados_beta_binomial": 0.4475015774118304,
+       "zeros_esperados_binomial": 0.27361127655798667
+      },
+      {
+       "faixa_validos": "(180.0, 218.0]",
+       "secoes": 70621,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00032546701422050164,
+       "zeros_esperados_binomial": 3.1915662108638804e-13
+      },
+      {
+       "faixa_validos": "(218.0, 256.0]",
+       "secoes": 117823,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00021566817000691734,
+       "zeros_esperados_binomial": 1.4764830432241715e-15
+      },
+      {
+       "faixa_validos": "(256.0, 288.0]",
+       "secoes": 120195,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.000932669755437087,
+       "zeros_esperados_binomial": 1.2751354919295532e-12
+      },
+      {
+       "faixa_validos": "(288.0, 312.0]",
+       "secoes": 68579,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.0001626545009993147,
+       "zeros_esperados_binomial": 4.014997937389754e-15
+      },
+      {
+       "faixa_validos": "(312.0, 364.0]",
+       "secoes": 41217,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 2.3673902704479673e-05,
+       "zeros_esperados_binomial": 2.9518673754704707e-21
+      },
+      {
+       "faixa_validos": "(364.0, 492.0]",
+       "secoes": 4636,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 7.987382081116957e-08,
+       "zeros_esperados_binomial": 8.934963139884052e-31
+      }
+     ],
+     "validos_mediana_nas_zero": 58.0,
+     "validos_mediana_geral": 256.0,
+     "comparecimento_positivo_nas_zero": 1,
+     "votos_do_outro_finalista_nessas_secoes": 58,
+     "ufs_top": {
+      "PA": 1
+     },
+     "municipios_distintos": 1,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 0.5895206702156153,
+      "rho": 0.05915297953560508
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 0.3647754475459922,
+      "rho": 0.009690890106007231
+     },
+     "correcao_previsor_proprio_1t": null
+    },
+    "2t": {
+     "rho_sobredispersao": 0.021573271272998316,
+     "zeros_observados": 2,
+     "esperado_beta_binomial": 0.4503994143404818,
+     "esperado_binomial_homogeneo": 0.2928127111148419,
+     "por_faixa": [
+      {
+       "faixa_validos": "(5.999, 179.0]",
+       "secoes": 48059,
+       "zeros_observados": 2,
+       "zeros_esperados_beta_binomial": 0.44987086437638335,
+       "zeros_esperados_binomial": 0.2928127111147582
+      },
+      {
+       "faixa_validos": "(179.0, 218.0]",
+       "secoes": 71251,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00010558018919559779,
+       "zeros_esperados_binomial": 3.1679099361450944e-14
+      },
+      {
+       "faixa_validos": "(218.0, 257.0]",
+       "secoes": 118164,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 7.38263412676665e-05,
+       "zeros_esperados_binomial": 2.47244623205654e-16
+      },
+      {
+       "faixa_validos": "(257.0, 289.0]",
+       "secoes": 117409,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00020451826556839442,
+       "zeros_esperados_binomial": 3.197161791666543e-14
+      },
+      {
+       "faixa_validos": "(289.0, 313.0]",
+       "secoes": 69263,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 0.00013892473780289144,
+       "zeros_esperados_binomial": 1.98396305741339e-14
+      },
+      {
+       "faixa_validos": "(313.0, 372.0]",
+       "secoes": 42276,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 5.683805722545723e-06,
+       "zeros_esperados_binomial": 1.947529348832983e-23
+      },
+      {
+       "faixa_validos": "(372.0, 484.0]",
+       "secoes": 4588,
+       "zeros_observados": 0,
+       "zeros_esperados_beta_binomial": 1.6624541277791494e-08,
+       "zeros_esperados_binomial": 1.3613050299405352e-33
+      }
+     ],
+     "validos_mediana_nas_zero": 59.0,
+     "validos_mediana_geral": 257.0,
+     "comparecimento_positivo_nas_zero": 2,
+     "votos_do_outro_finalista_nessas_secoes": 118,
+     "ufs_top": {
+      "PA": 1,
+      "RS": 1
+     },
+     "municipios_distintos": 2,
+     "sensibilidade_prior_por_UF": {
+      "esperado_beta_binomial": 0.625762265445979,
+      "rho": 0.05921753535559148
+     },
+     "correcao_prior_por_local_de_votacao": {
+      "esperado_beta_binomial": 0.398802499092588,
+      "rho": 0.00967439020112775
+     },
+     "correcao_previsor_proprio_1t": {
+      "esperado_beta_binomial": 1.5912303433523096,
+      "rho": 0.002247268994248616
+     }
+    },
+    "transicao_entre_turnos": {
+     "0_para_positivo": 1,
+     "positivo_para_0": 2,
+     "0_nos_dois": 0
+    }
+   },
+   "arquivos_das_urnas_nas_zeros_1t": {
+    "secoes": 160,
+    "sem_linha_de_urna": 0,
+    "bu_v22_diferente_de_0": 0,
+    "rdv_v22_diferente_de_0": 0,
+    "imagem_v22_diferente_de_0": 0,
+    "bu_v13_diferente_da_tabela_publicada": 1,
+    "origem_nao_urna": null
+   },
+   "arquivos_das_urnas_nas_zeros_2t": {
+    "secoes": 141,
+    "sem_linha_de_urna": 0,
+    "bu_v22_diferente_de_0": 0,
+    "rdv_v22_diferente_de_0": 0,
+    "imagem_v22_diferente_de_0": 0,
+    "bu_v13_diferente_da_tabela_publicada": 0,
+    "origem_nao_urna": null
+   }
+  }
+ },
+ "tempo_s": 6.5
+}

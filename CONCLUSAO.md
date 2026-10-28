@@ -13,6 +13,16 @@ Resultados novos, com o que significam em votos. A baseline V1.0 abaixo permanec
 - **Verificação de 20 seções (T39):** nenhuma divergência objetiva nova nas 19 com arquivos de urna; vale só para a amostra. Não houve confronto independente (sem material externo disponível).
 - **Fase 2 completa (V1.1):** o E02 original superestimava o agrupamento (766 e 683 locais viram 102 e 55 após corrigir a correlação dentro do local); a regra do T13 só enxerga troca a favor de Lula (10% dos válidos em 1% das urnas: 100% contra 0% no sentido contrário); a diferença de eleitorado do exterior (−495 e −525) está explicada (423 de seções não instaladas mais 72 e 30 de boletins só nos arquivos das urnas); em 200 seções e 200 certificados sorteados tudo concorda, mas a âncora de certificados e fontes externas continuam sem verificação. A assimetria de cauda do T02 é estatisticamente real, sem causa, e em 2022 concentrada na capital de São Paulo.
 
+## Atualização da Fase 3 (28/10/2026, rodada 4, V1.2)
+Duas sessões, sem novos dados do TSE. A baseline V1.0 e a V1.1 permanecem congeladas.
+- **Decodificação independente (T43):** a base do projeto e os votos decodificados dos BUs pelo DataUrnas-BR (terceiro) coincidem em todas as seções comparadas: 0 diferenças em 119,3 mi de votos (2026, 1º turno) e em cerca de 118 mi por turno (2022). Origem comum (TSE) e uma só versão de publicação continuam como limite.
+- **Curvas de apuração (T40):** nenhum modelo de chegada testado (cinco nulos, até UF × hora de fechamento × tamanho) reproduz a ordem real nem mesmo em 2022. As curvas não permitem concluir compatibilidade nem incompatibilidade; T10 e T11 valem como descrição. 2026 e 2022 diferem: em 2026 (2º turno) a liderança muda duas vezes, em 2022 o adversário lidera até 67,6% apurado.
+- **Zeros de votos (T41):** os zeros de Flávio (79 e 106 seções) e de Bolsonaro em 2022 (160 e 141) ficam 1,2 a 1,7 vez acima do esperado por um modelo de local de votação; o controle com Lula erra por 2 vezes, então não há evidência de excesso. Dezenas de votos em jogo, 0 divergências entre BU, RDV, imagem e tabela.
+- **Regra do T13 simétrica (P18):** com duas caudas, 10% dos válidos movidos em 1% das urnas (~125 mil votos) são vistos em 30 de 30 réplicas nos dois sentidos; 5% (~62 mil votos), em 0 de 30. Correção minha: na F2 eu havia escrito ~250 mil votos.
+- **Dependência espacial (T42):** Moran's I de 0,16 a 0,20 nos resíduos municipais: estrutura regional, não causa.
+- **São Paulo 2022 (P20):** o deslocamento é de locais de votação inteiros; com controle de tamanho e histórico, 4 das 29 seções continuam atípicas.
+- **Sem solução com estes dados:** certificados AC URNA v2 e AC RAIZ UE, snapshots históricos e boletins de terceiros com dados primários (P4, P6, P11, P21). Nenhum teste chegou às classes E ou F.
+
 ## Resposta curta
 
 - **Os registros:** nos registros públicos examinados, as igualdades e verificações listadas abaixo se confirmam. As duas tabelas do TSE conferem seção a seção. A soma das urnas confere com o total oficial. Os arquivos de cada urna conferem com a assinatura que a própria urna apresenta. A recontagem pelo RDV dá o mesmo boletim.

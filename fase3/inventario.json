@@ -12,10 +12,10 @@
    "criterio_de_encerramento": "Concordância em amostra com um canal independente de origem diferente.",
    "alcance_em_votos": "0 votos de diferença nas 200 seções (F2) e nas 486 seções com zero votos do E3.",
    "estado_inicial_f3": "parcial",
-   "trabalho_na_f3": "E3 comparou o BU das urnas com a tabela publicada em 486 seções-turno com zero votos para um finalista: 0 divergências em votos (1 seção de 2022 sem BU lido pelo leitor).",
+   "trabalho_na_f3": "E3 comparou o BU das urnas com a tabela publicada em 486 seções-turno com zero votos para um finalista: 0 divergências. R1-20 (sessão 2) comparou, em todas as seções, os votos de Presidente da base com a decodificação independente do DataUrnas-BR: 0 diferença em 2026 (1º turno) e 2022 (dois turnos).",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "Os canais comparados (pacote, BU na Web, tabela por seção) derivam do mesmo registro; independência de origem não demonstrada.",
-   "proxima_evidencia": "Segundo canal independente (DataUrnas executado, ou captura histórica)."
+   "resposta_ou_motivo": "Canais e decodificadores diferentes (BU decodificado por terceiro × tabela publicada) concordam em todas as seções comparáveis. Falta a dimensão de versão: só há uma captura de cada arquivo, então não se sabe se houve republicação. A origem comum (TSE) não pode ser removida.",
+   "proxima_evidencia": "Captura histórica com data (snapshots externos)."
   },
   {
    "id": "P4",
@@ -156,10 +156,10 @@
    "criterio_de_encerramento": "Verificação independente executada.",
    "alcance_em_votos": "n/a",
    "estado_inicial_f3": "nova na F3",
-   "trabalho_na_f3": "Não executada nesta sessão (limite de scripts e de escopo).",
-   "estado_final": "não executada nesta sessão",
-   "resposta_ou_motivo": "Não executada.",
-   "proxima_evidencia": "Executar o DataUrnas na amostra do P16."
+   "trabalho_na_f3": "Sessão 2 (f3_reconcilia.py): o repositório DataUrnas-BR traz os votos por seção já decodificados dos BUs (clone raso, sem baixar arquivos do TSE). Comparados 499.206 seções do 1º turno de 2026 e ~470.8 mil seções por turno de 2022: 0 seções com diferença em votos nominais, brancos e nulos (119,3 mi e 6,0 mi de votos em 2026). Só nossas: 1.209 seções em 2022 (1.018 do exterior e seções agregadas), 334 mil votos, que o DataUrnas não traz.",
+   "estado_final": "respondida",
+   "resposta_ou_motivo": "Concordância total com decodificação independente de terceiro em todas as seções comuns; diferença só de cobertura em 2022. Não cobre o 2º turno de 2026 (o repositório não o inclui).",
+   "proxima_evidencia": "2º turno de 2026 quando houver decodificação independente."
   },
   {
    "id": "C1",
@@ -172,10 +172,10 @@
    "criterio_de_encerramento": "Nulo adequado ou demonstração de que nenhum disponível discrimina.",
    "alcance_em_votos": "margem final 4,43 mi (2026, 2º turno); 2022: 2,1 mi",
    "estado_inicial_f3": "nova na F3",
-   "trabalho_na_f3": "E2 (f3_curvas.py): 4 curvas, 3 nulos, sensibilidade de grade.",
-   "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "A permutação irrestrita é um nulo inadequado (rejeita tudo: oscilações 44 contra 4 a 11 observadas). Os nulos condicionados por UF e município rejeitam alguma estatística nos dois anos, inclusive em 2022 e no 1º turno de 2026 sem inversão: a ordem real tem estrutura que nenhum nulo disponível captura. Não se demonstra incompatibilidade nem compatibilidade. Modelo D (snapshots) bloqueado.",
-   "proxima_evidencia": "Nulo com tamanho e hora de fechamento; snapshots externos."
+   "trabalho_na_f3": "E2 (f3_curvas.py): 4 curvas, 3 nulos, sensibilidade de grade. Sessão 2 (f3_curvas2.py): nulos condicionados em UF × hora de encerramento (D) e UF × hora × tamanho da seção (F). Ainda rejeitam o valor máximo de vale (S3) em 2026 e a fração da última inversão (S2) em todos os anos, 2022 inclusive; η² da ordem sobe só de 0,34 para 0,36 (2026, 1º turno). Conclusão: nenhum nulo disponível discrimina; a ordem de publicação tem estrutura (lotes de recepção) não capturada por UF, hora de fechamento e tamanho.",
+   "estado_final": "não identificável com estes dados",
+   "resposta_ou_motivo": "A permutação irrestrita é um nulo inadequado (rejeita tudo: oscilações 44 contra 4 a 11 observadas). Os nulos condicionados por UF e município rejeitam alguma estatística nos dois anos, inclusive em 2022 e no 1º turno de 2026 sem inversão: a ordem real tem estrutura que nenhum nulo disponível captura. Não se demonstra incompatibilidade nem compatibilidade. Modelo com snapshots bloqueado. Com UF, hora de fechamento e tamanho a rejeição persiste, inclusive em 2022: as curvas não permitem concluir nem compatibilidade nem incompatibilidade.",
+   "proxima_evidencia": "Só snapshots externos com data (a ordem de recepção real) mudariam isto."
   },
   {
    "id": "C2",
@@ -236,9 +236,9 @@
    "criterio_de_encerramento": "Quadro de resistência.",
    "alcance_em_votos": "n/a",
    "estado_inicial_f3": "nova na F3",
-   "trabalho_na_f3": "Revisão do T11/T10 (nulo de ordem), T13 (P18), E02 (ρ), zeros.",
+   "trabalho_na_f3": "Revisão do T11/T10 (nulo de ordem; sessão 2: nulos com hora e tamanho também rejeitam em 2022), T13 (P18), E02 (ρ), zeros.",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "T11/T10: o nulo de permutação não é calibrado (exige evidência adicional). T13: simetrizado, resiste com ressalva de calibração. E02: enfraquecido (F2). T02: assimetria real, sem causa. Zeros: modelo municipal refutado, modelo de local resiste com ressalva.",
+   "resposta_ou_motivo": "T11/T10: nenhum nulo de permutação testado (irrestrito, UF, município, UF×hora, UF×hora×tamanho) é calibrado; ficam como descrições, não como testes. T13: simetrizado, resiste com ressalva de calibração. E02: enfraquecido (F2). T02: assimetria real, sem causa. Zeros: modelo municipal refutado, modelo de local resiste com ressalva.",
    "proxima_evidencia": "Nulos de ordem com tamanho e hora."
   },
   {

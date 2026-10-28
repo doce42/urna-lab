@@ -21,14 +21,15 @@
   },
   "P3": {
    "situacao": "parcial",
-   "resposta": "Em 200 seções sorteadas (e nas 20 da primeira verificação), BU, imagem, RDV, log e BU na Web concordam em 100%. Só um canal e uma versão de publicação; a implementação independente (DataUrnas) e os canais alternativos não foram confrontados.",
+   "resposta": "Em 200 seções sorteadas (e nas 20 da primeira verificação), BU, imagem, RDV, log e BU na Web concordam em 100%. Só um canal e uma versão de publicação; a implementação independente (DataUrnas) e os canais alternativos não foram confrontados. F3 (R1-20): a base do projeto coincide com a decodificação independente do DataUrnas-BR em todas as seções comuns (0 diferenças em 2026 1º turno e em 2022 nos dois turnos). Persistem: mesma origem (TSE) e uma só versão de publicação.",
    "testes": [
     "T14",
     "T15",
     "T16",
-    "T17"
+    "T17",
+    "T43"
    ],
-   "resumo_claro": "Em 200 seções sorteadas, todos os arquivos das urnas e o site do TSE concordam. Falta confrontar com outro canal ou outra versão de publicação.",
+   "resumo_claro": "A base do projeto e a decodificação independente de um terceiro dão os mesmos votos em todas as seções comparadas (2026 1º turno e 2022). Falta ver se houve republicação do arquivo ao longo do tempo.",
    "em_votos": "0 votos de diferença"
   },
   "P4": {

@@ -124,10 +124,11 @@
    "rodada": 4,
    "versao": "V1.2",
    "titulo": "Pendências, curvas e zeros",
-   "status": "em_andamento",
+   "status": "concluida",
    "inicio": "2026-10-28",
-   "resumo": "A F3 herda as pendências da F2, investiga as curvas de apuração, as mudanças entre turnos e os zeros de votos. A primeira sessão está concluída e as perguntas bloqueadas por fonte externa continuam abertas. Não encerrada: depende da aprovação do responsável.",
-   "etapas": []
+   "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, em duas sessões. 27 itens inventariados: 0 diferenças contra a decodificação independente do DataUrnas-BR (R1-20); curvas de apuração sem nulo que discrimine (inclusive 2022); zeros de votos sem evidência de excesso; regra do T13 simétrica; dependência espacial medida. P4, P6, P11 e P21 ficam bloqueadas por fonte externa (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos, boletins de terceiros). Congelada na rodada 4 (V1.2).",
+   "etapas": [],
+   "fim": "2026-10-28"
   }
  ],
  "marcos": [
@@ -268,6 +269,12 @@
    "hora": "",
    "titulo": "F3: primeira sessão",
    "texto": "Inventário de 27 itens; P18 e P19 respondidas; P20, curvas, zeros e P9 em parte; P4, P6, P11 e P21 bloqueadas por fonte externa."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 3 concluída",
+   "texto": "Sessão 2: 0 diferenças contra a decodificação independente do DataUrnas-BR e curvas sem nulo que discrimine; rodada 4 (V1.2) congelada; P4, P6, P11 e P21 bloqueadas por fonte externa."
   }
  ],
  "etapas_do_caminho": [
@@ -322,6 +329,26 @@
  ],
  "conclusoes_recentes": [
   {
+   "titulo": "Votos da base = decodificação independente de terceiro",
+   "texto": "0 diferenças em 119,3 mi de votos (2026, 1º turno) e ~118 mi por turno (2022), seção a seção. Origem comum (TSE) e uma só versão de publicação seguem como limite.",
+   "teste": "T43"
+  },
+  {
+   "titulo": "As curvas de apuração não permitem concluir nada",
+   "texto": "Cinco modelos de chegada, até com hora de fechamento e tamanho, rejeitam a ordem real também em 2022. Compatibilidade e incompatibilidade ficam sem resposta; T10 e T11 viram descrição.",
+   "teste": "T40"
+  },
+  {
+   "titulo": "Zeros de votos: sem evidência de excesso",
+   "texto": "1,2 a 1,7 vez o esperado por local de votação, contra erro de 2 vezes no controle. Dezenas de votos em jogo e 0 divergências entre BU, RDV, imagem e tabela.",
+   "teste": "T41"
+  },
+  {
+   "titulo": "Regra do T13 vê os dois sentidos",
+   "texto": "10% dos válidos em 1% das urnas (~125 mil votos): 30 de 30 nos dois sentidos; 5% (~62 mil), 0 de 30.",
+   "teste": "T13"
+  },
+  {
    "titulo": "O crescimento de Lula entre turnos fecha nas contas",
    "texto": "2026: Lula +10,33 mi e adversário +3,69 mi com +2,92 mi de comparecimento; 2022: +3,07 mi e +7,11 mi com +0,56 mi. Cabe exatamente no que eliminados, brancos/nulos e abstenção liberaram.",
    "teste": "C06"
@@ -352,5 +379,5 @@
    "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 aprovada · Fase 2 concluída (V1.1) em 28/10/2026"
+ "situacao_atual": "Baseline V1.0 aprovada · Fases 2 e 3 concluídas (V1.2) em 28/10/2026"
 }

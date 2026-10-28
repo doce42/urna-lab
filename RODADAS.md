@@ -10,6 +10,7 @@ O Urna Lab precisa permitir que qualquer pessoa veja o que o estudo concluiu hoj
 | Revisão | **R1** | respondida | Revisão independente (Codex). Ver [`revisoes/`](revisoes/) |
 | Baseline aprovada | **V1.0** | **aprovada em 28/10/2026** (rodada 2, tag `v1.0`) | Critérios de [`revisoes/README.md`](revisoes/README.md) cumpridos e aprovação do responsável |
 | Novas investigações | **Fase 2 → V1.1** | **concluída em 28/10/2026** (rodada 3, tag `v1.1`) | Perguntas registradas antes dos resultados em [`FASE2.md`](FASE2.md); respostas em [`RELATORIO_FASE2_COMPLETA.md`](RELATORIO_FASE2_COMPLETA.md); P18 a P21 na fila |
+| Pendências e curvas | **Fase 3 → V1.2** | **concluída em 28/10/2026** (rodada 4, tag `v1.2`) | Inventário de 27 itens em [`fase3/INVENTARIO.md`](fase3/INVENTARIO.md); resultados em [`RELATORIO_F3.md`](RELATORIO_F3.md); P4, P6, P11 e P21 bloqueadas por fonte externa |
 | Comparações | rc1 → V1.0 → V1.1 → atual | disponível | O que mudou em cada teste, com a causa |
 | Estado atual | registro vivo | — | [`testes/registro.json`](testes/registro.json), com provas e mudanças ainda não congeladas |
 

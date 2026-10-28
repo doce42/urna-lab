@@ -1,0 +1,73 @@
+{
+ "pergunta": "p20",
+ "sp_capital": {
+  "secoes": 26286,
+  "atipicas_pro_lula": 29,
+  "locais_com_atipicas": 15,
+  "atipicas_por_local": {
+   "SP71072-251-1074": 10,
+   "SP71072-259-1627": 4,
+   "SP71072-246-1082": 2,
+   "SP71072-259-1058": 2,
+   "SP71072-1-1490": 1,
+   "SP71072-246-1031": 1,
+   "SP71072-250-2038": 1,
+   "SP71072-259-1040": 1
+  },
+  "zonas": {
+   "251": 10,
+   "259": 10,
+   "246": 3,
+   "5": 2,
+   "1": 1,
+   "250": 1,
+   "280": 1,
+   "6": 1
+  }
+ },
+ "efeito_do_local": {
+  "z_medio_das_outras_secoes_do_local_nas_atipicas": 3.5793977732058626,
+  "z_medio_das_outras_secoes_do_local_nas_demais_de_SP": 0.08624661276238059,
+  "atipicas_em_locais_onde_as_outras_secoes_tem_z_medio_acima_de_1": 29,
+  "atipicas_sem_outra_secao_no_local": 0
+ },
+ "apos_controle_tamanho_e_historico": {
+  "atipicas_com_z_ajustado_maior_que_5": 4,
+  "de": 29,
+  "r2": 0.2931182178467804
+ },
+ "caracteristicas": {
+  "validos_2_mediana_atipicas": 290.0,
+  "validos_2_mediana_SP": 269.0,
+  "p1_lula_mediana_atipicas": 0.3442028985507246,
+  "p1_lula_mediana_SP": 0.47330960854092524,
+  "delta_comparecimento_pp_medio_atipicas": 0.8469724008855851,
+  "delta_comparecimento_pp_medio_SP": 0.3397497328238716
+ },
+ "mesmas_secoes_em_2026": {
+  "encontradas": 29,
+  "z_medio_2026": 0.6208419470545153,
+  "z_medio_2026_demais_secoes_de_SP": 0.016301174265293504,
+  "acima_de_3_em_2026": 1,
+  "correlacao_z_2022_2026_nas_atipicas": 0.45327713735552694
+ },
+ "arquivos_das_atipicas_2t_2022": {
+  "secoes": 29,
+  "sem_linha": 0,
+  "lista_assinada_ok": 29,
+  "hash_bu_ok": 29,
+  "assin_bu_ok": 29,
+  "rdv_igual_bu": 29,
+  "log_igual_comparecimento": 29,
+  "modelos": {
+   "UE2015": 15,
+   "UE2020": 7,
+   "UE2013": 2,
+   "UE2010": 2,
+   "UE2009": 2,
+   "UE2011": 1
+  },
+  "urnas_substituidas": 0
+ },
+ "tempo_s": 0.5
+}

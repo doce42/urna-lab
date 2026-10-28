@@ -90,3 +90,22 @@ Ver `fase3/INVENTARIO.md`. Resumo: respondidas P18, P19; respondidas parcialment
 
 ## Arquivos
 Novos: `fase3/{PREREG.md, f3_inventario.py, f3_curvas.py, f3_zeros.py, f3_pendencias.py, INVENTARIO.md, inventario.json, resultados/*}`. Alterados: `testes/registro.json` (T40 a T42; provas da rodada 4 em T02, T10, T11, T13, E02), `scripts/impacto_votos.py`, `fase2/respostas.json` e `RELATORIO_FASE2_COMPLETA.md` (correção da conta), `rodadas/linha_do_tempo.json` (F3 em andamento), código do site (módulo H). Nada publicado, nenhum deploy, nenhuma versão congelada.
+
+## Sessão 2 (28/10/2026): R1-20 e nulo de ordem condicionado
+Autorizada pelo responsável. Dois scripts novos, nenhum subagente, nenhuma correção de modelo, nenhum arquivo do TSE baixado. Pré-registro: adendo no fim de `fase3/PREREG.md`.
+
+**R1-20, reconciliação com a decodificação independente (T43).** O repositório de terceiro DataUrnas-BR (clone raso) contém os votos por seção já decodificados dos BUs. Comparados com a base do projeto, seção a seção:
+
+| Conjunto | Seções comuns | Seções com diferença de votos | Votos comparados |
+|---|---|---|---|
+| 2026, 1º turno, candidatos | 499.206 | 0 | 119,3 mi |
+| 2026, 1º turno, brancos e nulos | 499.206 | 0 | 6,0 mi |
+| 2022, 1º turno, candidatos | 470.819 | 0 | 117,9 mi |
+| 2022, 2º turno, candidatos | 470.834 | 0 | 118,2 mi |
+| 2022, brancos e nulos (1º e 2º) | 470.736 e 470.750 | 0 | 5,4 mi e 5,7 mi |
+
+Em 2022 a base tem 1.194 a 1.292 seções que o DataUrnas não traz (334 mil votos; 1.018 são do exterior e várias são seções agregadas); essas não foram comparadas. O repositório não inclui o 2º turno de 2026. A conclusão é limitada: dois decodificadores independentes concordam, mas a origem (TSE) é a mesma e há uma só versão de publicação. Isto fecha o P3 apenas em parte e resolve o R1-20.
+
+**Nulos de ordem com hora de fechamento e tamanho (C1, MET).** Condicionando em UF × faixa de 30 min do encerramento (D) e também no tercil de eleitores aptos (F), o η² da ordem de chegada sobe pouco (2026, 1º turno: 0,34 → 0,36; 2022, 2º turno: 0,24 → 0,25). Ainda rejeitam a fração da última inversão (S2) em todos os anos e turnos, inclusive o 2º turno de 2022, e o maior vale (S3) em 2026 (p ≈ 0,01). Como o ano de referência também é rejeitado, os nulos não discriminam. C1 passa a **não identificável com estes dados**; T10 e T11 ficam como descrições, não como testes.
+
+**Estado final da fila.** Respondidas: P1, P2, P5, P7, P8, P10, P12 a P19, R1-20. Respondidas parcialmente: P3 (falta a dimensão de versão), P9, P20, C2, M1, Z1, MET. Não identificável com estes dados: C1. Bloqueadas por evidência externa: P4, P6, P11, P21 (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos e boletins de terceiros com dados primários). Nada disso muda a conclusão do estudo: nenhum teste chegou às classes E ou F.
