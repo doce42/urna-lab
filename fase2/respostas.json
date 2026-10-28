@@ -6,14 +6,18 @@
    "testes": [
     "T37",
     "C06"
-   ]
+   ],
+   "resumo_claro": "A conta do fluxo entre turnos acerta a direção (mais ex-abstencionistas foram para Lula do que para o adversário, ao contrário de 2022), mas não o tamanho: o \"4 para 1\" pode estar bem longe do valor real.",
+   "em_votos": "erro de ±0,5 a ±1,5 milhão na estimativa de 3,18 milhões de ex-abstencionistas para Lula"
   },
   "P2": {
    "situacao": "respondida",
    "resposta": "Com 1% das urnas e 10% dos válidos movidos (~250 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido.",
    "testes": [
     "T13"
-   ]
+   ],
+   "resumo_claro": "O teste de fraude simulada (T13) só enxerga desvio a favor de Lula. O mesmo desvio a favor do adversário passaria sem alarme, e desvios menores (2% e 5%) não são vistos em nenhum sentido.",
+   "em_votos": "cerca de 250 mil votos movidos no sentido contrário não seriam vistos"
   },
   "P3": {
    "situacao": "parcial",
@@ -23,17 +27,21 @@
     "T15",
     "T16",
     "T17"
-   ]
+   ],
+   "resumo_claro": "Em 200 seções sorteadas, todos os arquivos das urnas e o site do TSE concordam. Falta confrontar com outro canal ou outra versão de publicação.",
+   "em_votos": "0 votos de diferença"
   },
   "P4": {
    "situacao": "inventariada",
    "resposta": "Não há, no material local, capturas históricas externas da divulgação da curva; a pergunta depende de coleta de terceiros, que não foi iniciada.",
-   "testes": []
+   "testes": [],
+   "resumo_claro": "Não há capturas externas da curva divulgada na noite da apuração no material disponível; sem elas a pergunta não tem resposta."
   },
   "P6": {
    "situacao": "inventariada",
    "resposta": "Não há boletins impressos de terceiros nem QR no material local. Nada coletado. O desenho amostral e a coleta ficam como trabalho futuro e exigem dado externo.",
-   "testes": []
+   "testes": [],
+   "resumo_claro": "Não há boletins impressos coletados por terceiros no material disponível; a coleta fica para o futuro."
   },
   "P11": {
    "situacao": "parcial",
@@ -41,56 +49,71 @@
    "testes": [
     "T16",
     "T14"
-   ]
+   ],
+   "resumo_claro": "Os certificados das 200 urnas sorteadas estão assinados pela autoridade certificadora indicada. Ligar essa autoridade à raiz do TSE exige um canal oficial que não tivemos."
   },
   "P5": {
    "situacao": "respondida",
    "resposta": "Dentro dos 1.436 municípios (2026) e 1.779 (2022) com mais de um modelo de urna, a diferença entre modelos é equivalente a zero em ±0,02 logit; o maior efeito é +0,004 logit (UE2013, 2026), cerca de 2,7 mil votos se fosse real. A associação do T20 é efeito do território, não do modelo.",
    "testes": [
     "T20"
-   ]
+   ],
+   "resumo_claro": "O modelo da urna não muda o voto: dentro do mesmo município, urnas de modelos diferentes votam igual. A associação vista antes era efeito do lugar.",
+   "em_votos": "o maior efeito, se fosse real, seria cerca de 2,7 mil votos"
   },
   "P7": {
    "situacao": "respondida",
    "resposta": "Equivalência declarada na margem de ±0,10 z fixada antes: 2026 −0,029 (IC 90% −0,054 a −0,003, 4.432 urnas); 2022 −0,008 (−0,023 a +0,008, 12.653 urnas).",
    "testes": [
     "T04"
-   ]
+   ],
+   "resumo_claro": "As urnas trocadas entre turnos votam como as demais, dentro da margem fixada antes, em 2026 e em 2022.",
+   "em_votos": "mede padrão, não contagem de votos"
   },
   "P8": {
    "situacao": "respondida",
    "resposta": "Com bootstrap por município, 2026 tem r = +0,004 (IC 95% −0,004 a +0,012) e 2022 r = −0,028 (−0,040 a −0,019): efeitos desprezíveis (|r| ≤ 0,05), de sinais opostos.",
    "testes": [
     "T03"
-   ]
+   ],
+   "resumo_claro": "Considerar que seções do mesmo município se parecem não muda o T03: o efeito continua desprezível nos dois anos.",
+   "em_votos": "mede padrão, não contagem de votos"
   },
   "P9": {
    "situacao": "parcial",
    "resposta": "A correlação dentro do local (ρ ≈ 0,11 a 0,19) explicava quase tudo: com a correção os locais significativos caem de 1.140 para 55 em 2026 (28 pró-Lula, 27 pró-adversário) e de 766 para 102 em 2022 (30 e 72). Moran's I não foi feito por falta de adjacência municipal local.",
    "testes": [
     "E02"
-   ]
+   ],
+   "resumo_claro": "Quase todos os locais de votação \"fora do padrão\" eram só seções do mesmo local parecidas entre si. Corrigindo isso, caem de 1.140 para 55 em 2026 (divididos quase meio a meio entre os candidatos) e de 766 para 102 em 2022. O teste espacial (Moran's I) ficou para depois.",
+   "em_votos": "dezenas a centenas de votos por local"
   },
   "P10": {
    "situacao": "respondida",
    "resposta": "Com taxa incerta (beta-binomial por UF e modelo), 8 das 13 urnas do 1º turno de 2026 continuam sinalizadas (99 votos nos últimos 30 min); 2º turno: 0. Em 2022 o método sinaliza 18 e 21: o padrão não é específico de 2026.",
    "testes": [
     "T28"
-   ]
+   ],
+   "resumo_claro": "Das 13 urnas do 1º turno de 2026 sinalizadas por votação sem biometria no fim do dia, 8 continuam sinalizadas com um modelo mais cauteloso. Em 2022 o mesmo método sinaliza mais casos (18 e 21), então o padrão não é exclusivo de 2026.",
+   "em_votos": "99 votos"
   },
   "P12": {
    "situacao": "respondida",
    "resposta": "Explicada: −495 = 423 (41 seções não instaladas) + 72 (uma seção com boletim só nos arquivos das urnas); −525 = 423 + 72 + 30 (outra seção, no 2º turno). Resíduo zero. São eleitores aptos, não votos.",
    "testes": [
     "T32"
-   ]
+   ],
+   "resumo_claro": "A diferença de eleitores no exterior está explicada: seções não instaladas e seções que só aparecem nos arquivos das urnas. Não sobra nada sem explicação.",
+   "em_votos": "são eleitores aptos, não votos"
   },
   "P13": {
    "situacao": "respondida",
    "resposta": "Script reproduzível reproduz exatamente 79 (Flávio→Lula) e 123 (Lula→Flávio) como mínimos garantidos, com os aptos do 2º turno, sem exterior; máximos 43,5 mi e 39,4 mi.",
    "testes": [
     "C06b"
-   ]
+   ],
+   "resumo_claro": "O cálculo da troca direta entre finalistas agora é um script e reproduz os números: no mínimo 79 eleitores de Flávio foram para Lula e 123 de Lula para Flávio; o máximo possível chega a dezenas de milhões.",
+   "em_votos": "79 e 123 votos (mínimos garantidos)"
   }
  },
  "novas": [
@@ -106,7 +129,9 @@
    "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido).",
    "testes": [
     "T02"
-   ]
+   ],
+   "resumo_claro": "Em 2022, as seções atípicas pró-Lula se concentram na capital de São Paulo e em alguns locais repetidos; em 2026 estão espalhadas pelo país. A causa continua desconhecida.",
+   "em_votos": "cerca de 740 (2026) e 2.600 (2022) votos de excesso"
   },
   {
    "id": "P15",
@@ -121,7 +146,9 @@
    "testes": [
     "C06b",
     "T37"
-   ]
+   ],
+   "resumo_claro": "Só com os dados públicos não dá para saber para onde foram os abstencionistas: os limites possíveis vão de quase nada a dezenas de milhões. A estimativa do C06 depende do modelo.",
+   "em_votos": "de 4,1 mil a 32,3 milhões para Lula"
   },
   {
    "id": "P16",
@@ -138,7 +165,9 @@
     "T15",
     "T16",
     "T17"
-   ]
+   ],
+   "resumo_claro": "Repetida em 200 seções com o comparador corrigido, a verificação deu concordância total. As 14 diferenças do primeiro ensaio eram erro do nosso comparador.",
+   "em_votos": "0 votos"
   },
   {
    "id": "P17",
@@ -152,7 +181,9 @@
    "resposta": "A assimetria de cauda do T02 é estatisticamente real com bootstrap por município (IC 95% da razão acima de 1 em 3, 4 e 5 desvios, nos dois anos). Isto confirma que a característica existe; não explica a causa.",
    "testes": [
     "T02"
-   ]
+   ],
+   "resumo_claro": "A assimetria de cauda do T02 é real nos dois anos, não fruto do acaso. O teste confirma que ela existe, mas não diz a causa.",
+   "em_votos": "cerca de 740 (2026) e 2.600 (2022) votos de excesso"
   },
   {
    "id": "P18",

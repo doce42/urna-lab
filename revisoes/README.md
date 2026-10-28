@@ -36,4 +36,4 @@ A V1.0-rc1 só vira **V1.0 (baseline aprovada)** quando todos estes critérios f
 Aprovada, a V1.0 recebe uma tag `v1.0` e um GitHub Release, e abre oficialmente a Fase 2.
 
 
-**Situação (28/10/2026):** os seis critérios foram cumpridos e a baseline **V1.0 foi aprovada pelo responsável**. Congelada em `rodadas/rodada-2/` (tag `v1.0`). A Fase 2 está aberta.
+**Situação (28/10/2026):** os seis critérios foram cumpridos e a baseline **V1.0 foi aprovada pelo responsável**. Congelada em `rodadas/rodada-2/` (tag `v1.0`). A Fase 2 foi aberta em seguida e concluída no mesmo dia (V1.1, `rodadas/rodada-3/`, tag `v1.1`).

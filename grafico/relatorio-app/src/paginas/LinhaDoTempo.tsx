@@ -1,5 +1,5 @@
-// Evolução da pesquisa. Visível: o caminho em etapas, as fases com o estado atual, as versões congeladas e as perguntas
-// da Fase 2 com situação e resposta. Recolhido: revisão R1, critérios da baseline, comparação teste a teste, contestações e marcos.
+// Evolução da pesquisa. Visível: o caminho em etapas, as fases com o estado atual, as versões congeladas, as perguntas
+// da Fase 2 com situação e resposta e a fila do que ficou para depois. Recolhido: revisão R1, critérios da baseline, comparação teste a teste, contestações e marcos.
 import { useMemo, useState } from 'react';
 import { clsx } from 'clsx';
 import { Check, CircleDot, Circle, Clock, GitBranch, ExternalLink, FileText } from 'lucide-react';
@@ -72,6 +72,9 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
   const contF2: Record<string, number> = {};
   lt.fase2.forEach((q) => { const k = q.situacao || 'aberta'; contF2[k] = (contF2[k] || 0) + 1; });
   const ultima = lt.rodadas[lt.rodadas.length - 1];
+  const f2 = lt.fases.find((f) => f.id === 'F2');
+  const fila = lt.fase2.filter((q) => (q.situacao || 'aberta') === 'aberta');
+  const feitas = lt.fase2.filter((q) => (q.situacao || 'aberta') !== 'aberta');
   const v0 = lt.rodadas[0];
 
   return (
@@ -102,7 +105,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </nav>
 
       {/* fases */}
-      <Sec id="fases" eyebrow="Fases" titulo="Onde a pesquisa está" lead="O levantamento da Fase 1 foi congelado como V1.0-rc1, revisado (R1) e aprovado como baseline V1.0. A Fase 2 está em andamento.">
+      <Sec id="fases" eyebrow="Fases" titulo="Onde a pesquisa está" lead={`O levantamento da Fase 1 foi congelado como V1.0-rc1, revisado (R1) e aprovado como baseline V1.0. ${lt.fases.some((f) => f.id === 'F2' && f.status === 'concluida') ? 'A Fase 2 foi concluída e congelada como V1.1.' : 'A Fase 2 está em andamento.'}`}>
         <ol className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {lt.fases.map((f: Fase) => {
             const s = ST[f.status] || ST.planejada;
@@ -139,21 +142,26 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
         </div>
       </Sec>
       {/* fase 2 */}
-      <Sec id="fase2" eyebrow="Fase 2 · em andamento" titulo="Perguntas da Fase 2 e as respostas até agora" lead="Registradas antes de rodar. Cada uma diz qual hipótese concorrente distingue e que afirmação do estudo pode mudar; as que nascem de um resultado entram como exploratórias.">
-        <div className="mb-3 flex flex-wrap gap-1.5">{Object.keys(F2).filter((k) => contF2[k]).map((k) => <Selo key={k} cor={F2[k].cor}>{contF2[k]} {F2[k].rot}</Selo>)}</div>
+      <Sec id="fase2" eyebrow={`Fase 2 · ${ST[f2?.status || 'em_andamento']?.rot || ''}`} titulo="O que a Fase 2 respondeu" lead="Cada pergunta foi registrada antes de rodar e tenta derrubar um método ou uma conclusão. Abaixo, a resposta em poucas palavras e o que ela representa em votos; o detalhe técnico fica recolhido.">
+        <div className="mb-3 flex flex-wrap gap-1.5">{Object.keys(F2).filter((k) => k !== 'aberta' && contF2[k]).map((k) => <Selo key={k} cor={F2[k].cor}>{contF2[k]} {contF2[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2[k].rot + 's' : F2[k].rot}</Selo>)}{fila.length > 0 && <Selo cor="var(--text-subtle)">{fila.length} na fila</Selo>}</div>
         <ul className="cartao divide-y divide-border">
-          {lt.fase2.map((q) => {
+          {feitas.map((q) => {
             const st = F2[q.situacao || 'aberta'] || F2.aberta;
             return (
               <li key={q.id} className="p-3 md:p-4">
                 <div className="flex items-start gap-3">
                   <span className="font-mono text-sm font-semibold w-9 shrink-0 pt-0.5">{q.id}</span>
                   <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-start gap-x-3 gap-y-1.5"><span className="text-[15px] text-text leading-snug flex-1 min-w-[14rem]">{q.pergunta}</span><Selo cor={st.cor}>{st.rot}</Selo></div>
-                    {q.resposta && <p className="mt-2 text-[14px] text-muted leading-relaxed"><b className="font-medium text-text">Resposta: </b>{q.resposta}{q.testes && q.testes.length > 0 && <span className="ml-1.5 inline-flex flex-wrap gap-1 align-middle">{q.testes.map((t) => <a key={t} href={`#/testes/${t}`} className="font-mono text-xs h-6 px-2 inline-flex items-center rounded-md border border-border hover:border-border-strong">{t}</a>)}</span>}</p>}
+                    <div className="flex flex-wrap items-start gap-x-3 gap-y-1.5"><span className="text-[15px] text-text font-medium leading-snug flex-1 min-w-[14rem]">{q.pergunta}</span><Selo cor={st.cor}>{st.rot}</Selo></div>
+                    {(q.resumo_claro || q.resposta) && <p className="mt-1.5 text-[14.5px] text-muted leading-relaxed">{q.resumo_claro || q.resposta}</p>}
+                    <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px]">
+                      {q.em_votos && <span><b className="font-medium text-text">Em votos:</b> <span className="text-muted">{q.em_votos}</span></span>}
+                      {q.testes && q.testes.length > 0 && <span className="inline-flex flex-wrap gap-1">{q.testes.map((t) => <a key={t} href={`#/testes/${t}`} className="font-mono text-xs h-6 px-2 inline-flex items-center rounded-md border border-border hover:border-border-strong">{t}</a>)}</span>}
+                    </div>
                     <details className="mt-1.5 group/q">
-                      <summary className="cursor-pointer list-none text-[12.5px] text-subtle hover:text-text"><span className="group-open/q:hidden">o que distingue e o que pode mudar</span><span className="hidden group-open/q:inline">recolher</span></summary>
+                      <summary className="cursor-pointer list-none text-[12.5px] text-subtle hover:text-text"><span className="group-open/q:hidden">detalhe técnico</span><span className="hidden group-open/q:inline">recolher</span></summary>
                       <div className="mt-2 text-[13.5px] text-muted grid gap-1.5">
+                        {q.resumo_claro && q.resposta && <div><b className="font-medium text-text">Resposta técnica: </b>{q.resposta}</div>}
                         <div><b className="font-medium text-text">Distingue: </b>{q.distingue}</div>
                         <div><b className="font-medium text-text">Pode mudar: </b>{q.afirmacao}</div>
                         <div><b className="font-medium text-text">Menor teste: </b>{q.teste}</div>
@@ -166,6 +174,18 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
             );
           })}
         </ul>
+        {fila.length > 0 && <div className="mt-8">
+          <h3 className="t-h3">O que ficou para depois</h3>
+          <p className="text-muted text-[15px] mt-1 max-w-[48rem]">Perguntas que nasceram dos resultados da Fase 2. Estão registradas, ainda sem resposta.</p>
+          <ul className="mt-3 cartao divide-y divide-border">
+            {fila.map((q) => (
+              <li key={q.id} className="p-3 md:p-4 flex items-start gap-3">
+                <span className="font-mono text-sm font-semibold w-9 shrink-0 pt-0.5">{q.id}</span>
+                <div className="flex-1 min-w-0"><div className="text-[15px] text-text leading-snug">{q.pergunta}</div><div className="mt-1 text-[13px] text-muted"><b className="font-medium text-text">Como responder:</b> {q.teste} <span className="text-subtle">· nasceu de {q.origem}</span></div></div>
+              </li>
+            ))}
+          </ul>
+        </div>}
         <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13.5px]"><a href="#/docs/fase2" className="text-accent-text underline underline-offset-4">FASE2.md completo</a><a href="#/testes" className="text-accent-text underline underline-offset-4">Testes da Fase 2 (módulo G)</a></div>
       </Sec>
 

@@ -43,6 +43,7 @@ export function HistoriaCientifica({ t }: { t: Teste }) {
           <div className="flex flex-wrap items-center gap-2 text-[13px]"><SeloClasse classe={v.classe_evidencia} /><span className="text-subtle">{SIT(v.situacao)} · {v.natureza} · método v{v.metodo_versao} · {dataBR(v.data)}{v.commit ? ` · commit ${v.commit.slice(0, 7)}` : ''}</span></div>
           <p className="mt-1.5 text-[14px] leading-relaxed">{v.resultado}</p>
           {v.nota && <p className="mt-1 text-xs text-subtle">{v.nota}</p>}
+          {i > 0 && (v.mudancas || []).length > 0 && <ul className="mt-2 grid gap-1.5">{v.mudancas!.map((m, k) => <li key={k} className="flex flex-wrap items-start gap-2 text-[13.5px]"><SeloCausa c={m.causa} /><span className="text-subtle font-mono text-xs mt-1">{m.campo} · {m.origem}</span><span className="basis-full sm:basis-auto sm:flex-1 min-w-0">{m.justificativa}</span></li>)}</ul>}
         </Passo>
       ))}
       <Passo n={versoes.length + 1} titulo={`Contestações (${provas.length})`} cor={provas.some((p) => p.resultado === 'caiu') ? 'var(--erro)' : 'var(--warn)'}>
@@ -52,7 +53,7 @@ export function HistoriaCientifica({ t }: { t: Teste }) {
             const a = id ? achados.get(id) : undefined;
             return (
               <li key={i} className="rounded-lg border border-border p-3 bg-surface-2/60">
-                <div className="flex flex-wrap items-center gap-2 text-[13px]"><SeloProva r={p.resultado} />{p.alvo && <span className="text-subtle">alvo: {ALVO_ROT[p.alvo] || p.alvo}</span>}<span className="text-subtle">· {p.tipo} · {dataBR(p.data)}</span></div>
+                <div className="flex flex-wrap items-center gap-2 text-[13px]"><SeloProva r={p.resultado} />{p.alvo && <span className="text-subtle">alvo: {ALVO_ROT[p.alvo] || p.alvo}</span>}<span className="text-subtle">· {p.tipo} · {dataBR(p.data)}</span>{p.rodada && <span className="font-mono text-xs h-6 px-2 inline-flex items-center rounded-md border border-border text-muted">{versoes.find((v) => v.rodada === p.rodada)?.versao || `rodada ${p.rodada}`}</span>}</div>
                 {a && <p className="mt-1.5 text-[13px] text-subtle"><b className="font-medium text-muted">{a.id}:</b> {a.titulo}</p>}
                 <p className="mt-1 text-[14px]">{p.descricao}</p>
               </li>

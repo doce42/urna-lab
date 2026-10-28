@@ -116,7 +116,8 @@
     }
    ],
    "inicio": "2026-10-28",
-   "fim": "2026-10-28"
+   "fim": "2026-10-28",
+   "versao": "V1.1"
   }
  ],
  "marcos": [
@@ -282,7 +283,7 @@
    "id": "fase2",
    "titulo": "Novas investigações",
    "status": "concluida",
-   "versao": "Fase 2",
+   "versao": "V1.1",
    "texto": "As 17 perguntas da Fase 2 foram respondidas ou inventariadas. Fase congelada na rodada 3 (V1.1). Quatro novas perguntas ficam na fila.",
    "link": "#fase2"
   },
