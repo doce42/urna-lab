@@ -48,7 +48,8 @@ SINAL = {
  "T53": S("S0", "Liberação sem biometria menor que em 2022 (6,8% × 8,1%) e com relação levemente negativa com a virada de Lula."),
  "T54": S("S0", "Flávio perdeu votos em 937 municípios; em 2022 Lula perdeu em 981: mesmo padrão de 2º turno."),
  "T55": S("S0", "Cabo Frio: ganho de Lula (+9.169) cabe nos 9.511 votos disponíveis; percentil 89 do país; 28 casos espelhados a favor de Bolsonaro em 2022."),
- "T56": S("S1", "Brancos e nulos do 1º turno → Lula no estimador (C06); em parte explicado: excesso de brancos e nulos no 1º turno de 2026 onde Lula é forte (~0,47 de 1,82 mi); o resto é queda geral no 2º turno; fluxo individual não identificável."),
+ "T56": S("S1", "Brancos e nulos do 1º turno → Lula no estimador (C06); explicado em grande parte: excesso no 1º turno de 2026 onde Lula é forte (~0,47 mi) e menos 2º turno de governador (T57, ~0,69 mi); resto uniforme; fluxo individual não identificável."),
+ "T57": S("S1", "2º turno de governador eleva nulos de presidente (+1,58 ponto em 2022, +0,78 em 2026); 53% dos votos nessas UFs em 2022 contra 8% em 2026: ~0,69 mi da queda de nulos; resto uniforme."),
  "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."),
 }
 H = lambda id, mec, deixaria, escala, testes, resultado, status, votos: {"id": id, "mecanismo": mec, "o_que_deixaria": deixaria, "escala_necessaria": escala, "testes": testes, "resultado": resultado, "status": status, "em_votos": votos}

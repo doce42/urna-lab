@@ -1,0 +1,100 @@
+{
+ "pergunta": "P14",
+ "2026/pro_lula": {
+  "n": 32,
+  "municipios_distintos": 31,
+  "locais_distintos": 32,
+  "locais_com_2_ou_mais": 0,
+  "esperado_locais_2_ou_mais_sorteio_por_UF": [
+   0.022,
+   0.0
+  ],
+  "municipios_com_2_ou_mais": 1,
+  "esperado_municipios_2_ou_mais": [
+   1.994,
+   4.0
+  ],
+  "top_municipios": {
+   "AM2577": 2,
+   "AC1031": 1,
+   "AC1040": 1,
+   "AC1139": 1,
+   "AM2097": 1
+  },
+  "validos_2_mediana": 189.0,
+  "validos_2_mediana_todas": 254.0
+ },
+ "2026/pro_outro": {
+  "n": 13,
+  "municipios_distintos": 7,
+  "locais_distintos": 7,
+  "locais_com_2_ou_mais": 2,
+  "esperado_locais_2_ou_mais_sorteio_por_UF": [
+   0.002,
+   0.0
+  ],
+  "municipios_com_2_ou_mais": 2,
+  "esperado_municipios_2_ou_mais": [
+   0.706,
+   2.0
+  ],
+  "top_municipios": {
+   "SP71072": 6,
+   "PA5053": 2,
+   "AC1554": 1,
+   "MG42080": 1,
+   "PI10626": 1
+  },
+  "validos_2_mediana": 273.0,
+  "validos_2_mediana_todas": 254.0
+ },
+ "2022/pro_lula": {
+  "n": 90,
+  "municipios_distintos": 51,
+  "locais_distintos": 72,
+  "locais_com_2_ou_mais": 8,
+  "esperado_locais_2_ou_mais_sorteio_por_UF": [
+   0.152,
+   1.0
+  ],
+  "municipios_com_2_ou_mais": 8,
+  "esperado_municipios_2_ou_mais": [
+   7.632,
+   11.0
+  ],
+  "top_municipios": {
+   "SP71072": 29,
+   "MA7765": 5,
+   "AM98477": 3,
+   "AC1031": 2,
+   "AM2399": 2
+  },
+  "validos_2_mediana": 260.0,
+  "validos_2_mediana_todas": 257.0
+ },
+ "2022/pro_outro": {
+  "n": 13,
+  "municipios_distintos": 12,
+  "locais_distintos": 13,
+  "locais_com_2_ou_mais": 0,
+  "esperado_locais_2_ou_mais_sorteio_por_UF": [
+   0.002,
+   0.0
+  ],
+  "municipios_com_2_ou_mais": 1,
+  "esperado_municipios_2_ou_mais": [
+   0.234,
+   1.0
+  ],
+  "top_municipios": {
+   "MA8265": 2,
+   "AC1031": 1,
+   "BA34096": 1,
+   "CE14133": 1,
+   "CE14877": 1
+  },
+  "validos_2_mediana": 122.0,
+  "validos_2_mediana_todas": 257.0
+ },
+ "tempo_s": 49.7
+}

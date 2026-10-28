@@ -1,0 +1,235 @@
+{
+ "pre_registro": "fase3/PREREG_ZEROS_FLAVIO.md",
+ "a_2026": {
+  "secoes_brasil": 106,
+  "votos_lula_brasil": 14860,
+  "secoes_exterior": 0,
+  "votos_lula_exterior": 0,
+  "por_regiao": {
+   "Norte": 65,
+   "Nordeste": 29,
+   "Centro-Oeste": 6,
+   "Sudeste": 3,
+   "Sul": 3
+  },
+  "por_uf": {
+   "AM": 30,
+   "MA": 20,
+   "PA": 16,
+   "RR": 8,
+   "TO": 7,
+   "MT": 5,
+   "BA": 4,
+   "AC": 3,
+   "CE": 2,
+   "MG": 2,
+   "RS": 2,
+   "ES": 1,
+   "MS": 1,
+   "PB": 1,
+   "PE": 1,
+   "PI": 1,
+   "PR": 1,
+   "RO": 1
+  },
+  "validos_ge_20": 103,
+  "amazonas_municipios": [
+   "ATALAIA DO NORTE",
+   "BARREIRINHA",
+   "BENJAMIN CONSTANT",
+   "CARAUARI",
+   "JAPURÁ",
+   "JURUÁ",
+   "MAUÉS",
+   "PARINTINS",
+   "SANTA ISABEL DO RIO NEGRO",
+   "SANTO ANTÔNIO DO IÇÁ",
+   "SÃO GABRIEL DA CACHOEIRA",
+   "SÃO PAULO DE OLIVENÇA",
+   "TABATINGA",
+   "URUCURITUBA"
+  ],
+  "maiores_secoes": [
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "98477",
+    "NR_ZONA": "36",
+    "NR_SECAO": "61",
+    "NM_MUNICIPIO_2": "TABATINGA",
+    "v13_2": 354.0,
+    "validos_2": 354.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "98477",
+    "NR_ZONA": "36",
+    "NR_SECAO": "96",
+    "NM_MUNICIPIO_2": "TABATINGA",
+    "v13_2": 338.0,
+    "validos_2": 338.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "2615",
+    "NR_ZONA": "5",
+    "NR_SECAO": "176",
+    "NM_MUNICIPIO_2": "MAUÉS",
+    "v13_2": 333.0,
+    "validos_2": 333.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "2739",
+    "NR_ZONA": "47",
+    "NR_SECAO": "9",
+    "NM_MUNICIPIO_2": "SANTO ANTÔNIO DO IÇÁ",
+    "v13_2": 329.0,
+    "validos_2": 329.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "2054",
+    "NR_ZONA": "42",
+    "NR_SECAO": "29",
+    "NM_MUNICIPIO_2": "ATALAIA DO NORTE",
+    "v13_2": 325.0,
+    "validos_2": 325.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "2739",
+    "NR_ZONA": "47",
+    "NR_SECAO": "87",
+    "NM_MUNICIPIO_2": "SANTO ANTÔNIO DO IÇÁ",
+    "v13_2": 315.0,
+    "validos_2": 315.0
+   },
+   {
+    "SG_UF": "PR",
+    "CD_MUNICIPIO": "77275",
+    "NR_ZONA": "167",
+    "NR_SECAO": "96",
+    "NM_MUNICIPIO_2": "ORTIGUEIRA",
+    "v13_2": 314.0,
+    "validos_2": 314.0
+   },
+   {
+    "SG_UF": "MT",
+    "CD_MUNICIPIO": "90280",
+    "NR_ZONA": "28",
+    "NR_SECAO": "200",
+    "NM_MUNICIPIO_2": "CONFRESA",
+    "v13_2": 309.0,
+    "validos_2": 309.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "2054",
+    "NR_ZONA": "42",
+    "NR_SECAO": "26",
+    "NM_MUNICIPIO_2": "ATALAIA DO NORTE",
+    "v13_2": 302.0,
+    "validos_2": 302.0
+   },
+   {
+    "SG_UF": "AM",
+    "CD_MUNICIPIO": "2755",
+    "NR_ZONA": "22",
+    "NR_SECAO": "71",
+    "NM_MUNICIPIO_2": "SÃO PAULO DE OLIVENÇA",
+    "v13_2": 298.0,
+    "validos_2": 298.0
+   }
+  ]
+ },
+ "e_2026": {
+  "municipios_22_lider_1t_13_vence_2t": 211,
+  "por_uf": {
+   "MG": 76,
+   "SP": 32,
+   "PR": 20,
+   "RS": 19,
+   "GO": 14,
+   "TO": 11,
+   "RJ": 9,
+   "AL": 7,
+   "PA": 5,
+   "MS": 4,
+   "AM": 3,
+   "ES": 3,
+   "AP": 2,
+   "MT": 2,
+   "CE": 1,
+   "MA": 1,
+   "RN": 1,
+   "SC": 1
+  },
+  "inverso_13_lider_1t_22_vence_2t": 1,
+  "rio_de_janeiro": {
+   "aptos": 4952423,
+   "vantagem_13_2t": 113193,
+   "vantagem_22_1t": 137837
+  }
+ },
+ "b_2022": {
+  "secoes_brasil": 141,
+  "votos_lula_brasil": 16418,
+  "secoes_exterior": 2,
+  "votos_lula_exterior": 37,
+  "por_regiao": {
+   "Nordeste": 82,
+   "Norte": 36,
+   "Sudeste": 13,
+   "Centro-Oeste": 6,
+   "Sul": 4
+  },
+  "por_uf": {
+   "MA": 47,
+   "AM": 23,
+   "BA": 19,
+   "MG": 9,
+   "CE": 8,
+   "PA": 8,
+   "PI": 7,
+   "MT": 5,
+   "SP": 4,
+   "AC": 2,
+   "RR": 2,
+   "RS": 2,
+   "MS": 1,
+   "PR": 1,
+   "SC": 1,
+   "SE": 1,
+   "TO": 1
+  },
+  "validos_ge_20": 136
+ },
+ "e_2022": {
+  "municipios_22_lider_1t_13_vence_2t": 0,
+  "por_uf": {},
+  "inverso_13_lider_1t_22_vence_2t": 251
+ },
+ "c_continuidade": {
+  "com_par_em_2022": 61,
+  "sem_par_em_2022": 45,
+  "tambem_zero_em_2022": 23,
+  "prop_bolsonaro_2022_mediana": 0.00554016620498615,
+  "prop_bolsonaro_2022_max": 0.10989010989010989,
+  "com_bolsonaro_2022_ge_20pct": 0,
+  "flavio_zero_tambem_no_1t_2026": 50,
+  "flavio_1t_2026_mediana_pct": 0.0038161881402395035,
+  "lista_ge_20pct": []
+ },
+ "d_integridade": {
+  "secoes": 106,
+  "assinaturas_ok": 106,
+  "bu_lido": 106,
+  "bu_rdv_tabela_iguais": 106,
+  "por_modelo": {
+   "UE2022": 76,
+   "UE2020": 25,
+   "UE2015": 5
+  },
+  "falhas": []
+ }
+}

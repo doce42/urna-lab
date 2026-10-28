@@ -1,0 +1,801 @@
+{
+ "pre_registro": "fase3/PREREG_REVISAO.md (I2)",
+ "peso_encolhimento": 50.0,
+ "principal_prior_local": {
+  "2026": {
+   "controles": {
+    "Lula 1T": {
+     "rho": 0.005835509017123568,
+     "observado": 8,
+     "esperado": 0.437988159184484,
+     "ic_predicao_95": [
+      0.0,
+      2.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 18.265333964497287,
+     "ic95_razao_bootstrap_mun": [
+      7.453445341282181,
+      42.81710946046384
+     ],
+     "votos_esperados_nas_secoes_zero": 124.29180173471201,
+     "caudas": {
+      "1": {
+       "observado": 3,
+       "esperado": 1.6455793433400214
+      },
+      "2": {
+       "observado": 16,
+       "esperado": 3.962354377938892
+      },
+      "3a5": {
+       "observado": 62,
+       "esperado": 38.49401825205538
+      }
+     }
+    },
+    "Lula 2T": {
+     "rho": 0.0056520448537344895,
+     "observado": 4,
+     "esperado": 0.18467681971961053,
+     "ic_predicao_95": [
+      0.0,
+      1.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 21.659458973102765,
+     "ic95_razao_bootstrap_mun": [
+      5.671973818846014,
+      60.180585654956246
+     ],
+     "votos_esperados_nas_secoes_zero": 82.58069662480345,
+     "caudas": {
+      "1": {
+       "observado": 6,
+       "esperado": 0.8132916988361067
+      },
+      "2": {
+       "observado": 3,
+       "esperado": 2.178638491250421
+      },
+      "3a5": {
+       "observado": 50,
+       "esperado": 22.998495899045004
+      }
+     }
+    },
+    "cand. 70 1T": {
+     "rho": 0.0012637637602180955,
+     "observado": 11808,
+     "esperado": 13104.136805341994,
+     "ic_predicao_95": [
+      12906.525285368647,
+      13301.74832531534
+     ],
+     "dentro_do_ic": false,
+     "razao": 0.9010894937533303,
+     "ic95_razao_bootstrap_mun": [
+      0.8813454588660823,
+      0.9227956532125574
+     ],
+     "votos_esperados_nas_secoes_zero": 30101.44569724142,
+     "caudas": {
+      "1": {
+       "observado": 21700,
+       "esperado": 24712.961751310122
+      },
+      "2": {
+       "observado": 32112,
+       "esperado": 34707.55514299912
+      },
+      "3a5": {
+       "observado": 136817,
+       "esperado": 136447.98695243726
+      }
+     }
+    },
+    "cand. 14 1T": {
+     "rho": 0.0024456039271201616,
+     "observado": 30724,
+     "esperado": 39452.231266590614,
+     "ic_predicao_95": [
+      39130.98563896895,
+      39773.476894212276
+     ],
+     "dentro_do_ic": false,
+     "razao": 0.7787645720818342,
+     "ic95_razao_bootstrap_mun": [
+      0.7674529886324722,
+      0.789645927251323
+     ],
+     "votos_esperados_nas_secoes_zero": 62260.808362399446,
+     "caudas": {
+      "1": {
+       "observado": 46215,
+       "esperado": 49838.64540442833
+      },
+      "2": {
+       "observado": 54800,
+       "esperado": 54149.38724718996
+      },
+      "3a5": {
+       "observado": 161075,
+       "esperado": 150230.7683283434
+      }
+     }
+    }
+   },
+   "alvos": {
+    "Flávio 1T": {
+     "rho": 0.005528879414293279,
+     "observado": 79,
+     "esperado": 4.01901760980032,
+     "ic_predicao_95": [
+      1.0,
+      8.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 19.65654487488673,
+     "ic95_razao_bootstrap_mun": [
+      12.380154350672969,
+      35.9039894522998
+     ],
+     "votos_esperados_nas_secoes_zero": 2259.175960439362,
+     "caudas": {
+      "1": {
+       "observado": 129,
+       "esperado": 10.926323318308192
+      },
+      "2": {
+       "observado": 150,
+       "esperado": 21.008069705577757
+      },
+      "3a5": {
+       "observado": 705,
+       "esperado": 162.61405310884325
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    },
+    "Flávio 2T": {
+     "rho": 0.005594647321039783,
+     "observado": 106,
+     "esperado": 4.411104740480355,
+     "ic_predicao_95": [
+      1.0,
+      9.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 24.030261405322456,
+     "ic95_razao_bootstrap_mun": [
+      15.73964727424111,
+      40.150042256662374
+     ],
+     "votos_esperados_nas_secoes_zero": 3074.107989631243,
+     "caudas": {
+      "1": {
+       "observado": 123,
+       "esperado": 12.015508662365558
+      },
+      "2": {
+       "observado": 162,
+       "esperado": 23.319086236190085
+      },
+      "3a5": {
+       "observado": 759,
+       "esperado": 180.85769527469245
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    }
+   },
+   "calibrado": false,
+   "controles_com_esperado_ao_menos_5": 2
+  },
+  "2022": {
+   "controles": {
+    "Lula 1T": {
+     "rho": 0.005744007996861844,
+     "observado": 1,
+     "esperado": 0.32098428457351186,
+     "ic_predicao_95": [
+      0.0,
+      2.0
+     ],
+     "dentro_do_ic": true,
+     "razao": 3.115417321220846,
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      24.358562642000628
+     ],
+     "votos_esperados_nas_secoes_zero": 10.224880084719368,
+     "caudas": {
+      "1": {
+       "observado": 3,
+       "esperado": 1.0449421077769856
+      },
+      "2": {
+       "observado": 5,
+       "esperado": 2.172687529295411
+      },
+      "3a5": {
+       "observado": 33,
+       "esperado": 18.87480809333635
+      }
+     }
+    },
+    "Lula 2T": {
+     "rho": 0.005931095027796728,
+     "observado": 2,
+     "esperado": 0.3594612125802657,
+     "ic_predicao_95": [
+      0.0,
+      2.0
+     ],
+     "dentro_do_ic": true,
+     "razao": 5.56388263880741,
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      29.871822445070705
+     ],
+     "votos_esperados_nas_secoes_zero": 66.25321318175867,
+     "caudas": {
+      "1": {
+       "observado": 3,
+       "esperado": 1.2557235910016928
+      },
+      "2": {
+       "observado": 3,
+       "esperado": 2.7221116867093778
+      },
+      "3a5": {
+       "observado": 28,
+       "esperado": 20.724735077869315
+      }
+     }
+    },
+    "Tebet 1T": {
+     "rho": 0.0014096648612749476,
+     "observado": 12524,
+     "esperado": 15222.994946115396,
+     "ic_predicao_95": [
+      15025.798065433857,
+      15420.191826796934
+     ],
+     "dentro_do_ic": false,
+     "razao": 0.8227027627829486,
+     "ic95_razao_bootstrap_mun": [
+      0.8094202475312432,
+      0.8353838293720156
+     ],
+     "votos_esperados_nas_secoes_zero": 23917.46545481112,
+     "caudas": {
+      "1": {
+       "observado": 19141,
+       "esperado": 20172.521184452788
+      },
+      "2": {
+       "observado": 22376,
+       "esperado": 22918.559929383322
+      },
+      "3a5": {
+       "observado": 76080,
+       "esperado": 76695.92104425779
+      }
+     }
+    },
+    "Ciro 1T": {
+     "rho": 0.0012359924421868494,
+     "observado": 9231,
+     "esperado": 11411.04122895756,
+     "ic_predicao_95": [
+      11223.050066629989,
+      11599.03239128513
+     ],
+     "dentro_do_ic": false,
+     "razao": 0.8089533474451643,
+     "ic95_razao_bootstrap_mun": [
+      0.7893951602601138,
+      0.8278695365296139
+     ],
+     "votos_esperados_nas_secoes_zero": 24653.399260351856,
+     "caudas": {
+      "1": {
+       "observado": 19437,
+       "esperado": 22834.449672276758
+      },
+      "2": {
+       "observado": 29990,
+       "esperado": 32261.29559971766
+      },
+      "3a5": {
+       "observado": 125685,
+       "esperado": 122797.08140163668
+      }
+     }
+    }
+   },
+   "alvos": {
+    "Bolsonaro 1T": {
+     "rho": 0.005563226037882337,
+     "observado": 160,
+     "esperado": 11.783957927609523,
+     "ic_predicao_95": [
+      6.0,
+      19.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 13.577780995392384,
+     "ic95_razao_bootstrap_mun": [
+      10.198845649263427,
+      18.295454594179052
+     ],
+     "votos_esperados_nas_secoes_zero": 3025.694596559983,
+     "caudas": {
+      "1": {
+       "observado": 255,
+       "esperado": 32.7663687371234
+      },
+      "2": {
+       "observado": 326,
+       "esperado": 63.555178508787336
+      },
+      "3a5": {
+       "observado": 1323,
+       "esperado": 466.62903361317586
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    },
+    "Bolsonaro 2T": {
+     "rho": 0.005879059646328138,
+     "observado": 141,
+     "esperado": 7.741904437262551,
+     "ic_predicao_95": [
+      3.0,
+      13.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 18.212573035822174,
+     "ic95_razao_bootstrap_mun": [
+      13.592321143525508,
+      26.199257791910345
+     ],
+     "votos_esperados_nas_secoes_zero": 2964.7729346032233,
+     "caudas": {
+      "1": {
+       "observado": 207,
+       "esperado": 20.84329141185817
+      },
+      "2": {
+       "observado": 264,
+       "esperado": 40.194069244574365
+      },
+      "3a5": {
+       "observado": 967,
+       "esperado": 301.69781171907846
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    }
+   },
+   "calibrado": false,
+   "controles_com_esperado_ao_menos_5": 2
+  },
+  "comparacao_2026_vs_2022": {
+   "1T": {
+    "razao_das_razoes_mediana": 1.45597896859802,
+    "ic95": [
+     0.8350386085040054,
+     2.7003677314390373
+    ]
+   },
+   "2T": {
+    "razao_das_razoes_mediana": 1.3476451354499797,
+    "ic95": [
+     0.7595536209383906,
+     2.3530950158580417
+    ]
+   }
+  }
+ },
+ "sensibilidade_prior_zona": {
+  "2026": {
+   "controles": {
+    "Lula 1T": {
+     "rho": 0.018710314025017192,
+     "observado": 8,
+     "esperado": 0.5111858180940496,
+     "ic_predicao_95": [
+      0.0,
+      2.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 15.649886434306623,
+     "ic95_razao_bootstrap_mun": [
+      5.638189601932717,
+      30.482392030024556
+     ],
+     "votos_esperados_nas_secoes_zero": 134.5147471559847,
+     "caudas": {
+      "1": {
+       "observado": 3,
+       "esperado": 2.1390178104021462
+      },
+      "2": {
+       "observado": 16,
+       "esperado": 5.185779316977827
+      },
+      "3a5": {
+       "observado": 62,
+       "esperado": 48.63809516613156
+      }
+     }
+    },
+    "Lula 2T": {
+     "rho": 0.019175000225157373,
+     "observado": 4,
+     "esperado": 0.21174664493153572,
+     "ic_predicao_95": [
+      0.0,
+      1.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 18.890500018516583,
+     "ic95_razao_bootstrap_mun": [
+      2.931478462444189,
+      48.28974885991131
+     ],
+     "votos_esperados_nas_secoes_zero": 96.0478595714246,
+     "caudas": {
+      "1": {
+       "observado": 6,
+       "esperado": 1.0104823169686465
+      },
+      "2": {
+       "observado": 3,
+       "esperado": 2.6725073763648854
+      },
+      "3a5": {
+       "observado": 50,
+       "esperado": 26.63569345729251
+      }
+     }
+    },
+    "cand. 70 1T": {
+     "rho": 0.0010777481811573638,
+     "observado": 11808,
+     "esperado": 8492.896191231237,
+     "ic_predicao_95": [
+      8324.174500123712,
+      8661.617882338762
+     ],
+     "dentro_do_ic": false,
+     "razao": 1.3903384351019794,
+     "ic95_razao_bootstrap_mun": [
+      1.348770028103926,
+      1.4279806862768967
+     ],
+     "votos_esperados_nas_secoes_zero": 35793.439525545065,
+     "caudas": {
+      "1": {
+       "observado": 21700,
+       "esperado": 20824.638947532894
+      },
+      "2": {
+       "observado": 32112,
+       "esperado": 32948.60497110489
+      },
+      "3a5": {
+       "observado": 136817,
+       "esperado": 141721.27834655799
+      }
+     }
+    },
+    "cand. 14 1T": {
+     "rho": 0.002538260609823566,
+     "observado": 30724,
+     "esperado": 29743.04331344613,
+     "ic_predicao_95": [
+      29441.28829380081,
+      30044.79833309145
+     ],
+     "dentro_do_ic": false,
+     "razao": 1.0329810462304105,
+     "ic95_razao_bootstrap_mun": [
+      1.0179192515673599,
+      1.047433886684279
+     ],
+     "votos_esperados_nas_secoes_zero": 73785.22082384693,
+     "caudas": {
+      "1": {
+       "observado": 46215,
+       "esperado": 47540.09449890465
+      },
+      "2": {
+       "observado": 54800,
+       "esperado": 55361.71369878927
+      },
+      "3a5": {
+       "observado": 161075,
+       "esperado": 159385.73372670024
+      }
+     }
+    }
+   },
+   "alvos": {
+    "Flávio 1T": {
+     "rho": 0.016695836556471715,
+     "observado": 79,
+     "esperado": 1.019587644914043,
+     "ic_predicao_95": [
+      0.0,
+      3.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 77.48230413939562,
+     "ic95_razao_bootstrap_mun": [
+      49.27204328520441,
+      129.25525916736154
+     ],
+     "votos_esperados_nas_secoes_zero": 3196.6293449156856,
+     "caudas": {
+      "1": {
+       "observado": 129,
+       "esperado": 3.969219061505933
+      },
+      "2": {
+       "observado": 150,
+       "esperado": 9.470466368233492
+      },
+      "3a5": {
+       "observado": 705,
+       "esperado": 95.71665930410511
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    },
+    "Flávio 2T": {
+     "rho": 0.01903673930307146,
+     "observado": 106,
+     "esperado": 1.272803776032917,
+     "ic_predicao_95": [
+      0.0,
+      4.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 83.28070830397871,
+     "ic95_razao_bootstrap_mun": [
+      55.622661431527945,
+      123.67956061392549
+     ],
+     "votos_esperados_nas_secoes_zero": 4844.153317992294,
+     "caudas": {
+      "1": {
+       "observado": 123,
+       "esperado": 5.030973072022281
+      },
+      "2": {
+       "observado": 162,
+       "esperado": 12.039097731535335
+      },
+      "3a5": {
+       "observado": 759,
+       "esperado": 117.11885964987181
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    }
+   },
+   "calibrado": false,
+   "controles_com_esperado_ao_menos_5": 2
+  },
+  "2022": {
+   "controles": {
+    "Lula 1T": {
+     "rho": 0.020427615045553123,
+     "observado": 1,
+     "esperado": 0.42461864455381354,
+     "ic_predicao_95": [
+      0.0,
+      2.0
+     ],
+     "dentro_do_ic": true,
+     "razao": 2.355054383094255,
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      12.36713414533744
+     ],
+     "votos_esperados_nas_secoes_zero": 10.224880084719368,
+     "caudas": {
+      "1": {
+       "observado": 3,
+       "esperado": 1.3458310421361035
+      },
+      "2": {
+       "observado": 5,
+       "esperado": 2.7466082387818824
+      },
+      "3a5": {
+       "observado": 33,
+       "esperado": 22.452532069522203
+      }
+     }
+    },
+    "Lula 2T": {
+     "rho": 0.019443427797662245,
+     "observado": 2,
+     "esperado": 0.43309251860287284,
+     "ic_predicao_95": [
+      0.0,
+      2.0
+     ],
+     "dentro_do_ic": true,
+     "razao": 4.617950932174642,
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      21.2497066964328
+     ],
+     "votos_esperados_nas_secoes_zero": 66.25321318175867,
+     "caudas": {
+      "1": {
+       "observado": 3,
+       "esperado": 1.4602513407644468
+      },
+      "2": {
+       "observado": 3,
+       "esperado": 3.0979344982072177
+      },
+      "3a5": {
+       "observado": 28,
+       "esperado": 23.440504733865545
+      }
+     }
+    },
+    "Tebet 1T": {
+     "rho": 0.0019206091249755958,
+     "observado": 12524,
+     "esperado": 12821.149495143476,
+     "ic_predicao_95": [
+      12627.545664209856,
+      13014.753326077096
+     ],
+     "dentro_do_ic": false,
+     "razao": 0.9768234903386757,
+     "ic95_razao_bootstrap_mun": [
+      0.9596427891356429,
+      0.9948084869086504
+     ],
+     "votos_esperados_nas_secoes_zero": 27314.80011645475,
+     "caudas": {
+      "1": {
+       "observado": 19141,
+       "esperado": 19684.589212523017
+      },
+      "2": {
+       "observado": 22376,
+       "esperado": 23000.4845116096
+      },
+      "3a5": {
+       "observado": 76080,
+       "esperado": 76912.86753999419
+      }
+     }
+    },
+    "Ciro 1T": {
+     "rho": 0.0014274148714217708,
+     "observado": 9231,
+     "esperado": 8352.667623689595,
+     "ic_predicao_95": [
+      8184.857712212528,
+      8520.477535166661
+     ],
+     "dentro_do_ic": false,
+     "razao": 1.1051559113664842,
+     "ic95_razao_bootstrap_mun": [
+      1.0776909935171182,
+      1.134464921551443
+     ],
+     "votos_esperados_nas_secoes_zero": 28287.218952795418,
+     "caudas": {
+      "1": {
+       "observado": 19437,
+       "esperado": 20013.99699851154
+      },
+      "2": {
+       "observado": 29990,
+       "esperado": 30853.87571991364
+      },
+      "3a5": {
+       "observado": 125685,
+       "esperado": 125805.33501156226
+      }
+     }
+    }
+   },
+   "alvos": {
+    "Bolsonaro 1T": {
+     "rho": 0.01753651007072806,
+     "observado": 160,
+     "esperado": 7.000978652791592,
+     "ic_predicao_95": [
+      2.0,
+      13.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 22.85394770289738,
+     "ic95_razao_bootstrap_mun": [
+      17.54249510261327,
+      30.893029390819176
+     ],
+     "votos_esperados_nas_secoes_zero": 3916.8367756276275,
+     "caudas": {
+      "1": {
+       "observado": 255,
+       "esperado": 23.33896937948523
+      },
+      "2": {
+       "observado": 326,
+       "esperado": 49.245890046101636
+      },
+      "3a5": {
+       "observado": 1323,
+       "esperado": 390.8412156632571
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    },
+    "Bolsonaro 2T": {
+     "rho": 0.019318389348100592,
+     "observado": 141,
+     "esperado": 4.11162875689928,
+     "ic_predicao_95": [
+      1.0,
+      8.0
+     ],
+     "dentro_do_ic": false,
+     "razao": 34.29297933657146,
+     "ic95_razao_bootstrap_mun": [
+      26.460789658804067,
+      46.63541916866778
+     ],
+     "votos_esperados_nas_secoes_zero": 4340.249618363503,
+     "caudas": {
+      "1": {
+       "observado": 207,
+       "esperado": 14.143704269535881
+      },
+      "2": {
+       "observado": 264,
+       "esperado": 30.62249387702277
+      },
+      "3a5": {
+       "observado": 967,
+       "esperado": 252.61611283494324
+      }
+     },
+     "leitura": "não interpretável (modelo não calibrado nos controles)"
+    }
+   },
+   "calibrado": false,
+   "controles_com_esperado_ao_menos_5": 2
+  },
+  "comparacao_2026_vs_2022": {
+   "1T": {
+    "razao_das_razoes_mediana": 3.363644839726529,
+    "ic95": [
+     1.941059039743272,
+     5.999990414596151
+    ]
+   },
+   "2T": {
+    "razao_das_razoes_mediana": 2.3903299342661866,
+    "ic95": [
+     1.5214240004855428,
+     3.813765228318643
+    ]
+   }
+  }
+ },
+ "tempo_s": 34.3
+}

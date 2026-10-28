@@ -1,0 +1,24 @@
+{
+ "pergunta": "P16",
+ "amostra": {
+  "sorteadas": 200,
+  "com_arquivos_e_lista": 200,
+  "sem_lista_ou_pacote": 0,
+  "hash_ok": 200,
+  "assinatura_ok": 200,
+  "lista_ok": 200,
+  "rdv_igual_bu": 200,
+  "imagem_igual_bu": 200,
+  "bu_na_web_igual": 200,
+  "comparecimento_web_igual": 200,
+  "log_igual_comparecimento": 200,
+  "emissores": {
+   "AC UE2020": 79,
+   "AC URNA": 36,
+   "AC UE2022": 85
+  }
+ },
+ "divergentes": [],
+ "semente": 2028,
+ "tempo_s": 170.4
+}

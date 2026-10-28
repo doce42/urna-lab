@@ -1,0 +1,68 @@
+{
+ "pergunta": "P17",
+ "2026": {
+  "3": {
+   "pro_lula": 1997,
+   "pro_outro": 692,
+   "log_razao": 1.0598153777981456,
+   "ic95": [
+    0.9624989877627377,
+    1.170326561487604
+   ],
+   "assimetria_significativa": true
+  },
+  "4": {
+   "pro_lula": 190,
+   "pro_outro": 53,
+   "log_razao": 1.2767321586083644,
+   "ic95": [
+    0.9613702840711065,
+    1.668148835740782
+   ],
+   "assimetria_significativa": true
+  },
+  "5": {
+   "pro_lula": 32,
+   "pro_outro": 13,
+   "log_razao": 0.9007865453381899,
+   "ic95": [
+    0.08961215868968714,
+    2.5655823026611433
+   ],
+   "assimetria_significativa": true
+  }
+ },
+ "2022": {
+  "3": {
+   "pro_lula": 2460,
+   "pro_outro": 1163,
+   "log_razao": 0.7491584764077441,
+   "ic95": [
+    0.46468633682922217,
+    0.9531182740158772
+   ],
+   "assimetria_significativa": true
+  },
+  "4": {
+   "pro_lula": 429,
+   "pro_outro": 105,
+   "log_razao": 1.4074965687704935,
+   "ic95": [
+    0.7960621850690092,
+    1.8982633341194408
+   ],
+   "assimetria_significativa": true
+  },
+  "5": {
+   "pro_lula": 90,
+   "pro_outro": 13,
+   "log_razao": 1.9348603128687283,
+   "ic95": [
+    1.0817302826272335,
+    2.938720487700352
+   ],
+   "assimetria_significativa": true
+  }
+ },
+ "tempo_s": 1.7
+}

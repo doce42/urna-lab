@@ -146,6 +146,17 @@
     }
    ],
    "fim": "2026-10-28"
+  },
+  {
+   "id": "AP",
+   "rodada": 6,
+   "versao": "V1.4",
+   "titulo": "Alegações públicas testadas",
+   "status": "concluida",
+   "inicio": "2026-10-28",
+   "resumo": "Rodada 6 (V1.4), 28/10/2026: alegações públicas (live de 4/11/2022 e pedido do PL, matérias e posts no X) transformadas em perguntas, pré-registradas (emendas 7 a 14) e testadas com dados oficiais (T45 a T57; perguntas Q27 a Q39). Todos os números citados se reproduziram, menos o '644 mil' do Rio; nenhuma alegação apontou divergência nos arquivos. O bug do ID 67305985 no log das urnas antigas existe em 2022 e não aparece em 2026; a diferença de voto por modelo some no mesmo local de votação; o recebimento de boletins ficou parado das 17:07 às 19:03 no 2º turno de 2026, junto com a prorrogação; a queda de brancos e nulos tem causa estrutural em grande parte (marca no 1º turno e menos 2º turno de governador), com resíduo uniforme. A resposta central de 2026 não muda.",
+   "etapas": [],
+   "historico": []
   }
  ],
  "marcos": [
@@ -328,6 +339,12 @@
    "hora": "",
    "titulo": "Fase 3 concluída (V1.3)",
    "texto": "Aprovada pelo responsável e congelada na rodada 5, com todos os arquivos da fase no mesmo hash."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Alegações públicas testadas (V1.4)",
+   "texto": "13 testes pré-registrados (T45–T57) e 13 perguntas novas (Q27–Q39), congelados na rodada 6 com aprovação do responsável."
   }
  ],
  "etapas_do_caminho": [
@@ -364,6 +381,14 @@
    "link": "#fase2"
   },
   {
+   "id": "alegacoes",
+   "titulo": "Alegações públicas",
+   "status": "concluida",
+   "versao": "V1.4",
+   "texto": "Live de 2022, pedido do PL, matérias e posts testados com pré-registro (T45–T57, Q27–Q39). Rodada 6.",
+   "link": "#/respostas"
+  },
+  {
    "id": "comparacoes",
    "titulo": "Comparações",
    "status": "disponivel",
@@ -381,6 +406,26 @@
   }
  ],
  "conclusoes_recentes": [
+  {
+   "titulo": "Urna antiga não muda voto no mesmo local",
+   "texto": "Lula teve 50,3% nas urnas anteriores a 2020 e 46,0% nas UE2020 (1º turno de 2022), mas dentro do mesmo local de votação a diferença é equivalente a zero.",
+   "teste": "T47"
+  },
+  {
+   "titulo": "Bug do log confirmado, ligação também",
+   "texto": "279.291 urnas antigas com ID fixo 67305985 em 2022; 279.285 ligadas ao BU e ao RDV pela assinatura e pelo certificado; em 2026 o bug não aparece.",
+   "teste": "T45"
+  },
+  {
+   "titulo": "Boletins parados das 17:07 às 19:03",
+   "texto": "Só em 2026; voltou com o fechamento das urnas prorrogadas; o BU é assinado na emissão e confere com a tabela.",
+   "teste": "T52"
+  },
+  {
+   "titulo": "Brancos e nulos: causa estrutural",
+   "texto": "Marca no 1º turno (~0,47 mi) e menos 2º turno de governador (~0,69 mi) explicam a maior parte da queda; resto uniforme, sem viés para Lula.",
+   "teste": "T57"
+  },
   {
    "titulo": "O T02 não vê troca em município inteiro",
    "texto": "A mediana municipal absorve uma troca aplicada ao município ou à região inteira. O E02 a detecta a partir de ~62 mil votos em municípios de até ~5 mil seções, mas não no município inteiro das 5 maiores cidades (simulação, A2).",
@@ -442,5 +487,5 @@
    "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 concluída (V1.3) em 28/10/2026"
+ "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 (V1.3) · Alegações públicas testadas (V1.4) em 28/10/2026"
 }

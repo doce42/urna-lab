@@ -1,0 +1,7 @@
+bases 1 s
+zona 2026 {'locais': 59885, 'sem_referencia': 277, 'significativos_nulo_espacial': 61, 'pro_lula': 36, 'pro_adversario': 25, 'comparacao_rho_P9_mesmo_universo': {'rho': 0.1295752514301758, 'significativos': 55, 'pro_lula': 28, 'pro_adversario': 27}, 'sobreposicao_rho_e_espacial': 28} 2 s
+zona 2022 {'locais': 56164, 'sem_referencia': 338, 'significativos_nulo_espacial': 84, 'pro_lula': 46, 'pro_adversario': 38, 'comparacao_rho_P9_mesmo_universo': {'rho': 0.10933426910816281, 'significativos': 102, 'pro_lula': 30, 'pro_adversario': 72}, 'sobreposicao_rho_e_espacial': 41} 3 s
+zona SP {'secoes_selecionadas': 29, 'locais': 15, 'resistem': 0, 'persistem_2026': 1, 'sem_correspondencia_2026': 0}
+mun 2026 {'locais': 59885, 'sem_referencia': 277, 'significativos_nulo_espacial': 63, 'pro_lula': 35, 'pro_adversario': 28, 'comparacao_rho_P9_mesmo_universo': {'rho': 0.1295752514301758, 'significativos': 55, 'pro_lula': 28, 'pro_adversario': 27}, 'sobreposicao_rho_e_espacial': 28} 4 s
+mun 2022 {'locais': 56164, 'sem_referencia': 338, 'significativos_nulo_espacial': 80, 'pro_lula': 45, 'pro_adversario': 35, 'comparacao_rho_P9_mesmo_universo': {'rho': 0.10933426910816281, 'significativos': 102, 'pro_lula': 30, 'pro_adversario': 72}, 'sobreposicao_rho_e_espacial': 42} 5 s
+mun SP {'secoes_selecionadas': 29, 'locais': 15, 'resistem': 0, 'persistem_2026': 0, 'sem_correspondencia_2026': 0}

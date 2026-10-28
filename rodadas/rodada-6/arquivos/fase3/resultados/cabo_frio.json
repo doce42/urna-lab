@@ -1,0 +1,179 @@
+{
+ "pre_registro": "fase3/PREREG_CABO_FRIO.md",
+ "2026": {
+  "municipios": 5571,
+  "ganho_excede_disponivel": 0,
+  "frac_13_do_ganho_mediana": 0.7306737588652482,
+  "frac_13_do_ganho_p90": 0.9761715044583571,
+  "frac_13_do_ganho_p10": 0.5632033827999728,
+  "cidades": {
+   "CABO FRIO": {
+    "v13_1": 39944,
+    "v22_1": 83213,
+    "v13_2": 49113,
+    "v22_2": 83555,
+    "elim_1": 8822,
+    "bn_1": 5373,
+    "bn_2": 4144,
+    "QT_COMPARECIMENTO_1": 137352,
+    "QT_COMPARECIMENTO_2": 136812,
+    "g13": 9169,
+    "g22": 342,
+    "disponivel": 9511,
+    "frac_13_do_ganho": 0.9640416360004206,
+    "percentil_nacional": 0.888854199188261,
+    "excede_disponivel": false
+   },
+   "SANTANA DE PARNAÍBA": {
+    "v13_1": 29460,
+    "v22_1": 43095,
+    "v13_2": 38704,
+    "v22_2": 47920,
+    "elim_1": 9636,
+    "bn_1": 4222,
+    "bn_2": 3274,
+    "QT_COMPARECIMENTO_1": 86413,
+    "QT_COMPARECIMENTO_2": 89898,
+    "g13": 9244,
+    "g22": 4825,
+    "disponivel": 14069,
+    "frac_13_do_ganho": 0.6570474091975265,
+    "percentil_nacional": 0.3131439275679051,
+    "excede_disponivel": false
+   },
+   "CAMPOS DOS GOYTACAZES": {
+    "v13_1": 91105,
+    "v22_1": 160859,
+    "v13_2": 115927,
+    "v22_2": 159470,
+    "elim_1": 20210,
+    "bn_1": 18284,
+    "bn_2": 11163,
+    "QT_COMPARECIMENTO_1": 290458,
+    "QT_COMPARECIMENTO_2": 286560,
+    "g13": 24822,
+    "g22": -1389,
+    "disponivel": 23433,
+    "frac_13_do_ganho": 1.0592753808731277,
+    "percentil_nacional": 0.9534811114580081,
+    "excede_disponivel": false
+   },
+   "SÃO GONÇALO": {
+    "v13_1": 190984,
+    "v22_1": 247529,
+    "v13_2": 236201,
+    "v22_2": 255685,
+    "elim_1": 34151,
+    "bn_1": 27277,
+    "bn_2": 18785,
+    "QT_COMPARECIMENTO_1": 499941,
+    "QT_COMPARECIMENTO_2": 510671,
+    "g13": 45217,
+    "g22": 8156,
+    "disponivel": 53373,
+    "frac_13_do_ganho": 0.8471886534390047,
+    "percentil_nacional": 0.6955978769903216,
+    "excede_disponivel": false
+   }
+  },
+  "municipios_rival_lider_60pct_e_13_com_90pct_do_ganho": 36,
+  "municipios_13_lider_60pct_e_22_com_90pct_do_ganho": 0
+ },
+ "2022": {
+  "municipios": 5570,
+  "ganho_excede_disponivel": 0,
+  "frac_13_do_ganho_mediana": 0.2690815006468305,
+  "frac_13_do_ganho_p90": 0.5184502152478823,
+  "frac_13_do_ganho_p10": 0.08649894456720442,
+  "cidades": {
+   "CABO FRIO": {
+    "v13_1": 37586,
+    "v22_1": 75184,
+    "v13_2": 40668,
+    "v22_2": 81373,
+    "elim_1": 8762,
+    "bn_1": 4479,
+    "bn_2": 4313,
+    "QT_COMPARECIMENTO_1": 126011,
+    "QT_COMPARECIMENTO_2": 126354,
+    "g13": 3082,
+    "g22": 6189,
+    "disponivel": 9271,
+    "frac_13_do_ganho": 0.33243447308812424,
+    "percentil_nacional": 0.6629711751662971,
+    "excede_disponivel": false
+   },
+   "SANTANA DE PARNAÍBA": {
+    "v13_1": 31423,
+    "v22_1": 34978,
+    "v13_2": 35047,
+    "v22_2": 42530,
+    "elim_1": 11890,
+    "bn_1": 3578,
+    "bn_2": 4571,
+    "QT_COMPARECIMENTO_1": 81869,
+    "QT_COMPARECIMENTO_2": 82148,
+    "g13": 3624,
+    "g22": 7552,
+    "disponivel": 11176,
+    "frac_13_do_ganho": 0.3242662848962062,
+    "percentil_nacional": 0.6434589800443459,
+    "excede_disponivel": false
+   },
+   "CAMPOS DOS GOYTACAZES": {
+    "v13_1": 93871,
+    "v22_1": 159381,
+    "v13_2": 100427,
+    "v22_2": 171999,
+    "elim_1": 21510,
+    "bn_1": 14081,
+    "bn_2": 11835,
+    "QT_COMPARECIMENTO_1": 288843,
+    "QT_COMPARECIMENTO_2": 284261,
+    "g13": 6556,
+    "g22": 12618,
+    "disponivel": 19174,
+    "frac_13_do_ganho": 0.34192135183060396,
+    "percentil_nacional": 0.6811529933481153,
+    "excede_disponivel": false
+   },
+   "SÃO GONÇALO": {
+    "v13_1": 208703,
+    "v22_1": 246578,
+    "v13_2": 222694,
+    "v22_2": 276870,
+    "elim_1": 36940,
+    "bn_1": 26443,
+    "bn_2": 23307,
+    "QT_COMPARECIMENTO_1": 518664,
+    "QT_COMPARECIMENTO_2": 522871,
+    "g13": 13991,
+    "g22": 30292,
+    "disponivel": 44283,
+    "frac_13_do_ganho": 0.31594517083305107,
+    "percentil_nacional": 0.6252771618625277,
+    "excede_disponivel": false
+   }
+  },
+  "municipios_rival_lider_60pct_e_13_com_90pct_do_ganho": 0,
+  "municipios_13_lider_60pct_e_22_com_90pct_do_ganho": 28
+ },
+ "integridade_2026": {
+  "CABO FRIO": {
+   "secoes": 530,
+   "ok": 530
+  },
+  "SANTANA DE PARNAÍBA": {
+   "secoes": 305,
+   "ok": 305
+  },
+  "CAMPOS DOS GOYTACAZES": {
+   "secoes": 1190,
+   "ok": 1190
+  },
+  "SÃO GONÇALO": {
+   "secoes": 2019,
+   "ok": 2019
+  }
+ }
+}

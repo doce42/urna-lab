@@ -1,0 +1,156 @@
+{
+ "pre_registro": "fase3/PREREG_GRANDES_CIDADES.md",
+ "municipios": 5570,
+ "escala_robusta_200_maiores": 0.020109104087234972,
+ "centro": 0.004154344525991602,
+ "limiar_desvios": 3.0,
+ "cidades": {
+  "São Paulo": {
+   "z": -0.9948057796092813,
+   "desviante": false,
+   "virada_observada": 0.35815178352595156,
+   "virada_prevista": 0.37400209196870604,
+   "votos_de_lula_acima_do_previsto": -27229.8504782659,
+   "validos_2T": 6962277,
+   "poder": {
+    "2pct": {
+     "votos": 139245.54000000004,
+     "deslocamento_logit": 0.08138882481488566,
+     "em_desvios": 4.047362053615822,
+     "testavel": true
+    },
+    "5pct": {
+     "votos": 348113.8499999996,
+     "deslocamento_logit": 0.20545448308697004,
+     "em_desvios": 10.216988394693834,
+     "testavel": true
+    },
+    "10pct": {
+     "votos": 696227.7000000002,
+     "deslocamento_logit": 0.4202126115311232,
+     "em_desvios": 20.896635161278486,
+     "testavel": true
+    }
+   }
+  },
+  "Rio de Janeiro": {
+   "z": -1.5333228218021624,
+   "desviante": false,
+   "virada_observada": 0.3063430432155463,
+   "virada_prevista": 0.33302244691250715,
+   "votos_de_lula_acima_do_previsto": -24534.262114550453,
+   "validos_2T": 3683589,
+   "poder": {
+    "2pct": {
+     "votos": 73671.78000000003,
+     "deslocamento_logit": 0.0802172188685667,
+     "em_desvios": 3.989099589945813,
+     "testavel": true
+    },
+    "5pct": {
+     "votos": 184179.44999999995,
+     "deslocamento_logit": 0.20148549620526707,
+     "em_desvios": 10.019615758673591,
+     "testavel": true
+    },
+    "10pct": {
+     "votos": 368358.8999999999,
+     "deslocamento_logit": 0.4084411714576112,
+     "em_desvios": 20.31125651773243,
+     "testavel": true
+    }
+   }
+  },
+  "Brasília": {
+   "z": -0.5602307907169041,
+   "desviante": false,
+   "virada_observada": 0.3134798037027605,
+   "virada_prevista": 0.32059119846016937,
+   "votos_de_lula_acima_do_previsto": -3186.140028089867,
+   "validos_2T": 1804766,
+   "poder": {
+    "2pct": {
+     "votos": 36095.31999999995,
+     "deslocamento_logit": 0.08035566245638082,
+     "em_desvios": 3.995984212314544,
+     "testavel": true
+    },
+    "5pct": {
+     "votos": 90238.30000000005,
+     "deslocamento_logit": 0.20042052594446236,
+     "em_desvios": 9.966656151115505,
+     "testavel": true
+    },
+    "10pct": {
+     "votos": 180476.59999999998,
+     "deslocamento_logit": 0.40142692415179665,
+     "em_desvios": 19.9624469797547,
+     "testavel": true
+    }
+   }
+  },
+  "Fortaleza": {
+   "z": -1.4933939324977725,
+   "desviante": false,
+   "virada_observada": 0.2692863161234359,
+   "virada_prevista": 0.295162785629287,
+   "votos_de_lula_acima_do_previsto": -9606.388003618456,
+   "validos_2T": 1551916,
+   "poder": {
+    "2pct": {
+     "votos": 31038.31999999995,
+     "deslocamento_logit": 0.08414006466514007,
+     "em_desvios": 4.184177688878304,
+     "testavel": true
+    },
+    "5pct": {
+     "votos": 77595.80000000005,
+     "deslocamento_logit": 0.21374161415364973,
+     "em_desvios": 10.629096812390088,
+     "testavel": true
+    },
+    "10pct": {
+     "votos": 155191.6000000001,
+     "deslocamento_logit": 0.44226823150168865,
+     "em_desvios": 21.99343290397683,
+     "testavel": true
+    }
+   }
+  },
+  "Salvador": {
+   "z": 4.552448307742148,
+   "desviante": true,
+   "virada_observada": 0.37613426075106937,
+   "virada_prevista": 0.2804342593529341,
+   "votos_de_lula_acima_do_previsto": 30208.234268565895,
+   "validos_2T": 1575824,
+   "poder": {
+    "2pct": {
+     "votos": 31516.47999999998,
+     "deslocamento_logit": 0.10460960310268974,
+     "em_desvios": 5.202101627645098,
+     "testavel": true
+    },
+    "5pct": {
+     "votos": 78791.19999999995,
+     "deslocamento_logit": 0.2728437198912952,
+     "em_desvios": 13.568168860615389,
+     "testavel": true
+    },
+    "10pct": {
+     "votos": 157582.3999999999,
+     "deslocamento_logit": 0.59581806656324,
+     "em_desvios": 29.62926960736448,
+     "testavel": true
+    }
+   }
+  }
+ },
+ "validacao_falso_alarme": {
+  "municipios": 200,
+  "marcados": 3,
+  "taxa": 0.015,
+  "regra_valida": true
+ },
+ "r2_ponderado": 0.7470290852249319
+}

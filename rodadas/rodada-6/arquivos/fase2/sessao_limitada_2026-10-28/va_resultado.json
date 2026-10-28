@@ -1,0 +1,2077 @@
+{
+ "selecao": [
+  {
+   "grupo": "excecao",
+   "chave": [
+    "RJ",
+    "60011",
+    "8",
+    "61"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "ZZ",
+    "29564",
+    "1",
+    "91"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "SP",
+    "63215",
+    "9",
+    "199"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "ES",
+    "56472",
+    "24",
+    "100"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "MG",
+    "54135",
+    "281",
+    "261"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "BA",
+    "36692",
+    "48",
+    "245"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "RJ",
+    "58971",
+    "87",
+    "184"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "MG",
+    "47678",
+    "161",
+    "138"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "AL",
+    "28339",
+    "13",
+    "118"
+   ]
+  },
+  {
+   "grupo": "excecao",
+   "chave": [
+    "PB",
+    "22071",
+    "4",
+    "110"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "MG",
+    "41238",
+    "333",
+    "311"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "PE",
+    "25356",
+    "28",
+    "65"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "AL",
+    "27413",
+    "16",
+    "114"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "SP",
+    "62995",
+    "36",
+    "45"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "MT",
+    "91294",
+    "4",
+    "88"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "RJ",
+    "58327",
+    "183",
+    "141"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "CE",
+    "14192",
+    "40",
+    "131"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "BA",
+    "39713",
+    "68",
+    "187"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "PB",
+    "21377",
+    "47",
+    "37"
+   ]
+  },
+  {
+   "grupo": "aleatoria",
+   "chave": [
+    "PE",
+    "25739",
+    "13",
+    "184"
+   ]
+  }
+ ],
+ "resultados": [
+  {
+   "grupo": "excecao",
+   "uf": "RJ",
+   "mun": "60011",
+   "zona": "8",
+   "secao": "61",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "sem_explicacao",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220rj6001100080061-rdv.dat",
+    "vota": "o03220rj6001100080061-vota.vsc",
+    "bu": "o03220rj6001100080061-bu.dat",
+    "log": "o03220rj6001100080061-log.jez",
+    "imgbu": "o03220rj6001100080061-imgbu.dat"
+   },
+   "algoritmo": "ECDSA-P521",
+   "cert_urna": "ueao01760983",
+   "cert_emissor": "AC URNA",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220rj6001100080061-bu.dat",
+    "o03220rj6001100080061-hash.dat",
+    "o03220rj6001100080061-imgbu.dat",
+    "o03220rj6001100080061-imgze.dat",
+    "o03220rj6001100080061-jufa.dat",
+    "o03220rj6001100080061-log.jez",
+    "o03220rj6001100080061-mr.ver",
+    "o03220rj6001100080061-rdv.dat",
+    "o03220rj6001100080061-wsqbio.jez",
+    "o03220rj6001100080061-wsqman.jez",
+    "o03220rj6001100080061-wsqmes.jez"
+   ],
+   "sha512_rdv": "9325ded4b4074f70",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "143c09bfcc323b9b",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "9a7fcbde2137deed",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "0f445806ac18d7f0",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 433,
+    "bu_comparecimento": 311,
+    "bu_v13": 153,
+    "bu_v14": 6,
+    "bu_v22": 123,
+    "bu_v27": 1,
+    "bu_v30": 1,
+    "bu_v35": 1,
+    "bu_v55": 5,
+    "bu_v70": 8,
+    "bu_branco": 8,
+    "bu_nulo": 5
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 311,
+    "modelo": "UE2015",
+    "ids_urna_log": "01760983",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:06:05",
+    "ultimo_voto": "04/10/2026 17:54:01"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v35": 1,
+     "v14": 6,
+     "nulo": 5,
+     "v22": 123,
+     "v30": 1,
+     "v27": 1,
+     "v13": 153,
+     "v55": 5,
+     "v70": 8,
+     "branco": 8
+    },
+    "comparecimento": 311,
+    "aptos": 433
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "ZZ",
+   "mun": "29564",
+   "zona": "1",
+   "secao": "91",
+   "tipos_t36": [
+    "d_fora_do_bu"
+   ],
+   "grau_t36": "declarado_oficialmente",
+   "arquivos": [
+    "busa",
+    "rdv"
+   ],
+   "nomes": {
+    "rdv": "o03220zz2956400010091-rdv.dat",
+    "busa": "o03220zz2956400010091-busa.dat"
+   },
+   "algoritmo": null,
+   "cert_urna": null,
+   "cert_emissor": null,
+   "assin_lista_ok": null,
+   "lista_assinada_itens": null,
+   "sha512_rdv": "773709add7a1799d",
+   "hash_ok_rdv": false,
+   "assin_ok_rdv": false,
+   "sha512_busa": "4cc8318a05db00c3",
+   "hash_ok_busa": false,
+   "assin_ok_busa": false,
+   "rdv_vazio_ou_outro_formato": true,
+   "bu": {},
+   "rdv_igual_bu": null,
+   "img_igual_bu": null,
+   "log": {
+    "computado": null,
+    "modelo": null,
+    "ids_urna_log": null,
+    "urnas_com_voto_no_log": null,
+    "primeiro_voto": null,
+    "ultimo_voto": null
+   },
+   "log_computado_igual_comparecimento_bu": null
+  },
+  {
+   "grupo": "excecao",
+   "uf": "SP",
+   "mun": "63215",
+   "zona": "9",
+   "secao": "199",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "inferido",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "bu": "o03220sp6321500090199-bu.dat",
+    "vota": "o03220sp6321500090199-vota.vsc",
+    "rdv": "o03220sp6321500090199-rdv.dat",
+    "log": "o03220sp6321500090199-log.jez",
+    "imgbu": "o03220sp6321500090199-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02305105",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220sp6321500090199-bu.dat",
+    "o03220sp6321500090199-hash.dat",
+    "o03220sp6321500090199-imgbu.dat",
+    "o03220sp6321500090199-imgze.dat",
+    "o03220sp6321500090199-jufa.dat",
+    "o03220sp6321500090199-log.jez",
+    "o03220sp6321500090199-mr.ver",
+    "o03220sp6321500090199-rdv.dat",
+    "o03220sp6321500090199-wsqbio.jez",
+    "o03220sp6321500090199-wsqman.jez",
+    "o03220sp6321500090199-wsqmes.jez"
+   ],
+   "sha512_bu": "956cc15fc5b7b097",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_rdv": "ae1cb569a08b410b",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "aee060762e2778a0",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "fdbb7d0dc66db45b",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 371,
+    "bu_comparecimento": 265,
+    "bu_v13": 108,
+    "bu_v14": 9,
+    "bu_v22": 127,
+    "bu_v27": 1,
+    "bu_v55": 2,
+    "bu_v70": 7,
+    "bu_branco": 4,
+    "bu_nulo": 7
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 265,
+    "modelo": "UE2022",
+    "ids_urna_log": "02305105",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:05:24",
+    "ultimo_voto": "04/10/2026 17:31:31"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v22": 127,
+     "v55": 2,
+     "v14": 9,
+     "v13": 108,
+     "v70": 7,
+     "v27": 1,
+     "branco": 4,
+     "nulo": 7
+    },
+    "comparecimento": 265,
+    "aptos": 371
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "ES",
+   "mun": "56472",
+   "zona": "24",
+   "secao": "100",
+   "tipos_t36": [
+    "c_certificado_x_log"
+   ],
+   "grau_t36": "declarado_oficialmente",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "bu": "o03220es5647200240100-bu.dat",
+    "log": "o03220es5647200240100-log.jez",
+    "vota": "o03220es5647200240100-vota.vsc",
+    "rdv": "o03220es5647200240100-rdv.dat",
+    "imgbu": "o03220es5647200240100-imgbu.dat"
+   },
+   "algoritmo": "ECDSA-P521",
+   "cert_urna": "ueao01771857",
+   "cert_emissor": "AC URNA",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220es5647200240100-bu.dat",
+    "o03220es5647200240100-hash.dat",
+    "o03220es5647200240100-imgbu.dat",
+    "o03220es5647200240100-imgze.dat",
+    "o03220es5647200240100-jufa.dat",
+    "o03220es5647200240100-log.jez",
+    "o03220es5647200240100-mr.ver",
+    "o03220es5647200240100-rdv.dat",
+    "o03220es5647200240100-wsqbio.jez",
+    "o03220es5647200240100-wsqman.jez",
+    "o03220es5647200240100-wsqmes.jez"
+   ],
+   "sha512_bu": "d83e22c6ed51d5dc",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "10df08232afb14bb",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_rdv": "d809ab6b0b241f48",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_imgbu": "4cf9e0fefd801dd8",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 204,
+    "bu_comparecimento": 140,
+    "bu_v13": 53,
+    "bu_v22": 55,
+    "bu_v30": 1,
+    "bu_v55": 5,
+    "bu_v70": 1,
+    "bu_branco": 5,
+    "bu_nulo": 20
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 140,
+    "modelo": "UE2015",
+    "ids_urna_log": "01840092",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:03:53",
+    "ultimo_voto": "04/10/2026 16:47:10"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "nulo": 20,
+     "branco": 5,
+     "v70": 1,
+     "v22": 55,
+     "v55": 5,
+     "v13": 53,
+     "v30": 1
+    },
+    "comparecimento": 140,
+    "aptos": 204
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "MG",
+   "mun": "54135",
+   "zona": "281",
+   "secao": "261",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "declarado_oficialmente",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "log": "o03220mg5413502810261-log.jez",
+    "rdv": "o03220mg5413502810261-rdv.dat",
+    "vota": "o03220mg5413502810261-vota.vsc",
+    "bu": "o03220mg5413502810261-bu.dat",
+    "imgbu": "o03220mg5413502810261-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02453593",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220mg5413502810261-bu.dat",
+    "o03220mg5413502810261-hash.dat",
+    "o03220mg5413502810261-imgbu.dat",
+    "o03220mg5413502810261-imgze.dat",
+    "o03220mg5413502810261-jufa.dat",
+    "o03220mg5413502810261-log.jez",
+    "o03220mg5413502810261-mr.ver",
+    "o03220mg5413502810261-rdv.dat",
+    "o03220mg5413502810261-wsqbio.jez",
+    "o03220mg5413502810261-wsqman.jez",
+    "o03220mg5413502810261-wsqmes.jez"
+   ],
+   "sha512_log": "77881e2790a647d7",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_rdv": "1a1ca0cad5cce1b8",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "480cd00aa4e29958",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_imgbu": "9577f2e668b4028f",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 314,
+    "bu_comparecimento": 243,
+    "bu_v13": 62,
+    "bu_v14": 8,
+    "bu_v22": 157,
+    "bu_v30": 1,
+    "bu_v55": 3,
+    "bu_v70": 6,
+    "bu_branco": 4,
+    "bu_nulo": 2
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 243,
+    "modelo": "UE2022",
+    "ids_urna_log": "02254800,02453593",
+    "urnas_com_voto_no_log": 2,
+    "primeiro_voto": "04/10/2026 08:02:30",
+    "ultimo_voto": "04/10/2026 16:48:55"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v70": 6,
+     "v22": 157,
+     "v13": 62,
+     "v55": 3,
+     "nulo": 2,
+     "branco": 4,
+     "v30": 1,
+     "v14": 8
+    },
+    "comparecimento": 243,
+    "aptos": 314
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "BA",
+   "mun": "36692",
+   "zona": "48",
+   "secao": "245",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "inferido",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "bu": "o03220ba3669200480245-bu.dat",
+    "rdv": "o03220ba3669200480245-rdv.dat",
+    "vota": "o03220ba3669200480245-vota.vsc",
+    "log": "o03220ba3669200480245-log.jez",
+    "imgbu": "o03220ba3669200480245-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02272273",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220ba3669200480245-bu.dat",
+    "o03220ba3669200480245-hash.dat",
+    "o03220ba3669200480245-imgbu.dat",
+    "o03220ba3669200480245-imgze.dat",
+    "o03220ba3669200480245-jufa.dat",
+    "o03220ba3669200480245-log.jez",
+    "o03220ba3669200480245-mr.ver",
+    "o03220ba3669200480245-rdv.dat",
+    "o03220ba3669200480245-wsqbio.jez",
+    "o03220ba3669200480245-wsqman.jez",
+    "o03220ba3669200480245-wsqmes.jez"
+   ],
+   "sha512_bu": "a76330fd238d3a90",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_rdv": "9367868574ee4219",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "51db2e5ef07921cc",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "8eef9ab5d9a6c608",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 339,
+    "bu_comparecimento": 276,
+    "bu_v13": 145,
+    "bu_v14": 5,
+    "bu_v22": 103,
+    "bu_v55": 5,
+    "bu_v70": 6,
+    "bu_branco": 6,
+    "bu_nulo": 6
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 276,
+    "modelo": "UE2022",
+    "ids_urna_log": "02272273",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:06:14",
+    "ultimo_voto": "04/10/2026 17:06:42"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "nulo": 6,
+     "v70": 6,
+     "v55": 5,
+     "v13": 145,
+     "v14": 5,
+     "branco": 6,
+     "v22": 103
+    },
+    "comparecimento": 276,
+    "aptos": 339
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "RJ",
+   "mun": "58971",
+   "zona": "87",
+   "secao": "184",
+   "tipos_t36": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "compativel",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220rj5897100870184-rdv.dat",
+    "log": "o03220rj5897100870184-log.jez",
+    "vota": "o03220rj5897100870184-vota.vsc",
+    "bu": "o03220rj5897100870184-bu.dat",
+    "imgbu": "o03220rj5897100870184-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02172702",
+   "cert_emissor": "AC UE2020",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220rj5897100870184-bu.dat",
+    "o03220rj5897100870184-hash.dat",
+    "o03220rj5897100870184-imgbu.dat",
+    "o03220rj5897100870184-imgze.dat",
+    "o03220rj5897100870184-jufa.dat",
+    "o03220rj5897100870184-log.jez",
+    "o03220rj5897100870184-mr.ver",
+    "o03220rj5897100870184-rdv.dat",
+    "o03220rj5897100870184-wsqbio.jez",
+    "o03220rj5897100870184-wsqman.jez",
+    "o03220rj5897100870184-wsqmes.jez"
+   ],
+   "sha512_rdv": "e27d642da6d48e3d",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "8ff77d02802e9a0e",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_bu": "8ff5c86d2d9205c2",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_imgbu": "777caecad130a1c6",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 340,
+    "bu_comparecimento": 258,
+    "bu_v13": 118,
+    "bu_v14": 11,
+    "bu_v22": 110,
+    "bu_v30": 1,
+    "bu_v70": 6,
+    "bu_v80": 1,
+    "bu_branco": 4,
+    "bu_nulo": 7
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 256,
+    "modelo": "UE2020",
+    "ids_urna_log": "02172702",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:06:33",
+    "ultimo_voto": "04/10/2026 17:42:16"
+   },
+   "log_computado_igual_comparecimento_bu": false,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v70": 6,
+     "v13": 118,
+     "v80": 1,
+     "nulo": 7,
+     "v22": 110,
+     "branco": 4,
+     "v30": 1,
+     "v14": 11
+    },
+    "comparecimento": 258,
+    "aptos": 340
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "MG",
+   "mun": "47678",
+   "zona": "161",
+   "secao": "138",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "inferido",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220mg4767801610138-rdv.dat",
+    "bu": "o03220mg4767801610138-bu.dat",
+    "vota": "o03220mg4767801610138-vota.vsc",
+    "log": "o03220mg4767801610138-log.jez",
+    "imgbu": "o03220mg4767801610138-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02419534",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220mg4767801610138-bu.dat",
+    "o03220mg4767801610138-hash.dat",
+    "o03220mg4767801610138-imgbu.dat",
+    "o03220mg4767801610138-imgze.dat",
+    "o03220mg4767801610138-jufa.dat",
+    "o03220mg4767801610138-log.jez",
+    "o03220mg4767801610138-mr.ver",
+    "o03220mg4767801610138-rdv.dat",
+    "o03220mg4767801610138-wsqbio.jez",
+    "o03220mg4767801610138-wsqman.jez",
+    "o03220mg4767801610138-wsqmes.jez"
+   ],
+   "sha512_rdv": "95484f3328aa23f6",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "467ab2d560bcfde4",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "4e40a09f3b10cd44",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "dd07c6fd907562e6",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 285,
+    "bu_comparecimento": 235,
+    "bu_v13": 122,
+    "bu_v14": 5,
+    "bu_v22": 94,
+    "bu_v30": 1,
+    "bu_v55": 4,
+    "bu_v70": 3,
+    "bu_branco": 3,
+    "bu_nulo": 3
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 235,
+    "modelo": "UE2022",
+    "ids_urna_log": "02419534",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:01:37",
+    "ultimo_voto": "04/10/2026 17:00:52"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v30": 1,
+     "nulo": 3,
+     "v55": 4,
+     "v13": 122,
+     "branco": 3,
+     "v70": 3,
+     "v22": 94,
+     "v14": 5
+    },
+    "comparecimento": 235,
+    "aptos": 285
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "AL",
+   "mun": "28339",
+   "zona": "13",
+   "secao": "118",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "inferido",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220al2833900130118-rdv.dat",
+    "log": "o03220al2833900130118-log.jez",
+    "vota": "o03220al2833900130118-vota.vsc",
+    "bu": "o03220al2833900130118-bu.dat",
+    "imgbu": "o03220al2833900130118-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02443747",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220al2833900130118-bu.dat",
+    "o03220al2833900130118-hash.dat",
+    "o03220al2833900130118-imgbu.dat",
+    "o03220al2833900130118-imgze.dat",
+    "o03220al2833900130118-jufa.dat",
+    "o03220al2833900130118-log.jez",
+    "o03220al2833900130118-mr.ver",
+    "o03220al2833900130118-rdv.dat",
+    "o03220al2833900130118-wsqbio.jez",
+    "o03220al2833900130118-wsqman.jez",
+    "o03220al2833900130118-wsqmes.jez"
+   ],
+   "sha512_rdv": "4474dbbc47c48f0a",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "d65730cbb4eab9f5",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_bu": "530b50e9a8dfda0e",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_imgbu": "ac38cc84b2349800",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 365,
+    "bu_comparecimento": 268,
+    "bu_v13": 168,
+    "bu_v14": 4,
+    "bu_v22": 74,
+    "bu_v55": 3,
+    "bu_v70": 1,
+    "bu_branco": 1,
+    "bu_nulo": 17
+   },
+   "rdv_igual_bu": false,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 268,
+    "modelo": "UE2022",
+    "ids_urna_log": "02443747",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:25:21",
+    "ultimo_voto": "04/10/2026 18:55:05"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v22": 74,
+     "branco": 1,
+     "v13": 168,
+     "nulo": 17,
+     "v55": 3,
+     "v70": 1,
+     "v14": 4
+    },
+    "comparecimento": 268,
+    "aptos": 365
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "excecao",
+   "uf": "PB",
+   "mun": "22071",
+   "zona": "4",
+   "secao": "110",
+   "tipos_t36": [
+    "b_confirmacoes_x_total"
+   ],
+   "grau_t36": "inferido",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220pb2207100040110-rdv.dat",
+    "log": "o03220pb2207100040110-log.jez",
+    "vota": "o03220pb2207100040110-vota.vsc",
+    "bu": "o03220pb2207100040110-bu.dat",
+    "imgbu": "o03220pb2207100040110-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02371195",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220pb2207100040110-bu.dat",
+    "o03220pb2207100040110-hash.dat",
+    "o03220pb2207100040110-imgbu.dat",
+    "o03220pb2207100040110-imgze.dat",
+    "o03220pb2207100040110-jufa.dat",
+    "o03220pb2207100040110-log.jez",
+    "o03220pb2207100040110-mr.ver",
+    "o03220pb2207100040110-rdv.dat",
+    "o03220pb2207100040110-wsqbio.jez",
+    "o03220pb2207100040110-wsqman.jez",
+    "o03220pb2207100040110-wsqmes.jez"
+   ],
+   "sha512_rdv": "0c7686915a8d436f",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "129f082fc52cae23",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_bu": "5b9fa0e18915a23b",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_imgbu": "1f0f36331dcae1b4",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 266,
+    "bu_comparecimento": 212,
+    "bu_v13": 123,
+    "bu_v14": 1,
+    "bu_v21": 1,
+    "bu_v22": 65,
+    "bu_v55": 3,
+    "bu_v70": 1,
+    "bu_branco": 7,
+    "bu_nulo": 11
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 212,
+    "modelo": "UE2022",
+    "ids_urna_log": "02371195",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:04:03",
+    "ultimo_voto": "04/10/2026 17:15:20"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "nulo": 11,
+     "v22": 65,
+     "v21": 1,
+     "branco": 7,
+     "v70": 1,
+     "v55": 3,
+     "v14": 1,
+     "v13": 123
+    },
+    "comparecimento": 212,
+    "aptos": 266
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "MG",
+   "mun": "41238",
+   "zona": "333",
+   "secao": "311",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220mg4123803330311-rdv.dat",
+    "vota": "o03220mg4123803330311-vota.vsc",
+    "bu": "o03220mg4123803330311-bu.dat",
+    "log": "o03220mg4123803330311-log.jez",
+    "imgbu": "o03220mg4123803330311-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02424859",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220mg4123803330311-bu.dat",
+    "o03220mg4123803330311-hash.dat",
+    "o03220mg4123803330311-imgbu.dat",
+    "o03220mg4123803330311-imgze.dat",
+    "o03220mg4123803330311-jufa.dat",
+    "o03220mg4123803330311-log.jez",
+    "o03220mg4123803330311-mr.ver",
+    "o03220mg4123803330311-rdv.dat",
+    "o03220mg4123803330311-wsqbio.jez",
+    "o03220mg4123803330311-wsqman.jez",
+    "o03220mg4123803330311-wsqmes.jez"
+   ],
+   "sha512_rdv": "c0987bf42b7cef76",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "0a437a510d276bdf",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "8972c60e517a5c81",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "e7682d1d1e7e1241",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 440,
+    "bu_comparecimento": 320,
+    "bu_v13": 140,
+    "bu_v14": 8,
+    "bu_v22": 121,
+    "bu_v27": 1,
+    "bu_v30": 3,
+    "bu_v55": 5,
+    "bu_v70": 16,
+    "bu_v80": 2,
+    "bu_branco": 17,
+    "bu_nulo": 7
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 320,
+    "modelo": "UE2022",
+    "ids_urna_log": "02424859",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:03:08",
+    "ultimo_voto": "04/10/2026 17:36:21"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v13": 140,
+     "nulo": 7,
+     "v70": 16,
+     "v14": 8,
+     "v80": 2,
+     "v22": 121,
+     "branco": 17,
+     "v30": 3,
+     "v27": 1,
+     "v55": 5
+    },
+    "comparecimento": 320,
+    "aptos": 440
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "PE",
+   "mun": "25356",
+   "zona": "28",
+   "secao": "65",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "vota": "o03220pe2535600280065-vota.vsc",
+    "bu": "o03220pe2535600280065-bu.dat",
+    "log": "o03220pe2535600280065-log.jez",
+    "rdv": "o03220pe2535600280065-rdv.dat",
+    "imgbu": "o03220pe2535600280065-imgbu.dat"
+   },
+   "algoritmo": "ECDSA-P521",
+   "cert_urna": "ueao01773215",
+   "cert_emissor": "AC URNA",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220pe2535600280065-bu.dat",
+    "o03220pe2535600280065-hash.dat",
+    "o03220pe2535600280065-imgbu.dat",
+    "o03220pe2535600280065-imgze.dat",
+    "o03220pe2535600280065-jufa.dat",
+    "o03220pe2535600280065-log.jez",
+    "o03220pe2535600280065-mr.ver",
+    "o03220pe2535600280065-rdv.dat",
+    "o03220pe2535600280065-wsqbio.jez",
+    "o03220pe2535600280065-wsqman.jez",
+    "o03220pe2535600280065-wsqmes.jez"
+   ],
+   "sha512_bu": "b1769821663d5ea1",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "f7ca0586a49d55c9",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_rdv": "c2fd4a0a91c3f9b8",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_imgbu": "a8ee02a29e769c67",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 374,
+    "bu_comparecimento": 289,
+    "bu_v13": 183,
+    "bu_v14": 6,
+    "bu_v22": 74,
+    "bu_v55": 6,
+    "bu_v70": 6,
+    "bu_branco": 4,
+    "bu_nulo": 10
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 289,
+    "modelo": "UE2015",
+    "ids_urna_log": "01773215",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:10:26",
+    "ultimo_voto": "04/10/2026 18:23:39"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v70": 6,
+     "v13": 183,
+     "v22": 74,
+     "nulo": 10,
+     "branco": 4,
+     "v14": 6,
+     "v55": 6
+    },
+    "comparecimento": 289,
+    "aptos": 374
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "AL",
+   "mun": "27413",
+   "zona": "16",
+   "secao": "114",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220al2741300160114-rdv.dat",
+    "log": "o03220al2741300160114-log.jez",
+    "vota": "o03220al2741300160114-vota.vsc",
+    "bu": "o03220al2741300160114-bu.dat",
+    "imgbu": "o03220al2741300160114-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02032789",
+   "cert_emissor": "AC UE2020",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220al2741300160114-bu.dat",
+    "o03220al2741300160114-hash.dat",
+    "o03220al2741300160114-imgbu.dat",
+    "o03220al2741300160114-imgze.dat",
+    "o03220al2741300160114-jufa.dat",
+    "o03220al2741300160114-log.jez",
+    "o03220al2741300160114-mr.ver",
+    "o03220al2741300160114-rdv.dat",
+    "o03220al2741300160114-wsqbio.jez",
+    "o03220al2741300160114-wsqman.jez",
+    "o03220al2741300160114-wsqmes.jez"
+   ],
+   "sha512_rdv": "81c921c988c721a6",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "b10f21146a66d150",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_bu": "4392c1869c960642",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_imgbu": "079f2db5e81bfc09",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 247,
+    "bu_comparecimento": 190,
+    "bu_v13": 72,
+    "bu_v16": 1,
+    "bu_v22": 96,
+    "bu_v55": 1,
+    "bu_v70": 3,
+    "bu_branco": 4,
+    "bu_nulo": 13
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 190,
+    "modelo": "UE2020",
+    "ids_urna_log": "02032789",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:04:51",
+    "ultimo_voto": "04/10/2026 17:03:15"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v70": 3,
+     "v55": 1,
+     "v13": 72,
+     "v16": 1,
+     "branco": 4,
+     "v22": 96,
+     "nulo": 13
+    },
+    "comparecimento": 190,
+    "aptos": 247
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "SP",
+   "mun": "62995",
+   "zona": "36",
+   "secao": "45",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220sp6299500360045-rdv.dat",
+    "bu": "o03220sp6299500360045-bu.dat",
+    "vota": "o03220sp6299500360045-vota.vsc",
+    "log": "o03220sp6299500360045-log.jez",
+    "imgbu": "o03220sp6299500360045-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02096940",
+   "cert_emissor": "AC UE2020",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220sp6299500360045-bu.dat",
+    "o03220sp6299500360045-hash.dat",
+    "o03220sp6299500360045-imgbu.dat",
+    "o03220sp6299500360045-imgze.dat",
+    "o03220sp6299500360045-jufa.dat",
+    "o03220sp6299500360045-log.jez",
+    "o03220sp6299500360045-mr.ver",
+    "o03220sp6299500360045-rdv.dat",
+    "o03220sp6299500360045-wsqbio.jez",
+    "o03220sp6299500360045-wsqman.jez",
+    "o03220sp6299500360045-wsqmes.jez"
+   ],
+   "sha512_rdv": "fd3da1b0efcf0de8",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "1718cc85dabc5806",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "526b3215ed82cad7",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "263423473974491c",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 299,
+    "bu_comparecimento": 221,
+    "bu_v13": 83,
+    "bu_v14": 11,
+    "bu_v21": 1,
+    "bu_v22": 101,
+    "bu_v27": 1,
+    "bu_v55": 3,
+    "bu_v70": 8,
+    "bu_v80": 1,
+    "bu_branco": 5,
+    "bu_nulo": 7
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 221,
+    "modelo": "UE2020",
+    "ids_urna_log": "02096940",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:11:46",
+    "ultimo_voto": "04/10/2026 16:58:31"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v70": 8,
+     "v27": 1,
+     "v13": 83,
+     "branco": 5,
+     "v14": 11,
+     "v21": 1,
+     "v22": 101,
+     "nulo": 7,
+     "v55": 3,
+     "v80": 1
+    },
+    "comparecimento": 221,
+    "aptos": 299
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "MT",
+   "mun": "91294",
+   "zona": "4",
+   "secao": "88",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "bu": "o03220mt9129400040088-bu.dat",
+    "rdv": "o03220mt9129400040088-rdv.dat",
+    "vota": "o03220mt9129400040088-vota.vsc",
+    "log": "o03220mt9129400040088-log.jez",
+    "imgbu": "o03220mt9129400040088-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02474159",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220mt9129400040088-bu.dat",
+    "o03220mt9129400040088-hash.dat",
+    "o03220mt9129400040088-imgbu.dat",
+    "o03220mt9129400040088-imgze.dat",
+    "o03220mt9129400040088-jufa.dat",
+    "o03220mt9129400040088-log.jez",
+    "o03220mt9129400040088-mr.ver",
+    "o03220mt9129400040088-rdv.dat",
+    "o03220mt9129400040088-wsqbio.jez",
+    "o03220mt9129400040088-wsqman.jez",
+    "o03220mt9129400040088-wsqmes.jez"
+   ],
+   "sha512_bu": "42315dada75e0614",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_rdv": "179ccbc4a9ae30dd",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "d82bb394e1a71635",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "e23fb347b0dd2a97",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 295,
+    "bu_comparecimento": 208,
+    "bu_v13": 137,
+    "bu_v14": 1,
+    "bu_v22": 59,
+    "bu_v55": 2,
+    "bu_v70": 2,
+    "bu_branco": 2,
+    "bu_nulo": 5
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 208,
+    "modelo": "UE2022",
+    "ids_urna_log": "02474159",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 07:04:26",
+    "ultimo_voto": "04/10/2026 15:59:17"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v70": 2,
+     "branco": 2,
+     "v13": 137,
+     "nulo": 5,
+     "v14": 1,
+     "v22": 59,
+     "v55": 2
+    },
+    "comparecimento": 208,
+    "aptos": 295
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "RJ",
+   "mun": "58327",
+   "zona": "183",
+   "secao": "141",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220rj5832701830141-rdv.dat",
+    "vota": "o03220rj5832701830141-vota.vsc",
+    "bu": "o03220rj5832701830141-bu.dat",
+    "log": "o03220rj5832701830141-log.jez",
+    "imgbu": "o03220rj5832701830141-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02386317",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220rj5832701830141-bu.dat",
+    "o03220rj5832701830141-hash.dat",
+    "o03220rj5832701830141-imgbu.dat",
+    "o03220rj5832701830141-imgze.dat",
+    "o03220rj5832701830141-jufa.dat",
+    "o03220rj5832701830141-log.jez",
+    "o03220rj5832701830141-mr.ver",
+    "o03220rj5832701830141-rdv.dat",
+    "o03220rj5832701830141-wsqbio.jez",
+    "o03220rj5832701830141-wsqman.jez",
+    "o03220rj5832701830141-wsqmes.jez"
+   ],
+   "sha512_rdv": "4d443c809ce4a583",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "7d946459351839ba",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "e012e160d86392c0",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "89fbbba1e3f5c38b",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 314,
+    "bu_comparecimento": 266,
+    "bu_v13": 106,
+    "bu_v14": 4,
+    "bu_v22": 133,
+    "bu_v55": 5,
+    "bu_v70": 10,
+    "bu_branco": 3,
+    "bu_nulo": 5
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 266,
+    "modelo": "UE2022",
+    "ids_urna_log": "02386317",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:04:53",
+    "ultimo_voto": "04/10/2026 17:08:21"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v13": 106,
+     "branco": 3,
+     "nulo": 5,
+     "v55": 5,
+     "v14": 4,
+     "v22": 133,
+     "v70": 10
+    },
+    "comparecimento": 266,
+    "aptos": 314
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "CE",
+   "mun": "14192",
+   "zona": "40",
+   "secao": "131",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "vota": "o03220ce1419200400131-vota.vsc",
+    "log": "o03220ce1419200400131-log.jez",
+    "bu": "o03220ce1419200400131-bu.dat",
+    "rdv": "o03220ce1419200400131-rdv.dat",
+    "imgbu": "o03220ce1419200400131-imgbu.dat"
+   },
+   "algoritmo": "ECDSA-P521",
+   "cert_urna": "ueao01753267",
+   "cert_emissor": "AC URNA",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220ce1419200400131-bu.dat",
+    "o03220ce1419200400131-hash.dat",
+    "o03220ce1419200400131-imgbu.dat",
+    "o03220ce1419200400131-imgze.dat",
+    "o03220ce1419200400131-jufa.dat",
+    "o03220ce1419200400131-log.jez",
+    "o03220ce1419200400131-mr.ver",
+    "o03220ce1419200400131-rdv.dat",
+    "o03220ce1419200400131-wsqbio.jez",
+    "o03220ce1419200400131-wsqman.jez",
+    "o03220ce1419200400131-wsqmes.jez"
+   ],
+   "sha512_log": "88863b31e494d60a",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_bu": "9b9fc8827f90db67",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_rdv": "7d37309b0fa5f4d7",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_imgbu": "4fcfe64d0af8b7f3",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 264,
+    "bu_comparecimento": 208,
+    "bu_v13": 146,
+    "bu_v14": 4,
+    "bu_v22": 43,
+    "bu_v70": 2,
+    "bu_branco": 7,
+    "bu_nulo": 6
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 208,
+    "modelo": "UE2015",
+    "ids_urna_log": "01753267",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:06:17",
+    "ultimo_voto": "04/10/2026 17:50:18"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v13": 146,
+     "v14": 4,
+     "v70": 2,
+     "branco": 7,
+     "nulo": 6,
+     "v22": 43
+    },
+    "comparecimento": 208,
+    "aptos": 264
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "BA",
+   "mun": "39713",
+   "zona": "68",
+   "secao": "187",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "bu": "o03220ba3971300680187-bu.dat",
+    "log": "o03220ba3971300680187-log.jez",
+    "vota": "o03220ba3971300680187-vota.vsc",
+    "rdv": "o03220ba3971300680187-rdv.dat",
+    "imgbu": "o03220ba3971300680187-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02313205",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220ba3971300680187-bu.dat",
+    "o03220ba3971300680187-hash.dat",
+    "o03220ba3971300680187-imgbu.dat",
+    "o03220ba3971300680187-imgze.dat",
+    "o03220ba3971300680187-jufa.dat",
+    "o03220ba3971300680187-log.jez",
+    "o03220ba3971300680187-mr.ver",
+    "o03220ba3971300680187-rdv.dat",
+    "o03220ba3971300680187-wsqbio.jez",
+    "o03220ba3971300680187-wsqman.jez",
+    "o03220ba3971300680187-wsqmes.jez"
+   ],
+   "sha512_bu": "317eedaab0b90cec",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "b25b1d567fabc477",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_rdv": "108cf69cc710cf39",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_imgbu": "8e95e00e9a60ca87",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 241,
+    "bu_comparecimento": 192,
+    "bu_v13": 116,
+    "bu_v14": 2,
+    "bu_v22": 64,
+    "bu_v55": 5,
+    "bu_v70": 2,
+    "bu_branco": 1,
+    "bu_nulo": 2
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 192,
+    "modelo": "UE2022",
+    "ids_urna_log": "02313205",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:01:46",
+    "ultimo_voto": "04/10/2026 16:54:40"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v22": 64,
+     "nulo": 2,
+     "v55": 5,
+     "v70": 2,
+     "v13": 116,
+     "branco": 1,
+     "v14": 2
+    },
+    "comparecimento": 192,
+    "aptos": 241
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "PB",
+   "mun": "21377",
+   "zona": "47",
+   "secao": "37",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "rdv": "o03220pb2137700470037-rdv.dat",
+    "vota": "o03220pb2137700470037-vota.vsc",
+    "bu": "o03220pb2137700470037-bu.dat",
+    "log": "o03220pb2137700470037-log.jez",
+    "imgbu": "o03220pb2137700470037-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02351533",
+   "cert_emissor": "AC UE2022",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220pb2137700470037-bu.dat",
+    "o03220pb2137700470037-hash.dat",
+    "o03220pb2137700470037-imgbu.dat",
+    "o03220pb2137700470037-imgze.dat",
+    "o03220pb2137700470037-jufa.dat",
+    "o03220pb2137700470037-log.jez",
+    "o03220pb2137700470037-mr.ver",
+    "o03220pb2137700470037-rdv.dat",
+    "o03220pb2137700470037-wsqbio.jez",
+    "o03220pb2137700470037-wsqman.jez",
+    "o03220pb2137700470037-wsqmes.jez"
+   ],
+   "sha512_rdv": "4b52385871d09814",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_bu": "e3ee09d1edd7a584",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_log": "a3d359e4f6485a7b",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "2f33b16c83f9e483",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 212,
+    "bu_comparecimento": 178,
+    "bu_v13": 111,
+    "bu_v14": 1,
+    "bu_v22": 56,
+    "bu_v29": 1,
+    "bu_v70": 3,
+    "bu_branco": 3,
+    "bu_nulo": 3
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 178,
+    "modelo": "UE2022",
+    "ids_urna_log": "02351533",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:02:24",
+    "ultimo_voto": "04/10/2026 17:01:43"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "v13": 111,
+     "branco": 3,
+     "v14": 1,
+     "v70": 3,
+     "v22": 56,
+     "v29": 1,
+     "nulo": 3
+    },
+    "comparecimento": 178,
+    "aptos": 212
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  },
+  {
+   "grupo": "aleatoria",
+   "uf": "PE",
+   "mun": "25739",
+   "zona": "13",
+   "secao": "184",
+   "tipos_t36": [],
+   "grau_t36": "",
+   "arquivos": [
+    "bu",
+    "imgbu",
+    "log",
+    "rdv",
+    "vota"
+   ],
+   "nomes": {
+    "bu": "o03220pe2573900130184-bu.dat",
+    "rdv": "o03220pe2573900130184-rdv.dat",
+    "vota": "o03220pe2573900130184-vota.vsc",
+    "log": "o03220pe2573900130184-log.jez",
+    "imgbu": "o03220pe2573900130184-imgbu.dat"
+   },
+   "algoritmo": "Ed521",
+   "cert_urna": "UEAO02173233",
+   "cert_emissor": "AC UE2020",
+   "assin_lista_ok": true,
+   "lista_assinada_itens": [
+    "o03220pe2573900130184-bu.dat",
+    "o03220pe2573900130184-hash.dat",
+    "o03220pe2573900130184-imgbu.dat",
+    "o03220pe2573900130184-imgze.dat",
+    "o03220pe2573900130184-jufa.dat",
+    "o03220pe2573900130184-log.jez",
+    "o03220pe2573900130184-mr.ver",
+    "o03220pe2573900130184-rdv.dat",
+    "o03220pe2573900130184-wsqbio.jez",
+    "o03220pe2573900130184-wsqman.jez",
+    "o03220pe2573900130184-wsqmes.jez"
+   ],
+   "sha512_bu": "fa63bf85e34443d3",
+   "hash_ok_bu": true,
+   "assin_ok_bu": true,
+   "sha512_rdv": "f10e816e670bbe3f",
+   "hash_ok_rdv": true,
+   "assin_ok_rdv": true,
+   "sha512_log": "1655f40e462aa72c",
+   "hash_ok_log": true,
+   "assin_ok_log": true,
+   "sha512_imgbu": "241432e58ae9009b",
+   "hash_ok_imgbu": true,
+   "assin_ok_imgbu": true,
+   "bu": {
+    "bu_aptos": 391,
+    "bu_comparecimento": 320,
+    "bu_v13": 182,
+    "bu_v22": 99,
+    "bu_v55": 7,
+    "bu_v70": 10,
+    "bu_branco": 9,
+    "bu_nulo": 13
+   },
+   "rdv_igual_bu": true,
+   "img_igual_bu": true,
+   "log": {
+    "computado": 320,
+    "modelo": "UE2020",
+    "ids_urna_log": "02173233",
+    "urnas_com_voto_no_log": 1,
+    "primeiro_voto": "04/10/2026 08:09:06",
+    "ultimo_voto": "04/10/2026 17:54:14"
+   },
+   "log_computado_igual_comparecimento_bu": true,
+   "identidade_no_bu": {
+    "secao": true,
+    "zona": true,
+    "municipio": true,
+    "uf_texto": false
+   },
+   "web": {
+    "votos": {
+     "nulo": 13,
+     "v22": 99,
+     "v55": 7,
+     "branco": 9,
+     "v13": 182,
+     "v70": 10
+    },
+    "comparecimento": 320,
+    "aptos": 391
+   },
+   "web_igual_bu": true,
+   "web_comparecimento_igual_bu": true
+  }
+ ]
+}

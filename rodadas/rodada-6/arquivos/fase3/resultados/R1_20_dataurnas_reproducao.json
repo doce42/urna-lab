@@ -1,0 +1,171 @@
+{
+ "pergunta": "R1-20 reconciliação com DataUrnas-BR",
+ "fonte": "github.com/alissonlinneker/DataUrnas-BR (terceiro; clone raso, sem baixar arquivos do TSE)",
+ "commit": "12f0433bd20882d305dd7b9e4987d6dcf3b321a9",
+ "sha256_entradas": {
+  "2026/votos_presidente_2026.parquet": "b5654e7b692e2cf2eddb818be2365affd99b613ad17757c3b88f88430114d422",
+  "2026/secoes_2026.parquet": "cb0e3ecfdc13e14de77be40b87040983d55b26675f2c497474b4543473b30916",
+  "votos_t1_a.parquet": "fcb78b9c6be25ea78bbb208175d4242ff4bbc3598507759a6e7726fffe418176",
+  "votos_t1_b.parquet": "d4cb49542cd65c11d916a348d4aaedc8d19f2db24cbc421c4a35d7a945aca303",
+  "votos_t2.parquet": "97fe1abcdbd88c30de14e2d5f47076de119a8c7c980ab863dc69111aeae6fc80",
+  "totais_cargo.parquet": "d63b224cb9645dc2c68598e513e40b677c303e207f15839fc6fbcba39846db61"
+ },
+ "resultados": {
+  "2026_1T_nominais": {
+   "secoes_nossas": 499206,
+   "secoes_deles": 499206,
+   "em_comum": 499206,
+   "so_nossas": 0,
+   "so_deles": 0,
+   "secoes_com_diferenca": 0,
+   "soma_abs_diferenca_votos": 0,
+   "votos_nossos_em_comum": 119306034,
+   "votos_deles_em_comum": 119306034,
+   "exemplos_diferenca": [],
+   "exemplos_so_nossas": [],
+   "exemplos_so_deles": [],
+   "votos_so_nossas": 0,
+   "votos_so_deles": 0
+  },
+  "2026_1T_brancos_nulos": {
+   "secoes_nossas": 499206,
+   "secoes_deles": 499207,
+   "em_comum": 499206,
+   "so_nossas": 0,
+   "so_deles": 1,
+   "secoes_com_diferenca": 0,
+   "soma_abs_diferenca_votos": 0,
+   "votos_nossos_em_comum": 5969801,
+   "votos_deles_em_comum": 5969801,
+   "exemplos_diferenca": [],
+   "exemplos_so_nossas": [],
+   "exemplos_so_deles": [
+    "ZZ/29564/1/91"
+   ],
+   "votos_so_nossas": 0,
+   "votos_so_deles": 0
+  },
+  "2022_1T_nominais": {
+   "secoes_nossas": 472028,
+   "secoes_deles": 470819,
+   "em_comum": 470819,
+   "so_nossas": 1209,
+   "so_deles": 0,
+   "secoes_com_diferenca": 0,
+   "soma_abs_diferenca_votos": 0,
+   "votos_nossos_em_comum": 117895704,
+   "votos_deles_em_comum": 117895704,
+   "exemplos_diferenca": [],
+   "exemplos_so_nossas": [
+    "AM/2011/34/27",
+    "AM/2259/8/116",
+    "AM/2550/40/454",
+    "AM/2690/4/129",
+    "BA/34070/31/259"
+   ],
+   "exemplos_so_deles": [],
+   "votos_so_nossas": 334015,
+   "votos_so_deles": 0
+  },
+  "2022_1T_brancos_nulos": {
+   "secoes_nossas": 472028,
+   "secoes_deles": 470736,
+   "em_comum": 470736,
+   "so_nossas": 1292,
+   "so_deles": 0,
+   "secoes_com_diferenca": 0,
+   "soma_abs_diferenca_votos": 0,
+   "votos_nossos_em_comum": 5440003,
+   "votos_deles_em_comum": 5440003,
+   "exemplos_diferenca": [],
+   "exemplos_so_nossas": [
+    "AM/2011/34/27",
+    "AM/2259/8/116",
+    "AM/2550/40/454",
+    "AM/2690/4/129",
+    "BA/34070/31/259"
+   ],
+   "exemplos_so_deles": [],
+   "votos_so_nossas": 12650,
+   "votos_so_deles": 0
+  },
+  "2022_2T_nominais": {
+   "secoes_nossas": 472028,
+   "secoes_deles": 470834,
+   "em_comum": 470834,
+   "so_nossas": 1194,
+   "so_deles": 0,
+   "secoes_com_diferenca": 0,
+   "soma_abs_diferenca_votos": 0,
+   "votos_nossos_em_comum": 118217817,
+   "votos_deles_em_comum": 118217817,
+   "exemplos_diferenca": [],
+   "exemplos_so_nossas": [
+    "BA/36390/37/157",
+    "BA/36390/37/158",
+    "BA/36390/37/161",
+    "BA/36390/37/164",
+    "BA/36390/37/165"
+   ],
+   "exemplos_so_deles": [],
+   "votos_so_nossas": 334536,
+   "votos_so_deles": 0
+  },
+  "2022_2T_brancos_nulos": {
+   "secoes_nossas": 472028,
+   "secoes_deles": 470750,
+   "em_comum": 470750,
+   "so_nossas": 1278,
+   "so_deles": 0,
+   "secoes_com_diferenca": 0,
+   "soma_abs_diferenca_votos": 0,
+   "votos_nossos_em_comum": 5685265,
+   "votos_deles_em_comum": 5685265,
+   "exemplos_diferenca": [],
+   "exemplos_so_nossas": [
+    "BA/36382/107/101",
+    "BA/36382/107/70",
+    "BA/36382/107/75",
+    "BA/36382/107/76",
+    "BA/36382/107/77"
+   ],
+   "exemplos_so_deles": [],
+   "votos_so_nossas": 15178,
+   "votos_so_deles": 0
+  }
+ },
+ "colunas_2026": [
+  "v13_1",
+  "v14_1",
+  "v16_1",
+  "v21_1",
+  "v22_1",
+  "v27_1",
+  "v28_1",
+  "v29_1",
+  "v30_1",
+  "v35_1",
+  "v55_1",
+  "v70_1",
+  "v80_1"
+ ],
+ "colunas_2022": {
+  "1": [
+   "v12_1",
+   "v13_1",
+   "v14_1",
+   "v15_1",
+   "v16_1",
+   "v21_1",
+   "v22_1",
+   "v27_1",
+   "v30_1",
+   "v44_1",
+   "v80_1"
+  ],
+  "2": [
+   "v13_2",
+   "v22_2"
+  ]
+ }
+}

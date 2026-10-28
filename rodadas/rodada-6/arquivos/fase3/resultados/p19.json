@@ -1,0 +1,59 @@
+{
+ "pergunta": "p19",
+ "malha": {
+  "municipios": 5570,
+  "com_vizinho_por_arco": 5568,
+  "media_vizinhos": 5.741113105924596
+ },
+ "2026": {
+  "rainha_por_arco": {
+   "I": 0.16078409283308073,
+   "esperado_H0": -0.0001795654516071108,
+   "p_bilateral_perm": 0.001,
+   "sim_p2_5_p97_5": [
+    -0.015500813761470767,
+    0.015065929943339752
+   ]
+  },
+  "5_vizinhos_mais_proximos": {
+   "I": 0.17199348081388083,
+   "esperado_H0": -0.0001795654516071108,
+   "p_bilateral_perm": 0.001,
+   "sim_p2_5_p97_5": [
+    -0.017592979358328247,
+    0.015245938999271314
+   ]
+  },
+  "municipios": 5570,
+  "sem_vizinho_na_amostra": 2,
+  "sem_5pct_extremos_rainha": {
+   "I": 0.15685520429169844
+  }
+ },
+ "2022": {
+  "rainha_por_arco": {
+   "I": 0.1790794135549745,
+   "esperado_H0": -0.0001795654516071108,
+   "p_bilateral_perm": 0.001,
+   "sim_p2_5_p97_5": [
+    -0.015603850647855357,
+    0.014976661394103943
+   ]
+  },
+  "5_vizinhos_mais_proximos": {
+   "I": 0.1979244254751144,
+   "esperado_H0": -0.0001795654516071108,
+   "p_bilateral_perm": 0.001,
+   "sim_p2_5_p97_5": [
+    -0.016029209560236818,
+    0.015273657450967825
+   ]
+  },
+  "municipios": 5570,
+  "sem_vizinho_na_amostra": 2,
+  "sem_5pct_extremos_rainha": {
+   "I": 0.17006801852460776
+  }
+ },
+ "tempo_s": 2.0
+}

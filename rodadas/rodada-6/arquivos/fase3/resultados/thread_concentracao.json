@@ -1,0 +1,50 @@
+{
+ "pre_registro": "fase3/PREREG_THREAD_CONCENTRACAO.md",
+ "2026_brasil": {
+  "secoes_13_acima_80": 35591,
+  "secoes_22_acima_80": 7059,
+  "frac_13_acima_80_norte_nordeste": 0.9563091792868984,
+  "secoes_13_vence": 250108,
+  "vantagem_13_onde_vence": 19279311,
+  "vantagem_22_onde_vence_ou_empata": 14877777,
+  "saldo": 4401534,
+  "saldo_das_secoes_13_acima_80": 5558025
+ },
+ "2026_com_exterior": {
+  "secoes_13_acima_80": 35712,
+  "secoes_22_acima_80": 7175,
+  "frac_13_acima_80_norte_nordeste": 0.9530689964157706,
+  "secoes_13_vence": 250935,
+  "vantagem_13_onde_vence": 19363797,
+  "vantagem_22_onde_vence_ou_empata": 14933606,
+  "saldo": 4430191,
+  "saldo_das_secoes_13_acima_80": 5586433
+ },
+ "2022_brasil": {
+  "secoes_13_acima_80": 40046,
+  "secoes_22_acima_80": 6579,
+  "frac_13_acima_80_norte_nordeste": 0.9488588123657794,
+  "secoes_13_vence": 224955,
+  "vantagem_13_onde_vence": 17737367,
+  "vantagem_22_onde_vence_ou_empata": 15605363,
+  "saldo": 2132004,
+  "saldo_das_secoes_13_acima_80": 6188429
+ },
+ "2022_com_exterior": {
+  "secoes_13_acima_80": 40116,
+  "secoes_22_acima_80": 6727,
+  "frac_13_acima_80_norte_nordeste": 0.9472031109781633,
+  "secoes_13_vence": 225519,
+  "vantagem_13_onde_vence": 17798612,
+  "vantagem_22_onde_vence_ou_empata": 15658967,
+  "saldo": 2139645,
+  "saldo_das_secoes_13_acima_80": 6207483
+ },
+ "continuidade_2026_com_2022": {
+  "secoes": 35591,
+  "com_par": 32159,
+  "ja_acima_80_em_2022": 29173,
+  "frac_sobre_todas": 0.8196735129667613,
+  "frac_sobre_pareadas": 0.9071488541310364
+ }
+}

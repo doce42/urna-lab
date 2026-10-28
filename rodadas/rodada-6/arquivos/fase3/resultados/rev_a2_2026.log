@@ -1,0 +1,33 @@
+2026 real {'T1_pro': np.float64(32.0), 'T1_contra': np.float64(13.0), 'T2': np.float64(0.301), 'T3_pro': np.float64(116.0), 'T3_contra': np.float64(9.0), 'T4': np.float64(2.047), 'E02s_pro': np.float64(19.0), 'E02s_contra': np.float64(20.0), 'E02c_pro': np.float64(28.0), 'E02c_contra': np.float64(27.0)} rho 0.1865 2 s
+calibração 9 s
+nulo {'ancorado_no_real': {'qualquer_E02s': {'taxa': 0.0, 'ic95': [0.0, 0.113517091390478]}, 'qualquer_E02c': {'taxa': 0.0, 'ic95': [0.0, 0.113517091390478]}}, 'calibrado': {'qualquer_E02s': {'taxa': 0.03333333333333333, 'ic95': [0.0059084379948573795, 0.16670751396958874]}, 'qualquer_E02c': {'taxa': 0.03333333333333333, 'ic95': [0.0059084379948573795, 0.16670751396958874]}}} 20 s
+M0_disperso|2pct|A_adv_para_Lula 24767 {'qualquer_E02s': 0.03, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 30 s
+M0_disperso|2pct|B_Lula_para_adv 24777 {'qualquer_E02s': 0.03, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 42 s
+M0_disperso|5pct|A_adv_para_Lula 61837 {'qualquer_E02s': 0.07, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 54 s
+M0_disperso|5pct|B_Lula_para_adv 61911 {'qualquer_E02s': 0.0, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 65 s
+M0_disperso|10pct|A_adv_para_Lula 123334 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 77 s
+M0_disperso|10pct|B_Lula_para_adv 123822 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 89 s
+M1_locais|2pct|A_adv_para_Lula 24787 {'qualquer_E02s': 0.07, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 100 s
+M1_locais|2pct|B_Lula_para_adv 24796 {'qualquer_E02s': 0.03, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 110 s
+M1_locais|5pct|A_adv_para_Lula 61904 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.07, 'E02c_oposto': 0.33} 121 s
+M1_locais|5pct|B_Lula_para_adv 61975 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.1, 'E02c_oposto': 0.2} 132 s
+M1_locais|10pct|A_adv_para_Lula 123470 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.23, 'E02c_oposto': 0.27} 143 s
+M1_locais|10pct|B_Lula_para_adv 123947 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.17, 'E02c_oposto': 0.1} 153 s
+M2_municipios|2pct|A_adv_para_Lula 25674 {'qualquer_E02s': 0.07, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 164 s
+M2_municipios|2pct|B_Lula_para_adv 25686 {'qualquer_E02s': 0.03, 'sentido_E02s': 0.0, 'sentido_E02c': 0.03, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 174 s
+M2_municipios|5pct|A_adv_para_Lula 64090 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.07, 'E02c_oposto': 0.23} 184 s
+M2_municipios|5pct|B_Lula_para_adv 64180 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.13, 'E02c_oposto': 0.23} 194 s
+M2_municipios|10pct|A_adv_para_Lula 127733 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.53, 'E02c_oposto': 0.6} 204 s
+M2_municipios|10pct|B_Lula_para_adv 128351 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.43, 'E02c_oposto': 0.4} 214 s
+M3_regiao|2pct|A_adv_para_Lula 25344 {'qualquer_E02s': 0.13, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.03, 'E02c_oposto': 0.03} 224 s
+M3_regiao|2pct|B_Lula_para_adv 25363 {'qualquer_E02s': 0.07, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 234 s
+M3_regiao|5pct|A_adv_para_Lula 63189 {'qualquer_E02s': 0.97, 'sentido_E02s': 0.87, 'sentido_E02c': 0.9, 'E02s_oposto': 0.17, 'E02c_oposto': 0.27} 243 s
+M3_regiao|5pct|B_Lula_para_adv 63331 {'qualquer_E02s': 0.9, 'sentido_E02s': 0.77, 'sentido_E02c': 0.83, 'E02s_oposto': 0.0, 'E02c_oposto': 0.03} 254 s
+M3_regiao|10pct|A_adv_para_Lula 125685 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.73, 'E02c_oposto': 0.73} 264 s
+M3_regiao|10pct|B_Lula_para_adv 126632 {'qualquer_E02s': 1.0, 'sentido_E02s': 1.0, 'sentido_E02c': 1.0, 'E02s_oposto': 0.77, 'E02c_oposto': 0.73} 274 s
+M2G_grandes|2pct|A_adv_para_Lula 62373 {'qualquer_E02s': 0.2, 'sentido_E02s': 0.1, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 283 s
+M2G_grandes|2pct|B_Lula_para_adv 62373 {'qualquer_E02s': 0.2, 'sentido_E02s': 0.0, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 296 s
+M2G_grandes|5pct|A_adv_para_Lula 155804 {'qualquer_E02s': 0.73, 'sentido_E02s': 0.43, 'sentido_E02c': 0.03, 'E02s_oposto': 0.07, 'E02c_oposto': 0.0} 307 s
+M2G_grandes|5pct|B_Lula_para_adv 155805 {'qualquer_E02s': 0.9, 'sentido_E02s': 0.7, 'sentido_E02c': 0.0, 'E02s_oposto': 0.0, 'E02c_oposto': 0.0} 318 s
+M2G_grandes|10pct|A_adv_para_Lula 311559 {'qualquer_E02s': 1.0, 'sentido_E02s': 0.8, 'sentido_E02c': 0.33, 'E02s_oposto': 0.8, 'E02c_oposto': 0.6} 326 s
+M2G_grandes|10pct|B_Lula_para_adv 311568 {'qualquer_E02s': 1.0, 'sentido_E02s': 0.8, 'sentido_E02c': 0.43, 'E02s_oposto': 0.8, 'E02c_oposto': 0.57} 334 s

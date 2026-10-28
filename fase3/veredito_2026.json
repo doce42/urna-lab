@@ -320,7 +320,11 @@
   },
   "T56": {
    "nivel": "S1",
-   "motivo": "Brancos e nulos do 1º turno → Lula no estimador (C06); em parte explicado: excesso de brancos e nulos no 1º turno de 2026 onde Lula é forte (~0,47 de 1,82 mi); o resto é queda geral no 2º turno; fluxo individual não identificável."
+   "motivo": "Brancos e nulos do 1º turno → Lula no estimador (C06); explicado em grande parte: excesso no 1º turno de 2026 onde Lula é forte (~0,47 mi) e menos 2º turno de governador (T57, ~0,69 mi); resto uniforme; fluxo individual não identificável."
+  },
+  "T57": {
+   "nivel": "S1",
+   "motivo": "2º turno de governador eleva nulos de presidente (+1,58 ponto em 2022, +0,78 em 2026); 53% dos votos nessas UFs em 2022 contra 8% em 2026: ~0,69 mi da queda de nulos; resto uniforme."
   },
   "T44": {
    "nivel": "S3",

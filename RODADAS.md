@@ -12,6 +12,7 @@ O Urna Lab precisa permitir que qualquer pessoa veja o que o estudo concluiu hoj
 | Novas investigações | **Fase 2 → V1.1** | **concluída em 28/10/2026** (rodada 3, tag `v1.1`) | Perguntas registradas antes dos resultados em [`FASE2.md`](FASE2.md); respostas em [`RELATORIO_FASE2_COMPLETA.md`](RELATORIO_FASE2_COMPLETA.md); P18 a P21 na fila |
 | Pendências e curvas | **Fase 3 → V1.2** | congelada em 28/10/2026 antes da auditoria (rodada 4, tag `v1.2`), preservada; desvios em [`rodadas/rodada-4-desvio.md`](rodadas/rodada-4-desvio.md) |
 | Revisão e respostas | **Fase 3 → V1.3** | **concluída em 28/10/2026** (rodada 5, tag `v1.3`), todos os arquivos da fase no mesmo hash | [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md), [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md) |
+| Alegações públicas | **V1.4** | **concluída em 28/10/2026** (rodada 6, tag `v1.4`) | Live de 2022, pedido do PL, matérias e posts testados com pré-registro (T45–T57); respostas Q27–Q39 em [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md) |
 | Comparações | rc1 → V1.0 → V1.1 → atual | disponível | O que mudou em cada teste, com a causa |
 | Estado atual | registro vivo | — | [`testes/registro.json`](testes/registro.json), com provas e mudanças ainda não congeladas |
 

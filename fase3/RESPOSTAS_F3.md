@@ -531,17 +531,17 @@
 - **Evidências:** `fase3/PREREG_CABO_FRIO.md`, `fase3/cabo_frio.py`, `fase3/resultados/cabo_frio.json`
 
 ### Q39. Os brancos e nulos do 1º turno foram quase todos para Lula em 2026? Isso é uma anomalia?
-**Resposta:** A direção se confirma no nosso estimador (C06): cerca de 62% para Lula e 1% para Flávio, contra 16% e 28% para Bolsonaro em 2022. Mas há uma pista no próprio 1º turno: nas mesmas seções, onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 (até +0,73 ponto), o que é compatível com eleitores de Lula que anularam no 1º turno e voltaram, ou com campanha entre quem rejeitava os dois, e não só com erro do estimador. Isso cobre cerca de 0,47 mi da queda de 1,82 mi; o restante é uma queda geral de brancos e nulos no 2º turno, maior onde Lula é forte, sem causa identificada. As contagens de brancos e nulos conferem nos boletins e no RDV.
+**Resposta:** A direção se confirma no nosso estimador (C06): cerca de 62% para Lula e 1% para Flávio, contra 16% e 28% para Bolsonaro em 2022. Mas a maior parte tem explicação verificável. (1) No próprio 1º turno, onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 nas mesmas seções (até +0,73 ponto, ~0,47 mi): eleitores que anularam no 1º turno e votaram no 2º. (2) O 2º turno de governador faz o eleitor errar o voto de presidente: em 2022, 53% dos votos estavam em estados com governador no 2º turno; em 2026, 8%; isso explica ~0,69 mi nulos a menos. O que sobra é uma queda de ~0,6 ponto igual em seções de Lula e de Bolsonaro. As contagens conferem nos boletins e no RDV.
 **Classificação:** Parcialmente demonstrado
-**Em votos:** Queda de brancos e nulos de 1,82 mi (41% da margem); ~0,47 mi com marca no 1º turno; o restante sem causa identificada.
-- **Números:** Totais: 2022, 5.452.653 → 5.700.443; 2026, 5.969.801 → 4.153.801. Excesso no 1º turno de 2026 sobre 2022 por quintil de Lula: −0,08, +0,20, +0,46, +0,72, +0,73 ponto; no 2º turno: −0,90 a −1,66.
-- **Demonstra:** A direção e a marca no 1º turno.
-- **Não demonstra:** Quem eram os eleitores (Q26); qual das explicações comportamentais vale.
-- **Robustez:** Magnitude por UF frágil (T37).
-- **Causa:** verificável em parte · **Alcance:** Seções pareadas, Brasil.
-- **O que mudaria a resposta:** Pesquisa de painel 1º→2º turno; boletins impressos de amostra aleatória.
-- **Validação:** T56 (emenda 13); C06, T37, Q22, Q24, Q26.
-- **Evidências:** `fase3/PREREG_BRANCOS_NULOS.md`, `fase3/brancos_nulos.py`, `fase3/resultados/brancos_nulos.json`, `analise/resultado_comportamento_2026.json`
+**Em votos:** Queda de brancos e nulos de 1,82 mi entre os turnos de 2026: ~0,47 mi com marca no 1º turno e ~0,69 mi por haver menos 2º turno de governador; resto uniforme, sem viés para Lula.
+- **Números:** Totais: 2022, 5.452.653 → 5.700.443; 2026, 5.969.801 → 4.153.801. Nulos no 2º turno com × sem governador: 3,90% × 2,32% (2022); 2,84% × 2,06% (2026). UFs sem governador nos dois anos: −0,62 ponto, de −0,51 a −0,68 por quintil de Lula.
+- **Demonstra:** As duas causas estruturais e o resíduo uniforme.
+- **Não demonstra:** Quem eram os eleitores (Q26); o número digitado em cada nulo (RDV não lido).
+- **Robustez:** Cada UF é controle de si mesma entre os anos; magnitude do C06 frágil (T37).
+- **Causa:** verificável em grande parte · **Alcance:** Brasil, 2022 e 2026.
+- **O que mudaria a resposta:** Resíduo concentrado onde Lula é forte; leitura do RDV contrária.
+- **Validação:** T56 (emenda 13), T57 (emenda 14); C06, T37, Q22, Q24, Q26.
+- **Evidências:** `fase3/PREREG_BRANCOS_NULOS.md`, `fase3/resultados/brancos_nulos.json`, `fase3/PREREG_NULOS_GOVERNADOR.md`, `fase3/resultados/nulos_governador.json`, `analise/resultado_comportamento_2026.json`
 
 ## Matriz dos 33 itens do inventário
 
@@ -589,6 +589,8 @@
 - 2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).
 - 173 arquivos assinados e 485 auxiliares fora do pacote de dados abertos de 2022.
 - 8 urnas com rajada sem biometria no fim do dia (2026, 1º turno; 99 votos), padrão também presente em 2022.
+- Queda uniforme de ~0,6 ponto de brancos e nulos no 2º turno de 2026 nas UFs sem 2º turno de governador nos dois anos, sem relação com a força de Lula (T57).
+- Recebimento de boletins parado das 17:07 às 19:03 no 2º turno de 2026 (T52): coincide com a prorrogação; a regra que o acionou não está nos dados.
 - Última troca de liderança mais tardia que nos modelos nulos e que o modelo de atraso de transmissão prevê, nos dois anos (fila F4).
 
 ## Limites das fontes e dos métodos

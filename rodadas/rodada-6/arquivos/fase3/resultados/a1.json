@@ -1,0 +1,74 @@
+{
+ "pergunta": "A1",
+ "sem_par_por_turno": {
+  "1": 191,
+  "2": 176
+ },
+ "por_classe": {
+  "1T": {
+   "3 no DataUrnas-BR sem votos de Presidente": 167,
+   "1 Sistema de Apuração (SA22)": 17,
+   "4 fora do DataUrnas-BR, com arquivos no pacote local": 7
+  },
+  "2T": {
+   "3 no DataUrnas-BR sem votos de Presidente": 166,
+   "1 Sistema de Apuração (SA22)": 10
+  }
+ },
+ "boletins_lidos": 367,
+ "divergencias_de_votos": [],
+ "validacao_segunda_contagem": {
+  "1T": {
+   "sem_par": 191,
+   "com_arquivos_no_pacote": 191,
+   "sem_arquivos_no_pacote": 0,
+   "na_tabela_de_secoes_do_dataurnas": 167,
+   "agregadas_segundo_a_base": 0
+  },
+  "2T": {
+   "sem_par": 176,
+   "com_arquivos_no_pacote": 176,
+   "sem_arquivos_no_pacote": 0,
+   "na_tabela_de_secoes_do_dataurnas": 167,
+   "agregadas_segundo_a_base": 0
+  }
+ },
+ "issues_mais_comuns_entre_as_do_dataurnas": [
+  [
+   "I03",
+   51
+  ],
+  [
+   "C06",
+   28
+  ],
+  [
+   "I06",
+   14
+  ],
+  [
+   "I04",
+   10
+  ],
+  [
+   "M06",
+   6
+  ],
+  [
+   "A04",
+   5
+  ],
+  [
+   "I05",
+   5
+  ],
+  [
+   "I01",
+   4
+  ]
+ ],
+ "votos_nas_secoes_sem_par": {
+  "1T": 41706,
+  "2T": 38507
+ }
+}

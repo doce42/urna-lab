@@ -1,0 +1,491 @@
+{
+ "descricao": "Linha do tempo do urna lab: fases do estudo, rodadas congeladas e marcos. Cada rodada fechada é um retrato fixo (rodadas/rodada-N/) para comparar os resultados de hoje com os de amanhã.",
+ "fases": [
+  {
+   "id": "F1",
+   "rodada": 1,
+   "titulo": "Levantamento inicial",
+   "status": "concluida",
+   "inicio": "2026-10-27",
+   "fim": "2026-10-28",
+   "resumo": "Primeira rodada grossa: coleta de todos os dados oficiais, processamento das urnas, verificações padrão da literatura, validação criptográfica e de totais, e categorização de cada teste com classe de evidência. Congelada como snapshot preliminar V1.0-rc1, que depois da revisão R1 foi aprovada como baseline V1.0.",
+   "etapas": [
+    {
+     "titulo": "Coleta e proveniência",
+     "texto": "51.846 arquivos oficiais do TSE (≈ 405 GB) com SHA-256 no manifesto: tabelas de resultado, Boletim de Urna na Web, perfil do eleitorado e os arquivos de cada urna de 2026 e 2022."
+    },
+    {
+     "titulo": "Análise bruta e checks padrão",
+     "texto": "Bateria forense da literatura (dígitos, impressão digital de Klimek, percentuais inteiros, fraude incremental), curva da apuração minuto a minuto e comparação com 2022."
+    },
+    {
+     "titulo": "Validação de dados",
+     "texto": "Boletim × votação por seção (T01; na rc1 só a soma nacional, refeito seção a seção na R1), soma das urnas = total oficial (T32, 638/638), assinaturas e hashes (T14, T16), recontagem pelo RDV (T17)."
+    },
+    {
+     "titulo": "Processamento das urnas",
+     "texto": "≈ 499 mil urnas por turno, 4 combinações (2026 e 2022, 1º e 2º turno): log eleitor a eleitor, boletim digital, RDV, imagem do boletim e assinatura. Dois erros de leitura achados e corrigidos."
+    },
+    {
+     "titulo": "Categorização dos testes",
+     "texto": "48 testes no registro, cada um com hipótese nula, pressupostos, limitações, natureza (confirmatório ou exploratório) e classe de evidência A–G; poder medido com fraude simulada."
+    },
+    {
+     "titulo": "Snapshot preliminar V1.0-rc1",
+     "texto": "Retrato congelado (tag rodada-1) com a conclusão original; a baseline aprovada é a V1.0 (rodada 2)."
+    }
+   ],
+   "versao": "V1.0-rc1"
+  },
+  {
+   "id": "R1",
+   "rodada": null,
+   "titulo": "Revisão independente R1",
+   "status": "concluida",
+   "inicio": "2026-10-28",
+   "resumo": "Auditoria externa da V1.0-rc1 por outro agente (Codex). Preservada inteira; 28 achados classificados (16 confirmados por nós, 11 questões metodológicas, 1 pendente de reprodução) e respondidos no registro vivo.",
+   "etapas": [
+    {
+     "titulo": "Preservar o relatório",
+     "texto": "Original com SHA-256 em revisoes/R1-codex/."
+    },
+    {
+     "titulo": "Classificar e verificar",
+     "texto": "Cada achado conferido no código, nas saídas ou por reprodução."
+    },
+    {
+     "titulo": "Responder",
+     "texto": "41 provas nos testes: 1 resistiu, 29 ajustadas, 9 em andamento, 2 caíram."
+    },
+    {
+     "titulo": "Corrigir sem reescrever o passado",
+     "texto": "Correções no registro vivo e na conclusão revisada; a rc1 fica congelada."
+    }
+   ]
+  },
+  {
+   "id": "V1.0",
+   "rodada": 2,
+   "titulo": "Baseline aprovada",
+   "status": "concluida",
+   "resumo": "Baseline aprovada em 28/10/2026 pelo responsável, com os critérios cumpridos: achados da R1 respondidos ou adiados, ações de prioridade alta concluídas, verificador passando, conclusão coerente com o registro e proveniência completa. Congelada na rodada 2 (tag v1.0).",
+   "etapas": [
+    {
+     "titulo": "Critérios conferidos",
+     "texto": "20 achados respondidos e 8 adiados para a Fase 2, nenhum aberto; make verificar passa; proveniência em rodadas/rodada-2."
+    },
+    {
+     "titulo": "Aprovação do responsável",
+     "texto": "Dada em 28/10/2026. Significa que o levantamento está documentado e auditado conforme os critérios, não que todos os resultados sejam infalíveis."
+    },
+    {
+     "titulo": "Congelamento",
+     "texto": "Rodada 2: registro, resultados, conclusão e SHA-256 de cada arquivo; cada teste ganha a versão V1.0 na sua história."
+    }
+   ],
+   "inicio": "2026-10-28",
+   "fim": "2026-10-28",
+   "versao": "V1.0"
+  },
+  {
+   "id": "F2",
+   "rodada": 3,
+   "titulo": "Investigação aprofundada",
+   "status": "concluida",
+   "resumo": "Fase 2 concluída em 28/10/2026: as 13 perguntas registradas e as 4 que nasceram dos resultados foram respondidas, respondidas em parte ou inventariadas (quando dependem de dado externo que não temos). 4 novas perguntas ficam na fila (P18 a P21). Congelada na rodada 3 (V1.1).",
+   "etapas": [
+    {
+     "titulo": "Pré-registro",
+     "texto": "Critérios fixados antes de cada execução (fase2/sessao_limitada_2026-10-28/PREREG.md)."
+    },
+    {
+     "titulo": "Estimador do C06",
+     "texto": "A magnitude do \"4:1\" não é robusta a heterogeneidade; a ordem e o contraste com 2022 são (T37)."
+    },
+    {
+     "titulo": "Hipótese de enchimento",
+     "texto": "Sem a assinatura de comparecimento (T38); a assimetria de cauda do T02 é real e sem causa, concentrada em São Paulo capital em 2022."
+    },
+    {
+     "titulo": "Testes corrigidos",
+     "texto": "E02 cai de centenas para dezenas de locais após corrigir a correlação local; T13 só vê um sentido; T28 vai de 13 para 8 urnas."
+    },
+    {
+     "titulo": "Dados",
+     "texto": "Diferença do exterior explicada; 200 seções e 200 certificados conferidos; faltam fontes externas."
+    }
+   ],
+   "inicio": "2026-10-28",
+   "fim": "2026-10-28",
+   "versao": "V1.1"
+  },
+  {
+   "id": "F3",
+   "rodada": 5,
+   "versao": "V1.3",
+   "titulo": "Pendências, curvas e zeros",
+   "status": "concluida",
+   "inicio": "2026-10-28",
+   "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, congelada na rodada 5 (V1.3). A V1.2 fora congelada cedo demais e ficou preservada; a revisão trouxe auditoria, investigações de integridade, curva divulgada (Internet Archive), zeros, zona 251, auditoria adversarial, veredito de 2026 com 10 hipóteses de fraude, teste das grandes cidades e investigações finais. Resposta central: nos dados públicos não há sinal de fraude capaz de inverter 2026; anomalias reais somam dezenas de milhares de votos sem causa demonstrada (a maior, Salvador, ~30 mil); dois mecanismos ficam fora do alcance dos dados públicos (deslocamento uniforme pequeno e alteração da urna antes dos registros).",
+   "etapas": [],
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4)",
+     "status": "concluida",
+     "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, em duas sessões. 27 itens inventariados: 0 diferenças contra a decodificação independente do DataUrnas-BR (R1-20); curvas de apuração sem nulo que discrimine (inclusive 2022); zeros de votos sem evidência de excesso; regra do T13 simétrica; dependência espacial medida. P4, P6, P11 e P21 ficam bloqueadas por fonte externa (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos, boletins de terceiros). Congelada na rodada 4 (V1.2)."
+    },
+    {
+     "etapa": "revisão (antes do fechamento)",
+     "status": "em_revisao",
+     "resumo": "A F3 foi encerrada e congelada (V1.2, rodada 4) antes de uma auditoria científica. A auditoria de 28/10/2026 encontrou classificações acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19) e falhas de registro; com aprovação do responsável a fase voltou a 'em revisão'. A V1.2 e a tag v1.2 ficam como registro do que foi publicado. A revisão executou três investigações (poder contra trocas concentradas, zeros com modelo calibrado, locais com nulo espacial). Não há nova conclusão definitiva: o encerramento depende de aprovação."
+    },
+    {
+     "etapa": "fechamento das perguntas",
+     "status": "em_revisao",
+     "resumo": "A F3 foi congelada cedo demais (V1.2) e reaberta para revisão. Na revisão: auditoria, investigações de integridade, curva divulgada, zeros, zona 251, auditoria adversarial, veredito de 2026 com 10 hipóteses de fraude, teste das grandes cidades e investigações finais. Todas as 33 perguntas e as 26 da missão têm resposta final (respondida, em parte com limite, não determinável ou bloqueada por fonte externa). Aguarda aprovação do responsável para congelar."
+    }
+   ],
+   "fim": "2026-10-28"
+  },
+  {
+   "id": "AP",
+   "rodada": 6,
+   "versao": "V1.4",
+   "titulo": "Alegações públicas testadas",
+   "status": "concluida",
+   "inicio": "2026-10-28",
+   "resumo": "Rodada 6 (V1.4), 28/10/2026: alegações públicas (live de 4/11/2022 e pedido do PL, matérias e posts no X) transformadas em perguntas, pré-registradas (emendas 7 a 14) e testadas com dados oficiais (T45 a T57; perguntas Q27 a Q39). Todos os números citados se reproduziram, menos o '644 mil' do Rio; nenhuma alegação apontou divergência nos arquivos. O bug do ID 67305985 no log das urnas antigas existe em 2022 e não aparece em 2026; a diferença de voto por modelo some no mesmo local de votação; o recebimento de boletins ficou parado das 17:07 às 19:03 no 2º turno de 2026, junto com a prorrogação; a queda de brancos e nulos tem causa estrutural em grande parte (marca no 1º turno e menos 2º turno de governador), com resíduo uniforme. A resposta central de 2026 não muda.",
+   "etapas": [],
+   "historico": []
+  }
+ ],
+ "marcos": [
+  {
+   "data": "2026-10-27",
+   "hora": "18:03",
+   "titulo": "Início do estudo",
+   "texto": "Mapeamento do site de resultados do TSE e primeiros downloads."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "18:26",
+   "titulo": "Boletim = votação por seção",
+   "texto": "Conferência voto a voto nos dois turnos (T01)."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "18:39",
+   "titulo": "Primeiros falsos sinais derrubados",
+   "texto": "Três sinais suspeitos da primeira bateria eram artefatos de método; registrados e corrigidos."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "19:29",
+   "titulo": "Assinaturas das urnas decodificadas",
+   "texto": "Ed521 (UE2020/UE2022) e ECDSA P-521 (UE2013/UE2015) verificados sem a especificação oficial."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "19:55",
+   "titulo": "Protocolo pré-registrado",
+   "texto": "Perguntas, modelos nulos e critérios fixados antes de rodar (PROTOCOLO.md)."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "20:15",
+   "titulo": "Totalização conferida",
+   "texto": "Soma das urnas = total oficial em 638 de 638 itens (T32)."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "20:31",
+   "titulo": "Diretriz científica e classes A–G",
+   "texto": "Cada teste passa a ter classe de evidência, natureza e independência."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "21:59",
+   "titulo": "Repositório público",
+   "texto": "Código MIT e documentos CC BY 4.0 no GitHub."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "22:12",
+   "titulo": "2026 processado por inteiro",
+   "texto": "499.207 urnas por turno, 100% de cobertura."
+  },
+  {
+   "data": "2026-10-27",
+   "hora": "23:27",
+   "titulo": "Erro de leitura do log achado",
+   "texto": "Linhas repetidas entre partes do log contadas duas vezes; corrigido e tudo reprocessado."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "01:42",
+   "titulo": "Reprocessamento completo",
+   "texto": "4 combinações em ≈ 2 h 15 min, sem uso de IA."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "02:02",
+   "titulo": "Erro de leitura do bu.dat achado",
+   "texto": "Lista de eleições com governador antes de Presidente; 757 casos falsos sumiram com a correção."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "03:00",
+   "titulo": "Documentação oficial do TSE",
+   "texto": "Especificação de 2022 confere com os leitores; poder do T28 medido (T13b)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Site urna lab no ar",
+   "texto": "urna-lab.web.app: início, testes, mapas, docs e PDF."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Snapshot preliminar V1.0-rc1",
+   "texto": "Retrato congelado de todos os testes e resultados com a conclusão original (tag rodada-1); naquele momento, candidato à baseline. Aprovado depois, revisado, como V1.0."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "03:24",
+   "titulo": "Revisão independente R1 entregue",
+   "texto": "Relatório do Codex sobre a V1.0-rc1: 20 achados e 6 perguntas novas."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "R1 respondida no registro",
+   "texto": "T01 refeito seção a seção (0 diferenças); verificador Ed521 endurecido; manifesto com hash oficial real (331 conferidos); T36 com graus; conclusão revisada. Duas afirmações caíram."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Baseline V1.0 aprovada",
+   "texto": "Critérios cumpridos e aprovação do responsável; rodada 2 congelada (tag v1.0). A Fase 2 começa."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "P1 respondida",
+   "texto": "O estimador do C06 mantém a ordem dos fluxos, mas não a magnitude, sob heterogeneidade (T37)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Hipótese de enchimento para Lula sem sustentação",
+   "texto": "A assinatura de comparecimento prevista não aparece (T38)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Verificação de 20 seções",
+   "texto": "Nenhuma divergência objetiva nova; verificação independente indisponível (T39)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 2 concluída",
+   "texto": "17 perguntas respondidas ou inventariadas; rodada 3 (V1.1) congelada; 4 novas perguntas na fila."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "F3: primeira sessão",
+   "texto": "Inventário de 27 itens; P18 e P19 respondidas; P20, curvas, zeros e P9 em parte; P4, P6, P11 e P21 bloqueadas por fonte externa."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 3 concluída",
+   "texto": "Sessão 2: 0 diferenças contra a decodificação independente do DataUrnas-BR e curvas sem nulo que discrimine; rodada 4 (V1.2) congelada; P4, P6, P11 e P21 bloqueadas por fonte externa. (Encerramento revertido no mesmo dia: a F3 voltou a 'em revisão' depois da auditoria.)"
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 3 volta para revisão",
+   "texto": "Auditoria encontrou estados acima da evidência e falhas de registro; a V1.2 fica preservada e a F3 é reaberta. Investigações I1 a I3 executadas."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Verificação dos 173 arquivos e do BU não lido",
+   "texto": "Os 173 arquivos também faltam no pacote baixado pelo projeto; os boletins das 64 seções conferem. O BU não lido era do Sistema de Apuração e confere. 159 seções-turno de 2022 desse tipo ficaram fora das verificações por arquivo."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "As 159 seções do Sistema de Apuração de 2022 conferem",
+   "texto": "Boletim, texto impresso e assinatura conferem com a tabela publicada em 159 de 159 seções-turno (conferência interna). Documentação da F3 consolidada no PROTOCOLO, METODOLOGIA e CATALOGO. A F3 segue em revisão."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Verificações finais da F3 (A1, A2, A4)",
+   "texto": "Seções de 2022 sem par explicadas e conferidas; poder recontado no sentido correto: grandes municípios inteiros fora do alcance da bateria; denominador do T28 de 2022 corrigido. F3 segue em revisão."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "F3: todas as perguntas com resposta final",
+   "texto": "Salvador única capital desviante, não explicada pelo perfil; erros de assinatura do software no log seguidos de sucesso; anomalias pequenas descritas; fontes externas bloqueadas. Aguarda aprovação para congelar."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 3 concluída (V1.3)",
+   "texto": "Aprovada pelo responsável e congelada na rodada 5, com todos os arquivos da fase no mesmo hash."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Alegações públicas testadas (V1.4)",
+   "texto": "13 testes pré-registrados (T45–T57) e 13 perguntas novas (Q27–Q39), congelados na rodada 6 com aprovação do responsável."
+  }
+ ],
+ "etapas_do_caminho": [
+  {
+   "id": "inicial",
+   "titulo": "Estado inicial",
+   "status": "concluida",
+   "versao": "V1.0-rc1",
+   "texto": "Levantamento da Fase 1 congelado como snapshot preliminar (rc1), base da revisão.",
+   "link": "#fases"
+  },
+  {
+   "id": "revisao",
+   "titulo": "Revisão",
+   "status": "concluida",
+   "versao": "R1",
+   "texto": "Revisão independente (Codex): 28 achados classificados e respondidos; 20 respondidos, 8 viram Fase 2; contestações registradas nos testes.",
+   "link": "#revisao"
+  },
+  {
+   "id": "baseline",
+   "titulo": "Baseline aprovada",
+   "status": "concluida",
+   "versao": "V1.0",
+   "texto": "Aprovada em 28/10/2026 pelo responsável, depois de cumpridos os critérios. Tag v1.0 e GitHub Release.",
+   "link": "#baseline"
+  },
+  {
+   "id": "fase2",
+   "titulo": "Novas investigações",
+   "status": "concluida",
+   "versao": "V1.1",
+   "texto": "As 17 perguntas da Fase 2 foram respondidas ou inventariadas. Fase congelada na rodada 3 (V1.1). Quatro novas perguntas ficam na fila.",
+   "link": "#fase2"
+  },
+  {
+   "id": "alegacoes",
+   "titulo": "Alegações públicas",
+   "status": "concluida",
+   "versao": "V1.4",
+   "texto": "Live de 2022, pedido do PL, matérias e posts testados com pré-registro (T45–T57, Q27–Q39). Rodada 6.",
+   "link": "#/respostas"
+  },
+  {
+   "id": "comparacoes",
+   "titulo": "Comparações",
+   "status": "disponivel",
+   "versao": "rc1 → atual",
+   "texto": "O que mudou em cada teste, com a causa: dados, código, método, nova evidência, interpretação ou redação.",
+   "link": "#comparar"
+  },
+  {
+   "id": "atual",
+   "titulo": "Estado atual",
+   "status": "vivo",
+   "versao": "registro vivo",
+   "texto": "O registro de testes como está hoje, com provas e mudanças pendentes de congelamento.",
+   "link": "#/testes"
+  }
+ ],
+ "conclusoes_recentes": [
+  {
+   "titulo": "Urna antiga não muda voto no mesmo local",
+   "texto": "Lula teve 50,3% nas urnas anteriores a 2020 e 46,0% nas UE2020 (1º turno de 2022), mas dentro do mesmo local de votação a diferença é equivalente a zero.",
+   "teste": "T47"
+  },
+  {
+   "titulo": "Bug do log confirmado, ligação também",
+   "texto": "279.291 urnas antigas com ID fixo 67305985 em 2022; 279.285 ligadas ao BU e ao RDV pela assinatura e pelo certificado; em 2026 o bug não aparece.",
+   "teste": "T45"
+  },
+  {
+   "titulo": "Boletins parados das 17:07 às 19:03",
+   "texto": "Só em 2026; voltou com o fechamento das urnas prorrogadas; o BU é assinado na emissão e confere com a tabela.",
+   "teste": "T52"
+  },
+  {
+   "titulo": "Brancos e nulos: causa estrutural",
+   "texto": "Marca no 1º turno (~0,47 mi) e menos 2º turno de governador (~0,69 mi) explicam a maior parte da queda; resto uniforme, sem viés para Lula.",
+   "teste": "T57"
+  },
+  {
+   "titulo": "O T02 não vê troca em município inteiro",
+   "texto": "A mediana municipal absorve uma troca aplicada ao município ou à região inteira. O E02 a detecta a partir de ~62 mil votos em municípios de até ~5 mil seções, mas não no município inteiro das 5 maiores cidades (simulação, A2).",
+   "teste": "T02"
+  },
+  {
+   "titulo": "Os locais de São Paulo de 2022 não são atípicos contra a própria zona",
+   "texto": "o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). A causa continua desconhecida.",
+   "teste": "E02"
+  },
+  {
+   "titulo": "Votos da base = decodificação independente de terceiro",
+   "texto": "0 diferenças em 119,3 mi de votos (2026, 1º turno) e ~118 mi por turno (2022), seção a seção. Origem comum (TSE) e uma só versão de publicação seguem como limite.",
+   "teste": "T43"
+  },
+  {
+   "titulo": "As curvas de apuração não permitem concluir nada",
+   "texto": "Cinco modelos de chegada, até com hora de fechamento e tamanho, rejeitam a ordem real também em 2022. Compatibilidade e incompatibilidade ficam sem resposta; T10 e T11 viram descrição.",
+   "teste": "T40"
+  },
+  {
+   "titulo": "Zeros de votos: nada demonstrado",
+   "texto": "Arquivos das seções com zero conferem (inclusive a seção de 2022 cujo BU não tinha sido lido). Nenhum modelo de frequência de zeros passou na calibração: nem excesso nem ausência de excesso foram demonstrados.",
+   "teste": "T41"
+  },
+  {
+   "titulo": "Regra do T13 vê os dois sentidos",
+   "texto": "Sentido correto: troca dispersa de ~123 mil votos vista em 30 de 30; ~62 mil concentrados em locais ou municípios de até ~5 mil seções vistos pelo E02; ~25 mil em nenhuma forma; troca no município inteiro das 5 maiores cidades não vista com confiabilidade nem a 10% (até ~700 mil votos). Votos simulados.",
+   "teste": "T13"
+  },
+  {
+   "titulo": "O crescimento de Lula entre turnos fecha nas contas",
+   "texto": "2026: Lula +10,33 mi e adversário +3,69 mi com +2,92 mi de comparecimento; 2022: +3,07 mi e +7,11 mi com +0,56 mi. Cabe exatamente no que eliminados, brancos/nulos e abstenção liberaram.",
+   "teste": "C06"
+  },
+  {
+   "titulo": "O \"4:1\" entre abstencionistas é frágil na magnitude",
+   "texto": "Sob heterogeneidade a razão estimada varia de 1,7 a 11,8 (verdade 3 a 4): erro de ±0,5 a ±1,5 mi de votos. Ordem e contraste com 2022 resistem; os limites matemáticos não identificam o fluxo.",
+   "teste": "T37"
+  },
+  {
+   "titulo": "Sem assinatura de enchimento; assimetria real e sem causa",
+   "texto": "As seções pró-Lula atípicas (~740 votos de excesso em 2026, ~2.600 em 2022, contra 4,43 mi de margem) não têm comparecimento subindo. A assimetria é estatisticamente real e em 2022 concentra-se na capital de São Paulo.",
+   "teste": "T38"
+  },
+  {
+   "titulo": "200 seções e 200 certificados conferidos",
+   "texto": "Arquivos, hashes, assinaturas, boletim, RDV, log e site concordam em 200 de 200; cada certificado de urna é assinado pela AC emissora. A âncora (AC RAIZ UE) e fontes externas continuam sem verificação.",
+   "teste": "T39"
+  },
+  {
+   "titulo": "Dois testes ficaram menores do que pareciam",
+   "texto": "O E02 cai de 766 para 102 locais significativos (2022) e de 683 para dezenas (2026) ao corrigir a correlação local; a regra do T13 não enxerga troca no sentido Lula→Flávio.",
+   "teste": "E02"
+  },
+  {
+   "titulo": "Diferença do exterior explicada",
+   "texto": "−495 e −525 eleitores = 423 de 41 seções não instaladas + 72 (e 30) de seções com boletim só nos arquivos das urnas. Resíduo zero; não são votos.",
+   "teste": "T32"
+  }
+ ],
+ "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 (V1.3) · Alegações públicas testadas (V1.4) em 28/10/2026"
+}

@@ -1,0 +1,442 @@
+{
+ "pergunta": "E2b curvas, nulos condicionados",
+ "nperm": 200,
+ "resultados": {
+  "2026_1t": {
+   "urnas": 499206,
+   "observado": {
+    "S1_inversoes": 0,
+    "S2_fracao_ultima_inversao": 0.0,
+    "S3_maior_vale_pp": 0.1684852604241911,
+    "S4_oscilacoes": 5,
+    "S5_maior_trecho_linear_faixas": 10,
+    "_margem_final_pp": -1.8649224397149937
+   },
+   "eta2_ordem_por_UF_hora": 0.3427996823228584,
+   "eta2_ordem_por_UF_hora_tamanho": 0.35887630623356787,
+   "grupos_D": 235,
+   "grupos_F": 557,
+   "D_UF_x_hora_encerramento": {
+    "S1_inversoes": {
+     "observado": 0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.1684852604241911,
+     "sim_media": 0.006151405034129609,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.024747315751666228
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 5,
+     "sim_media": 1.76,
+     "sim_p2_5_p97_5": [
+      0.0,
+      6.0
+     ],
+     "p_bilateral": 0.06965174129353234
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 10,
+     "sim_media": 10.385,
+     "sim_p2_5_p97_5": [
+      10.0,
+      11.0
+     ],
+     "p_bilateral": 1.0
+    }
+   },
+   "F_UF_x_hora_x_tamanho": {
+    "S1_inversoes": {
+     "observado": 0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.1684852604241911,
+     "sim_media": 0.0031361787594848733,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.016567934546670406
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 5,
+     "sim_media": 1.19,
+     "sim_p2_5_p97_5": [
+      0.0,
+      4.0
+     ],
+     "p_bilateral": 0.029850746268656716
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 10,
+     "sim_media": 10.45,
+     "sim_p2_5_p97_5": [
+      10.0,
+      11.025000000000006
+     ],
+     "p_bilateral": 1.0
+    }
+   }
+  },
+  "2026_2t": {
+   "urnas": 499205,
+   "observado": {
+    "S1_inversoes": 2,
+    "S2_fracao_ultima_inversao": 0.4717921495177332,
+    "S3_maior_vale_pp": 1.8170656882368954,
+    "S4_oscilacoes": 11,
+    "S5_maior_trecho_linear_faixas": 8,
+    "_margem_final_pp": 3.5703657685252104
+   },
+   "eta2_ordem_por_UF_hora": 0.4026228629107242,
+   "eta2_ordem_por_UF_hora_tamanho": 0.4123073768778199,
+   "grupos_D": 103,
+   "grupos_F": 228,
+   "D_UF_x_hora_encerramento": {
+    "S1_inversoes": {
+     "observado": 2,
+     "sim_media": 67.25,
+     "sim_p2_5_p97_5": [
+      6.0,
+      182.70000000000016
+     ],
+     "p_bilateral": 0.01990049751243781
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.4717921495177332,
+     "sim_media": 0.2572931961819293,
+     "sim_p2_5_p97_5": [
+      0.23881822097134445,
+      0.2781099948918781
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 1.8170656882368954,
+     "sim_media": 0.5545181487517138,
+     "sim_p2_5_p97_5": [
+      0.4333091279226147,
+      0.684351434353104
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 11,
+     "sim_media": 12.83,
+     "sim_p2_5_p97_5": [
+      10.0,
+      18.0
+     ],
+     "p_bilateral": 0.527363184079602
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 6.81,
+     "sim_p2_5_p97_5": [
+      6.0,
+      8.025000000000006
+     ],
+     "p_bilateral": 0.15920398009950248
+    }
+   },
+   "F_UF_x_hora_x_tamanho": {
+    "S1_inversoes": {
+     "observado": 2,
+     "sim_media": 71.75,
+     "sim_p2_5_p97_5": [
+      8.975000000000001,
+      192.4500000000001
+     ],
+     "p_bilateral": 0.01990049751243781
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.4717921495177332,
+     "sim_media": 0.3091482957903066,
+     "sim_p2_5_p97_5": [
+      0.2796521969932192,
+      0.3204020392423954
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 1.8170656882368954,
+     "sim_media": 0.5049815048523498,
+     "sim_p2_5_p97_5": [
+      0.3879298531420874,
+      0.6109081599432887
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 11,
+     "sim_media": 12.46,
+     "sim_p2_5_p97_5": [
+      8.0,
+      18.0
+     ],
+     "p_bilateral": 0.527363184079602
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 6.75,
+     "sim_p2_5_p97_5": [
+      6.0,
+      9.0
+     ],
+     "p_bilateral": 0.19900497512437812
+    }
+   }
+  },
+  "2022_1t": {
+   "urnas": 472024,
+   "observado": {
+    "S1_inversoes": 3,
+    "S2_fracao_ultima_inversao": 0.6815691575004661,
+    "S3_maior_vale_pp": 0.11948003402038498,
+    "S4_oscilacoes": 4,
+    "S5_maior_trecho_linear_faixas": 8,
+    "_margem_final_pp": 5.233167305421745
+   },
+   "eta2_ordem_por_UF_hora": 0.34691191413626254,
+   "eta2_ordem_por_UF_hora_tamanho": 0.3590440258323566,
+   "grupos_D": 307,
+   "grupos_F": 701,
+   "D_UF_x_hora_encerramento": {
+    "S1_inversoes": {
+     "observado": 3,
+     "sim_media": 9.47,
+     "sim_p2_5_p97_5": [
+      1.0,
+      35.10000000000002
+     ],
+     "p_bilateral": 0.845771144278607
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6815691575004661,
+     "sim_media": 0.5600485144823144,
+     "sim_p2_5_p97_5": [
+      0.5507924914834839,
+      0.5688229306136976
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.11948003402038498,
+     "sim_media": 0.1360327921311594,
+     "sim_p2_5_p97_5": [
+      0.07904041649935807,
+      0.19293113484532012
+     ],
+     "p_bilateral": 0.5870646766169154
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 3.14,
+     "sim_p2_5_p97_5": [
+      2.0,
+      4.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 11.495,
+     "sim_p2_5_p97_5": [
+      9.0,
+      13.025000000000006
+     ],
+     "p_bilateral": 0.029850746268656716
+    }
+   },
+   "F_UF_x_hora_x_tamanho": {
+    "S1_inversoes": {
+     "observado": 3,
+     "sim_media": 10.1,
+     "sim_p2_5_p97_5": [
+      1.0,
+      41.05000000000001
+     ],
+     "p_bilateral": 0.6766169154228856
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6815691575004661,
+     "sim_media": 0.5623704938731929,
+     "sim_p2_5_p97_5": [
+      0.5519971971764147,
+      0.5727623489483585
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.11948003402038498,
+     "sim_media": 0.1494817918452478,
+     "sim_p2_5_p97_5": [
+      0.08277336667676512,
+      0.209201794776852
+     ],
+     "p_bilateral": 0.3582089552238806
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 2.83,
+     "sim_p2_5_p97_5": [
+      2.0,
+      4.0
+     ],
+     "p_bilateral": 0.8258706467661692
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 11.7,
+     "sim_p2_5_p97_5": [
+      9.0,
+      14.0
+     ],
+     "p_bilateral": 0.029850746268656716
+    }
+   }
+  },
+  "2022_2t": {
+   "urnas": 472027,
+   "observado": {
+    "S1_inversoes": 21,
+    "S2_fracao_ultima_inversao": 0.6761986072830579,
+    "S3_maior_vale_pp": 0.009525135596955003,
+    "S4_oscilacoes": 4,
+    "S5_maior_trecho_linear_faixas": 27,
+    "_margem_final_pp": 1.8048102343443153
+   },
+   "eta2_ordem_por_UF_hora": 0.2398357761641724,
+   "eta2_ordem_por_UF_hora_tamanho": 0.2497096180370587,
+   "grupos_D": 107,
+   "grupos_F": 218,
+   "D_UF_x_hora_encerramento": {
+    "S1_inversoes": {
+     "observado": 21,
+     "sim_media": 12.36,
+     "sim_p2_5_p97_5": [
+      1.0,
+      51.0
+     ],
+     "p_bilateral": 0.3681592039800995
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6761986072830579,
+     "sim_media": 0.38299488164871925,
+     "sim_p2_5_p97_5": [
+      0.36720018134555865,
+      0.3934093812430221
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.009525135596955003,
+     "sim_media": 0.031214013293708213,
+     "sim_p2_5_p97_5": [
+      0.015632041953322795,
+      0.04722997807721631
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 5.14,
+     "sim_p2_5_p97_5": [
+      2.0,
+      8.050000000000011
+     ],
+     "p_bilateral": 0.945273631840796
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 27,
+     "sim_media": 18.59,
+     "sim_p2_5_p97_5": [
+      14.975000000000001,
+      26.025000000000006
+     ],
+     "p_bilateral": 0.05970149253731343
+    }
+   },
+   "F_UF_x_hora_x_tamanho": {
+    "S1_inversoes": {
+     "observado": 21,
+     "sim_media": 10.98,
+     "sim_p2_5_p97_5": [
+      1.0,
+      51.05000000000001
+     ],
+     "p_bilateral": 0.27860696517412936
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6761986072830579,
+     "sim_media": 0.3904961898365984,
+     "sim_p2_5_p97_5": [
+      0.3789418295987306,
+      0.40307164632531617
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.009525135596955003,
+     "sim_media": 0.028892954754605155,
+     "sim_p2_5_p97_5": [
+      0.014255905688342313,
+      0.043961878448844874
+     ],
+     "p_bilateral": 0.01990049751243781
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 4.42,
+     "sim_p2_5_p97_5": [
+      2.0,
+      8.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 27,
+     "sim_media": 17.62,
+     "sim_p2_5_p97_5": [
+      14.975000000000001,
+      24.025000000000006
+     ],
+     "p_bilateral": 0.01990049751243781
+    }
+   }
+  }
+ }
+}

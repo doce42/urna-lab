@@ -22,6 +22,7 @@ import hashlib
 import json
 import os
 import shutil
+import subprocess
 import sys
 
 RAIZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -69,6 +70,9 @@ def fechar(n, rotulo, titulo, incluir=()):
     for item in incluir:
         origem = os.path.join(RAIZ, item)
         lista = [origem] if os.path.isfile(origem) else [os.path.join(r, f) for r, _, fs in os.walk(origem) for f in fs]
+        # só arquivos que o git versionaria: nada de .privado.txt ou outros arquivos locais ignorados
+        ign = set(subprocess.run(["git", "check-ignore", "--stdin"], input="\n".join(lista), capture_output=True, text=True, cwd=RAIZ).stdout.split("\n"))
+        lista = [f for f in lista if f not in ign]
         if not os.path.exists(origem):
             sys.exit(f"não existe: {item}")
         for f in sorted(lista):

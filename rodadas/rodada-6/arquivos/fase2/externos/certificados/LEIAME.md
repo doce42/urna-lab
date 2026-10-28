@@ -1,0 +1,1 @@
+Certificados públicos das autoridades certificadoras (AC UE2020, AC UE2022, AC URNA), obtidos do repositório de terceiros github.com/alissonlinneker/DataUrnas-BR (data/certificados/ac/) em 28/10/2026. Não vêm de canal do TSE. Arquivos .txt com o PEM do certificado (sem chave privada). SHA-256 de cada um em fase2/resultados/P11.json. Usados só no P11.

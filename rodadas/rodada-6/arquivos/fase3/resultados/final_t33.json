@@ -1,0 +1,352 @@
+{
+ "pre_registro": "fase3/PREREG_FINAL.md (Z2)",
+ "1T": {
+  "urnas": 128,
+  "linhas_por_texto": {
+   "Verificação de assinatura - Etapa [#] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]": 92,
+   "Verificação de assinatura - Etapa [#] - [/dsk/fe/estatico/#-lo.vsc] - [ERRO]": 20,
+   "Verificação de assinatura - Etapa [#] - [/boot/boot/avboot.vst] - [ERRO]": 6,
+   "Verificação de assinatura - Etapa [#] - [/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst] - [ERRO]": 6,
+   "Verificação de assinatura - Etapa [#] - [/lib/avlib.vst] - [ERRO]": 6,
+   "Verificação de assinatura - Etapa [#] - [/uenux/bin/avusrbin.vst] - [ERRO]": 6,
+   "Verificação de assinatura - Etapa [#] - [/uenux/lib/avusrlib.vst] - [ERRO]": 4,
+   "Verificação de assinatura - Etapa [#] - [/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst] - [ERRO]": 1,
+   "Verificação de assinatura - Etapa [#] - [/etc/avetc.vst] - [ERRO]": 1,
+   "Verificação de assinatura - Etapa [#] - [/dsk/fi/estatico/chave/avusrchave.vst] - [ERRO]": 1
+  },
+  "linhas_por_momento": {
+   "outro dia": 127,
+   "antes das 8h": 9,
+   "8h às 17h": 10
+  },
+  "por_modelo": {
+   "UE2020": 72,
+   "UE2022": 51,
+   "UE2015": 5
+  },
+  "exemplos": [
+   {
+    "secao": "AP/6157/6/115",
+    "linha": "01/10/2026 11:56:21\tINFO\t02014209\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t09893A5A2721D459"
+   },
+   {
+    "secao": "MS/91499/34/76",
+    "linha": "23/09/2026 12:56:07\tINFO\t02152133\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t2829FA6F794D605E"
+   },
+   {
+    "secao": "MS/91650/9/206",
+    "linha": "25/09/2026 10:51:16\tINFO\t02000923\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\tD0BA6B5DEF9CBFCD"
+   },
+   {
+    "secao": "MS/91138/2/182",
+    "linha": "29/09/2026 09:46:00\tINFO\t02002482\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t575754DD3625658C"
+   },
+   {
+    "secao": "MS/90735/43/408",
+    "linha": "23/09/2026 08:59:34\tINFO\t02451682\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t1A5FCF6C4DD0C0C9"
+   },
+   {
+    "secao": "MS/90735/43/377",
+    "linha": "22/09/2026 18:01:27\tINFO\t02351964\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t366F7038074A2379"
+   },
+   {
+    "secao": "MS/91430/11/57",
+    "linha": "23/09/2026 16:27:37\tINFO\t02337915\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t498F6E5A2D557CFC"
+   },
+   {
+    "secao": "DF/97012/13/105",
+    "linha": "23/09/2026 10:28:27\tINFO\t02464161\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t07546279D7D939D6"
+   }
+  ],
+  "teste_de_votos": {
+   "secoes_no_universo": 128,
+   "media_z": 0.09991652861738111,
+   "media_z_esperada_mesma_UF": 0.027065594779956653,
+   "diferenca": 0.07285093383742446,
+   "ic95_nulo_da_media": [
+    -0.1513172781204947,
+    0.20796672663223592
+   ],
+   "p_bilateral_media": 0.42075792420757924,
+   "fracao_abs_z_maior_3": 0.0078125,
+   "fracao_esperada": 0.0052625,
+   "p_excesso_cauda": 0.49265073492650735,
+   "pro_lula_z_maior_3": 1,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  }
+ },
+ "2T": {
+  "urnas": 162,
+  "linhas_por_texto": {
+   "Verificação de assinatura - Etapa [#] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]": 108,
+   "Verificação de assinatura - Etapa [#] - [/dsk/fe/estatico/#-lo.vsc] - [ERRO]": 21,
+   "Verificação de assinatura - Etapa [#] - [/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst] - [ERRO]": 10,
+   "Verificação de assinatura - Etapa [#] - [/uenux/bin/avusrbin.vst] - [ERRO]": 9,
+   "Verificação de assinatura - Etapa [#] - [/boot/boot/avboot.vst] - [ERRO]": 8,
+   "Verificação de assinatura - Etapa [#] - [/lib/avlib.vst] - [ERRO]": 8,
+   "Verificação de assinatura - Etapa [#] - [/uenux/lib/avusrlib.vst] - [ERRO]": 7,
+   "Verificação de assinatura - Etapa [#] - [/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst] - [ERRO]": 2,
+   "Verificação de assinatura - Etapa [#] - [/etc/avetc.vst] - [ERRO]": 2,
+   "Verificação de assinatura - Etapa [#] - [/dsk/fi/estatico/chave/avusrchave.vst] - [ERRO]": 2
+  },
+  "linhas_por_momento": {
+   "outro dia": 173,
+   "8h às 17h": 4,
+   "antes das 8h": 4
+  },
+  "por_modelo": {
+   "UE2020": 91,
+   "UE2022": 65,
+   "UE2015": 5,
+   "UE2013": 1
+  },
+  "exemplos": [
+   {
+    "secao": "RJ/58041/155/12",
+    "linha": "15/10/2026 10:21:12\tINFO\t02239252\tGAP\tVerificação de assinatura - Etapa [21] - [/lib/plugins/platforms/avlibqtplatforms.vst] - [ERRO]\t40FEA6D235DE42AB"
+   },
+   {
+    "secao": "RJ/58432/107/191",
+    "linha": "04/10/2026 09:53:34\tINFO\t02446608\tGAP\tVerificação de assinatura - Etapa [3] - [/boot/boot/avboot.vst] - [ERRO]\tCE8A455D54919E54"
+   },
+   {
+    "secao": "RJ/58475/109/384",
+    "linha": "19/10/2026 13:38:12\tINFO\t02457414\tGAP\tVerificação de assinatura - Etapa [1] - [/uenux/bin/avusrbin.vst] - [ERRO]\t8AF8F58EFD897925"
+   },
+   {
+    "secao": "RJ/59277/146/75",
+    "linha": "22/09/2026 11:55:09\tINFO\t02190686\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t368688048DD926AA"
+   },
+   {
+    "secao": "RJ/60011/16/223",
+    "linha": "21/09/2026 12:09:35\tINFO\t02216484\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\tA66F5E60F41A52E2"
+   },
+   {
+    "secao": "RJ/60011/123/54",
+    "linha": "22/09/2026 09:54:03\tINFO\t02213853\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t41070AEB4F24ACFC"
+   },
+   {
+    "secao": "RJ/60011/233/128",
+    "linha": "04/10/2026 07:07:44\tINFO\t02212184\tGAP\tVerificação de assinatura - Etapa [28] - [/dsk/fi/estatico/dadoscarga.vsu] - [ERRO]\t7D69C5563A98ADBA"
+   },
+   {
+    "secao": "RJ/58041/153/115",
+    "linha": "21/09/2026 10:59:30\tINFO\t02044087\tGAP\tVerificação de assinatura - Etapa [26] - [/dsk/fe/estatico/infomidia.vsc] - [ERRO]\t0083B6B66572CFC2"
+   }
+  ],
+  "teste_de_votos": {
+   "secoes_no_universo": 162,
+   "media_z": 0.12158515938437814,
+   "media_z_esperada_mesma_UF": 0.0263098535789618,
+   "diferenca": 0.09527530580541634,
+   "ic95_nulo_da_media": [
+    -0.13173563208044345,
+    0.18489523929025936
+   ],
+   "p_bilateral_media": 0.24317568243175683,
+   "fracao_abs_z_maior_3": 0.012345679012345678,
+   "fracao_esperada": 0.005211111111111112,
+   "p_excesso_cauda": 0.20437956204379562,
+   "pro_lula_z_maior_3": 2,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  }
+ },
+ "no_dia_da_eleicao": {
+  "1T": {
+   "linhas_no_dia": 19,
+   "urnas_no_dia": 18,
+   "seguidas_de_sucesso_no_mesmo_dia": 19,
+   "por_arquivo_e_sucesso_depois": {
+    "/dsk/fe/estatico/infomidia.vsc | sucesso depois: True": 4,
+    "/uenux/lib/avusrlib.vst | sucesso depois: True": 2,
+    "/boot/boot/avboot.vst | sucesso depois: True": 4,
+    "/dsk/fi/estatico/chave/avusrchave.vst | sucesso depois: True": 1,
+    "/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst | sucesso depois: True": 2,
+    "/lib/avlib.vst | sucesso depois: True": 2,
+    "/bin/avbin.vst | sucesso depois: True": 1,
+    "/uenux/bin/avusrbin.vst | sucesso depois: True": 2,
+    "/dsk/fi/estatico/dadoscarga.vsu | sucesso depois: True": 1
+   },
+   "detalhe": [
+    {
+     "secao": "AM/98353/56/19",
+     "hora": "06:56:39",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "MT/91294/4/22",
+     "hora": "06:23:28",
+     "arquivo": "/uenux/lib/avusrlib.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PI/10529/21/70",
+     "hora": "10:13:58",
+     "arquivo": "/boot/boot/avboot.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PI/10529/21/70",
+     "hora": "10:16:08",
+     "arquivo": "/boot/boot/avboot.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RN/16691/9/189",
+     "hora": "09:41:35",
+     "arquivo": "/dsk/fi/estatico/chave/avusrchave.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PA/4642/78/307",
+     "hora": "16:28:56",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "SE/31712/13/21",
+     "hora": "09:39:49",
+     "arquivo": "/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PR/77771/15/312",
+     "hora": "09:24:34",
+     "arquivo": "/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PR/74250/28/331",
+     "hora": "07:13:01",
+     "arquivo": "/lib/avlib.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "SC/83739/34/94",
+     "hora": "07:55:19",
+     "arquivo": "/bin/avbin.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "BA/33553/169/132",
+     "hora": "08:24:40",
+     "arquivo": "/uenux/bin/avusrbin.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RS/88013/2/290",
+     "hora": "07:28:13",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RS/87858/33/536",
+     "hora": "10:26:33",
+     "arquivo": "/uenux/lib/avusrlib.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RJ/60011/233/128",
+     "hora": "07:07:44",
+     "arquivo": "/dsk/fi/estatico/dadoscarga.vsu",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RJ/58432/107/191",
+     "hora": "09:53:34",
+     "arquivo": "/boot/boot/avboot.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RJ/58971/135/43",
+     "hora": "07:17:49",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "SP/63096/38/169",
+     "hora": "08:41:53",
+     "arquivo": "/uenux/bin/avusrbin.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "SP/71072/353/853",
+     "hora": "07:35:08",
+     "arquivo": "/lib/avlib.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "SP/67954/82/169",
+     "hora": "07:35:42",
+     "arquivo": "/boot/boot/avboot.vst",
+     "depois_com_sucesso": true
+    }
+   ]
+  },
+  "2T": {
+   "linhas_no_dia": 8,
+   "urnas_no_dia": 8,
+   "seguidas_de_sucesso_no_mesmo_dia": 8,
+   "por_arquivo_e_sucesso_depois": {
+    "/uenux/bin/avusrbin.vst | sucesso depois: True": 1,
+    "/dsk/fe/estatico/infomidia.vsc | sucesso depois: True": 5,
+    "/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst | sucesso depois: True": 2
+   },
+   "detalhe": [
+    {
+     "secao": "BA/33138/163/417",
+     "hora": "11:37:10",
+     "arquivo": "/uenux/bin/avusrbin.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PR/76678/41/159",
+     "hora": "08:30:45",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RS/85111/124/78",
+     "hora": "07:57:48",
+     "arquivo": "/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "RS/85995/16/472",
+     "hora": "07:21:34",
+     "arquivo": "/share/RHVoice/voices/Leticia-F#/#/avsharerhvoice#khz.vst",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PE/23531/23/99",
+     "hora": "08:07:34",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PE/24430/16/227",
+     "hora": "07:27:28",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "PE/25313/5/367",
+     "hora": "15:48:39",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    },
+    {
+     "secao": "SC/81671/39/27",
+     "hora": "07:29:45",
+     "arquivo": "/dsk/fe/estatico/infomidia.vsc",
+     "depois_com_sucesso": true
+    }
+   ]
+  }
+ }
+}
