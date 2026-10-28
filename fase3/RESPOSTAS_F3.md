@@ -531,17 +531,43 @@
 - **Evidências:** `fase3/PREREG_CABO_FRIO.md`, `fase3/cabo_frio.py`, `fase3/resultados/cabo_frio.json`
 
 ### Q39. Os brancos e nulos do 1º turno foram quase todos para Lula em 2026? Isso é uma anomalia?
-**Resposta:** A direção se confirma no nosso estimador (C06): cerca de 62% para Lula e 1% para Flávio, contra 16% e 28% para Bolsonaro em 2022. Mas a maior parte tem explicação verificável. (1) No próprio 1º turno, onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 nas mesmas seções (até +0,73 ponto, ~0,47 mi): eleitores que anularam no 1º turno e votaram no 2º. (2) O 2º turno de governador faz o eleitor errar o voto de presidente: em 2022, 53% dos votos estavam em estados com governador no 2º turno; em 2026, 8%; isso explica ~0,69 mi nulos a menos. O que sobra é uma queda de ~0,6 ponto igual em seções de Lula e de Bolsonaro. As contagens conferem nos boletins e no RDV.
+**Resposta:** Não é anomalia, e a maior parte tem causa medida. O estimador de fluxos aponta essa direção (cerca de 62% para Lula), mas a leitura do número digitado em cada nulo (Q40) mostra o mecanismo: no 1º turno de 2026, onde Lula é forte, sobrou nulo de presidente porque muita gente digitou o número do governador no campo de presidente (erro de campo); no 2º turno, sem governador na maioria dos estados, essas pessoas votaram normalmente. E em 2022 metade do eleitorado tinha 2º turno de governador, que gera esse mesmo erro, contra 8% em 2026. Sobra uma queda pequena e uniforme (~0,6 ponto). A magnitude dos fluxos estimados deve ser lida só como direção (Q41).
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Queda de brancos e nulos de 1,82 mi entre os turnos de 2026, explicada em grande parte por erro de campo (número de governador no campo de presidente) e por haver menos 2º turno de governador; resto uniforme.
+- **Números:** Totais: 2022, 5.452.653 → 5.700.443; 2026, 5.969.801 → 4.153.801. Nulos com número de governador no 1º turno: 697.773 (2026) × 422.104 (2022); excesso por quintil de Lula só nessa classe (+0,08 a +0,45 ponto). 2º turno com governador: 1,18 ponto (2026) e 0,97 (2022) dos votos.
+- **Demonstra:** O mecanismo (erro de campo) e a composição de UFs com governador.
+- **Não demonstra:** Em quem a pessoa queria votar.
+- **Robustez:** Leitura de todos os RDVs, conferida voto a voto com o leitor original.
+- **Causa:** verificável: erro de campo e 2º turno de governador · **Alcance:** Brasil, 2022 e 2026.
+- **O que mudaria a resposta:** Resíduo concentrado onde Lula é forte depois do erro de campo.
+- **Validação:** T56, T57, T58 (emendas 13 a 15); C06, Q22, Q26.
+- **Evidências:** `fase3/resultados/brancos_nulos.json`, `fase3/resultados/nulos_governador.json`, `fase3/resultados/rdv_nulos_analise.json`
+
+### Q40. O que os eleitores digitaram nos votos nulos para presidente?
+**Resposta:** Mais da metade digitou '00'. Uma parte grande digitou o número de um candidato a governador do próprio estado: 698 mil no 1º turno de 2026 (422 mil em 2022). No 2º turno, onde havia governador, cerca de 1 em cada 100 eleitores fez isso, o que explica todo o excesso de nulos desses estados. No 2º turno de 2026, 246 mil digitaram o número de um candidato a presidente já eliminado, 143 mil deles o 14 do Renan.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** 698 mil nulos com número de governador no 1º turno de 2026; 143 mil digitando 14 no 2º turno.
+- **Números:** Nulos de presidente: 2022, 3,49 mi e 3,93 mi; 2026, 3,67 mi e 2,72 mi. Mais digitados no 1º turno de 2026: 00, 10, 15, 11, 12; no 2º: 00, 11, 14, 12, 99.
+- **Demonstra:** Os números digitados, voto a voto, conferidos com a contagem dos boletins.
+- **Não demonstra:** A intenção do eleitor.
+- **Robustez:** 0 diferenças contra o leitor original nos 4 conjuntos.
+- **Causa:** não aplicável · **Alcance:** Todas as seções, 2022 e 2026.
+- **O que mudaria a resposta:** —
+- **Validação:** T58 (emenda 15).
+- **Evidências:** `fase3/PREREG_RDV_NULOS.md`, `fase3/rdv_nulos.py`, `fase3/rdv_nulos_analise.py`, `fase3/resultados/rdv_nulos_analise.json`
+
+### Q41. O estimador de fluxos de votos (para onde foi cada eleitor) acerta quando a origem é conhecida?
+**Resposta:** Em parte. Quem digitou 14 no 2º turno de 2026 quase certamente votou no Renan no 1º; o estimador atribui 90% desses votos ao Renan, e 69% dos que digitaram 70 ao Cury. Mas erra outros casos (55 em 2026; 12 e 15 em 2022). Pela regra fixada antes, os números de fluxo (por exemplo, '62% dos brancos e nulos para Lula') valem só como direção, não como tamanho.
 **Classificação:** Parcialmente demonstrado
-**Em votos:** Queda de brancos e nulos de 1,82 mi entre os turnos de 2026: ~0,47 mi com marca no 1º turno e ~0,69 mi por haver menos 2º turno de governador; resto uniforme, sem viés para Lula.
-- **Números:** Totais: 2022, 5.452.653 → 5.700.443; 2026, 5.969.801 → 4.153.801. Nulos no 2º turno com × sem governador: 3,90% × 2,32% (2022); 2,84% × 2,06% (2026). UFs sem governador nos dois anos: −0,62 ponto, de −0,51 a −0,68 por quintil de Lula.
-- **Demonstra:** As duas causas estruturais e o resíduo uniforme.
-- **Não demonstra:** Quem eram os eleitores (Q26); o número digitado em cada nulo (RDV não lido).
-- **Robustez:** Cada UF é controle de si mesma entre os anos; magnitude do C06 frágil (T37).
-- **Causa:** verificável em grande parte · **Alcance:** Brasil, 2022 e 2026.
-- **O que mudaria a resposta:** Resíduo concentrado onde Lula é forte; leitura do RDV contrária.
-- **Validação:** T56 (emenda 13), T57 (emenda 14); C06, T37, Q22, Q24, Q26.
-- **Evidências:** `fase3/PREREG_BRANCOS_NULOS.md`, `fase3/resultados/brancos_nulos.json`, `fase3/PREREG_NULOS_GOVERNADOR.md`, `fase3/resultados/nulos_governador.json`, `analise/resultado_comportamento_2026.json`
+**Em votos:** Não se traduz em votos; muda a leitura das magnitudes de fluxo.
+- **Números:** Fração atribuída à origem certa: 14 → 90% (22 de 27 UFs), 70 → 69% (15), 55 → 20%, 12 → 9%, 15 → 13%.
+- **Demonstra:** O desempenho do estimador com dado real.
+- **Não demonstra:** Qual fluxo ocorreu (Q26).
+- **Robustez:** Mesma implementação do C06; destinos com número também de governador são menos limpos.
+- **Causa:** não aplicável · **Alcance:** 2º turno, 2022 e 2026.
+- **O que mudaria a resposta:** Calibração com destinos mais limpos.
+- **Validação:** T59 (emenda 15); C06, T37, Q24.
+- **Evidências:** `fase3/PREREG_RDV_NULOS.md`, `fase3/resultados/rdv_nulos_analise.json`, `analise/resultado_comportamento_2026.json`
 
 ## Matriz dos 33 itens do inventário
 
@@ -589,7 +615,7 @@
 - 2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).
 - 173 arquivos assinados e 485 auxiliares fora do pacote de dados abertos de 2022.
 - 8 urnas com rajada sem biometria no fim do dia (2026, 1º turno; 99 votos), padrão também presente em 2022.
-- Queda uniforme de ~0,6 ponto de brancos e nulos no 2º turno de 2026 nas UFs sem 2º turno de governador nos dois anos, sem relação com a força de Lula (T57).
+- Queda uniforme de ~0,6 ponto de brancos e nulos no 2º turno de 2026 nas UFs sem 2º turno de governador nos dois anos, sem relação com a força de Lula (T57); o erro de campo (T58) explica a parte ligada a Lula.
 - Recebimento de boletins parado das 17:07 às 19:03 no 2º turno de 2026 (T52): coincide com a prorrogação; a regra que o acionou não está nos dados.
 - Última troca de liderança mais tardia que nos modelos nulos e que o modelo de atraso de transmissão prevê, nos dois anos (fila F4).
 

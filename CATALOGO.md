@@ -298,3 +298,9 @@ Pré-registro `fase3/PREREG_LIVE_2022.md` (emenda 7), script `fase3/live_2022.py
 - **T55 (Cabo Frio e cidades citadas, emenda 12):** ganho de Lula cabe nos votos disponíveis em todos os municípios; Cabo Frio no percentil 89; 36 casos em 2026 e 28 espelhados em 2022; 4.044/4.044 seções íntegras (S0). Artefato corrigido: validos_1 contado como eliminado.
 - **T56 (brancos e nulos, emenda 13):** C06 confirma a direção (62% → Lula em 2026); seções pareadas mostram excesso de brancos e nulos no 1º turno de 2026 onde Lula é forte (~0,47 mi), parte da queda de 1,82 mi; resto sem causa identificada (S1 em parte).
 - **T57 (nulos e 2º turno de governador, emenda 14):** nulos de presidente sobem onde há governador no 2º turno (+1,58 ponto em 2022, +0,78 em 2026); 53% × 8% dos votos nessas UFs; ~0,69 mi da queda; resto uniforme (S1).
+
+## Rodada 7 (28/10/2026): dígitos dos nulos no RDV e calibração do C06
+Pré-registro `fase3/PREREG_RDV_NULOS.md` (emenda 15). Extração de todos os RDVs (2022 e 2026, dois turnos; ~8 min por conjunto com 12 processos).
+- **Artefato (corrigido):** a conferência acusou 541 e 14 seções em 2022; causa: o leitor original soma o nulo tipo 6, e seções só com tipo 6 ficavam fora do comparador. Depois: 0 diferenças nos 4 conjuntos.
+- **T58:** nulos com número de governador no campo de presidente: 698 mil no 1º turno de 2026 (422 mil em 2022); explicam a marca do T56 e o efeito do T57 (S1).
+- **T59:** C06 contra origem conhecida: acerta 14 (90%) e 70 (69%), erra 55, 12 e 15; magnitudes de fluxo só como direção (prova "ajustado" no C06).

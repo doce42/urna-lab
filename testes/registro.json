@@ -5459,6 +5459,14 @@
      "alvo": "interpretacao",
      "descricao": "As estimativas de 2022 (Abs→Lula 2,3%, Abs→Adv 4,1%, razão 0,56) e de 2026 (9,7% e 2,4%, razão 4,0) têm sentidos opostos e mantêm o contraste em todos os cenários testados. O aumento de comparecimento foi 5 vezes maior em 2026 (+2,92 mi contra +0,56 mi). Isso é estimativa ecológica, não fluxo identificado.",
      "resultado": "resistiu"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 7,
+     "tipo": "T59: calibração com origem conhecida (nulo com número de eliminado)",
+     "alvo": "metodo",
+     "descricao": "Acerta 14 (90%) e 70 (69%) em 2026; erra 55 (20%), 12 (9%) e 15 (13%). Pela regra fixada antes, magnitudes passam a ser lidas só como direção.",
+     "resultado": "ajustado"
     }
    ],
    "versoes": [
@@ -6643,7 +6651,16 @@
    "referencia": "",
    "pressupostos": "",
    "anotacoes": [],
-   "provas": [],
+   "provas": [
+    {
+     "data": "2026-10-28",
+     "rodada": 7,
+     "tipo": "T59: fragilidade confirmada com dado real",
+     "alvo": "evidencia",
+     "descricao": "A fragilidade medida com dados sintéticos aparece em dado real: 3 de 5 destinos de origem conhecida mal atribuídos.",
+     "resultado": "resistiu"
+    }
+   ],
    "versoes": [
     {
      "versao": "V1.1",
@@ -7889,7 +7906,7 @@
    "saida": "fase3/resultados/brancos_nulos.json",
    "situacao": "concluido",
    "evidencia": "C06 (já existente) reproduz a direção do post: brancos e nulos do 1º turno → Lula 62%, → Flávio 1,4% em 2026 (21 de 27 UFs com < 5% para Flávio); em 2022, → Lula 16%, → Bolsonaro 28%. Totais: 2022, 5.452.653 (1º) e 5.700.443 (2º); 2026, 5.969.801 (1º) e 4.153.801 (2º), queda de 1,82 mi. Nas 459.706 seções com o mesmo número nos dois anos: o 1º turno de 2026 teve +0,41 ponto de brancos e nulos sobre o de 2022, crescendo com a força de Lula (−0,08 no quintil com menos Lula, +0,73 no com mais; inclinação dentro do município +0,016), cerca de 468 mil votos; no 2º turno, 1,30 ponto abaixo de 2022, mais onde Lula é forte (−0,90 a −1,66).",
-   "interpretacao": "A direção da tabela se confirma no nosso estimador, mas a magnitude por UF é frágil (T37). Há uma marca independente no próprio 1º turno: onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 nas mesmas seções, o que favorece as explicações (1) eleitores de Lula que anularam no 1º turno e voltaram ou (2) campanha entre quem rejeitava os dois, e não só viés do estimador. Essa marca cobre cerca de 0,47 mi da queda de 1,82 mi; o restante é queda geral de brancos e nulos no 2º turno, maior onde Lula é forte. Os dados não distinguem (1) de (2) nem identificam eleitores; brancos e nulos conferem nos boletins e no RDV (Q1, Q2). Atualização (T57): a maior parte do restante vem de haver menos 2º turno de governador em 2026 (~0,69 mi); sobra queda uniforme de ~0,6 ponto.",
+   "interpretacao": "A direção da tabela se confirma no nosso estimador, mas a magnitude por UF é frágil (T37). Há uma marca independente no próprio 1º turno: onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 nas mesmas seções, o que favorece as explicações (1) eleitores de Lula que anularam no 1º turno e voltaram ou (2) campanha entre quem rejeitava os dois, e não só viés do estimador. Essa marca cobre cerca de 0,47 mi da queda de 1,82 mi; o restante é queda geral de brancos e nulos no 2º turno, maior onde Lula é forte. Os dados não distinguem (1) de (2) nem identificam eleitores; brancos e nulos conferem nos boletins e no RDV (Q1, Q2). Atualização (T57): a maior parte do restante vem de haver menos 2º turno de governador em 2026 (~0,69 mi); sobra queda uniforme de ~0,6 ponto. Atualização (T58): a marca do 1º turno é quase toda número de governador digitado no campo de presidente (erro de campo).",
    "resultado_atual": "S1: direção confirmada; marca no 1º turno (~0,47 mi) e menos 2º turno de governador (T57, ~0,69 mi) explicam a maior parte; resto uniforme.",
    "impacto_votos": "Queda de brancos e nulos: 1,82 mi (41% da margem de 2026); ~0,47 mi com marca no 1º turno; o restante sem causa identificada, com contagens conferidas nos boletins.",
    "limitacoes": "Inferência ecológica (T37); pareamento por número de seção; não distingue (1) de (2).",
@@ -7934,7 +7951,7 @@
    "saida": "fase3/resultados/nulos_governador.json",
    "situacao": "concluido",
    "evidencia": "Nulos de presidente no 2º turno, UFs com 2º turno de governador × sem: 2022, 3,90% × 2,32% (+1,58 ponto); 2026, 2,84% × 2,06% (+0,78). Votos em UFs com governador no 2º turno: 53% em 2022 (12 UFs, com SP), 8% em 2026 (6 UFs). Por UF, cada estado é controle de si mesmo: com governador, nulos sobem do 1º para o 2º turno (2022: AL +2,50, AM +2,07, PB +1,55, PE +1,52; 2026: TO +1,02, ES +0,85, AC +0,82); sem governador, caem (2026: AL −2,48, PB −2,26, PE −1,44, SE −1,35, BA −1,24). Composição explica ~685 mil nulos a menos em 2026. Nas 11 UFs sem governador nos dois anos (196.907 seções pareadas): brancos e nulos do 2º turno caem 0,62 ponto, uniforme na força de Lula (−0,51 a −0,68).",
-   "interpretacao": "A maior parte da queda de brancos e nulos do 2º turno de 2026 tem causa estrutural verificável: em 2022 metade do eleitorado votou também para governador no 2º turno e errou mais no voto de presidente; em 2026 só 8%. Somado à marca do 1º turno (T56, ~0,47 mi), sobra uma queda de cerca de 0,6 ponto, igual em seções de Lula e de Bolsonaro, que não sustenta a ideia de brancos e nulos indo só para Lula por fora do comportamento. Qual número foi digitado em cada nulo está no RDV e não foi lido (fila).",
+   "interpretacao": "A maior parte da queda de brancos e nulos do 2º turno de 2026 tem causa estrutural verificável: em 2022 metade do eleitorado votou também para governador no 2º turno e errou mais no voto de presidente; em 2026 só 8%. Somado à marca do 1º turno (T56, ~0,47 mi), sobra uma queda de cerca de 0,6 ponto, igual em seções de Lula e de Bolsonaro, que não sustenta a ideia de brancos e nulos indo só para Lula por fora do comportamento. Qual número foi digitado em cada nulo está no RDV e não foi lido (fila). Atualização (T58): medido diretamente; nas UFs com governador no 2º turno, 1,18 ponto (2026) e 0,97 (2022) dos votos são nulos com número de governador.",
    "resultado_atual": "S1: 2º turno de governador eleva nulos de presidente; menos UFs com governador em 2026 explicam ~0,69 mi; resto uniforme (~0,6 ponto).",
    "impacto_votos": "~685 mil nulos a menos por composição; resto ~0,6 ponto, sem viés para Lula.",
    "limitacoes": "Lista de UFs com governador do noticiário, conferida pelo padrão do próprio dado; conteúdo dos nulos (RDV) não lido.",
@@ -7966,6 +7983,74 @@
      ]
     }
    ]
+  },
+  {
+   "id": "T58",
+   "pergunta": "O que os eleitores digitaram nos votos nulos de presidente (2022 e 2026)?",
+   "modulo": "H",
+   "metodo": "Leitura do número digitado em cada nulo no RDV de todas as seções; classes: número de candidato a governador da UF, presidente eliminado (2º turno), zeros, outros, sem número; por grupo de UF e por força de Lula",
+   "metodo_versao": 1,
+   "hipotese_nula": "Nulos de presidente não têm relação com o voto para governador",
+   "modelo_nulo": "—",
+   "afirmacao": "determinística",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "independencia": "interna",
+   "pre_especificacao": "fase3/PREREG_RDV_NULOS.md",
+   "script": "fase3/rdv_nulos.py; fase3/rdv_nulos_analise.py",
+   "comando": ".venv/bin/python fase3/rdv_nulos.py <ano> <turno>; .venv/bin/python fase3/rdv_nulos_analise.py",
+   "saida": "fase3/resultados/rdv_nulos_analise.json",
+   "situacao": "concluido",
+   "evidencia": "Conferência: soma por seção igual ao leitor original em 2022 e 2026, dois turnos (0 diferenças). Nulos de presidente: 2022 3,49 mi (1º) e 3,93 mi (2º); 2026 3,67 mi e 2,72 mi. '00' é mais da metade em todos. Número de candidato a governador digitado no campo de presidente: 2026 1º turno 697.773 (19%), 2022 1º turno 422.104 (12%). 2º turno, nas UFs com governador: 1,18 ponto do total em 2026 e 0,97 em 2022 (0 nas demais, onde não há governador); isso cobre todo o excesso de nulos dessas UFs medido no T57 (+0,78 e +1,58 com zeros). 2º turno de 2026: 245.638 nulos com número de presidente eliminado (143.372 digitando 14). Excesso de nulos do 1º turno de 2026 sobre 2022 nas mesmas seções, por quintil de Lula: a classe 'governador' sobe de +0,08 para +0,45 ponto; as outras classes não acompanham.",
+   "interpretacao": "Mede diretamente o mecanismo do T57: no 2º turno com governador, cerca de 1 em cada 100 eleitores digitou o número do governador no campo de presidente. E explica a marca do T56: o excesso de nulos do 1º turno de 2026 onde Lula é forte é quase todo número de governador digitado no lugar errado, isto é, erro de campo, não voto de protesto; no 2º turno, sem governador na maioria das UFs, esses eleitores votaram normalmente. Os dados mostram o erro, não em quem a pessoa queria votar.",
+   "resultado_atual": "S1: nulos com número de governador explicam o excesso das UFs com governador no 2º turno e a marca do 1º turno de 2026 onde Lula é forte.",
+   "impacto_votos": "2026 1º turno: 697.773 nulos com número de governador (275 mil a mais que em 2022); 2º turno: 119.563.",
+   "limitacoes": "Classe 'governador' depende da lista de números com voto nominal para governador na UF; um número de governador pode coincidir com partido de ex-candidato a presidente.",
+   "pressupostos": "",
+   "referencia": "fila do T57; ideia de estudo independente (welwelaraujo.github.io/transferencia_votos), não fonte",
+   "origem_fase3": "alegação de imprensa, 28/10/2026",
+   "anotacoes": [],
+   "mudancas": [
+    {
+     "data": "2026-10-28",
+     "causa": "codigo",
+     "descricao": "Correção única na conferência: em 2022 o leitor original soma o nulo tipo 6; seções só com tipo 6 ficavam fora (541 e 14 'diferenças' viraram 0)."
+    }
+   ],
+   "provas": [],
+   "revisoes": [],
+   "versoes": []
+  },
+  {
+   "id": "T59",
+   "pergunta": "O estimador de fluxos (C06) acerta quando a origem dos votos é conhecida?",
+   "modulo": "H",
+   "metodo": "Goodman restrito por UF do C06 com destinos 'nulo digitando o número de um candidato eliminado' no 2º turno (2026: 14, 70, 55; 2022: 12, 15); fração do destino atribuída à origem certa; critério fixado antes (passa ≥ 50% nacional e na maioria das UFs; falha < 25%)",
+   "metodo_versao": 1,
+   "hipotese_nula": "O C06 atribui o destino à origem certa",
+   "modelo_nulo": "—",
+   "afirmacao": "estatística",
+   "natureza": "confirmatório",
+   "classe_evidencia": "B",
+   "independencia": "interna",
+   "pre_especificacao": "fase3/PREREG_RDV_NULOS.md",
+   "script": "fase3/rdv_nulos_analise.py",
+   "comando": ".venv/bin/python fase3/rdv_nulos_analise.py",
+   "saida": "fase3/resultados/rdv_nulos_analise.json",
+   "situacao": "concluido",
+   "evidencia": "2026: '14' (Renan, 142.882 votos) 90% atribuído à origem certa, 22 de 27 UFs ≥ 50%: passa; '70' (Cury, 21.578) 69%, 15 UFs: passa; '55' (Caiado, 61.661) 20%, 5 UFs, atribuído sobretudo a Lula: falha. 2022: '12' (Ciro, 131.984) 9% e '15' (Tebet, 134.939) 13%, atribuídos sobretudo à abstenção: falham. Convergiu em 27/27 UFs. Nota: o C06 publicado é o Goodman restrito por UF (o pré-registro o descreveu também com efeito fixo de município, que não é a versão usada).",
+   "interpretacao": "Resultado misto com dado real: o estimador acerta os grupos de destino mais limpos de 2026 (14 e 70) e erra os demais. Parte das falhas pode vir de destinos menos limpos (55, 12 e 15 também são números de partido de governador), mas isso não muda a regra fixada antes: como falha em 3 de 5 destinos, as magnitudes do C06 (e da Q39) passam a ser lidas só como direção.",
+   "resultado_atual": "Parcial: passa em 2 de 5 destinos (14 e 70 de 2026), falha em 3; magnitudes do C06 só como direção.",
+   "impacto_votos": "Não se traduz em votos; muda a leitura das magnitudes de fluxo (Q24, Q39).",
+   "limitacoes": "Origem 'quase' conhecida; destinos com números que também são de partido de governador são menos limpos.",
+   "pressupostos": "",
+   "referencia": "ideia de estudo independente (welwelaraujo.github.io/transferencia_votos), não fonte",
+   "origem_fase3": "alegação de imprensa, 28/10/2026",
+   "anotacoes": [],
+   "mudancas": [],
+   "provas": [],
+   "revisoes": [],
+   "versoes": []
   }
  ],
  "classes": {
