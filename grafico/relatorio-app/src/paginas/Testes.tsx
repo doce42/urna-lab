@@ -171,6 +171,7 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
         <p className="text-lg font-medium leading-snug mt-1">{proc ? 'Ainda sem resultado desta versão.' : s || 'Sem resultado registrado.'}</p>
         {proc && t.resultado_atual && !/^(a fazer|em processamento)/i.test(t.resultado_atual) && <Nota className="mt-2">Registro anterior (não reexecutado): {t.resultado_atual}</Nota>}
         {longo && !proc && <p className="text-[15px] text-muted mt-2 leading-relaxed">{t.resultado_atual}</p>}
+        {t.impacto_votos && !proc && <p className="text-[14px] mt-2 text-text"><b className="font-medium">Em votos:</b> <span className="text-muted">{t.impacto_votos}</span></p>}
       </div>
       <div className="mt-6 cartao p-4 md:p-5">
         {v.el}

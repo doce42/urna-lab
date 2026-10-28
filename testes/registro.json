@@ -100,7 +100,8 @@
     "R1-13",
     "R1-18"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "0 votos de diferença em 3.800.511 pares seção × votável (1º turno) e 1.931.103 (2º). Nenhum voto divergente entre as duas tabelas."
   },
   {
    "id": "T02",
@@ -179,7 +180,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Excesso pró-Lula nas 33 seções acima de 5 desvios (2026): cerca de 740 votos; nas 13 pró-Flávio, cerca de 415 votos a menos para Lula. Em 2022: cerca de 2.600 e 350. Contra margem de 4,43 mi (2026): 0,017%. Se fosse tudo irregular (não demonstrado), não mudaria o resultado."
   },
   {
    "id": "T03",
@@ -271,7 +273,8 @@
     "R1-07",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Efeito desprezível: r = +0,004. Nenhuma seção ou lote identificado; o teste não produz contagem de votos."
   },
   {
    "id": "T04",
@@ -363,7 +366,8 @@
     "R1-07",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Efeito de −0,03 desvio-padrão por seção, limítrofe; não se traduz em um número de votos identificável. Nenhuma urna isolada sinalizada."
   },
   {
    "id": "T05",
@@ -431,7 +435,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: teste de padrão de dígitos; nenhum conjunto de seções sinalizado (p de 0,05 a 0,84)."
   },
   {
    "id": "T07",
@@ -499,7 +504,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "0 seções acima de 100% de comparecimento; 0 votos de enchimento por esta assinatura."
   },
   {
    "id": "T08",
@@ -567,7 +573,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "0 boletins emitidos antes do fim da votação depois da correção do fuso; 0 votos envolvidos."
   },
   {
    "id": "T09",
@@ -635,7 +642,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Prorrogação em 6.748 seções (1,4% das 499 mil); virada de +7,45 e +7,56 pp nos dois grupos: diferença de 0,1 pp, sem efeito identificável em votos."
   },
   {
    "id": "T10",
@@ -719,7 +727,8 @@
     "R1-10",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Desvio máximo da curva de 0,08 pp (município) e 0,25 a 0,32 pp (estado). Sobre 124 mi de votos válidos, 0,32 pp equivale a ~400 mil votos num instante da curva; é distância entre a curva e a reconstrução, não votos alterados."
   },
   {
    "id": "T11",
@@ -800,7 +809,8 @@
     "R1-10",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: conta oscilações da curva (23 contra 22 ± 1)."
   },
   {
    "id": "T12",
@@ -869,7 +879,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Efeito de −14,7 para +0,3 (t) depois de controlar a idade: sem efeito residual; nenhum voto atribuível à liberação sem biometria (12,7% das habilitações)."
   },
   {
    "id": "T13",
@@ -969,7 +980,8 @@
     "R1-05",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Menor alteração detectada na grade: 11.677 votos movidos (0,1% das urnas, 10% dos válidos). Maior alteração localizada não detectada: 496.895 votos. Troca uniforme de até 2,48 mi de votos (2% dos válidos) não foi vista. Descreve a grade, não a probabilidade geral."
   },
   {
    "id": "T13b",
@@ -1044,7 +1056,8 @@
     "R1-05",
     "R1-04"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Rajada convertendo 100% dos votos dos últimos 30 min em 'sem biometria' é vista em 76% a 98% das urnas alteradas; a 10% não é vista (recall ≈ 0%). As 13 urnas do 1º turno têm ≈140 votos no total."
   },
   {
    "id": "T14",
@@ -1139,7 +1152,8 @@
     "R1-14",
     "R1-15"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "0 votos de diferença entre log e comparecimento nas urnas sem exceção; nas exceções documentadas (T36) a soma das diferenças é 59 votos no 1º turno e 358 no 2º."
   },
   {
    "id": "T15",
@@ -1229,7 +1243,8 @@
     "R1-14",
     "R1-15"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Zero votos de diferença nas comparações feitas; não há valor a converter."
   },
   {
    "id": "T16",
@@ -1353,7 +1368,8 @@
     "R1-15",
     "R1-02"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não mede votos: mede se os bytes batem com a assinatura. 0 arquivos com hash ou assinatura divergente em 499.176 e 499.178 urnas."
   },
   {
    "id": "T16c",
@@ -1412,7 +1428,8 @@
    "evidencia": "300/300 legítimas válidas; 0 em todos os 5 controles negativos",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: valida o verificador (300/300 legítimas aceitas; 0 aceitas nos 5 controles negativos)."
   },
   {
    "id": "T17",
@@ -1502,7 +1519,8 @@
     "R1-14",
     "R1-15"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "0 votos de diferença entre a recontagem do RDV e o boletim em 499.176 urnas (1º turno)."
   },
   {
    "id": "T17b",
@@ -1579,7 +1597,8 @@
    "revisoes": [
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Zero votos de diferença nas comparações feitas; não há valor a converter."
   },
   {
    "id": "T19",
@@ -1647,7 +1666,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Mesmos números do T02 a T11 em 2022; ver cada teste."
   },
   {
    "id": "T20",
@@ -1722,7 +1742,8 @@
     "R1-07",
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Maior diferença entre modelos: +0,003 logit na UE2013 (2,59 mi de votos válidos no 2º turno), cerca de 1,9 mil votos; nos demais modelos, menos."
   },
   {
    "id": "T21",
@@ -1806,7 +1827,8 @@
     "R1-09",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: |z| ≤ 1,6 nos dois anos, nenhum excesso de percentuais inteiros."
   },
   {
    "id": "T22",
@@ -1890,7 +1912,8 @@
     "R1-09",
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: assinatura de fraude incremental simétrica (±0,08) e igual à de 2022 (±0,10)."
   },
   {
    "id": "T23",
@@ -1967,7 +1990,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Sensibilidade em fração de seções, não em votos: troca de 20% dos votos da seção é vista em 97% das seções alteradas; troca de 5%, em 7%. Seções reais marcadas: 0,35% das avaliadas, abaixo do 1% esperado."
   },
   {
    "id": "T24",
@@ -2026,7 +2050,8 @@
    "evidencia": "registradas (ex.: MS 22)",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Urnas substituídas registradas (ex.: MS 22); sem diferença de totais registrada (T32)."
   },
   {
    "id": "T25",
@@ -2082,7 +2107,8 @@
    "evidencia": "canto vazio; curtose 3,7 x 4,1 (2022)",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: canto vazio e curtose 3,7 contra 4,1 (2022)."
   },
   {
    "id": "T26",
@@ -2159,7 +2185,8 @@
    "revisoes": [
     "R1-05"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: método inadequado, excluído da conclusão."
   },
   {
    "id": "T27",
@@ -2233,7 +2260,8 @@
    "revisoes": [
     "R1-13"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: p = 0,57 e 0,34 no comparecimento."
   },
   {
    "id": "T28",
@@ -2319,7 +2347,8 @@
     "R1-05",
     "R1-11"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "2º turno: 0 urnas, 0 votos. 1º turno: 13 urnas acusadas, ≈140 votos no total (6 a 14 habilitações sem biometria cada); 0,0001% dos votos."
   },
   {
    "id": "T29",
@@ -2378,7 +2407,8 @@
    "evidencia": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.676 votos abaixo de 5 s em 273.451 urnas (no 1º turno, 1.311 em 945 urnas; em 2022, 306.528 no 2º turno e 779 no 1º). A diferença entre turnos se repete em 2022 e tem causa estrutural: no 1º turno o eleitor vota em vários cargos entre a habilitação e o voto computado, no 2º só em Presidente (e governador onde houve). O menor intervalo entre votos fica negativo em alguma urna (ordem das linhas do log e ajuste de relógio durante o dia); por isso o teste usa o percentil 1 do intervalo, não o mínimo. Corrigido após a remoção das linhas duplicadas entre partes do log.",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "1.120.676 votos (0,9% do 2º turno) abaixo de 5 s entre habilitação e voto, em 273.451 urnas; padrão estrutural que se repete em 2022 (306.528), sem direção para candidato."
   },
   {
    "id": "T30",
@@ -2456,7 +2486,8 @@
    "revisoes": [
     "R1-11"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "1 urna por turno com primeiro voto 2 a 4 min antes da abertura registrada (urna substituída); votos envolvidos: os da urna, sem diferença de totais."
   },
   {
    "id": "T31",
@@ -2515,7 +2546,8 @@
    "evidencia": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado.",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "2º turno: 0 votos. 1º turno: 2 votos em 1 urna (RJ 60011/8/61, log corrompido pela própria urna; totais e assinatura conferem)."
   },
   {
    "id": "T32",
@@ -2593,7 +2625,8 @@
    "revisoes": [
     "R1-16"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "0 votos de diferença em 638 itens de voto e comparecimento. A diferença do eleitorado do exterior (−495 e −525) é de eleitores aptos, não de votos."
   },
   {
    "id": "T33",
@@ -2670,7 +2703,8 @@
    "revisoes": [
     "R1-11"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Sem votos atribuíveis: mesma versão do software em todas as urnas; falhas de verificação de assinatura do software em 128 urnas (1º turno) e 162 (2º), sem diferença de totais."
   },
   {
    "id": "T34",
@@ -2748,7 +2782,8 @@
    "revisoes": [
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "3.060 seções com troca de urna declarada (0,6%); a urna efetivada coincide com a do boletim em todas as seções, e o total oficial confere (T32, 0 votos de diferença)."
   },
   {
    "id": "T35",
@@ -2832,7 +2867,8 @@
     "R1-11",
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Sem votos atribuíveis: 3 máquinas de geração de mídia (1º turno) e 2 (2º) sem log GEDAI publicado."
   },
   {
    "id": "C01",
@@ -2888,7 +2924,8 @@
    "evidencia": "comparecimento por região/porte/perfil",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Descritivo: comparecimento 78,9% (1º turno) e 80,8% (2º); a diferença de 2,92 mi de votantes é o que o C06 tenta repartir."
   },
   {
    "id": "C02",
@@ -2944,7 +2981,8 @@
    "evidencia": "votos por minuto (logs)",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Descritivo: distribuição dos votos por minuto; não altera totais."
   },
   {
    "id": "C03",
@@ -3000,7 +3038,8 @@
    "evidencia": "perfil x voto",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Descritivo: associação entre perfil e voto; não se converte em votos trocados."
   },
   {
    "id": "C06",
@@ -3102,7 +3141,8 @@
    "revisoes": [
     "R1-06"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Estimativa de 3,18 mi de abstencionistas do 1º turno para Lula e 0,79 mi para o adversário (2026). Sob heterogeneidade contextual, o erro da célula chega a ±0,5 mi (estresse moderado) e ±1,5 mi (estresse forte). O ganho total de Lula entre turnos foi de 10,33 mi."
   },
   {
    "id": "C06b",
@@ -3173,7 +3213,8 @@
     "R1-17",
     "R1-06"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Troca direta entre finalistas: mínimo garantido de 79 votos (Flávio → Lula) e 123 (Lula → Flávio); máximo matemático de ~40 milhões. Estimativa pontual: ~106 mil votos líquidos, dependente do C06."
   },
   {
    "id": "C07",
@@ -3229,7 +3270,8 @@
    "evidencia": "Mudança de comparecimento associada ao perfil, dentro do município (idosos +3,2 e mulheres +3,3 pontos por 100% do grupo); associação, não causa.",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Descritivo: idosos +3,2 pp e mulheres +3,3 pp de comparecimento por 100% do grupo; associação, não votos."
   },
   {
    "id": "C08",
@@ -3285,7 +3327,8 @@
    "evidencia": "Virada por região, UF e porte do município (descritivo): Centro-Oeste +7,4, Sudeste +7,6, Nordeste +5,6, Norte +5,4, Sul +6,2 pp.",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Mudança da diferença Lula − Flávio entre turnos: Sudeste +2,86 mi, Nordeste +2,56 mi, Sul +0,47 mi, Norte +0,46 mi, Centro-Oeste +0,30 mi (total 6,64 mi no país, sem exterior)."
   },
   {
    "id": "E01",
@@ -3360,7 +3403,8 @@
     "R1-08",
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Não se traduz em votos: 33 a 36% da variância dos resíduos está entre locais de votação, como em 2022."
   },
   {
    "id": "E02",
@@ -3452,7 +3496,8 @@
     "R1-08",
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "683 locais de votação significativos em 2026 (766 em 2022), lados equilibrados (390 × 293); sem soma de votos, por serem agrupamentos exploratórios."
   },
   {
    "id": "E03",
@@ -3530,7 +3575,8 @@
     "R1-08",
     "R1-17"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Lista dos casos extremos; as divergências individuais são de dezenas a centenas de votos por seção; nenhuma confirmada em dado independente."
   },
   {
    "id": "INC",
@@ -3589,7 +3635,8 @@
    "evidencia": "ver T02, T03, T04",
    "interpretacao": null,
    "revisoes": [],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "Define o menor efeito detectável (MDE) de cada teste; não é voto."
   },
   {
    "id": "T36",
@@ -3672,7 +3719,8 @@
     "R1-12",
     "R1-15"
    ],
-   "mudancas": []
+   "mudancas": [],
+   "impacto_votos": "1º turno: 186 urnas com contas que não fecham, das quais só 9 têm log ≠ comparecimento, somando 59 votos (maior diferença 36). 2º turno: 75 urnas, 7 com diferença, somando 358 votos (maior 304). Os demais casos diferem em 1 confirmação sem voto computado. Total no máximo 417 votos em 128 mi."
   }
  ],
  "classes": {

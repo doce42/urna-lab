@@ -3,7 +3,7 @@ export type Teste = {
   id: string; modulo: string; pergunta: string; metodo: string; modelo_nulo: string; script: string; comando: string; saida: string;
   situacao: string; referencia: string; hipotese_nula: string; pressupostos: string; limitacoes: string; afirmacao: string;
   independencia: string; natureza: string; classe_evidencia: string; resultado_atual: string; anotacoes: string[];
-  versoes?: VersaoTeste[]; provas?: Prova[]; evidencia?: string; interpretacao?: string | null; metodo_versao?: number;
+  versoes?: VersaoTeste[]; provas?: Prova[]; evidencia?: string; interpretacao?: string | null; impacto_votos?: string; metodo_versao?: number;
   pre_especificacao?: string; revisoes?: string[]; mudancas?: Mudanca[];
 };
 export type VersaoTeste = { versao: string; rodada: number; data: string; git_tag?: string; commit?: string; metodo_versao: number; situacao: string; classe_evidencia: string; natureza: string; resultado: string; evidencia?: string; interpretacao?: string | null; nota?: string; mudancas?: Mudanca[] };

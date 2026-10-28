@@ -20,6 +20,8 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
    - limite dos dados públicos (`AUTOAUDITORIA.md`).
 7. **Tudo registrado.** Cada etapa, incidente e consumo de recursos vai para o `CATALOGO.md`. Cada referência vai para o `REFERENCIAS.md`, classificada.
 
+8. **Resultado com contexto em votos.** Todo teste tem `impacto_votos` no registro: quanto o resultado representa em número de votos (ou por que não se traduz em votos), comparado à margem do 2º turno. `scripts/impacto_votos.py` preenche; atualize ao mudar um resultado.
+
 ## Mapa do projeto
 - `PROTOCOLO.md`: perguntas, modelos nulos (N1–N7), módulos, critérios, emendas.
 - `METODOLOGIA.md`: a matemática de cada teste.
