@@ -55,8 +55,8 @@ I = {
 }
 r = json.load(open(REG, encoding="utf-8"))
 ids = {t["id"] for t in r["testes"]}
-assert ids == set(I), (ids ^ set(I))
+assert set(I) <= ids, (set(I) - ids)
 for t in r["testes"]:
-    t["impacto_votos"] = I[t["id"]]
+    if t["id"] in I: t["impacto_votos"] = I[t["id"]]
 json.dump(r, open(REG, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print("ok", len(I))

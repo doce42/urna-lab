@@ -1,10 +1,16 @@
-# Conclusão do estudo (versão em revisão)
+# Conclusão do estudo (baseline V1.0, com atualização da Fase 2)
 
 > **Estado:** **baseline V1.0 aprovada** pelo responsável em 28/10/2026, depois da **revisão independente R1** (Codex). Os critérios de [`revisoes/README.md`](revisoes/README.md) foram conferidos: achados respondidos ou adiados, `make verificar` passando, proveniência completa. A conclusão original da rodada 1 (**V1.0-rc1**) está congelada, sem alteração, em [`rodadas/rodada-1/CONCLUSAO.md`](rodadas/rodada-1/CONCLUSAO.md) e na tag `rodada-1`; esta versão está congelada em [`rodadas/rodada-2/`](rodadas/rodada-2/) e na tag `v1.0`. As frases que mudaram, e por quê, estão em [Mudanças em relação à V1.0-rc1](#mudanças-em-relação-à-v10-rc1). Resultados novos entram na Fase 2 (rodada 3) sem reescrever esta versão.
 
 **Escopo:** eleição presidencial brasileira de 2026, 1º turno (04/10) e 2º turno (25/10), com 2022 como referência histórica. Não cobre outros cargos nem outros anos. **Fonte:** só dados oficiais do TSE: tabelas de dados abertos e os arquivos gravados por cada urna (boletim `bu.dat`, registro digital do voto `RDV`, log, imagem do boletim e assinaturas). São 51.846 arquivos, cerca de 405 GB, com SHA-256 no manifesto. Só 331 deles tinham hash SHA-512 oficial publicado pelo TSE para conferir, e todos conferiram.
 
 A pergunta "houve fraude?" reúne hipóteses diferentes: em que fase, por qual mecanismo, em que escala, com que intenção. Esta conclusão responde só ao que os testes alcançam, em três níveis: **o que os registros disponíveis mostram de forma exata**, **o que a estatística mostra e com que alcance**, e **o que fica fora do alcance dos dados públicos**. Cada afirmação aponta para o teste do [registro](testes/registro.json) que a sustenta.
+
+## Atualização da Fase 2 (28/10/2026, depois da baseline)
+Resultados novos, com o que significam em votos. A baseline V1.0 abaixo permanece como foi congelada (`rodadas/rodada-2/`).
+- **Crescimento de Lula entre turnos (C06, T37):** em 2026 Lula somou +10,33 mi de votos (adversário +3,69 mi) com +2,92 mi de comparecimento; em 2022, +3,07 mi e +7,11 mi, com +0,56 mi. As contas fecham exatamente. A razão "4:1 para Lula" entre abstencionistas é estimativa frágil na magnitude: sob heterogeneidade sintética varia de 1,7 a 11,8 (verdade 3 a 4), erro de ±0,5 a ±1,5 mi de votos. A ordem em 2026 e o contraste com 2022 resistem.
+- **Hipótese de enchimento para Lula (T38):** a assinatura prevista, comparecimento subindo nas seções pró-Lula atípicas, não aparece. Excesso de cerca de 740 votos (2026) e 2.600 (2022) contra a margem de 4,43 mi. A assimetria de cauda do T02 persiste, sem causa, e não exclui troca em urna sem alteração de comparecimento.
+- **Verificação de 20 seções (T39):** nenhuma divergência objetiva nova nas 19 com arquivos de urna; vale só para a amostra. Não houve confronto independente (sem material externo disponível).
 
 ## Resposta curta
 

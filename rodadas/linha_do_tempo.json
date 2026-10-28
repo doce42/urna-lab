@@ -8,7 +8,7 @@
    "status": "concluida",
    "inicio": "2026-10-27",
    "fim": "2026-10-28",
-   "resumo": "Primeira rodada grossa: coleta de todos os dados oficiais, processamento das urnas, verificações padrão da literatura, validação criptográfica e de totais, e categorização de cada teste com classe de evidência. Congelada como snapshot preliminar (candidato à baseline).",
+   "resumo": "Primeira rodada grossa: coleta de todos os dados oficiais, processamento das urnas, verificações padrão da literatura, validação criptográfica e de totais, e categorização de cada teste com classe de evidência. Congelada como snapshot preliminar V1.0-rc1, que depois da revisão R1 foi aprovada como baseline V1.0.",
    "etapas": [
     {
      "titulo": "Coleta e proveniência",
@@ -32,7 +32,7 @@
     },
     {
      "titulo": "Snapshot preliminar V1.0-rc1",
-     "texto": "Retrato congelado (tag rodada-1) com a conclusão original; não é a baseline aprovada."
+     "texto": "Retrato congelado (tag rodada-1) com a conclusão original; a baseline aprovada é a V1.0 (rodada 2)."
     }
    ],
    "versao": "V1.0-rc1"
@@ -59,7 +59,7 @@
     },
     {
      "titulo": "Corrigir sem reescrever o passado",
-     "texto": "Correções no registro vivo e na conclusão em revisão; a rc1 fica congelada."
+     "texto": "Correções no registro vivo e na conclusão revisada; a rc1 fica congelada."
     }
    ]
   },
@@ -92,7 +92,7 @@
    "rodada": 3,
    "titulo": "Investigação aprofundada",
    "status": "em_andamento",
-   "resumo": "Perguntas específicas derivadas do levantamento e da revisão (FASE2.md), cada uma tentando derrubar um método ou uma conclusão; exploratório e confirmatório separados. Primeira sessão limitada (28/10): P1 (C06 sob heterogeneidade), hipótese de enchimento para Lula entre turnos e verificação de 20 seções.",
+   "resumo": "Perguntas específicas derivadas do levantamento e da revisão, registradas antes de rodar, cada uma tentando derrubar um método ou uma conclusão; exploratório e confirmatório separados. Primeira sessão (28/10): P1 respondida (T37), hipótese de enchimento para Lula testada (T38) e 20 seções verificadas (T39).",
    "etapas": [],
    "inicio": "2026-10-28"
   }
@@ -186,7 +186,7 @@
    "data": "2026-10-28",
    "hora": "",
    "titulo": "Snapshot preliminar V1.0-rc1",
-   "texto": "Retrato congelado de todos os testes e resultados com a conclusão original (tag rodada-1); candidato à baseline, não aprovado."
+   "texto": "Retrato congelado de todos os testes e resultados com a conclusão original (tag rodada-1); naquele momento, candidato à baseline. Aprovado depois, revisado, como V1.0."
   },
   {
    "data": "2026-10-28",
@@ -198,13 +198,31 @@
    "data": "2026-10-28",
    "hora": "",
    "titulo": "R1 respondida no registro",
-   "texto": "T01 refeito seção a seção (0 diferenças); verificador Ed521 endurecido; manifesto com hash oficial real (331 conferidos); T36 com graus; conclusão em revisão. Duas afirmações caíram."
+   "texto": "T01 refeito seção a seção (0 diferenças); verificador Ed521 endurecido; manifesto com hash oficial real (331 conferidos); T36 com graus; conclusão revisada. Duas afirmações caíram."
   },
   {
    "data": "2026-10-28",
    "hora": "",
    "titulo": "Baseline V1.0 aprovada",
    "texto": "Critérios cumpridos e aprovação do responsável; rodada 2 congelada (tag v1.0). A Fase 2 começa."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "P1 respondida",
+   "texto": "O estimador do C06 mantém a ordem dos fluxos, mas não a magnitude, sob heterogeneidade (T37)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Hipótese de enchimento para Lula sem sustentação",
+   "texto": "A assinatura de comparecimento prevista não aparece (T38)."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Verificação de 20 seções",
+   "texto": "Nenhuma divergência objetiva nova; verificação independente indisponível (T39)."
   }
  ],
  "etapas_do_caminho": [
@@ -213,7 +231,7 @@
    "titulo": "Estado inicial",
    "status": "concluida",
    "versao": "V1.0-rc1",
-   "texto": "Levantamento da Fase 1 congelado como snapshot preliminar, candidato à baseline.",
+   "texto": "Levantamento da Fase 1 congelado como snapshot preliminar (rc1), base da revisão.",
    "link": "#fases"
   },
   {
@@ -237,7 +255,7 @@
    "titulo": "Novas investigações",
    "status": "em_andamento",
    "versao": "Fase 2",
-   "texto": "13 perguntas registradas antes de qualquer resultado; a primeira sessão limitada (28/10) já respondeu P1 e verificou 20 seções.",
+   "texto": "17 perguntas registradas antes dos resultados. A primeira sessão (28/10) respondeu P1, testou a hipótese de enchimento e verificou 20 seções.",
    "link": "#fase2"
   },
   {
@@ -256,5 +274,28 @@
    "texto": "O registro de testes como está hoje, com provas e mudanças pendentes de congelamento.",
    "link": "#/testes"
   }
- ]
+ ],
+ "conclusoes_recentes": [
+  {
+   "titulo": "O crescimento de Lula entre turnos fecha nas contas",
+   "texto": "Em 2026 Lula ganhou 10,33 mi de votos (e o adversário 3,69 mi); o comparecimento subiu 2,92 mi. Em 2022, +3,07 mi e +7,11 mi, com +0,56 mi de comparecimento. A soma cabe exatamente no que os eliminados, os brancos/nulos e a abstenção liberaram.",
+   "teste": "C06"
+  },
+  {
+   "titulo": "O \"4:1 para Lula\" entre abstencionistas é frágil na magnitude",
+   "texto": "Num teste com dados sintéticos a razão estimada varia de 1,7 a 11,8 quando as taxas mudam entre municípios (verdade: 3 a 4), um erro de ±0,5 a ±1,5 mi de votos. A ordem em 2026 e o contraste com 2022 (onde a razão foi inversa) resistem.",
+   "teste": "T37"
+  },
+  {
+   "titulo": "Sem a assinatura de enchimento de urna",
+   "texto": "As seções pró-Lula atípicas não têm comparecimento subindo junto (média −1,8 pp). Elas somam cerca de 740 votos de excesso em 2026 (2.600 em 2022), contra uma margem de 4,43 mi. A assimetria de cauda continua sem causa.",
+   "teste": "T38"
+  },
+  {
+   "titulo": "20 seções conferidas, nenhuma divergência objetiva nova",
+   "texto": "Arquivos, hashes, assinaturas, boletim e site concordam nas 19 seções com arquivos de urna. Vale só para a amostra: o certificado não foi ligado a uma raiz do TSE e não havia material independente para confrontar.",
+   "teste": "T39"
+  }
+ ],
+ "situacao_atual": "Baseline V1.0 aprovada em 28/10/2026 · Fase 2 em andamento"
 }

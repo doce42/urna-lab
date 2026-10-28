@@ -26,30 +26,33 @@ const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: st
 
 // Estado da pesquisa: lê a linha do tempo (rodadas/linha_do_tempo.json), então acompanha sozinha a progressão das fases.
 const ST_ROT: Record<string, string> = { concluida: 'concluída', em_andamento: 'em andamento', proxima: 'próxima', pendente: 'pendente', planejada: 'planejada' };
+const F2_ROT: Record<string, string> = { respondida: 'respondida', parcial: 'em parte', inventariada: 'inventariada', adiada: 'adiada', 'sem_avanço': 'sem avanço', aberta: 'aberta' };
 function EstadoPesquisa() {
   const { dados: lt } = useDados<LT>('linha-do-tempo');
   if (!lt) return null;
   const atual = lt.fases.find((f) => f.status === 'em_andamento') || [...lt.fases].reverse().find((f) => f.status === 'concluida');
-  const ult = lt.rodadas[lt.rodadas.length - 1];
-  const marcos = [...lt.marcos].slice(-3).reverse();
+  const cont: Record<string, number> = {};
+  lt.fase2.forEach((q) => { const k = q.situacao || 'aberta'; cont[k] = (cont[k] || 0) + 1; });
   return (
     <section id="estado" className="container mt-12 md:mt-16 scroll-mt-20">
       <div className="cartao p-5 md:p-6">
         <Eyebrow>Estado da pesquisa</Eyebrow>
-        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <h2 className="t-h3">{atual?.titulo}</h2>
-          <span className="text-sm text-muted">{atual ? ST_ROT[atual.status] : ''}{ult ? ` · última versão congelada: ${ult.versao || 'rodada ' + ult.rodada} (${dataBR(ult.data)})` : ''}</span>
-        </div>
-        {atual && <p className="mt-2 text-[15px] text-muted max-w-[52rem]">{atual.resumo}</p>}
-        <ol className="mt-4 flex flex-wrap gap-2">
+        <h2 className="t-h3 mt-2">{lt.situacao_atual || atual?.titulo}</h2>
+        <ol className="mt-3 flex flex-wrap gap-2">
           {lt.fases.map((f) => (
-            <li key={f.id} className={`h-7 px-3 rounded-full border text-xs font-medium inline-flex items-center ${f.status === 'em_andamento' ? 'border-accent text-accent' : f.status === 'concluida' ? 'border-border-strong text-text' : 'border-border text-subtle'}`}>{f.versao || f.id} · {f.titulo} · {ST_ROT[f.status]}</li>
+            <li key={f.id} className={`min-h-7 py-1 px-3 rounded-full border text-xs font-medium inline-flex items-center ${f.status === 'em_andamento' ? 'border-accent text-accent' : f.status === 'concluida' ? 'border-border-strong text-text' : 'border-border text-subtle'}`}>{f.versao || f.id} · {f.titulo} · {ST_ROT[f.status]}</li>
           ))}
         </ol>
-        <ul className="mt-4 grid gap-1.5 text-[14px]">
-          {marcos.map((m) => <li key={m.titulo}><span className="text-subtle t-num">{dataBR(m.data)}</span> · <b className="font-medium">{m.titulo}</b>: <span className="text-muted">{m.texto}</span></li>)}
-        </ul>
-        <a className="mt-4 inline-flex items-center gap-1 h-9 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">Evolução da pesquisa, versões e história de cada teste</a>
+        {lt.fase2.length > 0 && <p className="mt-3 text-[14px] text-muted"><b className="font-medium text-text">Fase 2:</b> {lt.fase2.length} perguntas registradas antes dos resultados · {Object.keys(F2_ROT).filter((k) => cont[k]).map((k) => `${cont[k]} ${cont[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2_ROT[k] + 's' : F2_ROT[k]}`).join(' · ')}.</p>}
+        {(lt.conclusoes_recentes || []).length > 0 && (
+          <div className="mt-5">
+            <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Conclusões mais recentes (Fase 2)</div>
+            <ul className="mt-2 grid gap-2.5 md:grid-cols-2">
+              {lt.conclusoes_recentes!.map((c) => <li key={c.titulo}><a href={c.teste ? `#/testes/${c.teste}` : '#/linha-do-tempo'} className="block h-full rounded-lg border border-border p-3 hover:border-border-strong transition-colors"><div className="text-[14.5px] font-medium text-text leading-snug">{c.titulo}{c.teste ? <span className="ml-2 font-mono text-xs text-subtle">{c.teste}</span> : null}</div><p className="mt-1 text-[13.5px] text-muted leading-relaxed">{c.texto}</p></a></li>)}
+            </ul>
+          </div>
+        )}
+        <a className="mt-4 inline-flex items-center gap-1 min-h-9 py-1.5 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">Linha do tempo e perguntas da Fase 2 <ArrowRight size={15} /></a>
       </div>
     </section>
   );
@@ -132,8 +135,8 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
         <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16 items-end">
           <div className="surgir">
             <div className="inline-flex items-start sm:items-center gap-2 min-h-8 py-1.5 sm:py-0 px-3 rounded-full border border-border bg-surface text-[13px] text-muted leading-snug">
-              <i className="w-2 h-2 rounded-full bg-warn shrink-0 mt-1.5 sm:mt-0" style={{ boxShadow: '0 0 0 3px color-mix(in srgb, var(--warn) 25%, transparent)' }} />
-              Estudo em andamento: parte dos testes ainda será feita · dados de {dataBR(h.gerado_em)}
+              <i className="w-2 h-2 rounded-full bg-accent shrink-0 mt-1.5 sm:mt-0" style={{ boxShadow: '0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent)' }} />
+              <a href="#estado" className="hover:text-text">{meta?.situacao || 'Estudo em andamento'} · dados de {dataBR(h.gerado_em)}</a>
             </div>
             <h1 className="t-display mt-6 max-w-[14ch]">A apuração de 2026, conferida urna por urna.</h1>
             <p className="t-lead mt-6 max-w-[52ch]">

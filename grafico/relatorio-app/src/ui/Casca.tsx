@@ -71,7 +71,7 @@ export function Rodape({ meta }: { meta: Meta | null }) {
             Estudo independente, imparcial e reproduzível da apuração presidencial brasileira de 2026, com 2022 como referência.
             Só dados oficiais do TSE (dados abertos e arquivos gravados por cada urna). Não é órgão oficial e não tem vínculo com candidatos ou partidos.
           </p>
-          <p className="mt-4 inline-flex items-center gap-2 text-[13px] text-muted"><i className="w-2 h-2 rounded-full bg-warn shrink-0" />Estudo em andamento: parte dos testes ainda será feita · dados de {meta?.gerado_em ? meta.gerado_em.split('-').reverse().join('/') : '—'}</p>
+          <p className="mt-4 inline-flex items-center gap-2 text-[13px] text-muted"><i className="w-2 h-2 rounded-full bg-accent shrink-0" />{meta?.situacao || 'Estudo em andamento'} · dados de {meta?.gerado_em ? meta.gerado_em.split('-').reverse().join('/') : '—'}</p>
           <p className="mt-2 text-xs text-subtle">Código MIT · documentação e resultados CC BY 4.0</p>
         </div>
         <div>

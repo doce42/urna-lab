@@ -108,3 +108,7 @@ Só dados oficiais do TSE (lista e conferências em CATALOGO, seção 2). Nada e
   - **Calibração:** o critério que torna um teste inadequado para o dado é fixado antes de olhar o resultado. Detecções em dados reais são achados, não falsos positivos.
   - **Não detecção:** não demonstra equivalência. Afirmações de "igual" exigem margem de equivalência definida antes (P7).
   - **Perguntas novas:** a partir daqui, só entram pelo [`FASE2.md`](FASE2.md), registradas antes de rodar.
+- **28/10/2026, emenda 5, primeira sessão da Fase 2.** Pré-registro em `fase2/sessao_limitada_2026-10-28/PREREG.md`, escrito antes das execuções. Entram:
+  - **T37:** o C06 sob heterogeneidade sintética (P1);
+  - **T38:** assinatura de comparecimento nas seções pró-Lula atípicas (hipótese de enchimento, derivada do T02, exploratória);
+  - **T39:** verificação de 20 seções do 1º turno (seleção fixada antes).

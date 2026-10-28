@@ -1,0 +1,88 @@
+{
+ "respostas": {
+  "P1": {
+   "situacao": "respondida",
+   "resposta": "Com taxas homogêneas por UF o C06 recupera a verdade (razão Abs→Lula:Abs→Adv de 2026: 4,12 contra 4,01). Com heterogeneidade contextual a razão estimada vai de 1,7 a 11,8 contra 3 a 4 verdadeiro. A ordem de 2026 e o contraste com 2022 (razão 0,56) resistem; a magnitude '4:1' não. Em votos: ±0,5 mi (estresse moderado) a ±1,5 mi (forte) na célula Abs→Lula, contra 3,18 mi estimados.",
+   "testes": [
+    "T37",
+    "C06"
+   ]
+  },
+  "P2": {
+   "situacao": "adiada",
+   "resposta": "Não executada nesta sessão. Observação de leitura do código: o T1 e o T3 do T13 só contam o sentido a favor de Lula, então a sensibilidade nos dois sentidos precisa ser medida antes de afirmar poder.",
+   "testes": [
+    "T13"
+   ]
+  },
+  "P3": {
+   "situacao": "parcial",
+   "resposta": "Verificação de 20 seções do 1º turno (T39): BU, imagem do BU e BU na Web iguais em todas as 19 com arquivos; RDV = BU em 18 (a 19ª é falha do comparador, nulo por suspensão); log = comparecimento em 18 (a divergente já está no T36). Só um canal e uma versão; sem implementação independente (DataUrnas). Não generaliza.",
+   "testes": [
+    "T39"
+   ]
+  },
+  "P4": {
+   "situacao": "inventariada",
+   "resposta": "Inventário: não há, no material local, capturas históricas externas da divulgação da curva. Sem coletor iniciado, como pré-registrado.",
+   "testes": []
+  },
+  "P6": {
+   "situacao": "inventariada",
+   "resposta": "Inventário (Verificação B): não há boletins impressos de terceiros nem QR de BU no material local; nada coletado. Desenho amostral continua pendente.",
+   "testes": [
+    "T39"
+   ]
+  },
+  "P11": {
+   "situacao": "sem_avanço",
+   "resposta": "Os emissores observados (AC UE2020, AC UE2022, AC URNA) não têm cadeia até uma raiz do TSE no material obtido; a lista de hashes de 2022 é de chaves do QR, não das urnas. Segue aberta.",
+   "testes": [
+    "T16",
+    "T39"
+   ]
+  }
+ },
+ "novas": [
+  {
+   "id": "P14",
+   "pergunta": "Qual a causa da assimetria de cauda do T02 em 2022 (SP 32 das 90 seções pró-Lula; 46 contra 2 nas seções maiores)?",
+   "distingue": "característica da distribuição × efeito territorial × intervenção localizada",
+   "afirmacao": "leitura do T02 como anomalia exploratória",
+   "natureza": "exploratória",
+   "teste": "decompor por município e tamanho, com nulo que preserve tamanho e agrupamento",
+   "origem": "T38 (28/10)",
+   "situacao": "aberta"
+  },
+  {
+   "id": "P15",
+   "pergunta": "O C06 com covariáveis municipais e limites de Fréchet por UF estreita a razão Abs→Lula:Abs→Adv?",
+   "distingue": "fluxo estimável × não identificado",
+   "afirmacao": "intervalo do 4:1 do C06",
+   "natureza": "exploratória",
+   "teste": "C06 com efeito contextual e limites por UF, comparado ao T37",
+   "origem": "T37 (28/10)",
+   "situacao": "aberta"
+  },
+  {
+   "id": "P16",
+   "pergunta": "Repetindo a verificação de seções com o comparador do RDV corrigido (nulos por suspensão), com amostra maior, aparece alguma divergência?",
+   "distingue": "erro do verificador × divergência nos arquivos",
+   "afirmacao": "alcance do T39",
+   "natureza": "confirmatória",
+   "teste": "corrigir o comparador do RDV e rodar em 200 seções sorteadas",
+   "origem": "T39 (28/10)",
+   "situacao": "aberta"
+  },
+  {
+   "id": "P17",
+   "pergunta": "A assimetria de cauda do T02 é estatisticamente significativa quando se considera a dependência dentro do município?",
+   "distingue": "assimetria real × variação entre municípios",
+   "afirmacao": "T02",
+   "natureza": "confirmatória",
+   "teste": "bootstrap por município das contagens pró-Lula e pró-outro",
+   "origem": "T38 (28/10)",
+   "situacao": "aberta"
+  }
+ ]
+}

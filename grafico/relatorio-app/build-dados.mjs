@@ -79,7 +79,9 @@ gravar('registro.json', { descricao: registro.descricao, modelos_nulos: registro
     const m = l.match(/^\| (P\d+) \| (.+) \|\s*$/);
     if (m) { const c = m[2].split(' | '); fase2.push({ id: m[1], pergunta: c[0], distingue: c[1], afirmacao: c[2], natureza: c[3], teste: c[4], origem: c[5] }); }
   }
-  gravar('linha-do-tempo.json', { descricao: lt.descricao, caminho: lt.etapas_do_caminho || [], fases: lt.fases, marcos: lt.marcos, rodadas, revisoes, fase2, github: 'https://github.com/doce42/urna-lab' });
+  const rf = path.join(RAIZ, 'fase2', 'respostas.json');
+  if (fs.existsSync(rf)) { const R = ler(rf); fase2.forEach((q) => Object.assign(q, R.respostas[q.id] || { situacao: 'aberta' })); R.novas.forEach((q) => fase2.push(q)); }
+  gravar('linha-do-tempo.json', { descricao: lt.descricao, situacao_atual: lt.situacao_atual || null, caminho: lt.etapas_do_caminho || [], fases: lt.fases, marcos: lt.marcos, conclusoes_recentes: lt.conclusoes_recentes || [], rodadas, revisoes, fase2, github: 'https://github.com/doce42/urna-lab' });
 }
 
 // ---------- dados do relatório (118 MB local) → testes.json (enxuto) ----------
@@ -270,5 +272,6 @@ gravar('docs-indice.json', { github: GITHUB, docs: docs.map((d) => ({ slug: d.sl
 
 // relatório em PDF: o site mostra o botão só se o arquivo existir em public/
 const pdf = path.join(AQUI, 'public', 'relatorio.pdf');
-gravar('meta.json', { gerado_em: home.gerado_em, pdf: existe(pdf), github: GITHUB, testes: placar.total });
+const situacaoAtual = ler(path.join(RAIZ, 'rodadas', 'linha_do_tempo.json')).situacao_atual || null;
+gravar('meta.json', { gerado_em: home.gerado_em, situacao: situacaoAtual, pdf: existe(pdf), github: GITHUB, testes: placar.total });
 console.log('ok');

@@ -2,7 +2,7 @@
 
 Estudo independente, imparcial e reproduzível da apuração presidencial brasileira de **2026** (1º e 2º turno), com **2022** como referência. Usa **somente dados oficiais do TSE** (dados abertos e arquivos gravados por cada urna).
 
-> **Status: V1.0-rc1 em revisão.** O levantamento inicial (Fase 1) está congelado como snapshot preliminar (tag `rodada-1`). A primeira revisão independente ([R1, Codex](revisoes/R1-codex/)) foi respondida, e a conclusão está em revisão ([`CONCLUSAO.md`](CONCLUSAO.md)). A baseline V1.0 é aprovada só com os critérios de [`revisoes/README.md`](revisoes/README.md). Depois vem a Fase 2 ([`FASE2.md`](FASE2.md)). Site: https://urna-lab.web.app Parte dos achados é exploratória e está marcada como tal; contribuições e contestações seguem abertas. A pergunta do estudo não é "houve fraude?", e sim: *quais padrões, anomalias e divergências existem nos dados, quais explicações científicas têm e quais hipóteses resistem a tentativas sérias de refutação.*
+> **Status: baseline V1.0 aprovada (28/10/2026, tag `v1.0`); Fase 2 em andamento.** O levantamento inicial (Fase 1) segue congelado como `rodada-1` (V1.0-rc1) e a baseline está em `rodadas/rodada-2/`. A revisão independente [R1 (Codex)](revisoes/R1-codex/) foi respondida. Os primeiros resultados da Fase 2 estão em [`RELATORIO_SESSAO_LIMITADA.md`](RELATORIO_SESSAO_LIMITADA.md).
 
 ## O que tem aqui
 

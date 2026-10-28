@@ -12,7 +12,7 @@
  },
  "situacoes": {
   "aberto": "registrado, ação pendente",
-  "respondido": "ação feita na versão em revisão",
+  "respondido": "ação feita na versão revisada (baseline V1.0)",
   "aceito_como_limite": "fica como limite declarado",
   "rejeitado": "não procede, com justificativa",
   "em_andamento": "ação começada, não concluída",
@@ -432,7 +432,7 @@
    ],
    "fase_alvo": "V1.0",
    "situacao": "respondido",
-   "pendente": "CONCLUSAO reescrita (versão em revisão)."
+   "pendente": "CONCLUSAO reescrita; aprovada na baseline V1.0."
   },
   {
    "id": "R1-20",

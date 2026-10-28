@@ -337,3 +337,9 @@ Bibliografia completa e classificada em `REFERENCIAS.md`. Principais:
 - Bernstein et al. (2012) e RFC 8032 (EdDSA);
 - SafeCurves (E-521);
 - FIPS 186 e 180-4.
+
+
+## Fase 2, primeira sessão (T37 a T39)
+- **T37:** X = frações reais por seção; taxa da seção B_i = softmax(log B0 + γ·s·z_m·d), com d = (+1 Lula, −1 adversário, 0, 0), B0 = matriz C06 gravada, z_m = ruído por município (S1) ou z-score do % de Lula do município dentro da UF (S2±). Y ~ Multinomial(aptos_2, X_i B_i). Verdade nacional T_jk = Σ X_ij w_i B_i,jk / Σ X_ij w_i. Erro = estimado − verdadeiro nas células Abs→Lula, Abs→Adversário e na razão.
+- **T38:** z robusto do T02 por seção; mudança de comparecimento relativa à mediana do município; fração de valores positivos nas seções acima de 5 desvios, contra 50% no conjunto; votos excedentes = L2 − p_esperado·V2.
+- **T39:** para cada seção, SHA-512 e tamanho de cada arquivo contra a lista assinada; assinatura da lista e de cada arquivo com a chave do certificado da urna; inteiros do `bu.dat` contêm seção, zona e município; RDV, imagem do BU e BU na Web comparados voto a voto (nulos por suspensão somados).

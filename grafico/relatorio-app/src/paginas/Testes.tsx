@@ -39,13 +39,13 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
   }), [reg, busca, classes, estados, modulos, natureza]);
   const contClasse: Record<string, number> = {}, contEstado: Record<string, number> = {}, contMod: Record<string, number> = {};
   reg.testes.forEach((t) => { contClasse[t.classe_evidencia] = (contClasse[t.classe_evidencia] || 0) + 1; contEstado[categoria(t)] = (contEstado[categoria(t)] || 0) + 1; contMod[t.modulo] = (contMod[t.modulo] || 0) + 1; });
-  const porModulo = 'ABCDEF'.split('').map((m) => ({ m, ts: visiveis.filter((t) => t.modulo === m) })).filter((x) => x.ts.length);
+  const porModulo = 'ABCDEFG'.split('').map((m) => ({ m, ts: visiveis.filter((t) => t.modulo === m) })).filter((x) => x.ts.length);
   return (
     <div className="container pt-10 md:pt-16 pb-8">
       <div className="max-w-[52rem]">
         <Eyebrow>Testes · {reg.testes.length} registrados</Eyebrow>
         <h1 className="t-h1 mt-2">Cada teste com pergunta, hipótese nula, resultado e limite.</h1>
-        <p className="t-lead mt-4">Organizados em seis módulos, do dado bruto à forense estatística. Clique num cartão para abrir o detalhe: como ler o gráfico, método, o que o teste não consegue ver, anotações e como reproduzir.</p>
+        <p className="t-lead mt-4">Organizados em sete módulos, do dado bruto à forense estatística e às investigações da Fase 2. Clique num cartão para abrir o detalhe: como ler o gráfico, método, o que o teste não consegue ver, anotações e como reproduzir.</p>
       </div>
 
       {/* filtros */}
@@ -65,7 +65,7 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
         <div className="mt-3 flex flex-wrap gap-1.5">
           {'ABCDEFG'.split('').map((k) => <Chip key={k} ativo={classes.has(k)} onClick={() => alternar(classes, k, setClasses)} cor={CLASSE_COR[k]} title={CLASSE_EXPL[k]}><b className="font-semibold">{k}</b> <span className="hidden sm:inline">{reg.classes[k].split(' / ')[0]}</span> · {contClasse[k] || 0}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
-          {'ABCDEF'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)}>módulo {m} · {contMod[m]}</Chip>)}
+          {'ABCDEFG'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)}>módulo {m} · {contMod[m]}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
           {['confirmatório', 'exploratório'].map((n) => <Chip key={n} ativo={natureza === n} onClick={() => setNatureza(natureza === n ? null : n)}>{n}</Chip>)}
         </div>
@@ -120,6 +120,7 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
           <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Resultado</div>
           <p className="text-[15px] font-medium leading-snug mt-0.5">{proc ? 'Ainda sem resultado desta versão.' : s || 'Sem resultado registrado.'}</p>
         </div>
+        {t.impacto_votos && !proc && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><b className="font-medium text-text">Em votos:</b> {t.impacto_votos}</p>}
       </a>
       <div className="px-5 pb-5 relative">
         <div className="max-h-[260px] overflow-hidden relative">
@@ -164,7 +165,7 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
         <SeloClasse classe={t.classe_evidencia} nome={reg.classes[t.classe_evidencia]} grande />
         <SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
         {preliminar(t) && !proc && <span className="inline-flex items-center h-7 px-2.5 rounded-full text-xs font-medium border border-warn/50 text-warn" style={{ background: 'var(--warn-soft)' }}>preliminar · em reprocessamento</span>}
-        {[t.natureza, t.afirmacao, t.independencia ? `independência: ${t.independencia}` : '', t.modelo_nulo ? `nulo ${t.modelo_nulo}` : ''].filter(Boolean).map((x) => <span key={x} className="inline-flex items-center h-7 px-2.5 rounded-full text-xs border border-border text-muted" title={x.startsWith('independência') ? reg.independencia[t.independencia] : x.startsWith('nulo') ? reg.modelos_nulos[t.modelo_nulo] : undefined}>{x}</span>)}
+        {[t.natureza, t.afirmacao, t.independencia ? `independência: ${t.independencia}` : '', t.modelo_nulo && t.modelo_nulo !== '—' ? `nulo ${t.modelo_nulo}` : ''].filter(Boolean).map((x) => <span key={x} className="inline-flex items-center h-7 px-2.5 rounded-full text-xs border border-border text-muted" title={x.startsWith('independência') ? reg.independencia[t.independencia] : x.startsWith('nulo') ? reg.modelos_nulos[t.modelo_nulo] : undefined}>{x}</span>)}
       </div>
       <div className="mt-6 rounded-lg border-l-4 pl-4 py-1" style={{ borderColor: CLASSE_COR[t.classe_evidencia] }}>
         <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Resultado</div>
