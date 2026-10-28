@@ -9,7 +9,7 @@ import { irPara } from '@/lib/rotas';
 import { Botao, Chip, Eyebrow, SeloClasse, SeloEstado, SkeletonBloco, Erro, Nota, CLASSE_COR, CLASSE_EXPL } from '@/ui/base';
 import { VIZ, generico, categoria, emProc, preliminar, MODS, ESTADO_TXT, AVISO_RE, MET, type Ctx, type Viz } from '@/viz/testes';
 import { Processando } from '@/graficos/primitivos';
-import { SeloSinal, useVeredito } from '@/ui/Sinal';
+import { SeloSinal, useVeredito, COR_SINAL } from '@/ui/Sinal';
 
 function montarCtx(d: TestesDados, reg: Registro, t: Teste): Ctx { return { d, t, reg, nv: d.novos || {}, bt22: (d.bateria || {})['2022'], bt26: (d.bateria || {})['2026'] }; }
 function vizDe(c: Ctx): NonNullable<Viz> {
@@ -28,16 +28,18 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
   const [estados, setEstados] = useState<Set<string>>(() => new Set(q0.get('estado') ? [q0.get('estado')!] : []));
   const [modulos, setModulos] = useState<Set<string>>(() => new Set(q0.get('modulo') ? [q0.get('modulo')!] : []));
   const [natureza, setNatureza] = useState<string | null>(null);
+  const [sinais, setSinais] = useState<Set<string>>(new Set());
+  const ver = useVeredito(); const sinalDe = (t: Teste) => ver?.sinal_por_teste[t.id]?.nivel || 'M';
   const aberto = partes[0] || null;
   useEffect(() => { const q = new URLSearchParams(location.hash.split('?')[1] || ''); if (q.get('classe')) setClasses(new Set([q.get('classe')!])); if (q.get('estado')) setEstados(new Set([q.get('estado')!])); if (q.get('modulo')) setModulos(new Set([q.get('modulo')!])); if (q.get('q') != null) setBusca(q.get('q')!); }, [location.hash.split('?')[1]]);
   const testeAberto = aberto ? reg.testes.find((t) => t.id === aberto) || null : null;
   const alternar = (set: Set<string>, k: string, f: (s: Set<string>) => void) => { const n = new Set(set); n.has(k) ? n.delete(k) : n.add(k); f(n); };
-  const limpar = () => { setBusca(''); setClasses(new Set()); setEstados(new Set()); setModulos(new Set()); setNatureza(null); };
-  const ativo = busca || classes.size || estados.size || modulos.size || natureza;
+  const limpar = () => { setBusca(''); setClasses(new Set()); setEstados(new Set()); setModulos(new Set()); setNatureza(null); setSinais(new Set()); };
+  const ativo = busca || classes.size || estados.size || modulos.size || natureza || sinais.size;
   const visiveis = useMemo(() => reg.testes.filter((t) => {
     const txt = [t.id, t.pergunta, t.metodo, t.resultado_atual, t.hipotese_nula, (t.anotacoes || []).join(' ')].join(' ').toLowerCase();
-    return (!busca || txt.includes(busca.toLowerCase())) && (!classes.size || classes.has(t.classe_evidencia)) && (!estados.size || estados.has(categoria(t))) && (!modulos.size || modulos.has(t.modulo)) && (!natureza || t.natureza === natureza);
-  }), [reg, busca, classes, estados, modulos, natureza]);
+    return (!busca || txt.includes(busca.toLowerCase())) && (!classes.size || classes.has(t.classe_evidencia)) && (!estados.size || estados.has(categoria(t))) && (!modulos.size || modulos.has(t.modulo)) && (!natureza || t.natureza === natureza) && (!sinais.size || sinais.has(sinalDe(t)));
+  }), [reg, busca, classes, estados, modulos, natureza, sinais, ver]);
   const contClasse: Record<string, number> = {}, contEstado: Record<string, number> = {}, contMod: Record<string, number> = {};
   reg.testes.forEach((t) => { contClasse[t.classe_evidencia] = (contClasse[t.classe_evidencia] || 0) + 1; contEstado[categoria(t)] = (contEstado[categoria(t)] || 0) + 1; contMod[t.modulo] = (contMod[t.modulo] || 0) + 1; });
   const porModulo = 'ABCDEFGH'.split('').map((m) => ({ m, ts: visiveis.filter((t) => t.modulo === m) })).filter((x) => x.ts.length);
@@ -63,13 +65,17 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
           </div>
           <div className="text-sm text-muted ml-auto t-num" aria-live="polite">{ativo ? `${visiveis.length} de ${reg.testes.length}` : `${reg.testes.length} testes`}{ativo ? <button className="ml-3 text-accent-text font-medium underline underline-offset-4" onClick={limpar}>limpar</button> : null}</div>
         </div>
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        {ver && <div className="mt-3 flex flex-wrap gap-1.5 items-center"><span className="text-xs text-muted mr-1">Sinal:</span>
+          {ver.niveis.map((n) => { const c = reg.testes.filter((t) => sinalDe(t) === n.id).length; return c ? <Chip key={n.id} ativo={sinais.has(n.id)} onClick={() => alternar(sinais, n.id, setSinais)} cor={COR_SINAL[n.id]} title={n.o_que_e}>{n.nome} · {c}</Chip> : null; })}
+        </div>}
+        <details className="mt-2 group/f"><summary className="cursor-pointer list-none text-xs text-subtle hover:text-text">mais filtros: classe de evidência (Fase 1), módulo, natureza</summary>
+        <div className="mt-2 flex flex-wrap gap-1.5">
           {'ABCDEFG'.split('').map((k) => <Chip key={k} ativo={classes.has(k)} onClick={() => alternar(classes, k, setClasses)} cor={CLASSE_COR[k]} title={CLASSE_EXPL[k]}><b className="font-semibold">{k}</b> <span className="hidden sm:inline">{reg.classes[k].split(' / ')[0]}</span> · {contClasse[k] || 0}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
           {'ABCDEFGH'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)}>módulo {m} · {contMod[m]}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
           {['confirmatório', 'exploratório'].map((n) => <Chip key={n} ativo={natureza === n} onClick={() => setNatureza(natureza === n ? null : n)}>{n}</Chip>)}
-        </div>
+        </div></details>
       </div>
 
       {erro && <div className="mt-8"><Erro erro={erro} aoTentar={recarregar} /></div>}
@@ -109,17 +115,17 @@ function Sinal({ t }: { t: Teste }) {
 }
 
 function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
+  const ver = useVeredito(); const corS = COR_SINAL[ver?.sinal_por_teste[t.id]?.nivel || 'M'];
   const v = useMemo(() => vizDe(montarCtx(d, reg, t)), [d, reg, t]);
   const cat = categoria(t), proc = emProc(t), { s } = sentencaDe(t);
   const parc = (t.resultado_atual.match(/\((AP:[^)]*)\)/) || [])[1];
   const prelim = preliminar(t) && !proc;
   const f2 = faseRecente(t);
   return (
-    <article id={`t-${t.id}`} className="cartao cartao-hover overflow-hidden flex flex-col min-w-0 scroll-mt-28" style={{ ['--cor' as string]: CLASSE_COR[t.classe_evidencia] }}>
+    <article id={`t-${t.id}`} className="cartao cartao-hover overflow-hidden flex flex-col min-w-0 scroll-mt-28" style={{ ['--cor' as string]: corS }}>
       <a href={`#/testes/${t.id}`} className="block p-5 pb-4 group" aria-label={`${t.id}: ${t.pergunta}`}>
         <div className="flex flex-wrap items-center gap-2">
           <span className="font-mono text-xs font-medium h-7 px-2.5 inline-flex items-center rounded-md border border-border bg-surface-2">{t.id}</span>
-          <SeloClasse classe={t.classe_evidencia} nome={reg.classes[t.classe_evidencia]} />
           <Sinal t={t} /><SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
           {prelim && <span className="inline-flex items-center h-7 px-2.5 rounded-full text-xs font-medium border border-warn/50 text-warn" style={{ background: 'var(--warn-soft)' }}>preliminar · em reprocessamento</span>}
           <ArrowUpRight size={18} className="ml-auto text-subtle group-hover:text-text transition-colors" />
@@ -129,7 +135,7 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
           <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Resultado</div>
           <p className="text-[15px] font-medium leading-snug mt-0.5">{proc ? 'Ainda sem resultado desta versão.' : s || 'Sem resultado registrado.'}</p>
         </div>
-        {f2 && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><span className="inline-flex align-middle mr-1.5"><SeloProva r={f2.resultado} /></span><b className="font-medium text-text">{(t.versoes || []).some((v) => v.rodada === f2.rodada) ? `Fase ${f2.rodada - 1} (${vRod(t, f2.rodada)})` : 'Revisão em curso (depois da última versão congelada)'}:</b> {f2.texto}</p>}
+        {f2 && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><span className="inline-flex align-middle mr-1.5"><SeloProva r={f2.resultado} /></span><b className="font-medium text-text">{(t.versoes || []).some((v) => v.rodada === f2.rodada) ? vRod(t, f2.rodada) : 'Revisão em curso (depois da última versão congelada)'}:</b> {f2.texto}</p>}
         {t.impacto_votos && !proc && <p className="mt-2 text-[13.5px] text-muted leading-snug line-clamp-3"><b className="font-medium text-text">Em votos:</b> {t.impacto_votos}</p>}
       </a>
       <div className="px-5 pb-5 relative">
@@ -184,8 +190,8 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
       </div>
       <Dialog.Title className="t-h2 mt-4">{t.pergunta}</Dialog.Title>
       <div className="mt-4 flex flex-wrap gap-2">
-        <SeloClasse classe={t.classe_evidencia} nome={reg.classes[t.classe_evidencia]} grande />
-        <Sinal t={t} /><SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
+        <Sinal t={t} />
+        <span className="inline-flex items-center gap-1.5 text-xs text-subtle" title="Classe de evidência da metodologia original (Fase 1). O sinal ao lado é a leitura atual de suspeita."><SeloClasse classe={t.classe_evidencia} nome={`classe de evidência (Fase 1): ${reg.classes[t.classe_evidencia]}`} /></span><SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
         {preliminar(t) && !proc && <span className="inline-flex items-center h-7 px-2.5 rounded-full text-xs font-medium border border-warn/50 text-warn" style={{ background: 'var(--warn-soft)' }}>preliminar · em reprocessamento</span>}
         {[t.natureza, t.afirmacao, t.independencia ? `independência: ${t.independencia}` : '', t.modelo_nulo && t.modelo_nulo !== '—' ? `nulo ${t.modelo_nulo}` : ''].filter(Boolean).map((x) => <span key={x} className="inline-flex items-center h-7 px-2.5 rounded-full text-xs border border-border text-muted" title={x.startsWith('independência') ? reg.independencia[t.independencia] : x.startsWith('nulo') ? reg.modelos_nulos[t.modelo_nulo] : undefined}>{x}</span>)}
       </div>
