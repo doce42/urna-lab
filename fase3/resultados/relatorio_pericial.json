@@ -1,0 +1,551 @@
+{
+ "pre_registro": "fase3/PREREG_RELATORIO_PERICIAL.md",
+ "R1": {
+  "secoes": 499206,
+  "comparecimento_2t": 128236074,
+  "validos_mais_brancos_e_nulos_2t": 128236074,
+  "secoes_com_dados_2t": 499205
+ },
+ "R2_R3_hora_local": {
+  "ate_17h00_59": {
+   "secoes": 150771,
+   "comparecimento": 37630420,
+   "lula": 17369159,
+   "flavio": 19116798,
+   "pct_lula": 47.60505254117358,
+   "vantagem_lula": -1747639
+  },
+  "17h01_a_17h15": {
+   "secoes": 339593,
+   "comparecimento": 88071750,
+   "lula": 45525188,
+   "flavio": 39627772,
+   "pct_lula": 53.4628367586987,
+   "vantagem_lula": 5897416
+  },
+  "17h16_a_18h59": {
+   "secoes": 2472,
+   "comparecimento": 674799,
+   "lula": 372470,
+   "flavio": 279102,
+   "pct_lula": 57.1648259900671,
+   "vantagem_lula": 93368
+  },
+  "19h_ou_mais": {
+   "secoes": 6342,
+   "comparecimento": 1858274,
+   "lula": 988970,
+   "flavio": 802016,
+   "pct_lula": 55.21930378015239,
+   "vantagem_lula": 186954
+  },
+  "ate_17h00_00": {
+   "secoes": 32025,
+   "comparecimento": 7619112,
+   "lula": 2990292,
+   "flavio": 4433690,
+   "pct_lula": 40.278815331179416,
+   "vantagem_lula": -1443398
+  },
+  "mais_de_17h30": {
+   "secoes": 7604,
+   "comparecimento": 2208356,
+   "lula": 1178536,
+   "flavio": 950441,
+   "pct_lula": 55.35691555145969,
+   "vantagem_lula": 228095
+  },
+  "apos_17h00_59_total": {
+   "secoes": 348407,
+   "vantagem_lula": 6177738,
+   "pct_lula": 53.52628658466293
+  },
+  "horario_de_encerramento_quantis": {
+   "0.01": "16:00",
+   "0.1": "17:00",
+   "0.5": "17:01",
+   "0.9": "17:05",
+   "0.99": "19:00",
+   "0.999": "19:05"
+  }
+ },
+ "R2_R3_hora_brasilia": {
+  "ate_17h00_59": {
+   "secoes": 125652,
+   "comparecimento": 31608254,
+   "lula": 15005586,
+   "flavio": 15611909,
+   "pct_lula": 49.00984224868821,
+   "vantagem_lula": -606323
+  },
+  "17h01_a_17h15": {
+   "secoes": 364625,
+   "comparecimento": 94072680,
+   "lula": 47878282,
+   "flavio": 43122472,
+   "pct_lula": 52.613060766507495,
+   "vantagem_lula": 4755810
+  },
+  "17h16_a_18h59": {
+   "secoes": 2549,
+   "comparecimento": 693050,
+   "lula": 382100,
+   "flavio": 287212,
+   "pct_lula": 57.08847293937655,
+   "vantagem_lula": 94888
+  },
+  "19h_ou_mais": {
+   "secoes": 6352,
+   "comparecimento": 1861259,
+   "lula": 989819,
+   "flavio": 804095,
+   "pct_lula": 55.17650232954311,
+   "vantagem_lula": 185724
+  },
+  "ate_17h00_00": {
+   "secoes": 0,
+   "comparecimento": 0,
+   "lula": 0,
+   "flavio": 0,
+   "pct_lula": null,
+   "vantagem_lula": 0
+  },
+  "mais_de_17h30": {
+   "secoes": 7621,
+   "comparecimento": 2212562,
+   "lula": 1180458,
+   "flavio": 952621,
+   "pct_lula": 55.34056638314849,
+   "vantagem_lula": 227837
+  },
+  "apos_17h00_59_total": {
+   "secoes": 373526,
+   "vantagem_lula": 5036422,
+   "pct_lula": 52.69431175518098
+  },
+  "horario_de_encerramento_quantis": {
+   "0.01": "17:00",
+   "0.1": "17:00",
+   "0.5": "17:01",
+   "0.9": "17:05",
+   "0.99": "19:00",
+   "0.999": "19:05"
+  }
+ },
+ "R2_R3_margem_nacional": {
+  "lula": 64256232,
+  "flavio": 59826041,
+  "margem": 4430191
+ },
+ "R4": {
+  "BA": {
+   "secoes_tardias": 936,
+   "pct_lula_tardias": 72.3128495625986,
+   "pct_lula_demais_do_estado": 71.28181997729124
+  },
+  "PE": {
+   "secoes_tardias": 657,
+   "pct_lula_tardias": 65.69561566823641,
+   "pct_lula_demais_do_estado": 69.31785264997613
+  },
+  "MA": {
+   "secoes_tardias": 3,
+   "pct_lula_tardias": 83.30658105939006,
+   "pct_lula_demais_do_estado": 69.53949384024436
+  },
+  "SP": {
+   "secoes_tardias": 1571,
+   "pct_lula_tardias": 57.45732586936079,
+   "pct_lula_demais_do_estado": 45.97618913707806
+  },
+  "dentro_do_municipio": {
+   "municipios_com_secoes_tardias_e_demais": 144,
+   "diferenca_media_ponderada_pct_lula_pontos": -2.086628357696843,
+   "diferenca_media_ponderada_da_virada_pontos": -0.19921503063857166,
+   "municipios_onde_a_tardia_tem_mais_lula": 67,
+   "secoes_tardias_totais": 6342,
+   "secoes_tardias_em_municipio_so_com_tardias": 0
+  }
+ },
+ "R5": {
+  "2026_2t": {
+   "manual": 8632488,
+   "comparecimento": 128236074,
+   "pct": 6.731715757299307
+  },
+  "2026_1t": {
+   "manual": 8342249,
+   "comparecimento": 125275835,
+   "pct": 6.659104686869578
+  },
+  "2022_2t": {
+   "manual": 10011346,
+   "comparecimento": 124252796,
+   "pct": 8.057240015749827
+  },
+  "2022_1t": {
+   "manual": 10780975,
+   "comparecimento": 123682372,
+   "pct": 8.716662549130284
+  },
+  "margem_2026": 4430191,
+  "margem_2022": 2139645,
+  "razao_manual_sobre_margem": {
+   "2026_2t": 1.9485588770326154,
+   "2022_2t": 4.678975250567267
+  }
+ },
+ "R6": {
+  "2026_2t": {
+   "secoes": 498585,
+   "correlacao_entre_secoes": 0.0678207868949796,
+   "correlacao_entre_municipios": -0.028821103350675094,
+   "correlacao_dentro_do_municipio": 0.012070095749358618,
+   "inclinacao_dentro_do_municipio": 0.028304618837754245,
+   "curva_pct_lula_por_taxa_de_liberacao_manual": {
+    "0-5%": {
+     "secoes": 175349,
+     "pct_lula": 51.37018922933162
+    },
+    "5-10%": {
+     "secoes": 238064,
+     "pct_lula": 51.768681784223524
+    },
+    "10-20%": {
+     "secoes": 81069,
+     "pct_lula": 54.38104659063329
+    },
+    "20-30%": {
+     "secoes": 3762,
+     "pct_lula": 58.151148062009824
+    },
+    "30-50%": {
+     "secoes": 245,
+     "pct_lula": 59.02883692754989
+    },
+    ">50%": {
+     "secoes": 96,
+     "pct_lula": 61.514454014341425
+    }
+   }
+  },
+  "2026_1t": {
+   "secoes": 498607,
+   "correlacao_entre_secoes": 0.06218343486657641,
+   "correlacao_entre_municipios": -0.05076519902092156,
+   "correlacao_dentro_do_municipio": 0.035169877826763535,
+   "inclinacao_dentro_do_municipio": 0.08153322401231868,
+   "curva_pct_lula_por_taxa_de_liberacao_manual": {
+    "0-5%": {
+     "secoes": 176555,
+     "pct_lula": 45.10975171021955
+    },
+    "5-10%": {
+     "secoes": 239347,
+     "pct_lula": 45.206574799710054
+    },
+    "10-20%": {
+     "secoes": 78799,
+     "pct_lula": 48.04901026355167
+    },
+    "20-30%": {
+     "secoes": 3521,
+     "pct_lula": 52.41266190125947
+    },
+    "30-50%": {
+     "secoes": 248,
+     "pct_lula": 52.32381843402355
+    },
+    ">50%": {
+     "secoes": 137,
+     "pct_lula": 52.06202787353784
+    }
+   }
+  },
+  "2022_2t": {
+   "secoes": 471416,
+   "correlacao_entre_secoes": 0.15626601414325716,
+   "correlacao_entre_municipios": 0.12325471930294643,
+   "correlacao_dentro_do_municipio": -0.004987866873737684,
+   "inclinacao_dentro_do_municipio": -0.008644762699303742,
+   "curva_pct_lula_por_taxa_de_liberacao_manual": {
+    "0-5%": {
+     "secoes": 174355,
+     "pct_lula": 50.0571375224123
+    },
+    "5-10%": {
+     "secoes": 153497,
+     "pct_lula": 50.365737264623256
+    },
+    "10-20%": {
+     "secoes": 114758,
+     "pct_lula": 53.286954240239304
+    },
+    "20-30%": {
+     "secoes": 24781,
+     "pct_lula": 60.54651647387711
+    },
+    "30-50%": {
+     "secoes": 3707,
+     "pct_lula": 68.9340078336036
+    },
+    ">50%": {
+     "secoes": 318,
+     "pct_lula": 56.523090507844344
+    }
+   }
+  },
+  "2022_1t": {
+   "secoes": 471445,
+   "correlacao_entre_secoes": 0.1383574763356966,
+   "correlacao_entre_municipios": 0.08619963455643456,
+   "correlacao_dentro_do_municipio": -0.025754274328417606,
+   "inclinacao_dentro_do_municipio": -0.04223845159448191,
+   "curva_pct_lula_por_taxa_de_liberacao_manual": {
+    "0-5%": {
+     "secoes": 152297,
+     "pct_lula": 48.153140651095676
+    },
+    "5-10%": {
+     "secoes": 158862,
+     "pct_lula": 47.424080588038855
+    },
+    "10-20%": {
+     "secoes": 123693,
+     "pct_lula": 50.14715379300291
+    },
+    "20-30%": {
+     "secoes": 30512,
+     "pct_lula": 56.3224032094514
+    },
+    "30-50%": {
+     "secoes": 5485,
+     "pct_lula": 64.52688683097996
+    },
+    ">50%": {
+     "secoes": 596,
+     "pct_lula": 54.53431246008786
+    }
+   }
+  }
+ },
+ "R7": {
+  "2026_2t": {
+   "lula": {
+    "100pct": 106,
+    "mais_de_90pct": 6802,
+    "mais_de_90pct_sem_100": 6696
+   },
+   "direita": {
+    "100pct": 4,
+    "mais_de_90pct": 368,
+    "mais_de_90pct_sem_100": 364
+   },
+   "razao_100pct": 26.5,
+   "razao_mais_de_90pct": 18.483695652173914
+  },
+  "2026_1t": {
+   "lula": {
+    "100pct": 36,
+    "mais_de_90pct": 3633,
+    "mais_de_90pct_sem_100": 3597
+   },
+   "direita": {
+    "100pct": 2,
+    "mais_de_90pct": 177,
+    "mais_de_90pct_sem_100": 175
+   },
+   "razao_100pct": 18.0,
+   "razao_mais_de_90pct": 20.52542372881356
+  },
+  "2022_2t": {
+   "lula": {
+    "100pct": 141,
+    "mais_de_90pct": 9424,
+    "mais_de_90pct_sem_100": 9283
+   },
+   "direita": {
+    "100pct": 2,
+    "mais_de_90pct": 199,
+    "mais_de_90pct_sem_100": 197
+   },
+   "razao_100pct": 70.5,
+   "razao_mais_de_90pct": 47.35678391959799
+  },
+  "2022_1t": {
+   "lula": {
+    "100pct": 60,
+    "mais_de_90pct": 5913,
+    "mais_de_90pct_sem_100": 5853
+   },
+   "direita": {
+    "100pct": 1,
+    "mais_de_90pct": 49,
+    "mais_de_90pct_sem_100": 48
+   },
+   "razao_100pct": 60.0,
+   "razao_mais_de_90pct": 120.6734693877551
+  },
+  "onde_ficam_as_seções_com_mais_de_90pct_de_Lula_2026_2t": {
+   "uf_top": {
+    "MA": 1549,
+    "BA": 1345,
+    "PI": 870,
+    "PE": 667,
+    "CE": 662,
+    "PA": 457
+   },
+   "mediana_validos": 198.0,
+   "mediana_validos_todas": 255.0,
+   "pct_no_norte_e_nordeste": 94.23698912084681
+  }
+ },
+ "R8": {
+  "2026_2t_lula": {
+   "secoes": 499205,
+   "mad_observado": 0.07914111182153977,
+   "qui2_observado": 297063.73434619134,
+   "primeiro_digito_observado": [
+    0.6081,
+    0.0929,
+    0.0094,
+    0.0169,
+    0.0281,
+    0.0426,
+    0.056,
+    0.0685,
+    0.0775
+   ],
+   "benford": [
+    0.301,
+    0.1761,
+    0.1249,
+    0.0969,
+    0.0792,
+    0.0669,
+    0.058,
+    0.0512,
+    0.0458
+   ],
+   "mad_referencia_binomial": [
+    0.08415430962131008,
+    0.08439479126071586
+   ],
+   "mad_referencia_beta_binomial": [
+    0.07671235396319057,
+    0.0770301926600519
+   ]
+  },
+  "2026_2t_direita": {
+   "secoes": 499205,
+   "mad_observado": 0.07480570637702237,
+   "qui2_observado": 273599.48164984584,
+   "primeiro_digito_observado": [
+    0.6188,
+    0.0721,
+    0.0281,
+    0.0344,
+    0.0386,
+    0.0435,
+    0.0487,
+    0.0545,
+    0.0613
+   ],
+   "benford": [
+    0.301,
+    0.1761,
+    0.1249,
+    0.0969,
+    0.0792,
+    0.0669,
+    0.058,
+    0.0512,
+    0.0458
+   ],
+   "mad_referencia_binomial": [
+    0.07763426424498306,
+    0.07782367487147525
+   ],
+   "mad_referencia_beta_binomial": [
+    0.07265632700786956,
+    0.07313098270708483
+   ]
+  },
+  "2022_2t_lula": {
+   "secoes": 472027,
+   "mad_observado": 0.08048156000241927,
+   "qui2_observado": 288854.3323724806,
+   "primeiro_digito_observado": [
+    0.6113,
+    0.0856,
+    0.009,
+    0.0169,
+    0.0287,
+    0.0427,
+    0.057,
+    0.0697,
+    0.0791
+   ],
+   "benford": [
+    0.301,
+    0.1761,
+    0.1249,
+    0.0969,
+    0.0792,
+    0.0669,
+    0.058,
+    0.0512,
+    0.0458
+   ],
+   "mad_referencia_binomial": [
+    0.08603553366711585,
+    0.08634154447259278
+   ],
+   "mad_referencia_beta_binomial": [
+    0.07808007627057663,
+    0.07850531392311037
+   ]
+  },
+  "2022_2t_direita": {
+   "secoes": 472027,
+   "mad_observado": 0.07109870403666262,
+   "qui2_observado": 238000.22103884263,
+   "primeiro_digito_observado": [
+    0.6135,
+    0.101,
+    0.0322,
+    0.0353,
+    0.0373,
+    0.0387,
+    0.0423,
+    0.0465,
+    0.0532
+   ],
+   "benford": [
+    0.301,
+    0.1761,
+    0.1249,
+    0.0969,
+    0.0792,
+    0.0669,
+    0.058,
+    0.0512,
+    0.0458
+   ],
+   "mad_referencia_binomial": [
+    0.07446842797178524,
+    0.07475622727836054
+   ],
+   "mad_referencia_beta_binomial": [
+    0.06892239535624088,
+    0.06929449142995216
+   ]
+  }
+ },
+ "R9": {
+  "primeira_conferencia_de_terceiro_contra_o_arquivo_do_tse_brasilia": "2026-10-25 19:10:23-03:00",
+  "conferencias_em_25_10": 177,
+  "conferencias_total": 404,
+  "nota": "arquivos por urna estavam publicados em resultados.tse.jus.br na noite de 25/10; o CSV BWeb de dados abertos não tem registro de primeira publicação neste projeto, então a afirmação sobre ele não é testável aqui"
+ }
+}

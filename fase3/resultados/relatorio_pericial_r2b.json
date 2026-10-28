@@ -1,0 +1,316 @@
+{
+ "rotulo": "exploratorio_depois_do_R2",
+ "a_sensibilidade_do_corte": {
+  "17:00:59": {
+   "antes": {
+    "secoes": 150771,
+    "comparecimento": 37630420,
+    "pct_lula": 47.60505254117358,
+    "vantagem_lula": -1747639
+   },
+   "depois": {
+    "secoes": 348407,
+    "comparecimento": 90604823,
+    "pct_lula": 53.52628658466293,
+    "vantagem_lula": 6177738
+   }
+  },
+  "17:01:59": {
+   "antes": {
+    "secoes": 294919,
+    "comparecimento": 74334848,
+    "pct_lula": 49.73687008827787,
+    "vantagem_lula": -378949
+   },
+   "depois": {
+    "secoes": 204259,
+    "comparecimento": 53900395,
+    "pct_lula": 54.61755716553607,
+    "vantagem_lula": 4809048
+   }
+  },
+  "17:02:59": {
+   "antes": {
+    "secoes": 372072,
+    "comparecimento": 94314576,
+    "pct_lula": 50.44952264990348,
+    "vantagem_lula": 821072
+   },
+   "depois": {
+    "secoes": 127106,
+    "comparecimento": 33920667,
+    "pct_lula": 55.50922891980079,
+    "vantagem_lula": 3609027
+   }
+  },
+  "17:05:59": {
+   "antes": {
+    "secoes": 461810,
+    "comparecimento": 117982542,
+    "pct_lula": 51.315869189321944,
+    "vantagem_lula": 3005150
+   },
+   "depois": {
+    "secoes": 37368,
+    "comparecimento": 10252701,
+    "pct_lula": 57.20202779971035,
+    "vantagem_lula": 1424949
+   }
+  },
+  "17:10:59": {
+   "antes": {
+    "secoes": 487475,
+    "comparecimento": 124917845,
+    "pct_lula": 51.65724107481685,
+    "vantagem_lula": 4006591
+   },
+   "depois": {
+    "secoes": 11703,
+    "comparecimento": 3317398,
+    "pct_lula": 56.61706849559923,
+    "vantagem_lula": 423508
+   }
+  },
+  "17:15:59": {
+   "antes": {
+    "secoes": 490364,
+    "comparecimento": 125702170,
+    "pct_lula": 51.705776860870934,
+    "vantagem_lula": 4149777
+   },
+   "depois": {
+    "secoes": 8814,
+    "comparecimento": 2533073,
+    "pct_lula": 55.73828748385913,
+    "vantagem_lula": 280322
+   }
+  },
+  "17:30:00": {
+   "antes": {
+    "secoes": 491574,
+    "comparecimento": 126026887,
+    "pct_lula": 51.722803578816404,
+    "vantagem_lula": 4202004
+   },
+   "depois": {
+    "secoes": 7604,
+    "comparecimento": 2208356,
+    "pct_lula": 55.35691555145969,
+    "vantagem_lula": 228095
+   }
+  },
+  "19:00:00": {
+   "antes": {
+    "secoes": 492852,
+    "comparecimento": 126381978,
+    "pct_lula": 51.734899699180616,
+    "vantagem_lula": 4243402
+   },
+   "depois": {
+    "secoes": 6326,
+    "comparecimento": 1853265,
+    "pct_lula": 55.22620275977052,
+    "vantagem_lula": 186697
+   }
+  }
+ },
+ "b_composicao": {
+  "fuso_ate_17h00_59": {
+   "0.0": 118745,
+   "1.0": 29200,
+   "2.0": 2826
+  },
+  "fuso_17h01_a_17h15": {
+   "0.0": 339591,
+   "1.0": 2
+  },
+  "pct_dos_votos_por_regiao": {
+   "Nordeste": {
+    "ate_17h00_59": 20.60024044376863,
+    "17h01_a_17h15": 31.577313951408936
+   },
+   "Sudeste": {
+    "ate_17h00_59": 30.46436101430704,
+    "17h01_a_17h15": 45.13533567801253
+   },
+   "Sul": {
+    "ate_17h00_59": 20.93824092316801,
+    "17h01_a_17h15": 12.284705368066378
+   },
+   "Norte": {
+    "ate_17h00_59": 14.164410070363285,
+    "17h01_a_17h15": 5.638972769361344
+   },
+   "Centro-Oeste": {
+    "ate_17h00_59": 13.810063772873116,
+    "17h01_a_17h15": 4.960793898156901
+   }
+  },
+  "ufs_com_mais_secoes_ate_17h00_59": {
+   "SP": 19726,
+   "MG": 16953,
+   "RS": 11945,
+   "PR": 10364,
+   "MT": 8278,
+   "AM": 8156
+  },
+  "ufs_com_mais_secoes_17h01_a_17h15": {
+   "SP": 81551,
+   "MG": 35057,
+   "RJ": 29115,
+   "BA": 27829,
+   "PE": 17620,
+   "PR": 16757
+  }
+ },
+ "c_dentro_do_bloco": {
+  "municipio": {
+   "blocos_com_os_dois_grupos": 5158,
+   "diferenca_media_ponderada_pct_lula_tarde_menos_cedo_pontos": 0.21662097505240865
+  },
+  "uf": {
+   "blocos_com_os_dois_grupos": 24,
+   "diferenca_media_ponderada_pct_lula_tarde_menos_cedo_pontos": 1.321591400577077
+  }
+ },
+ "d_antes_das_17h00_00": {
+  "secoes": 32025,
+  "comparecimento": 7619112,
+  "pct_lula": 40.278815331179416,
+  "vantagem_lula": -1443398,
+  "taxa_de_comparecimento_media_pct": 78.24289919414798,
+  "taxa_de_comparecimento_demais_pct": 80.94756750763499,
+  "mediana_de_aptos": 307.0,
+  "mediana_de_aptos_demais": 328.0
+ },
+ "e_fuso_e_hora_de_brasilia": {
+  "secoes_antes_das_17h00_local_por_fuso": {
+   "1.0": 29200,
+   "2.0": 2825
+  },
+  "secoes_antes_das_17h00_local_em_fuso_diferente_de_brasilia": 32025,
+  "secoes_antes_das_17h00_local": 32025,
+  "ufs_antes_das_17h00_local": {
+   "MT": 8278,
+   "AM": 8156,
+   "MS": 7106,
+   "RO": 4697,
+   "AC": 2269,
+   "RR": 1519
+  },
+  "sensibilidade_em_hora_de_brasilia": {
+   "17:00:59": {
+    "antes": {
+     "secoes": 125652,
+     "comparecimento": 31608254,
+     "pct_lula": 49.00984224868821,
+     "vantagem_lula": -606323
+    },
+    "depois": {
+     "secoes": 373526,
+     "comparecimento": 96626989,
+     "pct_lula": 52.69431175518098,
+     "vantagem_lula": 5036422
+    }
+   },
+   "17:01:59": {
+    "antes": {
+     "secoes": 280253,
+     "comparecimento": 70759333,
+     "pct_lula": 50.19595601745036,
+     "vantagem_lula": 268552
+    },
+    "depois": {
+     "secoes": 218925,
+     "comparecimento": 57475910,
+     "pct_lula": 53.74523189171808,
+     "vantagem_lula": 4161547
+    }
+   },
+   "17:02:59": {
+    "antes": {
+     "secoes": 363548,
+     "comparecimento": 92216155,
+     "pct_lula": 50.657386193606364,
+     "vantagem_lula": 1173860
+    },
+    "depois": {
+     "secoes": 135630,
+     "comparecimento": 36019088,
+     "pct_lula": 54.67862517482851,
+     "vantagem_lula": 3256239
+    }
+   },
+   "17:05:59": {
+    "antes": {
+     "secoes": 459962,
+     "comparecimento": 117526114,
+     "pct_lula": 51.3439340792006,
+     "vantagem_lula": 3057289
+    },
+    "depois": {
+     "secoes": 39216,
+     "comparecimento": 10709129,
+     "pct_lula": 56.63997347125495,
+     "vantagem_lula": 1372810
+    }
+   },
+   "17:10:59": {
+    "antes": {
+     "secoes": 487232,
+     "comparecimento": 124858666,
+     "pct_lula": 51.65823996984963,
+     "vantagem_lula": 4007095
+    },
+    "depois": {
+     "secoes": 11946,
+     "comparecimento": 3376577,
+     "pct_lula": 56.492296188336816,
+     "vantagem_lula": 423004
+    }
+   },
+   "17:15:59": {
+    "antes": {
+     "secoes": 490277,
+     "comparecimento": 125680934,
+     "pct_lula": 51.70594751779398,
+     "vantagem_lula": 4149487
+    },
+    "depois": {
+     "secoes": 8901,
+     "comparecimento": 2554309,
+     "pct_lula": 55.69602626799165,
+     "vantagem_lula": 280612
+    }
+   },
+   "17:30:00": {
+    "antes": {
+     "secoes": 491557,
+     "comparecimento": 126022681,
+     "pct_lula": 51.72296731151757,
+     "vantagem_lula": 4202262
+    },
+    "depois": {
+     "secoes": 7621,
+     "comparecimento": 2212562,
+     "pct_lula": 55.34056638314849,
+     "vantagem_lula": 227837
+    }
+   },
+   "19:00:00": {
+    "antes": {
+     "secoes": 492842,
+     "comparecimento": 126378993,
+     "pct_lula": 51.73544413035566,
+     "vantagem_lula": 4244632
+    },
+    "depois": {
+     "secoes": 6336,
+     "comparecimento": 1856250,
+     "pct_lula": 55.18327463499621,
+     "vantagem_lula": 185467
+    }
+   }
+  }
+ }
+}

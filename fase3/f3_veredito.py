@@ -59,6 +59,11 @@ SINAL = {
  "T63": S("M", "Poder da bateria contra 15 mecanismos: visto a partir de 25 a 50 mil votos em seções, locais, zonas e municípios; só a partir de 0,5 a 2,2 mi, ou nunca, em UFs, cinco grandes juntos, região, lote, conversão de brancos e nulos, enchimento e deslocamento uniforme; poder assimétrico entre sentidos."),
  "T64": S("PC", "Zeros: três famílias de modelo falham a calibração; os zeros são locais de uma seção só com menos de 1% do total, em 2022 e em 2026."),
  "T65": S("S1", "O '98,12% dos votos extras' do vídeo é a premissa de 60% devolvida (mínimo possível); o mesmo método dá 370% para Bolsonaro em 2022; a abstenção também caiu em 2022; resíduo acima do proporcional de sinal conhecido (Lula +3,68 mi em 2026, Bolsonaro +1,99 mi em 2022)."),
+ "T66": S("S1", "Divisão por hora de encerramento: números do relatório reproduzidos, mas o corte das 17h00 mistura fusos e o bloco de rotina (17:01 a 17:15, 339 mil seções); a prorrogação de fato (depois das 17:30) deu +228 mil a Lula; dentro do município, +0,2 ponto."),
+ "T67": S("S1", "Liberação sem biometria: 8.632.488 (6,73%), menor que em 2022 (8,06%); relação com Lula igual no 1º turno e em 2022 e nula dentro do município."),
+ "T68": S("S1", "Unanimidade: 106 contra 4 reproduzido; razão menor que em 2022; concentrada no Norte e Nordeste."),
+ "T69": S("S1", "Benford do primeiro dígito: desvio explicado pelo limite das contagens; cabe entre as referências simuladas; teste sem poder neste dado."),
+ "T70": S("PC", "Disponibilidade dos microdados: arquivos por urna publicados na noite de 25/10; CSV BWeb não testável aqui."),
  "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."),
 }
 H = lambda id, mec, deixaria, escala, testes, resultado, status, votos: {"id": id, "mecanismo": mec, "o_que_deixaria": deixaria, "escala_necessaria": escala, "testes": testes, "resultado": resultado, "status": status, "em_votos": votos}

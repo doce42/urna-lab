@@ -28,10 +28,10 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
   const [estados, setEstados] = useState<Set<string>>(() => new Set(q0.get('estado') ? [q0.get('estado')!] : []));
   const [modulos, setModulos] = useState<Set<string>>(() => new Set(q0.get('modulo') ? [q0.get('modulo')!] : []));
   const [natureza, setNatureza] = useState<string | null>(null);
-  const [sinais, setSinais] = useState<Set<string>>(new Set());
+  const [sinais, setSinais] = useState<Set<string>>(() => new Set(q0.get('sinal') ? [q0.get('sinal')!] : []));
   const ver = useVeredito(); const sinalDe = (t: Teste) => ver?.sinal_por_teste[t.id]?.nivel || 'M';
   const aberto = partes[0] || null;
-  useEffect(() => { const q = new URLSearchParams(location.hash.split('?')[1] || ''); if (q.get('classe')) setClasses(new Set([q.get('classe')!])); if (q.get('estado')) setEstados(new Set([q.get('estado')!])); if (q.get('modulo')) setModulos(new Set([q.get('modulo')!])); if (q.get('q') != null) setBusca(q.get('q')!); }, [location.hash.split('?')[1]]);
+  useEffect(() => { const q = new URLSearchParams(location.hash.split('?')[1] || ''); if (q.get('classe')) setClasses(new Set([q.get('classe')!])); if (q.get('estado')) setEstados(new Set([q.get('estado')!])); if (q.get('modulo')) setModulos(new Set([q.get('modulo')!])); if (q.get('sinal')) setSinais(new Set([q.get('sinal')!])); if (q.get('q') != null) setBusca(q.get('q')!); }, [location.hash.split('?')[1]]);
   const testeAberto = aberto ? reg.testes.find((t) => t.id === aberto) || null : null;
   const alternar = (set: Set<string>, k: string, f: (s: Set<string>) => void) => { const n = new Set(set); n.has(k) ? n.delete(k) : n.add(k); f(n); };
   const limpar = () => { setBusca(''); setClasses(new Set()); setEstados(new Set()); setModulos(new Set()); setNatureza(null); setSinais(new Set()); };

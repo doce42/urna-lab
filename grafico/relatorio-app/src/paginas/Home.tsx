@@ -10,7 +10,7 @@ import { Linhas } from '@/graficos/Linhas';
 import { Sankey, Cascata, BarrasUF, rotFluxo } from '@/graficos/especiais';
 import { dica, esc } from '@/ui/Dica';
 import { emProc } from '@/viz/testes';
-import { RespostaCentral, useVeredito } from '@/ui/Sinal';
+import { RespostaCentral, useVeredito, COR_SINAL } from '@/ui/Sinal';
 
 const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: string; eyebrow: string; titulo: string; lead?: string; children: React.ReactNode; className?: string }) => (
   <section id={id} className={`container mt-20 md:mt-28 scroll-mt-20 ${className}`}>
@@ -68,6 +68,7 @@ function OperacaoHome() {
 }
 
 export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta | null }) {
+  const verPlacar = useVeredito();
   const n26 = h.nacional['2026'], n22 = h.nacional['2022'];
   const t2 = h.totais_2, val2 = t2.v13 + t2.v22;
   const r2 = h.log_resumo.t2;
@@ -196,7 +197,7 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       <OperacaoHome />
 
       {/* ---------- placar ---------- */}
-      <Secao id="validado" eyebrow="O que já foi verificado" titulo="Placar da verificação" lead={`${placar.total} testes registrados, cada um com classe de evidência e grau de certeza. Nenhum número aqui é escrito à mão: tudo sai do código e do registro de testes.`}>
+      <Secao id="validado" eyebrow="O que já foi verificado" titulo="Placar da verificação" lead={`${placar.total} testes registrados, cada um com o sinal que a leitura atual dá. Nenhum número aqui é escrito à mão: tudo sai do código e do registro de testes.`}>
         <div className="grid gap-4">
           <div className="cartao p-5 md:p-6 grid gap-5 lg:grid-cols-[auto_1fr] lg:items-center">
             <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:min-w-[380px]">
@@ -210,16 +211,26 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm mb-3">
                 <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-accent" /><b className="font-semibold">{placar.confirmatorios}</b> confirmatórios</div>
                 <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-border-strong" /><b className="font-semibold">{placar.exploratorios}</b> exploratórios</div>
-                <span className="text-xs font-mono uppercase tracking-wider text-muted self-center basis-full sm:basis-auto"><span className="hidden sm:inline">· </span>classe de evidência</span>
+                <span className="text-xs font-mono uppercase tracking-wider text-muted self-center basis-full sm:basis-auto"><span className="hidden sm:inline">· </span>sinal de cada teste</span>
               </div>
               <div className="flex flex-wrap gap-2">
-                {'ABCDEFG'.split('').map((k) => (
-                  <a key={k} href={`#/testes?classe=${k}`} className="inline-flex items-center gap-2 h-9 pl-1 pr-3 rounded-full border border-border bg-surface text-[13px] font-medium hover:border-border-strong transition-colors" title={reg.classes[k]}>
-                    <b className="grid place-items-center w-7 h-7 rounded-full text-white text-xs" style={{ background: CLASSE_COR[k] }}>{k}</b>
-                    <span className="text-muted">{reg.classes[k].split(' / ')[0]}</span><span className="t-num">{placar.classes[k] || 0}</span>
-                  </a>
-                ))}
+                {verPlacar?.niveis.map((n) => { const c = reg.testes.filter((t) => (verPlacar.sinal_por_teste[t.id]?.nivel || 'M') === n.id).length; return c ? (
+                  <a key={n.id} href={`#/testes?sinal=${n.id}`} className="inline-flex items-center gap-2 h-9 pl-1 pr-3 rounded-full border border-border bg-surface text-[13px] font-medium hover:border-border-strong transition-colors" title={n.o_que_e}>
+                    <b className="grid place-items-center min-w-7 h-7 px-1.5 rounded-full text-white text-xs" style={{ background: COR_SINAL[n.id] || 'var(--text-subtle)' }}>{n.id}</b>
+                    <span className="text-muted">{n.nome}</span><span className="t-num">{c}</span>
+                  </a>) : null; })}
               </div>
+              <details className="mt-3 text-sm">
+                <summary className="cursor-pointer text-xs text-muted">Classe de evidência da Fase 1 (escala legada; o sinal acima é a leitura atual)</summary>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {'ABCDEFG'.split('').map((k) => (
+                    <a key={k} href={`#/testes?classe=${k}`} className="inline-flex items-center gap-2 h-9 pl-1 pr-3 rounded-full border border-border bg-surface text-[13px] font-medium hover:border-border-strong transition-colors" title={reg.classes[k]}>
+                      <b className="grid place-items-center w-7 h-7 rounded-full text-white text-xs" style={{ background: CLASSE_COR[k] }}>{k}</b>
+                      <span className="text-muted">{reg.classes[k].split(' / ')[0]}</span><span className="t-num">{placar.classes[k] || 0}</span>
+                    </a>
+                  ))}
+                </div>
+              </details>
             </div>
           </div>
           <div className="grid gap-3 lg:grid-cols-3">

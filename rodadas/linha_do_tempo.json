@@ -193,6 +193,17 @@
     }
    ],
    "historico": []
+  },
+  {
+   "id": "RP",
+   "rodada": 8,
+   "versao": "em aberto",
+   "titulo": "Relatório Pericial Independente (rodada 8)",
+   "status": "em_andamento",
+   "inicio": "2026-10-28",
+   "resumo": "Rodada 8, aberta em 28/10/2026 e não congelada: análise de um relatório divulgado em imagens (divisão dos votos por hora de encerramento das urnas, liberação sem biometria, unanimidade e Benford). As alegações viram pré-registro (fase3/PREREG_RELATORIO_PERICIAL.md, emenda 17) e são testadas só com dados do TSE; o que não é dado do TSE fica fora do escopo e é dito. Nada é congelado sem aprovação explícita do responsável.",
+   "etapas": [],
+   "historico": []
   }
  ],
  "marcos": [
@@ -387,6 +398,12 @@
    "hora": "",
    "titulo": "Operação Veracidade Geral (V1.5)",
    "texto": "7 testes novos (T60a a T65) e 9 perguntas (Q42 a Q50); cadeia de certificados em 100% das urnas e 404 boletins de terceiros iguais ao TSE; veredito revisto: H7 e T05 viram ponto cego, a resposta central passa a dizer o alcance por mecanismo. Rodada 7 a congelar."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Rodada 8 aberta: Relatório Pericial Independente",
+   "texto": "Pré-registro das alegações (emenda 17); rodada em aberto, sem congelamento."
   }
  ],
  "etapas_do_caminho": [
@@ -444,6 +461,14 @@
    "status": "concluida",
    "versao": "V1.5",
    "texto": "Auditoria adversarial dos dados e do veredito: cadeia em 100% das urnas, 404 boletins de terceiros, pontos cegos medidos (T60a a T65, Q42 a Q50). Rodada 7.",
+   "link": "#/respostas"
+  },
+  {
+   "id": "rodada8",
+   "titulo": "Relatório Pericial",
+   "status": "em_andamento",
+   "versao": "rodada 8, em aberto",
+   "texto": "Análise das alegações de um relatório em imagens (hora de encerramento, biometria, unanimidade, Benford) com pré-registro; rodada aberta, não congelada.",
    "link": "#/respostas"
   },
   {
@@ -575,5 +600,5 @@
    "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 (V1.3) · Alegações públicas testadas (V1.4) · Operação Veracidade Geral (V1.5, rodada 7, a congelar) em 28/10/2026"
+ "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 (V1.3) · Alegações públicas (V1.4) · Operação Veracidade Geral (V1.5, rodada 7) concluídas em 28/10/2026 · Rodada 8 em aberto"
 }

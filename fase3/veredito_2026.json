@@ -362,6 +362,26 @@
    "nivel": "S1",
    "motivo": "O '98,12% dos votos extras' do vídeo é a premissa de 60% devolvida (mínimo possível); o mesmo método dá 370% para Bolsonaro em 2022; a abstenção também caiu em 2022; resíduo acima do proporcional de sinal conhecido (Lula +3,68 mi em 2026, Bolsonaro +1,99 mi em 2022)."
   },
+  "T66": {
+   "nivel": "S1",
+   "motivo": "Divisão por hora de encerramento: números do relatório reproduzidos, mas o corte das 17h00 mistura fusos e o bloco de rotina (17:01 a 17:15, 339 mil seções); a prorrogação de fato (depois das 17:30) deu +228 mil a Lula; dentro do município, +0,2 ponto."
+  },
+  "T67": {
+   "nivel": "S1",
+   "motivo": "Liberação sem biometria: 8.632.488 (6,73%), menor que em 2022 (8,06%); relação com Lula igual no 1º turno e em 2022 e nula dentro do município."
+  },
+  "T68": {
+   "nivel": "S1",
+   "motivo": "Unanimidade: 106 contra 4 reproduzido; razão menor que em 2022; concentrada no Norte e Nordeste."
+  },
+  "T69": {
+   "nivel": "S1",
+   "motivo": "Benford do primeiro dígito: desvio explicado pelo limite das contagens; cabe entre as referências simuladas; teste sem poder neste dado."
+  },
+  "T70": {
+   "nivel": "PC",
+   "motivo": "Disponibilidade dos microdados: arquivos por urna publicados na noite de 25/10; CSV BWeb não testável aqui."
+  },
   "T44": {
    "nivel": "S3",
    "motivo": "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."

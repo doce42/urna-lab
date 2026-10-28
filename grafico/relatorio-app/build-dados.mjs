@@ -317,10 +317,12 @@ gravar('docs-indice.json', { github: GITHUB, docs: docs.map((d) => ({ slug: d.sl
 const pdf = path.join(AQUI, 'public', 'relatorio.pdf');
 const ltBruta = ler(path.join(RAIZ, 'rodadas', 'linha_do_tempo.json'));
 const situacaoAtual = ltBruta.situacao_atual || null;
-// fase atual, curta, para o selo do topo: a fase em andamento ou em revisão; senão a última concluída
+// fase atual, curta, para o selo do topo: a última versão concluída e, se houver, a rodada em andamento ou em revisão
 const ROT_ST = { em_andamento: 'em andamento', em_revisao: 'em revisão', concluida: 'concluída' };
-const faseNum = ltBruta.fases.filter((f) => /^F\d+$/.test(f.id));
-const fAtual = faseNum.find((f) => f.status === 'em_andamento' || f.status === 'em_revisao') || [...faseNum].reverse().find((f) => f.status === 'concluida');
-const faseAtual = fAtual ? `Fase ${fAtual.id.slice(1)} ${ROT_ST[fAtual.status] || ''}`.trim() : null;
+const fasesRod = ltBruta.fases.filter((f) => f.rodada != null);
+const ativa = [...fasesRod].reverse().find((f) => f.status === 'em_andamento' || f.status === 'em_revisao');
+const concl = [...fasesRod].reverse().find((f) => f.status === 'concluida' && /^V\d/.test(f.versao || ''));
+const rotConcl = concl ? (/^F\d+$/.test(concl.id) ? `Fase ${concl.id.slice(1)} (${concl.versao}) concluída` : `${concl.versao} concluída`) : null;
+const faseAtual = [rotConcl, ativa ? `rodada ${ativa.rodada} ${ROT_ST[ativa.status]}` : null].filter(Boolean).join(' · ') || null;
 gravar('meta.json', { gerado_em: home.gerado_em, situacao: situacaoAtual, fase_atual: faseAtual, pdf: existe(pdf), github: GITHUB, testes: placar.total });
 console.log('ok');
