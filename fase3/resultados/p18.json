@@ -1,0 +1,262 @@
+{
+ "pergunta": "p18",
+ "principal_2026": {
+  "referencia_real": [
+   33.0,
+   13.0,
+   0.3639014245577708,
+   116.0,
+   9.0,
+   2.0465860033360097
+  ],
+  "limiar_real": {
+   "referencia_alarme": [
+    0.0,
+    0.113517091390478,
+    0.0
+   ]
+  },
+  "limiar_mundo": [
+   12.0,
+   9.0,
+   0.49929828190046927,
+   133.0,
+   20.0,
+   3.2776276311355454
+  ],
+  "urnas": 499127,
+  "limiar_calibrado_no_mundo": {
+   "referencia_alarme": [
+    0.0,
+    0.113517091390478,
+    0.0
+   ]
+  },
+  "A_Flavio_para_Lula_5pct": {
+   "limiar_real": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 0.0,
+    "T1_contra": 0.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  },
+  "B_Lula_para_Flavio_5pct": {
+   "limiar_real": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 0.0,
+    "T1_contra": 0.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  },
+  "A_Flavio_para_Lula_10pct": {
+   "limiar_real": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 1.0,
+    "T1_contra": 0.0,
+    "T2": 0.03,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  },
+  "B_Lula_para_Flavio_10pct": {
+   "limiar_real": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 0.0,
+    "T1_contra": 1.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  }
+ },
+ "sensibilidade_2022": {
+  "referencia_real": [
+   90.0,
+   13.0,
+   3.4496145254751323,
+   44.0,
+   7.0,
+   2.8333353822854863
+  ],
+  "limiar_real": {
+   "referencia_alarme": [
+    0.0,
+    0.113517091390478,
+    0.0
+   ]
+  },
+  "limiar_mundo": [
+   16.0,
+   10.0,
+   8.190014215583886,
+   55.0,
+   17.0,
+   3.5952319560790804
+  ],
+  "urnas": 471965,
+  "limiar_calibrado_no_mundo": {
+   "referencia_alarme": [
+    0.0,
+    0.113517091390478,
+    0.0
+   ]
+  },
+  "A_Flavio_para_Lula_5pct": {
+   "limiar_real": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 0.0,
+    "T1_contra": 0.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  },
+  "B_Lula_para_Flavio_5pct": {
+   "limiar_real": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 0.0,
+    "T1_contra": 0.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  },
+  "A_Flavio_para_Lula_10pct": {
+   "limiar_real": {
+    "taxa": 0.0,
+    "ic95_wilson": [
+     0.0,
+     0.113517091390478
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 1.0,
+    "T1_contra": 0.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  },
+  "B_Lula_para_Flavio_10pct": {
+   "limiar_real": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "limiar_calibrado_no_mundo": {
+    "taxa": 1.0,
+    "ic95_wilson": [
+     0.8864829086095221,
+     1.0
+    ]
+   },
+   "por_teste_limiar_mundo": {
+    "T1_pro": 0.0,
+    "T1_contra": 1.0,
+    "T2": 0.0,
+    "T3_pro": 0.0,
+    "T3_contra": 0.0,
+    "T4": 0.0
+   }
+  }
+ },
+ "tempo_s": 32.0
+}

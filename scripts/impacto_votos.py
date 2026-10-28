@@ -15,7 +15,7 @@ I = {
 "T10": "Desvio máximo da curva de 0,08 pp (município) e 0,25 a 0,32 pp (estado). Sobre 124 mi de votos válidos, 0,32 pp equivale a ~400 mil votos num instante da curva; é distância entre a curva e a reconstrução, não votos alterados.",
 "T11": "Não se traduz em votos: conta oscilações da curva (23 contra 22 ± 1).",
 "T12": "Efeito de −14,7 para +0,3 (t) depois de controlar a idade: sem efeito residual; nenhum voto atribuível à liberação sem biometria (12,7% das habilitações).",
-"T13": "Menor alteração detectada na grade original: 11.677 votos movidos. Na Fase 2: 1% das urnas com 10% dos válidos movidos (~250 mil votos) são vistos no sentido Flávio→Lula em 100% das réplicas e em 0% no sentido contrário; com 2% e 5% dos válidos (~100 a 250 mil votos) não são vistos em nenhum. Troca uniforme de 2,48 mi de votos não foi vista.",
+"T13": "Menor alteração detectada na grade original: 11.677 votos movidos. Na Fase 2: 1% das urnas com 10% dos válidos movidos (~125 mil votos) são vistos no sentido Flávio→Lula em 100% das réplicas e em 0% no sentido contrário; com 2% e 5% dos válidos (~25 a 62 mil votos) não são vistos em nenhum. Troca uniforme de 2,48 mi de votos não foi vista.",
 "T13b": "Rajada convertendo 100% dos votos dos últimos 30 min em 'sem biometria' é vista em 76% a 98% das urnas alteradas; a 10% não é vista (recall ≈ 0%). As 13 urnas do 1º turno têm ≈140 votos no total.",
 "T14": "0 votos de diferença entre log e comparecimento nas 200 seções sorteadas e nas urnas sem exceção; nas exceções documentadas (T36) a soma é 59 votos no 1º turno e 358 no 2º.",
 "T15": ZERO,
@@ -51,6 +51,9 @@ I = {
 "E02": "Depois de corrigir a correlação dentro do local: 55 locais significativos em 2026 (28 pró-Lula, 27 pró-adversário) e 102 em 2022 (30 e 72); cada local tem de dezenas a poucas centenas de votos de diferença, sem soma que se aproxime da margem de 4,43 mi.",
 "E03": "Lista dos casos extremos; as divergências individuais são de dezenas a centenas de votos por seção; nenhuma confirmada em dado independente.",
 "INC": "Define o menor efeito detectável (MDE) de cada teste; não é voto.",
+"T40": "Margem final de 4,43 mi (2026, 2º turno) e 2,14 mi (2022). As inversões acontecem com menos de 10% dos votos apurados; a curva não altera o total.",
+"T41": "2026, 2º turno: 106 seções com 14.860 votos válidos; pela taxa do local o esperado seria ~44 votos de Flávio nelas (0,001% da margem de 4,43 mi). 2022, 2º turno: 141 seções, 16.418 válidos, ~66 votos esperados.",
+"T42": "Não se traduz em votos: mede dependência espacial dos resíduos de virada.",
 "T36": "1º turno: 186 urnas com contas que não fecham, das quais só 9 têm log ≠ comparecimento, somando 59 votos (maior diferença 36). 2º turno: 75 urnas, 7 com diferença, somando 358 votos (maior 304). Os demais casos diferem em 1 confirmação sem voto computado. Total no máximo 417 votos em 128 mi.",
 }
 r = json.load(open(REG, encoding="utf-8"))

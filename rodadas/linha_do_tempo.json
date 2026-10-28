@@ -118,6 +118,16 @@
    "inicio": "2026-10-28",
    "fim": "2026-10-28",
    "versao": "V1.1"
+  },
+  {
+   "id": "F3",
+   "rodada": 4,
+   "versao": "V1.2",
+   "titulo": "Pendências, curvas e zeros",
+   "status": "em_andamento",
+   "inicio": "2026-10-28",
+   "resumo": "A F3 herda as pendências da F2, investiga as curvas de apuração, as mudanças entre turnos e os zeros de votos. A primeira sessão está concluída e as perguntas bloqueadas por fonte externa continuam abertas. Não encerrada: depende da aprovação do responsável.",
+   "etapas": []
   }
  ],
  "marcos": [
@@ -252,6 +262,12 @@
    "hora": "",
    "titulo": "Fase 2 concluída",
    "texto": "17 perguntas respondidas ou inventariadas; rodada 3 (V1.1) congelada; 4 novas perguntas na fila."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "F3: primeira sessão",
+   "texto": "Inventário de 27 itens; P18 e P19 respondidas; P20, curvas, zeros e P9 em parte; P4, P6, P11 e P21 bloqueadas por fonte externa."
   }
  ],
  "etapas_do_caminho": [

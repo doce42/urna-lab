@@ -156,6 +156,14 @@
      "alvo": "interpretacao",
      "resultado": "ajustado",
      "descricao": "P17: a assimetria de cauda é estatisticamente real quando se considera a dependência por município (bootstrap por município): razão pró-Lula/pró-outro em log, IC 95% > 0 em 3, 4 e 5 desvios nos dois anos (2026 a 5 desvios: 32 contra 13, IC 0,09 a 2,57; 2022: 90 contra 13, IC 1,08 a 2,94). P14: em 2022, 29 das 90 seções pró-Lula estão na capital de São Paulo e 8 locais de votação têm 2 ou mais seções atípicas (esperado 0,15 por sorteio dentro da UF); em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido). Causa não determinada; o padrão de 2022 é compatível com efeito local."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 4,
+     "tipo": "F3, P20: São Paulo capital 2022",
+     "alvo": "interpretacao",
+     "resultado": "ajustado",
+     "descricao": "29 seções atípicas em 15 locais, 10 delas num só local (zona 251); as outras seções desses locais têm z médio +3,6: efeito de local inteiro. Com controle de tamanho e histórico só 4 das 29 passam de 5 desvios; em 2026 as mesmas seções têm z médio +0,62. Arquivos conferem nas 29. Causa do deslocamento dos locais não identificável."
     }
    ],
    "versoes": [
@@ -810,6 +818,14 @@
      "alvo": "interpretacao",
      "resultado": "ajustado",
      "descricao": "Deixa de ser apresentada como previsão independente."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 4,
+     "tipo": "F3, E2: adequação do nulo de ordem",
+     "alvo": "metodo",
+     "resultado": "em_andamento",
+     "descricao": "Ver T11: a comparação da curva com permutações não discrimina com os nulos disponíveis."
     }
    ],
    "versoes": [
@@ -905,6 +921,14 @@
      "alvo": "metodo",
      "resultado": "em_andamento",
      "descricao": "Calibração da simulação na Fase 2."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 4,
+     "tipo": "F3, E2: adequação do nulo de ordem",
+     "alvo": "metodo",
+     "resultado": "em_andamento",
+     "descricao": "Permutação irrestrita da ordem de chegada rejeita todas as estatísticas de curva (oscilações 44 simuladas contra 4 a 11 reais); os nulos por UF e município também rejeitam alguma estatística em 2022 e 2026. Nenhum nulo de ordem disponível está calibrado; o T11 e o T10 exigem evidência adicional."
     }
    ],
    "versoes": [
@@ -1103,6 +1127,22 @@
      "alvo": "interpretacao",
      "resultado": "ajustado",
      "descricao": "Com 1% das urnas sorteadas e 10% dos válidos movidos, a regra detecta Flávio→Lula em 30 de 30 réplicas (IC 95% 89% a 100%) e Lula→Flávio em 0 de 30 (0% a 11%). A alteração no sentido B produz em média 79 seções abaixo de −5 desvios (contra 13 na referência), mas o T1 só conta o lado positivo. Com 2% e 5% dos válidos não há detecção em nenhum sentido. O mundo de referência não alarma (0 de 30). A detecção de 111 contra 62 do T13 original, a 5%, não se repete em mundo com ruído só binomial (0 de 30): depende da cauda pesada dos dados reais."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 4,
+     "tipo": "F3: correção de cálculo na própria F2",
+     "alvo": "redacao",
+     "resultado": "ajustado",
+     "descricao": "A F2 dizia que 10% dos válidos movidos em 1% das urnas eram ~250 mil votos. A conta correta é ~125 mil (1% de 499 mil urnas × ~250 votos válidos × 10%); a tabela original do T13 já trazia 124.743 votos nessa célula. 2% e 5% equivalem a ~25 mil e ~62 mil votos. Corrigido no registro vivo, em impacto_votos e na resposta da P2; a cópia congelada da rodada 3 mantém o texto original."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 4,
+     "tipo": "F3, P18: T1 e T3 de duas caudas",
+     "alvo": "metodo",
+     "resultado": "ajustado",
+     "descricao": "Com T1 e T3 contando os dois lados, 10% dos válidos movidos em 1% das urnas (~125 mil votos) são detectados em 30 de 30 réplicas nos dois sentidos em 2026; 5% (~62 mil votos), em 0 de 30; falsos alarmes 0 de 30. A calibração importa: em 2022, com o limiar ancorado nos dados reais (cauda pró-Lula já grande), o sentido pró-Lula cai a 0 de 30, e com limiar calibrado no mundo simulado volta a 30 de 30."
     }
    ],
    "versoes": [
@@ -1183,7 +1223,7 @@
     "R1-13"
    ],
    "mudancas": [],
-   "impacto_votos": "Menor alteração detectada na grade original: 11.677 votos movidos. Na Fase 2: 1% das urnas com 10% dos válidos movidos (~250 mil votos) são vistos no sentido Flávio→Lula em 100% das réplicas e em 0% no sentido contrário; com 2% e 5% dos válidos (~100 a 250 mil votos) não são vistos em nenhum. Troca uniforme de 2,48 mi de votos não foi vista."
+   "impacto_votos": "Menor alteração detectada na grade original: 11.677 votos movidos. Na Fase 2: 1% das urnas com 10% dos válidos movidos (~125 mil votos) são vistos no sentido Flávio→Lula em 100% das réplicas e em 0% no sentido contrário; com 2% e 5% dos válidos (~25 a 62 mil votos) não são vistos em nenhum. Troca uniforme de 2,48 mi de votos não foi vista."
   },
   {
    "id": "T13b",
@@ -4163,6 +4203,14 @@
      "alvo": "interpretacao",
      "resultado": "ajustado",
      "descricao": "Correlação intralocal ρ = 0,13 (2026, modelo completo sem perfil) e 0,11 (2022); 0,19 e 0,12 no modelo simples. Corrigindo o z do local por 1+(k−1)ρ, os locais significativos (BH 5%) caem de 1.140 para 55 em 2026 (28 pró-Lula, 27 pró-adversário) e de 766 para 102 em 2022 (30 e 72). A maior parte dos significativos do E02 original vinha da correlação dentro do local. Moran's I não foi feito (sem adjacência municipal local)."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 4,
+     "tipo": "F3, P19: dependência espacial",
+     "alvo": "metodo",
+     "resultado": "ajustado",
+     "descricao": "Moran's I municipal de 0,16 a 0,20 (p = 0,001) em 2022 e 2026: o agrupamento tem componente regional além do local."
     }
    ],
    "versoes": [
@@ -4634,6 +4682,99 @@
    "evidencia": "19 seções com arquivos: tamanho, SHA-512 e assinatura conferem com a lista assinada em todas; BU = imagem = BU na Web em todas; RDV = BU em 18 (AL 28339/13/118 difere em 1 nulo por suspensão, falha do comparador e não do dado); log = comparecimento em 18 (RJ 58971/87/184: 256 contra 258, caso documentado no T36). A seção do exterior (ZZ 29564/1/91) é do Sistema de Apuração, sem lista de urna.",
    "resultado_atual": "Nenhuma divergência objetiva nova nas 20 seções; vale só para a amostra. A Verificação B (confronto independente) não pôde ser feita: não há material externo disponível.",
    "impacto_votos": "0 votos de diferença entre BU, imagem e BU na Web nas 19 seções; a diferença de 2 votos entre log e comparecimento (RJ 58971/87/184) já está no T36."
+  },
+  {
+   "modulo": "H",
+   "modelo_nulo": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "pressupostos": "",
+   "anotacoes": [],
+   "provas": [],
+   "versoes": [],
+   "metodo_versao": 1,
+   "pre_especificacao": "protocolo_ou_emenda",
+   "revisoes": [],
+   "mudancas": [],
+   "origem_fase3": "sessão F3 de 28/10/2026",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "G",
+   "id": "T40",
+   "pergunta": "As curvas de apuração de 2022 e 2026 são compatíveis com modelos nulos de chegada dos boletins?",
+   "metodo": "Inversões da liderança parcial, vales, oscilações e trechos lineares sob permutação irrestrita, dentro de UF e dentro de município (200 permutações), nos dois turnos e anos",
+   "script": "fase3/f3_curvas.py",
+   "comando": ".venv/bin/python fase3/f3_curvas.py",
+   "saida": "fase3/resultados/E2_curvas.json",
+   "hipotese_nula": "As estatísticas da curva real estão dentro do que o nulo produz",
+   "limitacoes": "Os nulos disponíveis não capturam a estrutura da ordem real (tamanho, hora de encerramento, lotes); sem snapshots externos",
+   "evidencia": "A permutação irrestrita rejeita tudo (oscilações 44 contra 4 a 11 observadas): nulo inadequado. Os nulos por UF e por município rejeitam ao menos uma estatística em todos os anos e turnos, inclusive 2022 e o 1º turno de 2026. 2026 2º turno: 2 inversões (13,5% e 47,2% apurado); 2022 2º turno: o adversário lidera até 67,6% apurado. A ordem de chegada é mais territorial no 2º turno de 2026 (η² por UF 0,39 contra 0,24).",
+   "resultado_atual": "Nenhum nulo disponível discrimina a curva real; não se demonstra incompatibilidade nem compatibilidade.",
+   "interpretacao": "Curvas com poucas inversões não são evidência por si; o teste de ordem por permutação precisa de nulos com estrutura de chegada.",
+   "impacto_votos": "Margem final de 4,43 mi (2026, 2º turno) e 2,14 mi (2022). As inversões acontecem com menos de 10% dos votos apurados; a curva não altera o total."
+  },
+  {
+   "modulo": "H",
+   "modelo_nulo": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "pressupostos": "",
+   "anotacoes": [],
+   "provas": [],
+   "versoes": [],
+   "metodo_versao": 1,
+   "pre_especificacao": "protocolo_ou_emenda",
+   "revisoes": [],
+   "mudancas": [],
+   "origem_fase3": "sessão F3 de 28/10/2026",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "G",
+   "id": "T41",
+   "pergunta": "Seções com zero votos para um finalista excedem o esperado?",
+   "metodo": "Beta-binomial com prior por município, por UF e por local de votação (leave-one-out), controle com zeros de Lula, arquivos das urnas (BU, RDV, imagem) das seções zero",
+   "script": "fase3/f3_zeros.py",
+   "comando": ".venv/bin/python fase3/f3_zeros.py",
+   "saida": "fase3/resultados/E3_zeros.json",
+   "hipotese_nula": "A contagem de zeros é a esperada sob heterogeneidade local",
+   "limitacoes": "O modelo com prior de local subestima também os zeros do controle (Lula) por cerca de 2 vezes; excesso modesto não excluível",
+   "evidencia": "Flávio 2026: 79 seções (1º turno) e 106 (2º) com zero votos e comparecimento positivo; Bolsonaro 2022: 160 e 141. Com prior municipal o esperado é 1 a 8 (modelo refutado); com prior de local, 65 a 83 (2026) e 85 a 95 (2022), razão 1,2 a 1,7 (controle de Lula 2026: 2,1). 0 divergências entre BU, RDV, imagem e tabela publicada nas 486 seções-turno (1 seção de 2022 sem BU lido). Concentradas em AM, PA, MA e BA.",
+   "resultado_atual": "Os zeros se explicam em boa parte por heterogeneidade do local de votação; não há evidência de excesso, mas o modelo não exclui um excesso modesto.",
+   "interpretacao": "Zero votos isolado não é irregularidade; a probabilidade binomial homogênea é inadequada.",
+   "impacto_votos": "2026, 2º turno: 106 seções com 14.860 votos válidos; pela taxa do local o esperado seria ~44 votos de Flávio nelas (0,001% da margem de 4,43 mi). 2022, 2º turno: 141 seções, 16.418 válidos, ~66 votos esperados."
+  },
+  {
+   "modulo": "H",
+   "modelo_nulo": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "pressupostos": "",
+   "anotacoes": [],
+   "provas": [],
+   "versoes": [],
+   "metodo_versao": 1,
+   "pre_especificacao": "protocolo_ou_emenda",
+   "revisoes": [],
+   "mudancas": [],
+   "origem_fase3": "sessão F3 de 28/10/2026",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "B",
+   "id": "T42",
+   "pergunta": "Os resíduos do E02 têm dependência espacial entre municípios?",
+   "metodo": "Moran's I do z médio por município com adjacência por arco compartilhado da malha IBGE e 5 vizinhos mais próximos; 999 permutações; 2022 e 2026",
+   "script": "fase3/f3_pendencias.py",
+   "comando": ".venv/bin/python fase3/f3_pendencias.py p19",
+   "saida": "fase3/resultados/p19.json",
+   "hipotese_nula": "Os z municipais são espacialmente independentes",
+   "limitacoes": "Mede estrutura regional não modelada, não causa; p com piso de 0,001",
+   "evidencia": "2026: I = 0,161 (arco) e 0,172 (5 vizinhos); 2022: 0,179 e 0,198; esperado sob H0 −0,0002; p = 0,001 nos quatro; sem os 5% mais extremos 0,157 e 0,170.",
+   "resultado_atual": "Há autocorrelação espacial real nos dois anos, ligeiramente maior em 2022.",
+   "interpretacao": "O modelo por UF deixa estrutura regional nos resíduos; isso não indica manipulação.",
+   "impacto_votos": "Não se traduz em votos: mede dependência espacial dos resíduos de virada."
   }
  ],
  "classes": {

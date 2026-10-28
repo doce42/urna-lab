@@ -6,7 +6,7 @@ Decisão do responsável: finalizar todas as perguntas da Fase 2 (P1 a P17). Pr�
 | P | Pergunta | Situação | O que ficou demonstrado | Em votos |
 |---|---|---|---|---|
 | P1 | O C06 resiste a taxas heterogêneas? | respondida | A magnitude "4:1" não; ordem e contraste 2022 × 2026 sim (T37) | erro de ±0,5 a ±1,5 mi na célula Abs→Lula, estimada em 3,18 mi |
-| P2 | Poder do T13 nos dois sentidos | respondida | 10% dos válidos em 1% das urnas: 100% (Flávio→Lula) e 0% (Lula→Flávio); 2% e 5%: 0% nos dois. T1 e T3 só contam um lado | ~250 mil votos movidos não vistos no sentido contrário |
+| P2 | Poder do T13 nos dois sentidos | respondida | 10% dos válidos em 1% das urnas: 100% (Flávio→Lula) e 0% (Lula→Flávio); 2% e 5%: 0% nos dois. T1 e T3 só contam um lado | ~125 mil votos movidos não vistos no sentido contrário |
 | P3 | Canal e versão de publicação | em parte | 200 de 200 concordam (BU, imagem, RDV, log, BU na Web); um canal só | 0 votos de diferença |
 | P4 | Curva reconstruída por BUs | inventariada | sem capturas externas locais | n/a |
 | P5 | Modelo de urna, mesmo município | respondida | equivalente a zero em ±0,02 logit | até ~2,7 mil votos se fosse real |

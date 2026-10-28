@@ -12,12 +12,12 @@
   },
   "P2": {
    "situacao": "respondida",
-   "resposta": "Com 1% das urnas e 10% dos válidos movidos (~250 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido.",
+   "resposta": "Com 1% das urnas e 10% dos válidos movidos (~125 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido.",
    "testes": [
     "T13"
    ],
    "resumo_claro": "O teste de fraude simulada (T13) só enxerga desvio a favor de Lula. O mesmo desvio a favor do adversário passaria sem alarme, e desvios menores (2% e 5%) não são vistos em nenhum sentido.",
-   "em_votos": "cerca de 250 mil votos movidos no sentido contrário não seriam vistos"
+   "em_votos": "cerca de 125 mil votos movidos no sentido contrário não seriam vistos"
   },
   "P3": {
    "situacao": "parcial",
