@@ -10,8 +10,6 @@ import { Linhas } from '@/graficos/Linhas';
 import { Sankey, Cascata, BarrasUF, rotFluxo } from '@/graficos/especiais';
 import { dica, esc } from '@/ui/Dica';
 import { emProc } from '@/viz/testes';
-import { useDados } from '@/lib/dados';
-import type { LinhaDoTempo as LT } from '@/lib/tipos';
 
 const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: string; eyebrow: string; titulo: string; lead?: string; children: React.ReactNode; className?: string }) => (
   <section id={id} className={`container mt-20 md:mt-28 scroll-mt-20 ${className}`}>
@@ -24,48 +22,6 @@ const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: st
   </section>
 );
 
-// Estado da pesquisa: lê a linha do tempo (rodadas/linha_do_tempo.json), então acompanha sozinha a progressão das fases.
-const ST_ROT: Record<string, string> = { concluida: 'concluída', em_andamento: 'em andamento', em_revisao: 'em revisão', proxima: 'próxima', pendente: 'pendente', planejada: 'planejada' };
-const F2_ROT: Record<string, string> = { respondida: 'respondida', parcial: 'em parte', inventariada: 'inventariada', adiada: 'adiada', 'sem_avanço': 'sem avanço', aberta: 'aberta' };
-function EstadoPesquisa() {
-  const { dados: lt } = useDados<LT>('linha-do-tempo');
-  if (!lt) return null;
-  const atual = lt.fases.find((f) => f.status === 'em_andamento' || f.status === 'em_revisao') || [...lt.fases].reverse().find((f) => f.status === 'concluida');
-  const cont: Record<string, number> = {};
-  lt.fase2.forEach((q) => { const k = q.situacao || 'aberta'; cont[k] = (cont[k] || 0) + 1; });
-  const filaF3 = lt.fase2.filter((q) => (q.situacao || 'aberta') === 'aberta' && q.f3).length;
-  // Fase 3: inventário (fase3/inventario.json), contado pelo estado final dos itens trabalhados na F3
-  const f3 = lt.fases.find((f) => f.id === 'F3');
-  const f3Itens = lt.fase3 || [];
-  const f3Ativos = f3Itens.filter((i) => i.estado_inicial_f3 !== 'respondida' || i.reaberta_na_revisao);
-  const f3Bloq = f3Ativos.filter((i) => /bloquead/.test(i.estado_final));
-  const nF3 = (re: RegExp) => f3Ativos.filter((i) => re.test(i.estado_final)).length;
-  const f3Partes = [[nF3(/^respondida$/), 'respondida', 'respondidas'], [nF3(/parcialmente/), 'em parte', 'em parte'], [nF3(/identific/), 'não identificável com estes dados', 'não identificáveis com estes dados'], [nF3(/decidível/), 'não decidível com os modelos disponíveis', 'não decidíveis com os modelos disponíveis'], [nF3(/não executada/), 'não executada', 'não executadas']] as const;
-  return (
-    <section id="estado" className="container mt-12 md:mt-16 scroll-mt-20">
-      <div className="cartao p-5 md:p-6">
-        <Eyebrow>Estado da pesquisa</Eyebrow>
-        <h2 className="t-h3 mt-2">{lt.situacao_atual || atual?.titulo}</h2>
-        <ol className="mt-3 flex flex-wrap gap-2">
-          {lt.fases.map((f) => (
-            <li key={f.id} className={`min-h-7 py-1 px-3 rounded-full border text-xs font-medium inline-flex items-center ${f.status === 'em_andamento' ? 'border-accent text-accent' : f.status === 'concluida' ? 'border-border-strong text-text' : 'border-border text-subtle'}`}>{f.versao || f.id} · {f.titulo} · {ST_ROT[f.status]}</li>
-          ))}
-        </ol>
-        {lt.fase2.length > 0 && <p className="mt-3 text-[14px] text-muted"><b className="font-medium text-text">Fase 2:</b> {lt.fase2.length - (cont.aberta || 0)} perguntas tratadas · {Object.keys(F2_ROT).filter((k) => k !== 'aberta' && cont[k]).map((k) => `${cont[k]} ${cont[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2_ROT[k] + 's' : F2_ROT[k]}`).join(' · ')}{cont.aberta ? (filaF3 === cont.aberta ? ` · ${cont.aberta} novas levadas à Fase 3` : ` · ${cont.aberta} novas na fila`) : ''}.</p>}
-        {f3Itens.length > 0 && <p className="mt-1.5 text-[14px] text-muted"><b className="font-medium text-text">Fase 3{f3?.versao ? ` (${f3.versao})` : ''}:</b> {f3Itens.length} itens inventariados · {f3Partes.filter(([n]) => n).map(([n, um, varios]) => `${n} ${n > 1 ? varios : um}`).join(' · ')}{f3Bloq.length ? <> · <b className="font-medium text-text">{f3Bloq.length} {f3Bloq.length > 1 ? 'pendências bloqueadas' : 'pendência bloqueada'} por fonte externa</b> ({f3Bloq.map((i) => i.id).join(', ')})</> : null}{f3Itens.length > f3Ativos.length ? ` · ${f3Itens.length - f3Ativos.length} da Fase 2, não reabertas` : ''}{f3?.status === 'em_revisao' ? ' · em revisão depois da auditoria; os estados podem mudar' : ''}.</p>}
-        {(lt.conclusoes_recentes || []).length > 0 && (
-          <div className="mt-5">
-            <div className="text-[11px] font-mono uppercase tracking-wider text-muted">{f3Itens.length ? 'Conclusões das Fases 2 e 3' : 'Conclusões da Fase 2'}</div>
-            <ul className="mt-2 grid gap-2.5 md:grid-cols-2 xl:grid-cols-3">
-              {lt.conclusoes_recentes!.map((c) => <li key={c.titulo}><a href={c.teste ? `#/testes/${c.teste}` : '#/linha-do-tempo'} className="block h-full rounded-lg border border-border p-3 hover:border-border-strong transition-colors"><div className="text-[14.5px] font-medium text-text leading-snug">{c.titulo}{c.teste ? <span className="ml-2 font-mono text-xs text-subtle">{c.teste}</span> : null}</div><p className="mt-1 text-[13.5px] text-muted leading-relaxed line-clamp-4">{c.texto}</p><span className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-medium text-accent-text">ver o teste <ArrowRight size={13} /></span></a></li>)}
-            </ul>
-          </div>
-        )}
-        <a className="mt-4 inline-flex items-center gap-1 min-h-9 py-1.5 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">{f3Itens.length ? 'Linha do tempo e perguntas das Fases 2 e 3' : 'Linha do tempo e perguntas da Fase 2'} <ArrowRight size={15} /></a>
-      </div>
-    </section>
-  );
-}
 
 export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta | null }) {
   const n26 = h.nacional['2026'], n22 = h.nacional['2022'];
@@ -145,7 +101,7 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
           <div className="surgir">
             <div className="inline-flex items-start sm:items-center gap-2 min-h-8 py-1.5 sm:py-0 px-3 rounded-full border border-border bg-surface text-[13px] text-muted leading-snug">
               <i className="w-2 h-2 rounded-full bg-accent shrink-0 mt-1.5 sm:mt-0" style={{ boxShadow: '0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent)' }} />
-              <a href="#estado" className="hover:text-text">{meta?.situacao || 'Estudo em andamento'} · dados de {dataBR(h.gerado_em)}</a>
+              <a href="#/linha-do-tempo" className="hover:text-text">{meta?.fase_atual || 'Estudo em andamento'} · dados de {dataBR(h.gerado_em)}</a>
             </div>
             <h1 className="t-display mt-6 max-w-[14ch]">A apuração de 2026, conferida urna por urna.</h1>
             <p className="t-lead mt-6 max-w-[52ch]">
@@ -190,8 +146,6 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       </section>
 
       {/* ---------- placar ---------- */}
-      <EstadoPesquisa />
-
       <Secao id="validado" eyebrow="O que já foi verificado" titulo="Placar da verificação" lead={`${placar.total} testes registrados, cada um com classe de evidência e grau de certeza. Nenhum número aqui é escrito à mão: tudo sai do código e do registro de testes.`}>
         <div className="grid gap-4">
           <div className="cartao p-5 md:p-6 grid gap-5 lg:grid-cols-[auto_1fr] lg:items-center">

@@ -51,4 +51,4 @@ export type Mapas2022 = { campos: string[]; municipios: (number[] | null)[] };
 export type DocSecao = { id: string; titulo: string; html: string; texto: string };
 export type Doc = { slug: string; arquivo: string; titulo: string; resumo: string; github: string; secoes: DocSecao[] };
 export type Docs = { github: string; docs: Doc[] };
-export type Meta = { gerado_em: string; pdf: boolean; github: string; testes: number; situacao?: string | null };
+export type Meta = { gerado_em: string; pdf: boolean; github: string; testes: number; situacao?: string | null; fase_atual?: string | null };

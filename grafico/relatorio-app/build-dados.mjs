@@ -288,6 +288,12 @@ gravar('docs-indice.json', { github: GITHUB, docs: docs.map((d) => ({ slug: d.sl
 
 // relatório em PDF: o site mostra o botão só se o arquivo existir em public/
 const pdf = path.join(AQUI, 'public', 'relatorio.pdf');
-const situacaoAtual = ler(path.join(RAIZ, 'rodadas', 'linha_do_tempo.json')).situacao_atual || null;
-gravar('meta.json', { gerado_em: home.gerado_em, situacao: situacaoAtual, pdf: existe(pdf), github: GITHUB, testes: placar.total });
+const ltBruta = ler(path.join(RAIZ, 'rodadas', 'linha_do_tempo.json'));
+const situacaoAtual = ltBruta.situacao_atual || null;
+// fase atual, curta, para o selo do topo: a fase em andamento ou em revisão; senão a última concluída
+const ROT_ST = { em_andamento: 'em andamento', em_revisao: 'em revisão', concluida: 'concluída' };
+const faseNum = ltBruta.fases.filter((f) => /^F\d+$/.test(f.id));
+const fAtual = faseNum.find((f) => f.status === 'em_andamento' || f.status === 'em_revisao') || [...faseNum].reverse().find((f) => f.status === 'concluida');
+const faseAtual = fAtual ? `Fase ${fAtual.id.slice(1)} ${ROT_ST[fAtual.status] || ''}`.trim() : null;
+gravar('meta.json', { gerado_em: home.gerado_em, situacao: situacaoAtual, fase_atual: faseAtual, pdf: existe(pdf), github: GITHUB, testes: placar.total });
 console.log('ok');
