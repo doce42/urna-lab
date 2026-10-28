@@ -121,3 +121,8 @@ Só dados oficiais do TSE (lista e conferências em CATALOGO, seção 2). Nada e
   - **I2 (zeros com modelo calibrado):** o critério de calibração fixado antes não foi cumprido. O critério para controles com dezenas de milhares de zeros era quase impossível de cumprir e precisa ser refeito antes de nova tentativa.
   - **I3 (locais contra o entorno):** a referência é a zona eleitoral (divisão administrativa), não uma vizinhança geográfica.
   - **A173, BU1, SA22:** verificações documentais dos arquivos de 2022 (sem estatística).
+- **28/10/2026, emenda 7, alegações da live de 4/11/2022 e do pedido do PL (antes de rodar).** Pré-registro em `fase3/PREREG_LIVE_2022.md`; contexto em `docs/pesquisas/2026-10-28_live_cerimedo_2022.md`. Entram:
+  - **T45:** ligação log → BU → RDV nas urnas com o ID fixo 67305985 (2022 e 2026).
+  - **T46:** reprodução dos 51,05% "só UE2020" e contrafactual dentro do município.
+  - **T47:** voto em Lula por modelo de urna no nível (1º e 2º turno), dentro do município e do local de votação, margem ±0,02 logit, calibração por permutação e poder com fraude sintética.
+  - **T48:** versão do software e seções unânimes por modelo.

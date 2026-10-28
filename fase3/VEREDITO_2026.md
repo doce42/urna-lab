@@ -120,4 +120,8 @@
 | T41 | PC | Zeros: sem modelo calibrado; sem excesso agregado na descrição. |
 | T42 | M | Dependência espacial (estrutura, não sinal). |
 | T43 | S0 | Decodificação independente igual (implementação de terceiro). |
+| T45 | S1 | 2022: ID fixo 67305985 no log de todas as urnas pré-2020 (bug); log ligado ao BU e ao RDV pela assinatura e pelo certificado em 279.285 de 279.291 seções; 6 são trocas de urna ou arquivos faltantes já catalogados. Em 2026 o bug não aparece. |
+| T46 | S1 | O 51,05% de Bolsonaro só nas UE2020 (2022) se reproduz; é o voto das cidades que tinham UE2020. Dentro do município, Lula continua vencendo (Bolsonaro 49,25%). |
+| T47 | S1 | Lula teve mais votos nas urnas antigas (50,3% × 46,0%, 1º turno de 2022), também dentro do município; dentro do mesmo local de votação a diferença é equivalente a zero nos dois turnos: é localização, não modelo. |
+| T48 | S0 | Mesmo software (8.26.0.0) em todos os modelos em 2022; seções unânimes proporcionais à presença de cada modelo. |
 | T44 | S3 | Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto. |

@@ -282,3 +282,11 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
   - **Z3, anomalias pequenas:** as 8 urnas do T28 têm Lula abaixo do município em 6; as 33 seções extremas do T02 estão espalhadas e com comparecimento em queda.
   - **Z4, fontes externas:** sem dado primário.
   - **Fechamento:** cada item com resposta final.
+
+## Alegações da live de 4/11/2022 e do pedido do PL (28/10/2026, pós-V1.3)
+Pré-registro `fase3/PREREG_LIVE_2022.md` (emenda 7), script `fase3/live_2022.py`, saída `fase3/resultados/live_2022.json`, contexto `docs/pesquisas/2026-10-28_live_cerimedo_2022.md`. Tempo: 40 s por execução; 2 execuções.
+- **Artefato (corrigido):** a 1ª execução acusou ~22 mil seções sem ligação log-BU-RDV; causa: BU e RDV omitem quem teve zero voto e o comparador tratou ausente ≠ 0. Mais um caso da regra "suspeite primeiro do comparador".
+- **T45:** ID fixo 67305985 em todas as 279.291 seções pré-2020 do 2º turno de 2022; ligação completa em 279.285; 0 casos em 2026 (bug corrigido).
+- **T46:** 51,0508% reproduzido; subconjunto geográfico; contrafactual dentro do município: Bolsonaro 49,25%.
+- **T47:** diferença bruta (50,3% × 46,0%) e dentro do município (fora de ±0,02); dentro do local de votação equivalente a zero nos dois turnos → S1.
+- **T48:** software 8.26.0.0 em todos os modelos; unanimidades proporcionais à presença do modelo; 1 seção UE2015 em SC com 8.10.0.1 Sabiá no log (não investigada).
