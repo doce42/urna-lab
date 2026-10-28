@@ -10,6 +10,7 @@ import { Linhas } from '@/graficos/Linhas';
 import { Sankey, Cascata, BarrasUF, rotFluxo } from '@/graficos/especiais';
 import { dica, esc } from '@/ui/Dica';
 import { emProc } from '@/viz/testes';
+import { RespostaCentral, useVeredito } from '@/ui/Sinal';
 
 const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: string; eyebrow: string; titulo: string; lead?: string; children: React.ReactNode; className?: string }) => (
   <section id={id} className={`container mt-20 md:mt-28 scroll-mt-20 ${className}`}>
@@ -22,6 +23,17 @@ const Secao = ({ id, eyebrow, titulo, lead, children, className = '' }: { id: st
   </section>
 );
 
+
+function RespostaHome() {
+  const v = useVeredito();
+  if (!v) return null;
+  return (
+    <section id="resposta" className="container mt-12 md:mt-16 scroll-mt-20">
+      <RespostaCentral v={v} />
+      <p className="mt-5 text-[14.5px]"><a href="#/respostas" className="text-accent-text underline underline-offset-4">Todas as perguntas, com a resposta, os números e o que cada uma significa em votos</a></p>
+    </section>
+  );
+}
 
 export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta | null }) {
   const n26 = h.nacional['2026'], n22 = h.nacional['2022'];
@@ -144,6 +156,9 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
           ))}
         </div>
       </section>
+
+      {/* ---------- a pergunta e a resposta (fase3/veredito_2026.json) ---------- */}
+      <RespostaHome />
 
       {/* ---------- placar ---------- */}
       <Secao id="validado" eyebrow="O que já foi verificado" titulo="Placar da verificação" lead={`${placar.total} testes registrados, cada um com classe de evidência e grau de certeza. Nenhum número aqui é escrito à mão: tudo sai do código e do registro de testes.`}>

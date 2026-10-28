@@ -270,3 +270,9 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
   - **F2:** Sistema de Apuração de 2026, 60/60 assinaturas válidas.
   - **F3:** das 10 seções sem boletim lido, 5 conferem e 5 não têm arquivos.
   - **F4:** modelo de chegada não validado; Q10 e Q12 seguem não determinados.
+- **Veredito de 2026 e reorganização** (`fase3/f3_veredito.py` → `fase3/veredito_2026.json`, `VEREDITO_2026.md`):
+  - **Pergunta central e dedução:** a pergunta é se há sinal de fraude capaz de mudar o resultado; a resposta deduz onde uma fraude dessas caberia e onde não.
+  - **Hipóteses:** 10 mecanismos de fraude, cada um com o que deixaria nos dados e o veredito.
+  - **Escala de sinal:** sem sinal, explicado, compatível só com o registro, anomalia sem causa, divergência, indício, ponto cego. Fica separada de "concluído".
+  - **Teste novo T44** (grandes cidades, `PREREG_GRANDES_CIDADES.md`): falso alarme 1,5%; troca de 2% no município inteiro detectável; Salvador desviante, ~30 mil votos, em todas as 19 zonas, sem 2º turno estadual.
+  - **No site:** resposta central na Home, selo de sinal nos testes e busca por pergunta na página Respostas.

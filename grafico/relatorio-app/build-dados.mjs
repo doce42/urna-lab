@@ -93,6 +93,9 @@ gravar('registro.json', { descricao: registro.descricao, modelos_nulos: registro
     const pos = caminho.findIndex((e) => e.status === 'disponivel' || e.status === 'vivo');
     caminho.splice(pos < 0 ? caminho.length : pos, 0, { id: f.id.toLowerCase(), titulo: f.titulo, status: f.status, versao: f.versao || f.id, texto: f.resumo.split(/(?<=\.)\s/)[0], link: '#fase' + f.id.slice(1) });
   }
+  // Veredito de 2026: hipóteses, sinal por teste (fase3/f3_veredito.py)
+  const vf3 = path.join(RAIZ, 'fase3', 'veredito_2026.json');
+  if (fs.existsSync(vf3)) gravar('veredito.json', ler(vf3));
   // Perguntas e respostas científicas (fase3/f3_respostas.py)
   const rf3 = path.join(RAIZ, 'fase3', 'respostas_f3.json');
   if (fs.existsSync(rf3)) gravar('respostas.json', ler(rf3));
@@ -231,6 +234,7 @@ const DOCS = [
   ['fase2', 'FASE2.md', 'Fase 2', 'Perguntas registradas antes dos resultados, com a hipótese concorrente que cada uma distingue.'],
   ['fase3', 'RELATORIO_F3.md', 'Fase 3', 'Pendências, curvas e zeros: o que foi feito, o estado final de cada item e o que ficou bloqueado.'],
   ['fase3-auditoria', 'fase3/AUDITORIA_F3.md', 'Auditoria da Fase 3', 'Revisão crítica da F3: o que foi executado, documentado, publicado e validado, e o que excedia a evidência.'],
+  ['veredito-2026', 'fase3/VEREDITO_2026.md', 'Veredito de 2026', 'A pergunta central, a dedução, as hipóteses de fraude examinadas e o sinal de cada teste.'],
   ['fase3-respostas', 'fase3/RESPOSTAS_F3.md', 'Respostas científicas da Fase 3', 'Resposta explícita por pergunta: integridade, curvas, zeros, mudança entre turnos e os 33 itens do inventário.'],
   ['fase3-adversarial', 'fase3/RELATORIO_ADVERSARIAL.md', 'Auditoria adversarial', 'Explicações baseadas em registros oficiais confrontadas com hipóteses concorrentes; o que resistiu, o que enfraqueceu e o que depende só da confiança nos registros.'],
   ['fase3-verificacoes-finais', 'fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md', 'Verificações finais da Fase 3', 'A1 (seções de 2022 sem par), A2 (poder no sentido correto e grandes municípios), A4 (universo do T28) e parecer.'],

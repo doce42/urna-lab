@@ -9,6 +9,7 @@ import { irPara } from '@/lib/rotas';
 import { Botao, Chip, Eyebrow, SeloClasse, SeloEstado, SkeletonBloco, Erro, Nota, CLASSE_COR, CLASSE_EXPL } from '@/ui/base';
 import { VIZ, generico, categoria, emProc, preliminar, MODS, ESTADO_TXT, AVISO_RE, MET, type Ctx, type Viz } from '@/viz/testes';
 import { Processando } from '@/graficos/primitivos';
+import { SeloSinal, useVeredito } from '@/ui/Sinal';
 
 function montarCtx(d: TestesDados, reg: Registro, t: Teste): Ctx { return { d, t, reg, nv: d.novos || {}, bt22: (d.bateria || {})['2022'], bt26: (d.bateria || {})['2026'] }; }
 function vizDe(c: Ctx): NonNullable<Viz> {
@@ -100,6 +101,13 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
   );
 }
 
+// sinal (suspeita) do teste, separado de 'concluído': fase3/veredito_2026.json
+function Sinal({ t }: { t: Teste }) {
+  const v = useVeredito(); const s = v?.sinal_por_teste[t.id];
+  if (!v || !s) return null;
+  return <SeloSinal nivel={s.nivel} nome={v.niveis.find((n) => n.id === s.nivel)?.nome} titulo={s.motivo} />;
+}
+
 function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
   const v = useMemo(() => vizDe(montarCtx(d, reg, t)), [d, reg, t]);
   const cat = categoria(t), proc = emProc(t), { s } = sentencaDe(t);
@@ -112,7 +120,7 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
         <div className="flex flex-wrap items-center gap-2">
           <span className="font-mono text-xs font-medium h-7 px-2.5 inline-flex items-center rounded-md border border-border bg-surface-2">{t.id}</span>
           <SeloClasse classe={t.classe_evidencia} nome={reg.classes[t.classe_evidencia]} />
-          <SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
+          <Sinal t={t} /><SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
           {prelim && <span className="inline-flex items-center h-7 px-2.5 rounded-full text-xs font-medium border border-warn/50 text-warn" style={{ background: 'var(--warn-soft)' }}>preliminar · em reprocessamento</span>}
           <ArrowUpRight size={18} className="ml-auto text-subtle group-hover:text-text transition-colors" />
         </div>
@@ -177,7 +185,7 @@ export function Detalhe({ t, reg, d, meta }: { t: Teste; reg: Registro; d: Teste
       <Dialog.Title className="t-h2 mt-4">{t.pergunta}</Dialog.Title>
       <div className="mt-4 flex flex-wrap gap-2">
         <SeloClasse classe={t.classe_evidencia} nome={reg.classes[t.classe_evidencia]} grande />
-        <SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
+        <Sinal t={t} /><SeloEstado estado={cat} texto={proc ? 'em processamento' : (ESTADO_TXT[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '')} />
         {preliminar(t) && !proc && <span className="inline-flex items-center h-7 px-2.5 rounded-full text-xs font-medium border border-warn/50 text-warn" style={{ background: 'var(--warn-soft)' }}>preliminar · em reprocessamento</span>}
         {[t.natureza, t.afirmacao, t.independencia ? `independência: ${t.independencia}` : '', t.modelo_nulo && t.modelo_nulo !== '—' ? `nulo ${t.modelo_nulo}` : ''].filter(Boolean).map((x) => <span key={x} className="inline-flex items-center h-7 px-2.5 rounded-full text-xs border border-border text-muted" title={x.startsWith('independência') ? reg.independencia[t.independencia] : x.startsWith('nulo') ? reg.modelos_nulos[t.modelo_nulo] : undefined}>{x}</span>)}
       </div>

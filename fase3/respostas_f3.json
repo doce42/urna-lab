@@ -166,7 +166,7 @@
     {
      "id": "Q7",
      "pergunta": "Os testes conseguem detectar mecanismos plausíveis de alteração, e em quais condições falham?",
-     "resposta": "Detectam alguns, em condições limitadas: nos cenários simulados, trocas dispersas de ~123 mil votos e concentradas de ~62 mil em locais ou municípios de até ~5 mil seções foram detectadas no sentido certo; trocas de ~25 mil e trocas no município inteiro das 5 maiores cidades não foram detectadas com confiabilidade.",
+     "resposta": "Detectam alguns, em condições limitadas: nos cenários simulados, trocas dispersas de ~123 mil votos e concentradas de ~62 mil em locais ou municípios de até ~5 mil seções foram detectadas no sentido certo; trocas de ~25 mil não foram detectadas; no município inteiro das 5 maiores cidades, a bateria original não detecta, mas o teste T44 (histórico de 2022 e perfil do 1º turno) detecta a partir de 2% dos válidos (31 mil a 139 mil votos).",
      "classificacao": "Parcialmente demonstrado",
      "evidencias": [
       "fase3/rev_i1_poder.py",
@@ -174,7 +174,7 @@
       "fase3/resultados/rev_a2_2026.json",
       "fase3/resultados/rev_a2_2022.json"
      ],
-     "numeros": "2026, 30 réplicas, limiar calibrado, falso alarme 0/30: dispersa 10% (~123 mil) 30/30; locais e municípios até ~5 mil seções a 5% (~62 mil) 30/30; região a 5% 26/30 e 23/30; 2% (~25 mil) 0 a 1/30; 5 maiores cidades a 10% (155 mil a 696 mil votos) 10 a 13/30 (E02 completo), Brasília e Fortaleza 0/12.",
+     "numeros": "2026, 30 réplicas, limiar calibrado, falso alarme 0/30: dispersa 10% (~123 mil) 30/30; locais e municípios até ~5 mil seções a 5% (~62 mil) 30/30; região a 5% 26/30 e 23/30; 2% (~25 mil) 0 a 1/30; 5 maiores cidades a 10% (155 mil a 696 mil votos) 10 a 13/30 (E02 completo), Brasília e Fortaleza 0/12. T44: troca de 2% dos válidos no município inteiro detectável nas 5 cidades (4,0 a 5,2 desvios; falso alarme 3/200).",
      "demonstra": "O alcance dos testes nos cenários simulados.",
      "nao_demonstra": "Detecção fora dos cenários simulados; mecanismos que preservam medianas, mexem no comparecimento ou atuam antes do boletim; votos simulados não são votos encontrados.",
      "robustez": "Validação em 2022 com o mesmo padrão; direção conferida.",
@@ -187,7 +187,7 @@
       "2026": "Ver números."
      },
      "reabertura": "",
-     "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado."
+     "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). Inverter 2026 exigiria trocar ~2,22 mi votos de lado."
     }
    ]
   },
@@ -570,14 +570,16 @@
     {
      "id": "Q25",
      "pergunta": "O padrão territorial de crescimento apresenta desvios persistentes após controles?",
-     "resposta": "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado.",
+     "resposta": "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44); as outras 4 maiores cidades estão dentro do esperado.",
      "classificacao": "Parcialmente demonstrado",
      "evidencias": [
       "fase2/resultados/P17.json",
       "fase3/resultados/rev_i3.json",
       "fase3/resultados/p19.json",
       "fase3/inv_r4_zona251.py",
-      "fase3/resultados/r4_zona251.json"
+      "fase3/resultados/r4_zona251.json",
+      "fase3/teste_grandes_cidades.py",
+      "fase3/resultados/teste_grandes_cidades.json"
      ],
      "numeros": "Zona 251: desvio de 0,58 z cai para 0,42 (IC 95% 0,23 a 0,62; 26% explicado) com escolaridade, idade, sexo e estado civil; sensibilidade 0,37 (36%). Zona 259: explicado em parte. Moran's I 0,16 a 0,20. Locais: 61 (2026) e 84 (2022) contra o entorno.",
      "demonstra": "Que há desvios territoriais persistentes, inclusive na zona 251 depois do perfil.",
@@ -589,7 +591,7 @@
      "validacao": "Executado (R4, I3, P17, P19).",
      "por_ano": {},
      "reabertura": "",
-     "em_votos": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos."
+     "em_votos": "Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos."
     },
     {
      "id": "Q26",
@@ -652,7 +654,7 @@
     "fase3/resultados/rev_a2_2026.json"
    ],
    "limitacao": "Ver P18.",
-   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -902,7 +904,7 @@
     "fase3/resultados/r4_zona251.json"
    ],
    "limitacao": "Covariáveis de campanha, renda, migração; dados externos.",
-   "em_votos": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
+   "em_votos": "Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -996,7 +998,7 @@
     "fase3/resultados/rev_a2_2022.json"
    ],
    "limitacao": "Mecanismos não simulados (preservar medianas, mexer no comparecimento, anteriores ao BU) e outras coberturas não testados.",
-   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1048,7 +1050,7 @@
     "fase3/resultados/rev_i3.json"
    ],
    "limitacao": "Ver P14.",
-   "em_votos": "Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
+   "em_votos": "Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1293,7 +1295,7 @@
     "fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md"
    ],
    "limitacao": "Modelos de chegada e de cauda baixa.",
-   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%); trocas no município inteiro das 5 maiores cidades até ~696 mil votos (15,7% da margem; ~31% do que seria preciso para inverter o resultado). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -1425,6 +1427,7 @@
   }
  ],
  "achados_sem_causa": [
+  "Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as zonas da cidade (T44); sem 2º turno estadual na Bahia.",
   "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
   "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
   "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).",

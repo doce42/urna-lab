@@ -53,6 +53,7 @@ I = {
 "INC": "Define o menor efeito detectável (MDE) de cada teste; não é voto.",
 "T40": "Margem final de 4,43 mi (2026, 2º turno) e 2,14 mi (2022). As inversões acontecem com menos de 10% dos votos apurados; a curva não altera o total.",
 "T41": "2026, 2º turno: 106 seções com 14.860 válidos; o esperado para Flávio nelas vai de ~44 votos (modelo de local do E3) a ~3.100 (modelo da revisão I2), conforme o modelo: no máximo 0,07% da margem de 4,43 mi. 2022, 2º turno: 141 seções, 16.418 válidos, ~66 a ~3.000 votos esperados.",
+"T44": "Salvador: ~30 mil votos de Lula acima do previsto (0,7% da margem de 4,43 mi). As outras 4 grandes cidades: Lula abaixo do previsto (−3 mil a −27 mil).",
 "T43": "0 votos de diferença em 119,3 mi (2026) e em cerca de 118 mi por turno (2022) nas seções comuns; os 334 mil votos de seções só da base em 2022 não foram comparados.",
 "T42": "Não se traduz em votos: mede dependência espacial dos resíduos de virada.",
 "T36": "1º turno: 186 urnas com contas que não fecham, das quais só 9 têm log ≠ comparecimento, somando 59 votos (maior diferença 36). 2º turno: 75 urnas, 7 com diferença, somando 358 votos (maior 304). Os demais casos diferem em 1 confirmação sem voto computado. Total no máximo 417 votos em 128 mi.",

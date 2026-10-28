@@ -13,6 +13,15 @@ Resultados novos, com o que significam em votos. A baseline V1.0 abaixo permanec
 - **Verificação de 20 seções (T39):** nenhuma divergência objetiva nova nas 19 com arquivos de urna; vale só para a amostra. Não houve confronto independente (sem material externo disponível).
 - **Fase 2 completa (V1.1):** o E02 original superestimava o agrupamento (766 e 683 locais viram 102 e 55 após corrigir a correlação dentro do local); a regra do T13 só enxerga troca a favor de Lula (10% dos válidos em 1% das urnas: 100% contra 0% no sentido contrário); a diferença de eleitorado do exterior (−495 e −525) está explicada (423 de seções não instaladas mais 72 e 30 de boletins só nos arquivos das urnas); em 200 seções e 200 certificados sorteados tudo concorda, mas a âncora de certificados e fontes externas continuam sem verificação. A assimetria de cauda do T02 é estatisticamente real, sem causa, e em 2022 concentrada na capital de São Paulo.
 
+## A pergunta e a resposta (28/10/2026)
+**A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?** Não encontramos.
+- **Escala:** inverter o resultado exigiria trocar ~2,2 milhões de votos de lado.
+- **Mecanismos examináveis:** os que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores que os encontrados. Exemplos: alteração depois da apuração, troca na totalização, troca concentrada em urnas, locais, municípios ou numa grande cidade, enchimento e apagamento de votos.
+- **Anomalias reais:** as encontradas somam dezenas de milhares de votos, sem causa demonstrada. A maior é Salvador, com ~30 mil.
+- **O que resta sem exame:** dois mecanismos que nenhum dado público examina, que são um deslocamento pequeno e uniforme em quase todas as urnas e uma alteração da urna antes de gerar os registros. Só boletins impressos coletados por fiscais ou uma auditoria independente da urna os examinam.
+
+Hipótese por hipótese, com o sinal de cada teste, em [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md).
+
 ## Fase 3 em revisão (28/10/2026)
 > **Estado:** a F3 foi encerrada e congelada como V1.2 (rodada 4, tag `v1.2`) **antes** de uma auditoria científica. A auditoria ([`fase3/AUDITORIA_F3.md`](fase3/AUDITORIA_F3.md)) encontrou afirmações acima da evidência e falhas de registro, e a fase voltou a **em revisão**. O texto congelado está em `rodadas/rodada-4/CONCLUSAO.md`. Abaixo, primeiro o que mudou na revisão, depois o texto da V1.2 com as frases corrigidas marcadas. Não há conclusão definitiva da F3.
 
