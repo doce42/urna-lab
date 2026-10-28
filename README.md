@@ -2,13 +2,14 @@
 
 Estudo independente, imparcial e reproduzível da apuração presidencial brasileira de **2026** (1º e 2º turno), com **2022** como referência. Usa **somente dados oficiais do TSE** (dados abertos e arquivos gravados por cada urna).
 
-> **Status: análise concluída em 28/10/2026** (conclusão em [`CONCLUSAO.md`](CONCLUSAO.md); site: https://urna-lab.web.app). Parte dos achados é exploratória e está marcada como tal; contribuições e contestações seguem abertas. A pergunta do estudo não é "houve fraude?", e sim: *quais padrões, anomalias e divergências existem nos dados, quais explicações científicas têm e quais hipóteses resistem a tentativas sérias de refutação.*
+> **Status: rodada 1 (levantamento inicial) concluída em 28/10/2026**, com conclusão em [`CONCLUSAO.md`](CONCLUSAO.md) e site em https://urna-lab.web.app. Próxima fase: double check da metodologia, depois rodadas de perguntas que põem à prova cada teste ([`RODADAS.md`](RODADAS.md)). Parte dos achados é exploratória e está marcada como tal; contribuições e contestações seguem abertas. A pergunta do estudo não é "houve fraude?", e sim: *quais padrões, anomalias e divergências existem nos dados, quais explicações científicas têm e quais hipóteses resistem a tentativas sérias de refutação.*
 
 ## O que tem aqui
 
 | Arquivo | Para quê |
 |---|---|
 | [`CONCLUSAO.md`](CONCLUSAO.md) | **A conclusão** em três níveis: o que foi provado, o que a estatística mostra (com poder medido) e o que os dados públicos não alcançam |
+| [`RODADAS.md`](RODADAS.md) | **Linha do tempo**: fases do estudo, rodadas congeladas para comparar resultados e como cada teste é posto à prova |
 | [`DIRETRIZ.md`](DIRETRIZ.md) | Princípios do estudo, classes de evidência A–G, ficha de resultado |
 | [`PROTOCOLO.md`](PROTOCOLO.md) | Perguntas, modelos nulos, critérios fixados **antes** de rodar, emendas datadas |
 | [`METODOLOGIA.md`](METODOLOGIA.md) | A matemática de cada teste |

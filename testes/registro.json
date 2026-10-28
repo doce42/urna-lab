@@ -33,7 +33,18 @@
     "Total das duas tabelas oficiais igual voto a voto nos dois turnos.",
     "Incidente: o arquivo de São Paulo do 1º turno chegou cortado (download interrompido) e os totais ficaram 12% abaixo; baixado de novo e conferido pelo hash oficial.",
     "Roraima: o link do portal apontava para o arquivo .sha512 no lugar do zip; usado o endereço direto."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "iguais voto a voto"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T02",
@@ -58,7 +69,18 @@
     "1ª rodada (diferença de percentual) apontou 69 seções 'pró-Flávio': eram seções com 100% de um candidato nos dois turnos, que não têm como subir. Trocado para a escala logit.",
     "Resultado atual: 46 seções além de 5 desvios (33 pró-Lula, 13 pró-Flávio). Com o nulo realista (t de Student) esperaríamos ~9 e ~8: há excesso pró-Lula, também em 2022 (90 contra ~36). Classe B, exploratório.",
     "Confirmação em dados independentes (logs das urnas, 2º turno): as seções extremas não diferem das demais em biometria, tempo de voto ou urna substituída."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "B",
+     "natureza": "confirmatório",
+     "resultado_atual": "46 de 499 mil além de 5 desvios (33 pró-Lula, 13 pró-Flávio). Nulo realista (t de Student, 24 gl): esperado ~9 e ~8. Excesso na cauda pró-Lula também em 2022 (90 x 36 esperado). Anomalia estatística exploratória: confirmar nos logs."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T03",
@@ -81,7 +103,18 @@
    "resultado_atual": "r = +0,0043 [+0,0015; +0,0072], n = 477.108, MDE 0,005: diferente de zero, mas desprezível; 2022: −0,028 [−0,031; −0,025]",
    "anotacoes": [
     "Correlação de +0,004 com intervalo de 95% de [+0,0015; +0,0072] e menor efeito detectável de 0,005: o efeito existe no papel, mas é desprezível."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "r = +0,0043 [+0,0015; +0,0072], n = 477.108, MDE 0,005: diferente de zero, mas desprezível; 2022: −0,028 [−0,031; −0,025]"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T04",
@@ -104,7 +137,18 @@
    "resultado_atual": "diferença −0,029 z [−0,060; −0,0004], MDE 0,055: limítrofe e desprezível na prática; 2022: −0,008 [−0,028; +0,013]",
    "anotacoes": [
     "Diferença limítrofe (IC [−0,060; −0,0004]) e abaixo do menor efeito detectável (0,055): sem conclusão prática. Só 4.432 urnas trocadas."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "diferença −0,029 z [−0,060; −0,0004], MDE 0,055: limítrofe e desprezível na prática; 2022: −0,008 [−0,028; +0,013]"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T05",
@@ -127,7 +171,18 @@
    "resultado_atual": "p de 0,05 a 0,84",
    "anotacoes": [
     "1ª rodada comparou com o uniforme puro e deu p = 0 em tudo: era a inclinação natural da distribuição (seções pequenas são mais comuns). Corrigido com o esperado local; 1 de 4 testes ficou em p = 0,05, esperado ao acaso."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "p de 0,05 a 0,84"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T07",
@@ -150,7 +205,18 @@
    "resultado_atual": "0 seções > 100%; canto igual a 2022",
    "anotacoes": [
     "Nenhuma seção acima de 100% de comparecimento; o canto de comparecimento e voto altos tem a mesma forma nos dois anos."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "0 seções > 100%; canto igual a 2022"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T08",
@@ -173,7 +239,18 @@
    "resultado_atual": "0 após correção do fuso",
    "anotacoes": [
     "Boletins 'emitidos às 16h' eram erro meu de fuso: urnas que abriram atrasadas recebiam o fuso errado. O fuso passou a vir do município (urnas que abriram nos primeiros 15 minutos)."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "0 após correção do fuso"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T09",
@@ -196,7 +273,18 @@
    "resultado_atual": "prorrogação de 6.748 seções; virada +7,45 x +7,56 pp",
    "anotacoes": [
     "O buraco entre 17h10 e 19h03 no 2º turno é a prorrogação: 6.748 seções com fila ficaram abertas até ~19h e votaram como as vizinhas (+7,45 contra +7,56 pp)."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "prorrogação de 6.748 seções; virada +7,45 x +7,56 pp"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T10",
@@ -219,7 +307,18 @@
    "resultado_atual": "desvio máx 0,08 pp (município) e 0,25–0,32 pp (estado); 2022 igual",
    "anotacoes": [
     "Desvio máximo de 0,08 pp (previsão pelo município) e 0,25 a 0,32 pp (pela UF, mais independente). A previsão pelo município usa dados do próprio 2º turno de outras seções: é a menos independente."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "desvio máx 0,08 pp (município) e 0,25–0,32 pp (estado); 2022 igual"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T11",
@@ -239,7 +338,18 @@
    "independencia": "interna",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "23 x 22 ± 1 (2026); 38 x 34 ± 2 (2022)"
+   "resultado_atual": "23 x 22 ± 1 (2026); 38 x 34 ± 2 (2022)",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "23 x 22 ± 1 (2026); 38 x 34 ± 2 (2022)"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T12",
@@ -263,7 +373,18 @@
    "anotacoes": [
     "O campo 'sem biometria' do Boletim de Urna na Web é a habilitação biográfica do bu.dat (conferido em 100% do Acre).",
     "Sem controle, seções com mais habilitação biográfica viraram um pouco menos para Lula (t = −14,7); com o perfil do eleitorado o efeito some (t = +0,3): eram seções com mais idosos."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "t de −14,7 para +0,3 com controle de idade"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T13",
@@ -287,7 +408,18 @@
    "anotacoes": [
     "O teste estadual acusava Goiás nos dados reais: Ronaldo Caiado teve 12,3% lá no 1º turno (voto órfão). Entrou no modelo e o falso alarme sumiu.",
     "Limite estrutural: troca uniforme no país inteiro não deixa diferença entre urnas e nenhum teste estatístico a vê."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "pega concentrada, estadual >= 1–2%, enchimento; não pega troca uniforme nacional"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T13b",
@@ -307,7 +439,18 @@
    "independencia": "—",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui)."
+   "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui).",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui)."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T14",
@@ -332,7 +475,18 @@
     "No 2º turno o log.jez de cada urna traz o log do 1º turno arquivado dentro: as contagens passaram a usar só o dia da eleição (RJ dava 19,9 mi antes da correção).",
     "Urna reiniciada ou trocada guarda o log anterior dentro do arquivo: leitura recursiva.",
     "Nulo por suspensão (eleitor sai sem terminar) é contado à parte das confirmações."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T15",
@@ -352,7 +506,18 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T16",
@@ -377,7 +542,18 @@
     "Parâmetros do Ed521 (urnas UE2020/UE2022) inferidos dos arquivos, sem a especificação oficial; só uma combinação valida. Validado por controles negativos (T16c).",
     "Modelos antigos: bloco da urna em minúsculas (ueao) e certificado com bytes de preenchimento: 4.043 urnas apareciam 'sem assinatura' e 547 com erro de leitura antes da correção.",
     "Limite: a cadeia de certificados até a raiz do TSE não foi verificada."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T16c",
@@ -400,7 +576,18 @@
    "resultado_atual": "300/300 legítimas válidas; 0 em todos os 5 controles negativos",
    "anotacoes": [
     "300 urnas reais: todas as assinaturas legítimas válidas e 0% válidas em cada um dos 5 controles (1 bit da assinatura, 1 bit do hash, chave de outra urna, mensagem aleatória, assinatura de outro arquivo)."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "300/300 legítimas válidas; 0 em todos os 5 controles negativos"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T17",
@@ -420,7 +607,18 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T17b",
@@ -443,7 +641,18 @@
    "resultado_atual": "bu.dat = RDV = publicado em todas as urnas eletrônicas nos dois turnos de 2026 (1º: 499.176; 2º: 499.178), depois da correção do leitor (lista de eleições). Seções do exterior apuradas pelo Sistema de Apuração conferem com o publicado.",
    "anotacoes": [
     "bu.dat decodificado pela estrutura e conferido contra o RDV e o publicado. No exterior o bu.dat não tem o campo de habilitações e 29 seções foram apuradas pelo Sistema de Apuração (RDV vazio): o leitor foi ajustado."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "bu.dat = RDV = publicado em todas as urnas eletrônicas nos dois turnos de 2026 (1º: 499.176; 2º: 499.178), depois da correção do leitor (lista de eleições). Seções do exterior apuradas pelo Sistema de Apuração conferem com o publicado."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T19",
@@ -466,7 +675,18 @@
    "resultado_atual": "mesmo perfil",
    "anotacoes": [
     "Mesma bateria, mesmo código, 2022 e 2026. O resultado de 2022 bate exatamente com o oficial (Lula 60.345.999 × Bolsonaro 58.206.354)."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "mesmo perfil"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T20",
@@ -486,7 +706,18 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno: resíduo médio da virada por modelo de urna entre −0,0005 e +0,003 logit, sem diferença prática (Kruskal-Wallis p = 0,014 com 499 mil urnas: efeito desprezível, a UE2013 tem o maior, +0,003)."
+   "resultado_atual": "2º turno: resíduo médio da virada por modelo de urna entre −0,0005 e +0,003 logit, sem diferença prática (Kruskal-Wallis p = 0,014 com 499 mil urnas: efeito desprezível, a UE2013 tem o maior, +0,003).",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno: resíduo médio da virada por modelo de urna entre −0,0005 e +0,003 logit, sem diferença prática (Kruskal-Wallis p = 0,014 com 499 mil urnas: efeito desprezível, a UE2013 tem o maior, +0,003)."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T21",
@@ -509,7 +740,18 @@
    "resultado_atual": "|z| <= 1,6 nos dois anos",
    "anotacoes": [
     "Nulo por reamostragem (200 sorteios binomiais), como em Rozenas (2017), para não confundir com percentual redondo natural de seção pequena."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "|z| <= 1,6 nos dois anos"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T22",
@@ -532,7 +774,18 @@
    "resultado_atual": "±0,08 simétrico; 2022 ±0,10",
    "anotacoes": [
     "Correlação pequena e simétrica entre os candidatos, e igual em 2022: comportamento normal, não enchimento."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "±0,08 simétrico; 2022 ±0,10"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T23",
@@ -555,7 +808,18 @@
    "resultado_atual": "reais marcadas 0,35% (2022: 0,36%) contra 1% esperado; lados equilibrados; poder 97% para troca de 20% e enchimento de 60%, 7% para troca de 5%",
    "anotacoes": [
     "Versão 1 era circular (classe 'limpa' = dados reais, então ~1% marcado por construção): preservada como inválida. Versão 2 simula o mundo sem fraude: 0,35% das seções reais marcadas (2022: 0,36%) com poder de 97% para troca de 20% e 7% para troca de 5%."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "reais marcadas 0,35% (2022: 0,36%) contra 1% esperado; lados equilibrados; poder 97% para troca de 20% e enchimento de 60%, 7% para troca de 5%"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T24",
@@ -578,7 +842,18 @@
    "resultado_atual": "registradas (ex.: MS 22)",
    "anotacoes": [
     "Urnas substituídas deixam votos de duas urnas no log; 1.417 no 2º turno."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "registradas (ex.: MS 22)"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T25",
@@ -598,7 +873,18 @@
    "independencia": "interna",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "canto vazio; curtose 3,7 x 4,1 (2022)"
+   "resultado_atual": "canto vazio; curtose 3,7 x 4,1 (2022)",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "canto vazio; curtose 3,7 x 4,1 (2022)"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T26",
@@ -621,7 +907,18 @@
    "resultado_atual": "rejeita nos dois anos e candidatos: método inadequado; excluído da conclusão",
    "anotacoes": [
     "Acusa nos dois anos e nos dois candidatos (contagens pequenas): método inadequado para este dado. Mantido no registro, excluído da conclusão."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido_excluido_da_conclusao",
+     "classe_evidencia": "B",
+     "natureza": "confirmatório",
+     "resultado_atual": "rejeita nos dois anos e candidatos: método inadequado; excluído da conclusão"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T27",
@@ -641,7 +938,18 @@
    "independencia": "interna",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "p 0,34–0,67"
+   "resultado_atual": "p 0,34–0,67",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "p 0,34–0,67"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T28",
@@ -664,7 +972,18 @@
    "resultado_atual": "2º turno 2026: 12,71% de habilitação sem biometria nos últimos 30 min contra 12,68% no resto do dia; 0 urnas com rajada após Benjamini-Hochberg (499.177). 1º turno 2026: 12,15% contra 12,49%; 13 urnas acusadas (6 a 14 habilitações sem biometria cada, ≈ 140 votos no total), em 7 UFs, sem direção de voto (Lula na seção 51,5% em média contra 53,4% no município). Em 2022: 23 (1º) e 25 (2º turno) urnas acusadas. Anomalia estatística pequena e exploratória (classe B), no mesmo nível de 2022; poder medido no T13b.",
    "anotacoes": [
     "Nenhuma urna com rajada de habilitações sem biometria no fim do dia (12,71% nos últimos 30 minutos contra 12,68% no resto do dia). Explicações legítimas a descartar se aparecer: fila de idosos e falha de leitor."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "B",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno 2026: 12,71% de habilitação sem biometria nos últimos 30 min contra 12,68% no resto do dia; 0 urnas com rajada após Benjamini-Hochberg (499.177). 1º turno 2026: 12,15% contra 12,49%; 13 urnas acusadas (6 a 14 habilitações sem biometria cada, ≈ 140 votos no total), em 7 UFs, sem direção de voto (Lula na seção 51,5% em média contra 53,4% no município). Em 2022: 23 (1º) e 25 (2º turno) urnas acusadas. Anomalia estatística pequena e exploratória (classe B), no mesmo nível de 2022; poder medido no T13b."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T29",
@@ -687,7 +1006,18 @@
    "resultado_atual": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.676 votos abaixo de 5 s em 273.451 urnas (no 1º turno, 1.311 em 945 urnas; em 2022, 306.528 no 2º turno e 779 no 1º). A diferença entre turnos se repete em 2022 e tem causa estrutural: no 1º turno o eleitor vota em vários cargos entre a habilitação e o voto computado, no 2º só em Presidente (e governador onde houve). O menor intervalo entre votos fica negativo em alguma urna (ordem das linhas do log e ajuste de relógio durante o dia); por isso o teste usa o percentil 1 do intervalo, não o mínimo. Corrigido após a remoção das linhas duplicadas entre partes do log.",
    "anotacoes": [
     "Menor tempo entre habilitação e voto: 2 segundos; 1.120.679 votos abaixo de 5 segundos (o limiar de 5 s é de referência, não regra). Distribuição semelhante em todos os grupos."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.676 votos abaixo de 5 s em 273.451 urnas (no 1º turno, 1.311 em 945 urnas; em 2022, 306.528 no 2º turno e 779 no 1º). A diferença entre turnos se repete em 2022 e tem causa estrutural: no 1º turno o eleitor vota em vários cargos entre a habilitação e o voto computado, no 2º só em Presidente (e governador onde houve). O menor intervalo entre votos fica negativo em alguma urna (ordem das linhas do log e ajuste de relógio durante o dia); por isso o teste usa o percentil 1 do intervalo, não o mínimo. Corrigido após a remoção das linhas duplicadas entre partes do log."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T30",
@@ -711,7 +1041,18 @@
    "anotacoes": [
     "Erro meu em duas versões: o valor cru de 124 milhões de votos 'fora do dia' é o log do 1º turno arquivado dentro do log do 2º; e o corte fixo de 7h é errado porque a votação abre às 06h locais no Acre (fuso). O teste certo usa o horário local de abertura e de encerramento de cada urna, vindos do boletim (o subagente que adaptou o leitor a 2022 apontou o problema do corte de 7h).",
     "Resultado: as duas únicas urnas com voto antes da abertura registrada são casos de urna substituída antes do primeiro voto."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º e 2º turno de 2026: 0 votos depois do encerramento; 1 urna por turno com o primeiro voto 2 a 4 minutos antes da abertura registrada no boletim (RJ 60011/214/22 e SP 71374/172/98), as duas explicadas por urna substituída antes do primeiro voto: a urna que abriu e emitiu a zerésima não é a que registrou os votos."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T31",
@@ -734,7 +1075,18 @@
    "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado.",
    "anotacoes": [
     "Nenhum voto computado sem habilitação anterior no 2º turno."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T32",
@@ -758,7 +1110,18 @@
    "anotacoes": [
     "Soma das urnas igual ao total oficial em todos os itens de voto e de comparecimento (638/638).",
     "Eleitorado: diferença de 495 (1º turno) e 525 (2º), toda no exterior; 423 correspondem às 41 seções não instaladas; restam 72 e 102 sem explicação (a investigar)."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "638/638 votos iguais; eleitorado do exterior com diferença em parte explicada"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T33",
@@ -781,7 +1144,18 @@
    "resultado_atual": "Mesma versão do software de votação (10.23.0.0) em todas as urnas com log nos dois turnos (499.176 e 499.177). Verificações de assinatura do software sem sucesso: 146 em 128 urnas (1º turno) e 181 em 162 urnas (2º); as do dia da eleição são urnas que bloquearam, foram religadas e passaram; as demais em datas de preparação.",
    "anotacoes": [
     "Mesma versão de software nas 499.177 urnas. 8 urnas tiveram uma falha de verificação no dia: bloquearam ('Erro na validação de assinaturas'), foram desligadas, religadas e passaram nas verificações seguintes. Outras 154 só tiveram erro em datas de preparação."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "Mesma versão do software de votação (10.23.0.0) em todas as urnas com log nos dois turnos (499.176 e 499.177). Verificações de assinatura do software sem sucesso: 146 em 128 urnas (1º turno) e 181 em 162 urnas (2º); as do dia da eleição são urnas que bloquearam, foram religadas e passaram; as demais em datas de preparação."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T34",
@@ -805,7 +1179,18 @@
    "anotacoes": [
     "1º turno: a urna efetivada é igual à do Boletim de Urna em 499.206 de 499.206 seções; 31 seções por 'Sistema de apuração' (cédula) e 50 por recuperação de dados.",
     "43 certificados diferentes da urna declarada, a investigar."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno: urna efetivada = urna do boletim em 499.206/499.206 seções; origem do voto: 499.126 urna eletrônica, 50 por recuperação de dados (RED) e 31 por Sistema de Apuração; 3.060 seções com troca de urna declarada, 2.099 delas com as 2 urnas no log. 2º turno: 499.205/499.205 iguais; 499.162 urna eletrônica, 29 Sistema de Apuração, 14 RED em urna de seção e 2 RED em urna de contingência; 2.715 trocas declaradas, 1.416 com as 2 urnas no log. Certificado da urna diferente do declarado: 45 seções no 1º turno e 32 no 2º (inclui as de Sistema de Apuração, que não têm certificado de urna). As demais são tratadas no T36 (tipo c): 26 casos no 1º turno e 17 no 2º, todos com explicação operacional (troca de urna ou arquivo de log não publicado; 1 caso D1 em SP no 2º turno)."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T35",
@@ -828,7 +1213,18 @@
    "resultado_atual": "1º turno: 2.450 de 2.453 máquinas de carga com log do GEDAI publicado; versão 8.23 e fase OFICIAL; 3 sem log: limite dos dados públicos (o log não está entre os arquivos abertos; ver AUTOAUDITORIA §6), nada se infere.",
    "anotacoes": [
     "2.450 de 2.453 máquinas de carga têm log do GEDAI publicado; versão 8.23 e fase OFICIAL em todos. 3 sem log, a investigar."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "G",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno: 2.450 de 2.453 máquinas de carga com log do GEDAI publicado; versão 8.23 e fase OFICIAL; 3 sem log: limite dos dados públicos (o log não está entre os arquivos abertos; ver AUTOAUDITORIA §6), nada se infere."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C01",
@@ -848,7 +1244,18 @@
    "independencia": "interna",
    "natureza": "exploratório",
    "classe_evidencia": "A",
-   "resultado_atual": "comparecimento por região/porte/perfil"
+   "resultado_atual": "comparecimento por região/porte/perfil",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "comparecimento por região/porte/perfil"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C02",
@@ -868,7 +1275,18 @@
    "independencia": "criptográfica",
    "natureza": "exploratório",
    "classe_evidencia": "A",
-   "resultado_atual": "votos por minuto (logs)"
+   "resultado_atual": "votos por minuto (logs)",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "votos por minuto (logs)"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C03",
@@ -888,7 +1306,18 @@
    "independencia": "interna",
    "natureza": "exploratório",
    "classe_evidencia": "A",
-   "resultado_atual": "perfil x voto"
+   "resultado_atual": "perfil x voto",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "perfil x voto"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C06",
@@ -912,7 +1341,18 @@
    "anotacoes": [
     "1ª versão sem restrição dava frações acima de 100% e negativas; com restrição, o otimizador não convergia por falta de normalizar os pesos. Hoje reproduz o total observado com erro abaixo de 0,1%.",
     "Falácia ecológica: é média de grupos, nunca o voto de uma pessoa."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "conferência previsto x observado < 0,1%; abstencionistas do 1º turno → Lula 4:1 (2022: → Bolsonaro 1,7:1): achado a confirmar com logs"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C06b",
@@ -935,7 +1375,18 @@
    "resultado_atual": "2026: F→L entre 79 e 43,6 mi; L→F entre 123 e 39,5 mi (2022 parecido). Os dados não identificam a troca direta; a estimativa pontual (~106 mil, saldo pequeno) depende do pressuposto do C06",
    "anotacoes": [
     "Os números oficiais garantem pelo menos 79 trocas de Flávio para Lula e 123 no sentido contrário, e permitem até ~40 milhões em cada sentido: a troca direta não é identificável com dado público."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "G",
+     "natureza": "exploratório",
+     "resultado_atual": "2026: F→L entre 79 e 43,6 mi; L→F entre 123 e 39,5 mi (2022 parecido). Os dados não identificam a troca direta; a estimativa pontual (~106 mil, saldo pequeno) depende do pressuposto do C06"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C07",
@@ -955,7 +1406,18 @@
    "independencia": "interna",
    "natureza": "exploratório",
    "classe_evidencia": "A",
-   "resultado_atual": "Mudança de comparecimento associada ao perfil, dentro do município (idosos +3,2 e mulheres +3,3 pontos por 100% do grupo); associação, não causa."
+   "resultado_atual": "Mudança de comparecimento associada ao perfil, dentro do município (idosos +3,2 e mulheres +3,3 pontos por 100% do grupo); associação, não causa.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "Mudança de comparecimento associada ao perfil, dentro do município (idosos +3,2 e mulheres +3,3 pontos por 100% do grupo); associação, não causa."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "C08",
@@ -975,7 +1437,18 @@
    "independencia": "interna",
    "natureza": "exploratório",
    "classe_evidencia": "A",
-   "resultado_atual": "Virada por região, UF e porte do município (descritivo): Centro-Oeste +7,4, Sudeste +7,6, Nordeste +5,6, Norte +5,4, Sul +6,2 pp."
+   "resultado_atual": "Virada por região, UF e porte do município (descritivo): Centro-Oeste +7,4, Sudeste +7,6, Nordeste +5,6, Norte +5,4, Sul +6,2 pp.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "Virada por região, UF e porte do município (descritivo): Centro-Oeste +7,4, Sudeste +7,6, Nordeste +5,6, Norte +5,4, Sul +6,2 pp."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "E01",
@@ -995,7 +1468,18 @@
    "independencia": "interna",
    "natureza": "exploratório",
    "classe_evidencia": "A",
-   "resultado_atual": "33–36% da variância dos resíduos está entre locais de votação e só ~5–8% entre zona e município, igual em 2022: o agrupamento é local, como no comportamento normal."
+   "resultado_atual": "33–36% da variância dos resíduos está entre locais de votação e só ~5–8% entre zona e município, igual em 2022: o agrupamento é local, como no comportamento normal.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "33–36% da variância dos resíduos está entre locais de votação e só ~5–8% entre zona e município, igual em 2022: o agrupamento é local, como no comportamento normal."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "E02",
@@ -1018,7 +1502,18 @@
    "resultado_atual": "Modelo completo: 683 locais significativos em 2026 contra 766 em 2022; lados equilibrados (390 × 293 e 458 × 308).",
    "anotacoes": [
     "Com modelo simples: 2.618 locais de votação significativos em 2026 contra 946 em 2022. Com o modelo completo (cada candidato eliminado, perfil, porte): 683 contra 766. O excesso era o voto de Cury e Zema, não anomalia."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "Modelo completo: 683 locais significativos em 2026 contra 766 em 2022; lados equilibrados (390 × 293 e 458 × 308)."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "E03",
@@ -1041,7 +1536,18 @@
    "resultado_atual": "Casos extremos listados; todos exploratórios, ainda sem confirmação em dado independente.",
    "anotacoes": [
     "Casos extremos (Belo Monte-AL, Santo Antônio de Lisboa-PI, Crateús-CE, Santos-SP, Juiz de Fora-MG; Caldeirão Grande-BA nos dois anos): exploratórios, ainda sem confirmação em dado independente."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "B",
+     "natureza": "exploratório",
+     "resultado_atual": "Casos extremos listados; todos exploratórios, ainda sem confirmação em dado independente."
+    }
+   ],
+   "provas": []
   },
   {
    "id": "INC",
@@ -1064,7 +1570,18 @@
    "resultado_atual": "ver T02, T03, T04",
    "anotacoes": [
     "1ª versão com n errado (municípios no lugar de seções) e bootstrap desalinhado porque a base foi reordenada: percebido porque o IC não continha a estimativa. Corrigido."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "ver T02, T03, T04"
+    }
+   ],
+   "provas": []
   },
   {
    "id": "T36",
@@ -1086,7 +1603,18 @@
    "resultado_atual": "1º turno 2026: 186 casos em 499.206 urnas; 185 com explicação operacional (votos íntegros); 1 sem explicação (RJ 60011/8/61: linhas do log corrompidas pela própria urna; hash do arquivo, totais e assinatura conferem). 2º turno 2026: 75 casos em 499.205 urnas; 74 com explicação operacional; 1 inconsistência de publicação (log de 1 urna de SP assinado pela urna e não publicado); 0 sem explicação. Refeito após duas correções de leitura: linhas duplicadas entre partes do log e lista de eleições do bu.dat em estados com governador no 2º turno.",
    "anotacoes": [
     "76 casos de 499.205 urnas no 2º turno: 75 com explicação operacional, 1 log de São Paulo assinado pela urna e não publicado, 0 sem explicação."
-   ]
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "D",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 186 casos em 499.206 urnas; 185 com explicação operacional (votos íntegros); 1 sem explicação (RJ 60011/8/61: linhas do log corrompidas pela própria urna; hash do arquivo, totais e assinatura conferem). 2º turno 2026: 75 casos em 499.205 urnas; 74 com explicação operacional; 1 inconsistência de publicação (log de 1 urna de SP assinado pela urna e não publicado); 0 sem explicação. Refeito após duas correções de leitura: linhas duplicadas entre partes do log e lista de eleições do bu.dat em estados com governador no 2º turno."
+    }
+   ],
+   "provas": []
   }
  ],
  "classes": {

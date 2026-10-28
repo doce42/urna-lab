@@ -1,0 +1,208 @@
+{
+ "turno": 1,
+ "T34_secoes_ceft": 499207,
+ "T34_origem_voto": {
+  "Urna Eletrônica": 499126,
+  "BU gerado por RED em urna de seção": 50,
+  "Sistema de apuração": 31
+ },
+ "T34_esperada_diferente_efetivada": 3060,
+ "T34_tipos_divergencia": {
+  "(vazio)": 496164,
+  "C": 3043
+ },
+ "T34_ceft_x_bu_cobertura": {
+  "both": 499206,
+  "left_only": 1,
+  "right_only": 0
+ },
+ "T34_ceft_urna_igual_bu": [
+  499206,
+  499206
+ ],
+ "T34_urnas_processadas": 499207,
+ "T34_ceft_igual_certificado": 499162,
+ "T34_ceft_entre_urnas_do_log": 499163,
+ "T34_trocas_declaradas_com_2_urnas_no_log": [
+  2099,
+  3060
+ ],
+ "T34_exemplos_diferenca": [
+  {
+   "SG_UF": "AL",
+   "CD_MUNICIPIO": "27057",
+   "NR_ZONA": "22",
+   "NR_SECAO": "581",
+   "NR_URNA_ESPERADA": "2073355",
+   "NR_URNA_EFETIVADA": "2073355",
+   "cert_urna": "UEAO02072552",
+   "ids_urna_log": "02073355"
+  },
+  {
+   "SG_UF": "BA",
+   "CD_MUNICIPIO": "38857",
+   "NR_ZONA": "108",
+   "NR_SECAO": "148",
+   "NR_URNA_ESPERADA": "1768711",
+   "NR_URNA_EFETIVADA": "1768711",
+   "cert_urna": "ueao01672673",
+   "ids_urna_log": "01768711"
+  },
+  {
+   "SG_UF": "ES",
+   "CD_MUNICIPIO": "56472",
+   "NR_ZONA": "24",
+   "NR_SECAO": "100",
+   "NR_URNA_ESPERADA": "1840092",
+   "NR_URNA_EFETIVADA": "1840092",
+   "cert_urna": "ueao01771857",
+   "ids_urna_log": "01840092"
+  },
+  {
+   "SG_UF": "ES",
+   "CD_MUNICIPIO": "56995",
+   "NR_ZONA": "53",
+   "NR_SECAO": "28",
+   "NR_URNA_ESPERADA": "1677012",
+   "NR_URNA_EFETIVADA": "1677012",
+   "cert_urna": "ueao01656698",
+   "ids_urna_log": "01677012"
+  },
+  {
+   "SG_UF": "ES",
+   "CD_MUNICIPIO": "57053",
+   "NR_ZONA": "1",
+   "NR_SECAO": "46",
+   "NR_URNA_ESPERADA": "2036425",
+   "NR_URNA_EFETIVADA": "2036425",
+   "cert_urna": "UEAO02353044",
+   "ids_urna_log": "02036425"
+  },
+  {
+   "SG_UF": "ES",
+   "CD_MUNICIPIO": "57053",
+   "NR_ZONA": "1",
+   "NR_SECAO": "413",
+   "NR_URNA_ESPERADA": "2036420",
+   "NR_URNA_EFETIVADA": "2036420",
+   "cert_urna": "UEAO02036277",
+   "ids_urna_log": "02036420"
+  },
+  {
+   "SG_UF": "MG",
+   "CD_MUNICIPIO": "41238",
+   "NR_ZONA": "39",
+   "NR_SECAO": "168",
+   "NR_URNA_ESPERADA": "2409879",
+   "NR_URNA_EFETIVADA": "2254078",
+   "cert_urna": NaN,
+   "ids_urna_log": NaN
+  },
+  {
+   "SG_UF": "MG",
+   "CD_MUNICIPIO": "50075",
+   "NR_ZONA": "47",
+   "NR_SECAO": "41",
+   "NR_URNA_ESPERADA": "2422379",
+   "NR_URNA_EFETIVADA": "2458923",
+   "cert_urna": NaN,
+   "ids_urna_log": NaN
+  },
+  {
+   "SG_UF": "MS",
+   "CD_MUNICIPIO": "91570",
+   "NR_ZONA": "31",
+   "NR_SECAO": "7",
+   "NR_URNA_ESPERADA": "2150794",
+   "NR_URNA_EFETIVADA": "2150794",
+   "cert_urna": "UEAO02152596",
+   "ids_urna_log": "02150794"
+  },
+  {
+   "SG_UF": "PR",
+   "CD_MUNICIPIO": "75280",
+   "NR_ZONA": "133",
+   "NR_SECAO": "34",
+   "NR_URNA_ESPERADA": "2081583",
+   "NR_URNA_EFETIVADA": "2081583",
+   "cert_urna": "UEAO02077196",
+   "ids_urna_log": "02081583"
+  },
+  {
+   "SG_UF": "PR",
+   "CD_MUNICIPIO": "76236",
+   "NR_ZONA": "93",
+   "NR_SECAO": "83",
+   "NR_URNA_ESPERADA": "2089535",
+   "NR_URNA_EFETIVADA": "2060632",
+   "cert_urna": "UEAO02056331",
+   "ids_urna_log": "02089535"
+  },
+  {
+   "SG_UF": "RN",
+   "CD_MUNICIPIO": "18813",
+   "NR_ZONA": "9",
+   "NR_SECAO": "144",
+   "NR_URNA_ESPERADA": "2348402",
+   "NR_URNA_EFETIVADA": "2348402",
+   "cert_urna": "UEAO02052038",
+   "ids_urna_log": "02348402"
+  },
+  {
+   "SG_UF": "SE",
+   "CD_MUNICIPIO": "31054",
+   "NR_ZONA": "1",
+   "NR_SECAO": "346",
+   "NR_URNA_ESPERADA": "1751434",
+   "NR_URNA_EFETIVADA": "1751434",
+   "cert_urna": "ueao01791133",
+   "ids_urna_log": "01751434"
+  },
+  {
+   "SG_UF": "SE",
+   "CD_MUNICIPIO": "32417",
+   "NR_ZONA": "22",
+   "NR_SECAO": "133",
+   "NR_URNA_ESPERADA": "2044616",
+   "NR_URNA_EFETIVADA": "2044616",
+   "cert_urna": "UEAO02273651",
+   "ids_urna_log": "02044616"
+  },
+  {
+   "SG_UF": "SP",
+   "CD_MUNICIPIO": "71072",
+   "NR_ZONA": "418",
+   "NR_SECAO": "73",
+   "NR_URNA_ESPERADA": "2001951",
+   "NR_URNA_EFETIVADA": "2001951",
+   "cert_urna": "UEAO02276282",
+   "ids_urna_log": "02001951"
+  }
+ ],
+ "T35_maquinas_geracao_midia": 2453,
+ "T35_com_log_gedai_publicado": 2450,
+ "T35_sem_log": [
+  {
+   "NM_MAQUINA_GERACAO_MIDIA": "ZPR003STD01",
+   "NR_SRI_TPM_GERACAO_MIDIA": "53366517",
+   "NR_SRI_INSTAL_GERACAO_MIDIA": "023F5CC0"
+  },
+  {
+   "NM_MAQUINA_GERACAO_MIDIA": "ZPR018STD02",
+   "NR_SRI_TPM_GERACAO_MIDIA": "68C24F8D",
+   "NR_SRI_INSTAL_GERACAO_MIDIA": "E6989B3E"
+  },
+  {
+   "NM_MAQUINA_GERACAO_MIDIA": "ZRJ042STD92",
+   "NR_SRI_TPM_GERACAO_MIDIA": "223445AB",
+   "NR_SRI_INSTAL_GERACAO_MIDIA": "EE8B468A"
+  }
+ ],
+ "T35_versoes_gedai": {
+  "8.23.0.0 - Praia da Barra do Cahy": 4760
+ },
+ "T35_fases_gedai": {
+  "OFICIAL": 4760
+ },
+ "T35_logs_gedai_lidos": 4760
+}

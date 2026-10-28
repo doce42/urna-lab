@@ -1,0 +1,1634 @@
+{
+ "descricao": "Registro de todos os testes do estudo. Módulos e modelos nulos: PROTOCOLO.md. Matemática: METODOLOGIA.md.",
+ "modelos_nulos": {
+  "N1": "contagem como sorteio",
+  "N2": "persistência do eleitor",
+  "N3": "transferência de votos",
+  "N4": "perfil demográfico",
+  "N5": "ordem de chegada aleatória",
+  "N6": "referência 2022",
+  "N7": "integridade criptográfica"
+ },
+ "testes": [
+  {
+   "id": "T01",
+   "modulo": "A",
+   "pergunta": "O Boletim de Urna bate com a votação por seção, voto a voto?",
+   "metodo": "Soma por votável, por turno",
+   "modelo_nulo": "N7",
+   "script": "grafico/montar_dados.py",
+   "comando": "make dados",
+   "saida": "grafico/web/dados.json (para se diferente)",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "As duas tabelas oficiais (BU e votação por seção) somam o mesmo",
+   "pressupostos": "mesmo recorte (Presidente, por turno)",
+   "limitacoes": "coerência interna do TSE: não verifica a contagem em si",
+   "afirmacao": "determinística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "iguais voto a voto",
+   "anotacoes": [
+    "Total das duas tabelas oficiais igual voto a voto nos dois turnos.",
+    "Incidente: o arquivo de São Paulo do 1º turno chegou cortado (download interrompido) e os totais ficaram 12% abaixo; baixado de novo e conferido pelo hash oficial.",
+    "Roraima: o link do portal apontava para o arquivo .sha512 no lugar do zip; usado o endereço direto."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "iguais voto a voto"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T02",
+   "modulo": "D",
+   "pergunta": "Alguma seção virou diferente das vizinhas?",
+   "metodo": "Virada em logit, resíduo da mediana do município, z robusto (MAD); contagem acima de 5 nos dois sentidos",
+   "modelo_nulo": "N1+N2",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "analise/resultado_bateria_<ano>.json → T02",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "A virada de cada seção segue a das vizinhas (mesmo município) mais ruído",
+   "pressupostos": "eleitorado da seção estável entre turnos; logit corrige o teto",
+   "limitacoes": "não vê manipulação uniforme no município; dispersão real > binomial",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "B",
+   "resultado_atual": "46 de 499 mil além de 5 desvios (33 pró-Lula, 13 pró-Flávio). Nulo realista (t de Student, 24 gl): esperado ~9 e ~8. Excesso na cauda pró-Lula também em 2022 (90 x 36 esperado). Anomalia estatística exploratória: confirmar nos logs.",
+   "anotacoes": [
+    "1ª rodada (diferença de percentual) apontou 69 seções 'pró-Flávio': eram seções com 100% de um candidato nos dois turnos, que não têm como subir. Trocado para a escala logit.",
+    "Resultado atual: 46 seções além de 5 desvios (33 pró-Lula, 13 pró-Flávio). Com o nulo realista (t de Student) esperaríamos ~9 e ~8: há excesso pró-Lula, também em 2022 (90 contra ~36). Classe B, exploratório.",
+    "Confirmação em dados independentes (logs das urnas, 2º turno): as seções extremas não diferem das demais em biometria, tempo de voto ou urna substituída."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "B",
+     "natureza": "confirmatório",
+     "resultado_atual": "46 de 499 mil além de 5 desvios (33 pró-Lula, 13 pró-Flávio). Nulo realista (t de Student, 24 gl): esperado ~9 e ~8. Excesso na cauda pró-Lula também em 2022 (90 x 36 esperado). Anomalia estatística exploratória: confirmar nos logs."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T03",
+   "modulo": "D",
+   "pergunta": "A virada depende da hora de chegada ao TSE?",
+   "metodo": "Spearman entre resíduo da virada e ordem de chegada, dentro do município (>= 20 seções)",
+   "modelo_nulo": "N5",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T03",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "A virada não depende da ordem de chegada ao TSE (N5)",
+   "pressupostos": "ordem de chegada dentro do município é exógena ao voto",
+   "limitacoes": "só capta manipulação ligada ao tempo de transmissão",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "r = +0,0043 [+0,0015; +0,0072], n = 477.108, MDE 0,005: diferente de zero, mas desprezível; 2022: −0,028 [−0,031; −0,025]",
+   "anotacoes": [
+    "Correlação de +0,004 com intervalo de 95% de [+0,0015; +0,0072] e menor efeito detectável de 0,005: o efeito existe no papel, mas é desprezível."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "r = +0,0043 [+0,0015; +0,0072], n = 477.108, MDE 0,005: diferente de zero, mas desprezível; 2022: −0,028 [−0,031; −0,025]"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T04",
+   "modulo": "D",
+   "pergunta": "Urna trocada entre turnos votou diferente?",
+   "metodo": "Mann-Whitney no z da virada",
+   "modelo_nulo": "N2",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T04",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Urna trocada vota como as demais",
+   "pressupostos": "troca de urna aleatória em relação ao voto",
+   "limitacoes": "poucas urnas trocadas (4.432); poder limitado",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "diferença −0,029 z [−0,060; −0,0004], MDE 0,055: limítrofe e desprezível na prática; 2022: −0,008 [−0,028; +0,013]",
+   "anotacoes": [
+    "Diferença limítrofe (IC [−0,060; −0,0004]) e abaixo do menor efeito detectável (0,055): sem conclusão prática. Só 4.432 urnas trocadas."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "diferença −0,029 z [−0,060; −0,0004], MDE 0,055: limítrofe e desprezível na prática; 2022: −0,008 [−0,028; +0,013]"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T05",
+   "modulo": "D",
+   "pergunta": "Último dígito uniforme?",
+   "metodo": "Qui-quadrado contra o esperado pela inclinação local (ajuste exponencial por janela); contagens >= 100",
+   "modelo_nulo": "N1",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T05",
+   "situacao": "concluido",
+   "referencia": "Beber e Scacco 2012",
+   "hipotese_nula": "Último dígito uniforme dado a inclinação da distribuição",
+   "pressupostos": "contagens >= 100 com densidade suave",
+   "limitacoes": "pouca sensibilidade a fraude que não fabrica números; T05 2t Flávio p=0,05",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "p de 0,05 a 0,84",
+   "anotacoes": [
+    "1ª rodada comparou com o uniforme puro e deu p = 0 em tudo: era a inclinação natural da distribuição (seções pequenas são mais comuns). Corrigido com o esperado local; 1 de 4 testes ficou em p = 0,05, esperado ao acaso."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "p de 0,05 a 0,84"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T07",
+   "modulo": "D",
+   "pergunta": "Assinatura de enchimento de urna?",
+   "metodo": "Seções com comparecimento >= 95% e >= 90% dos válidos para um candidato; comparecimento > 100%",
+   "modelo_nulo": "N1",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T07",
+   "situacao": "concluido",
+   "referencia": "Klimek et al. 2012",
+   "hipotese_nula": "Não há massa no canto alto comparecimento + voto unânime",
+   "pressupostos": "Klimek: enchimento grosseiro produz essa massa",
+   "limitacoes": "não vê enchimento pequeno nem troca de votos",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "0 seções > 100%; canto igual a 2022",
+   "anotacoes": [
+    "Nenhuma seção acima de 100% de comparecimento; o canto de comparecimento e voto altos tem a mesma forma nos dois anos."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "0 seções > 100%; canto igual a 2022"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T08",
+   "modulo": "A",
+   "pergunta": "Boletim emitido antes do fim da votação?",
+   "metodo": "Horário de emissão com o fuso do município",
+   "modelo_nulo": "N7",
+   "script": "analise/testes.py",
+   "comando": "make teste T=T08",
+   "saida": "analise/resultado_testes.txt",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Nenhum BU antes do fim da votação",
+   "pressupostos": "fuso do município inferido pela abertura",
+   "limitacoes": "depende do relógio da urna",
+   "afirmacao": "determinística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "0 após correção do fuso",
+   "anotacoes": [
+    "Boletins 'emitidos às 16h' eram erro meu de fuso: urnas que abriram atrasadas recebiam o fuso errado. O fuso passou a vir do município (urnas que abriram nos primeiros 15 minutos)."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "0 após correção do fuso"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T09",
+   "modulo": "B",
+   "pergunta": "O buraco de 17h10–19h03 (2º turno) e a prorrogação",
+   "metodo": "Encerramento por urna; seções prorrogadas x vizinhas",
+   "modelo_nulo": "N2",
+   "script": "analise/investigar.py",
+   "comando": "make teste T=T09",
+   "saida": "saída na tela",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "O buraco 17h10–19h03 tem explicação operacional; prorrogadas votam como vizinhas",
+   "pressupostos": "prorrogação só nas seções com fila",
+   "limitacoes": "explicação operacional vem dos próprios dados de horário",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "prorrogação de 6.748 seções; virada +7,45 x +7,56 pp",
+   "anotacoes": [
+    "O buraco entre 17h10 e 19h03 no 2º turno é a prorrogação: 6.748 seções com fila ficaram abertas até ~19h e votaram como as vizinhas (+7,45 contra +7,56 pp)."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "prorrogação de 6.748 seções; virada +7,45 x +7,56 pp"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T10",
+   "modulo": "D",
+   "pergunta": "A curva da apuração teve movimento fora do natural?",
+   "metodo": "Curva real x prevista (1º turno da urna + virada do município sem a própria seção, ou do estado), máximo desvio após 5% apurado",
+   "modelo_nulo": "N2+N5",
+   "script": "analise/bateria.py, analise/curva.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T10; analise/curva_2turno_por_minuto.csv",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "A curva real coincide com a prevista pelo 1º turno de cada urna",
+   "pressupostos": "persistência do eleitor; virada do município sem a própria seção",
+   "limitacoes": "a previsão pelo município usa dados do 2º turno de outras seções; versão estadual mais independente",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "desvio máx 0,08 pp (município) e 0,25–0,32 pp (estado); 2022 igual",
+   "anotacoes": [
+    "Desvio máximo de 0,08 pp (previsão pelo município) e 0,25 a 0,32 pp (pela UF, mais independente). A previsão pelo município usa dados do próprio 2º turno de outras seções: é a menos independente."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "desvio máx 0,08 pp (município) e 0,25–0,32 pp (estado); 2022 igual"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T11",
+   "modulo": "D",
+   "pergunta": "Zigue-zagues demais na curva?",
+   "metodo": "Mudanças de direção minuto a minuto: real x 200 simulações (previsto + resíduo embaralhado)",
+   "modelo_nulo": "N2+N5",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T11",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Oscilações da curva = as de urnas votando o previsto + ruído",
+   "pressupostos": "ruído embaralhado representa a variação legítima",
+   "limitacoes": "simulação condicionada ao modelo N2",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "23 x 22 ± 1 (2026); 38 x 34 ± 2 (2022)",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "23 x 22 ± 1 (2026); 38 x 34 ± 2 (2022)"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T12",
+   "modulo": "B",
+   "pergunta": "Liberação sem biometria afeta a virada?",
+   "metodo": "Regressão dentro do município com perfil do eleitorado; erro-padrão agrupado por município",
+   "modelo_nulo": "N4",
+   "script": "analise/biometria.py",
+   "comando": "make teste T=T12",
+   "saida": "analise/resultado_biometria.json",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Habilitação biográfica não se associa à virada, dado o perfil",
+   "pressupostos": "perfil 2026 representa o eleitorado da seção",
+   "limitacoes": "campo do BU na Web = habilitação biográfica (confirmado no bu.dat)",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "t de −14,7 para +0,3 com controle de idade",
+   "anotacoes": [
+    "O campo 'sem biometria' do Boletim de Urna na Web é a habilitação biográfica do bu.dat (conferido em 100% do Acre).",
+    "Sem controle, seções com mais habilitação biográfica viraram um pouco menos para Lula (t = −14,7); com o perfil do eleitorado o efeito some (t = +0,3): eram seções com mais idosos."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "t de −14,7 para +0,3 com controle de idade"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T13",
+   "modulo": "D",
+   "pergunta": "Que fraude os testes conseguiriam ver (poder)?",
+   "metodo": "Fraude sintética injetada no 2º turno real (troca em urnas sorteadas, estado inteiro, uniforme; enchimento) e mesmos testes",
+   "modelo_nulo": "—",
+   "script": "analise/poder.py",
+   "comando": "make teste T=T13",
+   "saida": "analise/resultado_poder.json",
+   "situacao": "concluido",
+   "referencia": "Zhang, Alvarez e Levin 2019 (ideia)",
+   "hipotese_nula": "(medição de poder, não teste de hipótese)",
+   "pressupostos": "fraude sintética representa as fraudes plausíveis",
+   "limitacoes": "cenários escolhidos pelo analista; não cobre fraude de software uniforme",
+   "afirmacao": "estatística",
+   "independencia": "—",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "pega concentrada, estadual >= 1–2%, enchimento; não pega troca uniforme nacional",
+   "anotacoes": [
+    "O teste estadual acusava Goiás nos dados reais: Ronaldo Caiado teve 12,3% lá no 1º turno (voto órfão). Entrou no modelo e o falso alarme sumiu.",
+    "Limite estrutural: troca uniforme no país inteiro não deixa diferença entre urnas e nenhum teste estatístico a vê."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "pega concentrada, estadual >= 1–2%, enchimento; não pega troca uniforme nacional"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T13b",
+   "modulo": "D",
+   "pergunta": "Poder dos testes de log (eleitor fantasma sintético)",
+   "metodo": "Rajadas sintéticas de habilitação sem biometria com tempos reais",
+   "modelo_nulo": "—",
+   "script": "analise/poder_logs.py",
+   "comando": "python analise/poder_logs.py 2",
+   "saida": "analise/resultado_poder_logs_{1,2}t.json",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "O T28 (binomial por urna contra a taxa da própria urna no resto do dia, BH a 5%) não acusa nada quando não há fraude e acusa urnas alteradas quando há.",
+   "pressupostos": "Fraude sintética = converter fração dos votos dos últimos 30 min em 'sem biometria'; urnas alteradas sorteadas (semente fixa, 5 repetições por cenário) sobre as contagens reais de cada turno.",
+   "limitacoes": "Só mede fraude que deixa rastro 'sem biometria' no log. Um voto lançado com habilitação biométrica coerente no log não é visto por este teste. Vale para o T28 apenas, não para os demais testes de log.",
+   "afirmacao": "estatística",
+   "independencia": "—",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui).",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui)."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T14",
+   "modulo": "A",
+   "pergunta": "Votos no log = comparecimento? Confirmações + nulos por suspensão = total?",
+   "metodo": "Log (todas as partes arquivadas) x boletim",
+   "modelo_nulo": "N7",
+   "script": "analise/processar_brutos.py",
+   "comando": "make integridade",
+   "saida": "analise/brutos/<t>t/urnas_<UF>.parquet",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Votos no log = comparecimento; confirmações + nulos por suspensão = total",
+   "pressupostos": "log completo (inclui arquivados)",
+   "limitacoes": "log e BU saem do mesmo software",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
+   "anotacoes": [
+    "No 2º turno o log.jez de cada urna traz o log do 1º turno arquivado dentro: as contagens passaram a usar só o dia da eleição (RJ dava 19,9 mi antes da correção).",
+    "Urna reiniciada ou trocada guarda o log anterior dentro do arquivo: leitura recursiva.",
+    "Nulo por suspensão (eleitor sai sem terminar) é contado à parte das confirmações."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T15",
+   "modulo": "A",
+   "pergunta": "Boletim impresso = dado publicado?",
+   "metodo": "Texto do imgbu x BU na Web",
+   "modelo_nulo": "N7",
+   "script": "analise/processar_brutos.py",
+   "comando": "make integridade",
+   "saida": "→ img_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Boletim impresso = publicado",
+   "pressupostos": "",
+   "limitacoes": "imgbu é gerado pela mesma urna",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T16",
+   "modulo": "A",
+   "pergunta": "Assinatura digital válida e arquivos íntegros?",
+   "metodo": "Ed521 (UE2020/2022) e ECDSA P-521+SHA-512 (UE2013/2015); assinatura da lista e de cada arquivo; tamanho e SHA-512 x lista",
+   "modelo_nulo": "N7",
+   "script": "analise/processar_brutos.py, analise/ed521.py, analise/der.py",
+   "comando": "make integridade",
+   "saida": "→ assin_*, hash_ok_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Todo arquivo publicado é o que a urna assinou",
+   "pressupostos": "chave da urna confiável (cadeia até a AC não verificada)",
+   "limitacoes": "não audita o software que gerou o conteúdo",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
+   "anotacoes": [
+    "Parâmetros do Ed521 (urnas UE2020/UE2022) inferidos dos arquivos, sem a especificação oficial; só uma combinação valida. Validado por controles negativos (T16c).",
+    "Modelos antigos: bloco da urna em minúsculas (ueao) e certificado com bytes de preenchimento: 4.043 urnas apareciam 'sem assinatura' e 547 com erro de leitura antes da correção.",
+    "Limite: a cadeia de certificados até a raiz do TSE não foi verificada."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T16c",
+   "modulo": "A",
+   "pergunta": "A implementação Ed521 rejeita o que deve rejeitar?",
+   "metodo": "300 urnas reais: assinatura legítima; 1 bit da assinatura; 1 bit do hash; chave de outra urna; mensagem aleatória; assinatura de outro arquivo",
+   "modelo_nulo": "N7",
+   "script": "analise/controles/ed521_controles.py",
+   "comando": ".venv/bin/python analise/controles/ed521_controles.py 300",
+   "saida": "tela",
+   "situacao": "concluido",
+   "referencia": "revisão cega externa (27/10)",
+   "hipotese_nula": "a verificação aceita só assinaturas legítimas com a chave certa",
+   "pressupostos": "",
+   "limitacoes": "não substitui conferência com a especificação oficial nem vetores de teste oficiais",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "300/300 legítimas válidas; 0 em todos os 5 controles negativos",
+   "anotacoes": [
+    "300 urnas reais: todas as assinaturas legítimas válidas e 0% válidas em cada um dos 5 controles (1 bit da assinatura, 1 bit do hash, chave de outra urna, mensagem aleatória, assinatura de outro arquivo)."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "300/300 legítimas válidas; 0 em todos os 5 controles negativos"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T17",
+   "modulo": "A",
+   "pergunta": "Recontagem pelo RDV = boletim?",
+   "metodo": "Decodificação DER do RDV; Presidente",
+   "modelo_nulo": "N7",
+   "script": "analise/processar_brutos.py",
+   "comando": "make integridade",
+   "saida": "→ rdv_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Recontagem pelo RDV = BU",
+   "pressupostos": "decodificação DER validada",
+   "limitacoes": "RDV e BU saem do mesmo software",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T17b",
+   "modulo": "A",
+   "pergunta": "O bu.dat (somado na totalização) = RDV = publicado?",
+   "metodo": "Decodificação DER do bu.dat",
+   "modelo_nulo": "N7",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "bu.dat (somado na totalização) = RDV = publicado",
+   "pressupostos": "decodificação DER validada",
+   "limitacoes": "idem",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "bu.dat = RDV = publicado em todas as urnas eletrônicas nos dois turnos de 2026 (1º: 499.176; 2º: 499.178), depois da correção do leitor (lista de eleições). Seções do exterior apuradas pelo Sistema de Apuração conferem com o publicado.",
+   "anotacoes": [
+    "bu.dat decodificado pela estrutura e conferido contra o RDV e o publicado. No exterior o bu.dat não tem o campo de habilitações e 29 seções foram apuradas pelo Sistema de Apuração (RDV vazio): o leitor foi ajustado."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "bu.dat = RDV = publicado em todas as urnas eletrônicas nos dois turnos de 2026 (1º: 499.176; 2º: 499.178), depois da correção do leitor (lista de eleições). Seções do exterior apuradas pelo Sistema de Apuração conferem com o publicado."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T19",
+   "modulo": "F",
+   "pergunta": "A mesma bateria em 2022",
+   "metodo": "bateria.py com base_2022",
+   "modelo_nulo": "N6",
+   "script": "analise/bateria.py, analise/montar_base.py",
+   "comando": "make teste T=bateria ANO=2022",
+   "saida": "analise/resultado_bateria_2022.json",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "2026 tem o mesmo perfil de testes de 2022",
+   "pressupostos": "2022 como referência sem fraude conhecida",
+   "limitacoes": "2022 também é dado do mesmo sistema",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "mesmo perfil",
+   "anotacoes": [
+    "Mesma bateria, mesmo código, 2022 e 2026. O resultado de 2022 bate exatamente com o oficial (Lula 60.345.999 × Bolsonaro 58.206.354)."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "mesmo perfil"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T20",
+   "modulo": "B",
+   "pergunta": "Modelo de urna (lido do log) afeta a virada?",
+   "metodo": "Comparação dentro do município",
+   "modelo_nulo": "N2",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Modelo de urna não se associa à virada (dentro do município)",
+   "pressupostos": "",
+   "limitacoes": "modelos distribuídos de forma desigual pelo território",
+   "afirmacao": "estatística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "2º turno: resíduo médio da virada por modelo de urna entre −0,0005 e +0,003 logit, sem diferença prática (Kruskal-Wallis p = 0,014 com 499 mil urnas: efeito desprezível, a UE2013 tem o maior, +0,003).",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno: resíduo médio da virada por modelo de urna entre −0,0005 e +0,003 logit, sem diferença prática (Kruskal-Wallis p = 0,014 com 499 mil urnas: efeito desprezível, a UE2013 tem o maior, +0,003)."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T21",
+   "modulo": "D",
+   "pergunta": "Percentuais inteiros em excesso?",
+   "metodo": "Seções com % exato inteiro x 200 sorteios binomiais (mesmo n e p)",
+   "modelo_nulo": "N1",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T21",
+   "situacao": "concluido",
+   "referencia": "Kobak et al. 2016; Rozenas 2017",
+   "hipotese_nula": "Sem excesso de percentuais inteiros",
+   "pressupostos": "binomial com n e p da seção",
+   "limitacoes": "",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "|z| <= 1,6 nos dois anos",
+   "anotacoes": [
+    "Nulo por reamostragem (200 sorteios binomiais), como em Rozenas (2017), para não confundir com percentual redondo natural de seção pequena."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "|z| <= 1,6 nos dois anos"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T22",
+   "modulo": "D",
+   "pergunta": "Assinatura de fraude incremental?",
+   "metodo": "Spearman comparecimento x % do candidato, dentro do município",
+   "modelo_nulo": "N4",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T22",
+   "situacao": "concluido",
+   "referencia": "Klimek et al. 2012",
+   "hipotese_nula": "Sem correlação comparecimento x voto favorecendo um lado",
+   "pressupostos": "dentro do município",
+   "limitacoes": "correlação comportamental legítima existe",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "±0,08 simétrico; 2022 ±0,10",
+   "anotacoes": [
+    "Correlação pequena e simétrica entre os candidatos, e igual em 2022: comportamento normal, não enchimento."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "±0,08 simétrico; 2022 ±0,10"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T23",
+   "modulo": "D",
+   "pergunta": "Classificador com fraude sintética",
+   "metodo": "Classe limpa SIMULADA (1º turno da seção + virada do município + resíduo sorteado do país); fraude injetada (troca 5–20%, enchimento 30–60% das abstenções) em 10% das seções; HistGradientBoosting treinado em metade dos municípios; limiar a 1% de falso alarme; aplicado às seções reais da outra metade",
+   "modelo_nulo": "—",
+   "script": "analise/ml_sintetico.py",
+   "comando": ".venv/bin/python analise/ml_sintetico.py <ano>",
+   "saida": "analise/resultado_ml_<ano>.json",
+   "situacao": "concluido",
+   "referencia": "Zhang, Alvarez e Levin 2019",
+   "hipotese_nula": "seções reais não se parecem mais com fraude do que o mundo simulado sem fraude",
+   "pressupostos": "modelo gerador N2 com resíduos reamostrados",
+   "limitacoes": "o mundo simulado é mais disperso que o real (teste conservador); poder baixo para trocas de 5–10%; versão 1 (circular) inválida e preservada",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "reais marcadas 0,35% (2022: 0,36%) contra 1% esperado; lados equilibrados; poder 97% para troca de 20% e enchimento de 60%, 7% para troca de 5%",
+   "anotacoes": [
+    "Versão 1 era circular (classe 'limpa' = dados reais, então ~1% marcado por construção): preservada como inválida. Versão 2 simula o mundo sem fraude: 0,35% das seções reais marcadas (2022: 0,36%) com poder de 97% para troca de 20% e 7% para troca de 5%."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "reais marcadas 0,35% (2022: 0,36%) contra 1% esperado; lados equilibrados; poder 97% para troca de 20% e enchimento de 60%, 7% para troca de 5%"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T24",
+   "modulo": "A",
+   "pergunta": "Urnas substituídas no meio do dia",
+   "metodo": "Log com votos de 2 urnas; certificado entre as urnas do log",
+   "modelo_nulo": "N7",
+   "script": "analise/processar_brutos.py",
+   "comando": "make integridade",
+   "saida": "→ urnas_com_voto_no_log, cert_igual_log",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Urna substituída: votos nas duas urnas registrados",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "registradas (ex.: MS 22)",
+   "anotacoes": [
+    "Urnas substituídas deixam votos de duas urnas no log; 1.417 no 2º turno."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "registradas (ex.: MS 22)"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T25",
+   "modulo": "D",
+   "pergunta": "Impressão digital 2D e curtose",
+   "metodo": "Histograma comparecimento x % do vencedor; curtose do log da razão de votos",
+   "modelo_nulo": "N1",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T25",
+   "situacao": "concluido",
+   "referencia": "Klimek et al. 2012",
+   "hipotese_nula": "Distribuição sem massa de fraude extrema; momentos iguais a 2022",
+   "pressupostos": "",
+   "limitacoes": "polarização regional deforma a distribuição legitimamente",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "canto vazio; curtose 3,7 x 4,1 (2022)",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "canto vazio; curtose 3,7 x 4,1 (2022)"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T26",
+   "modulo": "D",
+   "pergunta": "2º dígito de Benford",
+   "metodo": "Teste 2BL (com as ressalvas da literatura)",
+   "modelo_nulo": "N1",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T26",
+   "situacao": "concluido_excluido_da_conclusao",
+   "referencia": "Mebane",
+   "hipotese_nula": "2º dígito segue Benford",
+   "pressupostos": "contagens grandes",
+   "limitacoes": "falha com contagens pequenas (acusa dado limpo)",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "B",
+   "resultado_atual": "rejeita nos dois anos e candidatos: método inadequado; excluído da conclusão",
+   "anotacoes": [
+    "Acusa nos dois anos e nos dois candidatos (contagens pequenas): método inadequado para este dado. Mantido no registro, excluído da conclusão."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido_excluido_da_conclusao",
+     "classe_evidencia": "B",
+     "natureza": "confirmatório",
+     "resultado_atual": "rejeita nos dois anos e candidatos: método inadequado; excluído da conclusão"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T27",
+   "modulo": "D",
+   "pergunta": "Dígitos de branco, nulo e comparecimento",
+   "metodo": "Último dígito corrigido pela inclinação",
+   "modelo_nulo": "N1",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ T27",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Último dígito do comparecimento uniforme",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "p 0,34–0,67",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "p 0,34–0,67"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T28",
+   "modulo": "D",
+   "pergunta": "Rajada de habilitações sem biometria no fim do dia (eleitor fantasma)?",
+   "metodo": "Últimos 30 min x resto do dia, por urna, x vizinhas",
+   "modelo_nulo": "N1+N4",
+   "script": "analise/seqlog.py",
+   "comando": "make integridade",
+   "saida": "→ seq_ult30_*, seq_resto_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Sem rajada de habilitações sem biometria no fim do dia",
+   "pressupostos": "taxa de habilitação sem biometria estável no dia",
+   "limitacoes": "fila e idosos no fim do dia podem elevar legitimamente",
+   "afirmacao": "estatística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "B",
+   "resultado_atual": "2º turno 2026: 12,71% de habilitação sem biometria nos últimos 30 min contra 12,68% no resto do dia; 0 urnas com rajada após Benjamini-Hochberg (499.177). 1º turno 2026: 12,15% contra 12,49%; 13 urnas acusadas (6 a 14 habilitações sem biometria cada, ≈ 140 votos no total), em 7 UFs, sem direção de voto (Lula na seção 51,5% em média contra 53,4% no município). Em 2022: 23 (1º) e 25 (2º turno) urnas acusadas. Anomalia estatística pequena e exploratória (classe B), no mesmo nível de 2022; poder medido no T13b.",
+   "anotacoes": [
+    "Nenhuma urna com rajada de habilitações sem biometria no fim do dia (12,71% nos últimos 30 minutos contra 12,68% no resto do dia). Explicações legítimas a descartar se aparecer: fila de idosos e falha de leitor."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "B",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno 2026: 12,71% de habilitação sem biometria nos últimos 30 min contra 12,68% no resto do dia; 0 urnas com rajada após Benjamini-Hochberg (499.177). 1º turno 2026: 12,15% contra 12,49%; 13 urnas acusadas (6 a 14 habilitações sem biometria cada, ≈ 140 votos no total), em 7 UFs, sem direção de voto (Lula na seção 51,5% em média contra 53,4% no município). Em 2022: 23 (1º) e 25 (2º turno) urnas acusadas. Anomalia estatística pequena e exploratória (classe B), no mesmo nível de 2022; poder medido no T13b."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T29",
+   "modulo": "D",
+   "pergunta": "Votos rápidos demais?",
+   "metodo": "Duração habilitação → voto; menor intervalo entre votos",
+   "modelo_nulo": "—",
+   "script": "analise/seqlog.py",
+   "comando": "make integridade",
+   "saida": "→ seq_dur_*, seq_intervalo_min",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Sem votos fisicamente rápidos demais",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.676 votos abaixo de 5 s em 273.451 urnas (no 1º turno, 1.311 em 945 urnas; em 2022, 306.528 no 2º turno e 779 no 1º). A diferença entre turnos se repete em 2022 e tem causa estrutural: no 1º turno o eleitor vota em vários cargos entre a habilitação e o voto computado, no 2º só em Presidente (e governador onde houve). O menor intervalo entre votos fica negativo em alguma urna (ordem das linhas do log e ajuste de relógio durante o dia); por isso o teste usa o percentil 1 do intervalo, não o mínimo. Corrigido após a remoção das linhas duplicadas entre partes do log.",
+   "anotacoes": [
+    "Menor tempo entre habilitação e voto: 2 segundos; 1.120.679 votos abaixo de 5 segundos (o limiar de 5 s é de referência, não regra). Distribuição semelhante em todos os grupos."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.676 votos abaixo de 5 s em 273.451 urnas (no 1º turno, 1.311 em 945 urnas; em 2022, 306.528 no 2º turno e 779 no 1º). A diferença entre turnos se repete em 2022 e tem causa estrutural: no 1º turno o eleitor vota em vários cargos entre a habilitação e o voto computado, no 2º só em Presidente (e governador onde houve). O menor intervalo entre votos fica negativo em alguma urna (ordem das linhas do log e ajuste de relógio durante o dia); por isso o teste usa o percentil 1 do intervalo, não o mínimo. Corrigido após a remoção das linhas duplicadas entre partes do log."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T30",
+   "modulo": "A",
+   "pergunta": "Há voto antes da abertura ou depois do encerramento da própria urna?",
+   "metodo": "Primeiro e último voto computado no log (hora local, só no dia da eleição) contra o horário local de abertura e de encerramento registrado no Boletim de Urna; tolerância de 60 s no encerramento",
+   "modelo_nulo": "N7",
+   "script": "analise/seqlog.py",
+   "comando": "make integridade",
+   "saida": "→ seq_votos_fora_dia",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Sem voto fora do dia/horário",
+   "pressupostos": "",
+   "limitacoes": "relógio da urna",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "1º e 2º turno de 2026: 0 votos depois do encerramento; 1 urna por turno com o primeiro voto 2 a 4 minutos antes da abertura registrada no boletim (RJ 60011/214/22 e SP 71374/172/98), as duas explicadas por urna substituída antes do primeiro voto: a urna que abriu e emitiu a zerésima não é a que registrou os votos.",
+   "anotacoes": [
+    "Erro meu em duas versões: o valor cru de 124 milhões de votos 'fora do dia' é o log do 1º turno arquivado dentro do log do 2º; e o corte fixo de 7h é errado porque a votação abre às 06h locais no Acre (fuso). O teste certo usa o horário local de abertura e de encerramento de cada urna, vindos do boletim (o subagente que adaptou o leitor a 2022 apontou o problema do corte de 7h).",
+    "Resultado: as duas únicas urnas com voto antes da abertura registrada são casos de urna substituída antes do primeiro voto."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º e 2º turno de 2026: 0 votos depois do encerramento; 1 urna por turno com o primeiro voto 2 a 4 minutos antes da abertura registrada no boletim (RJ 60011/214/22 e SP 71374/172/98), as duas explicadas por urna substituída antes do primeiro voto: a urna que abriu e emitiu a zerésima não é a que registrou os votos."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T31",
+   "modulo": "A",
+   "pergunta": "Voto computado sem habilitação?",
+   "metodo": "Sequência de eventos do log",
+   "modelo_nulo": "N7",
+   "script": "analise/seqlog.py",
+   "comando": "make integridade",
+   "saida": "→ seq_sem_habilitacao",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Todo voto tem habilitação antes",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado.",
+   "anotacoes": [
+    "Nenhum voto computado sem habilitação anterior no 2º turno."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T32",
+   "modulo": "A",
+   "pergunta": "Soma das urnas = total oficial divulgado?",
+   "metodo": "Arquivos oficiais do site de resultados (BR, UFs, ZZ) x soma dos boletins",
+   "modelo_nulo": "N7",
+   "script": "analise/totalizacao.py",
+   "comando": "make teste T=T32",
+   "saida": "analise/resultado_totalizacao.csv",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Soma das urnas = total divulgado",
+   "pressupostos": "",
+   "limitacoes": "coerência interna: as duas pontas são do TSE",
+   "afirmacao": "determinística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "638/638 votos iguais; eleitorado do exterior com diferença em parte explicada",
+   "anotacoes": [
+    "Soma das urnas igual ao total oficial em todos os itens de voto e de comparecimento (638/638).",
+    "Eleitorado: diferença de 495 (1º turno) e 525 (2º), toda no exterior; 423 correspondem às 41 seções não instaladas; restam 72 e 102 sem explicação (a investigar)."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "638/638 votos iguais; eleitorado do exterior com diferença em parte explicada"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T33",
+   "modulo": "A",
+   "pergunta": "Software oficial em todas as urnas?",
+   "metodo": "Versão da aplicação e verificações de assinatura do software no log",
+   "modelo_nulo": "N7",
+   "script": "analise/seqlog.py",
+   "comando": "make integridade",
+   "saida": "→ sw_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Mesma versão de software e verificações com sucesso",
+   "pressupostos": "",
+   "limitacoes": "o log é escrito pela própria urna",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "Mesma versão do software de votação (10.23.0.0) em todas as urnas com log nos dois turnos (499.176 e 499.177). Verificações de assinatura do software sem sucesso: 146 em 128 urnas (1º turno) e 181 em 162 urnas (2º); as do dia da eleição são urnas que bloquearam, foram religadas e passaram; as demais em datas de preparação.",
+   "anotacoes": [
+    "Mesma versão de software nas 499.177 urnas. 8 urnas tiveram uma falha de verificação no dia: bloquearam ('Erro na validação de assinaturas'), foram desligadas, religadas e passaram nas verificações seguintes. Outras 154 só tiveram erro em datas de preparação."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "Mesma versão do software de votação (10.23.0.0) em todas as urnas com log nos dois turnos (499.176 e 499.177). Verificações de assinatura do software sem sucesso: 146 em 128 urnas (1º turno) e 181 em 162 urnas (2º); as do dia da eleição são urnas que bloquearam, foram religadas e passaram; as demais em datas de preparação."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T34",
+   "modulo": "A",
+   "pergunta": "Urna usada = urna preparada para a seção?",
+   "metodo": "Correspondências esperadas x efetivadas x certificado e log",
+   "modelo_nulo": "N7",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Urna usada = urna preparada para a seção",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "determinística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "1º turno: urna efetivada = urna do boletim em 499.206/499.206 seções; origem do voto: 499.126 urna eletrônica, 50 por recuperação de dados (RED) e 31 por Sistema de Apuração; 3.060 seções com troca de urna declarada, 2.099 delas com as 2 urnas no log. 2º turno: 499.205/499.205 iguais; 499.162 urna eletrônica, 29 Sistema de Apuração, 14 RED em urna de seção e 2 RED em urna de contingência; 2.715 trocas declaradas, 1.416 com as 2 urnas no log. Certificado da urna diferente do declarado: 45 seções no 1º turno e 32 no 2º (inclui as de Sistema de Apuração, que não têm certificado de urna). As demais são tratadas no T36 (tipo c): 26 casos no 1º turno e 17 no 2º, todos com explicação operacional (troca de urna ou arquivo de log não publicado; 1 caso D1 em SP no 2º turno).",
+   "anotacoes": [
+    "1º turno: a urna efetivada é igual à do Boletim de Urna em 499.206 de 499.206 seções; 31 seções por 'Sistema de apuração' (cédula) e 50 por recuperação de dados.",
+    "43 certificados diferentes da urna declarada, a investigar."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno: urna efetivada = urna do boletim em 499.206/499.206 seções; origem do voto: 499.126 urna eletrônica, 50 por recuperação de dados (RED) e 31 por Sistema de Apuração; 3.060 seções com troca de urna declarada, 2.099 delas com as 2 urnas no log. 2º turno: 499.205/499.205 iguais; 499.162 urna eletrônica, 29 Sistema de Apuração, 14 RED em urna de seção e 2 RED em urna de contingência; 2.715 trocas declaradas, 1.416 com as 2 urnas no log. Certificado da urna diferente do declarado: 45 seções no 1º turno e 32 no 2º (inclui as de Sistema de Apuração, que não têm certificado de urna). As demais são tratadas no T36 (tipo c): 26 casos no 1º turno e 17 no 2º, todos com explicação operacional (troca de urna ou arquivo de log não publicado; 1 caso D1 em SP no 2º turno)."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T35",
+   "modulo": "A",
+   "pergunta": "Toda urna usada tem carga registrada?",
+   "metodo": "Logs do GEDAI",
+   "modelo_nulo": "N7",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Toda urna usada tem carga registrada",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "determinística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "G",
+   "resultado_atual": "1º turno: 2.450 de 2.453 máquinas de carga com log do GEDAI publicado; versão 8.23 e fase OFICIAL; 3 sem log: limite dos dados públicos (o log não está entre os arquivos abertos; ver AUTOAUDITORIA §6), nada se infere.",
+   "anotacoes": [
+    "2.450 de 2.453 máquinas de carga têm log do GEDAI publicado; versão 8.23 e fase OFICIAL em todos. 3 sem log, a investigar."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "G",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno: 2.450 de 2.453 máquinas de carga com log do GEDAI publicado; versão 8.23 e fase OFICIAL; 3 sem log: limite dos dados públicos (o log não está entre os arquivos abertos; ver AUTOAUDITORIA §6), nada se infere."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C01",
+   "modulo": "B",
+   "pergunta": "Comparecimento por região, porte e perfil",
+   "metodo": "Descritivo + regressão dentro do município",
+   "modelo_nulo": "N4",
+   "script": "analise/comportamento.py",
+   "comando": "make comportamento",
+   "saida": "analise/resultado_comportamento_<ano>.json",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "(descritivo)",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "comparecimento por região/porte/perfil",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "comparecimento por região/porte/perfil"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C02",
+   "modulo": "B",
+   "pergunta": "A que horas o eleitor votou?",
+   "metodo": "Votos computados por minuto (logs), horário de Brasília",
+   "modelo_nulo": "—",
+   "script": "analise/relatorio_dados.py",
+   "comando": "make relatorio",
+   "saida": "grafico/web/logs.json",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "(descritivo)",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "votos por minuto (logs)",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "votos por minuto (logs)"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C03",
+   "modulo": "B",
+   "pergunta": "Voto x perfil demográfico",
+   "metodo": "Regressão dentro do município; quintis",
+   "modelo_nulo": "N4",
+   "script": "analise/comportamento.py",
+   "comando": "make comportamento",
+   "saida": "→ C03_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "(descritivo/associação)",
+   "pressupostos": "",
+   "limitacoes": "associação, não causa",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "perfil x voto",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "perfil x voto"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C06",
+   "modulo": "C",
+   "pergunta": "Para onde foram os votos do 1º turno?",
+   "metodo": "Goodman com restrição (0–1, linhas somam 1), por UF, ponderado; conferência previsto x observado",
+   "modelo_nulo": "N3",
+   "script": "analise/comportamento.py",
+   "comando": "make comportamento",
+   "saida": "→ C06",
+   "situacao": "concluido",
+   "referencia": "Goodman 1953; King 1997 (inferência ecológica)",
+   "hipotese_nula": "Transferência de votos estimável por inferência ecológica",
+   "pressupostos": "homogeneidade das taxas dentro da UF",
+   "limitacoes": "falácia ecológica: médias de grupo, não indivíduos",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "conferência previsto x observado < 0,1%; abstencionistas do 1º turno → Lula 4:1 (2022: → Bolsonaro 1,7:1): achado a confirmar com logs",
+   "anotacoes": [
+    "1ª versão sem restrição dava frações acima de 100% e negativas; com restrição, o otimizador não convergia por falta de normalizar os pesos. Hoje reproduz o total observado com erro abaixo de 0,1%.",
+    "Falácia ecológica: é média de grupos, nunca o voto de uma pessoa."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "conferência previsto x observado < 0,1%; abstencionistas do 1º turno → Lula 4:1 (2022: → Bolsonaro 1,7:1): achado a confirmar com logs"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C06b",
+   "modulo": "C",
+   "pergunta": "Quantos eleitores trocaram diretamente de um finalista para o outro?",
+   "metodo": "Limites determinísticos de Duncan-Davis por seção: mínimo = max(0, L2 − (A − F1)); máximo = min(F1, L2); somados no país",
+   "modelo_nulo": "—",
+   "script": "(cálculo registrado no CATALOGO; incorporar a analise/comportamento.py)",
+   "comando": "—",
+   "saida": "mapas.html; CATALOGO",
+   "situacao": "concluido",
+   "referencia": "Duncan e Davis (1953); King (1997)",
+   "hipotese_nula": "(identificação)",
+   "pressupostos": "eleitorado da seção igual nos dois turnos (usa o menor dos dois)",
+   "limitacoes": "voto secreto: trocas que se cancelam são invisíveis; a estimativa pontual do C06 depende de homogeneidade dentro da UF",
+   "afirmacao": "determinística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "G",
+   "resultado_atual": "2026: F→L entre 79 e 43,6 mi; L→F entre 123 e 39,5 mi (2022 parecido). Os dados não identificam a troca direta; a estimativa pontual (~106 mil, saldo pequeno) depende do pressuposto do C06",
+   "anotacoes": [
+    "Os números oficiais garantem pelo menos 79 trocas de Flávio para Lula e 123 no sentido contrário, e permitem até ~40 milhões em cada sentido: a troca direta não é identificável com dado público."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "G",
+     "natureza": "exploratório",
+     "resultado_atual": "2026: F→L entre 79 e 43,6 mi; L→F entre 123 e 39,5 mi (2022 parecido). Os dados não identificam a troca direta; a estimativa pontual (~106 mil, saldo pequeno) depende do pressuposto do C06"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C07",
+   "modulo": "C",
+   "pergunta": "Mudança de comparecimento x perfil",
+   "metodo": "Regressão dentro do município",
+   "modelo_nulo": "N4",
+   "script": "analise/comportamento.py",
+   "comando": "make comportamento",
+   "saida": "→ C03_C07_perfil",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "(associação)",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "Mudança de comparecimento associada ao perfil, dentro do município (idosos +3,2 e mulheres +3,3 pontos por 100% do grupo); associação, não causa.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "Mudança de comparecimento associada ao perfil, dentro do município (idosos +3,2 e mulheres +3,3 pontos por 100% do grupo); associação, não causa."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "C08",
+   "modulo": "C",
+   "pergunta": "Geografia da virada (região, UF, porte)",
+   "metodo": "Descritivo",
+   "modelo_nulo": "—",
+   "script": "analise/comportamento.py",
+   "comando": "make comportamento",
+   "saida": "→ C08_*",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "(descritivo)",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "Virada por região, UF e porte do município (descritivo): Centro-Oeste +7,4, Sudeste +7,6, Nordeste +5,6, Norte +5,4, Sul +6,2 pp.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "Virada por região, UF e porte do município (descritivo): Centro-Oeste +7,4, Sudeste +7,6, Nordeste +5,6, Norte +5,4, Sul +6,2 pp."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "E01",
+   "modulo": "E",
+   "pergunta": "Divergências em vários níveis",
+   "metodo": "Resíduos por seção, local, zona, município, UF",
+   "modelo_nulo": "N2–N4",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Divergências não se agrupam além do comportamento local normal",
+   "pressupostos": "2022 como referência do normal",
+   "limitacoes": "modelo do esperado imperfeito",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "33–36% da variância dos resíduos está entre locais de votação e só ~5–8% entre zona e município, igual em 2022: o agrupamento é local, como no comportamento normal.",
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "33–36% da variância dos resíduos está entre locais de votação e só ~5–8% entre zona e município, igual em 2022: o agrupamento é local, como no comportamento normal."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "E02",
+   "modulo": "E",
+   "pergunta": "Divergências agrupadas no espaço?",
+   "metodo": "Moran's I; excesso de variância por local de votação e zona",
+   "modelo_nulo": "N2–N4",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Número de grupos significativos igual ao de 2022",
+   "pressupostos": "modelo completo (candidatos, perfil, porte)",
+   "limitacoes": "BH sob dependência espacial",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "A",
+   "resultado_atual": "Modelo completo: 683 locais significativos em 2026 contra 766 em 2022; lados equilibrados (390 × 293 e 458 × 308).",
+   "anotacoes": [
+    "Com modelo simples: 2.618 locais de votação significativos em 2026 contra 946 em 2022. Com o modelo completo (cada candidato eliminado, perfil, porte): 683 contra 766. O excesso era o voto de Cury e Zema, não anomalia."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "exploratório",
+     "resultado_atual": "Modelo completo: 683 locais significativos em 2026 contra 766 em 2022; lados equilibrados (390 × 293 e 458 × 308)."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "E03",
+   "modulo": "E",
+   "pergunta": "Lista das maiores divergências e explicação",
+   "metodo": "Ranqueamento + investigação caso a caso",
+   "modelo_nulo": "—",
+   "script": "(a fazer)",
+   "comando": "—",
+   "saida": "—",
+   "situacao": "concluido",
+   "referencia": "",
+   "hipotese_nula": "Casos extremos têm explicação local",
+   "pressupostos": "",
+   "limitacoes": "exploratório: precisa de confirmação em dados independentes (logs)",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "exploratório",
+   "classe_evidencia": "B",
+   "resultado_atual": "Casos extremos listados; todos exploratórios, ainda sem confirmação em dado independente.",
+   "anotacoes": [
+    "Casos extremos (Belo Monte-AL, Santo Antônio de Lisboa-PI, Crateús-CE, Santos-SP, Juiz de Fora-MG; Caldeirão Grande-BA nos dois anos): exploratórios, ainda sem confirmação em dado independente."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "B",
+     "natureza": "exploratório",
+     "resultado_atual": "Casos extremos listados; todos exploratórios, ainda sem confirmação em dado independente."
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "INC",
+   "modulo": "D",
+   "pergunta": "Qual a incerteza e o poder dos resultados negativos?",
+   "metodo": "t de Student nos z (T02); IC de Fisher e menor r detectável (T03); bootstrap por município e menor diferença detectável (T04)",
+   "modelo_nulo": "—",
+   "script": "analise/bateria.py",
+   "comando": "make teste T=bateria",
+   "saida": "→ INC",
+   "situacao": "concluido",
+   "referencia": "revisão cega externa (27/10)",
+   "hipotese_nula": "",
+   "pressupostos": "",
+   "limitacoes": "",
+   "afirmacao": "estatística",
+   "independencia": "interna",
+   "natureza": "confirmatório",
+   "classe_evidencia": "A",
+   "resultado_atual": "ver T02, T03, T04",
+   "anotacoes": [
+    "1ª versão com n errado (municípios no lugar de seções) e bootstrap desalinhado porque a base foi reordenada: percebido porque o IC não continha a estimativa. Corrigido."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "A",
+     "natureza": "confirmatório",
+     "resultado_atual": "ver T02, T03, T04"
+    }
+   ],
+   "provas": []
+  },
+  {
+   "id": "T36",
+   "modulo": "A",
+   "pergunta": "As urnas cujas contas de integridade não fecham exatamente têm explicação?",
+   "metodo": "Classificação caso a caso: E1 contingência reaproveitada; E2 CEFT (RED/correspondência alterada); E3 urna substituída; E4 confirmação sem voto computado; E5 queda de energia entre confirmação e registro; D1 arquivo listado pela urna mas não publicado",
+   "modelo_nulo": "N7",
+   "script": "analise/casos_integridade.py",
+   "comando": ".venv/bin/python analise/casos_integridade.py <turno>",
+   "saida": "analise/resultado_casos_integridade_<t>t.json",
+   "situacao": "concluido",
+   "hipotese_nula": "toda divergência tem causa operacional verificável nos próprios registros",
+   "pressupostos": "",
+   "limitacoes": "E4 é inferida pelo padrão de contagem (mais fraca que E5, verificada no log)",
+   "afirmacao": "determinística",
+   "independencia": "criptográfica",
+   "natureza": "confirmatório",
+   "classe_evidencia": "D",
+   "resultado_atual": "1º turno 2026: 186 casos em 499.206 urnas; 185 com explicação operacional (votos íntegros); 1 sem explicação (RJ 60011/8/61: linhas do log corrompidas pela própria urna; hash do arquivo, totais e assinatura conferem). 2º turno 2026: 75 casos em 499.205 urnas; 74 com explicação operacional; 1 inconsistência de publicação (log de 1 urna de SP assinado pela urna e não publicado); 0 sem explicação. Refeito após duas correções de leitura: linhas duplicadas entre partes do log e lista de eleições do bu.dat em estados com governador no 2º turno.",
+   "anotacoes": [
+    "76 casos de 499.205 urnas no 2º turno: 75 com explicação operacional, 1 log de São Paulo assinado pela urna e não publicado, 0 sem explicação."
+   ],
+   "historico": [
+    {
+     "rodada": 1,
+     "data": "2026-10-28",
+     "situacao": "concluido",
+     "classe_evidencia": "D",
+     "natureza": "confirmatório",
+     "resultado_atual": "1º turno 2026: 186 casos em 499.206 urnas; 185 com explicação operacional (votos íntegros); 1 sem explicação (RJ 60011/8/61: linhas do log corrompidas pela própria urna; hash do arquivo, totais e assinatura conferem). 2º turno 2026: 75 casos em 499.205 urnas; 74 com explicação operacional; 1 inconsistência de publicação (log de 1 urna de SP assinado pela urna e não publicado); 0 sem explicação. Refeito após duas correções de leitura: linhas duplicadas entre partes do log e lista de eleições do bu.dat em estados com governador no 2º turno."
+    }
+   ],
+   "provas": []
+  }
+ ],
+ "classes": {
+  "A": "regularidade observada",
+  "B": "anomalia estatística",
+  "C": "anomalia robusta",
+  "D": "inconsistência verificável",
+  "E": "evidência de possível irregularidade",
+  "F": "evidência de manipulação",
+  "G": "inconclusivo / ainda sem resultado"
+ },
+ "independencia": {
+  "interna": "coerência entre arquivos oficiais da mesma origem",
+  "criptográfica": "conferível com matemática pública e a chave da urna; depende do software da urna",
+  "externa": "fonte fora do TSE"
+ }
+}

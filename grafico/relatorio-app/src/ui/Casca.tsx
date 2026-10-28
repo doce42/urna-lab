@@ -9,7 +9,7 @@ import { href, type Rota } from '@/lib/rotas';
 import type { Meta } from '@/lib/tipos';
 
 const ITENS: { rota: Rota['pagina']; rotulo: string; h: string }[] = [
-  { rota: 'home', rotulo: 'Início', h: '/' }, { rota: 'testes', rotulo: 'Testes', h: '/testes' }, { rota: 'mapas', rotulo: 'Mapas', h: '/mapas' }, { rota: 'docs', rotulo: 'Docs e ajuda', h: '/docs' },
+  { rota: 'home', rotulo: 'Início', h: '/' }, { rota: 'testes', rotulo: 'Testes', h: '/testes' }, { rota: 'mapas', rotulo: 'Mapas', h: '/mapas' }, { rota: 'linha', rotulo: 'Linha do tempo', h: '/linha-do-tempo' }, { rota: 'docs', rotulo: 'Docs e ajuda', h: '/docs' },
 ];
 export function Cabecalho({ rota, meta }: { rota: Rota; meta: Meta | null }) {
   const { efetivo, alternar } = useTema();
@@ -23,7 +23,7 @@ export function Cabecalho({ rota, meta }: { rota: Rota; meta: Meta | null }) {
     <header className={clsx('sticky top-0 z-40 transition-[background,box-shadow,border-color] duration-300 border-b', rolou ? 'bg-bg/85 backdrop-blur-md border-border' : 'bg-bg/0 border-transparent')} style={{ height: 'var(--topo)' }}>
       <div className="container h-full flex items-center gap-3">
         <a href="#/" className="shrink-0 rounded-md" aria-label="urna lab, início"><Logo tamanho={26} /></a>
-        <nav className="hidden md:flex items-center gap-1 ml-6" aria-label="Principal">
+        <nav className="hidden lg:flex items-center gap-1 ml-6" aria-label="Principal">
           {ITENS.map((i) => (
             <a key={i.rota} href={href(i.h)} aria-current={rota.pagina === i.rota ? 'page' : undefined}
               className={clsx('h-10 px-3.5 inline-flex items-center rounded-full text-[15px] font-medium transition-colors', rota.pagina === i.rota ? 'text-text bg-surface-2' : 'text-muted hover:text-text hover:bg-surface-2/70')}>
@@ -37,13 +37,13 @@ export function Cabecalho({ rota, meta }: { rota: Rota; meta: Meta | null }) {
           <Botao icone tamanho="sm" variante="secundario" onClick={alternar} aria-label={efetivo === 'dark' ? 'Usar tema claro' : 'Usar tema escuro'} title="Alternar tema">
             {efetivo === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
           </Botao>
-          <Botao icone tamanho="sm" variante="secundario" className="md:hidden" onClick={() => setAberto((a) => !a)} aria-expanded={aberto} aria-controls="menu-movel" aria-label="Abrir menu">
+          <Botao icone tamanho="sm" variante="secundario" className="lg:hidden" onClick={() => setAberto((a) => !a)} aria-expanded={aberto} aria-controls="menu-movel" aria-label="Abrir menu">
             {aberto ? <X size={18} /> : <Menu size={18} />}
           </Botao>
         </div>
       </div>
       {aberto && (
-        <div id="menu-movel" className="md:hidden fixed inset-x-0 bottom-0 bg-bg border-t border-border overflow-y-auto" style={{ top: 'var(--topo)' }}>
+        <div id="menu-movel" className="lg:hidden fixed inset-x-0 bottom-0 bg-bg border-t border-border overflow-y-auto" style={{ top: 'var(--topo)' }}>
           <nav className="container py-4 flex flex-col gap-1" aria-label="Principal (móvel)">
             {ITENS.map((i) => (
               <a key={i.rota} href={href(i.h)} aria-current={rota.pagina === i.rota ? 'page' : undefined}

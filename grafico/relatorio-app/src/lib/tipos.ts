@@ -3,7 +3,13 @@ export type Teste = {
   id: string; modulo: string; pergunta: string; metodo: string; modelo_nulo: string; script: string; comando: string; saida: string;
   situacao: string; referencia: string; hipotese_nula: string; pressupostos: string; limitacoes: string; afirmacao: string;
   independencia: string; natureza: string; classe_evidencia: string; resultado_atual: string; anotacoes: string[];
+  historico?: HistoricoTeste[]; provas?: Prova[];
 };
+export type HistoricoTeste = { rodada: number; data: string; situacao: string; classe_evidencia: string; natureza: string; resultado_atual: string };
+export type Prova = { data: string; rodada: number; tipo: string; descricao: string; resultado: 'resistiu' | 'caiu' | 'ajustado' | 'em_andamento' };
+export type Fase = { id: string; rodada: number; titulo: string; status: 'concluida' | 'em_andamento' | 'proxima' | 'planejada'; inicio?: string; fim?: string; resumo: string; etapas: { titulo: string; texto: string }[] };
+export type ResumoRodada = { rodada: number; titulo: string; data: string; placar: { testes: number; classes: Record<string, number>; situacoes: Record<string, number>; natureza: Record<string, number> }; tag: string | null; arquivos: number };
+export type LinhaDoTempo = { descricao: string; fases: Fase[]; marcos: { data: string; hora: string; titulo: string; texto: string }[]; rodadas: ResumoRodada[]; github: string };
 export type Placar = { total: number; concluidos: number; parciais: number; processando: number; exploratorios: number; confirmatorios: number; classes: Record<string, number>; situacoes: Record<string, number> };
 export type Registro = { descricao: string; modelos_nulos: Record<string, string>; classes: Record<string, string>; independencia: Record<string, string>; testes: Teste[]; placar: Placar };
 

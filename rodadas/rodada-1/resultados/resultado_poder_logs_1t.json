@@ -1,0 +1,128 @@
+{
+ "turno": 1,
+ "urnas": 499207,
+ "urnas_com_votos_ult30": 499176,
+ "falsos_positivos_sem_fraude": 13,
+ "cenarios": [
+  {
+   "frac_urnas_alteradas": 0.001,
+   "frac_votos_ult30_convertidos": 0.1,
+   "recall_medio": 0.0,
+   "falsos_positivos_medio": 13.0
+  },
+  {
+   "frac_urnas_alteradas": 0.001,
+   "frac_votos_ult30_convertidos": 0.2,
+   "recall_medio": 0.0052,
+   "falsos_positivos_medio": 13.0
+  },
+  {
+   "frac_urnas_alteradas": 0.001,
+   "frac_votos_ult30_convertidos": 0.3,
+   "recall_medio": 0.0317,
+   "falsos_positivos_medio": 14.0
+  },
+  {
+   "frac_urnas_alteradas": 0.001,
+   "frac_votos_ult30_convertidos": 0.5,
+   "recall_medio": 0.5198,
+   "falsos_positivos_medio": 38.2
+  },
+  {
+   "frac_urnas_alteradas": 0.001,
+   "frac_votos_ult30_convertidos": 1.0,
+   "recall_medio": 0.9022,
+   "falsos_positivos_medio": 46.0
+  },
+  {
+   "frac_urnas_alteradas": 0.01,
+   "frac_votos_ult30_convertidos": 0.1,
+   "recall_medio": 0.0004,
+   "falsos_positivos_medio": 12.8
+  },
+  {
+   "frac_urnas_alteradas": 0.01,
+   "frac_votos_ult30_convertidos": 0.2,
+   "recall_medio": 0.0061,
+   "falsos_positivos_medio": 14.8
+  },
+  {
+   "frac_urnas_alteradas": 0.01,
+   "frac_votos_ult30_convertidos": 0.3,
+   "recall_medio": 0.132,
+   "falsos_positivos_medio": 53.2
+  },
+  {
+   "frac_urnas_alteradas": 0.01,
+   "frac_votos_ult30_convertidos": 0.5,
+   "recall_medio": 0.6805,
+   "falsos_positivos_medio": 184.2
+  },
+  {
+   "frac_urnas_alteradas": 0.01,
+   "frac_votos_ult30_convertidos": 1.0,
+   "recall_medio": 0.943,
+   "falsos_positivos_medio": 227.4
+  },
+  {
+   "frac_urnas_alteradas": 0.05,
+   "frac_votos_ult30_convertidos": 0.1,
+   "recall_medio": 0.0003,
+   "falsos_positivos_medio": 13.0
+  },
+  {
+   "frac_urnas_alteradas": 0.05,
+   "frac_votos_ult30_convertidos": 0.2,
+   "recall_medio": 0.0183,
+   "falsos_positivos_medio": 45.6
+  },
+  {
+   "frac_urnas_alteradas": 0.05,
+   "frac_votos_ult30_convertidos": 0.3,
+   "recall_medio": 0.3236,
+   "falsos_positivos_medio": 345.0
+  },
+  {
+   "frac_urnas_alteradas": 0.05,
+   "frac_votos_ult30_convertidos": 0.5,
+   "recall_medio": 0.7991,
+   "falsos_positivos_medio": 725.0
+  },
+  {
+   "frac_urnas_alteradas": 0.05,
+   "frac_votos_ult30_convertidos": 1.0,
+   "recall_medio": 0.9651,
+   "falsos_positivos_medio": 860.0
+  },
+  {
+   "frac_urnas_alteradas": 0.2,
+   "frac_votos_ult30_convertidos": 0.1,
+   "recall_medio": 0.0004,
+   "falsos_positivos_medio": 12.0
+  },
+  {
+   "frac_urnas_alteradas": 0.2,
+   "frac_votos_ult30_convertidos": 0.2,
+   "recall_medio": 0.0932,
+   "falsos_positivos_medio": 330.6
+  },
+  {
+   "frac_urnas_alteradas": 0.2,
+   "frac_votos_ult30_convertidos": 0.3,
+   "recall_medio": 0.55,
+   "falsos_positivos_medio": 1429.6
+  },
+  {
+   "frac_urnas_alteradas": 0.2,
+   "frac_votos_ult30_convertidos": 0.5,
+   "recall_medio": 0.8849,
+   "falsos_positivos_medio": 2210.0
+  },
+  {
+   "frac_urnas_alteradas": 0.2,
+   "frac_votos_ult30_convertidos": 1.0,
+   "recall_medio": 0.9796,
+   "falsos_positivos_medio": 2418.6
+  }
+ ]
+}

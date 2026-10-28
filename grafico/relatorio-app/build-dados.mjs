@@ -39,7 +39,8 @@ console.log('urna lab · build dos dados');
 const registro = ler(path.join(RAIZ, 'testes', 'registro.json'));
 const testes = registro.testes.map((t) => {
   const o = {};
-  for (const k of Object.keys(t)) o[k] = typeof t[k] === 'string' ? sanear(t[k]) : Array.isArray(t[k]) ? t[k].map(sanear) : t[k];
+  const san = (v) => (typeof v === 'string' ? sanear(v) : Array.isArray(v) ? v.map(san) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, san(x)])) : v);
+  for (const k of Object.keys(t)) o[k] = san(t[k]);
   return o;
 });
 const emProc = (t) => t.situacao === 'a_fazer' || /^(a fazer|em processamento)/i.test(t.resultado_atual || '');
@@ -53,6 +54,17 @@ for (const t of testes) {
   placar.situacoes[t.situacao] = (placar.situacoes[t.situacao] || 0) + 1;
 }
 gravar('registro.json', { descricao: registro.descricao, modelos_nulos: registro.modelos_nulos, classes: registro.classes, independencia: registro.independencia, testes, placar });
+
+// ---------- linha do tempo: fases, marcos e o resumo de cada rodada congelada (rodadas/rodada-N/resumo.json) ----------
+{
+  const dirR = path.join(RAIZ, 'rodadas');
+  const lt = ler(path.join(dirR, 'linha_do_tempo.json'));
+  const rodadas = fs.readdirSync(dirR).filter((d) => /^rodada-\d+$/.test(d)).map((d) => {
+    const r = ler(path.join(dirR, d, 'resumo.json'));
+    return { rodada: r.rodada, titulo: r.titulo, data: r.data, placar: r.placar, tag: r.git_tag || null, arquivos: Object.keys(r.arquivos_sha256 || {}).length };
+  }).sort((a, b) => a.rodada - b.rodada);
+  gravar('linha-do-tempo.json', { descricao: lt.descricao, fases: lt.fases, marcos: lt.marcos, rodadas, github: 'https://github.com/doce42/urna-lab' });
+}
 
 // ---------- dados do relatório (118 MB local) → testes.json (enxuto) ----------
 const rd = ler(path.join(WEB, 'relatorio_dados.json'));
@@ -180,6 +192,7 @@ gravar('geo.json', topo);
 const DOCS = [
   ['visao-geral', 'README.md', 'Visão geral', 'O que é o estudo, o que tem no repositório e como reproduzir.'],
   ['conclusao', 'CONCLUSAO.md', 'Conclusão', 'A resposta do estudo em três níveis: provado, estatística com poder medido e limites dos dados públicos.'],
+  ['rodadas', 'RODADAS.md', 'Rodadas e linha do tempo', 'Como o estudo avança em rodadas congeladas e como cada teste é posto à prova.'],
   ['diretriz', 'DIRETRIZ.md', 'Diretriz científica', 'Princípios, cinco níveis de investigação e classes de evidência A–G.'],
   ['protocolo', 'PROTOCOLO.md', 'Protocolo', 'Perguntas, modelos nulos, critérios fixados antes de rodar e emendas datadas.'],
   ['metodologia', 'METODOLOGIA.md', 'Metodologia matemática', 'A matemática de cada teste, camada por camada.'],

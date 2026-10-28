@@ -58,3 +58,7 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 
 - **Sem GitHub Actions e sem Git LFS** (têm limites pagos): toda a computação roda na máquina local; o repositório guarda só código, documentação, listas de download e resultados pequenos.
 - **Publicar** só com `python scripts/publicar.py "mensagem"` (copia, higieniza caminhos, varre atrás de dados pessoais e segredos, aborta se achar algo, commita com o e-mail de privacidade do GitHub). Nunca dê `git push` direto do diretório de trabalho. Teste antes com `--simular`.
+
+
+## Rodadas (linha do tempo)
+O estudo avança em rodadas congeladas (`rodadas/rodada-N/`, tag `rodada-N`). Rodada fechada não se reescreve: correção entra na rodada seguinte. Toda contestação feita a um teste vai para o campo `provas` dele (`python scripts/rodada.py prova ...`). Ao fechar uma rodada: `python scripts/rodada.py fechar N "título"`, atualizar `rodadas/linha_do_tempo.json`, regerar o site, publicar e criar a tag. Detalhes em `RODADAS.md`.

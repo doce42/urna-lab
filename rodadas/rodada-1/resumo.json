@@ -1,0 +1,54 @@
+{
+ "rodada": 1,
+ "titulo": "Levantamento inicial",
+ "data": "2026-10-28",
+ "placar": {
+  "testes": 48,
+  "classes": {
+   "A": 41,
+   "B": 4,
+   "G": 2,
+   "D": 1
+  },
+  "situacoes": {
+   "concluido": 47,
+   "concluido_excluido_da_conclusao": 1
+  },
+  "natureza": {
+   "confirmatório": 37,
+   "exploratório": 11
+  }
+ },
+ "arquivos_sha256": {
+  "resultados/resultado_bateria_2022.json": "82270518922d59bde565cc06808a3fd547962fc0c986ff7e3e0b4ad636eac4fe",
+  "resultados/resultado_bateria_2026.json": "5d88485ea149edfa8127bcb4a430c9946ff6befd574082f812a44955a8011e97",
+  "resultados/resultado_biometria.json": "c1c0a9408e10035463d15e29a8371cff59ee1dfa80b5324ffa6c3fa59c35e7f3",
+  "resultados/resultado_casos_integridade_1t.json": "4692697b35a43daed941af0fd48559ba4943e6e857712736357f20832c3acae3",
+  "resultados/resultado_casos_integridade_2t.json": "986a4649be5d3a67a84d6e8a34204048312b8c414a3090f8d711fce46590ead5",
+  "resultados/resultado_comportamento_2022.json": "c782aabb975d5ac6644e5fd93a7d197a5bed6720870b76efdc16f6a03ff96943",
+  "resultados/resultado_comportamento_2026.json": "eaea104eea7940aa1de0b0ac6b197c089e656244155c04ab0200177d455cc2aa",
+  "resultados/resultado_correspondencia_1t.json": "c76434f4af6911a4cfce9c6e77defda0644477e0bd43186c191a13ba9059bad5",
+  "resultados/resultado_correspondencia_2t.json": "36d607091b83eabee56fa644f5e4c0cc2885ccafb3dc9fd8aea34ffb2cf3152b",
+  "resultados/resultado_divergencias_2022.json": "a58c181cdd932b792fd2111c5856b2ccf20bad736c33317d8cea30e41ab5f45e",
+  "resultados/resultado_divergencias_2022_completo.json": "97c4382eb7f2036f66d43a4835e3dbdff45a96a59170da97931608e86406c1f4",
+  "resultados/resultado_divergencias_2026.json": "44492348d33e95c820877edf0efc48179d45214e321408f9187870ec42401096",
+  "resultados/resultado_divergencias_2026_completo.json": "f4f722cc1ecc9bedac505f667029831e1e0e8df6b1dc5963f031673ecf5ebfdb",
+  "resultados/resultado_logs_1t.json": "a4eae0ae205507415cc75f6c2386658ce18fae6d59a349ca5357b8c5662d3ddf",
+  "resultados/resultado_logs_2022_1t.json": "070d86add1d223d73100d788836e8ff353fb91787c860ed3e48a5f19ed358111",
+  "resultados/resultado_logs_2022_2t.json": "e145c3c06e5a8cf21c450a6c8345bf3fe6e08c4e4fd0785bc3afc98f5504d278",
+  "resultados/resultado_logs_2t.json": "b0e1b0ed994c2c5c6fc60750e01bbff77650739664e0e28e460b419df259b6e4",
+  "resultados/resultado_ml_2022.json": "9a536c6d239c0e2a7aea686ad7d8e27d3888150883625699271a9ca0af160fc2",
+  "resultados/resultado_ml_2022_v1_invalido.json": "7b9cdbf2a25bb52f785fe930e6d3fcb1f064b6ae21e6ebce2f5c07d86f8f9771",
+  "resultados/resultado_ml_2026.json": "87e4e03d07a45a254130961666867aecede49b02b08b422238d0347eeeed4d7d",
+  "resultados/resultado_ml_2026_v1_invalido.json": "a7f22fb75011c830aa20c4b3dfe46e14daa054ae337190faeb76ba7ea2d9cdf2",
+  "resultados/resultado_poder.json": "130729b896a7d25c5cc33625ac351c1ceee6c259b5f4dcda58e256ae40793369",
+  "resultados/resultado_poder_logs_1t.json": "16ee75663544234c4e66491fa7d87fd0a9fe200442089ddc0bbd6654c83c2227",
+  "resultados/resultado_poder_logs_2t.json": "5701d5654851a657670e1adb9b440c5b9aa0422b4e0a093a63ef360bcfca8cee",
+  "resultados/resultado_sensibilidade_2022.json": "242bb87ff599fd57a339d45e2a3be2e058a15661aa9b388a09b563f2f176f4a0",
+  "resultados/resultado_sensibilidade_2026.json": "4bfcec024a83d9f049adc188cc4a7ce156afcb8196fa3a06c515b7541ece7940",
+  "registro.json": "774fdf0bd5d963a84a8687221161fd09e173219e7a2517956932200207fd1d95",
+  "CONCLUSAO.md": "7e27542563567e9a459416d88703dcf45718055b0e75bd489f1b43312a92400b"
+ },
+ "git_tag": "rodada-1",
+ "site": "https://urna-lab.web.app/#/linha-do-tempo"
+}
