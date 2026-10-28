@@ -173,3 +173,6 @@
   box-shadow: var(--shadow-lg); overflow-y: auto; overscroll-behavior: contain; animation: deslizar .32s cubic-bezier(.2,.8,.2,1); }
 @keyframes deslizar { from { transform: translateX(40px); opacity: 0; } }
 @media (max-width: 640px) { .gaveta { width: 100vw; border-left: 0; } }
+
+/* trava de segurança: nada empurra a página para o lado no celular (tabelas e gráficos largos rolam dentro da própria caixa) */
+html, body { overflow-x: clip; }

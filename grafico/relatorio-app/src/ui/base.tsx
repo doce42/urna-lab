@@ -4,11 +4,11 @@ import type { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'reac
 type BotaoProps = { variante?: 'primario' | 'secundario' | 'fantasma' | 'cobre'; tamanho?: 'sm' | 'md' | 'lg'; icone?: boolean; className?: string; children?: ReactNode };
 const botaoClasses = ({ variante = 'secundario', tamanho = 'md', icone = false, className }: BotaoProps) =>
   clsx(
-    'inline-flex items-center justify-center gap-2 font-medium rounded-full whitespace-nowrap select-none transition-[background,border-color,color,transform,box-shadow] duration-200 ease-out',
+    'inline-flex items-center justify-center gap-2 font-medium rounded-full whitespace-normal sm:whitespace-nowrap text-center max-w-full select-none transition-[background,border-color,color,transform,box-shadow] duration-200 ease-out',
     'focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[.98]',
-    tamanho === 'sm' && (icone ? 'h-9 w-9 text-sm' : 'h-9 px-3.5 text-sm'),
-    tamanho === 'md' && (icone ? 'h-11 w-11 text-[15px]' : 'h-11 px-5 text-[15px]'),
-    tamanho === 'lg' && (icone ? 'h-12 w-12 text-base' : 'h-12 px-6 text-base'),
+    tamanho === 'sm' && (icone ? 'h-9 w-9 text-sm' : 'min-h-9 py-1.5 px-3.5 text-sm'),
+    tamanho === 'md' && (icone ? 'h-11 w-11 text-[15px]' : 'min-h-11 py-2 px-5 text-[15px]'),
+    tamanho === 'lg' && (icone ? 'h-12 w-12 text-base' : 'min-h-12 py-2.5 px-6 text-base'),
     variante === 'primario' && 'bg-brand text-brand-contrast border border-brand hover:opacity-90',
     variante === 'cobre' && 'bg-accent text-white border border-accent hover:brightness-95',
     variante === 'secundario' && 'bg-surface text-text border border-border hover:border-border-strong hover:bg-surface-2',

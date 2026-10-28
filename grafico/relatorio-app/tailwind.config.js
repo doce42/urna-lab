@@ -3,7 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
-    container: { center: true, padding: { DEFAULT: '16px', sm: '24px', lg: '32px' }, screens: { '2xl': '1280px' } },
+    container: { center: true, padding: { DEFAULT: '16px', sm: '24px', lg: '32px' }, screens: { '2xl': '1440px' } },
     extend: {
       colors: {
         bg: 'var(--bg)', surface: 'var(--surface)', 'surface-2': 'var(--surface-2)',
