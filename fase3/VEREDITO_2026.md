@@ -1,4 +1,12 @@
-# A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?
+# Apuração de 2026: o que os dados públicos mostram
+
+> **O que este estudo é, e o que não é**
+>
+> - É uma auditoria metodológica dos dados públicos oficiais da apuração: confere se os registros do TSE são coerentes entre si e se os padrões estatísticos têm explicação, com critérios fixados antes de rodar e poder medido com fraude simulada.
+> - Não parte de suspeita nem de acusação: parte dos dados. A pergunta sobre fraude é uma das perguntas que os testes respondem, a mais feita pelo público; não é a premissa nem o motivo do estudo.
+> - É independente, não é auditoria oficial e não é veredito sobre a eleição. Anomalia estatística não é fraude, e ausência de sinal não prova ausência onde os dados públicos não alcançam.
+
+**Pergunta testada:** A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?
 
 **Resposta:** Não encontramos. Para inverter o resultado seria preciso trocar ~2,2 milhões de votos de lado. Os mecanismos que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores do que os encontrados. As anomalias reais que achamos somam dezenas de milhares de votos, não milhões, e não têm causa demonstrada. Restam dois caminhos que nenhum dado público consegue examinar: um deslocamento pequeno e uniforme em quase todas as urnas, e uma alteração da urna antes de gerar os registros. Ambos só podem ser checados com evidência de fora do sistema, como boletins impressos coletados por fiscais ou auditoria independente da urna.
 

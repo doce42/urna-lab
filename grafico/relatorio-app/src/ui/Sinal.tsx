@@ -5,7 +5,7 @@ export type Nivel = { id: string; nome: string; cor: string; o_que_e: string };
 export type Hipotese = { id: string; mecanismo: string; o_que_deixaria: string; escala_necessaria: string; testes: string[]; resultado: string; status: string; em_votos: string };
 export type Veredito = {
   margem_2026: number; votos_para_inverter: number; niveis: Nivel[]; sinal_por_teste: Record<string, { nivel: string; motivo: string }>; hipoteses: Hipotese[];
-  resposta_central: { pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[] };
+  resposta_central: { aviso?: { titulo: string; itens: string[] }; pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[] };
 };
 
 export const COR_SINAL: Record<string, string> = {
@@ -30,13 +30,25 @@ export function SeloStatus({ s }: { s: string }) {
   return <span className="inline-flex items-center gap-1.5 min-h-6 px-2 rounded-full text-xs font-medium border shrink-0" style={{ color: c, borderColor: c }}><i className="w-1.5 h-1.5 rounded-full" style={{ background: c }} />{s}</span>;
 }
 
+// Aviso antes da pergunta: o estudo é auditoria metodológica dos dados; a pergunta sobre fraude é testada, não é a premissa.
+export function AvisoEstudo({ aviso }: { aviso: { titulo: string; itens: string[] } }) {
+  return (
+    <div className="cartao p-5 md:p-6 border-l-[3px]" style={{ borderLeftColor: 'var(--accent)' }}>
+      <div className="text-[12px] font-mono uppercase tracking-wider text-accent-text">Aviso</div>
+      <h2 className="t-h3 mt-1">{aviso.titulo}</h2>
+      <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted list-disc pl-5">{aviso.itens.map((a) => <li key={a}>{a}</li>)}</ul>
+    </div>
+  );
+}
+
 // Bloco da resposta central: pergunta, resposta, dedução, hipóteses e anomalias reais. Usado na Home e em Respostas.
 export function RespostaCentral({ v, compacto }: { v: Veredito; compacto?: boolean }) {
   const r = v.resposta_central; const nivel = (id: string) => v.niveis.find((n) => n.id === id)?.nome || id;
   return (
     <div className="grid gap-6">
+      {r.aviso && <AvisoEstudo aviso={r.aviso} />}
       <div className="cartao p-5 md:p-7">
-        <div className="text-[12px] font-mono uppercase tracking-wider text-muted">A pergunta da pesquisa</div>
+        <div className="text-[12px] font-mono uppercase tracking-wider text-muted">Pergunta testada</div>
         <h2 className="t-h2 mt-1">{r.pergunta}</h2>
         <p className="mt-3 text-[17px] leading-relaxed text-text">{r.resposta}</p>
         {!compacto && <ol className="mt-4 grid gap-1.5 text-[15px] text-muted list-decimal pl-5">{r.deducao.map((d) => <li key={d}>{d}</li>)}</ol>}

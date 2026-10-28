@@ -117,7 +117,7 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
             </div>
             <h1 className="t-display mt-6 max-w-[14ch]">A apuração de 2026, conferida urna por urna.</h1>
             <p className="t-lead mt-6 max-w-[52ch]">
-              Estudo independente, imparcial e reproduzível da eleição presidencial (1º e 2º turno), com 2022 como referência.
+              Auditoria metodológica independente, imparcial e reproduzível dos dados públicos da eleição presidencial (1º e 2º turno), com 2022 como referência. Não parte de suspeita nem de acusação.
               Só dados oficiais do TSE: dados abertos e os arquivos gravados por cada urna. Cada teste diz a pergunta, a hipótese nula, o resultado e o que ele não consegue ver.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -275,7 +275,7 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       )}
 
       {/* ---------- propósito ---------- */}
-      <Secao id="proposito" eyebrow="Propósito" titulo="Não procuramos uma conclusão: procuramos explicações testáveis" lead="A pergunta “houve fraude?” evoluiu para: quais padrões, anomalias e divergências existem nos dados, quais explicações científicas têm, e quais hipóteses resistem a uma investigação rigorosa.">
+      <Secao id="proposito" eyebrow="Propósito" titulo="Não procuramos uma conclusão: procuramos explicações testáveis" lead="O estudo não parte da pergunta “houve fraude?”: parte dos dados. Pergunta quais padrões, anomalias e divergências existem, quais explicações científicas têm e quais hipóteses resistem a uma investigação rigorosa. A pergunta sobre fraude é respondida dentro desse quadro.">
         <div className="grid gap-4 md:grid-cols-3">
           {[
             ['Não presumir', 'Nem que houve fraude, nem que seria impossível. Anomalia estatística não é fraude; ausência de evidência não é demonstração de inexistência.'],

@@ -64,7 +64,17 @@ HIP = [
  H("H10", "Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes)", "Nada nos arquivos: tudo concorda entre si", "Qualquer escala",
    ["T16", "T33", "auditoria adversarial"], "Assinaturas válidas até a AC emissora, sem âncora do TSE verificada (busca externa sem resultado); erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos.", CEGO, "Até o total; sem rastro nos dados públicos."),
 ]
+# Aviso que vem antes da pergunta em todo lugar (site, VEREDITO, README, release): a pergunta é testada, não é a premissa.
+AVISO = {
+ "titulo": "O que este estudo é, e o que não é",
+ "itens": [
+   "É uma auditoria metodológica dos dados públicos oficiais da apuração: confere se os registros do TSE são coerentes entre si e se os padrões estatísticos têm explicação, com critérios fixados antes de rodar e poder medido com fraude simulada.",
+   "Não parte de suspeita nem de acusação: parte dos dados. A pergunta sobre fraude é uma das perguntas que os testes respondem, a mais feita pelo público; não é a premissa nem o motivo do estudo.",
+   "É independente, não é auditoria oficial e não é veredito sobre a eleição. Anomalia estatística não é fraude, e ausência de sinal não prova ausência onde os dados públicos não alcançam.",
+ ],
+}
 RESPOSTA = {
+ "aviso": AVISO,
  "pergunta": "A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?",
  "resposta": "Não encontramos. Para inverter o resultado seria preciso trocar ~2,2 milhões de votos de lado. Os mecanismos que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores do que os encontrados. As anomalias reais que achamos somam dezenas de milhares de votos, não milhões, e não têm causa demonstrada. Restam dois caminhos que nenhum dado público consegue examinar: um deslocamento pequeno e uniforme em quase todas as urnas, e uma alteração da urna antes de gerar os registros. Ambos só podem ser checados com evidência de fora do sistema, como boletins impressos coletados por fiscais ou auditoria independente da urna.",
  "deducao": [
@@ -88,7 +98,7 @@ RESPOSTA = {
 }
 OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; não congelado", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
 json.dump(OUT, open(R + "/fase3/veredito_2026.json", "w"), ensure_ascii=False, indent=1)
-L = [f"# {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
+L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
      "## Hipóteses de fraude examinadas", "", "| Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |", "|---|---|---|---|---|---|"]
 L += [f"| {h['id']} | {h['mecanismo']} | {h['o_que_deixaria']} | {h['resultado']} | **{h['status']}** | {h['em_votos']} |" for h in HIP]
 L += ["", "## Anomalias reais em 2026", "", "| O que | Votos | Sinal | Teste |", "|---|---|---|---|"] + [f"| {a['o_que']} | {a['votos']} | {a['sinal']} | {a['teste']} |" for a in RESPOSTA["anomalias_2026"]]
