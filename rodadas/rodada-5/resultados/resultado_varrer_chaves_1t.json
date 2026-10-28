@@ -1,0 +1,10 @@
+{
+ "turno": 1,
+ "pacotes": 28,
+ "urnas": 499176,
+ "Ed521": 399220,
+ "ECDSA-P521": 99956,
+ "lista_ok": 499176,
+ "lista_falhou": [],
+ "sem_bloco": 0
+}

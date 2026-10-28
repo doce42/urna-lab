@@ -1,6 +1,6 @@
 # Proposta de termo de encerramento condicionado da F3
 
-> **Situação:** proposta para revisão do responsável. **Não é aprovação.** A F3 continua "em revisão". Nenhuma tag nem snapshot foi criado.
+> **Situação:** proposta revisada pelo responsável. Depois dela, a pedido do responsável, a F3 executou as investigações de resolução, a auditoria adversarial, o veredito de 2026 e as investigações finais (ver `RESPOSTAS_F3.md` e `VEREDITO_2026.md`, que prevalecem sobre este termo onde forem mais recentes). **Aprovada e congelada como V1.3 (rodada 5) em 28/10/2026.**
 > **Base:** commit publicado `96f48a9` (28/10/2026). Inventário de 33 itens com evidência por item em [`fase3/INVENTARIO.md`](INVENTARIO.md) e `fase3/inventario.json` (campo `evidencia_arquivos`). Relatórios: [`AUDITORIA_F3.md`](AUDITORIA_F3.md), [`RELATORIO_ACEITACAO_F3.md`](RELATORIO_ACEITACAO_F3.md), [`PARECER_CONSOLIDACAO_F3.md`](PARECER_CONSOLIDACAO_F3.md), [`RELATORIO_VERIFICACOES_FINAIS_F3.md`](RELATORIO_VERIFICACOES_FINAIS_F3.md).
 > **Leitura:**
 > - **Simulações:** os números de simulação (poder de detecção) são de votos **sintéticos**, inseridos para medir o que a bateria veria. Não são votos encontrados nos dados.

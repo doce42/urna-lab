@@ -9,3 +9,6 @@ h2==4.4.1
 asn1crypto==1.5.1
 cryptography==50.0.2
 gmpy2==2.3.2
+# carimbo de tempo do manifesto e das versões congeladas (scripts/carimbo.py)
+opentimestamps-client==0.8.0
+opentimestamps==0.5.0

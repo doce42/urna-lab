@@ -30,3 +30,10 @@ Montar os dados do zero, acrescentar outra eleição (ex.: 2018), refazer um dow
 
 ## Validação
 `make dados` confere BU × votação por seção voto a voto e para se não bater. `make verificar` mostra a cobertura.
+
+## Preservação e dados leves
+- **Manifesto e carimbo:** manifesto SHA-256 (`scripts/manifesto.py`) e carimbo de tempo (`scripts/carimbo.py`); ver `DADOS_PRESERVACAO.md`.
+- **Pacote para terceiros:** `scripts/dados_leves.py` (ver `DADOS_LEVES.md`).
+- **Fontes externas usadas:**
+  - DataUrnas-BR (commit 12f0433) em `<DISCO_GRANDE>/externos/DataUrnas-BR`;
+  - capturas do Internet Archive em `fase3/externos/wayback_capturas`.

@@ -27,3 +27,8 @@ Antes de criar um teste, ao revisar se uma conclusão se sustenta, ao registrar 
 Só depois disso a afirmação entra no relatório.
 
 - **Situação e resultados num lugar só:** `testes/registro.json` e `CATALOGO.md`. Os documentos de método (METODOLOGIA, PROTOCOLO) não carregam situação ("pendente", "feito"), para não haver versões contraditórias. Ao atualizar, preserve o texto antigo como instantâneo datado no CATALOGO (lição de 27/10, revisão cega externa).
+
+## Desde a F3
+- **Pré-registro de cada lote:** em `fase3/PREREG_*.md`, com emenda no PROTOCOLO.
+- **Regra adversarial e escala de sinal:** na skill apuracao-investigacao.
+- **Resultado:** "Passou" não é conclusão. Todo resultado tem sinal (S0 a S5, ponto cego, método) e impacto em votos (`scripts/impacto_votos.py`, campo `impacto_votos`).

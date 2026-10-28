@@ -1,0 +1,75 @@
+{
+ "pre_registro": "fase3/PREREG_RESPOSTAS.md (R4)",
+ "secoes_sp_capital": 26286,
+ "com_perfil": 26274,
+ "covariaveis": [
+  "log_aptos",
+  "fem",
+  "casado",
+  "esc1",
+  "esc2",
+  "esc3",
+  "esc4",
+  "esc5",
+  "esc6",
+  "esc7",
+  "id_ate24",
+  "id_25_34",
+  "id_35_44",
+  "id_45_59"
+ ],
+ "principal_ajuste_fora_das_zonas": {
+  "r2_fora": 0.019799822603519535,
+  "zona_251": {
+   "secoes": 322,
+   "locais": 27,
+   "desvio_original": 0.5769239210451563,
+   "desvio_residual": 0.4241949281834593,
+   "ic95_residual_bootstrap_locais": [
+    0.23386930470859535,
+    0.619100572045747
+   ],
+   "fracao_explicada": 0.26472986695544354,
+   "leitura": "persiste"
+  },
+  "zona_259": {
+   "secoes": 446,
+   "locais": 34,
+   "desvio_original": 0.1870156839305856,
+   "desvio_residual": 0.11886297831153166,
+   "ic95_residual_bootstrap_locais": [
+    0.00493374372443277,
+    0.2254917573435007
+   ],
+   "fracao_explicada": 0.36442240664879266,
+   "leitura": "explicado em parte"
+  }
+ },
+ "sensibilidade_ajuste_com_todas": {
+  "r2_fora": 0.019373170205123524,
+  "zona_251": {
+   "secoes": 322,
+   "locais": 27,
+   "desvio_original": 0.5769239210451563,
+   "desvio_residual": 0.37193925607564365,
+   "ic95_residual_bootstrap_locais": [
+    0.17067366328108735,
+    0.5638824479761593
+   ],
+   "fracao_explicada": 0.3553062327493062,
+   "leitura": "explicado em parte"
+  },
+  "zona_259": {
+   "secoes": 446,
+   "locais": 34,
+   "desvio_original": 0.1870156839305856,
+   "desvio_residual": 0.08046463253921443,
+   "ic95_residual_bootstrap_locais": [
+    -0.03125172471223276,
+    0.18538371511598284
+   ],
+   "fracao_explicada": 0.569743933513724,
+   "leitura": "explicado em parte"
+  }
+ }
+}

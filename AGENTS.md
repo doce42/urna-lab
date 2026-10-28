@@ -22,6 +22,15 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 
 8. **Resultado com contexto em votos.** Todo teste tem `impacto_votos` no registro: quanto o resultado representa em número de votos (ou por que não se traduz em votos), comparado à margem do 2º turno. `scripts/impacto_votos.py` preenche; atualize ao mudar um resultado.
 
+## Estado atual e por onde continuar
+- **Estado:** Fase 3 concluída (V1.3, rodada 5).
+  - Pergunta central e resposta: `fase3/VEREDITO_2026.md`.
+  - Respostas pergunta a pergunta: `fase3/RESPOSTAS_F3.md`.
+  - Fila de investigações em aberto: skill `apuracao-investigacao`.
+- **Para investigar algo novo:** carregue `apuracao-investigacao` (pré-registro, regra adversarial, escala de sinal, orçamento por lote) e a skill do domínio.
+- **Para publicar, congelar ou preparar dados para terceiros:** carregue `apuracao-versoes`.
+- **Regra adversarial:** concordância entre BU, RDV, log e tabela é consistência interna; explicação vinda do próprio log é "compatível", não "verificada".
+
 ## Mapa do projeto
 - `PROTOCOLO.md`: perguntas, modelos nulos (N1–N7), módulos, critérios, emendas.
 - `METODOLOGIA.md`: a matemática de cada teste.

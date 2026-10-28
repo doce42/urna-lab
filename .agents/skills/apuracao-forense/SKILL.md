@@ -28,3 +28,9 @@ Rodar ou acrescentar testes T02–T13, T21–T27, ou interpretar um sinal.
 
 ## Limite que todo relatório tem que dizer
 Troca uniforme no país inteiro não deixa diferença entre urnas: nenhum teste estatístico a vê (T13). O que cobre esse caso é a camada A (skill apuracao-integridade) e as auditorias do TSE.
+
+## F2 e F3
+- **Poder no sentido correto:** `fase3/rev_a2_poder.py` (A2) e `rev_i1_poder.py` (I1). Mecanismos disperso, locais, municípios, região e grandes cidades. Regra calibrada; detecção conta só o lado certo.
+- **Ponto cego e teste próprio:** o T02 não vê troca em município inteiro (a mediana absorve). Para isso há o T44, `fase3/teste_grandes_cidades.py` (histórico de 2022).
+- **Curvas (T40):** `f3_curvas.py`, `f3_curvas2.py`, `fila_f4_chegada.py`. Nenhum modelo de chegada validado; T10 e T11 são descritivos. A curva divulgada ao vivo está no R2 (`inv_r2_curva_publica.py`, capturas do Internet Archive).
+- **Zeros (T41):** `f3_zeros.py`, `rev_i2_zeros.py`, `inv_r3_zeros.py`. Nenhum modelo calibrado. Fora da amostra, previsto ≈ observado.

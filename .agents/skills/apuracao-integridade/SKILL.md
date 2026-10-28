@@ -39,3 +39,16 @@ Rode numa UF pequena (AC) e numa com urnas antigas (MS). Tudo tem que dar 100%:
 - `cert_igual_log`.
 
 Um resultado abaixo de 100% é, primeiro, suspeita de erro de leitura (aconteceu 4 vezes, ver CATALOGO, seção 4).
+
+## Lições da F2 e da F3 (leia antes de mexer nos arquivos das urnas)
+- **Nulo por suspensão em 2022:** o leitor de 2022 já soma o tipo 6 em `rdv_nulo` e o grava também em `rdv_tipo6`. Não some de novo. Em 2026 é preciso somar.
+- **Sistema de Apuração:**
+  - 2022: o leitor geral não reconhece `.busa`, `.imgbusa`, `.logsajez` e `.vscsa`. Leitura à parte em `fase3/ver_sa22.py` (159 seções-turno) e `fila_f3_semboletim.py`.
+  - 2026: os `-sa.vsc` não são conferidos pelo leitor; conferência à parte em `fase3/fila_f2_sa2026.py`.
+- **Log de 2022:**
+  - O 3º campo da linha **não é** o número da urna em parte dos logs (o mesmo valor aparece em vários estados). `ids_urna_log` e `urnas_com_voto_no_log` não valem para 2022.
+  - "Certificado ≠ urna do log" ocorre em 59% das seções e não indica troca de urna.
+- **Parquet de 2022:** gerado com versão anterior do leitor de boletim (5 seções sem votos lidos). Regerar com `processar_brutos.py` atual se for usar boletins de 2022.
+- **"Verificação de assinatura … [ERRO]" no log:** quase sempre fora do dia da eleição, e as do dia são seguidas de sucesso (`fase3/final_t33.py`). O leitor conta como falha qualquer linha sem SUCESSO.
+- **Investigações por arquivo:** `fase3/inv_r1_integridade.py` (tabela × bu × RDV × imagem, 2022 e 2026), `ver_a173.py`, `ver_bu1.py`, `fila_f1_log2022.py` (log × comparecimento 2022).
+- **Regra adversarial:** concordância entre arquivos da mesma urna é consistência interna (skill apuracao-investigacao).

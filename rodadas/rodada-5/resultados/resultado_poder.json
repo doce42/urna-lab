@@ -1,0 +1,646 @@
+{
+ "base": {
+  "T1": 33,
+  "T2": 0.3639014245577708,
+  "T3": 116,
+  "T4": 2.0465860033360097
+ },
+ "limiar": {
+  "T1": 61.72281323269014,
+  "T2": 1.0917042736733125,
+  "T3": 169.85164807134504,
+  "T4": 3.5
+ },
+ "margem_real_votos": 4429831,
+ "linhas": [
+  {
+   "cenario": "0.1% das urnas,  2% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 2352,
+   "pct_validos": 0.002,
+   "T1": 33,
+   "T2": 0.363,
+   "T3": 116,
+   "T4": 2.06,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "0.1% das urnas,  5% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 6639,
+   "pct_validos": 0.005,
+   "T1": 39,
+   "T2": 0.366,
+   "T3": 117,
+   "T4": 2.01,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "0.1% das urnas, 10% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 11677,
+   "pct_validos": 0.009,
+   "T1": 210,
+   "T2": 0.372,
+   "T3": 116,
+   "T4": 2.06,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "0.1% das urnas, 20% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 24901,
+   "pct_validos": 0.02,
+   "T1": 541,
+   "T2": 0.386,
+   "T3": 116,
+   "T4": 2.04,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "1.0% das urnas,  2% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 24309,
+   "pct_validos": 0.02,
+   "T1": 35,
+   "T2": 0.357,
+   "T3": 116,
+   "T4": 2.04,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "1.0% das urnas,  5% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 63636,
+   "pct_validos": 0.051,
+   "T1": 111,
+   "T2": 0.364,
+   "T3": 117,
+   "T4": 2.02,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "1.0% das urnas, 10% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 124743,
+   "pct_validos": 0.101,
+   "T1": 1962,
+   "T2": 0.416,
+   "T3": 118,
+   "T4": 2.0,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "1.0% das urnas, 20% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 250367,
+   "pct_validos": 0.202,
+   "T1": 5088,
+   "T2": 0.515,
+   "T3": 116,
+   "T4": 2.03,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "5.0% das urnas,  2% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 124579,
+   "pct_validos": 0.1,
+   "T1": 36,
+   "T2": 0.34,
+   "T3": 117,
+   "T4": 2.13,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "5.0% das urnas,  5% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 309241,
+   "pct_validos": 0.249,
+   "T1": 246,
+   "T2": 0.426,
+   "T3": 119,
+   "T4": 2.08,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "5.0% das urnas, 10% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 615424,
+   "pct_validos": 0.496,
+   "T1": 6946,
+   "T2": 0.654,
+   "T3": 126,
+   "T4": 1.98,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "5.0% das urnas, 20% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 1217136,
+   "pct_validos": 0.981,
+   "T1": 24273,
+   "T2": 1.102,
+   "T3": 128,
+   "T4": 2.21,
+   "detectou": [
+    1,
+    true,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "20.0% das urnas,  2% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 496895,
+   "pct_validos": 0.4,
+   "T1": 31,
+   "T2": 0.415,
+   "T3": 120,
+   "T4": 2.31,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "20.0% das urnas,  5% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 1241878,
+   "pct_validos": 1.001,
+   "T1": 62,
+   "T2": 0.741,
+   "T3": 128,
+   "T4": 2.77,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "20.0% das urnas, 10% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 2464966,
+   "pct_validos": 1.987,
+   "T1": 3118,
+   "T2": 1.691,
+   "T3": 144,
+   "T4": 2.48,
+   "detectou": [
+    1,
+    true,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "20.0% das urnas, 20% dos válidos",
+   "grupo": "Troca de votos (Flávio -> Lula) em urnas sorteadas no país",
+   "votos": 4881766,
+   "pct_validos": 3.934,
+   "T1": 81685,
+   "T2": 3.448,
+   "T3": 162,
+   "T4": 2.62,
+   "detectou": [
+    1,
+    true,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de BA, 1% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 90442,
+   "pct_validos": 0.073,
+   "T1": 34,
+   "T2": 0.364,
+   "T3": 117,
+   "T4": 2.54,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "todas as urnas de BA, 2% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 181934,
+   "pct_validos": 0.147,
+   "T1": 36,
+   "T2": 0.364,
+   "T3": 123,
+   "T4": 4.04,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de BA, 5% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 453967,
+   "pct_validos": 0.366,
+   "T1": 83,
+   "T2": 0.364,
+   "T3": 134,
+   "T4": 9.98,
+   "detectou": [
+    1,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de MG, 1% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 126865,
+   "pct_validos": 0.102,
+   "T1": 34,
+   "T2": 0.364,
+   "T3": 116,
+   "T4": 2.4,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "todas as urnas de MG, 2% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 252026,
+   "pct_validos": 0.203,
+   "T1": 34,
+   "T2": 0.364,
+   "T3": 116,
+   "T4": 4.42,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de MG, 5% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 629520,
+   "pct_validos": 0.507,
+   "T1": 43,
+   "T2": 0.363,
+   "T3": 121,
+   "T4": 10.13,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de SP, 1% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 266207,
+   "pct_validos": 0.215,
+   "T1": 33,
+   "T2": 0.364,
+   "T3": 116,
+   "T4": 3.56,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de SP, 2% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 525687,
+   "pct_validos": 0.424,
+   "T1": 33,
+   "T2": 0.364,
+   "T3": 116,
+   "T4": 5.78,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de SP, 5% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 1312908,
+   "pct_validos": 1.058,
+   "T1": 33,
+   "T2": 0.364,
+   "T3": 118,
+   "T4": 9.1,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de PR, 1% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 69359,
+   "pct_validos": 0.056,
+   "T1": 33,
+   "T2": 0.362,
+   "T3": 116,
+   "T4": 2.04,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "todas as urnas de PR, 2% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 137060,
+   "pct_validos": 0.11,
+   "T1": 33,
+   "T2": 0.362,
+   "T3": 116,
+   "T4": 3.7,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas de PR, 5% dos válidos",
+   "grupo": "Troca em todas as urnas de um estado",
+   "votos": 342880,
+   "pct_validos": 0.276,
+   "T1": 34,
+   "T2": 0.361,
+   "T3": 116,
+   "T4": 7.79,
+   "detectou": [
+    0,
+    false,
+    0,
+    true
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "todas as urnas, 0.5% dos válidos",
+   "grupo": "Troca uniforme no país inteiro",
+   "votos": 568151,
+   "pct_validos": 0.458,
+   "T1": 36,
+   "T2": 0.317,
+   "T3": 121,
+   "T4": 1.84,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "todas as urnas, 1.0% dos válidos",
+   "grupo": "Troca uniforme no país inteiro",
+   "votos": 1248013,
+   "pct_validos": 1.006,
+   "T1": 42,
+   "T2": 0.349,
+   "T3": 129,
+   "T4": 2.16,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "todas as urnas, 2.0% dos válidos",
+   "grupo": "Troca uniforme no país inteiro",
+   "votos": 2482040,
+   "pct_validos": 2.0,
+   "T1": 56,
+   "T2": 0.378,
+   "T3": 140,
+   "T4": 2.0,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "0.1% das urnas, 50% das abstenções",
+   "grupo": "Enchimento de urna (eleitores que faltaram 'votando' no Lula)",
+   "votos": 15043,
+   "pct_validos": 0.012,
+   "T1": 56,
+   "T2": 0.398,
+   "T3": 117,
+   "T4": 2.04,
+   "detectou": [
+    0,
+    false,
+    0,
+    false
+   ],
+   "algum": false
+  },
+  {
+   "cenario": "0.1% das urnas, 100% das abstenções",
+   "grupo": "Enchimento de urna (eleitores que faltaram 'votando' no Lula)",
+   "votos": 27787,
+   "pct_validos": 0.022,
+   "T1": 218,
+   "T2": 0.398,
+   "T3": 123,
+   "T4": 2.03,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "1.0% das urnas, 50% das abstenções",
+   "grupo": "Enchimento de urna (eleitores que faltaram 'votando' no Lula)",
+   "votos": 155663,
+   "pct_validos": 0.125,
+   "T1": 246,
+   "T2": 0.412,
+   "T3": 126,
+   "T4": 2.06,
+   "detectou": [
+    1,
+    false,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "1.0% das urnas, 100% das abstenções",
+   "grupo": "Enchimento de urna (eleitores que faltaram 'votando' no Lula)",
+   "votos": 305181,
+   "pct_validos": 0.246,
+   "T1": 1971,
+   "T2": 0.619,
+   "T3": 234,
+   "T4": 2.07,
+   "detectou": [
+    1,
+    false,
+    1,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "5.0% das urnas, 50% das abstenções",
+   "grupo": "Enchimento de urna (eleitores que faltaram 'votando' no Lula)",
+   "votos": 761672,
+   "pct_validos": 0.614,
+   "T1": 843,
+   "T2": 1.443,
+   "T3": 154,
+   "T4": 1.92,
+   "detectou": [
+    1,
+    true,
+    0,
+    false
+   ],
+   "algum": true
+  },
+  {
+   "cenario": "5.0% das urnas, 100% das abstenções",
+   "grupo": "Enchimento de urna (eleitores que faltaram 'votando' no Lula)",
+   "votos": 1526886,
+   "pct_validos": 1.231,
+   "T1": 8130,
+   "T2": 2.641,
+   "T3": 674,
+   "T4": 2.05,
+   "detectou": [
+    1,
+    true,
+    1,
+    false
+   ],
+   "algum": true
+  }
+ ]
+}

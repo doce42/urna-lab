@@ -1,0 +1,261 @@
+{
+ "pergunta": "R1",
+ "correcao": "1ª execução: comparador somava NaN + nulos por suspensão (resultado NaN, contado como diferença) e a validação usava NaN or 0; corrigido e repetido uma vez",
+ "regra": "divergência só com arquivo lido (valor presente); RDV: nulo inclui nulo por suspensão (tipo 6)",
+ "2022_1T": {
+  "secoes_tabela": 472028,
+  "secoes_com_linha_de_arquivo": 472024,
+  "pareadas": 472024,
+  "bu": {
+   "lidas": 471907,
+   "iguais_nos_4_campos": 471907,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "rdv": {
+   "lidas": 471851,
+   "iguais_nos_4_campos": 429087,
+   "diferentes": 42764,
+   "exemplos_diferentes": [
+    "AC/1058/6/4",
+    "AC/1007/9/200",
+    "AC/1392/9/327",
+    "AC/1139/7/40",
+    "AC/1074/4/51",
+    "AC/1392/9/224",
+    "AC/1392/1/565",
+    "AC/1473/5/17",
+    "AC/1120/8/84",
+    "AC/1120/8/123"
+   ]
+  },
+  "img": {
+   "lidas": 471852,
+   "iguais_nos_4_campos": 471851,
+   "diferentes": 1,
+   "exemplos_diferentes": [
+    "RS/88013/2/199"
+   ]
+  },
+  "bu_comparecimento_diferente": 0,
+  "arquivo_bu": {
+   "com_conferencia": 471908,
+   "hash_ok": 471908,
+   "assinatura_ok": 471908
+  },
+  "arquivo_rdv": {
+   "com_conferencia": 471968,
+   "hash_ok": 471852,
+   "assinatura_ok": 471852
+  },
+  "arquivo_log": {
+   "com_conferencia": 471859,
+   "hash_ok": 471852,
+   "assinatura_ok": 471852
+  },
+  "arquivo_imgbu": {
+   "com_conferencia": 471853,
+   "hash_ok": 471853,
+   "assinatura_ok": 471853
+  },
+  "lista_assinada_ok": 471908,
+  "lista_lida": 471908,
+  "secoes_da_tabela_sem_linha_de_arquivo": 4,
+  "sem_linha_por_uf": {
+   "ZZ": 4
+  }
+ },
+ "2022_2T": {
+  "secoes_tabela": 472028,
+  "secoes_com_linha_de_arquivo": 472027,
+  "pareadas": 472027,
+  "bu": {
+   "lidas": 471980,
+   "iguais_nos_4_campos": 471980,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "rdv": {
+   "lidas": 471980,
+   "iguais_nos_4_campos": 464570,
+   "diferentes": 7410,
+   "exemplos_diferentes": [
+    "SP/70572/307/377",
+    "SP/70572/383/307",
+    "SP/62910/33/57",
+    "SP/62910/423/18",
+    "SP/62910/423/99",
+    "SP/62910/379/212",
+    "SP/62910/379/338",
+    "SP/62910/378/360",
+    "SP/62910/274/596",
+    "SP/71510/415/118"
+   ]
+  },
+  "img": {
+   "lidas": 471979,
+   "iguais_nos_4_campos": 471979,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "bu_comparecimento_diferente": 0,
+  "arquivo_bu": {
+   "com_conferencia": 471984,
+   "hash_ok": 471984,
+   "assinatura_ok": 471984
+  },
+  "arquivo_rdv": {
+   "com_conferencia": 472027,
+   "hash_ok": 471984,
+   "assinatura_ok": 471984
+  },
+  "arquivo_log": {
+   "com_conferencia": 471983,
+   "hash_ok": 471979,
+   "assinatura_ok": 471979
+  },
+  "arquivo_imgbu": {
+   "com_conferencia": 471983,
+   "hash_ok": 471983,
+   "assinatura_ok": 471983
+  },
+  "lista_assinada_ok": 471984,
+  "lista_lida": 471984,
+  "secoes_da_tabela_sem_linha_de_arquivo": 1,
+  "sem_linha_por_uf": {
+   "ZZ": 1
+  }
+ },
+ "2026_1T": {
+  "secoes_tabela": 499206,
+  "secoes_com_linha_de_arquivo": 499207,
+  "pareadas": 499206,
+  "bu": {
+   "lidas": 499198,
+   "iguais_nos_4_campos": 499198,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "rdv": {
+   "lidas": 499167,
+   "iguais_nos_4_campos": 499167,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "img": {
+   "lidas": 499169,
+   "iguais_nos_4_campos": 499168,
+   "diferentes": 1,
+   "exemplos_diferentes": [
+    "MG/50075/47/41"
+   ]
+  },
+  "bu_comparecimento_diferente": 0,
+  "arquivo_bu": {
+   "com_conferencia": 499176,
+   "hash_ok": 499176,
+   "assinatura_ok": 499176
+  },
+  "arquivo_rdv": {
+   "com_conferencia": 499206,
+   "hash_ok": 499175,
+   "assinatura_ok": 499175
+  },
+  "arquivo_log": {
+   "com_conferencia": 499176,
+   "hash_ok": 499176,
+   "assinatura_ok": 499176
+  },
+  "arquivo_imgbu": {
+   "com_conferencia": 499177,
+   "hash_ok": 499176,
+   "assinatura_ok": 499176
+  },
+  "lista_assinada_ok": 499176,
+  "lista_lida": 499176,
+  "secoes_da_tabela_sem_linha_de_arquivo": 0,
+  "sem_linha_por_uf": {}
+ },
+ "2026_2T": {
+  "secoes_tabela": 499205,
+  "secoes_com_linha_de_arquivo": 499207,
+  "pareadas": 499205,
+  "bu": {
+   "lidas": 499201,
+   "iguais_nos_4_campos": 499201,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "rdv": {
+   "lidas": 499174,
+   "iguais_nos_4_campos": 499174,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "img": {
+   "lidas": 499174,
+   "iguais_nos_4_campos": 499174,
+   "diferentes": 0,
+   "exemplos_diferentes": []
+  },
+  "bu_comparecimento_diferente": 0,
+  "arquivo_bu": {
+   "com_conferencia": 499178,
+   "hash_ok": 499178,
+   "assinatura_ok": 499178
+  },
+  "arquivo_rdv": {
+   "com_conferencia": 499207,
+   "hash_ok": 499178,
+   "assinatura_ok": 499178
+  },
+  "arquivo_log": {
+   "com_conferencia": 499177,
+   "hash_ok": 499177,
+   "assinatura_ok": 499177
+  },
+  "arquivo_imgbu": {
+   "com_conferencia": 499178,
+   "hash_ok": 499178,
+   "assinatura_ok": 499178
+  },
+  "lista_assinada_ok": 499178,
+  "lista_lida": 499178,
+  "secoes_da_tabela_sem_linha_de_arquivo": 0,
+  "sem_linha_por_uf": {}
+ },
+ "validacao_releitura_100_secoes_2022": {
+  "secoes": 100,
+  "identicas": 100,
+  "diferentes": []
+ },
+ "analise_das_diferencas": {
+  "rdv_2022": {
+   "achado": "todas as diferenças de RDV em 2022 (42.764 no 1º turno, 7.410 no 2º) estão só no campo nulo e só em seções com nulo por suspensão; o leitor de 2022 já soma o tipo 6 no nulo (analise/processar_brutos.py, linha 200), e a regra pré-registrada, copiada do T17b de 2026, somava de novo",
+   "resultado_lido_corretamente": {
+    "1T": {
+     "lidas": 471851,
+     "rdv_nulo_diferente_da_tabela": 0
+    },
+    "2T": {
+     "lidas": 471980,
+     "rdv_nulo_diferente_da_tabela": 0
+    }
+   },
+   "desvio": "segunda correção do comparador, além do orçamento de uma correção; declarada"
+  },
+  "imagem_2026_MG_50075_47_41": {
+   "achado": "seção do Sistema de Apuração com duas imagens: imgbu da urna (258 votos, parcial) e imgbusa do Sistema de Apuração (278 votos: Lula 103, Flávio 125, brancos 9, nulos 15), igual à tabela; o comparador leu a imagem parcial da urna",
+   "classe": "contingência documentada (urna + cédulas), não divergência"
+  },
+  "imagem_2022_RS_88013_2_199": {
+   "achado": "imagem do boletim (imgbu) assinada e com hash válido mostra Lula 83, Bolsonaro 83, Ciro 8, Tebet 15, outros 2, brancos 3, nulos 2, total apurado 196, aptos 352; o bu.dat assinado, o RDV e a tabela mostram Lula 129, Bolsonaro 111 (comparecimento igual à tabela). Certificado da urna (UEAO02228407) diferente da urna registrada no log (2215062)",
+   "classe": "divergência objetiva entre dois arquivos assinados da mesma seção (imagem × boletim digital); votos da tabela = bu.dat = RDV; causa não demonstrada (troca de urna com recuperação de dados é compatível, não verificada); 87 votos de diferença no total apurado"
+  },
+  "bu_nao_lido_2022": {
+   "1T": "121 = 116 do Sistema de Apuração (verificados no SA22) + 5 (4 do exterior, 1 PA/4383/91/73)",
+   "2T": "48 = 43 do Sistema de Apuração + 5 (3 do exterior, RS/86568/100/15, PA/4499/17/41)",
+   "nota": "as 10 seções restantes não foram lidas nesta sessão (fila)"
+  }
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "pre_registro": "fase3/PREREG_FINAL.md (Z1)",
+ "capitais": {
+  "BA": {
+   "municipio": "BA38490",
+   "residuo": 0.09570000139813517,
+   "z_entre_capitais": 6.070068601080915
+  },
+  "PE": {
+   "municipio": "PE25313",
+   "residuo": -0.03698498399510977,
+   "z_entre_capitais": -1.7301989590736195
+  },
+  "AC": {
+   "municipio": "AC1392",
+   "residuo": 0.017698132455597537,
+   "z_entre_capitais": 1.6406876973181215
+  },
+  "RO": {
+   "municipio": "RO35",
+   "residuo": 0.016297497125814575,
+   "z_entre_capitais": 1.5611518161016538
+  },
+  "GO": {
+   "municipio": "GO93734",
+   "residuo": -0.03230323880365249,
+   "z_entre_capitais": -1.4313230120538372
+  },
+  "ES": {
+   "municipio": "ES56995",
+   "residuo": 0.010271830980295549,
+   "z_entre_capitais": 1.218980905080613
+  },
+  "RJ": {
+   "municipio": "RJ60011",
+   "residuo": -0.026679403696960924,
+   "z_entre_capitais": -1.0723053862200933
+  },
+  "CE": {
+   "municipio": "CE13897",
+   "residuo": -0.025876469505851263,
+   "z_entre_capitais": -1.0210472107003432
+  },
+  "PR": {
+   "municipio": "PR75353",
+   "residuo": -0.025393461526763805,
+   "z_entre_capitais": -0.99021266903599
+  },
+  "MA": {
+   "municipio": "MA9210",
+   "residuo": -0.024094659435540733,
+   "z_entre_capitais": -0.9072989928039137
+  },
+  "TO": {
+   "municipio": "TO73440",
+   "residuo": 0.004547494511786765,
+   "z_entre_capitais": 0.8939211727426039
+  },
+  "PB": {
+   "municipio": "PB20516",
+   "residuo": -0.023495221629114438,
+   "z_entre_capitais": -0.8690317367383708
+  },
+  "RR": {
+   "municipio": "RR3018",
+   "residuo": 0.003333904338743643,
+   "z_entre_capitais": 0.8250067581222136
+  },
+  "PA": {
+   "municipio": "PA4278",
+   "residuo": 0.000689380210408097,
+   "z_entre_capitais": 0.6632016656369382
+  },
+  "AM": {
+   "municipio": "AM2550",
+   "residuo": 0.0006772229689758213,
+   "z_entre_capitais": 0.6621901709287205
+  },
+  "SC": {
+   "municipio": "SC81795",
+   "residuo": -0.0016900511501699023,
+   "z_entre_capitais": 0.5301471024418497
+  },
+  "SE": {
+   "municipio": "SE31054",
+   "residuo": -0.018831419770577673,
+   "z_entre_capitais": -0.5074969450349112
+  },
+  "RS": {
+   "municipio": "RS88013",
+   "residuo": -0.017043778706380297,
+   "z_entre_capitais": -0.4061217366617982
+  },
+  "MG": {
+   "municipio": "MG41238",
+   "residuo": -0.016742636017802626,
+   "z_entre_capitais": -0.38904425762195094
+  },
+  "MT": {
+   "municipio": "MT90670",
+   "residuo": -0.015863958453634253,
+   "z_entre_capitais": -0.3392153949132382
+  },
+  "SP": {
+   "municipio": "SP71072",
+   "residuo": -0.01585030844275437,
+   "z_entre_capitais": -0.3384413174292525
+  },
+  "PI": {
+   "municipio": "PI12190",
+   "residuo": -0.006937478370732442,
+   "z_entre_capitais": 0.2374533301994317
+  },
+  "DF": {
+   "municipio": "DF97012",
+   "residuo": -0.007111394757408573,
+   "z_entre_capitais": 0.22775252995363984
+  },
+  "RN": {
+   "municipio": "RN17612",
+   "residuo": -0.00812773945033013,
+   "z_entre_capitais": 0.1710623178618785
+  },
+  "AP": {
+   "municipio": "AP6050",
+   "residuo": -0.008766135817003584,
+   "z_entre_capitais": 0.13545350750710125
+  },
+  "MS": {
+   "municipio": "MS90514",
+   "residuo": -0.011390709699230506,
+   "z_entre_capitais": -0.08554225343947593
+  },
+  "AL": {
+   "municipio": "AL27855",
+   "residuo": -0.01099839518386092,
+   "z_entre_capitais": -0.05132419870857391
+  }
+ },
+ "salvador_z_entre_capitais": 6.070068601080915,
+ "capitais_com_abs_z_maior_3": [
+  "BA"
+ ],
+ "secoes_ne_pareadas": 23060,
+ "Salvador": {
+  "secoes": 5010,
+  "excesso_original_dvirada": 0.0771460594280684,
+  "excesso_apos_perfil": 0.12129286167074435,
+  "ic95_bootstrap_locais": [
+   0.11693542613507357,
+   0.12547605929234962
+  ],
+  "fracao_explicada": -0.5722496076917418,
+  "leitura": "persiste"
+ },
+ "Recife (validação)": {
+  "secoes": 3380,
+  "excesso_original_dvirada": 0.007942722754863046,
+  "excesso_apos_perfil": 0.0066236362007771575,
+  "ic95_bootstrap_locais": [
+   0.00269563182325053,
+   0.010755606812446191
+  ],
+  "fracao_explicada": 0.16607485805522537,
+  "leitura": "persiste"
+ },
+ "Fortaleza (validação)": {
+  "secoes": 5209,
+  "excesso_original_dvirada": -0.10548746526155699,
+  "excesso_apos_perfil": -0.10760000184000336,
+  "ic95_bootstrap_locais": [
+   -0.11126365867319697,
+   -0.10412142225281446
+  ],
+  "fracao_explicada": -0.02002642279069189,
+  "leitura": "persiste"
+ }
+}

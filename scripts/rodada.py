@@ -8,6 +8,9 @@ congelar, o campo "mudancas" do teste é esvaziado: começa a contar de novo. O 
 (site: página Linha do tempo e gaveta de cada teste). As fases e os marcos ficam em rodadas/linha_do_tempo.json.
 
 Uso:  python scripts/rodada.py fechar 2 V1.0 "Baseline aprovada"  congela a rodada 2 com o rótulo V1.0 (recusa se já existir)
+      python scripts/rodada.py fechar 5 V1.3 "título" --incluir fase3 CONCLUSAO.md ...
+                                                                 copia também esses arquivos/pastas (caminho relativo à raiz)
+                                                                 para arquivos/ e grava o SHA-256 de todos no mesmo resumo.json
       python scripts/rodada.py comparar 1 2                      lista os testes que mudaram entre duas rodadas
       python scripts/rodada.py prova T02 "tipo" "alvo" "descrição" "resistiu|caiu|ajustado|em_andamento"
                                                                  registra uma prova (contestação) feita a um teste;
@@ -39,7 +42,7 @@ def sha(p):
     return hashlib.sha256(open(p, "rb").read()).hexdigest()
 
 
-def fechar(n, rotulo, titulo):
+def fechar(n, rotulo, titulo, incluir=()):
     destino = os.path.join(DIR, f"rodada-{n}")
     if os.path.exists(destino):
         sys.exit(f"a rodada {n} já foi fechada ({destino}); rodadas fechadas não se reescrevem")
@@ -62,6 +65,16 @@ def fechar(n, rotulo, titulo):
     gravar(REG, reg)
     gravar(os.path.join(destino, "registro.json"), reg)
     arquivos["registro.json"] = sha(os.path.join(destino, "registro.json"))
+    # arquivos extras (documentos, scripts e resultados da fase), copiados ANTES de gravar o resumo: tudo entra no mesmo hash
+    for item in incluir:
+        origem = os.path.join(RAIZ, item)
+        lista = [origem] if os.path.isfile(origem) else [os.path.join(r, f) for r, _, fs in os.walk(origem) for f in fs]
+        if not os.path.exists(origem):
+            sys.exit(f"não existe: {item}")
+        for f in sorted(lista):
+            rel = os.path.relpath(f, RAIZ); alvo = os.path.join(destino, "arquivos", rel)
+            os.makedirs(os.path.dirname(alvo), exist_ok=True); shutil.copy2(f, alvo)
+            arquivos["arquivos/" + rel] = sha(alvo)
     gravar(os.path.join(destino, "resumo.json"), {"rodada": n, "versao": rotulo, "titulo": titulo, "data": hoje, "placar": placar, "arquivos_sha256": arquivos})
     print(f"rodada {n} fechada em {destino}: {len(reg['testes'])} testes, {len(arquivos)} arquivos com SHA-256")
 
@@ -100,7 +113,8 @@ def prova(tid, tipo, alvo, descricao, resultado):
 if __name__ == "__main__":
     acao = sys.argv[1] if len(sys.argv) > 1 else ""
     if acao == "fechar" and len(sys.argv) >= 5:
-        fechar(int(sys.argv[2]), sys.argv[3], sys.argv[4])
+        extras = sys.argv[sys.argv.index("--incluir") + 1:] if "--incluir" in sys.argv else []
+        fechar(int(sys.argv[2]), sys.argv[3], sys.argv[4], extras)
     elif acao == "comparar" and len(sys.argv) == 4:
         comparar(int(sys.argv[2]), int(sys.argv[3]))
     elif acao == "prova" and len(sys.argv) == 7:

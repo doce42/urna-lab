@@ -20,3 +20,14 @@ Atualizar o gráfico ou o relatório, acrescentar uma seção, gerar o PDF.
   - Nunca dois eixos y no mesmo gráfico.
 - **Gráfico de tempo:** a lightweight-charts espaça por quantidade de pontos, então preencha todos os segundos/minutos para o tempo ficar proporcional.
 - **Antes de entregar:** abra a página (`chromium --headless --screenshot`) e olhe. O validador não vê sobreposição de rótulos.
+
+## Site atual (React)
+- **Onde:** `grafico/relatorio-app`. O build é `npm run build`, que roda `build-dados.mjs` (registro, linha do tempo, inventário, `respostas_f3.json`, `veredito_2026.json`).
+- **Páginas:**
+  - **Início:** com a resposta central (`RespostaHome`).
+  - **Respostas** (`src/paginas/Respostas.tsx`): busca por pergunta, resposta central, perguntas com "Em votos" e os 33 itens.
+  - **Testes:** com o selo de sinal (`src/ui/Sinal.tsx`).
+  - **Mapas.**
+  - **Evolução** (`LinhaDoTempo.tsx`).
+  - **Docs:** lista em `build-dados.mjs`.
+- **Deploy:** `firebase deploy --only hosting`, depois de conferir com o Playwright. A Home mostra só a fase atual; o detalhe fica em Evolução.

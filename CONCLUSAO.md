@@ -22,8 +22,8 @@ Resultados novos, com o que significam em votos. A baseline V1.0 abaixo permanec
 
 Hipótese por hipótese, com o sinal de cada teste, em [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md).
 
-## Fase 3 em revisão (28/10/2026)
-> **Estado:** a F3 foi encerrada e congelada como V1.2 (rodada 4, tag `v1.2`) **antes** de uma auditoria científica. A auditoria ([`fase3/AUDITORIA_F3.md`](fase3/AUDITORIA_F3.md)) encontrou afirmações acima da evidência e falhas de registro, e a fase voltou a **em revisão**. O texto congelado está em `rodadas/rodada-4/CONCLUSAO.md`. Abaixo, primeiro o que mudou na revisão, depois o texto da V1.2 com as frases corrigidas marcadas. Não há conclusão definitiva da F3.
+## Fase 3 (concluída em 28/10/2026, V1.3; histórico da revisão abaixo)
+> **Estado:** concluída e congelada na rodada 5 (V1.3) com aprovação do responsável. Histórico: a F3 foi encerrada e congelada como V1.2 (rodada 4, tag `v1.2`) **antes** de uma auditoria científica. A auditoria ([`fase3/AUDITORIA_F3.md`](fase3/AUDITORIA_F3.md)) encontrou afirmações acima da evidência e falhas de registro, e a fase voltou a **em revisão**. O texto congelado está em `rodadas/rodada-4/CONCLUSAO.md`. Abaixo, primeiro o que mudou na revisão, depois o texto da V1.2 com as frases corrigidas marcadas. Não há conclusão definitiva da F3.
 
 **O que a revisão mudou (investigações I1 a I3, pré-registro em [`fase3/PREREG_REVISAO.md`](fase3/PREREG_REVISAO.md)):**
 - **Alcance da detecção (I1, corrigido pelo A2):** os votos das simulações são sintéticos, não encontrados nos dados. Contando só alarmes no sentido certo, a bateria:

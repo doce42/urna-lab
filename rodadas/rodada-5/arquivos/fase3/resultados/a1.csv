@@ -1,0 +1,368 @@
+turno,uf,chave,tipo_urna_tabela,secoes_agregadas_nesta,aptos,comparecimento,arquivos_no_pacote,no_dataurnas_secoes,dataurnas_tipo_urna,dataurnas_reserva,dataurnas_issues,dataurnas_ocorrencia,sa22,agregada_a_outra,boletim_local,boletim_lido,diferencas_boletim_x_tabela,classe
+1,AM,AM/2011/34/27,APURADA,#NULO#,130,120,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,AM,AM/2259/8/116,APURADA,172,361,220,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,AM,AM/2550/40/454,APURADA,#NULO#,417,276,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,AM,AM/2690/4/129,APURADA,#NULO#,215,167,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,BA,BA/34070/31/259,APURADA,#NULO#,396,313,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,BA,BA/36390/37/157,APURADA,#NULO#,237,180,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"I03,I04",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/158,APURADA,159 / 160,383,251,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/161,APURADA,162 / 163,377,273,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"I03,I04",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/164,APURADA,#NULO#,236,175,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,"I03,I06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/165,APURADA,#NULO#,241,187,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/166,APURADA,#NULO#,337,244,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/167,APURADA,#NULO#,265,218,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,I03",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/168,APURADA,#NULO#,257,204,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/190,APURADA,#NULO#,195,144,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/195,APURADA,#NULO#,352,267,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/197,APURADA,#NULO#,265,212,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I04,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/212,APURADA,#NULO#,325,232,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36390/37/227,APURADA,#NULO#,225,182,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/1,APURADA,#NULO#,380,286,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/10,APURADA,#NULO#,310,217,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/11,APURADA,#NULO#,340,275,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/12,APURADA,#NULO#,340,251,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/13,APURADA,#NULO#,282,175,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/14,APURADA,#NULO#,382,253,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/15,APURADA,#NULO#,381,265,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/16,APURADA,#NULO#,373,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/17,APURADA,#NULO#,299,203,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/18,APURADA,#NULO#,300,194,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/19,APURADA,#NULO#,296,196,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,"A03,A04,C06,I01,I06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/2,APURADA,#NULO#,383,261,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,"A03,A04,I01,I06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/20,APURADA,#NULO#,311,193,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,"A04,I01,I06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/21,APURADA,#NULO#,323,235,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/22,APURADA,#NULO#,272,188,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/23,APURADA,#NULO#,279,182,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/24,APURADA,#NULO#,274,185,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,A04,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/25,APURADA,#NULO#,357,255,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/26,APURADA,#NULO#,354,248,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/27,APURADA,#NULO#,324,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/28,APURADA,#NULO#,234,156,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/29,APURADA,#NULO#,274,169,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/3,APURADA,#NULO#,348,249,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/30,APURADA,#NULO#,276,176,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/31,APURADA,#NULO#,256,186,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/32,APURADA,#NULO#,354,263,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,I02",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/33,APURADA,#NULO#,350,258,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I02,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/34,APURADA,#NULO#,314,223,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/35,APURADA,#NULO#,317,230,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/36,APURADA,#NULO#,227,152,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I02,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/37,APURADA,#NULO#,229,158,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/38,APURADA,#NULO#,216,160,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/39,APURADA,#NULO#,262,171,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/4,APURADA,#NULO#,343,244,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/40,APURADA,#NULO#,242,171,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/41,APURADA,#NULO#,282,190,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,M06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/42,APURADA,#NULO#,303,229,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/43,APURADA,#NULO#,311,215,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/44,APURADA,#NULO#,322,218,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,"A03,A04,I01,I03,I06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/45,APURADA,#NULO#,301,233,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/46,APURADA,#NULO#,241,175,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/47,APURADA,#NULO#,249,176,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/48,APURADA,#NULO#,350,242,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/49,APURADA,#NULO#,259,172,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/5,APURADA,200,220,160,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,A01,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/50,APURADA,#NULO#,270,170,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/51,APURADA,#NULO#,299,219,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/52,APURADA,#NULO#,301,210,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"I02,I04",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/53,APURADA,66,344,242,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/54,APURADA,#NULO#,332,220,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I04,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/6,APURADA,#NULO#,347,256,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/7,APURADA,#NULO#,293,202,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/8,APURADA,#NULO#,291,207,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36412/149/9,APURADA,#NULO#,307,223,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/90,APURADA,#NULO#,155,120,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/93,APURADA,#NULO#,333,269,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/94,APURADA,#NULO#,295,221,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/95,APURADA,#NULO#,347,259,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/96,APURADA,#NULO#,303,222,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/97,APURADA,#NULO#,359,275,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36439/137/99,APURADA,#NULO#,275,198,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,I03",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/100,APURADA,#NULO#,338,252,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/106,APURADA,#NULO#,257,205,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/107,APURADA,#NULO#,312,250,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/108,APURADA,#NULO#,242,214,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/109,APURADA,#NULO#,328,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/11,APURADA,#NULO#,258,197,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/110,APURADA,#NULO#,344,265,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"I03,I04",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/111,APURADA,#NULO#,290,235,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/112,APURADA,#NULO#,385,305,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/12,APURADA,#NULO#,246,197,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/13,APURADA,#NULO#,311,251,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/14,APURADA,#NULO#,314,248,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,M06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/15,APURADA,#NULO#,247,198,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,I03",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/16,APURADA,#NULO#,247,208,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/17,APURADA,#NULO#,304,249,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/18,APURADA,#NULO#,312,240,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/186,APURADA,#NULO#,274,240,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/187,APURADA,#NULO#,308,257,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/19,APURADA,#NULO#,261,205,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/191,APURADA,#NULO#,236,204,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/192,APURADA,#NULO#,205,175,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/193,APURADA,#NULO#,252,203,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I04,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/194,APURADA,#NULO#,201,171,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/195,APURADA,#NULO#,213,176,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/196,APURADA,#NULO#,402,329,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,I03",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/197,APURADA,#NULO#,256,211,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/199,APURADA,#NULO#,254,196,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/20,APURADA,#NULO#,250,196,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/200,APURADA,#NULO#,266,218,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/201,APURADA,#NULO#,245,203,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/204,APURADA,#NULO#,241,196,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/206,APURADA,#NULO#,182,159,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/21,APURADA,#NULO#,245,201,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/22,APURADA,#NULO#,316,271,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/23,APURADA,#NULO#,314,246,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/24,APURADA,#NULO#,253,209,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/25,APURADA,#NULO#,323,248,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/26,APURADA,#NULO#,252,195,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/27,APURADA,#NULO#,247,210,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/28,APURADA,#NULO#,304,239,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/30,APURADA,#NULO#,334,254,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/31,APURADA,#NULO#,210,167,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/33,APURADA,#NULO#,373,293,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/36,APURADA,#NULO#,396,308,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/390,APURADA,#NULO#,241,191,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/63,APURADA,#NULO#,355,294,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/82,APURADA,#NULO#,260,210,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,I03",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/83,APURADA,#NULO#,309,245,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/92,APURADA,#NULO#,330,252,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/94,APURADA,#NULO#,285,238,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/95,APURADA,#NULO#,294,239,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/96,APURADA,#NULO#,268,220,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/97,APURADA,#NULO#,247,169,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/98,APURADA,#NULO#,202,180,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36455/58/99,APURADA,#NULO#,388,316,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/1,APURADA,#NULO#,317,201,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/10,APURADA,#NULO#,243,148,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/11,APURADA,#NULO#,224,150,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/12,APURADA,#NULO#,231,152,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I04,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/13,APURADA,#NULO#,251,160,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/14,APURADA,#NULO#,239,143,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"I04,I05",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/16,APURADA,#NULO#,319,238,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/17,APURADA,#NULO#,304,213,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/18,APURADA,#NULO#,316,203,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/19,APURADA,#NULO#,322,220,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/2,APURADA,#NULO#,318,201,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/20,APURADA,#NULO#,339,246,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/21,APURADA,#NULO#,338,237,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/22,APURADA,#NULO#,368,231,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/23,APURADA,#NULO#,393,268,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/24,APURADA,#NULO#,355,239,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/25,APURADA,#NULO#,236,140,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"I03,I05",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/26,APURADA,#NULO#,371,238,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/27,APURADA,#NULO#,399,283,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/28,APURADA,#NULO#,394,279,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/29,APURADA,#NULO#,293,184,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/3,APURADA,#NULO#,316,196,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/30,APURADA,#NULO#,285,183,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/31,APURADA,#NULO#,392,248,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/32,APURADA,#NULO#,385,272,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/33,APURADA,#NULO#,251,191,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/34,APURADA,#NULO#,394,315,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/4,APURADA,#NULO#,328,209,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/44,APURADA,#NULO#,313,226,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/45,APURADA,#NULO#,301,212,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/46,APURADA,15,338,213,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/47,APURADA,#NULO#,326,243,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I03,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/48,APURADA,#NULO#,380,253,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/5,APURADA,#NULO#,360,244,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/6,APURADA,#NULO#,238,162,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/7,APURADA,#NULO#,353,246,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/8,APURADA,#NULO#,367,250,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/36471/32/9,APURADA,#NULO#,229,149,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I04,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+1,BA,BA/37478/131/222,APURADA,#NULO#,213,164,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,CE,CE/15270/6/206,APURADA,#NULO#,298,235,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,CE,CE/15873/89/181,APURADA,#NULO#,293,236,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,MG,MG/47872/167/41,APURADA,#NULO#,391,291,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,MG,MG/49050/196/173,APURADA,#NULO#,109,16,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,MS,MS/90735/43/27,APURADA,#NULO#,212,166,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,MT,MT/98191/27/126,APURADA,#NULO#,382,261,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,PA,PA/4839/23/707,APURADA,#NULO#,353,292,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,PE,PE/23493/99/39,APURADA,#NULO#,391,254,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,PE,PE/25313/5/54,APURADA,#NULO#,330,283,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,PR,PR/74039/48/13,APURADA,#NULO#,386,259,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,PR,PR/75043/188/166,APURADA,#NULO#,354,289,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,PR,PR/76678/42/329,APURADA,#NULO#,357,300,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,RN,RN/17434/30/77,APURADA,#NULO#,236,55,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,RS,RS/87378/62/35,APURADA,66,144,109,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,SC,SC/81744/54/167,APURADA,#NULO#,294,215,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,SC,SC/82210/106/6,APURADA,#NULO#,355,277,"bu,imgbu,logjez,rdv,vscmr",False,,,,secao_fora_do_banco,False,False,bu,True,,"4 fora do DataUrnas-BR, com arquivos no pacote local"
+1,SP,SP/61557/299/242,APURADA,#NULO#,264,198,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+1,SP,SP/71838/407/205,APURADA,#NULO#,258,215,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,BA,BA/36390/37/157,APURADA,#NULO#,237,179,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/158,APURADA,159 / 160,383,250,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/161,APURADA,162 / 163,377,272,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/164,APURADA,#NULO#,236,173,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/165,APURADA,#NULO#,241,187,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/166,APURADA,#NULO#,337,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/167,APURADA,#NULO#,265,214,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/168,APURADA,#NULO#,257,202,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/190,APURADA,#NULO#,195,148,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/195,APURADA,#NULO#,352,278,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/197,APURADA,#NULO#,265,213,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/212,APURADA,#NULO#,325,224,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36390/37/227,APURADA,#NULO#,225,175,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/1,APURADA,#NULO#,382,282,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/10,APURADA,#NULO#,310,209,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/11,APURADA,#NULO#,342,282,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/12,APURADA,#NULO#,342,248,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/13,APURADA,#NULO#,283,178,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/14,APURADA,#NULO#,382,268,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/15,APURADA,#NULO#,381,270,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/16,APURADA,#NULO#,373,250,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/17,APURADA,#NULO#,299,206,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/18,APURADA,#NULO#,300,193,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/19,APURADA,#NULO#,296,193,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,"C06,I06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/2,APURADA,#NULO#,384,264,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/20,APURADA,#NULO#,311,199,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/21,APURADA,#NULO#,323,236,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/22,APURADA,#NULO#,272,186,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/23,APURADA,#NULO#,279,180,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/24,APURADA,#NULO#,274,184,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/25,APURADA,#NULO#,357,254,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,M06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/26,APURADA,#NULO#,354,246,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/27,APURADA,#NULO#,324,242,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/28,APURADA,#NULO#,234,155,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/29,APURADA,#NULO#,274,168,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/3,APURADA,#NULO#,348,250,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/30,APURADA,#NULO#,276,177,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/31,APURADA,#NULO#,256,184,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/32,APURADA,#NULO#,354,267,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/33,APURADA,#NULO#,350,259,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/34,APURADA,#NULO#,314,218,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,M06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/35,APURADA,#NULO#,317,232,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/36,APURADA,#NULO#,227,150,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/37,APURADA,#NULO#,229,157,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/38,APURADA,#NULO#,216,160,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/39,APURADA,#NULO#,262,171,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/4,APURADA,#NULO#,343,253,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/40,APURADA,#NULO#,242,172,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/41,APURADA,#NULO#,281,185,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,M06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/42,APURADA,#NULO#,303,227,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/43,APURADA,#NULO#,311,216,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/44,APURADA,#NULO#,322,215,"bu,imgbu,logjez,rdv,vscmr",True,reservaSecao,True,I06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/45,APURADA,#NULO#,301,220,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/46,APURADA,#NULO#,241,176,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/47,APURADA,#NULO#,249,177,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/48,APURADA,#NULO#,350,249,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/49,APURADA,#NULO#,259,184,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/5,APURADA,200,221,163,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,A01,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/50,APURADA,#NULO#,270,179,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/51,APURADA,#NULO#,299,217,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/52,APURADA,#NULO#,301,210,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/53,APURADA,66,344,243,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/6,APURADA,#NULO#,349,268,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/7,APURADA,#NULO#,293,193,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/8,APURADA,#NULO#,292,202,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36412/149/9,APURADA,#NULO#,307,224,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/88,APURADA,#NULO#,191,136,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/90,APURADA,#NULO#,155,120,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/93,APURADA,#NULO#,333,267,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/94,APURADA,#NULO#,295,213,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/95,APURADA,#NULO#,347,257,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/96,APURADA,#NULO#,303,222,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/97,APURADA,#NULO#,359,285,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36439/137/99,APURADA,#NULO#,275,200,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/100,APURADA,#NULO#,338,272,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/106,APURADA,#NULO#,257,204,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/107,APURADA,#NULO#,312,249,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/108,APURADA,#NULO#,242,220,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/109,APURADA,#NULO#,328,257,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/11,APURADA,#NULO#,258,198,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/110,APURADA,#NULO#,344,278,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/111,APURADA,#NULO#,290,236,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/112,APURADA,#NULO#,385,312,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/12,APURADA,#NULO#,246,193,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/13,APURADA,#NULO#,311,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/14,APURADA,#NULO#,314,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,"C06,M06",,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/15,APURADA,#NULO#,247,198,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/16,APURADA,#NULO#,247,201,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/17,APURADA,#NULO#,304,255,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/18,APURADA,#NULO#,311,241,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/186,APURADA,#NULO#,274,245,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/187,APURADA,#NULO#,308,260,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/19,APURADA,#NULO#,261,206,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/191,APURADA,#NULO#,236,203,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/192,APURADA,#NULO#,205,172,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/193,APURADA,#NULO#,252,202,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/194,APURADA,#NULO#,201,172,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/195,APURADA,#NULO#,213,183,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/196,APURADA,#NULO#,402,342,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/197,APURADA,#NULO#,256,216,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/199,APURADA,#NULO#,254,207,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/20,APURADA,#NULO#,250,202,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/200,APURADA,#NULO#,266,210,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/201,APURADA,#NULO#,245,211,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/204,APURADA,#NULO#,241,200,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/206,APURADA,#NULO#,182,160,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/21,APURADA,#NULO#,245,196,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/22,APURADA,#NULO#,316,270,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/23,APURADA,#NULO#,314,251,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/24,APURADA,#NULO#,253,217,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/25,APURADA,#NULO#,323,248,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/26,APURADA,#NULO#,252,198,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/27,APURADA,#NULO#,247,207,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/28,APURADA,#NULO#,304,247,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/30,APURADA,#NULO#,335,263,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/31,APURADA,#NULO#,210,171,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/33,APURADA,#NULO#,373,299,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/36,APURADA,#NULO#,396,312,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/390,APURADA,#NULO#,241,191,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/63,APURADA,#NULO#,355,298,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/82,APURADA,#NULO#,260,211,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/83,APURADA,#NULO#,309,251,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/92,APURADA,#NULO#,330,262,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/94,APURADA,#NULO#,285,240,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/95,APURADA,#NULO#,294,242,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/96,APURADA,#NULO#,268,223,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/97,APURADA,#NULO#,247,182,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/98,APURADA,#NULO#,202,190,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36455/58/99,APURADA,#NULO#,388,319,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/1,APURADA,#NULO#,317,201,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/10,APURADA,#NULO#,243,152,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/11,APURADA,#NULO#,224,151,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/12,APURADA,#NULO#,231,148,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/13,APURADA,#NULO#,251,157,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/14,APURADA,#NULO#,239,134,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I05,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/16,APURADA,#NULO#,319,229,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/17,APURADA,#NULO#,304,220,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/18,APURADA,#NULO#,316,195,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/19,APURADA,#NULO#,322,225,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/2,APURADA,#NULO#,318,198,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/20,APURADA,#NULO#,339,237,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/21,APURADA,#NULO#,339,231,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/22,APURADA,#NULO#,368,215,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I05,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/23,APURADA,#NULO#,393,272,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/24,APURADA,#NULO#,355,242,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/25,APURADA,#NULO#,236,139,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,I05,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/26,APURADA,#NULO#,371,241,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/27,APURADA,#NULO#,399,286,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/28,APURADA,#NULO#,394,269,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/29,APURADA,#NULO#,293,178,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,C06,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/3,APURADA,#NULO#,316,193,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/30,APURADA,#NULO#,285,183,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/31,APURADA,#NULO#,392,251,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/32,APURADA,#NULO#,385,276,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/33,APURADA,#NULO#,251,184,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/34,APURADA,#NULO#,394,305,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/4,APURADA,#NULO#,328,204,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/44,APURADA,#NULO#,313,224,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/45,APURADA,#NULO#,301,203,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/46,APURADA,15,338,207,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/47,APURADA,#NULO#,326,239,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/5,APURADA,#NULO#,360,234,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/6,APURADA,#NULO#,238,162,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/7,APURADA,#NULO#,353,243,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/8,APURADA,#NULO#,367,250,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/36471/32/9,APURADA,#NULO#,229,156,"bu,imgbu,logjez,rdv,vscmr",True,secao,False,,,False,False,bu,True,,3 no DataUrnas-BR sem votos de Presidente
+2,BA,BA/37877/105/83,APURADA,#NULO#,176,103,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,DF,DF/97012/9/11,APURADA,12,418,353,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,GO,GO/92886/26/131,APURADA,#NULO#,387,310,"busa,imgbusa,logsajez,rdv,vscsa",True,,False,,,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,PA,PA/4898/99/17,APURADA,#NULO#,375,175,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,PA,PA/4898/99/18,APURADA,#NULO#,321,180,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,PA,PA/4898/99/19,APURADA,#NULO#,319,173,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,PA,PA/4898/99/55,APURADA,#NULO#,269,161,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,PE,PE/26212/75/135,APURADA,#NULO#,244,208,"busa,imgbusa,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,RS,RS/89192/54/13,APURADA,#NULO#,296,249,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)
+2,SC,SC/83011/46/22,APURADA,#NULO#,383,321,"busa,imgbusa,logjez,logsajez,rdv,vscsa",False,,,,secao_fora_do_banco,True,False,busa,True,,1 Sistema de Apuração (SA22)

@@ -121,12 +121,12 @@
   },
   {
    "id": "F3",
-   "rodada": 4,
-   "versao": "V1.2",
+   "rodada": 5,
+   "versao": "V1.3",
    "titulo": "Pendências, curvas e zeros",
-   "status": "em_revisao",
+   "status": "concluida",
    "inicio": "2026-10-28",
-   "resumo": "A F3 foi congelada cedo demais (V1.2) e reaberta para revisão. Na revisão: auditoria, investigações de integridade, curva divulgada, zeros, zona 251, auditoria adversarial, veredito de 2026 com 10 hipóteses de fraude, teste das grandes cidades e investigações finais. Todas as 33 perguntas e as 26 da missão têm resposta final (respondida, em parte com limite, não determinável ou bloqueada por fonte externa). Aguarda aprovação do responsável para congelar.",
+   "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, congelada na rodada 5 (V1.3). A V1.2 fora congelada cedo demais e ficou preservada; a revisão trouxe auditoria, investigações de integridade, curva divulgada (Internet Archive), zeros, zona 251, auditoria adversarial, veredito de 2026 com 10 hipóteses de fraude, teste das grandes cidades e investigações finais. Resposta central: nos dados públicos não há sinal de fraude capaz de inverter 2026; anomalias reais somam dezenas de milhares de votos sem causa demonstrada (a maior, Salvador, ~30 mil); dois mecanismos ficam fora do alcance dos dados públicos (deslocamento uniforme pequeno e alteração da urna antes dos registros).",
    "etapas": [],
    "historico": [
     {
@@ -138,8 +138,14 @@
      "etapa": "revisão (antes do fechamento)",
      "status": "em_revisao",
      "resumo": "A F3 foi encerrada e congelada (V1.2, rodada 4) antes de uma auditoria científica. A auditoria de 28/10/2026 encontrou classificações acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19) e falhas de registro; com aprovação do responsável a fase voltou a 'em revisão'. A V1.2 e a tag v1.2 ficam como registro do que foi publicado. A revisão executou três investigações (poder contra trocas concentradas, zeros com modelo calibrado, locais com nulo espacial). Não há nova conclusão definitiva: o encerramento depende de aprovação."
+    },
+    {
+     "etapa": "fechamento das perguntas",
+     "status": "em_revisao",
+     "resumo": "A F3 foi congelada cedo demais (V1.2) e reaberta para revisão. Na revisão: auditoria, investigações de integridade, curva divulgada, zeros, zona 251, auditoria adversarial, veredito de 2026 com 10 hipóteses de fraude, teste das grandes cidades e investigações finais. Todas as 33 perguntas e as 26 da missão têm resposta final (respondida, em parte com limite, não determinável ou bloqueada por fonte externa). Aguarda aprovação do responsável para congelar."
     }
-   ]
+   ],
+   "fim": "2026-10-28"
   }
  ],
  "marcos": [
@@ -316,6 +322,12 @@
    "hora": "",
    "titulo": "F3: todas as perguntas com resposta final",
    "texto": "Salvador única capital desviante, não explicada pelo perfil; erros de assinatura do software no log seguidos de sucesso; anomalias pequenas descritas; fontes externas bloqueadas. Aguarda aprovação para congelar."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Fase 3 concluída (V1.3)",
+   "texto": "Aprovada pelo responsável e congelada na rodada 5, com todos os arquivos da fase no mesmo hash."
   }
  ],
  "etapas_do_caminho": [
@@ -430,5 +442,5 @@
    "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 aprovada · Fase 2 concluída (V1.1) · Fase 3 em revisão (V1.2 congelada antes da auditoria)"
+ "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 concluída (V1.3) em 28/10/2026"
 }

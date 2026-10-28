@@ -1,0 +1,46 @@
+{
+ "2022": {
+  "lula_1T": 57259504,
+  "lula_2T": 60345999,
+  "adv_1T": 51072345,
+  "adv_2T": 58206354,
+  "eliminados_1T": 9897870,
+  "brancos_nulos_1T": 5452653,
+  "brancos_nulos_2T": 5700443,
+  "comparecimento_1T": 123682372,
+  "comparecimento_2T": 124252796,
+  "delta_lula": 3086495,
+  "delta_adv": 7134009,
+  "delta_comp": 570424,
+  "delta_bn": 247790,
+  "secoes_votos_maior_que_comparecimento": 0,
+  "secoes_comparecimento_maior_que_aptos": 0,
+  "identidade": {
+   "ganho_dos_finalistas": 10220504,
+   "eliminados_mais_delta_comparecimento_menos_delta_brancos_nulos": 10220504
+  },
+  "nota": "base do projeto (tabela por seção, inclui exterior); 1ª execução somou colunas que não eram candidatos em 'eliminados' (corrigido)"
+ },
+ "2026": {
+  "lula_1T": 53879538,
+  "lula_2T": 64256232,
+  "adv_1T": 56104503,
+  "adv_2T": 59826041,
+  "eliminados_1T": 9321993,
+  "brancos_nulos_1T": 5969801,
+  "brancos_nulos_2T": 4153801,
+  "comparecimento_1T": 125275835,
+  "comparecimento_2T": 128236074,
+  "delta_lula": 10376694,
+  "delta_adv": 3721538,
+  "delta_comp": 2960239,
+  "delta_bn": -1816000,
+  "secoes_votos_maior_que_comparecimento": 0,
+  "secoes_comparecimento_maior_que_aptos": 0,
+  "identidade": {
+   "ganho_dos_finalistas": 14098232,
+   "eliminados_mais_delta_comparecimento_menos_delta_brancos_nulos": 14098232
+  },
+  "nota": "base do projeto (tabela por seção, inclui exterior); 1ª execução somou colunas que não eram candidatos em 'eliminados' (corrigido)"
+ }
+}

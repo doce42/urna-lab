@@ -15,6 +15,7 @@ grafico/web/dados.json
 grafico/web/logs.json
 grafico/web/relatorio.pdf
 !dados/listas/MANIFESTO.csv
+!dados/listas/MANIFESTO.csv.ots
 
 # termos pessoais bloqueados na publicação
 scripts/.privado.txt
@@ -33,3 +34,4 @@ dados/brutos/doc/*.zip
 # revisão R1: cópias de repositórios de terceiros e do próprio projeto ficam só locais (há manifesto com SHA-256 no relatório)
 revisoes/*/original/fontes/
 !dados/listas/MANIFESTO_hash_oficial.csv
+dados_leves/

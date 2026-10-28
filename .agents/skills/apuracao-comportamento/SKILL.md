@@ -24,3 +24,11 @@ Explicar o que mudou entre turnos, quem votou, onde e quando; montar o "comporta
 
 ## Divergências (E01–E03)
 Comportamento esperado = modelos N2 (persistência), N3 (transferência) e N4 (perfil). Divergência = resíduo. Procure agrupamento por local, zona e município. Explique cada uma antes de chamar de anomalia (PROTOCOLO, seção 4).
+
+## F2 e F3
+- **E02 com nulo espacial:** `fase3/rev_i3_espacial.py`. A referência é a zona eleitoral, que não é vizinhança geográfica. A lista de locais depende do método.
+- **Moran's I (T42):** `fase3/f3_pendencias.py p19`.
+- **Zona 251 de SP (2022) e perfil do eleitorado:** `fase3/inv_r4_zona251.py`. O desvio persiste.
+- **Salvador (2026) entre as capitais e com perfil:** `fase3/final_salvador.py`. Única capital desviante, não explicada pelo perfil.
+- **Perfil por seção:** `dados/perfil_eleitorado` (2026, coluna `QT_ELEITORES`) e `dados/2022/perfil_eleitorado` (coluna `QT_ELEITORES_PERFIL`).
+- **Contas entre turnos:** `fase3/resultados/entre_turnos_contas.json`. A identidade fecha exatamente; os fluxos individuais não são identificáveis.

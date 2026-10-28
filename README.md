@@ -2,7 +2,7 @@
 
 Estudo independente, imparcial e reproduzível da apuração presidencial brasileira de **2026** (1º e 2º turno), com **2022** como referência. Usa **somente dados oficiais do TSE** (dados abertos e arquivos gravados por cada urna).
 
-> **Status: Fase 3 em revisão.** A V1.2 (tag `v1.2`, `rodadas/rodada-4/`) foi congelada antes de uma auditoria científica e fica preservada. A auditoria está em [`fase3/AUDITORIA_F3.md`](fase3/AUDITORIA_F3.md), e a revisão em [`RELATORIO_F3.md`](RELATORIO_F3.md). **Fase 2 concluída** (V1.1, tag `v1.1`, `rodadas/rodada-3/`). A baseline V1.0 (tag `v1.0`, `rodadas/rodada-2/`) e o levantamento inicial V1.0-rc1 (`rodada-1`) seguem congelados. A revisão independente [R1 (Codex)](revisoes/R1-codex/) foi respondida. Resultados da Fase 2 em [`RELATORIO_FASE2_COMPLETA.md`](RELATORIO_FASE2_COMPLETA.md) (e a primeira sessão em [`RELATORIO_SESSAO_LIMITADA.md`](RELATORIO_SESSAO_LIMITADA.md)); quatro perguntas novas (P18 a P21) ficaram na fila.
+> **Status: Fase 3 concluída (V1.3, 28/10/2026, tag `v1.3`, `rodadas/rodada-5/`).** A pergunta central e a resposta estão em [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md); as respostas pergunta a pergunta, em [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md). A V1.2 (congelada cedo demais) e as anteriores seguem preservadas.
 
 ## O que tem aqui
 

@@ -1,0 +1,23 @@
+{
+ "pergunta": "fila F2",
+ "secoes_turno": 60,
+ "por_turno": {
+  "1": 31,
+  "2": 29
+ },
+ "por_classe": {
+  "concorda (boletim, texto impresso e assinatura; consistência interna)": 56,
+  "não comparável: fora da tabela": 3,
+  "concorda nos votos; assinatura não conferida integralmente": 1
+ },
+ "assinatura_ok": 60,
+ "algoritmos": {
+  "ECDSA-P521": 58,
+  "Ed521": 2
+ },
+ "com_listados_e_ausentes": 60,
+ "nao_conferidos": {
+  "": 59,
+  "imgbu.dat": 1
+ }
+}
