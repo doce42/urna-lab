@@ -12,7 +12,7 @@
 > [!NOTE]
 > **Nota do autor**
 >
-> Não quero provar nem desprovar nada. A gente vê muita coisa sobre urna na internet e quase ninguém para e analisa os dados de verdade. Então eu fiz essa análise até onde os dados públicos permitiram ir. Daqui em diante é com vocês: em vez de reclamar, usem o projeto, rodem os dados, coloquem nos seus agentes de IA, contribuam com o que encontrarem e tirem as suas próprias conclusões.
+> Não quero provar nem desprovar nada. Também não afirmo nem nego que os dados oficiais sejam verdadeiros: peguei o que está disponível publicamente e analisei o que dava para analisar. A gente vê muita coisa sobre urna na internet e quase ninguém para e analisa os dados de verdade. Então eu fiz essa análise até onde os dados públicos permitiram ir. Daqui em diante é com vocês: em vez de reclamar, usem o projeto, rodem os dados, coloquem nos seus agentes de IA, contribuam com o que encontrarem e tirem as suas próprias conclusões.
 
 **Site:** [urna-lab.web.app](https://urna-lab.web.app) · **Versão:** V1.3, Fase 3 concluída e congelada em 28/10/2026 (tag [`v1.3`](https://github.com/doce42/urna-lab/releases/tag/v1.3))
 
