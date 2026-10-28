@@ -1,0 +1,164 @@
+ano,turno,tipo,SG_UF,CD_MUNICIPIO,NR_ZONA,NR_SECAO,cn_certificado,urna_tabela,ids_urna_log,log_computado,comparecimento,votos_validos,emitido_em
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,AL,27057,55,143,ueao01248794,1774827,67305985,314.0,314.0,299.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,BA,38490,2,534,UEAO02238719,2238580,,0.0,342.0,324.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,BA,34495,129,46,ueao01299186,1260088,67305985,262.0,262.0,245.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,MG,52477,255,152,ueao01244898,1261838,67305985,181.0,181.0,170.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,PR,75833,43,74,ueao01113109,1099580,,0.0,307.0,298.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,RS,87955,78,23,ueao01103991,1678747,67305985,126.0,126.0,121.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SC,80896,92,239,UEAO02019043,2177459,2177459,300.0,300.0,291.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SE,31798,14,19,UEAO02048133,2172912,2172912,252.0,252.0,240.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SE,31950,34,35,UEAO02048309,2172850,"2172850,2175218",563.0,307.0,287.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,70718,273,183,ueao01164735,1240788,67305985,296.0,296.0,284.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,328,882,ueao01766566,1052960,67305985,312.0,312.0,294.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,280,885,ueao01173755,1340491,67305985,267.0,267.0,254.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,280,638,UEAO02057416,2056570,2056570,317.0,317.0,290.0,
+2022,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,71218,340,303,ueao01031875,1094964,67305985,297.0,297.0,273.0,
+2022,1,F_mesmo_certificado_em_duas_secoes,BA,34495,129,46,ueao01299186,,,,,,
+2022,1,F_mesmo_certificado_em_duas_secoes,BA,34495,129,143,ueao01299186,,,,,,
+2022,1,F_mesmo_certificado_em_duas_secoes,SP,71072,389,524,ueao01095313,,,,,,
+2022,1,F_mesmo_certificado_em_duas_secoes,SP,71072,389,529,ueao01095313,,,,,,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,AL,27774,14,36,ueao01028044,1250020,67305985,266.0,266.0,247.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,CE,13897,95,201,UEAO02100853,2246579,2246579,267.0,267.0,255.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,MG,41238,28,125,UEAO02012945,2084689,2084689,343.0,343.0,323.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,MG,52477,255,152,ueao01245523,1244898,67305985,205.0,205.0,199.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,RJ,60011,170,191,UEAO02151667,2162263,2162263,287.0,287.0,277.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,RJ,58971,135,250,ueao01276441,1221457,67305985,263.0,263.0,245.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,418,466,UEAO02086436,2086457,2086457,297.0,297.0,272.0,
+2022,2,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,418,261,UEAO02086436,2086688,"2086457,2086688",629.0,332.0,313.0,
+2022,2,F_mesmo_certificado_em_duas_secoes,SP,71072,418,466,UEAO02086436,,,,,,
+2022,2,F_mesmo_certificado_em_duas_secoes,SP,71072,418,261,UEAO02086436,,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,AL,27774,14,36,ueao01250020 -> ueao01028044,1250020 -> 1250020,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,CE,13897,95,201,UEAO02246579 -> UEAO02100853,2246579 -> 2246579,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,MG,41238,28,125,UEAO02084689 -> UEAO02012945,2084689 -> 2084689,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,RJ,60011,170,191,UEAO02162263 -> UEAO02151667,2162263 -> 2162263,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,RJ,58971,135,250,ueao01221457 -> ueao01276441,1221457 -> 1221457,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,SP,71072,418,261,UEAO02086688 -> UEAO02086436,2086688 -> 2086688,,,,,
+2022,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,SP,71072,418,466,UEAO02086457 -> UEAO02086436,2086457 -> 2086457,,,,,
+2022,1e2,C_urna_da_tabela_mudou_mas_certificado_nao,RS,87955,78,23,ueao01103991 -> ueao01103991,1678747 -> 1103991,,,,,
+2022,1e2,C_urna_da_tabela_mudou_mas_certificado_nao,SC,80896,92,239,UEAO02019043 -> UEAO02019043,2177459 -> 2019043,,,,,
+2022,1e2,C_urna_da_tabela_mudou_mas_certificado_nao,SP,71072,328,882,ueao01766566 -> ueao01766566,1052960 -> 1766566,,,,,
+2022,1e2,C_urna_da_tabela_mudou_mas_certificado_nao,SP,71072,280,638,UEAO02057416 -> UEAO02057416,2056570 -> 2057416,,,,,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,AL,27057,22,581,UEAO02072552,2073355,02073355,303.0,303.0,289.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,BA,38857,108,148,ueao01672673,1768711,01768711,70.0,70.0,64.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,ES,56995,53,28,ueao01656698,1677012,01677012,241.0,241.0,228.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,ES,57053,1,46,UEAO02353044,2036425,02036425,247.0,247.0,239.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,ES,57053,1,413,UEAO02036277,2036420,02036420,210.0,210.0,205.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,ES,56472,24,100,ueao01771857,1840092,01840092,140.0,140.0,115.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,MS,91570,31,7,UEAO02152596,2150794,02150794,241.0,241.0,236.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,PR,75280,133,34,UEAO02077196,2081583,02081583,257.0,257.0,248.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,PR,76236,93,83,UEAO02056331,2060632,02089535,252.0,252.0,247.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,RN,18813,9,144,UEAO02052038,2348402,02348402,293.0,293.0,284.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,SE,31054,1,346,ueao01791133,1751434,01751434,245.0,245.0,234.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,SE,32417,22,133,UEAO02273651,2044616,02044616,199.0,199.0,178.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,418,73,UEAO02276282,2001951,02001951,265.0,265.0,244.0,
+2026,1,A_certificado_de_outra_urna_que_a_da_tabela,SP,71072,418,418,UEAO02403160,2087618,02087618,308.0,308.0,278.0,
+2026,2,A_certificado_de_outra_urna_que_a_da_tabela,ES,57932,9,85,ueao01758779,1841837,"01750820,01841837",612.0,308.0,298.0,
+2026,2,A_certificado_de_outra_urna_que_a_da_tabela,RJ,58696,27,139,UEAO02189420,2179194,02179194,249.0,249.0,238.0,
+2026,2,A_certificado_de_outra_urna_que_a_da_tabela,SP,64777,393,312,UEAO02399743,2396114,02396114,262.0,262.0,249.0,
+2026,2,F_mesmo_certificado_em_duas_secoes,ES,57932,9,85,ueao01758779,,,,,,
+2026,2,F_mesmo_certificado_em_duas_secoes,ES,57932,9,112,ueao01758779,,,,,,
+2026,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,ES,57053,1,413,UEAO02036277 -> UEAO02036420,2036420 -> 2036420,,,,,
+2026,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,ES,57932,9,85,ueao01841837 -> ueao01758779,1841837 -> 1841837,,,,,
+2026,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,RJ,58696,27,139,UEAO02179194 -> UEAO02189420,2179194 -> 2179194,,,,,
+2026,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,SP,71072,418,73,UEAO02276282 -> UEAO02001951,2001951 -> 2001951,,,,,
+2026,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,SP,71072,418,418,UEAO02403160 -> UEAO02087618,2087618 -> 2087618,,,,,
+2026,1e2,B_certificado_mudou_entre_turnos_mas_urna_da_tabela_nao,SP,64777,393,312,UEAO02396114 -> UEAO02399743,2396114 -> 2396114,,,,,
+2026,1e2,C_urna_da_tabela_mudou_mas_certificado_nao,ES,56472,24,100,ueao01771857 -> ueao01771857,1840092 -> 1771857,,,,,
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,27022,39,128,ueao01682879,,,,,,2026-09-09
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,27472,40,31,ueao01847874,,,,,,2026-09-09
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,27650,39,92,ueao01844078,,,,,,2026-09-09
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,28894,31,159,ueao01679245,,,,,,2026-09-09
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,28258,10,271,ueao01848297,,,,,,2026-09-23
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,28673,51,121,ueao01682873,,,,,,2026-09-09
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,34134,171,171,ueao01844121,,,,,,2026-09-15
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,37532,32,150,ueao01847990,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,39632,141,103,ueao01844118,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,53,384,ueao01682614,,,,,,2026-09-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,40,ueao01682953,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,318,ueao01682962,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,355,ueao01682925,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,5,ueao01682957,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,GO,96873,125,88,ueao01848317,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,GO,96016,94,109,ueao01847655,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8079,16,32,ueao01844165,,,,,,2026-09-17
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8893,47,460,ueao01682741,,,,,,2026-08-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8893,47,458,ueao01844173,,,,,,2026-09-17
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8494,93,405,ueao01844130,,,,,,2026-09-17
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,9210,76,636,ueao01848205,,,,,,2026-10-01
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,9210,89,282,ueao01844126,,,,,,2026-07-27
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MT,91677,20,485,ueao01847378,,,,,,2026-08-31
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MT,90670,1,1108,ueao01847523,,,,,,2026-09-17
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MT,90670,39,531,ueao01681706,,,,,,2026-08-31
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,5770,85,55,ueao01847646,,,,,,2026-08-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,5770,85,76,ueao01847690,,,,,,2026-08-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,4472,50,193,ueao01847746,,,,,,2026-08-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PB,19658,57,157,ueao01682759,,,,,,2026-09-25
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PB,20516,64,355,ueao01682134,,,,,,2026-09-14
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,23698,132,24,ueao01848222,,,,,,2026-09-18
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,23418,61,105,ueao01847549,,,,,,2026-09-18
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,24198,56,386,ueao01844163,,,,,,2026-09-18
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,24198,56,422,ueao01847748,,,,,,2026-09-18
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,24198,56,102,ueao01848058,,,,,,2026-08-31
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,25631,116,20,ueao01848139,,,,,,2026-08-31
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,66818,400,141,ueao01682645,,,,,,2026-08-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,65471,52,47,ueao01843888,,,,,,2026-09-17
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,67130,74,76,ueao01842388,,,,,,2026-08-31
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,71072,280,564,ueao01682525,,,,,,2026-09-03
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,71072,254,24,ueao01682534,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,62170,22,119,ueao01682927,,,,,,2026-07-20
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,64777,394,197,ueao01682724,,,,,,2026-08-31
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,63711,119,173,ueao01682105,,,,,,2026-09-12
+2026,1,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,70718,273,82,ueao01848224,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,27022,39,128,ueao01682879,,,,,,2026-09-09
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,27472,40,31,ueao01847874,,,,,,2026-09-09
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,27650,39,92,ueao01844078,,,,,,2026-09-09
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,28258,10,271,ueao01848297,,,,,,2026-09-23
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,28673,51,121,ueao01682873,,,,,,2026-09-09
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,AL,28894,31,159,ueao01679245,,,,,,2026-09-09
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,33774,71,150,ueao01843885,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,34134,171,171,ueao01844121,,,,,,2026-09-15
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,37532,32,150,ueao01847990,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,BA,39632,141,103,ueao01844118,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,355,ueao01682925,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,318,ueao01682962,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,40,ueao01682953,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,26,5,ueao01682957,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,ES,56995,53,384,ueao01682614,,,,,,2026-09-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,GO,96016,94,109,ueao01847655,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,GO,96873,125,88,ueao01848317,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8079,16,32,ueao01844165,,,,,,2026-09-17
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8494,93,405,ueao01844130,,,,,,2026-09-17
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8893,47,458,ueao01844173,,,,,,2026-09-17
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,8893,47,460,ueao01682741,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,9210,76,636,ueao01848205,,,,,,2026-10-01
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,9210,76,643,ueao01844177,,,,,,2026-10-01
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MA,9210,89,282,ueao01844126,,,,,,2026-07-27
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MT,90670,1,1108,ueao01847523,,,,,,2026-09-17
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MT,90670,39,531,ueao01681706,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,MT,91677,20,485,ueao01847378,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,4472,4,378,ueao01682885,,,,,,2026-09-29
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,4472,50,193,ueao01847746,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,5770,85,76,ueao01847690,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,5770,85,55,ueao01847646,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PA,5770,85,40,ueao01847529,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PB,19658,57,157,ueao01682759,,,,,,2026-09-25
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PB,20516,64,355,ueao01682134,,,,,,2026-09-14
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,23418,61,105,ueao01847549,,,,,,2026-09-18
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,23515,54,192,ueao01682260,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,23698,132,24,ueao01848222,,,,,,2026-09-18
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,24198,56,386,ueao01844163,,,,,,2026-09-18
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,24198,56,422,ueao01847748,,,,,,2026-09-18
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,25631,116,20,ueao01848139,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PE,25330,41,173,ueao01682785,,,,,,2026-09-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,PR,74128,150,144,ueao01681993,,,,,,2026-09-22
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,62170,22,119,ueao01682927,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,62634,214,3,ueao01682541,,,,,,2026-10-19
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,63711,119,173,ueao01682105,,,,,,2026-09-12
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,64777,394,197,ueao01682724,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,65471,52,47,ueao01843888,,,,,,2026-09-17
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,66818,400,141,ueao01682645,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,67130,74,76,ueao01842388,,,,,,2026-08-31
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,70718,273,82,ueao01848224,,,,,,2026-08-03
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,71072,4,114,ueao01847509,,,,,,2026-10-18
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,71072,254,24,ueao01682534,,,,,,2026-07-20
+2026,2,D_certificado_emitido_depois_do_fim_da_validade_do_certificado_publico_da_AC_URNA,SP,71072,280,564,ueao01682525,,,,,,2026-09-03

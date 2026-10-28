@@ -32,3 +32,10 @@ Comportamento esperado = modelos N2 (persistência), N3 (transferência) e N4 (p
 - **Salvador (2026) entre as capitais e com perfil:** `fase3/final_salvador.py`. Única capital desviante, não explicada pelo perfil.
 - **Perfil por seção:** `dados/perfil_eleitorado` (2026, coluna `QT_ELEITORES`) e `dados/2022/perfil_eleitorado` (coluna `QT_ELEITORES_PERFIL`).
 - **Contas entre turnos:** `fase3/resultados/entre_turnos_contas.json`. A identidade fecha exatamente; os fluxos individuais não são identificáveis.
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **Identidade exata entre turnos:** `ganho dos finalistas = votos dos eliminados + Δcomparecimento − Δ(brancos e nulos)`; abaixo dela só existe uma família de partilhas (parcela *s* dos eliminados que vai a um finalista, fração dos extras, ver T65). Nenhuma conta com premissa de *s* é medida; mostre sempre a família.
+- **O C06 (Goodman restrito) dá direção, não magnitude:** com origem conhecida (nulo que digita o número de um eliminado), acerta 14 (90%) e 70 (69%) em 2026 e erra 55, 12 e 15 (T59).
+- **Brancos e nulos:** a queda de 1,82 mi tem causa estrutural medida: erro de campo com número de governador no campo de presidente (698 mil no 1º turno de 2026) e menos 2º turno de governador (8% dos votos contra 53% em 2022) (T56 a T58).
+- **Controle proporcional (T65 M6):** dividir eliminados e extras na proporção do 1º turno em cada município; o resíduo (+3,68 mi para Lula em 2026, +1,99 mi para Bolsonaro em 2022, 27 de 27 UFs) é o que passou do proporcional. Exploratório, sem causa demonstrada.
+- Regressão ecológica por município é associação; leia só como direção (T37, T59).

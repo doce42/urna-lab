@@ -116,3 +116,24 @@ Rode tudo que é pesado com `nice -n 10 ionice -c3` para não travar o computado
 - **2022:** usa `DS_AGREGADAS` e `QT_ELEITORES_BIOMETRIA_NH` no lugar dos nomes de 2026, e as datas vêm como dd/mm/aaaa.
 - **Certificados das urnas UE2013/UE2015:** trazem bytes de preenchimento depois do DER. Recorte no tamanho declarado.
 - **Gráfico:** a lightweight-charts espaça os pontos por quantidade, não por tempo. Preencha todos os segundos ou minutos.
+
+## 7. Rodada 7 e Operação Veracidade (V1.5)
+**Ordem para reproduzir** (detalhes em `operacao_veracidade/REPRODUCAO.md`):
+1. `fase3/rdv_nulos.py <ano> <turno>` (uma vez por ano e turno; ~8 min com 12 processos): lê o número digitado em cada voto nulo e branco no RDV, por seção. Depois `fase3/rdv_nulos_analise.py` (T58 e T59).
+2. `operacao_veracidade/scripts/cert_extrai.py <ano> <turno> 12` (13 a 25 min por combinação), depois `cert_analise.py`, `casos_certificado.py`, `casos_A_relidos.py` (T60a).
+3. `controles_mutacao.py <ano> <UF>`, `ed521_unitarios.py` (T60b); `terceiros_qr.py`, `terceiros_qr_relogio.py`, `republicacao_bu.py` (T61); `identificabilidade.py` (T62).
+4. `sim_adversarial.py <ano> 6 20`, `sim_fabricacao_v2.py <ano> 20`, `gera_tabelas_sim.py` (T63, ~1 min por ano); `zeros_contagens.py`, `zeros_locais.py` (T64); `hipotese_video.py`, `hipotese_video_m6.py` (T65).
+5. Regerar `fase3/f3_veredito.py`, `f3_inventario.py`, `f3_respostas.py`, `scripts/verificar.py`, build do site.
+
+**Dados derivados novos (fora do git, reproduzíveis):** `operacao_veracidade/resultados/certs_<ano>_<turno>t.parquet` (uma linha por seção: UF, município, zona, seção, `cert_sha256`, `alg`, `cn`, `emissor`, `nao_antes`, `nao_depois`, `pub_sha256`, `cadeia_ok`, `valido_no_dia`, `emitido_depois_da_eleicao`, `erro`; ~75 MB cada) e `fase3/resultados/rdv_nulos_<ano>_<turno>t.parquet` (seção, cargo, tipo de voto, dígitos, quantidade) com `_gov.json` (números com voto nominal para governador por UF). O `.gitignore` os exclui porque o `publicar.py` recusa arquivo > 20 MB e total > 120 MB.
+**Dados externos (terceiros, fora do git, SHA-256 em `operacao_veracidade/externo/arvor_totalizacao/SHA256SUMS.txt`):** arquivos estáticos públicos de um projeto de totalização paralela (404 boletins do 2º turno de 2026); a licença de redistribuição não foi verificada.
+
+**Armadilhas novas:**
+- **O log de um pacote pode trazer logs arquivados de outras urnas e de outras seções** (contingência: ES 57932/9/85, 612 eventos de voto para 308 votos). Contar eventos por **data da eleição, ID de urna e seção declarada**, nunca o total do pacote.
+- **Fuso:** `DT_ENCERRAMENTO` e `DT_EMISSAO_BU` estão em hora local; `DT_BU_RECEBIDO` está em hora de Brasília. O fuso do município vem da abertura às 8h de Brasília. "Antes das 19h" é do **dia** da eleição, não da hora de qualquer dia.
+- **`dict.setdefault(k, zipfile.ZipFile(p))` reabre o zip a cada chamada** (o argumento é sempre avaliado): guarde o objeto e o conjunto de nomes em cache.
+- **BU e RDV omitem candidato com zero voto:** ausente = 0 ao comparar, quando o arquivo foi lido; senão milhares de falsas divergências.
+- **O tipo 6 do RDV (nulo sem número)** é somado ao nulo em 2022; seções só com tipo 6 ficam fora do comparador se isso não for tratado.
+- **A verificação de lista (`assin_lista_ok`) usa o certificado embutido no mesmo arquivo:** é autoconsistência. Só a cadeia (`cert_extrai.py`) autentica até a AC emissora. `assin_ok_<tipo>` assina o **hash da lista**, não o arquivo: use sempre junto com `hash_ok_<tipo>`.
+- **A página oficial de certificados do TSE responde HTTP 403 a este ambiente:** não contornar.
+- **`rodada.py fechar --incluir` agora ignora arquivos que o git ignora** (antes copiou por engano `scripts/.privado.txt` e 43 logs na rodada 6).

@@ -1,0 +1,32 @@
+{
+ "2026": {
+  "ganho_L_observado": 10333927.0,
+  "ganho_L_previsto_proporcional": 6656453.30274993,
+  "residual_L": 3677473.69725007,
+  "ganho_direita_observado": 3693941.0,
+  "ganho_direita_previsto": 7371414.69725007,
+  "residual_direita": -3677473.69725007,
+  "extras_para_Lula_se_proporcional_pct": 50.150720739590504,
+  "eliminados_para_Lula_se_proporcional_pct": 46.07611464314534,
+  "disponivel_total": 14027868.0,
+  "residual_L_pct_do_disponivel": 26.215485469709794,
+  "residual_direita_pct_do_disponivel": -26.215485469709794,
+  "ufs_com_residual_de_Lula_positivo": 27,
+  "ufs": 27
+ },
+ "2022": {
+  "ganho_L_observado": 3072523.0,
+  "ganho_L_previsto_proporcional": 5065934.752978671,
+  "residual_L": -1993411.7529786716,
+  "ganho_direita_observado": 7111293.0,
+  "ganho_direita_previsto": 5117881.247021329,
+  "residual_direita": 1993411.7529786713,
+  "extras_para_Lula_se_proporcional_pct": 21.253843112223798,
+  "eliminados_para_Lula_se_proporcional_pct": 50.66624711713099,
+  "disponivel_total": 10183816.0,
+  "residual_L_pct_do_disponivel": -19.5743103859955,
+  "residual_direita_pct_do_disponivel": 19.574310385995496,
+  "ufs_com_residual_de_Lula_positivo": 0,
+  "ufs": 27
+ }
+}

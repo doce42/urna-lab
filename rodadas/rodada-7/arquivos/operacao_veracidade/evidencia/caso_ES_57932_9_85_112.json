@@ -1,0 +1,184 @@
+{
+ "secoes": {
+  "85": {
+   "arquivos": {
+    "vota": {
+     "nome": "o03221es5793200090085-vota.vsc",
+     "bytes": 62609,
+     "sha256": "c33ba225294276b8949997b34c59e4c4c8f4eeb73eab23623f85e1e3e0570e0a"
+    },
+    "bu": {
+     "nome": "o03221es5793200090085-bu.dat",
+     "bytes": 1538,
+     "sha256": "22254e41417c9f2d45fb567aef16d09946e54dd2813f3df41ab2cdc21518bb4a"
+    },
+    "rdv": {
+     "nome": "o03221es5793200090085-rdv.dat",
+     "bytes": 5807,
+     "sha256": "8075d4fcc95b2e76472a861485e7edd2a6d7c51b29c1eb723294406ef94ba9c1"
+    },
+    "imgbu": {
+     "nome": "o03221es5793200090085-imgbu.dat",
+     "bytes": 6752,
+     "sha256": "9e635c4dd82da5008dbc94f5ff80bee9ea3cde9cb4518a9b7c47bb23f4b24274"
+    },
+    "log": {
+     "nome": "o03221es5793200090085-log.jez",
+     "bytes": 399475,
+     "sha256": "53f94512f36fea2011ee579c044210129b97ec8c461fa31a503c72d1d458a7d0"
+    }
+   },
+   "partes_do_log": [
+    [
+     "logd.dat",
+     10456
+    ],
+    [
+     "logd.dat",
+     10849
+    ],
+    [
+     "logd.dat",
+     725
+    ]
+   ],
+   "segundo_metodo": {
+    "votos_computados_por_id_e_data": {
+     "01750820|04/10/2026": 304,
+     "01750820|25/10/2026": 304,
+     "01841837|04/10/2026": 297,
+     "01841837|25/10/2026": 308
+    },
+    "votos_em_25_10_2026": 612,
+    "votos_em_04_10_2026": 601,
+    "linhas_com_secao_eleitoral": {
+     "01750820|24/09/2026|secao 112": 3,
+     "01750820|28/09/2026|secao 112": 1,
+     "01750820|03/10/2026|secao 112": 1,
+     "01750820|04/10/2026|secao 112": 1,
+     "01750820|14/10/2026|secao 112": 2,
+     "01750820|19/10/2026|secao 112": 2,
+     "01750820|24/10/2026|secao 112": 2,
+     "01750820|25/10/2026|secao 112": 1,
+     "01841837|22/09/2026|secao 85": 3,
+     "01841837|28/09/2026|secao 85": 1,
+     "01841837|03/10/2026|secao 85": 1,
+     "01841837|04/10/2026|secao 85": 1,
+     "01841837|13/10/2026|secao 85": 2,
+     "01841837|19/10/2026|secao 85": 2,
+     "01841837|24/10/2026|secao 85": 3,
+     "01841837|25/10/2026|secao 85": 4,
+     "01758779|22/09/2026|secao 0": 3,
+     "01758779|28/09/2026|secao 0": 1,
+     "01758779|15/10/2026|secao 0": 2,
+     "01758779|19/10/2026|secao 0": 1,
+     "01758779|25/10/2026|secao 0": 3,
+     "01758779|25/10/2026|secao 112": 1
+    },
+    "por_parte": [
+     {
+      "parte": "logd.dat",
+      "votos_computados_por_id_e_data": {
+       "01750820|04/10/2026": 304,
+       "01750820|25/10/2026": 304
+      }
+     },
+     {
+      "parte": "logd.dat",
+      "votos_computados_por_id_e_data": {
+       "01841837|04/10/2026": 297,
+       "01841837|25/10/2026": 308
+      }
+     },
+     {
+      "parte": "logd.dat",
+      "votos_computados_por_id_e_data": {}
+     }
+    ]
+   }
+  },
+  "112": {
+   "arquivos": {
+    "vota": {
+     "nome": "o03221es5793200090112-vota.vsc",
+     "bytes": 62609,
+     "sha256": "cdf8606db806d4d21816b0fa0e29d5a78b1b89f601196784f64ebba1cb206ea1"
+    },
+    "bu": {
+     "nome": "o03221es5793200090112-bu.dat",
+     "bytes": 1532,
+     "sha256": "a0dcfd16d7962041a752b7c52b4d765dc855d682047a614fefc4545cd9ed96c1"
+    },
+    "rdv": {
+     "nome": "o03221es5793200090112-rdv.dat",
+     "bytes": 5759,
+     "sha256": "299069b5d4a1c05a130d721bdf579cfd5abcc68a7a39c18e2b2dbc21d14a8362"
+    },
+    "imgbu": {
+     "nome": "o03221es5793200090112-imgbu.dat",
+     "bytes": 6906,
+     "sha256": "f279ce629e937b3924190eaaef7923c045c7f2c4d332d3c35fb44b6a13c11b4e"
+    },
+    "log": {
+     "nome": "o03221es5793200090112-log.jez",
+     "bytes": 200287,
+     "sha256": "e8a968d7e81162cc34db9ad870c80069fbfe8a344e9f356f6aebc93f2bd25174"
+    }
+   },
+   "partes_do_log": [
+    [
+     "logd.dat",
+     10456
+    ],
+    [
+     "logd.dat",
+     564
+    ]
+   ],
+   "segundo_metodo": {
+    "votos_computados_por_id_e_data": {
+     "01750820|04/10/2026": 304,
+     "01750820|25/10/2026": 304
+    },
+    "votos_em_25_10_2026": 304,
+    "votos_em_04_10_2026": 304,
+    "linhas_com_secao_eleitoral": {
+     "01750820|24/09/2026|secao 112": 3,
+     "01750820|28/09/2026|secao 112": 1,
+     "01750820|03/10/2026|secao 112": 1,
+     "01750820|04/10/2026|secao 112": 1,
+     "01750820|14/10/2026|secao 112": 2,
+     "01750820|19/10/2026|secao 112": 2,
+     "01750820|24/10/2026|secao 112": 2,
+     "01750820|25/10/2026|secao 112": 1,
+     "01758779|22/09/2026|secao 0": 3,
+     "01758779|28/09/2026|secao 0": 1,
+     "01758779|15/10/2026|secao 0": 2,
+     "01758779|19/10/2026|secao 0": 1,
+     "01758779|25/10/2026|secao 0": 2,
+     "01758779|25/10/2026|secao 112": 1
+    },
+    "por_parte": [
+     {
+      "parte": "logd.dat",
+      "votos_computados_por_id_e_data": {
+       "01750820|04/10/2026": 304,
+       "01750820|25/10/2026": 304
+      }
+     },
+     {
+      "parte": "logd.dat",
+      "votos_computados_por_id_e_data": {}
+     }
+    ]
+   }
+  }
+ },
+ "comparacao": {
+  "vota": "arquivos diferentes",
+  "bu": "arquivos diferentes",
+  "rdv": "arquivos diferentes",
+  "imgbu": "arquivos diferentes",
+  "log": "arquivos diferentes"
+ }
+}

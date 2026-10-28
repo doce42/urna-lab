@@ -37,3 +37,10 @@ Montar os dados do zero, acrescentar outra eleição (ex.: 2018), refazer um dow
 - **Fontes externas usadas:**
   - DataUrnas-BR (commit 12f0433) em `<DISCO_GRANDE>/externos/DataUrnas-BR`;
   - capturas do Internet Archive em `fase3/externos/wayback_capturas`.
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **Dados derivados novos fora do git** (`.gitignore`): `certs_<ano>_<turno>t.parquet` (~75 MB cada) e `rdv_nulos_<ano>_<turno>t.parquet`; reproduzíveis pelos scripts (ver `PIPELINE.md`, seção 7). O `publicar.py` recusa arquivo > 20 MB e total > 120 MB.
+- **Dados de terceiros** ficam em `operacao_veracidade/externo/` fora do git (licença de redistribuição não verificada), com `SHA256SUMS.txt` e data de download.
+- **Cobertura de hash oficial no manifesto:** 331 de 51.883 arquivos; o resto só tem hash local.
+- **Fuso:** emissão e encerramento em hora local; recebimento em hora de Brasília.
+- **Extração do RDV com o número digitado** (`fase3/rdv_nulos.py <ano> <turno>`): ~8 min por conjunto com 12 processos.

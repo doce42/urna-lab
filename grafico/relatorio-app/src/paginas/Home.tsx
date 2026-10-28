@@ -35,6 +35,38 @@ function RespostaHome() {
   );
 }
 
+// Operação Veracidade Geral (fase3/veredito_2026.json → resposta_central.operacao): o que a auditoria adversarial achou e onde ler
+function OperacaoHome() {
+  const v = useVeredito();
+  const o = v?.resposta_central.operacao;
+  if (!o) return null;
+  return (
+    <section id="veracidade" className="container mt-14 md:mt-20 scroll-mt-20">
+      <div className="max-w-[46rem]">
+        <Eyebrow>{o.titulo} · {o.versao} · {dataBR(o.data)}</Eyebrow>
+        <h2 className="t-h2 mt-2">{o.pergunta}</h2>
+        <p className="t-lead mt-3 text-[17px]">{o.resposta}</p>
+      </div>
+      <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        {o.achados.map((a) => (
+          <a key={a.teste} href={`#/testes/${a.teste}`} className="cartao cartao-hover p-5 border-l-4 flex flex-col gap-2" style={{ borderLeftColor: 'var(--accent)' }}>
+            <div className="flex items-start justify-between gap-3"><h3 className="t-h3">{a.titulo}</h3><span className="font-mono text-xs h-7 px-2.5 inline-flex items-center rounded-md border border-border shrink-0">{a.teste}</span></div>
+            <p className="text-[14.5px] text-muted leading-relaxed">{a.texto}</p>
+          </a>
+        ))}
+      </div>
+      <div className="mt-3 cartao p-5 border-l-4" style={{ borderLeftColor: 'var(--cG)' }}>
+        <h3 className="t-h3">O que continua fora do alcance</h3>
+        <ul className="mt-2 grid gap-1.5 text-[14.5px] text-muted leading-relaxed list-disc pl-5">{o.pontos_cegos.map((x) => <li key={x}>{x}</li>)}</ul>
+      </div>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <BotaoLink href={`#/respostas/${o.capitulo}`} variante="primario"><ArrowRight size={17} />As perguntas {o.perguntas[0]} a {o.perguntas[o.perguntas.length - 1]}</BotaoLink>
+        <BotaoLink href={`#/docs/${o.documentos[0].slug}`}><BookOpen size={17} />Documentos da operação</BotaoLink>
+      </div>
+    </section>
+  );
+}
+
 export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta | null }) {
   const n26 = h.nacional['2026'], n22 = h.nacional['2022'];
   const t2 = h.totais_2, val2 = t2.v13 + t2.v22;
@@ -160,6 +192,9 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       {/* ---------- a pergunta e a resposta (fase3/veredito_2026.json) ---------- */}
       <RespostaHome />
 
+      {/* ---------- Operação Veracidade Geral ---------- */}
+      <OperacaoHome />
+
       {/* ---------- placar ---------- */}
       <Secao id="validado" eyebrow="O que já foi verificado" titulo="Placar da verificação" lead={`${placar.total} testes registrados, cada um com classe de evidência e grau de certeza. Nenhum número aqui é escrito à mão: tudo sai do código e do registro de testes.`}>
         <div className="grid gap-4">
@@ -189,9 +224,9 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
           </div>
           <div className="grid gap-3 lg:grid-cols-3">
             {[
-              { t: '1. Prova determinística', cor: 'var(--cA)', p: r2 ? <>Assinatura da lista de arquivos válida em <b>{N(r2.assin_lista_ok)}</b> das <b>{N(base2)}</b> urnas do 2º turno com arquivos; recontagem do RDV igual ao boletim em <b>{N(r2.rdv_igual_boletim)}</b> de <b>{N(r2.urnas_com_rdv)}</b>; log fecha com o comparecimento em <b>{N(r2.log_igual_comparecimento)}</b> de <b>{N(r2.urnas)}</b>. Boletim de Urna e votação por seção iguais voto a voto nos dois turnos (T01).</> : 'Processamento dos arquivos do 2º turno ainda não terminou.', ids: ['T01', 'T16', 'T17'] },
-              { t: '2. Evidência estatística, com poder medido', cor: 'var(--cB)', p: <>{N(h.z_hist.acima5_lula + h.z_hist.acima5_flavio)} seções de {N(h.z_hist.n)} ficaram além de 5 desvios ({h.z_hist.acima5_lula} pró-Lula, {h.z_hist.acima5_flavio} pró-Flávio): anomalia estatística registrada (classe B), com excesso pró-Lula que também aparece em 2022, sem prova de causa. A curva reconstruída pela hora de recebimento dos boletins difere da prevista em no máximo {P(h.curva_max_desvio.depois_19h, 2)} pp depois das 19h (descrição, não teste calibrado; não é a curva divulgada). Dos {h.poder.cenarios} cenários de fraude simulada, {h.poder.detectados} foram detectados; o maior que passou despercebido move {N(h.poder.maior_passou_votos)} votos, contra uma margem de {N(h.margem_votos)}. Esses cenários só deslocam votos a favor de Lula; na Fase 2, o mesmo teste não via o deslocamento no sentido contrário, e na Fase 3, com a regra de duas caudas e contando só alarmes no sentido certo, vê troca dispersa de ~123 mil votos e troca concentrada de ~62 mil em locais ou municípios de até ~5 mil seções; não vê ~25 mil votos em nenhuma forma, nem troca no município inteiro das 5 maiores cidades (até ~700 mil votos). São simulações, não votos encontrados nos dados, e mecanismos não simulados ficam fora desse alcance (P18, A2).</>, ids: ['T02', 'T10', 'T13'] },
-              { t: '3. Limite dos dados públicos', cor: 'var(--cG)', p: <>Uma troca pequena e uniforme no país inteiro, ou qualquer falha no software da urna que gere arquivos consistentes e assinados, não deixa rastro nos dados públicos. Resultados nulos não provam ausência. {falta.length ? <>{falta.length === 1 ? 'Falta 1 teste' : `Faltam ${falta.length} testes`} ({falta.map((t) => t.id).join(', ')}).</> : null}</>, ids: ['C06b', 'T13b'] },
+              { t: '1. Prova determinística', cor: 'var(--cA)', p: r2 ? <>Assinatura da lista de arquivos válida em <b>{N(r2.assin_lista_ok)}</b> das <b>{N(base2)}</b> urnas do 2º turno com arquivos; recontagem do RDV igual ao boletim em <b>{N(r2.rdv_igual_boletim)}</b> de <b>{N(r2.urnas_com_rdv)}</b>; log fecha com o comparecimento em <b>{N(r2.log_igual_comparecimento)}</b> de <b>{N(r2.urnas)}</b>. Boletim de Urna e votação por seção iguais voto a voto nos dois turnos (T01). Cadeia de certificados até a autoridade emissora em <b>100%</b> das urnas de 2022 e 2026 (T60a), sem a raiz do TSE; 404 boletins impressos lidos por terceiros iguais ao TSE, amostra de conveniência (T61).</> : 'Processamento dos arquivos do 2º turno ainda não terminou.', ids: ['T01', 'T16', 'T17', 'T60a', 'T61'] },
+              { t: '2. Evidência estatística, com poder medido', cor: 'var(--cB)', p: <>{N(h.z_hist.acima5_lula + h.z_hist.acima5_flavio)} seções de {N(h.z_hist.n)} ficaram além de 5 desvios ({h.z_hist.acima5_lula} pró-Lula, {h.z_hist.acima5_flavio} pró-Flávio): anomalia estatística registrada (classe B), com excesso pró-Lula que também aparece em 2022, sem prova de causa. A curva reconstruída pela hora de recebimento dos boletins difere da prevista em no máximo {P(h.curva_max_desvio.depois_19h, 2)} pp depois das 19h (descrição, não teste calibrado; não é a curva divulgada). Dos {h.poder.cenarios} cenários de fraude simulada, {h.poder.detectados} foram detectados; o maior que passou despercebido move {N(h.poder.maior_passou_votos)} votos, contra uma margem de {N(h.margem_votos)}. Esses cenários só deslocam votos a favor de Lula; na Fase 2, o mesmo teste não via o deslocamento no sentido contrário, e na Fase 3, com a regra de duas caudas e contando só alarmes no sentido certo, vê troca dispersa de ~123 mil votos e troca concentrada de ~62 mil em locais ou municípios de até ~5 mil seções; não vê ~25 mil votos em nenhuma forma, nem troca no município inteiro das 5 maiores cidades (até ~700 mil votos). Na grade adversarial do T63 (15 mecanismos, dois sentidos), seções, locais, zonas e municípios são vistos a partir de 25 a 50 mil votos; UFs, os cinco grandes juntos, região, lote e deslocamento uniforme só a partir de ~0,5 a 2,2 milhões, ou nunca, e o poder é assimétrico entre os sentidos. São simulações, não votos encontrados nos dados, e mecanismos não simulados ficam fora desse alcance (P18, A2, T63).</>, ids: ['T02', 'T10', 'T13', 'T63'] },
+              { t: '3. Limite dos dados públicos', cor: 'var(--cG)', p: <>Uma troca pequena e uniforme no país inteiro, ou qualquer falha no software da urna que gere arquivos consistentes e assinados, não deixa rastro nos dados públicos: registros coerentes gerados pela própria fonte passam em todas as verificações internas (T62). Alterações em escala de UF, região ou lote passam sem alarme até centenas de milhares de votos (T63). Resultados nulos não provam ausência. {falta.length ? <>{falta.length === 1 ? 'Falta 1 teste' : `Faltam ${falta.length} testes`} ({falta.map((t) => t.id).join(', ')}).</> : null}</>, ids: ['C06b', 'T13b', 'T62'] },
             ].map((f) => (
               <div key={f.t} className="cartao p-5 border-l-4" style={{ borderLeftColor: f.cor }}>
                 <h3 className="t-h3">{f.t}</h3>

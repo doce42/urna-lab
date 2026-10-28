@@ -1,0 +1,61 @@
+{
+ "pergunta": "P12",
+ "1t": {
+  "oficial_eleitorado_total": 916534,
+  "oficial_eleitorado_secoes_instaladas": 916111,
+  "oficial_eleitorado_secoes_nao_instaladas": 423,
+  "oficial_secoes_total": 1351,
+  "oficial_secoes_instaladas": 1310,
+  "oficial_secoes_nao_instaladas": 41,
+  "soma_aptos_dos_bu": 916039,
+  "secoes_com_bu": 1309,
+  "diferenca_total_oficial_menos_bu": 495,
+  "diferenca_instaladas_oficial_menos_bu": 72,
+  "explicado_por_secoes_nao_instaladas": 423,
+  "residuo_nao_explicado": 72,
+  "cadastro_perfil_14_07_2026_total": 918876,
+  "secoes_so_nos_arquivos_das_urnas": [
+   {
+    "municipio": "29564",
+    "zona": "1",
+    "secao": "91",
+    "aptos_no_bu_da_urna": 72
+   }
+  ],
+  "soma_aptos_secoes_so_nos_arquivos_das_urnas": 72,
+  "residuo_depois_das_secoes_so_nas_urnas": 0
+ },
+ "2t": {
+  "oficial_eleitorado_total": 916683,
+  "oficial_eleitorado_secoes_instaladas": 916260,
+  "oficial_eleitorado_secoes_nao_instaladas": 423,
+  "oficial_secoes_total": 1351,
+  "oficial_secoes_instaladas": 1310,
+  "oficial_secoes_nao_instaladas": 41,
+  "soma_aptos_dos_bu": 916158,
+  "secoes_com_bu": 1309,
+  "diferenca_total_oficial_menos_bu": 525,
+  "diferenca_instaladas_oficial_menos_bu": 102,
+  "explicado_por_secoes_nao_instaladas": 423,
+  "residuo_nao_explicado": 102,
+  "cadastro_perfil_14_07_2026_total": 918876,
+  "secoes_so_nos_arquivos_das_urnas": [
+   {
+    "municipio": "29564",
+    "zona": "1",
+    "secao": "91",
+    "aptos_no_bu_da_urna": 72
+   },
+   {
+    "municipio": "30686",
+    "zona": "1",
+    "secao": "443",
+    "aptos_no_bu_da_urna": 30
+   }
+  ],
+  "soma_aptos_secoes_so_nos_arquivos_das_urnas": 102,
+  "residuo_depois_das_secoes_so_nas_urnas": 0
+ },
+ "nota": "O total oficial inclui as seções não instaladas; o residuo é o que sobra depois de descontá-las. O cadastro (perfil, gerado em 14/07) está só como ordem de grandeza: é anterior à eleição.",
+ "tempo_s": 0.6
+}

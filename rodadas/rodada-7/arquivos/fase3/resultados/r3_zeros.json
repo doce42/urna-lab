@@ -1,0 +1,827 @@
+{
+ "pre_registro": "fase3/PREREG_RESPOSTAS.md (R3)",
+ "principal": {
+  "2026": {
+   "controles": {
+    "Lula 1T zeros": {
+     "observado": 8,
+     "esperado": 6.6390461202326545,
+     "razao_obs_esp": 1.204992382206806,
+     "ic_predicao_95": [
+      2.0,
+      12.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.4392478528552177,
+      2.2040557907300142
+     ],
+     "hosmer_lemeshow": 2.502114882789364,
+     "hl_p": 0.9616322522567919,
+     "razao_3_decis_superiores": [
+      0.0,
+      3.283284986712495,
+      1.2256770222592235
+     ],
+     "calibrado": [
+      false,
+      false,
+      true
+     ]
+    },
+    "Lula 2T zeros": {
+     "observado": 4,
+     "esperado": 3.6285948470817555,
+     "razao_obs_esp": 1.1023550902126595,
+     "ic_predicao_95": [
+      3.0,
+      5.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.19340165229752315,
+      4.907235481122409
+     ],
+     "hosmer_lemeshow": 176707575.46727479,
+     "hl_p": 0.0,
+     "razao_3_decis_superiores": [
+      214635252.39561874,
+      0.0,
+      0.8267663272136341
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "cand. 70 1T zeros": {
+     "observado": 11808,
+     "esperado": 11814.72278462113,
+     "razao_obs_esp": 0.9994309824492978,
+     "ic_predicao_95": [
+      11627.951814510125,
+      12001.780267013402
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.969317306108044,
+      1.0273445128495478
+     ],
+     "hosmer_lemeshow": 655.7652707770874,
+     "hl_p": 2.3733642142868684e-136,
+     "razao_3_decis_superiores": [
+      1.0703374927044498,
+      1.2701454376115582,
+      1.040438572899177
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "cand. 14 1T zeros": {
+     "observado": 30724,
+     "esperado": 30716.67975029888,
+     "razao_obs_esp": 1.0002383151356404,
+     "ic_predicao_95": [
+      30414.608370266047,
+      31022.65239384599
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9802411937880359,
+      1.0190490237333596
+     ],
+     "hosmer_lemeshow": 1741.631091985089,
+     "hl_p": 0.0,
+     "razao_3_decis_superiores": [
+      1.2536676412572552,
+      1.2422775525332368,
+      0.9524053658588724
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "alvo 1T y<=2 (verificação preditiva)": {
+     "observado": 358,
+     "esperado": 361.36013143064076,
+     "razao_obs_esp": 0.9907014328964907,
+     "ic_predicao_95": [
+      327.975,
+      398.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.8470064135118635,
+      1.1516320876674626
+     ],
+     "hosmer_lemeshow": 5.230848893422639,
+     "hl_p": 0.7326417896465722,
+     "razao_3_decis_superiores": [
+      0.6646017187129928,
+      0.8187135079430038,
+      1.0223676911758184
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    },
+    "alvo 2T y<=2 (verificação preditiva)": {
+     "observado": 391,
+     "esperado": 390.2398488240591,
+     "razao_obs_esp": 1.0019479076220215,
+     "ic_predicao_95": [
+      366.975,
+      415.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9340294624606585,
+      1.0706160949042216
+     ],
+     "hosmer_lemeshow": 0.4614209540191971,
+     "hl_p": 0.9999017769754299,
+     "razao_3_decis_superiores": [
+      0.0,
+      0.0,
+      1.0031241432183544
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    }
+   },
+   "alvo": {
+    "1T zeros": {
+     "observado": 79,
+     "esperado": 79.12866364578228,
+     "razao_obs_esp": 0.9983739944559377,
+     "ic_predicao_95": [
+      63.0,
+      98.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.726891516311446,
+      1.297432403610194
+     ],
+     "hosmer_lemeshow": 5.474347710154013,
+     "hl_p": 0.7058803666028397,
+     "razao_3_decis_superiores": [
+      0.5279905464884832,
+      0.841664376012354,
+      1.0871434352907547
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    },
+    "2T zeros": {
+     "observado": 106,
+     "esperado": 101.45401363423203,
+     "razao_obs_esp": 1.044808344223398,
+     "ic_predicao_95": [
+      88.0,
+      115.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.8548363606646979,
+      1.227682374037915
+     ],
+     "hosmer_lemeshow": 0.8612557986094433,
+     "hl_p": 0.9989821530361631,
+     "razao_3_decis_superiores": [
+      0.0,
+      0.0,
+      1.0510066718614806
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    }
+   },
+   "validado": false,
+   "controles_que_falharam": [
+    "Lula 1T zeros",
+    "Lula 2T zeros",
+    "cand. 70 1T zeros",
+    "cand. 14 1T zeros"
+   ]
+  },
+  "2022": {
+   "controles": {
+    "Lula 1T zeros": {
+     "observado": 1,
+     "esperado": 0.9229623504362068,
+     "razao_obs_esp": 1.083467813749265,
+     "ic_predicao_95": [
+      0.0,
+      3.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      9.206525780478648
+     ],
+     "hosmer_lemeshow": 12724.209267173086,
+     "hl_p": 0.0,
+     "razao_3_decis_superiores": [
+      0.0,
+      12725.448175042751,
+      0.0
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "Lula 2T zeros": {
+     "observado": 2,
+     "esperado": 3.8204106647705998,
+     "razao_obs_esp": 0.5235039307273246,
+     "ic_predicao_95": [
+      3.0,
+      4.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      1.9931653027941063
+     ],
+     "hosmer_lemeshow": 0.8674888924487184,
+     "hl_p": 0.9989549359057037,
+     "razao_3_decis_superiores": [
+      0.0,
+      0.0,
+      0.523503936162932
+     ],
+     "calibrado": [
+      false,
+      false,
+      true
+     ]
+    },
+    "Tebet 1T zeros": {
+     "observado": 12524,
+     "esperado": 12542.377397148808,
+     "razao_obs_esp": 0.9985347756197334,
+     "ic_predicao_95": [
+      12346.847821948928,
+      12727.678414239163
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9782531331855768,
+      1.0184942445966583
+     ],
+     "hosmer_lemeshow": 614.4679104803627,
+     "hl_p": 1.8133954253766065e-127,
+     "razao_3_decis_superiores": [
+      0.7869393190287357,
+      1.2738618773775825,
+      1.027042284455563
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "Ciro 1T zeros": {
+     "observado": 9231,
+     "esperado": 9233.726236144244,
+     "razao_obs_esp": 0.9997047523313424,
+     "ic_predicao_95": [
+      9063.709975614403,
+      9403.546402645252
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9723067365962685,
+      1.025512984894833
+     ],
+     "hosmer_lemeshow": 462.5136645384681,
+     "hl_p": 7.695065298263292e-95,
+     "razao_3_decis_superiores": [
+      1.0873105289621847,
+      1.2563165488429544,
+      1.03434058385168
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "alvo 1T y<=2 (verificação preditiva)": {
+     "observado": 741,
+     "esperado": 736.8379360619608,
+     "razao_obs_esp": 1.0056485473051013,
+     "ic_predicao_95": [
+      686.0,
+      788.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9136203621538679,
+      1.1176944190102938
+     ],
+     "hosmer_lemeshow": 23.342887930220286,
+     "hl_p": 0.002950813144850673,
+     "razao_3_decis_superiores": [
+      0.79782675082088,
+      0.8236512026596879,
+      1.0096680102522662
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "alvo 2T y<=2 (verificação preditiva)": {
+     "observado": 612,
+     "esperado": 607.137126930184,
+     "razao_obs_esp": 1.008009513591112,
+     "ic_predicao_95": [
+      577.975,
+      640.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9497642117288801,
+      1.0625215984714673
+     ],
+     "hosmer_lemeshow": 0.3247225884372827,
+     "hl_p": 0.999974563183657,
+     "razao_3_decis_superiores": [
+      0.0,
+      0.0,
+      1.008475532062184
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    }
+   },
+   "alvo": {
+    "1T zeros": {
+     "observado": 160,
+     "esperado": 162.87943311723149,
+     "razao_obs_esp": 0.9823216899634036,
+     "ic_predicao_95": [
+      139.975,
+      187.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.7919852110290433,
+      1.1972517272523415
+     ],
+     "hosmer_lemeshow": 201.27536502452728,
+     "hl_p": 3.4415157154615144e-39,
+     "razao_3_decis_superiores": [
+      0.7910770256600279,
+      0.17976421527215514,
+      0.9867111729314213
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    },
+    "2T zeros": {
+     "observado": 141,
+     "esperado": 136.4835601554252,
+     "razao_obs_esp": 1.0330914568716667,
+     "ic_predicao_95": [
+      118.0,
+      153.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9035992254605535,
+      1.1725160363895122
+     ],
+     "hosmer_lemeshow": 0.5381967873721883,
+     "hl_p": 0.9998236543970491,
+     "razao_3_decis_superiores": [
+      0.0,
+      0.0,
+      1.0358448831197193
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    }
+   },
+   "validado": false,
+   "controles_que_falharam": [
+    "Lula 1T zeros",
+    "Lula 2T zeros",
+    "Tebet 1T zeros",
+    "Ciro 1T zeros",
+    "alvo 1T y<=2 (verificação preditiva)"
+   ]
+  }
+ },
+ "sensibilidade_sem_1T": {
+  "2026": {
+   "controles": {
+    "Lula 1T zeros": {
+     "observado": 8,
+     "esperado": 6.6390461202326545,
+     "razao_obs_esp": 1.204992382206806,
+     "ic_predicao_95": [
+      2.0,
+      12.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.4392478528552177,
+      2.2040557907300142
+     ],
+     "hosmer_lemeshow": 2.502114882789364,
+     "hl_p": 0.9616322522567919,
+     "razao_3_decis_superiores": [
+      0.0,
+      3.283284986712495,
+      1.2256770222592235
+     ],
+     "calibrado": [
+      false,
+      false,
+      true
+     ]
+    },
+    "Lula 2T zeros": {
+     "observado": 4,
+     "esperado": 4.085739749522044,
+     "razao_obs_esp": 0.9790148774081673,
+     "ic_predicao_95": [
+      1.0,
+      8.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.2031831671320345,
+      2.296251128057297
+     ],
+     "hosmer_lemeshow": 3.859587080838637,
+     "hl_p": 0.869564499853648,
+     "razao_3_decis_superiores": [
+      0.0,
+      5.256677231401461,
+      0.8390499426779984
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    },
+    "cand. 70 1T zeros": {
+     "observado": 11808,
+     "esperado": 11814.72278462113,
+     "razao_obs_esp": 0.9994309824492978,
+     "ic_predicao_95": [
+      11627.951814510125,
+      12001.780267013402
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.969317306108044,
+      1.0273445128495478
+     ],
+     "hosmer_lemeshow": 655.7652707770874,
+     "hl_p": 2.3733642142868684e-136,
+     "razao_3_decis_superiores": [
+      1.0703374927044498,
+      1.2701454376115582,
+      1.040438572899177
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "cand. 14 1T zeros": {
+     "observado": 30724,
+     "esperado": 30716.67975029888,
+     "razao_obs_esp": 1.0002383151356404,
+     "ic_predicao_95": [
+      30414.608370266047,
+      31022.65239384599
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9802411937880359,
+      1.0190490237333596
+     ],
+     "hosmer_lemeshow": 1741.631091985089,
+     "hl_p": 0.0,
+     "razao_3_decis_superiores": [
+      1.2536676412572552,
+      1.2422775525332368,
+      0.9524053658588724
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "alvo 1T y<=2 (verificação preditiva)": {
+     "observado": 358,
+     "esperado": 361.36013143064076,
+     "razao_obs_esp": 0.9907014328964907,
+     "ic_predicao_95": [
+      327.975,
+      398.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.8470064135118635,
+      1.1516320876674626
+     ],
+     "hosmer_lemeshow": 5.230848893422639,
+     "hl_p": 0.7326417896465722,
+     "razao_3_decis_superiores": [
+      0.6646017187129928,
+      0.8187135079430038,
+      1.0223676911758184
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    },
+    "alvo 2T y<=2 (verificação preditiva)": {
+     "observado": 391,
+     "esperado": 395.64652257221667,
+     "razao_obs_esp": 0.9882558741019427,
+     "ic_predicao_95": [
+      356.0,
+      429.025
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.8347203268707925,
+      1.1401974455603614
+     ],
+     "hosmer_lemeshow": 4.570508116479372,
+     "hl_p": 0.8023382436012279,
+     "razao_3_decis_superiores": [
+      0.7723694999410132,
+      1.0687202945011318,
+      0.9893431779221846
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    }
+   },
+   "alvo": {
+    "1T zeros": {
+     "observado": 79,
+     "esperado": 79.12866364578228,
+     "razao_obs_esp": 0.9983739944559377,
+     "ic_predicao_95": [
+      63.0,
+      98.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.726891516311446,
+      1.297432403610194
+     ],
+     "hosmer_lemeshow": 5.474347710154013,
+     "hl_p": 0.7058803666028397,
+     "razao_3_decis_superiores": [
+      0.5279905464884832,
+      0.841664376012354,
+      1.0871434352907547
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    },
+    "2T zeros": {
+     "observado": 106,
+     "esperado": 105.0940996579516,
+     "razao_obs_esp": 1.0086198972634697,
+     "ic_predicao_95": [
+      87.0,
+      124.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.7527435592606808,
+      1.2753766732079452
+     ],
+     "hosmer_lemeshow": 6.754424754237909,
+     "hl_p": 0.5633453921221974,
+     "razao_3_decis_superiores": [
+      0.8956996894854996,
+      1.0375955477921865,
+      1.004048767963597
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    }
+   },
+   "validado": false,
+   "controles_que_falharam": [
+    "Lula 1T zeros",
+    "cand. 70 1T zeros",
+    "cand. 14 1T zeros"
+   ]
+  },
+  "2022": {
+   "controles": {
+    "Lula 1T zeros": {
+     "observado": 1,
+     "esperado": 0.9229623504362068,
+     "razao_obs_esp": 1.083467813749265,
+     "ic_predicao_95": [
+      0.0,
+      3.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      9.206525780478648
+     ],
+     "hosmer_lemeshow": 12724.209267173086,
+     "hl_p": 0.0,
+     "razao_3_decis_superiores": [
+      0.0,
+      12725.448175042751,
+      0.0
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "Lula 2T zeros": {
+     "observado": 2,
+     "esperado": 1.9311062217134018,
+     "razao_obs_esp": 1.0356758098088832,
+     "ic_predicao_95": [
+      0.0,
+      5.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.0,
+      2.6956139783939124
+     ],
+     "hosmer_lemeshow": 0.68238959882768,
+     "hl_p": 0.9995695303655957,
+     "razao_3_decis_superiores": [
+      0.0,
+      0.0,
+      1.3756381298987046
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    },
+    "Tebet 1T zeros": {
+     "observado": 12524,
+     "esperado": 12542.377397148808,
+     "razao_obs_esp": 0.9985347756197334,
+     "ic_predicao_95": [
+      12346.847821948928,
+      12727.678414239163
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9782531331855768,
+      1.0184942445966583
+     ],
+     "hosmer_lemeshow": 614.4679104803627,
+     "hl_p": 1.8133954253766065e-127,
+     "razao_3_decis_superiores": [
+      0.7869393190287357,
+      1.2738618773775825,
+      1.027042284455563
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "Ciro 1T zeros": {
+     "observado": 9231,
+     "esperado": 9233.726236144244,
+     "razao_obs_esp": 0.9997047523313424,
+     "ic_predicao_95": [
+      9063.709975614403,
+      9403.546402645252
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9723067365962685,
+      1.025512984894833
+     ],
+     "hosmer_lemeshow": 462.5136645384681,
+     "hl_p": 7.695065298263292e-95,
+     "razao_3_decis_superiores": [
+      1.0873105289621847,
+      1.2563165488429544,
+      1.03434058385168
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "alvo 1T y<=2 (verificação preditiva)": {
+     "observado": 741,
+     "esperado": 736.8379360619608,
+     "razao_obs_esp": 1.0056485473051013,
+     "ic_predicao_95": [
+      686.0,
+      788.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9136203621538679,
+      1.1176944190102938
+     ],
+     "hosmer_lemeshow": 23.342887930220286,
+     "hl_p": 0.002950813144850673,
+     "razao_3_decis_superiores": [
+      0.79782675082088,
+      0.8236512026596879,
+      1.0096680102522662
+     ],
+     "calibrado": [
+      false,
+      true,
+      false
+     ]
+    },
+    "alvo 2T y<=2 (verificação preditiva)": {
+     "observado": 612,
+     "esperado": 603.7940914244562,
+     "razao_obs_esp": 1.013590574489036,
+     "ic_predicao_95": [
+      560.975,
+      648.025
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.9023180881551844,
+      1.1404606708310014
+     ],
+     "hosmer_lemeshow": 12.197607827639816,
+     "hl_p": 0.14260249080851783,
+     "razao_3_decis_superiores": [
+      1.6771349297070168,
+      0.8267984134325808,
+      1.0147331881744124
+     ],
+     "calibrado": [
+      true,
+      true,
+      true
+     ]
+    }
+   },
+   "alvo": {
+    "1T zeros": {
+     "observado": 160,
+     "esperado": 162.87943311723149,
+     "razao_obs_esp": 0.9823216899634036,
+     "ic_predicao_95": [
+      139.975,
+      187.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.7919852110290433,
+      1.1972517272523415
+     ],
+     "hosmer_lemeshow": 201.27536502452728,
+     "hl_p": 3.4415157154615144e-39,
+     "razao_3_decis_superiores": [
+      0.7910770256600279,
+      0.17976421527215514,
+      0.9867111729314213
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    },
+    "2T zeros": {
+     "observado": 141,
+     "esperado": 134.84290850205429,
+     "razao_obs_esp": 1.0456612184233027,
+     "ic_predicao_95": [
+      113.0,
+      157.0
+     ],
+     "ic95_razao_bootstrap_mun": [
+      0.8287502213584096,
+      1.2781029059537612
+     ],
+     "hosmer_lemeshow": 28.119704576535007,
+     "hl_p": 0.0004520146673386154,
+     "razao_3_decis_superiores": [
+      1.3150498531734767,
+      0.6422248121504139,
+      1.0064789507991998
+     ],
+     "leitura": "não determinado (modelo não validado pelo critério pré-registrado)"
+    }
+   },
+   "validado": false,
+   "controles_que_falharam": [
+    "Lula 1T zeros",
+    "Tebet 1T zeros",
+    "Ciro 1T zeros",
+    "alvo 1T y<=2 (verificação preditiva)"
+   ]
+  }
+ }
+}

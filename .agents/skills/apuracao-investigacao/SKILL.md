@@ -1,6 +1,6 @@
 ---
 name: apuracao-investigacao
-description: Investigar perguntas e hipóteses de fraude no estudo da apuração e transformar resultados em respostas legíveis — pergunta central de 2026, catálogo de hipóteses (o que cada fraude deixaria, quantos votos exige), escala de sinal separada de "passou", regra adversarial (compatível com log ≠ verificado), pré-registro por investigação com orçamento e parada, respostas pergunta a pergunta com impacto em votos. Use ao abrir uma investigação nova, ao avaliar uma anomalia ou ao atualizar as respostas e o veredito.
+description: Investigar perguntas e hipóteses de fraude no estudo da apuração e transformar resultados em respostas legíveis — pergunta central de 2026, catálogo de hipóteses (o que cada fraude deixaria, quantos votos exige), escala de sinal separada de "passou", regra adversarial (compatível com log ≠ verificado), pré-registro por investigação com orçamento e parada, respostas pergunta a pergunta com impacto em votos. Use ao abrir uma investigação nova, ao avaliar uma anomalia ou ao atualizar as respostas e o veredito. Desde a rodada 7: fluxo de alegação pública (pré-registro antes de contar), resposta central com pontos cegos e poder por mecanismo, frases que não podem voltar e fila aberta.
 ---
 # Investigação, hipóteses e respostas
 
@@ -38,3 +38,10 @@ Ao investigar uma anomalia ou hipótese, ao propor um teste novo, ao atualizar a
 - **Salvador (T44):** desvio de cidade inteira sem causa.
 - **Curvas (Q10, Q12):** sem modelo de chegada validado.
 - **Zeros:** sem modelo de cauda baixa calibrado (refazer o critério de calibração antes).
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **Fluxo para alegação pública (rodadas 6 e 7):** transcrever o que se afirma em números; pré-registrar medidas e leitura pré-fixada; rodar; registrar T-nn; acrescentar a pergunta (Q-nn) no capítulo certo; regerar veredito, inventário e respostas. Ex.: T45 a T51 (live de 2022, matérias, thread), T52 a T55, T65 (vídeo dos "votos extras").
+- **Operação Veracidade Geral (`operacao_veracidade/`):** a resposta central agora é "não encontramos sinal nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um"; os pontos cegos incluem UF, região, lote e uniforme abaixo de ~0,5 a 2,2 mi, além de H9 e H10. **Não escreva "deixariam sinais muito maiores" sem os limiares do T63, nem trate a soma das anomalias como teto.**
+- **Frases que não podem voltar:** "dois caminhos" (H9 e H10 só), "zeros no nível previsto" (H7 é não determinado), dígitos S0 (T05 é PC), "falso alarme 0/30" como taxa, "todos até a AC emissora" sem a data da verificação completa.
+- **Fila aberta:** reler os 16 casos do T14 por data, ID de urna e seção; T44 por cidade com o poder do T63; correção formal de multiplicidade; teste de integridade com votos conhecidos (resultado não obtido); raiz da cadeia; amostra probabilística de boletins impressos.
+- **Rodada 8 está aberta** (hipótese do "Relatório Pericial Independente"): pré-registro e testes entram no registro vivo; **não congelar sem aprovação explícita**.

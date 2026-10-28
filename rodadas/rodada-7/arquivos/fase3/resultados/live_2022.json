@@ -1,0 +1,1426 @@
+{
+ "pre_registro": "fase3/PREREG_LIVE_2022.md",
+ "T45": {
+  "2022_1t": {
+   "por_modelo": {
+    "UE2009": {
+     "secoes": 44571,
+     "com_id_fixo_67305985": 44569,
+     "id_fixo_assinaturas_ok": 44569,
+     "id_fixo_certificado_igual_urna_efetivada": 44568,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 44569,
+     "id_fixo_nulo_bu_igual_rdv": 44569
+    },
+    "UE2010": {
+     "secoes": 94898,
+     "com_id_fixo_67305985": 94896,
+     "id_fixo_assinaturas_ok": 94893,
+     "id_fixo_certificado_igual_urna_efetivada": 94891,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 94893,
+     "id_fixo_nulo_bu_igual_rdv": 94893
+    },
+    "UE2011": {
+     "secoes": 28365,
+     "com_id_fixo_67305985": 28365,
+     "id_fixo_assinaturas_ok": 28364,
+     "id_fixo_certificado_igual_urna_efetivada": 28364,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 28364,
+     "id_fixo_nulo_bu_igual_rdv": 28364
+    },
+    "UE2013": {
+     "secoes": 25357,
+     "com_id_fixo_67305985": 25357,
+     "id_fixo_assinaturas_ok": 25356,
+     "id_fixo_certificado_igual_urna_efetivada": 25354,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 25356,
+     "id_fixo_nulo_bu_igual_rdv": 25356
+    },
+    "UE2015": {
+     "secoes": 86024,
+     "com_id_fixo_67305985": 86023,
+     "id_fixo_assinaturas_ok": 86022,
+     "id_fixo_certificado_igual_urna_efetivada": 86021,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 86022,
+     "id_fixo_nulo_bu_igual_rdv": 86022
+    },
+    "UE2020": {
+     "secoes": 192644,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    }
+   },
+   "id_fixo_sem_ligacao": 14,
+   "id_fixo_sem_ligacao_agregadas": 0,
+   "id_fixo_sem_bu_lido": 4,
+   "exemplos_sem_ligacao": [
+    {
+     "SG_UF": "AL",
+     "CD_MUNICIPIO": "27057",
+     "NR_ZONA": "55",
+     "NR_SECAO": "143",
+     "modelo": "UE2013",
+     "cert_urna": "ueao01248794",
+     "NR_URNA_EFETIVADA_1": "1774827"
+    },
+    {
+     "SG_UF": "AM",
+     "CD_MUNICIPIO": "2550",
+     "NR_ZONA": "40",
+     "NR_SECAO": "454",
+     "modelo": "UE2013",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_1": "1787726"
+    },
+    {
+     "SG_UF": "AM",
+     "CD_MUNICIPIO": "2690",
+     "NR_ZONA": "4",
+     "NR_SECAO": "129",
+     "modelo": "UE2011",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_1": "1180947"
+    },
+    {
+     "SG_UF": "BA",
+     "CD_MUNICIPIO": "33197",
+     "NR_ZONA": "36",
+     "NR_SECAO": "15",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01264637",
+     "NR_URNA_EFETIVADA_1": "1264637"
+    },
+    {
+     "SG_UF": "BA",
+     "CD_MUNICIPIO": "34495",
+     "NR_ZONA": "129",
+     "NR_SECAO": "46",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01299186",
+     "NR_URNA_EFETIVADA_1": "1260088"
+    },
+    {
+     "SG_UF": "CE",
+     "CD_MUNICIPIO": "15270",
+     "NR_ZONA": "6",
+     "NR_SECAO": "206",
+     "modelo": "UE2015",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_1": "1633369"
+    },
+    {
+     "SG_UF": "MA",
+     "CD_MUNICIPIO": "9237",
+     "NR_ZONA": "84",
+     "NR_SECAO": "215",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01329216",
+     "NR_URNA_EFETIVADA_1": "1329216"
+    },
+    {
+     "SG_UF": "MG",
+     "CD_MUNICIPIO": "52477",
+     "NR_ZONA": "255",
+     "NR_SECAO": "152",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01244898",
+     "NR_URNA_EFETIVADA_1": "1261838"
+    },
+    {
+     "SG_UF": "RS",
+     "CD_MUNICIPIO": "87955",
+     "NR_ZONA": "78",
+     "NR_SECAO": "23",
+     "modelo": "UE2013",
+     "cert_urna": "ueao01103991",
+     "NR_URNA_EFETIVADA_1": "1678747"
+    },
+    {
+     "SG_UF": "SP",
+     "CD_MUNICIPIO": "61557",
+     "NR_ZONA": "299",
+     "NR_SECAO": "242",
+     "modelo": "UE2010",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_1": "1812136"
+    },
+    {
+     "SG_UF": "SP",
+     "CD_MUNICIPIO": "70718",
+     "NR_ZONA": "273",
+     "NR_SECAO": "183",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01164735",
+     "NR_URNA_EFETIVADA_1": "1240788"
+    },
+    {
+     "SG_UF": "SP",
+     "CD_MUNICIPIO": "71072",
+     "NR_ZONA": "280",
+     "NR_SECAO": "885",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01173755",
+     "NR_URNA_EFETIVADA_1": "1340491"
+    },
+    {
+     "SG_UF": "SP",
+     "CD_MUNICIPIO": "71072",
+     "NR_ZONA": "328",
+     "NR_SECAO": "882",
+     "modelo": "UE2009",
+     "cert_urna": "ueao01766566",
+     "NR_URNA_EFETIVADA_1": "1052960"
+    },
+    {
+     "SG_UF": "SP",
+     "CD_MUNICIPIO": "71218",
+     "NR_ZONA": "340",
+     "NR_SECAO": "303",
+     "modelo": "UE2015",
+     "cert_urna": "ueao01031875",
+     "NR_URNA_EFETIVADA_1": "1094964"
+    }
+   ]
+  },
+  "2022_2t": {
+   "por_modelo": {
+    "UE2009": {
+     "secoes": 44868,
+     "com_id_fixo_67305985": 44868,
+     "id_fixo_assinaturas_ok": 44867,
+     "id_fixo_certificado_igual_urna_efetivada": 44867,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 44867,
+     "id_fixo_nulo_bu_igual_rdv": 44867
+    },
+    "UE2010": {
+     "secoes": 94747,
+     "com_id_fixo_67305985": 94747,
+     "id_fixo_assinaturas_ok": 94746,
+     "id_fixo_certificado_igual_urna_efetivada": 94743,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 94746,
+     "id_fixo_nulo_bu_igual_rdv": 94746
+    },
+    "UE2011": {
+     "secoes": 28163,
+     "com_id_fixo_67305985": 28163,
+     "id_fixo_assinaturas_ok": 28162,
+     "id_fixo_certificado_igual_urna_efetivada": 28162,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 28162,
+     "id_fixo_nulo_bu_igual_rdv": 28162
+    },
+    "UE2013": {
+     "secoes": 25376,
+     "com_id_fixo_67305985": 25376,
+     "id_fixo_assinaturas_ok": 25376,
+     "id_fixo_certificado_igual_urna_efetivada": 25376,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 25376,
+     "id_fixo_nulo_bu_igual_rdv": 25376
+    },
+    "UE2015": {
+     "secoes": 86138,
+     "com_id_fixo_67305985": 86137,
+     "id_fixo_assinaturas_ok": 86137,
+     "id_fixo_certificado_igual_urna_efetivada": 86137,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 86137,
+     "id_fixo_nulo_bu_igual_rdv": 86137
+    },
+    "UE2020": {
+     "secoes": 192691,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    }
+   },
+   "id_fixo_sem_ligacao": 6,
+   "id_fixo_sem_ligacao_agregadas": 0,
+   "id_fixo_sem_bu_lido": 3,
+   "exemplos_sem_ligacao": [
+    {
+     "SG_UF": "AL",
+     "CD_MUNICIPIO": "27774",
+     "NR_ZONA": "14",
+     "NR_SECAO": "36",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01028044",
+     "NR_URNA_EFETIVADA_2": "1250020"
+    },
+    {
+     "SG_UF": "BA",
+     "CD_MUNICIPIO": "37877",
+     "NR_ZONA": "105",
+     "NR_SECAO": "83",
+     "modelo": "UE2011",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_2": "1613155"
+    },
+    {
+     "SG_UF": "MG",
+     "CD_MUNICIPIO": "52477",
+     "NR_ZONA": "255",
+     "NR_SECAO": "152",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01245523",
+     "NR_URNA_EFETIVADA_2": "1244898"
+    },
+    {
+     "SG_UF": "RJ",
+     "CD_MUNICIPIO": "58971",
+     "NR_ZONA": "135",
+     "NR_SECAO": "250",
+     "modelo": "UE2010",
+     "cert_urna": "ueao01276441",
+     "NR_URNA_EFETIVADA_2": "1221457"
+    },
+    {
+     "SG_UF": "RS",
+     "CD_MUNICIPIO": "89192",
+     "NR_ZONA": "54",
+     "NR_SECAO": "13",
+     "modelo": "UE2009",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_2": "1305645"
+    },
+    {
+     "SG_UF": "SC",
+     "CD_MUNICIPIO": "83011",
+     "NR_ZONA": "46",
+     "NR_SECAO": "22",
+     "modelo": "UE2010",
+     "cert_urna": NaN,
+     "NR_URNA_EFETIVADA_2": "1778800"
+    }
+   ]
+  },
+  "2026_1t": {
+   "por_modelo": {
+    "UE2013": {
+     "secoes": 11442,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    },
+    "UE2015": {
+     "secoes": 88514,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    },
+    "UE2020": {
+     "secoes": 200508,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    },
+    "UE2022": {
+     "secoes": 198712,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    }
+   },
+   "id_fixo_sem_ligacao": 0,
+   "id_fixo_sem_ligacao_agregadas": 0,
+   "id_fixo_sem_bu_lido": 0,
+   "exemplos_sem_ligacao": []
+  },
+  "2026_2t": {
+   "por_modelo": {
+    "UE2013": {
+     "secoes": 11576,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    },
+    "UE2015": {
+     "secoes": 88351,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    },
+    "UE2020": {
+     "secoes": 200538,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    },
+    "UE2022": {
+     "secoes": 198712,
+     "com_id_fixo_67305985": 0,
+     "id_fixo_assinaturas_ok": 0,
+     "id_fixo_certificado_igual_urna_efetivada": 0,
+     "id_fixo_votos_bu_rdv_tabela_iguais": 0,
+     "id_fixo_nulo_bu_igual_rdv": 0
+    }
+   },
+   "id_fixo_sem_ligacao": 0,
+   "id_fixo_sem_ligacao_agregadas": 0,
+   "id_fixo_sem_bu_lido": 0,
+   "exemplos_sem_ligacao": []
+  }
+ },
+ "T46": {
+  "1t": {
+   "so_ue2020_bolsonaro_sobre_lula_mais_bolsonaro": 0.4925157109775204,
+   "so_ue2020_lula": 23520724,
+   "so_ue2020_bolsonaro": 22826965,
+   "so_ue2020_bolsonaro_sobre_validos": 0.4460881243780098,
+   "so_ue2020_lula_sobre_validos": 0.45964567138788887,
+   "todas_bolsonaro_sobre_lula_mais_bolsonaro": 0.4714552512862097,
+   "contrafactual_mun": {
+    "municipios_com_os_dois": 310,
+    "secoes_pre2020_substituidas": 59012,
+    "secoes_pre2020_sem_ue2020_no_municipio": 220203,
+    "bolsonaro_sobre_lula_mais_bolsonaro": 0.4733082571388115,
+    "diferenca_lula_em_votos": -200672.59555970132
+   }
+  },
+  "2t": {
+   "so_ue2020_bolsonaro_sobre_lula_mais_bolsonaro": 0.5105082289286751,
+   "so_ue2020_lula": 25111550,
+   "so_ue2020_bolsonaro": 26189721,
+   "so_ue2020_bolsonaro_sobre_validos": 0.5105082289286751,
+   "so_ue2020_lula_sobre_validos": 0.4894917710713249,
+   "todas_bolsonaro_sobre_lula_mais_bolsonaro": 0.4909785598517855,
+   "contrafactual_mun": {
+    "municipios_com_os_dois": 311,
+    "secoes_pre2020_substituidas": 59003,
+    "secoes_pre2020_sem_ue2020_no_municipio": 220289,
+    "bolsonaro_sobre_lula_mais_bolsonaro": 0.4924859765966096,
+    "diferenca_lula_em_votos": -178701.54325617105
+   }
+  }
+ },
+ "T47": {
+  "1t": {
+   "a_conta_live_aptos_menor_77000": {
+    "total": {
+     "UE2020": 0.5227539031654717,
+     "pre2020": 0.5450201958453332
+    },
+    "ufs_pre2020_maior": 18,
+    "ufs_comparadas": 23,
+    "por_uf": {
+     "AC": {
+      "UE2020": 0.264,
+      "pre2020": 0.3206
+     },
+     "AL": {
+      "UE2020": 0.5141,
+      "pre2020": 0.6673
+     },
+     "AM": {
+      "UE2020": NaN,
+      "pre2020": 0.6594
+     },
+     "AP": {
+      "UE2020": NaN,
+      "pre2020": 0.578
+     },
+     "BA": {
+      "UE2020": 0.7196,
+      "pre2020": 0.7428
+     },
+     "CE": {
+      "UE2020": 0.6566,
+      "pre2020": 0.7436
+     },
+     "ES": {
+      "UE2020": 0.3608,
+      "pre2020": 0.4329
+     },
+     "GO": {
+      "UE2020": 0.4018,
+      "pre2020": 0.4344
+     },
+     "MA": {
+      "UE2020": 0.6821,
+      "pre2020": 0.7438
+     },
+     "MG": {
+      "UE2020": 0.4895,
+      "pre2020": 0.5278
+     },
+     "MS": {
+      "UE2020": 0.4308,
+      "pre2020": 0.4237
+     },
+     "MT": {
+      "UE2020": 0.4093,
+      "pre2020": 0.3209
+     },
+     "PA": {
+      "UE2020": 0.6313,
+      "pre2020": 0.5354
+     },
+     "PB": {
+      "UE2020": 0.6439,
+      "pre2020": 0.7417
+     },
+     "PE": {
+      "UE2020": 0.6629,
+      "pre2020": 0.7401
+     },
+     "PI": {
+      "UE2020": 0.7854,
+      "pre2020": 0.7897
+     },
+     "PR": {
+      "UE2020": 0.3963,
+      "pre2020": 0.4035
+     },
+     "RJ": {
+      "UE2020": NaN,
+      "pre2020": 0.3956
+     },
+     "RN": {
+      "UE2020": 0.6597,
+      "pre2020": 0.7103
+     },
+     "RO": {
+      "UE2020": 0.2185,
+      "pre2020": 0.277
+     },
+     "RR": {
+      "UE2020": 0.2387,
+      "pre2020": 0.3738
+     },
+     "RS": {
+      "UE2020": 0.4236,
+      "pre2020": 0.4047
+     },
+     "SC": {
+      "UE2020": 0.3139,
+      "pre2020": 0.2986
+     },
+     "SE": {
+      "UE2020": 0.6574,
+      "pre2020": 0.7011
+     },
+     "SP": {
+      "UE2020": 0.3454,
+      "pre2020": 0.3723
+     },
+     "TO": {
+      "UE2020": 0.5191,
+      "pre2020": 0.5741
+     },
+     "ZZ": {
+      "UE2020": NaN,
+      "pre2020": 0.4665
+     }
+    }
+   },
+   "a_conta_live_aptos_menor_38500": {
+    "total": {
+     "UE2020": 0.5382464118543293,
+     "pre2020": 0.5630184502706852
+    },
+    "ufs_pre2020_maior": 19,
+    "ufs_comparadas": 23,
+    "por_uf": {
+     "AC": {
+      "UE2020": 0.264,
+      "pre2020": 0.3411
+     },
+     "AL": {
+      "UE2020": 0.5562,
+      "pre2020": 0.6776
+     },
+     "AM": {
+      "UE2020": NaN,
+      "pre2020": 0.6672
+     },
+     "AP": {
+      "UE2020": NaN,
+      "pre2020": 0.578
+     },
+     "BA": {
+      "UE2020": 0.7192,
+      "pre2020": 0.7558
+     },
+     "CE": {
+      "UE2020": 0.6949,
+      "pre2020": 0.7519
+     },
+     "ES": {
+      "UE2020": 0.3436,
+      "pre2020": 0.433
+     },
+     "GO": {
+      "UE2020": 0.3722,
+      "pre2020": 0.4424
+     },
+     "MA": {
+      "UE2020": 0.7351,
+      "pre2020": 0.7552
+     },
+     "MG": {
+      "UE2020": 0.5112,
+      "pre2020": 0.5416
+     },
+     "MS": {
+      "UE2020": 0.4308,
+      "pre2020": 0.4247
+     },
+     "MT": {
+      "UE2020": 0.4431,
+      "pre2020": 0.322
+     },
+     "PA": {
+      "UE2020": 0.6683,
+      "pre2020": 0.5421
+     },
+     "PB": {
+      "UE2020": 0.6906,
+      "pre2020": 0.7472
+     },
+     "PE": {
+      "UE2020": 0.6953,
+      "pre2020": 0.7616
+     },
+     "PI": {
+      "UE2020": 0.7904,
+      "pre2020": 0.7952
+     },
+     "PR": {
+      "UE2020": 0.3973,
+      "pre2020": 0.4243
+     },
+     "RJ": {
+      "UE2020": NaN,
+      "pre2020": 0.4055
+     },
+     "RN": {
+      "UE2020": 0.6727,
+      "pre2020": 0.7128
+     },
+     "RO": {
+      "UE2020": 0.2577,
+      "pre2020": 0.2948
+     },
+     "RR": {
+      "UE2020": 0.2387,
+      "pre2020": 0.3738
+     },
+     "RS": {
+      "UE2020": 0.3923,
+      "pre2020": 0.4076
+     },
+     "SC": {
+      "UE2020": 0.3139,
+      "pre2020": 0.3075
+     },
+     "SE": {
+      "UE2020": 0.6766,
+      "pre2020": 0.7158
+     },
+     "SP": {
+      "UE2020": 0.3576,
+      "pre2020": 0.379
+     },
+     "TO": {
+      "UE2020": 0.5419,
+      "pre2020": 0.584
+     },
+     "ZZ": {
+      "UE2020": NaN,
+      "pre2020": 0.4665
+     }
+    }
+   },
+   "a_bruto_brasil": {
+    "UE2020": 0.45964434236093493,
+    "pre2020": 0.5031206848903792
+   },
+   "b_municipio": {
+    "blocos": 310,
+    "secoes": {
+     "pre2020": 59004,
+     "UE2020": 52755
+    },
+    "media_residuo_logit": {
+     "pre2020": 0.03132564779845036,
+     "UE2020": -0.035036271873750434
+    },
+    "ic95": {
+     "pre2020": [
+      0.02282381316938542,
+      0.04548584782948338
+     ],
+     "UE2020": [
+      -0.0483523968584674,
+      -0.022832165009921662
+     ]
+    },
+    "equivalente_em_0_02": false,
+    "por_modelo": {
+     "UE2009": {
+      "secoes": 7431,
+      "media": 0.0206840617605026,
+      "ic95": [
+       0.002979590700748008,
+       0.045835042111582396
+      ]
+     },
+     "UE2010": {
+      "secoes": 19247,
+      "media": 0.013290090830759474,
+      "ic95": [
+       -0.0014632418066638454,
+       0.03285088936012435
+      ]
+     },
+     "UE2011": {
+      "secoes": 7057,
+      "media": 0.03626994098600014,
+      "ic95": [
+       0.01573274549388395,
+       0.05444773312013966
+      ]
+     },
+     "UE2013": {
+      "secoes": 3925,
+      "media": 0.03102483575466954,
+      "ic95": [
+       0.013044707056095116,
+       0.06103708510636258
+      ]
+     },
+     "UE2015": {
+      "secoes": 21344,
+      "media": 0.04971474080128138,
+      "ic95": [
+       0.03846502807659611,
+       0.06798435001737908
+      ]
+     },
+     "UE2020": {
+      "secoes": 52755,
+      "media": -0.035036271873750434,
+      "ic95": [
+       -0.0483523968584674,
+       -0.022832165009921662
+      ]
+     }
+    },
+    "votos_lula_equivalentes_a_diferenca": 233039.99451690697,
+    "calibracao": {
+     "permutacoes": 200,
+     "fracao_ic_fora_da_margem": 0.0,
+     "adequado": true,
+     "nota": "IC das permutações aproximado com a semi-amplitude do bootstrap real (desvio declarado)"
+    },
+    "poder_fraude_1pct": {
+     "media_pre2020": 0.04984505819610219,
+     "ic95_pre2020": [
+      0.040341223080367666,
+      0.06287536684858204
+     ],
+     "detectou_no_sentido_correto": true,
+     "votos_movidos": 154481
+    }
+   },
+   "c_local": {
+    "blocos": 135,
+    "secoes": {
+     "pre2020": 665,
+     "UE2020": 713
+    },
+    "media_residuo_logit": {
+     "pre2020": 0.00813274411041809,
+     "UE2020": -0.0075852381955512195
+    },
+    "ic95": {
+     "pre2020": [
+      -0.0020807565735342023,
+      0.016857188804215377
+     ],
+     "UE2020": [
+      -0.015096248471508441,
+      0.0016105108348225768
+     ]
+    },
+    "equivalente_em_0_02": true,
+    "por_modelo": {
+     "UE2009": {
+      "secoes": 108,
+      "media": 0.009427910103120675,
+      "ic95": [
+       -0.029879876429424263,
+       0.04195715876259399
+      ]
+     },
+     "UE2010": {
+      "secoes": 224,
+      "media": 0.005220538605664001,
+      "ic95": [
+       -0.0176236020548796,
+       0.030975678361850233
+      ]
+     },
+     "UE2011": {
+      "secoes": 71,
+      "media": 0.014519829585312748,
+      "ic95": [
+       -0.026465130094210542,
+       0.058546732442201536
+      ]
+     },
+     "UE2013": {
+      "secoes": 28,
+      "media": 0.0019404189545581668,
+      "ic95": [
+       -0.056098462326590146,
+       0.04932107719986141
+      ]
+     },
+     "UE2015": {
+      "secoes": 234,
+      "media": 0.009125727621100104,
+      "ic95": [
+       -0.011215513221338633,
+       0.02634507372604812
+      ]
+     },
+     "UE2020": {
+      "secoes": 713,
+      "media": -0.0075852381955512195,
+      "ic95": [
+       -0.015096248471508441,
+       0.0016105108348225768
+      ]
+     }
+    },
+    "votos_lula_equivalentes_a_diferenca": 578.8808846385552
+   }
+  },
+  "2t": {
+   "a_conta_live_aptos_menor_77000": {
+    "total": {
+     "UE2020": 0.5417428049288994,
+     "pre2020": 0.5593942303903413
+    },
+    "ufs_pre2020_maior": 18,
+    "ufs_comparadas": 23,
+    "por_uf": {
+     "AC": {
+      "UE2020": 0.2679,
+      "pre2020": 0.3197
+     },
+     "AL": {
+      "UE2020": 0.5292,
+      "pre2020": 0.693
+     },
+     "AM": {
+      "UE2020": NaN,
+      "pre2020": 0.6782
+     },
+     "AP": {
+      "UE2020": NaN,
+      "pre2020": 0.5983
+     },
+     "BA": {
+      "UE2020": 0.7416,
+      "pre2020": 0.7622
+     },
+     "CE": {
+      "UE2020": 0.6859,
+      "pre2020": 0.7792
+     },
+     "ES": {
+      "UE2020": 0.3696,
+      "pre2020": 0.44
+     },
+     "GO": {
+      "UE2020": 0.4189,
+      "pre2020": 0.4467
+     },
+     "MA": {
+      "UE2020": 0.7023,
+      "pre2020": 0.7622
+     },
+     "MG": {
+      "UE2020": 0.5087,
+      "pre2020": 0.5413
+     },
+     "MS": {
+      "UE2020": 0.4412,
+      "pre2020": 0.4292
+     },
+     "MT": {
+      "UE2020": 0.4126,
+      "pre2020": 0.3213
+     },
+     "PA": {
+      "UE2020": 0.6626,
+      "pre2020": 0.5482
+     },
+     "PB": {
+      "UE2020": 0.6645,
+      "pre2020": 0.7668
+     },
+     "PE": {
+      "UE2020": 0.6747,
+      "pre2020": 0.7543
+     },
+     "PI": {
+      "UE2020": 0.8072,
+      "pre2020": 0.8108
+     },
+     "PR": {
+      "UE2020": 0.4071,
+      "pre2020": 0.4093
+     },
+     "RJ": {
+      "UE2020": NaN,
+      "pre2020": 0.4168
+     },
+     "RN": {
+      "UE2020": 0.6768,
+      "pre2020": 0.7317
+     },
+     "RO": {
+      "UE2020": 0.2192,
+      "pre2020": 0.2776
+     },
+     "RR": {
+      "UE2020": 0.2374,
+      "pre2020": 0.3858
+     },
+     "RS": {
+      "UE2020": 0.4351,
+      "pre2020": 0.4101
+     },
+     "SC": {
+      "UE2020": 0.3222,
+      "pre2020": 0.3042
+     },
+     "SE": {
+      "UE2020": 0.6903,
+      "pre2020": 0.729
+     },
+     "SP": {
+      "UE2020": 0.3699,
+      "pre2020": 0.393
+     },
+     "TO": {
+      "UE2020": 0.529,
+      "pre2020": 0.5802
+     },
+     "ZZ": {
+      "UE2020": NaN,
+      "pre2020": 0.5127
+     }
+    }
+   },
+   "a_conta_live_aptos_menor_38500": {
+    "total": {
+     "UE2020": 0.5552600894417755,
+     "pre2020": 0.5771495039656428
+    },
+    "ufs_pre2020_maior": 19,
+    "ufs_comparadas": 23,
+    "por_uf": {
+     "AC": {
+      "UE2020": 0.2679,
+      "pre2020": 0.342
+     },
+     "AL": {
+      "UE2020": 0.5725,
+      "pre2020": 0.7045
+     },
+     "AM": {
+      "UE2020": NaN,
+      "pre2020": 0.686
+     },
+     "AP": {
+      "UE2020": NaN,
+      "pre2020": 0.5983
+     },
+     "BA": {
+      "UE2020": 0.741,
+      "pre2020": 0.7755
+     },
+     "CE": {
+      "UE2020": 0.7189,
+      "pre2020": 0.7875
+     },
+     "ES": {
+      "UE2020": 0.3517,
+      "pre2020": 0.4396
+     },
+     "GO": {
+      "UE2020": 0.3875,
+      "pre2020": 0.4538
+     },
+     "MA": {
+      "UE2020": 0.7558,
+      "pre2020": 0.7745
+     },
+     "MG": {
+      "UE2020": 0.5291,
+      "pre2020": 0.5545
+     },
+     "MS": {
+      "UE2020": 0.4412,
+      "pre2020": 0.4285
+     },
+     "MT": {
+      "UE2020": 0.4477,
+      "pre2020": 0.3213
+     },
+     "PA": {
+      "UE2020": 0.7033,
+      "pre2020": 0.5544
+     },
+     "PB": {
+      "UE2020": 0.7118,
+      "pre2020": 0.7723
+     },
+     "PE": {
+      "UE2020": 0.7077,
+      "pre2020": 0.7755
+     },
+     "PI": {
+      "UE2020": 0.8123,
+      "pre2020": 0.8164
+     },
+     "PR": {
+      "UE2020": 0.4077,
+      "pre2020": 0.4282
+     },
+     "RJ": {
+      "UE2020": NaN,
+      "pre2020": 0.428
+     },
+     "RN": {
+      "UE2020": 0.6909,
+      "pre2020": 0.7344
+     },
+     "RO": {
+      "UE2020": 0.2672,
+      "pre2020": 0.2949
+     },
+     "RR": {
+      "UE2020": 0.2374,
+      "pre2020": 0.3858
+     },
+     "RS": {
+      "UE2020": 0.3985,
+      "pre2020": 0.4129
+     },
+     "SC": {
+      "UE2020": 0.3222,
+      "pre2020": 0.312
+     },
+     "SE": {
+      "UE2020": 0.7086,
+      "pre2020": 0.7424
+     },
+     "SP": {
+      "UE2020": 0.378,
+      "pre2020": 0.3971
+     },
+     "TO": {
+      "UE2020": 0.5516,
+      "pre2020": 0.59
+     },
+     "ZZ": {
+      "UE2020": NaN,
+      "pre2020": 0.5228
+     }
+    }
+   },
+   "a_bruto_brasil": {
+    "UE2020": 0.48949039599186206,
+    "pre2020": 0.5239186411831908
+   },
+   "b_municipio": {
+    "blocos": 311,
+    "secoes": {
+     "pre2020": 58991,
+     "UE2020": 52801
+    },
+    "media_residuo_logit": {
+     "pre2020": 0.023180981280240324,
+     "UE2020": -0.025898548639280036
+    },
+    "ic95": {
+     "pre2020": [
+      0.015373355976280402,
+      0.03593301886508747
+     ],
+     "UE2020": [
+      -0.03968554374538521,
+      -0.01606074827939998
+     ]
+    },
+    "equivalente_em_0_02": false,
+    "por_modelo": {
+     "UE2009": {
+      "secoes": 7591,
+      "media": 0.015433923840080552,
+      "ic95": [
+       -0.0005303411816810175,
+       0.03178913787022965
+      ]
+     },
+     "UE2010": {
+      "secoes": 19161,
+      "media": 0.008446214758615211,
+      "ic95": [
+       -0.012299316645642494,
+       0.026276823642106647
+      ]
+     },
+     "UE2011": {
+      "secoes": 7003,
+      "media": 0.0284797896718379,
+      "ic95": [
+       0.014798026522073822,
+       0.046250829340317094
+      ]
+     },
+     "UE2013": {
+      "secoes": 3898,
+      "media": 0.017651410173597823,
+      "ic95": [
+       0.0030865991552548244,
+       0.048211427753235676
+      ]
+     },
+     "UE2015": {
+      "secoes": 21338,
+      "media": 0.038439556936648835,
+      "ic95": [
+       0.027848422070949265,
+       0.05272801920889165
+      ]
+     },
+     "UE2020": {
+      "secoes": 52801,
+      "media": -0.025898548639280036,
+      "ic95": [
+       -0.03968554374538521,
+       -0.01606074827939998
+      ]
+     }
+    },
+    "votos_lula_equivalentes_a_diferenca": 176309.43325254103,
+    "calibracao": {
+     "permutacoes": 200,
+     "fracao_ic_fora_da_margem": 0.0,
+     "adequado": true,
+     "nota": "IC das permutações aproximado com a semi-amplitude do bootstrap real (desvio declarado)"
+    },
+    "poder_fraude_1pct": {
+     "media_pre2020": 0.04133438042248032,
+     "ic95_pre2020": [
+      0.03511066129740772,
+      0.055188322655995846
+     ],
+     "detectou_no_sentido_correto": true,
+     "votos_movidos": 154900
+    }
+   },
+   "c_local": {
+    "blocos": 163,
+    "secoes": {
+     "pre2020": 985,
+     "UE2020": 760
+    },
+    "media_residuo_logit": {
+     "pre2020": 0.00333131889125797,
+     "UE2020": -0.004317564615643582
+    },
+    "ic95": {
+     "pre2020": [
+      -0.003396787835890367,
+      0.009205846444466339
+     ],
+     "UE2020": [
+      -0.012415928262974012,
+      0.004229051874851184
+     ]
+    },
+    "equivalente_em_0_02": true,
+    "por_modelo": {
+     "UE2009": {
+      "secoes": 171,
+      "media": -0.0005979841269012753,
+      "ic95": [
+       -0.024736031277551224,
+       0.027975738435391948
+      ]
+     },
+     "UE2010": {
+      "secoes": 301,
+      "media": 0.0037252057697041187,
+      "ic95": [
+       -0.013149855180457947,
+       0.020411057587128988
+      ]
+     },
+     "UE2011": {
+      "secoes": 127,
+      "media": 0.004039619182827787,
+      "ic95": [
+       -0.014906685093133568,
+       0.03305148635855811
+      ]
+     },
+     "UE2013": {
+      "secoes": 35,
+      "media": -0.016965113633838323,
+      "ic95": [
+       -0.07597781212408455,
+       0.04224213986461089
+      ]
+     },
+     "UE2015": {
+      "secoes": 351,
+      "media": 0.006675398284539855,
+      "ic95": [
+       -0.00595187432354794,
+       0.021135197322532603
+      ]
+     },
+     "UE2020": {
+      "secoes": 760,
+      "media": -0.004317564615643582,
+      "ic95": [
+       -0.012415928262974012,
+       0.004229051874851184
+      ]
+     }
+    },
+    "votos_lula_equivalentes_a_diferenca": 441.38148050495516
+   }
+  }
+ },
+ "T48": {
+  "1t": {
+   "versoes_por_modelo": {
+    "UE2009": {
+     "8.26.0.0 - Onça-pintada": 44571
+    },
+    "UE2010": {
+     "8.26.0.0 - Onça-pintada": 94898
+    },
+    "UE2011": {
+     "8.26.0.0 - Onça-pintada": 28365
+    },
+    "UE2013": {
+     "8.26.0.0 - Onça-pintada": 25357
+    },
+    "UE2015": {
+     "8.26.0.0 - Onça-pintada": 86024
+    },
+    "UE2020": {
+     "8.26.0.0 - Onça-pintada": 192644
+    }
+   },
+   "falhas_verificacao_sw_por_modelo": {
+    "UE2009": 0,
+    "UE2010": 1,
+    "UE2011": 0,
+    "UE2013": 0,
+    "UE2015": 0,
+    "UE2020": 0
+   },
+   "unanimes_lula_validos_min_1": {
+    "total": 59,
+    "observado_por_modelo": {
+     "UE2015": 24,
+     "UE2010": 13,
+     "UE2009": 9,
+     "UE2020": 5,
+     "UE2011": 4,
+     "UE2013": 4
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 9.5,
+     "UE2010": 16.0,
+     "UE2011": 6.4,
+     "UE2013": 4.0,
+     "UE2015": 18.0,
+     "UE2020": 5.0
+    },
+    "votos": 6075
+   },
+   "unanimes_bolsonaro_validos_min_1": {
+    "total": 1,
+    "observado_por_modelo": {
+     "UE2013": 1
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 0.0,
+     "UE2010": 0.0,
+     "UE2011": 0.0,
+     "UE2013": 1.0,
+     "UE2015": 0.0,
+     "UE2020": 0.0
+    },
+    "votos": 58
+   },
+   "unanimes_lula_validos_min_20": {
+    "total": 59,
+    "observado_por_modelo": {
+     "UE2015": 24,
+     "UE2010": 13,
+     "UE2009": 9,
+     "UE2020": 5,
+     "UE2011": 4,
+     "UE2013": 4
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 9.5,
+     "UE2010": 16.0,
+     "UE2011": 6.4,
+     "UE2013": 4.0,
+     "UE2015": 18.0,
+     "UE2020": 5.0
+    },
+    "votos": 6075
+   },
+   "unanimes_bolsonaro_validos_min_20": {
+    "total": 1,
+    "observado_por_modelo": {
+     "UE2013": 1
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 0.0,
+     "UE2010": 0.0,
+     "UE2011": 0.0,
+     "UE2013": 1.0,
+     "UE2015": 0.0,
+     "UE2020": 0.0
+    },
+    "votos": 58
+   }
+  },
+  "2t": {
+   "versoes_por_modelo": {
+    "UE2009": {
+     "8.26.0.0 - Onça-pintada": 44868
+    },
+    "UE2010": {
+     "8.26.0.0 - Onça-pintada": 94747
+    },
+    "UE2011": {
+     "8.26.0.0 - Onça-pintada": 28163
+    },
+    "UE2013": {
+     "8.26.0.0 - Onça-pintada": 25376
+    },
+    "UE2015": {
+     "8.26.0.0 - Onça-pintada": 86137,
+     "8.10.0.1 - Sabiá|8.26.0.0 - Onça-pintada": 1
+    },
+    "UE2020": {
+     "8.26.0.0 - Onça-pintada": 192691
+    }
+   },
+   "falhas_verificacao_sw_por_modelo": {
+    "UE2009": 0,
+    "UE2010": 1,
+    "UE2011": 0,
+    "UE2013": 0,
+    "UE2015": 0,
+    "UE2020": 0
+   },
+   "unanimes_lula_validos_min_1": {
+    "total": 141,
+    "observado_por_modelo": {
+     "UE2015": 49,
+     "UE2010": 37,
+     "UE2009": 18,
+     "UE2013": 14,
+     "UE2011": 12,
+     "UE2020": 11
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 17.9,
+     "UE2010": 39.0,
+     "UE2011": 16.0,
+     "UE2013": 14.5,
+     "UE2015": 40.7,
+     "UE2020": 13.0
+    },
+    "votos": 16418
+   },
+   "unanimes_bolsonaro_validos_min_1": {
+    "total": 4,
+    "observado_por_modelo": {
+     "UE2009": 2,
+     "UE2015": 1,
+     "UE2010": 1
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 2.4,
+     "UE2010": 0.9,
+     "UE2011": 0.0,
+     "UE2013": 0.0,
+     "UE2015": 0.7,
+     "UE2020": 0.0
+    },
+    "votos": 124
+   },
+   "unanimes_lula_validos_min_20": {
+    "total": 136,
+    "observado_por_modelo": {
+     "UE2015": 46,
+     "UE2010": 37,
+     "UE2009": 17,
+     "UE2013": 14,
+     "UE2011": 12,
+     "UE2020": 10
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 17.5,
+     "UE2010": 38.5,
+     "UE2011": 15.8,
+     "UE2013": 13.8,
+     "UE2015": 39.1,
+     "UE2020": 11.2
+    },
+    "votos": 16339
+   },
+   "unanimes_bolsonaro_validos_min_20": {
+    "total": 2,
+    "observado_por_modelo": {
+     "UE2015": 1,
+     "UE2010": 1
+    },
+    "esperado_pela_presenca_no_municipio": {
+     "UE2009": 0.4,
+     "UE2010": 0.9,
+     "UE2011": 0.0,
+     "UE2013": 0.0,
+     "UE2015": 0.7,
+     "UE2020": 0.0
+    },
+    "votos": 118
+   }
+  }
+ },
+ "tempo_s": 39
+}

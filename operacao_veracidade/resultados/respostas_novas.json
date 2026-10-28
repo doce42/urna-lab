@@ -1,0 +1,170 @@
+[
+ {
+  "id": "N1",
+  "pergunta": "Os certificados de todas as urnas de 2022 e 2026 verificam até a AC emissora, estavam válidos no dia da eleição e são únicos?",
+  "resposta": "Sim: nos 1.942.246 pares seção × turno (2022 e 2026, dois turnos) a assinatura da AC emissora verifica, 0 falhas, todos válidos no dia, nenhum emitido depois da eleição, nenhuma chave pública repetida. A raiz não é pública.",
+  "estado": "Demonstrado no escopo definido (até a AC emissora)",
+  "evidencia": [
+   "operacao_veracidade/scripts/cert_extrai.py",
+   "operacao_veracidade/resultados/cert_analise.json",
+   "operacao_veracidade/resultados/certs_2026_1t.parquet",
+   "operacao_veracidade/resultados/certs_2022_2t.parquet"
+  ],
+  "cobertura": "499.176 + 499.178 seções (2026) e 471.908 + 471.984 (2022), 0 erros de leitura; exterior e Sistema de Apuração sem vota.vsc ficam fora",
+  "validacao": "Ed521 só com M = TBS (sem busca de variantes); ECDSA por biblioteca padrão; controles positivos e negativos em T60b; testes unitários do Ed521 (9 de 9)",
+  "independencia": "Interna (certificados e lista vêm da mesma urna) com ACs obtidas de terceiro; **externa quanto à AC só por cópia de terceiro**",
+  "demonstra": "Que toda chave de urna pertence à cadeia das ACs que temos e que nenhuma chave se repete entre urnas. Fecha a lacuna dos 200 casos do P11.",
+  "nao_demonstra": "Que a raiz é do TSE (AC RAIZ UE e AC URNA v2 não são públicas); que a cópia das ACs é a oficial (página do TSE bloqueada a este ambiente); fidelidade do voto.",
+  "votos": "Não se traduz em votos.",
+  "proxima": "AC RAIZ UE e AC URNA v2 obtidas por canal oficial verificável"
+ },
+ {
+  "id": "N2",
+  "pergunta": "O verificador de assinaturas rejeita arquivos adulterados, e o que cada degrau (hash, assinatura do arquivo, assinatura da lista, cadeia) prova?",
+  "resposta": "Sim: 0 de 40 genuínos rejeitados; 40 de 40 rejeitados em cada uma de 7 mutações, em 2026 e em 2022. A assinatura do arquivo sozinha não detecta alteração do arquivo; o hash detecta. Um certificado sintético autoassinado passa pela verificação de lista e só a cadeia o rejeita.",
+  "estado": "Demonstrado no escopo definido",
+  "evidencia": [
+   "operacao_veracidade/scripts/controles_mutacao.py",
+   "operacao_veracidade/resultados/controles_mutacao_2026_AC.json",
+   "operacao_veracidade/resultados/controles_mutacao_2022_AL.json",
+   "operacao_veracidade/resultados/ed521_unitarios.json"
+  ],
+  "cobertura": "40 seções reais de AC (2026) e 40 de AL (2022); 9 testes unitários do Ed521",
+  "validacao": "controle positivo (genuíno) e 8 negativos; chave descartável em memória",
+  "independencia": "Sintética (mutações em cópias em memória)",
+  "demonstra": "Que o verificador do projeto não aceita as adulterações testadas e que nenhum resultado herdado depende de `assin_ok` isolado.",
+  "nao_demonstra": "Que o verificador seja correto contra todo ataque; que a chave seja de uma urna autêntica.",
+  "votos": "Não se traduz em votos.",
+  "proxima": "Revisão externa do código de verificação por criptógrafo independente"
+ },
+ {
+  "id": "N3",
+  "pergunta": "Os boletins impressos lidos por terceiros (QR Code) concordam com a base do TSE e têm assinatura válida?",
+  "resposta": "Sim, nos 404 boletins do 2º turno de 2026 obtidos: assinatura da urna válida, cadeia até a AC, votos iguais à tabela e ao BU do TSE, identidade da urna igual. É amostra de conveniência (0,08% das seções).",
+  "estado": "Parcialmente demonstrado (amostra de conveniência)",
+  "evidencia": [
+   "operacao_veracidade/scripts/terceiros_qr.py",
+   "operacao_veracidade/resultados/terceiros_qr.json",
+   "operacao_veracidade/externo/arvor_totalizacao/SHA256SUMS.txt"
+  ],
+  "cobertura": "404 de 499.207 seções (0,08%), 22 UFs, 167 de SP, só 2º turno de 2026",
+  "validacao": "verificador próprio da assinatura; `hash_final` = SHA-512 do conteúdo em 404; comparação com tabela, BU do pacote e certificado do vota.vsc",
+  "independencia": "**Externa parcial**: cadeia de obtenção diferente (QR do boletim impresso), mas a assinatura é da mesma urna; coletor e publicador são o mesmo projeto",
+  "demonstra": "Que o boletim impresso na seção coincide com o que o TSE publicou nas 404 seções; 77 deles já estavam no servidor de terceiros entre 18:10 e 18:47, 45 minutos ou mais antes do TSE registrar o recebimento.",
+  "nao_demonstra": "Veracidade do voto; representatividade; qualquer coisa fora da amostra; o relógio do servidor de terceiros não é auditado.",
+  "votos": "Não se traduz em votos: 404 seções sem diferença.",
+  "proxima": "Boletins impressos de amostra probabilística, com lista de seções sorteada antes da eleição"
+ },
+ {
+  "id": "N4",
+  "pergunta": "Que alterações cada verificação de consistência consegue ver, e um registro coerente gerado por fonte comprometida seria distinguível de um genuíno?",
+  "resposta": "Alterar só a tabela é visto pela comparação com o BU; BU e tabela, pelo RDV, pela imagem e pelo hash; tudo sem reassinar, só pelo hash da lista assinada; registros coerentes assinados pelo próprio gerador **não são vistos por nenhuma verificação interna**.",
+  "estado": "Demonstrado no escopo definido (limite de identificabilidade)",
+  "evidencia": [
+   "operacao_veracidade/scripts/identificabilidade.py",
+   "operacao_veracidade/resultados/identificabilidade.json"
+  ],
+  "cobertura": "52.062 seções reais de MG, 2º turno de 2026, 2.497 alteradas (59.499 votos); 6 cenários e 6 verificações",
+  "validacao": "controle sem alteração: 0 em todas as verificações",
+  "independencia": "Sintética",
+  "demonstra": "O que cada consistência interna pode e não pode ver.",
+  "nao_demonstra": "Que alguém consiga produzir registros coerentes assinados na prática; só mede o limite.",
+  "votos": "Não se traduz em votos.",
+  "proxima": "Amostra probabilística de boletins impressos ou auditoria do software da urna (as únicas que separam os dois mundos)"
+ },
+ {
+  "id": "N5",
+  "pergunta": "Que mecanismos de alteração a bateria estatística consegue ver, com que poder, e quais passam sem alarme?",
+  "resposta": "Vê com 80% de poder a partir de 25 a 50 mil votos: seções dispersas, poucas seções, locais, zonas e municípios inteiros, redutos. Só vê a partir de 0,5 a 2,2 milhões, ou nunca: UFs, os cinco grandes juntos, macrorregião, lote tardio, conversão de brancos e nulos, deslocamento uniforme. O poder é assimétrico entre sentidos. Um atacante de estrutura completa passa D1 a D7 em 2026.",
+  "estado": "Parcialmente demonstrado",
+  "evidencia": [
+   "operacao_veracidade/scripts/sim_adversarial.py",
+   "operacao_veracidade/scripts/sim_fabricacao_v2.py",
+   "operacao_veracidade/resultados/sim_2026_resumo.json",
+   "operacao_veracidade/resultados/sim_2022_resumo.json",
+   "operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md"
+  ],
+  "cobertura": "2026 e 2022; 15 mecanismos, 2 sentidos, 7 magnitudes, 20 réplicas; limiares do bootstrap por município",
+  "validacao": "falso alarme em bootstrap independente (4% a 14,5% a união); sensibilidade do D1 (z de 3 e 5); fabricação em três níveis",
+  "independencia": "Sintética (base real é referência, não verdade conhecida)",
+  "demonstra": "Quais mecanismos a bateria vê e em que escala; que a ausência de alarme em mecanismos de UF, região, lote e uniforme não exclui alterações de centenas de milhares de votos.",
+  "nao_demonstra": "Que a base real foi ou não alterada (alteração já presente é absorvida pelo limiar); que a soma das anomalias seja teto de fraude.",
+  "votos": "Poder ≥ 80% só a partir de 25 mil (locais, zonas) a 2,22 mi votos movidos (UFs, uniforme); ver tabela em 03.",
+  "proxima": "Detectores com referência externa (histórico, boletins impressos)"
+ },
+ {
+  "id": "N6",
+  "pergunta": "Os zeros de votos de um finalista são excepcionais depois de modelos calibrados (2022 e 2026)?",
+  "resposta": "Não determinável: três famílias de modelo (município, zona, local de votação) falharam o critério fixado antes; os zeros são, na descrição, locais de uma seção só com menos de 1% do total, nos dois anos (141 em 2022 e 106 em 2026 para o candidato da direita; 2 e 4 para Lula).",
+  "estado": "Não determinável com as evidências disponíveis",
+  "evidencia": [
+   "operacao_veracidade/scripts/zeros_contagens.py",
+   "operacao_veracidade/scripts/zeros_locais.py",
+   "operacao_veracidade/resultados/zeros_contagens.json",
+   "operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md"
+  ],
+  "cobertura": "todas as seções com comparecimento positivo, 2022 e 2026, dois turnos, dois finalistas",
+  "validacao": "beta-binomial com UF retida, 500 sorteios Monte Carlo; critério: 80% das UFs com esperado ≥ 1 dentro do intervalo de 95%",
+  "independencia": "Interna (tabela do TSE)",
+  "demonstra": "As contagens (0, 1, 2, 3 a 5 votos) e o perfil descritivo dos zeros.",
+  "nao_demonstra": "Excesso ou ausência de excesso de zeros; o modelo por local reproduz 45% a 63% e falha.",
+  "votos": "14.860 votos de Lula nas 106 seções de 2026 (0,34% da margem); 16.418 em 2022.",
+  "proxima": "Modelo de cauda baixa que passe no critério (nenhum das 3 famílias passou)"
+ },
+ {
+  "id": "N7",
+  "pergunta": "Os arquivos que o TSE publicou mudaram entre downloads independentes?",
+  "resposta": "Não, nos 404 boletins: o SHA-256 do `bu.dat` baixado por terceiros do TSE (a partir de 25/10) é igual ao do nosso download (27 e 28/10) em 404 de 404.",
+  "estado": "Demonstrado no escopo definido (404 arquivos)",
+  "evidencia": [
+   "operacao_veracidade/scripts/republicacao_bu.py",
+   "operacao_veracidade/resultados/republicacao_bu.json"
+  ],
+  "cobertura": "404 BU de 22 UFs",
+  "validacao": "comparação byte a byte (SHA-256) entre duas origens de download",
+  "independencia": "Externa parcial: hash declarado por terceiro, confirmado por igualdade com o nosso",
+  "demonstra": "Nenhuma republicação nesses arquivos entre os dois downloads.",
+  "nao_demonstra": "Que o arquivo seja o que a urna gerou; arquivos fora dos 404; mudanças antes do primeiro download.",
+  "votos": "Não se traduz em votos.",
+  "proxima": "Capturas de arquivos do TSE em horários de resolução fina por terceiros"
+ },
+ {
+  "id": "N8",
+  "pergunta": "Há divergência objetiva nova nos dados publicados pelo TSE?",
+  "resposta": "Nenhuma divergência de votos. Há lacunas documentais: 98 certificados emitidos depois da validade do certificado público da AC URNA; certificado ≠ urna da tabela em 17 seções de 2026 e 22 de 2022 (1 com três identificações diferentes); regra de emissão por modelo não pública; raiz ausente.",
+  "estado": "Parcialmente demonstrado",
+  "evidencia": [
+   "operacao_veracidade/resultados/casos_certificado.csv",
+   "operacao_veracidade/resultados/casos_A_relidos_por_id_e_data.csv",
+   "operacao_veracidade/evidencia/caso_ES_57932_9_85_112.json",
+   "operacao_veracidade/06_ANOMALIAS_E_LOGS.md"
+  ],
+  "cobertura": "2026 e 2022, dois turnos, todas as seções com certificado",
+  "validacao": "releitura por ID de urna, data e seção, com segundo método de leitura do log (caso ES)",
+  "independencia": "Interna (certificado da AC, tabela e log têm origens parcialmente distintas)",
+  "demonstra": "As lacunas e o artefato do leitor (log de pacote traz logs arquivados de outras urnas e seções).",
+  "nao_demonstra": "Causa de cada caso; os explicados vêm do próprio log (compatível, não verificado).",
+  "votos": "Menos de 30 mil votos válidos nas seções dos tipos A e D (cerca de 0,6% da margem de 2026).",
+  "proxima": "Ata e caderno de votação das seções citadas; documentação de contingência do TSE; certificado renovado da AC URNA"
+ },
+ {
+  "id": "N9",
+  "pergunta": "A conta dos \"votos extras\" (98,12%) mostra que o crescimento de Lula entre os turnos não fecha?",
+  "resposta": "Não. A aritmética do vídeo está certa, mas o 98% é a premissa de 60% devolvida: é o mínimo possível para a parcela dos outros que vai a Lula e deixa Flávio sem nenhum voto dos extras. Com 85% dos outros indo a Lula, os extras se dividem 51/49. O mesmo método dá 370% para Bolsonaro em 2022. O que é real: o candidato que mais cresceu recebeu mais que a divisão proporcional nos dois anos, em todas as UFs, e em 2026 mais (26,2% do disponível contra 19,6%).",
+  "estado": "Refutado no escopo definido (a conclusão do vídeo); resíduo descrito sem causa",
+  "evidencia": [
+   "operacao_veracidade/scripts/hipotese_video.py",
+   "operacao_veracidade/scripts/hipotese_video_m6.py",
+   "operacao_veracidade/resultados/hipotese_video.json",
+   "operacao_veracidade/resultados/hipotese_video_m6.json",
+   "operacao_veracidade/10_HIPOTESE_DO_VIDEO.md"
+  ],
+  "cobertura": "totais nacionais com exterior (identidade exata) e 5.570 municípios sem exterior, 2022 e 2026",
+  "validacao": "identidade exata (diferença 0); regressão ecológica com bootstrap de municípios; controle proporcional (M6) declarado como exploratório",
+  "independencia": "Aritmética exata sobre totais do TSE; ecológica (associação, frágil: T37 e T59)",
+  "demonstra": "Que o 98,12% decorre da premissa; que os extras não precisam ter ido todos a Lula; que o método não discrimina (2022: 370%); que a abstenção também caiu em 2022.",
+  "nao_demonstra": "Para onde foi cada eleitor (Q26); causa do resíduo de 3,68 mi acima do proporcional; a afirmação 'nunca aconteceu' para anos anteriores a 2022 (sem dados no projeto).",
+  "votos": "Resíduo acima do proporcional: +3,68 mi para Lula em 2026 (26,2% do disponível) e +1,99 mi para Bolsonaro em 2022 (19,6%); não é limite de fraude nem evidência dela.",
+  "proxima": "Pesquisa de painel 1º→2º turno ou dado individual (inexistente por sigilo)"
+ }
+]

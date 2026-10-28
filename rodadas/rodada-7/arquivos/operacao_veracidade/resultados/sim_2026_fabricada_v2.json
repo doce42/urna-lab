@@ -1,0 +1,29 @@
+{
+ "ano": "2026",
+ "custo_ab": 0.1861087606618282,
+ "a_local": 0.03,
+ "b_zona": 0.02,
+ "reps": 20,
+ "alarmes": {
+  "d1_pos_4": 0.0,
+  "d1_neg_4": 0.0,
+  "d2l_pos": 0.0,
+  "d2l_neg": 0.0,
+  "d2z_pos": 0.0,
+  "d2z_neg": 0.0,
+  "d3_pos": 0.0,
+  "d3_neg": 0.0,
+  "d4_pos": 0.0,
+  "d5_alarme": 0.0,
+  "d6_subdispersao": 0.0,
+  "d7_estrutura_local": 0.05,
+  "alarme_qualquer_lado": 0.0
+ },
+ "escalas_relativas": {
+  "z": 0.9770725646570029,
+  "local": 0.9743216885640249,
+  "zona": 0.8448327061231208
+ },
+ "margem_nacional_media": 4393174.4,
+ "margem_real": 4401157.0
+}

@@ -1,0 +1,48 @@
+{
+ "2022": {
+  "1t": {
+   "secoes": 471908,
+   "A_cert_diferente_da_urna_da_tabela": 14,
+   "A_votos_validos": 3670,
+   "F_certificado_em_mais_de_uma_secao": 2
+  },
+  "2t": {
+   "secoes": 471984,
+   "A_cert_diferente_da_urna_da_tabela": 8,
+   "A_votos_validos": 2131,
+   "F_certificado_em_mais_de_uma_secao": 1
+  },
+  "entre_turnos": {
+   "certificado_diferente": 12540,
+   "urna_da_tabela_diferente": 12537,
+   "ambos": 12533,
+   "so_certificado": 7,
+   "so_tabela": 4
+  },
+  "D_AC_URNA_emitidos_depois_de_18_07_2026_1t": 0,
+  "D_AC_URNA_emitidos_depois_de_18_07_2026_2t": 0
+ },
+ "2026": {
+  "1t": {
+   "secoes": 499176,
+   "A_cert_diferente_da_urna_da_tabela": 14,
+   "A_votos_validos": 3089,
+   "F_certificado_em_mais_de_uma_secao": 0
+  },
+  "2t": {
+   "secoes": 499178,
+   "A_cert_diferente_da_urna_da_tabela": 3,
+   "A_votos_validos": 785,
+   "F_certificado_em_mais_de_uma_secao": 1
+  },
+  "entre_turnos": {
+   "certificado_diferente": 4429,
+   "urna_da_tabela_diferente": 4424,
+   "ambos": 4423,
+   "so_certificado": 6,
+   "so_tabela": 1
+  },
+  "D_AC_URNA_emitidos_depois_de_18_07_2026_1t": 45,
+  "D_AC_URNA_emitidos_depois_de_18_07_2026_2t": 53
+ }
+}

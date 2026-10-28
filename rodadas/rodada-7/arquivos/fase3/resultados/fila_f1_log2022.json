@@ -1,0 +1,6885 @@
+{
+ "pergunta": "fila F1",
+ "secoes": 153,
+ "por_classe": {
+  "2 log da urna efetivada ausente (o log publicado é de outra urna)": 94,
+  "3b log maior que o comparecimento, uma só urna": 30,
+  "3 log com votos de mais de uma urna ou fora do dia": 17,
+  "2b log menor que o comparecimento, com a urna efetivada no log": 12
+ },
+ "por_classe_e_turno": {
+  "1T | 2 log da urna efetivada ausente (o log publicado é de outra urna)": 64,
+  "1T | 2b log menor que o comparecimento, com a urna efetivada no log": 6,
+  "1T | 3 log com votos de mais de uma urna ou fora do dia": 4,
+  "1T | 3b log maior que o comparecimento, uma só urna": 30,
+  "2T | 2 log da urna efetivada ausente (o log publicado é de outra urna)": 30,
+  "2T | 2b log menor que o comparecimento, com a urna efetivada no log": 6,
+  "2T | 3 log com votos de mais de uma urna ou fora do dia": 13
+ },
+ "validacao_recontagem_igual_parquet": 153,
+ "votos_sem_log_por_classe": {
+  "2 log da urna efetivada ausente (o log publicado é de outra urna)": 4932,
+  "2b log menor que o comparecimento, com a urna efetivada no log": 355,
+  "3 log com votos de mais de uma urna ou fora do dia": 0,
+  "3b log maior que o comparecimento, uma só urna": 0
+ },
+ "secoes_detalhe": [
+  {
+   "turno": 1,
+   "secao": "MG/45136/100/231",
+   "comparecimento_bu": 281,
+   "computado_parquet": 252,
+   "cert_urna": "ueao01604324",
+   "urna_efetivada_tabela": "1604324",
+   "encerramento": "2022-10-02 17:36:02",
+   "emissao_bu": "2022-10-02 17:38:52",
+   "partes": [
+    {
+     "parte": "6730598502102022094157-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598502102022102203-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 252,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 252,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 10:29:50",
+     "ultimo": "02/10/2022 17:34:52"
+    }
+   ],
+   "recontagem_como_leitor": 252,
+   "soma_simples_das_partes": 252,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 252
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:34:52",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MG/51071/235/52",
+   "comparecimento_bu": 122,
+   "computado_parquet": 200,
+   "cert_urna": "ueao01631002",
+   "urna_efetivada_tabela": "1631002",
+   "encerramento": "2022-10-02 17:03:16",
+   "emissao_bu": "2022-10-02 17:04:53",
+   "partes": [
+    {
+     "parte": "6730598502102022132534-01.jez/logd.dat",
+     "votos_no_dia": 78,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 78,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:44",
+     "ultimo": "02/10/2022 11:40:47"
+    },
+    {
+     "parte": "6730598502102022142002-02.jez/logd.dat",
+     "votos_no_dia": 72,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 72,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:01:48",
+     "ultimo": "02/10/2022 12:56:44"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 50,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 50,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 14:27:22",
+     "ultimo": "02/10/2022 17:01:35"
+    }
+   ],
+   "recontagem_como_leitor": 200,
+   "soma_simples_das_partes": 200,
+   "so_logd_dat": 78,
+   "votos_por_urna": {
+    "67305985": 200
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:01:35",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "MG/50350/350/147",
+   "comparecimento_bu": 180,
+   "computado_parquet": 179,
+   "cert_urna": "ueao01107652",
+   "urna_efetivada_tabela": "1107652",
+   "encerramento": "2022-10-02 17:00:57",
+   "emissao_bu": "2022-10-02 17:04:19",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 179,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 179,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:56",
+     "ultimo": "02/10/2022 16:42:00"
+    }
+   ],
+   "recontagem_como_leitor": 179,
+   "soma_simples_das_partes": 179,
+   "so_logd_dat": 179,
+   "votos_por_urna": {
+    "67305985": 179
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:42:00",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MG/44830/303/70",
+   "comparecimento_bu": 122,
+   "computado_parquet": 220,
+   "cert_urna": "ueao01603961",
+   "urna_efetivada_tabela": "1603961",
+   "encerramento": "2022-10-02 19:06:45",
+   "emissao_bu": "2022-10-02 19:10:35",
+   "partes": [
+    {
+     "parte": "6730598502102022174010-01.jez/logd.dat",
+     "votos_no_dia": 168,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 168,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:26",
+     "ultimo": "02/10/2022 15:50:16"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 52,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 52,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:46:40",
+     "ultimo": "02/10/2022 19:03:16"
+    }
+   ],
+   "recontagem_como_leitor": 220,
+   "soma_simples_das_partes": 220,
+   "so_logd_dat": 168,
+   "votos_por_urna": {
+    "67305985": 220
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 19:03:16",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "MG/49735/213/36",
+   "comparecimento_bu": 61,
+   "computado_parquet": 105,
+   "cert_urna": "ueao01633925",
+   "urna_efetivada_tabela": "1633925",
+   "encerramento": "2022-10-02 17:00:56",
+   "emissao_bu": "2022-10-02 17:03:54",
+   "partes": [
+    {
+     "parte": "6730598502102022152536-01.jez/logd.dat",
+     "votos_no_dia": 87,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 87,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:08",
+     "ultimo": "02/10/2022 11:56:17"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 18,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 18,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:31:21",
+     "ultimo": "02/10/2022 16:48:23"
+    }
+   ],
+   "recontagem_como_leitor": 105,
+   "soma_simples_das_partes": 105,
+   "so_logd_dat": 87,
+   "votos_por_urna": {
+    "67305985": 105
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:48:23",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/64270/367/18",
+   "comparecimento_bu": 259,
+   "computado_parquet": 253,
+   "cert_urna": "ueao01153789",
+   "urna_efetivada_tabela": "1153789",
+   "encerramento": "2022-10-02 18:02:21",
+   "emissao_bu": "2022-10-02 18:05:46",
+   "partes": [
+    {
+     "parte": "6730598502102022093320-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 253,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 253,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:42:23",
+     "ultimo": "02/10/2022 18:01:29"
+    }
+   ],
+   "recontagem_como_leitor": 253,
+   "soma_simples_das_partes": 253,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 253
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:01:29",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/20/36",
+   "comparecimento_bu": 255,
+   "computado_parquet": 256,
+   "cert_urna": "ueao01673537",
+   "urna_efetivada_tabela": "1673537",
+   "encerramento": "2022-10-02 17:21:55",
+   "emissao_bu": "2022-10-02 17:23:35",
+   "partes": [
+    {
+     "parte": "6730598502102022143701ME.jez/logd.dat",
+     "votos_no_dia": 161,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 161,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:49",
+     "ultimo": "02/10/2022 13:57:26"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 95,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 95,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 14:44:37",
+     "ultimo": "02/10/2022 17:10:00"
+    }
+   ],
+   "recontagem_como_leitor": 256,
+   "soma_simples_das_partes": 256,
+   "so_logd_dat": 161,
+   "votos_por_urna": {
+    "67305985": 256
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:10:00",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/417/95",
+   "comparecimento_bu": 264,
+   "computado_parquet": 110,
+   "cert_urna": "ueao01097530",
+   "urna_efetivada_tabela": "1097530",
+   "encerramento": "2022-10-02 18:22:21",
+   "emissao_bu": "2022-10-02 18:25:14",
+   "partes": [
+    {
+     "parte": "6730598502102022161301ME.jez/logd.dat",
+     "votos_no_dia": 28,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 28,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:46",
+     "ultimo": "02/10/2022 08:56:55"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 82,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 82,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 16:21:26",
+     "ultimo": "02/10/2022 18:21:04"
+    }
+   ],
+   "recontagem_como_leitor": 110,
+   "soma_simples_das_partes": 110,
+   "so_logd_dat": 28,
+   "votos_por_urna": {
+    "67305985": 110
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:21:04",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/66893/365/166",
+   "comparecimento_bu": 270,
+   "computado_parquet": 269,
+   "cert_urna": "ueao01803411",
+   "urna_efetivada_tabela": "1803411",
+   "encerramento": "2022-10-02 17:00:53",
+   "emissao_bu": "2022-10-02 17:03:13",
+   "partes": [
+    {
+     "parte": "6730598502102022093908-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 269,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 269,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:46:55",
+     "ultimo": "02/10/2022 16:59:32"
+    }
+   ],
+   "recontagem_como_leitor": 269,
+   "soma_simples_das_partes": 269,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 269
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:59:32",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/70998/412/195",
+   "comparecimento_bu": 304,
+   "computado_parquet": 303,
+   "cert_urna": "ueao01336995",
+   "urna_efetivada_tabela": "1336995",
+   "encerramento": "2022-10-02 18:13:19",
+   "emissao_bu": "2022-10-02 18:14:32",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 303,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 303,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:47",
+     "ultimo": "02/10/2022 18:11:57"
+    }
+   ],
+   "recontagem_como_leitor": 303,
+   "soma_simples_das_partes": 303,
+   "so_logd_dat": 303,
+   "votos_por_urna": {
+    "67305985": 303
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:11:57",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/351/271",
+   "comparecimento_bu": 214,
+   "computado_parquet": 220,
+   "cert_urna": "ueao01658818",
+   "urna_efetivada_tabela": "1658818",
+   "encerramento": "2022-10-02 17:32:42",
+   "emissao_bu": "2022-10-02 17:34:38",
+   "partes": [
+    {
+     "parte": "6730598502102022111530-01.jez/logd.dat",
+     "votos_no_dia": 6,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 6,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:19:44",
+     "ultimo": "02/10/2022 09:02:06"
+    },
+    {
+     "parte": "6730598502102022154701ME.jez/logd.dat",
+     "votos_no_dia": 170,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 170,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:21",
+     "ultimo": "02/10/2022 15:03:29"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 44,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 44,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:58:52",
+     "ultimo": "02/10/2022 17:29:17"
+    }
+   ],
+   "recontagem_como_leitor": 220,
+   "soma_simples_das_partes": 220,
+   "so_logd_dat": 6,
+   "votos_por_urna": {
+    "67305985": 220
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:29:17",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71811/140/216",
+   "comparecimento_bu": 233,
+   "computado_parquet": 120,
+   "cert_urna": "UEAO02154469",
+   "urna_efetivada_tabela": "2154469",
+   "encerramento": "2022-10-02 17:04:53",
+   "emissao_bu": "2022-10-02 17:07:42",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 120,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 120,
+     "urnas": [
+      "2154469"
+     ],
+     "primeiro": "02/10/2022 08:03:21",
+     "ultimo": "02/10/2022 12:26:37"
+    }
+   ],
+   "recontagem_como_leitor": 120,
+   "soma_simples_das_partes": 120,
+   "so_logd_dat": 120,
+   "votos_por_urna": {
+    "2154469": 120
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 12:26:37",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/66850/71/23",
+   "comparecimento_bu": 201,
+   "computado_parquet": 200,
+   "cert_urna": "ueao01079959",
+   "urna_efetivada_tabela": "1079959",
+   "encerramento": "2022-10-02 17:43:08",
+   "emissao_bu": "2022-10-02 17:45:34",
+   "partes": [
+    {
+     "parte": "6730598502102022165001ME.jez/logd.dat",
+     "votos_no_dia": 183,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 183,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:24",
+     "ultimo": "02/10/2022 16:11:27"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 17,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 17,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 16:59:14",
+     "ultimo": "02/10/2022 17:42:13"
+    }
+   ],
+   "recontagem_como_leitor": 200,
+   "soma_simples_das_partes": 200,
+   "so_logd_dat": 183,
+   "votos_por_urna": {
+    "67305985": 200
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:42:13",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/350/33",
+   "comparecimento_bu": 285,
+   "computado_parquet": 284,
+   "cert_urna": "ueao01189904",
+   "urna_efetivada_tabela": "1189904",
+   "encerramento": "2022-10-02 17:46:19",
+   "emissao_bu": "2022-10-02 17:50:18",
+   "partes": [
+    {
+     "parte": "6730598502102022160201ME.jez/logd.dat",
+     "votos_no_dia": 234,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 234,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:01:26",
+     "ultimo": "02/10/2022 15:18:41"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 50,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 50,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 16:12:36",
+     "ultimo": "02/10/2022 17:44:31"
+    }
+   ],
+   "recontagem_como_leitor": 284,
+   "soma_simples_das_partes": 284,
+   "so_logd_dat": 234,
+   "votos_por_urna": {
+    "67305985": 284
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:44:31",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/64734/197/122",
+   "comparecimento_bu": 191,
+   "computado_parquet": 192,
+   "cert_urna": "ueao01310787",
+   "urna_efetivada_tabela": "1310787",
+   "encerramento": "2022-10-02 17:00:49",
+   "emissao_bu": "2022-10-02 17:03:13",
+   "partes": [
+    {
+     "parte": "6730598502102022094445-01.jez/logd.dat",
+     "votos_no_dia": 12,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 12,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:10:01",
+     "ultimo": "02/10/2022 08:42:22"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 180,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 180,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:54:59",
+     "ultimo": "02/10/2022 16:50:10"
+    }
+   ],
+   "recontagem_como_leitor": 192,
+   "soma_simples_das_partes": 192,
+   "so_logd_dat": 12,
+   "votos_por_urna": {
+    "67305985": 192
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:50:10",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/381/441",
+   "comparecimento_bu": 346,
+   "computado_parquet": 345,
+   "cert_urna": "ueao01629989",
+   "urna_efetivada_tabela": "1629989",
+   "encerramento": "2022-10-02 18:20:01",
+   "emissao_bu": "2022-10-02 18:22:45",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 345,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 345,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:06:27",
+     "ultimo": "02/10/2022 17:08:52"
+    }
+   ],
+   "recontagem_como_leitor": 345,
+   "soma_simples_das_partes": 345,
+   "so_logd_dat": 345,
+   "votos_por_urna": {
+    "67305985": 345
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:08:52",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/64777/394/152",
+   "comparecimento_bu": 339,
+   "computado_parquet": 338,
+   "cert_urna": "ueao01343751",
+   "urna_efetivada_tabela": "1343751",
+   "encerramento": "2022-10-02 18:08:27",
+   "emissao_bu": "2022-10-02 18:10:59",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 338,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 338,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:00",
+     "ultimo": "02/10/2022 18:00:08"
+    }
+   ],
+   "recontagem_como_leitor": 338,
+   "soma_simples_das_partes": 338,
+   "so_logd_dat": 338,
+   "votos_por_urna": {
+    "67305985": 338
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:00:08",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/70335/187/58",
+   "comparecimento_bu": 289,
+   "computado_parquet": 288,
+   "cert_urna": "UEAO02179369",
+   "urna_efetivada_tabela": "2179369",
+   "encerramento": "2022-10-02 17:01:27",
+   "emissao_bu": "2022-10-02 17:04:12",
+   "partes": [
+    {
+     "parte": "0217936902102022104901ME.jez/logd.dat",
+     "votos_no_dia": 80,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 80,
+     "urnas": [
+      "2182495"
+     ],
+     "primeiro": "02/10/2022 08:06:20",
+     "ultimo": "02/10/2022 10:32:27"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 208,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 208,
+     "urnas": [
+      "2179369"
+     ],
+     "primeiro": "02/10/2022 10:53:25",
+     "ultimo": "02/10/2022 16:52:31"
+    }
+   ],
+   "recontagem_como_leitor": 288,
+   "soma_simples_das_partes": 288,
+   "so_logd_dat": 80,
+   "votos_por_urna": {
+    "2182495": 80,
+    "2179369": 208
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 16:52:31",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/61654/14/206",
+   "comparecimento_bu": 342,
+   "computado_parquet": 341,
+   "cert_urna": "ueao01058225",
+   "urna_efetivada_tabela": "1058225",
+   "encerramento": "2022-10-02 17:27:26",
+   "emissao_bu": "2022-10-02 17:29:15",
+   "partes": [
+    {
+     "parte": "6730598502102022145601ME.jez/logd.dat",
+     "votos_no_dia": 241,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 241,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:11",
+     "ultimo": "02/10/2022 14:44:37"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 100,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 100,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:04:28",
+     "ultimo": "02/10/2022 17:25:46"
+    }
+   ],
+   "recontagem_como_leitor": 341,
+   "soma_simples_das_partes": 341,
+   "so_logd_dat": 241,
+   "votos_por_urna": {
+    "67305985": 341
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:25:46",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/63070/140/2",
+   "comparecimento_bu": 278,
+   "computado_parquet": 277,
+   "cert_urna": "ueao01630835",
+   "urna_efetivada_tabela": "1630835",
+   "encerramento": "2022-10-02 18:40:30",
+   "emissao_bu": "2022-10-02 18:43:22",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 277,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 277,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:40",
+     "ultimo": "02/10/2022 18:38:59"
+    }
+   ],
+   "recontagem_como_leitor": 277,
+   "soma_simples_das_partes": 277,
+   "so_logd_dat": 277,
+   "votos_por_urna": {
+    "67305985": 277
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:38:59",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/66397/66/430",
+   "comparecimento_bu": 222,
+   "computado_parquet": 221,
+   "cert_urna": "ueao01628040",
+   "urna_efetivada_tabela": "1628040",
+   "encerramento": "2022-10-02 17:01:46",
+   "emissao_bu": "2022-10-02 17:04:37",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 221,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 221,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:26",
+     "ultimo": "02/10/2022 16:55:09"
+    }
+   ],
+   "recontagem_como_leitor": 221,
+   "soma_simples_das_partes": 221,
+   "so_logd_dat": 221,
+   "votos_por_urna": {
+    "67305985": 221
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:55:09",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/351/545",
+   "comparecimento_bu": 247,
+   "computado_parquet": 268,
+   "cert_urna": "ueao01300197",
+   "urna_efetivada_tabela": "1300197",
+   "encerramento": "2022-10-02 18:08:22",
+   "emissao_bu": "2022-10-02 18:11:33",
+   "partes": [
+    {
+     "parte": "6730598502102022111232-01.jez/logd.dat",
+     "votos_no_dia": 21,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 21,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:15",
+     "ultimo": "02/10/2022 09:29:39"
+    },
+    {
+     "parte": "6730598502102022140709-02.jez/logd.dat",
+     "votos_no_dia": 130,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 130,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:12:34",
+     "ultimo": "02/10/2022 14:00:50"
+    },
+    {
+     "parte": "6730598502102022150756-01.jez/logd.dat",
+     "votos_no_dia": 15,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 15,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 14:19:16",
+     "ultimo": "02/10/2022 14:49:41"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 102,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 102,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:14:16",
+     "ultimo": "02/10/2022 18:07:45"
+    }
+   ],
+   "recontagem_como_leitor": 268,
+   "soma_simples_das_partes": 268,
+   "so_logd_dat": 21,
+   "votos_por_urna": {
+    "67305985": 268
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:07:45",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/66230/223/23",
+   "comparecimento_bu": 215,
+   "computado_parquet": 216,
+   "cert_urna": "ueao01841357",
+   "urna_efetivada_tabela": "1841357",
+   "encerramento": "2022-10-02 17:11:53",
+   "emissao_bu": "2022-10-02 17:13:52",
+   "partes": [
+    {
+     "parte": "6730598502102022092622-01.jez/logd.dat",
+     "votos_no_dia": 8,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 8,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:46:08",
+     "ultimo": "02/10/2022 09:13:49"
+    },
+    {
+     "parte": "6730598502102022101802ME.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:41:10",
+     "ultimo": "02/10/2022 09:41:10"
+    },
+    {
+     "parte": "6730598523092022145013-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 207,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 207,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 10:32:38",
+     "ultimo": "02/10/2022 17:09:47"
+    }
+   ],
+   "recontagem_como_leitor": 216,
+   "soma_simples_das_partes": 216,
+   "so_logd_dat": 8,
+   "votos_por_urna": {
+    "67305985": 216
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:09:47",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/70718/118/314",
+   "comparecimento_bu": 213,
+   "computado_parquet": 212,
+   "cert_urna": "ueao01327860",
+   "urna_efetivada_tabela": "1327860",
+   "encerramento": "2022-10-02 17:00:55",
+   "emissao_bu": "2022-10-02 17:03:22",
+   "partes": [
+    {
+     "parte": "6730598502102022113301ME.jez/logd.dat",
+     "votos_no_dia": 65,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 65,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:55",
+     "ultimo": "02/10/2022 10:45:59"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 147,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 147,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 11:44:36",
+     "ultimo": "02/10/2022 16:55:32"
+    }
+   ],
+   "recontagem_como_leitor": 212,
+   "soma_simples_das_partes": 212,
+   "so_logd_dat": 65,
+   "votos_por_urna": {
+    "67305985": 212
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:55:32",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/389/529",
+   "comparecimento_bu": 299,
+   "computado_parquet": 591,
+   "cert_urna": "ueao01095313",
+   "urna_efetivada_tabela": "1095313",
+   "encerramento": "2022-10-02 20:24:02",
+   "emissao_bu": "2022-10-02 20:27:42",
+   "partes": [
+    {
+     "parte": "6730598502102022200801ME.jez/logd.dat",
+     "votos_no_dia": 292,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 292,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:01:16",
+     "ultimo": "02/10/2022 17:01:29"
+    },
+    {
+     "parte": "6730598502102022202225-02.jez/logd.dat",
+     "votos_no_dia": 299,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 299,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:35",
+     "ultimo": "02/10/2022 16:55:09"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 591,
+   "soma_simples_das_partes": 591,
+   "so_logd_dat": 292,
+   "votos_por_urna": {
+    "67305985": 591
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:01:29",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/71072/418/395",
+   "comparecimento_bu": 271,
+   "computado_parquet": 255,
+   "cert_urna": "ueao01106877",
+   "urna_efetivada_tabela": "1106877",
+   "encerramento": "2022-10-02 18:07:03",
+   "emissao_bu": "2022-10-02 18:12:34",
+   "partes": [
+    {
+     "parte": "6730598502102022123701ME.jez/logd.dat",
+     "votos_no_dia": 54,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 54,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:08:26",
+     "ultimo": "02/10/2022 10:02:03"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 201,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 201,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:47:44",
+     "ultimo": "02/10/2022 18:01:50"
+    }
+   ],
+   "recontagem_como_leitor": 255,
+   "soma_simples_das_partes": 255,
+   "so_logd_dat": 54,
+   "votos_por_urna": {
+    "67305985": 255
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:01:50",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SP/64939/49/212",
+   "comparecimento_bu": 266,
+   "computado_parquet": 265,
+   "cert_urna": "ueao01200090",
+   "urna_efetivada_tabela": "1200090",
+   "encerramento": "2022-10-02 17:29:19",
+   "emissao_bu": "2022-10-02 17:33:13",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 265,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 265,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:06:25",
+     "ultimo": "02/10/2022 17:28:49"
+    }
+   ],
+   "recontagem_como_leitor": 265,
+   "soma_simples_das_partes": 265,
+   "so_logd_dat": 265,
+   "votos_por_urna": {
+    "67305985": 265
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:28:49",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PR/84611/206/69",
+   "comparecimento_bu": 263,
+   "computado_parquet": 262,
+   "cert_urna": "ueao01111529",
+   "urna_efetivada_tabela": "1111529",
+   "encerramento": "2022-10-02 17:12:45",
+   "emissao_bu": "2022-10-02 17:14:18",
+   "partes": [
+    {
+     "parte": "6730598502102022154151-01.jez/logd.dat",
+     "votos_no_dia": 209,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 209,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:01:36",
+     "ultimo": "02/10/2022 15:06:18"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 53,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 53,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:47:33",
+     "ultimo": "02/10/2022 17:10:44"
+    }
+   ],
+   "recontagem_como_leitor": 262,
+   "soma_simples_das_partes": 262,
+   "so_logd_dat": 209,
+   "votos_por_urna": {
+    "67305985": 262
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:10:44",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PR/76678/41/318",
+   "comparecimento_bu": 236,
+   "computado_parquet": 235,
+   "cert_urna": "ueao01660683",
+   "urna_efetivada_tabela": "1660683",
+   "encerramento": "2022-10-02 17:07:32",
+   "emissao_bu": "2022-10-02 17:10:06",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 235,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 235,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:22:42",
+     "ultimo": "02/10/2022 16:58:54"
+    }
+   ],
+   "recontagem_como_leitor": 235,
+   "soma_simples_das_partes": 235,
+   "so_logd_dat": 235,
+   "votos_por_urna": {
+    "67305985": 235
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:58:54",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PR/74071/171/41",
+   "comparecimento_bu": 308,
+   "computado_parquet": 309,
+   "cert_urna": "UEAO02081440",
+   "urna_efetivada_tabela": "2081440",
+   "encerramento": "2022-10-02 17:11:39",
+   "emissao_bu": "2022-10-02 17:13:20",
+   "partes": [
+    {
+     "parte": "0208144002102022152826-01.jez/logd.dat",
+     "votos_no_dia": 249,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 249,
+     "urnas": [
+      "2081992"
+     ],
+     "primeiro": "02/10/2022 08:04:17",
+     "ultimo": "02/10/2022 15:17:49"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 60,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 60,
+     "urnas": [
+      "2081440"
+     ],
+     "primeiro": "02/10/2022 15:32:06",
+     "ultimo": "02/10/2022 17:09:46"
+    }
+   ],
+   "recontagem_como_leitor": 309,
+   "soma_simples_das_partes": 309,
+   "so_logd_dat": 249,
+   "votos_por_urna": {
+    "2081992": 249,
+    "2081440": 60
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 17:09:46",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 1,
+   "secao": "PR/75833/43/74",
+   "comparecimento_bu": 307,
+   "computado_parquet": 0,
+   "cert_urna": "ueao01113109",
+   "urna_efetivada_tabela": "1099580",
+   "encerramento": "2022-10-02 17:03:00",
+   "emissao_bu": "2022-10-02 19:58:57",
+   "partes": [
+    {
+     "parte": "6730598502102022195044-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PR/75370/119/16",
+   "comparecimento_bu": 268,
+   "computado_parquet": 0,
+   "cert_urna": "ueao01174868",
+   "urna_efetivada_tabela": "1174868",
+   "encerramento": "2022-10-02 18:11:47",
+   "emissao_bu": "2022-10-02 20:36:32",
+   "partes": [
+    {
+     "parte": "6730598502102022203152-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PR/77275/167/100",
+   "comparecimento_bu": 326,
+   "computado_parquet": 23,
+   "cert_urna": "ueao01336675",
+   "urna_efetivada_tabela": "1336675",
+   "encerramento": "2022-10-02 17:39:49",
+   "emissao_bu": "2022-10-02 17:43:10",
+   "partes": [
+    {
+     "parte": "6730598502102022165057-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 23,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 23,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:01:27",
+     "ultimo": "02/10/2022 17:36:28"
+    }
+   ],
+   "recontagem_como_leitor": 23,
+   "soma_simples_das_partes": 23,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 23
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:36:28",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/38075/121/151",
+   "comparecimento_bu": 272,
+   "computado_parquet": 297,
+   "cert_urna": "ueao01656315",
+   "urna_efetivada_tabela": "1656315",
+   "encerramento": "2022-10-02 19:36:23",
+   "emissao_bu": "2022-10-02 19:38:04",
+   "partes": [
+    {
+     "parte": "6730598502102022110208-01.jez/logd.dat",
+     "votos_no_dia": 25,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 25,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:50",
+     "ultimo": "02/10/2022 09:31:39"
+    },
+    {
+     "parte": "6730598502102022111906-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598502102022120101ME.jez/logd.dat",
+     "votos_no_dia": 37,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 37,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:11:37",
+     "ultimo": "02/10/2022 11:52:09"
+    },
+    {
+     "parte": "6730598502102022142003ME.jez/logd.dat",
+     "votos_no_dia": 61,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 61,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:09:07",
+     "ultimo": "02/10/2022 14:00:41"
+    },
+    {
+     "parte": "6730598502102022145129-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598502102022153305ME.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 14:27:31",
+     "ultimo": "02/10/2022 14:27:31"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 173,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 173,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:39:20",
+     "ultimo": "02/10/2022 19:36:11"
+    }
+   ],
+   "recontagem_como_leitor": 297,
+   "soma_simples_das_partes": 297,
+   "so_logd_dat": 25,
+   "votos_por_urna": {
+    "67305985": 297
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 19:36:11",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/36196/185/122",
+   "comparecimento_bu": 288,
+   "computado_parquet": 289,
+   "cert_urna": "ueao01257727",
+   "urna_efetivada_tabela": "1257727",
+   "encerramento": "2022-10-02 18:25:19",
+   "emissao_bu": "2022-10-02 18:28:07",
+   "partes": [
+    {
+     "parte": "6730598502102022125121-01.jez/logd.dat",
+     "votos_no_dia": 93,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 93,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:08:23",
+     "ultimo": "02/10/2022 12:27:45"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 196,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 196,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:59:54",
+     "ultimo": "02/10/2022 18:21:18"
+    }
+   ],
+   "recontagem_como_leitor": 289,
+   "soma_simples_das_partes": 289,
+   "so_logd_dat": 93,
+   "votos_por_urna": {
+    "67305985": 289
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:21:18",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/30007/205/210",
+   "comparecimento_bu": 189,
+   "computado_parquet": 9,
+   "cert_urna": "ueao01016432",
+   "urna_efetivada_tabela": "1016432",
+   "encerramento": "2022-10-02 17:21:33",
+   "emissao_bu": "2022-10-02 17:23:47",
+   "partes": [
+    {
+     "parte": "6730598502102022170332-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 9,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 9,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:10:13",
+     "ultimo": "02/10/2022 17:20:37"
+    }
+   ],
+   "recontagem_como_leitor": 9,
+   "soma_simples_das_partes": 9,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 9
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:20:37",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/39594/120/24",
+   "comparecimento_bu": 256,
+   "computado_parquet": 255,
+   "cert_urna": "ueao01069086",
+   "urna_efetivada_tabela": "1069086",
+   "encerramento": "2022-10-02 17:12:39",
+   "emissao_bu": "2022-10-02 17:15:38",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 255,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 255,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:11",
+     "ultimo": "02/10/2022 17:11:58"
+    }
+   ],
+   "recontagem_como_leitor": 255,
+   "soma_simples_das_partes": 255,
+   "so_logd_dat": 255,
+   "votos_por_urna": {
+    "67305985": 255
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:11:58",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/37710/89/11",
+   "comparecimento_bu": 332,
+   "computado_parquet": 287,
+   "cert_urna": "ueao01625478",
+   "urna_efetivada_tabela": "1625478",
+   "encerramento": "2022-10-03 01:25:04",
+   "emissao_bu": "2022-10-03 01:29:40",
+   "partes": [
+    {
+     "parte": "6730598502102022204301ME.jez/logd.dat",
+     "votos_no_dia": 184,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 184,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:34:21",
+     "ultimo": "02/10/2022 16:30:04"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 103,
+     "votos_fora_do_dia": 45,
+     "novos_em_relacao_a_partes_anteriores": 103,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 20:59:17",
+     "ultimo": "02/10/2022 23:58:38"
+    }
+   ],
+   "recontagem_como_leitor": 287,
+   "soma_simples_das_partes": 287,
+   "so_logd_dat": 184,
+   "votos_por_urna": {
+    "67305985": 287
+   },
+   "votos_fora_do_dia": 45,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:58:38",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/38075/121/191",
+   "comparecimento_bu": 209,
+   "computado_parquet": 218,
+   "cert_urna": "ueao01656160",
+   "urna_efetivada_tabela": "1656160",
+   "encerramento": "2022-10-02 17:04:45",
+   "emissao_bu": "2022-10-02 17:07:19",
+   "partes": [
+    {
+     "parte": "6730598502102022114637-01.jez/logd.dat",
+     "votos_no_dia": 9,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 9,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:09",
+     "ultimo": "02/10/2022 08:55:41"
+    },
+    {
+     "parte": "6730598502102022132901ME.jez/logd.dat",
+     "votos_no_dia": 145,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 145,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:01:51",
+     "ultimo": "02/10/2022 12:47:04"
+    },
+    {
+     "parte": "6730598502102022154803ME.jez/logd.dat",
+     "votos_no_dia": 32,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 32,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 13:37:45",
+     "ultimo": "02/10/2022 15:36:33"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 32,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 32,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:54:33",
+     "ultimo": "02/10/2022 16:59:35"
+    }
+   ],
+   "recontagem_como_leitor": 218,
+   "soma_simples_das_partes": 218,
+   "so_logd_dat": 9,
+   "votos_por_urna": {
+    "67305985": 218
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:59:35",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/34134/171/232",
+   "comparecimento_bu": 345,
+   "computado_parquet": 0,
+   "cert_urna": "UEAO02213308",
+   "urna_efetivada_tabela": "2213308",
+   "encerramento": "2022-10-02 19:12:57",
+   "emissao_bu": "2022-10-02 19:15:51",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/34495/129/143",
+   "comparecimento_bu": 146,
+   "computado_parquet": 408,
+   "cert_urna": "ueao01299186",
+   "urna_efetivada_tabela": "1299186",
+   "encerramento": "2022-10-03 00:12:50",
+   "emissao_bu": "2022-10-03 00:15:28",
+   "partes": [
+    {
+     "parte": "6730598502102022180546-03.jez/logd.dat",
+     "votos_no_dia": 262,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 262,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:02",
+     "ultimo": "02/10/2022 16:59:25"
+    },
+    {
+     "parte": "6730598502102022181753-04.jez/logd.dat",
+     "votos_no_dia": 146,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 146,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:07",
+     "ultimo": "02/10/2022 16:41:31"
+    },
+    {
+     "parte": "6730598503102022001112-05.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530092022194931-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530092022201940-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 408,
+   "soma_simples_das_partes": 408,
+   "so_logd_dat": 262,
+   "votos_por_urna": {
+    "67305985": 408
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:59:25",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/36013/119/135",
+   "comparecimento_bu": 243,
+   "computado_parquet": 225,
+   "cert_urna": "ueao01601752",
+   "urna_efetivada_tabela": "1601752",
+   "encerramento": "2022-10-03 00:37:42",
+   "emissao_bu": "2022-10-03 00:40:59",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 225,
+     "votos_fora_do_dia": 18,
+     "novos_em_relacao_a_partes_anteriores": 225,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:18:25",
+     "ultimo": "02/10/2022 23:59:27"
+    }
+   ],
+   "recontagem_como_leitor": 225,
+   "soma_simples_das_partes": 225,
+   "so_logd_dat": 225,
+   "votos_por_urna": {
+    "67305985": 225
+   },
+   "votos_fora_do_dia": 18,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:59:27",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/38490/2/534",
+   "comparecimento_bu": 342,
+   "computado_parquet": 0,
+   "cert_urna": "UEAO02238719",
+   "urna_efetivada_tabela": "2238580",
+   "encerramento": "2022-10-02 18:16:20",
+   "emissao_bu": "2022-10-02 18:19:33",
+   "partes": [
+    {
+     "parte": "0223871902102022213923-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/30872/186/94",
+   "comparecimento_bu": 318,
+   "computado_parquet": 319,
+   "cert_urna": "UEAO02155497",
+   "urna_efetivada_tabela": "2155497",
+   "encerramento": "2022-10-02 18:43:30",
+   "emissao_bu": "2022-10-02 18:46:24",
+   "partes": [
+    {
+     "parte": "0215549702102022120758-01.jez/logd.dat",
+     "votos_no_dia": 100,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 100,
+     "urnas": [
+      "2196346"
+     ],
+     "primeiro": "02/10/2022 08:09:06",
+     "ultimo": "02/10/2022 11:54:24"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 219,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 219,
+     "urnas": [
+      "2155497"
+     ],
+     "primeiro": "02/10/2022 12:13:35",
+     "ultimo": "02/10/2022 18:37:57"
+    }
+   ],
+   "recontagem_como_leitor": 319,
+   "soma_simples_das_partes": 319,
+   "so_logd_dat": 100,
+   "votos_por_urna": {
+    "2196346": 100,
+    "2155497": 219
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 18:37:57",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/33871/190/8",
+   "comparecimento_bu": 224,
+   "computado_parquet": 215,
+   "cert_urna": "ueao01653303",
+   "urna_efetivada_tabela": "1653303",
+   "encerramento": "2022-10-03 00:33:18",
+   "emissao_bu": "2022-10-03 00:37:47",
+   "partes": [
+    {
+     "parte": "6730598502102022233201ME.jez/logd.dat",
+     "votos_no_dia": 203,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 203,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:00:48",
+     "ultimo": "02/10/2022 23:21:19"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 12,
+     "votos_fora_do_dia": 9,
+     "novos_em_relacao_a_partes_anteriores": 12,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 23:42:55",
+     "ultimo": "02/10/2022 23:58:31"
+    }
+   ],
+   "recontagem_como_leitor": 215,
+   "soma_simples_das_partes": 215,
+   "so_logd_dat": 203,
+   "votos_por_urna": {
+    "67305985": 215
+   },
+   "votos_fora_do_dia": 9,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:58:31",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "BA/35696/168/142",
+   "comparecimento_bu": 287,
+   "computado_parquet": 259,
+   "cert_urna": "ueao01650907",
+   "urna_efetivada_tabela": "1650907",
+   "encerramento": "2022-10-02 21:58:15",
+   "emissao_bu": "2022-10-02 22:01:55",
+   "partes": [
+    {
+     "parte": "6730598502102022120701ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 259,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 259,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:17:25",
+     "ultimo": "02/10/2022 21:46:42"
+    }
+   ],
+   "recontagem_como_leitor": 259,
+   "soma_simples_das_partes": 259,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 259
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 21:46:42",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RS/89052/132/63",
+   "comparecimento_bu": 307,
+   "computado_parquet": 305,
+   "cert_urna": "ueao01098866",
+   "urna_efetivada_tabela": "1098866",
+   "encerramento": "2022-10-02 18:30:13",
+   "emissao_bu": "2022-10-02 18:31:38",
+   "partes": [
+    {
+     "parte": "6730598502102022133201ME.jez/logd.dat",
+     "votos_no_dia": 142,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 142,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:55",
+     "ultimo": "02/10/2022 12:53:22"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 163,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 163,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 13:38:34",
+     "ultimo": "02/10/2022 18:25:47"
+    }
+   ],
+   "recontagem_como_leitor": 305,
+   "soma_simples_das_partes": 305,
+   "so_logd_dat": 142,
+   "votos_por_urna": {
+    "67305985": 305
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:25:47",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RS/89192/54/9",
+   "comparecimento_bu": 253,
+   "computado_parquet": 252,
+   "cert_urna": "ueao01102665",
+   "urna_efetivada_tabela": "1102665",
+   "encerramento": "2022-10-02 17:01:00",
+   "emissao_bu": "2022-10-02 17:03:06",
+   "partes": [
+    {
+     "parte": "6730598502102022124004-01.jez/logd.dat",
+     "votos_no_dia": 119,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 119,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:21:12",
+     "ultimo": "02/10/2022 12:29:32"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 133,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 133,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:47:33",
+     "ultimo": "02/10/2022 16:56:04"
+    }
+   ],
+   "recontagem_como_leitor": 252,
+   "soma_simples_das_partes": 252,
+   "so_logd_dat": 119,
+   "votos_por_urna": {
+    "67305985": 252
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:56:04",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RS/88013/114/336",
+   "comparecimento_bu": 259,
+   "computado_parquet": 27,
+   "cert_urna": "UEAO02215279",
+   "urna_efetivada_tabela": "2215279",
+   "encerramento": "2022-10-02 17:01:13",
+   "emissao_bu": "2022-10-02 17:03:19",
+   "partes": [
+    {
+     "parte": "0221527902102022161501ME.jez/logd.dat",
+     "votos_no_dia": 13,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 13,
+     "urnas": [
+      "2213648"
+     ],
+     "primeiro": "02/10/2022 08:01:44",
+     "ultimo": "02/10/2022 08:41:38"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 14,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 14,
+     "urnas": [
+      "2215279"
+     ],
+     "primeiro": "02/10/2022 16:23:09",
+     "ultimo": "02/10/2022 16:53:34"
+    }
+   ],
+   "recontagem_como_leitor": 27,
+   "soma_simples_das_partes": 27,
+   "so_logd_dat": 13,
+   "votos_por_urna": {
+    "2213648": 13,
+    "2215279": 14
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 16:53:34",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 1,
+   "secao": "RS/87912/60/322",
+   "comparecimento_bu": 300,
+   "computado_parquet": 0,
+   "cert_urna": "UEAO02158647",
+   "urna_efetivada_tabela": "2158647",
+   "encerramento": "2022-10-02 17:28:58",
+   "emissao_bu": "2022-10-02 17:32:21",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RS/88013/2/199",
+   "comparecimento_bu": 288,
+   "computado_parquet": 196,
+   "cert_urna": "UEAO02228407",
+   "urna_efetivada_tabela": "2228407",
+   "encerramento": "2022-10-02 17:18:51",
+   "emissao_bu": "2022-10-02 17:24:25",
+   "partes": [
+    {
+     "parte": "0222840702102022182501ME.jez/logd.dat",
+     "votos_no_dia": 196,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 196,
+     "urnas": [
+      "2215062"
+     ],
+     "primeiro": "02/10/2022 08:12:09",
+     "ultimo": "02/10/2022 13:53:43"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 196,
+   "soma_simples_das_partes": 196,
+   "so_logd_dat": 196,
+   "votos_por_urna": {
+    "2215062": 196
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 13:53:43",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "CE/14192/40/50",
+   "comparecimento_bu": 162,
+   "computado_parquet": 0,
+   "cert_urna": "ueao01769208",
+   "urna_efetivada_tabela": "1769208",
+   "encerramento": "2022-10-02 17:01:07",
+   "emissao_bu": "2022-10-02 17:04:35",
+   "partes": [
+    {
+     "parte": "6730598502102022075401MI.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "CE/14117/13/42",
+   "comparecimento_bu": 234,
+   "computado_parquet": 233,
+   "cert_urna": "ueao01116116",
+   "urna_efetivada_tabela": "1116116",
+   "encerramento": "2022-10-02 17:36:34",
+   "emissao_bu": "2022-10-02 17:39:10",
+   "partes": [
+    {
+     "parte": "6730598502102022080401ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598502102022092228-01.jez/logd.dat",
+     "votos_no_dia": 11,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 11,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:21:49",
+     "ultimo": "02/10/2022 09:01:17"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 222,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 222,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:32:13",
+     "ultimo": "02/10/2022 17:31:08"
+    }
+   ],
+   "recontagem_como_leitor": 233,
+   "soma_simples_das_partes": 233,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 233
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:31:08",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "CE/15377/9/301",
+   "comparecimento_bu": 253,
+   "computado_parquet": 252,
+   "cert_urna": "ueao01660019",
+   "urna_efetivada_tabela": "1660019",
+   "encerramento": "2022-10-02 17:20:15",
+   "emissao_bu": "2022-10-02 17:22:59",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 252,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 252,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:20:20",
+     "ultimo": "02/10/2022 17:18:18"
+    }
+   ],
+   "recontagem_como_leitor": 252,
+   "soma_simples_das_partes": 252,
+   "so_logd_dat": 252,
+   "votos_por_urna": {
+    "67305985": 252
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:18:18",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RJ/59013/186/147",
+   "comparecimento_bu": 215,
+   "computado_parquet": 8,
+   "cert_urna": "ueao01268164",
+   "urna_efetivada_tabela": "1268164",
+   "encerramento": "2022-10-02 18:41:47",
+   "emissao_bu": "2022-10-02 18:44:09",
+   "partes": [
+    {
+     "parte": "6730598502102022181953-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 8,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 8,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 18:25:50",
+     "ultimo": "02/10/2022 18:36:39"
+    }
+   ],
+   "recontagem_como_leitor": 8,
+   "soma_simples_das_partes": 8,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 8
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:36:39",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RJ/58777/65/41",
+   "comparecimento_bu": 271,
+   "computado_parquet": 270,
+   "cert_urna": "ueao01278747",
+   "urna_efetivada_tabela": "1278747",
+   "encerramento": "2022-10-02 17:04:46",
+   "emissao_bu": "2022-10-02 17:06:41",
+   "partes": [
+    {
+     "parte": "6730598502102022121356-01.jez/logd.dat",
+     "votos_no_dia": 120,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 120,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:23",
+     "ultimo": "02/10/2022 12:07:58"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 150,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 150,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:20:47",
+     "ultimo": "02/10/2022 17:00:46"
+    }
+   ],
+   "recontagem_como_leitor": 270,
+   "soma_simples_das_partes": 270,
+   "so_logd_dat": 120,
+   "votos_por_urna": {
+    "67305985": 270
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:00:46",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RJ/58971/36/7",
+   "comparecimento_bu": 264,
+   "computado_parquet": 243,
+   "cert_urna": "ueao01277501",
+   "urna_efetivada_tabela": "1277501",
+   "encerramento": "2022-10-02 18:01:34",
+   "emissao_bu": "2022-10-02 18:04:22",
+   "partes": [
+    {
+     "parte": "6730598502102022110345-01.jez/logd.dat",
+     "votos_no_dia": 24,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 24,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:52",
+     "ultimo": "02/10/2022 08:44:33"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 219,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 219,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 11:12:47",
+     "ultimo": "02/10/2022 18:00:17"
+    }
+   ],
+   "recontagem_como_leitor": 243,
+   "soma_simples_das_partes": 243,
+   "so_logd_dat": 24,
+   "votos_por_urna": {
+    "67305985": 243
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:00:17",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RJ/58394/105/40",
+   "comparecimento_bu": 208,
+   "computado_parquet": 189,
+   "cert_urna": "ueao01841283",
+   "urna_efetivada_tabela": "1841283",
+   "encerramento": "2022-10-02 17:42:27",
+   "emissao_bu": "2022-10-02 17:45:23",
+   "partes": [
+    {
+     "parte": "6730598502102022104726-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 189,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 189,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 11:38:01",
+     "ultimo": "02/10/2022 17:41:08"
+    }
+   ],
+   "recontagem_como_leitor": 189,
+   "soma_simples_das_partes": 189,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 189
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:41:08",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "GO/92916/20/107",
+   "comparecimento_bu": 190,
+   "computado_parquet": 189,
+   "cert_urna": "ueao01604165",
+   "urna_efetivada_tabela": "1604165",
+   "encerramento": "2022-10-02 17:02:08",
+   "emissao_bu": "2022-10-02 17:04:43",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 189,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 189,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:03",
+     "ultimo": "02/10/2022 16:25:13"
+    }
+   ],
+   "recontagem_como_leitor": 189,
+   "soma_simples_das_partes": 189,
+   "so_logd_dat": 189,
+   "votos_por_urna": {
+    "67305985": 189
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:25:13",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/9598/102/12",
+   "comparecimento_bu": 198,
+   "computado_parquet": 199,
+   "cert_urna": "ueao01292150",
+   "urna_efetivada_tabela": "1292150",
+   "encerramento": "2022-10-02 17:26:57",
+   "emissao_bu": "2022-10-02 17:29:26",
+   "partes": [
+    {
+     "parte": "6730598502102022083601ME.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:11",
+     "ultimo": "02/10/2022 08:05:11"
+    },
+    {
+     "parte": "6730598502102022091121-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598502102022093658-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 198,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 198,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 10:04:32",
+     "ultimo": "02/10/2022 17:21:26"
+    }
+   ],
+   "recontagem_como_leitor": 199,
+   "soma_simples_das_partes": 199,
+   "so_logd_dat": 1,
+   "votos_por_urna": {
+    "67305985": 199
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:21:26",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/9210/76/48",
+   "comparecimento_bu": 297,
+   "computado_parquet": 296,
+   "cert_urna": "UEAO02125590",
+   "urna_efetivada_tabela": "2125590",
+   "encerramento": "2022-10-02 18:26:39",
+   "emissao_bu": "2022-10-02 18:28:48",
+   "partes": [
+    {
+     "parte": "0212428802102022155202ME.jez/logd.dat",
+     "votos_no_dia": 133,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 133,
+     "urnas": [
+      "2127532"
+     ],
+     "primeiro": "02/10/2022 11:09:37",
+     "ultimo": "02/10/2022 15:17:53"
+    },
+    {
+     "parte": "0212559002102022171303ME.jez/logd.dat",
+     "votos_no_dia": 34,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 34,
+     "urnas": [
+      "2124288"
+     ],
+     "primeiro": "02/10/2022 15:57:34",
+     "ultimo": "02/10/2022 16:41:14"
+    },
+    {
+     "parte": "0212753202102022110352-01.jez/logd.dat",
+     "votos_no_dia": 71,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 71,
+     "urnas": [
+      "2100213"
+     ],
+     "primeiro": "02/10/2022 08:05:42",
+     "ultimo": "02/10/2022 10:27:22"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 58,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 58,
+     "urnas": [
+      "2125590"
+     ],
+     "primeiro": "02/10/2022 17:17:38",
+     "ultimo": "02/10/2022 18:25:30"
+    }
+   ],
+   "recontagem_como_leitor": 296,
+   "soma_simples_das_partes": 296,
+   "so_logd_dat": 133,
+   "votos_por_urna": {
+    "2127532": 133,
+    "2124288": 34,
+    "2100213": 71,
+    "2125590": 58
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 18:25:30",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/7064/107/157",
+   "comparecimento_bu": 279,
+   "computado_parquet": 278,
+   "cert_urna": "ueao01187880",
+   "urna_efetivada_tabela": "1187880",
+   "encerramento": "2022-10-02 19:04:52",
+   "emissao_bu": "2022-10-02 19:06:32",
+   "partes": [
+    {
+     "parte": "6730598502102022115801ME.jez/logd.dat",
+     "votos_no_dia": 70,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 70,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:22",
+     "ultimo": "02/10/2022 11:18:37"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 208,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 208,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:07:34",
+     "ultimo": "02/10/2022 19:02:37"
+    }
+   ],
+   "recontagem_como_leitor": 278,
+   "soma_simples_das_partes": 278,
+   "so_logd_dat": 70,
+   "votos_por_urna": {
+    "67305985": 278
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 19:02:37",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/7617/42/98",
+   "comparecimento_bu": 301,
+   "computado_parquet": 300,
+   "cert_urna": "ueao01813630",
+   "urna_efetivada_tabela": "1813630",
+   "encerramento": "2022-10-02 17:41:51",
+   "emissao_bu": "2022-10-02 17:43:37",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 300,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 300,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:47",
+     "ultimo": "02/10/2022 17:41:06"
+    }
+   ],
+   "recontagem_como_leitor": 300,
+   "soma_simples_das_partes": 300,
+   "so_logd_dat": 300,
+   "votos_por_urna": {
+    "67305985": 300
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:41:06",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/7331/56/166",
+   "comparecimento_bu": 182,
+   "computado_parquet": 181,
+   "cert_urna": "ueao01045942",
+   "urna_efetivada_tabela": "1045942",
+   "encerramento": "2022-10-02 18:45:55",
+   "emissao_bu": "2022-10-02 18:48:49",
+   "partes": [
+    {
+     "parte": "6730598502102022163401ME.jez/logd.dat",
+     "votos_no_dia": 130,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 130,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:06:27",
+     "ultimo": "02/10/2022 14:34:31"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 51,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 51,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 16:44:24",
+     "ultimo": "02/10/2022 18:43:52"
+    }
+   ],
+   "recontagem_como_leitor": 181,
+   "soma_simples_das_partes": 181,
+   "so_logd_dat": 130,
+   "votos_por_urna": {
+    "67305985": 181
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:43:52",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/7358/17/96",
+   "comparecimento_bu": 334,
+   "computado_parquet": 305,
+   "cert_urna": "ueao01183005",
+   "urna_efetivada_tabela": "1183005",
+   "encerramento": "2022-10-03 01:03:28",
+   "emissao_bu": "2022-10-03 01:06:47",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 305,
+     "votos_fora_do_dia": 29,
+     "novos_em_relacao_a_partes_anteriores": 305,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:12",
+     "ultimo": "02/10/2022 23:57:48"
+    }
+   ],
+   "recontagem_como_leitor": 305,
+   "soma_simples_das_partes": 305,
+   "so_logd_dat": 305,
+   "votos_por_urna": {
+    "67305985": 305
+   },
+   "votos_fora_do_dia": 29,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:57:48",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/7560/105/124",
+   "comparecimento_bu": 319,
+   "computado_parquet": 317,
+   "cert_urna": "ueao01323737",
+   "urna_efetivada_tabela": "1323737",
+   "encerramento": "2022-10-03 00:05:55",
+   "emissao_bu": "2022-10-03 00:08:40",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 317,
+     "votos_fora_do_dia": 2,
+     "novos_em_relacao_a_partes_anteriores": 317,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:29",
+     "ultimo": "02/10/2022 23:58:33"
+    }
+   ],
+   "recontagem_como_leitor": 317,
+   "soma_simples_das_partes": 317,
+   "so_logd_dat": 317,
+   "votos_por_urna": {
+    "67305985": 317
+   },
+   "votos_fora_do_dia": 2,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:58:33",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MA/7714/14/21",
+   "comparecimento_bu": 224,
+   "computado_parquet": 223,
+   "cert_urna": "ueao01813220",
+   "urna_efetivada_tabela": "1813220",
+   "encerramento": "2022-10-02 18:50:44",
+   "emissao_bu": "2022-10-02 18:53:13",
+   "partes": [
+    {
+     "parte": "6730598502102022152121-01.jez/logd.dat",
+     "votos_no_dia": 117,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 117,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:18:50",
+     "ultimo": "02/10/2022 14:16:33"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 106,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 106,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:28:09",
+     "ultimo": "02/10/2022 18:49:38"
+    }
+   ],
+   "recontagem_como_leitor": 223,
+   "soma_simples_das_partes": 223,
+   "so_logd_dat": 117,
+   "votos_por_urna": {
+    "67305985": 223
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:49:38",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4340/49/157",
+   "comparecimento_bu": 243,
+   "computado_parquet": 245,
+   "cert_urna": "ueao01300599",
+   "urna_efetivada_tabela": "1300599",
+   "encerramento": "2022-10-02 18:16:29",
+   "emissao_bu": "2022-10-02 18:21:18",
+   "partes": [
+    {
+     "parte": "6730598502102022104031-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:16:39",
+     "ultimo": "02/10/2022 17:19:30"
+    },
+    {
+     "parte": "6730598508102022084829-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 243,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 243,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:03",
+     "ultimo": "02/10/2022 18:15:10"
+    }
+   ],
+   "recontagem_como_leitor": 245,
+   "soma_simples_das_partes": 245,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 245
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:15:10",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4154/72/12",
+   "comparecimento_bu": 318,
+   "computado_parquet": 317,
+   "cert_urna": "UEAO02183512",
+   "urna_efetivada_tabela": "2183512",
+   "encerramento": "2022-10-02 18:01:46",
+   "emissao_bu": "2022-10-02 18:05:23",
+   "partes": [
+    {
+     "parte": "0218351202102022164201ME.jez/logd.dat",
+     "votos_no_dia": 264,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 264,
+     "urnas": [
+      "2188816"
+     ],
+     "primeiro": "02/10/2022 08:03:18",
+     "ultimo": "02/10/2022 16:33:36"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 53,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 53,
+     "urnas": [
+      "2183512"
+     ],
+     "primeiro": "02/10/2022 16:49:06",
+     "ultimo": "02/10/2022 18:00:33"
+    }
+   ],
+   "recontagem_como_leitor": 317,
+   "soma_simples_das_partes": 317,
+   "so_logd_dat": 264,
+   "votos_por_urna": {
+    "2188816": 264,
+    "2183512": 53
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 18:00:33",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/44",
+   "comparecimento_bu": 171,
+   "computado_parquet": 173,
+   "cert_urna": "ueao01306116",
+   "urna_efetivada_tabela": "1306116",
+   "encerramento": "2022-10-02 17:01:11",
+   "emissao_bu": "2022-10-02 17:04:46",
+   "partes": [
+    {
+     "parte": "6730598502102022103917-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:17:19",
+     "ultimo": "02/10/2022 17:19:11"
+    },
+    {
+     "parte": "6730598508102022130450-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 171,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 171,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:23",
+     "ultimo": "02/10/2022 16:45:16"
+    }
+   ],
+   "recontagem_como_leitor": 173,
+   "soma_simples_das_partes": 173,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 173
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:19:11",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4340/49/99",
+   "comparecimento_bu": 202,
+   "computado_parquet": 204,
+   "cert_urna": "ueao01030887",
+   "urna_efetivada_tabela": "1030887",
+   "encerramento": "2022-10-02 17:03:22",
+   "emissao_bu": "2022-10-02 17:05:51",
+   "partes": [
+    {
+     "parte": "6730598503102022151308-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:25:20",
+     "ultimo": "02/10/2022 17:31:59"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 202,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 202,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:04",
+     "ultimo": "02/10/2022 17:03:03"
+    }
+   ],
+   "recontagem_como_leitor": 204,
+   "soma_simples_das_partes": 204,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 204
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:31:59",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/224",
+   "comparecimento_bu": 266,
+   "computado_parquet": 267,
+   "cert_urna": "ueao01344410",
+   "urna_efetivada_tabela": "1344410",
+   "encerramento": "2022-10-02 17:48:25",
+   "emissao_bu": "2022-10-02 17:51:20",
+   "partes": [
+    {
+     "parte": "6730598502102022104009-01.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:39:10",
+     "ultimo": "02/10/2022 12:39:10"
+    },
+    {
+     "parte": "6730598508102022125134-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 266,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 266,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:49",
+     "ultimo": "02/10/2022 17:46:48"
+    }
+   ],
+   "recontagem_como_leitor": 267,
+   "soma_simples_das_partes": 267,
+   "so_logd_dat": 1,
+   "votos_por_urna": {
+    "67305985": 267
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:46:48",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/14",
+   "comparecimento_bu": 243,
+   "computado_parquet": 245,
+   "cert_urna": "ueao01227156",
+   "urna_efetivada_tabela": "1227156",
+   "encerramento": "2022-10-02 17:10:16",
+   "emissao_bu": "2022-10-02 17:12:54",
+   "partes": [
+    {
+     "parte": "6730598508102022144154-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:14:16",
+     "ultimo": "02/10/2022 17:18:05"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 243,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 243,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:28:47",
+     "ultimo": "02/10/2022 17:03:22"
+    }
+   ],
+   "recontagem_como_leitor": 245,
+   "soma_simples_das_partes": 245,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 245
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:18:05",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/5614/40/292",
+   "comparecimento_bu": 316,
+   "computado_parquet": 276,
+   "cert_urna": "ueao01304382",
+   "urna_efetivada_tabela": "1304382",
+   "encerramento": "2022-10-03 01:28:33",
+   "emissao_bu": "2022-10-03 01:28:46",
+   "partes": [
+    {
+     "parte": "6730598502102022113401ME.jez/logd.dat",
+     "votos_no_dia": 22,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 22,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:24:42",
+     "ultimo": "02/10/2022 09:56:45"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 254,
+     "votos_fora_do_dia": 40,
+     "novos_em_relacao_a_partes_anteriores": 254,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 11:43:26",
+     "ultimo": "02/10/2022 23:58:20"
+    }
+   ],
+   "recontagem_como_leitor": 276,
+   "soma_simples_das_partes": 276,
+   "so_logd_dat": 22,
+   "votos_por_urna": {
+    "67305985": 276
+   },
+   "votos_fora_do_dia": 40,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:58:20",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/176",
+   "comparecimento_bu": 215,
+   "computado_parquet": 217,
+   "cert_urna": "ueao01327051",
+   "urna_efetivada_tabela": "1327051",
+   "encerramento": "2022-10-02 18:06:06",
+   "emissao_bu": "2022-10-02 18:08:06",
+   "partes": [
+    {
+     "parte": "6730598502102022104041-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:16:22",
+     "ultimo": "02/10/2022 17:18:39"
+    },
+    {
+     "parte": "6730598508102022093509-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 215,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 215,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:21:52",
+     "ultimo": "02/10/2022 17:59:59"
+    }
+   ],
+   "recontagem_como_leitor": 217,
+   "soma_simples_das_partes": 217,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 217
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:59:59",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/218",
+   "comparecimento_bu": 252,
+   "computado_parquet": 254,
+   "cert_urna": "ueao01301881",
+   "urna_efetivada_tabela": "1301881",
+   "encerramento": "2022-10-02 17:24:45",
+   "emissao_bu": "2022-10-02 17:25:18",
+   "partes": [
+    {
+     "parte": "6730598508102022194354-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:17:19",
+     "ultimo": "02/10/2022 17:19:11"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 252,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 252,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:59",
+     "ultimo": "02/10/2022 17:19:21"
+    }
+   ],
+   "recontagem_como_leitor": 254,
+   "soma_simples_das_partes": 254,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 254
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:19:21",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/25",
+   "comparecimento_bu": 211,
+   "computado_parquet": 213,
+   "cert_urna": "ueao01234838",
+   "urna_efetivada_tabela": "1234838",
+   "encerramento": "2022-10-02 17:03:44",
+   "emissao_bu": "2022-10-02 17:05:20",
+   "partes": [
+    {
+     "parte": "6730598508102022164739-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:16:00",
+     "ultimo": "02/10/2022 17:18:11"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 211,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 211,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:29",
+     "ultimo": "02/10/2022 16:53:25"
+    }
+   ],
+   "recontagem_como_leitor": 213,
+   "soma_simples_das_partes": 213,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 213
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:18:11",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4014/7/96",
+   "comparecimento_bu": 221,
+   "computado_parquet": 208,
+   "cert_urna": "ueao01315715",
+   "urna_efetivada_tabela": "1315715",
+   "encerramento": "2022-10-03 00:31:26",
+   "emissao_bu": "2022-10-03 00:34:00",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 208,
+     "votos_fora_do_dia": 13,
+     "novos_em_relacao_a_partes_anteriores": 208,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 15:33:51",
+     "ultimo": "02/10/2022 23:57:24"
+    }
+   ],
+   "recontagem_como_leitor": 208,
+   "soma_simples_das_partes": 208,
+   "so_logd_dat": 208,
+   "votos_por_urna": {
+    "67305985": 208
+   },
+   "votos_fora_do_dia": 13,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:57:24",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/43",
+   "comparecimento_bu": 246,
+   "computado_parquet": 248,
+   "cert_urna": "ueao01306315",
+   "urna_efetivada_tabela": "1306315",
+   "encerramento": "2022-10-02 17:19:18",
+   "emissao_bu": "2022-10-02 17:25:07",
+   "partes": [
+    {
+     "parte": "6730598502102022103956-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:16:12",
+     "ultimo": "02/10/2022 17:18:55"
+    },
+    {
+     "parte": "6730598508102022125730-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 246,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 246,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:50",
+     "ultimo": "02/10/2022 17:01:43"
+    }
+   ],
+   "recontagem_como_leitor": 248,
+   "soma_simples_das_partes": 248,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 248
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:18:55",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/5177/82/62",
+   "comparecimento_bu": 249,
+   "computado_parquet": 248,
+   "cert_urna": "ueao01798000",
+   "urna_efetivada_tabela": "1798000",
+   "encerramento": "2022-10-02 18:07:12",
+   "emissao_bu": "2022-10-02 18:10:20",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 248,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 248,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:07:34",
+     "ultimo": "02/10/2022 18:02:31"
+    }
+   ],
+   "recontagem_como_leitor": 248,
+   "soma_simples_das_partes": 248,
+   "so_logd_dat": 248,
+   "votos_por_urna": {
+    "67305985": 248
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:02:31",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4340/49/64",
+   "comparecimento_bu": 223,
+   "computado_parquet": 225,
+   "cert_urna": "ueao01316574",
+   "urna_efetivada_tabela": "1316574",
+   "encerramento": "2022-10-02 17:23:20",
+   "emissao_bu": "2022-10-02 17:25:24",
+   "partes": [
+    {
+     "parte": "6730598508102022135643-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:16:16",
+     "ultimo": "02/10/2022 17:19:05"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 223,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 223,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:08:35",
+     "ultimo": "02/10/2022 17:22:41"
+    }
+   ],
+   "recontagem_como_leitor": 225,
+   "soma_simples_das_partes": 225,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 225
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:22:41",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/11",
+   "comparecimento_bu": 200,
+   "computado_parquet": 201,
+   "cert_urna": "ueao01293404",
+   "urna_efetivada_tabela": "1293404",
+   "encerramento": "2022-10-02 17:02:00",
+   "emissao_bu": "2022-10-02 17:04:35",
+   "partes": [
+    {
+     "parte": "6730598503102022155252-01.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:19:42",
+     "ultimo": "02/10/2022 17:19:42"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 200,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 200,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:07",
+     "ultimo": "02/10/2022 16:36:14"
+    }
+   ],
+   "recontagem_como_leitor": 201,
+   "soma_simples_das_partes": 201,
+   "so_logd_dat": 1,
+   "votos_por_urna": {
+    "67305985": 201
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:19:42",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4340/49/80",
+   "comparecimento_bu": 197,
+   "computado_parquet": 199,
+   "cert_urna": "ueao01295189",
+   "urna_efetivada_tabela": "1295189",
+   "encerramento": "2022-10-02 17:02:30",
+   "emissao_bu": "2022-10-02 17:04:22",
+   "partes": [
+    {
+     "parte": "6730598508102022154553-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 17:16:12",
+     "ultimo": "02/10/2022 17:18:55"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 197,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 197,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:49",
+     "ultimo": "02/10/2022 17:01:26"
+    }
+   ],
+   "recontagem_como_leitor": 199,
+   "soma_simples_das_partes": 199,
+   "so_logd_dat": 2,
+   "votos_por_urna": {
+    "67305985": 199
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:18:55",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4774/105/24",
+   "comparecimento_bu": 312,
+   "computado_parquet": 119,
+   "cert_urna": "ueao01041685",
+   "urna_efetivada_tabela": "1041685",
+   "encerramento": "2022-10-02 22:34:32",
+   "emissao_bu": "2022-10-02 22:34:51",
+   "partes": [
+    {
+     "parte": "6730598502102022184612-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 119,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 119,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 18:58:47",
+     "ultimo": "02/10/2022 22:30:28"
+    }
+   ],
+   "recontagem_como_leitor": 119,
+   "soma_simples_das_partes": 119,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 119
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 22:30:28",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4103/49/45",
+   "comparecimento_bu": 270,
+   "computado_parquet": 271,
+   "cert_urna": "ueao01242740",
+   "urna_efetivada_tabela": "1242740",
+   "encerramento": "2022-10-02 17:40:06",
+   "emissao_bu": "2022-10-02 17:42:15",
+   "partes": [
+    {
+     "parte": "6730598508102022101255-01.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:39:10",
+     "ultimo": "02/10/2022 12:39:10"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 270,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 270,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:08",
+     "ultimo": "02/10/2022 17:39:20"
+    }
+   ],
+   "recontagem_como_leitor": 271,
+   "soma_simples_das_partes": 271,
+   "so_logd_dat": 1,
+   "votos_por_urna": {
+    "67305985": 271
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:39:20",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "AL/27219/9/5",
+   "comparecimento_bu": 242,
+   "computado_parquet": 241,
+   "cert_urna": "ueao01188935",
+   "urna_efetivada_tabela": "1188935",
+   "encerramento": "2022-10-02 17:19:17",
+   "emissao_bu": "2022-10-02 17:26:24",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 241,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 241,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:46",
+     "ultimo": "02/10/2022 17:14:04"
+    }
+   ],
+   "recontagem_como_leitor": 241,
+   "soma_simples_das_partes": 241,
+   "so_logd_dat": 241,
+   "votos_por_urna": {
+    "67305985": 241
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:14:04",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "AM/98370/69/16",
+   "comparecimento_bu": 414,
+   "computado_parquet": 398,
+   "cert_urna": "ueao01289208",
+   "urna_efetivada_tabela": "1289208",
+   "encerramento": "2022-10-03 00:50:04",
+   "emissao_bu": "2022-10-03 00:53:16",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 398,
+     "votos_fora_do_dia": 16,
+     "novos_em_relacao_a_partes_anteriores": 398,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 06:06:43",
+     "ultimo": "02/10/2022 23:59:45"
+    }
+   ],
+   "recontagem_como_leitor": 398,
+   "soma_simples_das_partes": 398,
+   "so_logd_dat": 398,
+   "votos_por_urna": {
+    "67305985": 398
+   },
+   "votos_fora_do_dia": 16,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:59:45",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SC/83054/51/59",
+   "comparecimento_bu": 259,
+   "computado_parquet": 260,
+   "cert_urna": "ueao01148603",
+   "urna_efetivada_tabela": "1148603",
+   "encerramento": "2022-10-02 17:02:56",
+   "emissao_bu": "2022-10-02 17:05:07",
+   "partes": [
+    {
+     "parte": "6730598502102022091501ME.jez/logd.dat",
+     "votos_no_dia": 17,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 17,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:01:46",
+     "ultimo": "02/10/2022 09:02:30"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 243,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 243,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:21:18",
+     "ultimo": "02/10/2022 16:40:42"
+    }
+   ],
+   "recontagem_como_leitor": 260,
+   "soma_simples_das_partes": 260,
+   "so_logd_dat": 17,
+   "votos_por_urna": {
+    "67305985": 260
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:40:42",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "SC/81434/73/134",
+   "comparecimento_bu": 244,
+   "computado_parquet": 243,
+   "cert_urna": "ueao01845875",
+   "urna_efetivada_tabela": "1845875",
+   "encerramento": "2022-10-02 17:04:10",
+   "emissao_bu": "2022-10-02 17:06:40",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 243,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 243,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:09:40",
+     "ultimo": "02/10/2022 16:58:32"
+    }
+   ],
+   "recontagem_como_leitor": 243,
+   "soma_simples_das_partes": 243,
+   "so_logd_dat": 243,
+   "votos_por_urna": {
+    "67305985": 243
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:58:32",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SC/83275/84/22",
+   "comparecimento_bu": 241,
+   "computado_parquet": 240,
+   "cert_urna": "UEAO02191247",
+   "urna_efetivada_tabela": "2191247",
+   "encerramento": "2022-10-02 17:00:52",
+   "emissao_bu": "2022-10-02 17:02:47",
+   "partes": [
+    {
+     "parte": "0219124702102022112901ME.jez/logd.dat",
+     "votos_no_dia": 83,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 83,
+     "urnas": [
+      "2044376"
+     ],
+     "primeiro": "02/10/2022 08:02:09",
+     "ultimo": "02/10/2022 11:23:50"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 157,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 157,
+     "urnas": [
+      "2191247"
+     ],
+     "primeiro": "02/10/2022 11:33:44",
+     "ultimo": "02/10/2022 16:54:21"
+    }
+   ],
+   "recontagem_como_leitor": 240,
+   "soma_simples_das_partes": 240,
+   "so_logd_dat": 83,
+   "votos_por_urna": {
+    "2044376": 83,
+    "2191247": 157
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 16:54:21",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 1,
+   "secao": "DF/97012/17/90",
+   "comparecimento_bu": 274,
+   "computado_parquet": 261,
+   "cert_urna": "ueao01301143",
+   "urna_efetivada_tabela": "1301143",
+   "encerramento": "2022-10-02 18:00:46",
+   "emissao_bu": "2022-10-02 18:02:53",
+   "partes": [
+    {
+     "parte": "6730598502102022094101ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 261,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 261,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 09:48:01",
+     "ultimo": "02/10/2022 17:58:57"
+    }
+   ],
+   "recontagem_como_leitor": 261,
+   "soma_simples_das_partes": 261,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 261
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:58:57",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "MS/98035/38/8",
+   "comparecimento_bu": 193,
+   "computado_parquet": 158,
+   "cert_urna": "ueao01261123",
+   "urna_efetivada_tabela": "1261123",
+   "encerramento": "2022-10-02 16:32:24",
+   "emissao_bu": "2022-10-02 16:34:39",
+   "partes": [
+    {
+     "parte": "6730598502102022120140-01.jez/logd.dat",
+     "votos_no_dia": 38,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 38,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 07:13:42",
+     "ultimo": "02/10/2022 09:44:03"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 120,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 120,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 12:11:36",
+     "ultimo": "02/10/2022 16:27:49"
+    }
+   ],
+   "recontagem_como_leitor": 158,
+   "soma_simples_das_partes": 158,
+   "so_logd_dat": 38,
+   "votos_por_urna": {
+    "67305985": 158
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:27:49",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PE/23434/33/36",
+   "comparecimento_bu": 239,
+   "computado_parquet": 238,
+   "cert_urna": "ueao01239890",
+   "urna_efetivada_tabela": "1239890",
+   "encerramento": "2022-10-02 18:09:26",
+   "emissao_bu": "2022-10-02 18:12:15",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 238,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 238,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:30",
+     "ultimo": "02/10/2022 18:08:18"
+    }
+   ],
+   "recontagem_como_leitor": 238,
+   "soma_simples_das_partes": 238,
+   "so_logd_dat": 238,
+   "votos_por_urna": {
+    "67305985": 238
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 18:08:18",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "ES/56251/54/126",
+   "comparecimento_bu": 251,
+   "computado_parquet": 250,
+   "cert_urna": "ueao01237796",
+   "urna_efetivada_tabela": "1237796",
+   "encerramento": "2022-10-02 17:01:28",
+   "emissao_bu": "2022-10-02 17:05:14",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 250,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 250,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:03",
+     "ultimo": "02/10/2022 16:59:42"
+    }
+   ],
+   "recontagem_como_leitor": 250,
+   "soma_simples_das_partes": 250,
+   "so_logd_dat": 250,
+   "votos_por_urna": {
+    "67305985": 250
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:59:42",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "ES/56995/53/375",
+   "comparecimento_bu": 270,
+   "computado_parquet": 570,
+   "cert_urna": "ueao01014214",
+   "urna_efetivada_tabela": "1014214",
+   "encerramento": "2022-10-02 17:07:30",
+   "emissao_bu": "2022-10-02 18:01:44",
+   "partes": [
+    {
+     "parte": "6730598502102022174401ME.jez/logd.dat",
+     "votos_no_dia": 300,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 300,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:15",
+     "ultimo": "02/10/2022 17:02:29"
+    },
+    {
+     "parte": "6730598502102022175601ME.jez/logd.dat",
+     "votos_no_dia": 270,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 270,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:12",
+     "ultimo": "02/10/2022 16:58:54"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 570,
+   "soma_simples_das_partes": 570,
+   "so_logd_dat": 300,
+   "votos_por_urna": {
+    "67305985": 570
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:02:29",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "ES/56189/41/226",
+   "comparecimento_bu": 230,
+   "computado_parquet": 229,
+   "cert_urna": "ueao01313613",
+   "urna_efetivada_tabela": "1313613",
+   "encerramento": "2022-10-02 17:00:22",
+   "emissao_bu": "2022-10-02 17:04:09",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 229,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 229,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:21",
+     "ultimo": "02/10/2022 16:51:53"
+    }
+   ],
+   "recontagem_como_leitor": 229,
+   "soma_simples_das_partes": 229,
+   "so_logd_dat": 229,
+   "votos_por_urna": {
+    "67305985": 229
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:51:53",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "ES/56251/54/511",
+   "comparecimento_bu": 289,
+   "computado_parquet": 288,
+   "cert_urna": "ueao01343354",
+   "urna_efetivada_tabela": "1343354",
+   "encerramento": "2022-10-02 17:01:27",
+   "emissao_bu": "2022-10-02 17:03:29",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 288,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 288,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:04:32",
+     "ultimo": "02/10/2022 16:58:47"
+    }
+   ],
+   "recontagem_como_leitor": 288,
+   "soma_simples_das_partes": 288,
+   "so_logd_dat": 288,
+   "votos_por_urna": {
+    "67305985": 288
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:58:47",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SE/31690/12/77",
+   "comparecimento_bu": 209,
+   "computado_parquet": 208,
+   "cert_urna": "ueao01072542",
+   "urna_efetivada_tabela": "1072542",
+   "encerramento": "2022-10-02 17:00:13",
+   "emissao_bu": "2022-10-02 17:01:38",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 208,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 208,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:02:29",
+     "ultimo": "02/10/2022 16:55:29"
+    }
+   ],
+   "recontagem_como_leitor": 208,
+   "soma_simples_das_partes": 208,
+   "so_logd_dat": 208,
+   "votos_por_urna": {
+    "67305985": 208
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 16:55:29",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "SE/31950/34/35",
+   "comparecimento_bu": 307,
+   "computado_parquet": 563,
+   "cert_urna": "UEAO02048309",
+   "urna_efetivada_tabela": "2172850",
+   "encerramento": "2022-10-02 17:06:38",
+   "emissao_bu": "2022-10-02 17:09:49",
+   "partes": [
+    {
+     "parte": "0204830902102022190450-01.jez/logd.dat",
+     "votos_no_dia": 256,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 256,
+     "urnas": [
+      "2175218"
+     ],
+     "primeiro": "02/10/2022 08:04:45",
+     "ultimo": "02/10/2022 16:56:33"
+    },
+    {
+     "parte": "0204830902102022195301ME.jez/logd.dat",
+     "votos_no_dia": 307,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 307,
+     "urnas": [
+      "2172850"
+     ],
+     "primeiro": "02/10/2022 08:01:24",
+     "ultimo": "02/10/2022 17:02:06"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 563,
+   "soma_simples_das_partes": 563,
+   "so_logd_dat": 256,
+   "votos_por_urna": {
+    "2175218": 256,
+    "2172850": 307
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 17:02:06",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 1,
+   "secao": "PI/10286/38/82",
+   "comparecimento_bu": 367,
+   "computado_parquet": 331,
+   "cert_urna": "ueao01325970",
+   "urna_efetivada_tabela": "1325970",
+   "encerramento": "2022-10-03 01:41:07",
+   "emissao_bu": "2022-10-03 01:48:51",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 331,
+     "votos_fora_do_dia": 36,
+     "novos_em_relacao_a_partes_anteriores": 331,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:03:52",
+     "ultimo": "02/10/2022 23:59:46"
+    }
+   ],
+   "recontagem_como_leitor": 331,
+   "soma_simples_das_partes": 331,
+   "so_logd_dat": 331,
+   "votos_por_urna": {
+    "67305985": 331
+   },
+   "votos_fora_do_dia": 36,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 23:59:46",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "PI/10766/15/79",
+   "comparecimento_bu": 138,
+   "computado_parquet": 132,
+   "cert_urna": "ueao01799640",
+   "urna_efetivada_tabela": "1799640",
+   "encerramento": "2022-10-03 03:12:11",
+   "emissao_bu": "2022-10-03 03:14:16",
+   "partes": [
+    {
+     "parte": "6730598503102022024118-01.jez/logd.dat",
+     "votos_no_dia": 132,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 132,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:05:18",
+     "ultimo": "02/10/2022 15:23:06"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 6,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 132,
+   "soma_simples_das_partes": 132,
+   "so_logd_dat": 132,
+   "votos_por_urna": {
+    "67305985": 132
+   },
+   "votos_fora_do_dia": 6,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 15:23:06",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 1,
+   "secao": "RN/16977/68/66",
+   "comparecimento_bu": 270,
+   "computado_parquet": 271,
+   "cert_urna": "UEAO02058861",
+   "urna_efetivada_tabela": "2058861",
+   "encerramento": "2022-10-02 17:32:27",
+   "emissao_bu": "2022-10-02 17:34:40",
+   "partes": [
+    {
+     "parte": "0205886102102022155701ME.jez/logd.dat",
+     "votos_no_dia": 211,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 211,
+     "urnas": [
+      "2059004"
+     ],
+     "primeiro": "02/10/2022 08:02:17",
+     "ultimo": "02/10/2022 15:34:47"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 60,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 60,
+     "urnas": [
+      "2058861"
+     ],
+     "primeiro": "02/10/2022 16:01:00",
+     "ultimo": "02/10/2022 17:30:26"
+    }
+   ],
+   "recontagem_como_leitor": 271,
+   "soma_simples_das_partes": 271,
+   "so_logd_dat": 211,
+   "votos_por_urna": {
+    "2059004": 211,
+    "2058861": 60
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "02/10/2022 17:30:26",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 1,
+   "secao": "RN/18139/65/32",
+   "comparecimento_bu": 249,
+   "computado_parquet": 259,
+   "cert_urna": "ueao01792236",
+   "urna_efetivada_tabela": "1792236",
+   "encerramento": "2022-10-02 18:00:56",
+   "emissao_bu": "2022-10-02 18:02:59",
+   "partes": [
+    {
+     "parte": "6730598502102022092826-01.jez/logd.dat",
+     "votos_no_dia": 10,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 10,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:26:10",
+     "ultimo": "02/10/2022 08:49:57"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 249,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 249,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:06:30",
+     "ultimo": "02/10/2022 17:58:48"
+    }
+   ],
+   "recontagem_como_leitor": 259,
+   "soma_simples_das_partes": 259,
+   "so_logd_dat": 10,
+   "votos_por_urna": {
+    "67305985": 259
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:58:48",
+   "classe": "3b log maior que o comparecimento, uma só urna"
+  },
+  {
+   "turno": 1,
+   "secao": "RN/18953/7/123",
+   "comparecimento_bu": 267,
+   "computado_parquet": 266,
+   "cert_urna": "ueao01073008",
+   "urna_efetivada_tabela": "1073008",
+   "encerramento": "2022-10-02 17:48:10",
+   "emissao_bu": "2022-10-02 17:51:15",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 266,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 266,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "02/10/2022 08:09:02",
+     "ultimo": "02/10/2022 17:41:36"
+    }
+   ],
+   "recontagem_como_leitor": 266,
+   "soma_simples_das_partes": 266,
+   "so_logd_dat": 266,
+   "votos_por_urna": {
+    "67305985": 266
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "02/10/2022 17:41:36",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "MG/40720/167/179",
+   "comparecimento_bu": 339,
+   "computado_parquet": 338,
+   "cert_urna": "ueao01239440",
+   "urna_efetivada_tabela": "1239440",
+   "encerramento": "2022-10-30 17:02:48",
+   "emissao_bu": "2022-10-30 17:05:19",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 338,
+     "votos_fora_do_dia": 334,
+     "novos_em_relacao_a_partes_anteriores": 338,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:03:28",
+     "ultimo": "30/10/2022 16:49:18"
+    }
+   ],
+   "recontagem_como_leitor": 338,
+   "soma_simples_das_partes": 338,
+   "so_logd_dat": 338,
+   "votos_por_urna": {
+    "67305985": 338
+   },
+   "votos_fora_do_dia": 334,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:49:18",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "MG/51152/239/22",
+   "comparecimento_bu": 206,
+   "computado_parquet": 205,
+   "cert_urna": "ueao01617927",
+   "urna_efetivada_tabela": "1617927",
+   "encerramento": "2022-10-30 17:00:44",
+   "emissao_bu": "2022-10-30 17:02:56",
+   "partes": [
+    {
+     "parte": "6730598530102022151001ME.jez/logd.dat",
+     "votos_no_dia": 179,
+     "votos_fora_do_dia": 203,
+     "novos_em_relacao_a_partes_anteriores": 179,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:00:47",
+     "ultimo": "30/10/2022 14:40:20"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 26,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 26,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:17:04",
+     "ultimo": "30/10/2022 16:48:18"
+    }
+   ],
+   "recontagem_como_leitor": 205,
+   "soma_simples_das_partes": 205,
+   "so_logd_dat": 179,
+   "votos_por_urna": {
+    "67305985": 205
+   },
+   "votos_fora_do_dia": 203,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:48:18",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/71153/132/129",
+   "comparecimento_bu": 294,
+   "computado_parquet": 278,
+   "cert_urna": "ueao01838913",
+   "urna_efetivada_tabela": "1838913",
+   "encerramento": "2022-10-30 17:02:51",
+   "emissao_bu": "2022-10-30 17:05:00",
+   "partes": [
+    {
+     "parte": "6730598501102022135653-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598501102022140321-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598529102022125334-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022092141-02.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 235,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 278,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 278,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 09:28:41",
+     "ultimo": "30/10/2022 16:53:44"
+    }
+   ],
+   "recontagem_como_leitor": 278,
+   "soma_simples_das_partes": 278,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 278
+   },
+   "votos_fora_do_dia": 235,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:53:44",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/70572/156/309",
+   "comparecimento_bu": 241,
+   "computado_parquet": 240,
+   "cert_urna": "UEAO02122700",
+   "urna_efetivada_tabela": "2122700",
+   "encerramento": "2022-10-30 17:00:19",
+   "emissao_bu": "2022-10-30 17:02:27",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 240,
+     "votos_fora_do_dia": 239,
+     "novos_em_relacao_a_partes_anteriores": 240,
+     "urnas": [
+      "2122700"
+     ],
+     "primeiro": "30/10/2022 08:08:52",
+     "ultimo": "30/10/2022 16:39:26"
+    }
+   ],
+   "recontagem_como_leitor": 240,
+   "soma_simples_das_partes": 240,
+   "so_logd_dat": 240,
+   "votos_por_urna": {
+    "2122700": 240
+   },
+   "votos_fora_do_dia": 239,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:39:26",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/67938/163/23",
+   "comparecimento_bu": 232,
+   "computado_parquet": 231,
+   "cert_urna": "ueao01803092",
+   "urna_efetivada_tabela": "1803092",
+   "encerramento": "2022-10-30 17:00:18",
+   "emissao_bu": "2022-10-30 17:01:49",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 231,
+     "votos_fora_do_dia": 239,
+     "novos_em_relacao_a_partes_anteriores": 231,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:11",
+     "ultimo": "30/10/2022 16:51:13"
+    }
+   ],
+   "recontagem_como_leitor": 231,
+   "soma_simples_das_partes": 231,
+   "so_logd_dat": 231,
+   "votos_por_urna": {
+    "67305985": 231
+   },
+   "votos_fora_do_dia": 239,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:51:13",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/64254/291/165",
+   "comparecimento_bu": 310,
+   "computado_parquet": 309,
+   "cert_urna": "ueao01339342",
+   "urna_efetivada_tabela": "1339342",
+   "encerramento": "2022-10-30 17:02:25",
+   "emissao_bu": "2022-10-30 17:07:24",
+   "partes": [
+    {
+     "parte": "6730598502102022141036-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 178,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022131802ME.jez/logd.dat",
+     "votos_no_dia": 219,
+     "votos_fora_do_dia": 115,
+     "novos_em_relacao_a_partes_anteriores": 219,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:33",
+     "ultimo": "30/10/2022 13:10:59"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 90,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 90,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 13:24:39",
+     "ultimo": "30/10/2022 17:01:01"
+    }
+   ],
+   "recontagem_como_leitor": 309,
+   "soma_simples_das_partes": 309,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 309
+   },
+   "votos_fora_do_dia": 293,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 17:01:01",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/64777/394/204",
+   "comparecimento_bu": 306,
+   "computado_parquet": 286,
+   "cert_urna": "ueao01105452",
+   "urna_efetivada_tabela": "1105452",
+   "encerramento": "2022-10-30 17:01:46",
+   "emissao_bu": "2022-10-30 17:02:52",
+   "partes": [
+    {
+     "parte": "6730598530102022135136-01.jez/logd.dat",
+     "votos_no_dia": 190,
+     "votos_fora_do_dia": 302,
+     "novos_em_relacao_a_partes_anteriores": 190,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:48",
+     "ultimo": "30/10/2022 12:21:57"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 96,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 96,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 13:58:05",
+     "ultimo": "30/10/2022 16:47:51"
+    }
+   ],
+   "recontagem_como_leitor": 286,
+   "soma_simples_das_partes": 286,
+   "so_logd_dat": 190,
+   "votos_por_urna": {
+    "67305985": 286
+   },
+   "votos_fora_do_dia": 302,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:47:51",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/67954/82/84",
+   "comparecimento_bu": 234,
+   "computado_parquet": 233,
+   "cert_urna": "ueao01161983",
+   "urna_efetivada_tabela": "1161983",
+   "encerramento": "2022-10-30 17:01:09",
+   "emissao_bu": "2022-10-30 17:10:08",
+   "partes": [
+    {
+     "parte": "6730598530102022145401ME.jez/logd.dat",
+     "votos_no_dia": 189,
+     "votos_fora_do_dia": 233,
+     "novos_em_relacao_a_partes_anteriores": 189,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:00:48",
+     "ultimo": "30/10/2022 14:12:17"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 44,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 44,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:00:59",
+     "ultimo": "30/10/2022 16:54:43"
+    }
+   ],
+   "recontagem_como_leitor": 233,
+   "soma_simples_das_partes": 233,
+   "so_logd_dat": 189,
+   "votos_por_urna": {
+    "67305985": 233
+   },
+   "votos_fora_do_dia": 233,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:54:43",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/66192/65/451",
+   "comparecimento_bu": 305,
+   "computado_parquet": 304,
+   "cert_urna": "ueao01628296",
+   "urna_efetivada_tabela": "1628296",
+   "encerramento": "2022-10-30 17:00:26",
+   "emissao_bu": "2022-10-30 17:02:23",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 304,
+     "votos_fora_do_dia": 302,
+     "novos_em_relacao_a_partes_anteriores": 304,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:08",
+     "ultimo": "30/10/2022 16:50:27"
+    }
+   ],
+   "recontagem_como_leitor": 304,
+   "soma_simples_das_partes": 304,
+   "so_logd_dat": 304,
+   "votos_por_urna": {
+    "67305985": 304
+   },
+   "votos_fora_do_dia": 302,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:50:27",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/71072/373/734",
+   "comparecimento_bu": 322,
+   "computado_parquet": 0,
+   "cert_urna": "ueao01615695",
+   "urna_efetivada_tabela": "1615695",
+   "encerramento": "2022-10-30 17:07:04",
+   "emissao_bu": "2022-10-30 17:09:04",
+   "partes": [
+    {
+     "parte": "6730598530102022182401ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 311,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 311,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/71072/2/310",
+   "comparecimento_bu": 267,
+   "computado_parquet": 17,
+   "cert_urna": "ueao01204047",
+   "urna_efetivada_tabela": "1204047",
+   "encerramento": "2022-10-30 17:03:00",
+   "emissao_bu": "2022-10-30 17:05:19",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 17,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 17,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 16:17:06",
+     "ultimo": "30/10/2022 16:58:21"
+    }
+   ],
+   "recontagem_como_leitor": 17,
+   "soma_simples_das_partes": 17,
+   "so_logd_dat": 17,
+   "votos_por_urna": {
+    "67305985": 17
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:58:21",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/71072/374/478",
+   "comparecimento_bu": 287,
+   "computado_parquet": 286,
+   "cert_urna": "ueao01649631",
+   "urna_efetivada_tabela": "1649631",
+   "encerramento": "2022-10-30 17:00:20",
+   "emissao_bu": "2022-10-30 17:00:28",
+   "partes": [
+    {
+     "parte": "6730598530102022160356-01.jez/logd.dat",
+     "votos_no_dia": 254,
+     "votos_fora_do_dia": 293,
+     "novos_em_relacao_a_partes_anteriores": 254,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:00",
+     "ultimo": "30/10/2022 15:40:48"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 32,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 32,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 16:08:44",
+     "ultimo": "30/10/2022 16:52:02"
+    }
+   ],
+   "recontagem_como_leitor": 286,
+   "soma_simples_das_partes": 286,
+   "so_logd_dat": 254,
+   "votos_por_urna": {
+    "67305985": 286
+   },
+   "votos_fora_do_dia": 293,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:52:02",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/70998/127/546",
+   "comparecimento_bu": 327,
+   "computado_parquet": 326,
+   "cert_urna": "UEAO02084726",
+   "urna_efetivada_tabela": "2084726",
+   "encerramento": "2022-10-30 17:05:39",
+   "emissao_bu": "2022-10-30 17:07:33",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 326,
+     "votos_fora_do_dia": 324,
+     "novos_em_relacao_a_partes_anteriores": 326,
+     "urnas": [
+      "2084726"
+     ],
+     "primeiro": "30/10/2022 08:04:00",
+     "ultimo": "30/10/2022 16:49:25"
+    }
+   ],
+   "recontagem_como_leitor": 326,
+   "soma_simples_das_partes": 326,
+   "so_logd_dat": 326,
+   "votos_por_urna": {
+    "2084726": 326
+   },
+   "votos_fora_do_dia": 324,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:49:25",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/69876/190/100",
+   "comparecimento_bu": 281,
+   "computado_parquet": 254,
+   "cert_urna": "ueao01333877",
+   "urna_efetivada_tabela": "1333877",
+   "encerramento": "2022-10-30 17:00:47",
+   "emissao_bu": "2022-10-30 17:03:22",
+   "partes": [
+    {
+     "parte": "6730598501102022153802-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022100419-02.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 254,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 254,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 10:11:12",
+     "ultimo": "30/10/2022 16:57:08"
+    }
+   ],
+   "recontagem_como_leitor": 254,
+   "soma_simples_das_partes": 254,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 254
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:57:08",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/70998/127/7",
+   "comparecimento_bu": 172,
+   "computado_parquet": 171,
+   "cert_urna": "ueao01200819",
+   "urna_efetivada_tabela": "1200819",
+   "encerramento": "2022-10-30 17:03:36",
+   "emissao_bu": "2022-10-30 17:06:28",
+   "partes": [
+    {
+     "parte": "6730598502102022081750-02.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598525092022081124-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022145326-01.jez/logd.dat",
+     "votos_no_dia": 146,
+     "votos_fora_do_dia": 173,
+     "novos_em_relacao_a_partes_anteriores": 146,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:55",
+     "ultimo": "30/10/2022 14:41:03"
+    },
+    {
+     "parte": "6730598530102022150604ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 25,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 25,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:20:56",
+     "ultimo": "30/10/2022 16:56:27"
+    }
+   ],
+   "recontagem_como_leitor": 171,
+   "soma_simples_das_partes": 171,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 171
+   },
+   "votos_fora_do_dia": 173,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:56:27",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/70998/282/126",
+   "comparecimento_bu": 275,
+   "computado_parquet": 274,
+   "cert_urna": "UEAO02164194",
+   "urna_efetivada_tabela": "2164194",
+   "encerramento": "2022-10-30 17:01:56",
+   "emissao_bu": "2022-10-30 17:03:28",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 274,
+     "votos_fora_do_dia": 273,
+     "novos_em_relacao_a_partes_anteriores": 274,
+     "urnas": [
+      "2164194"
+     ],
+     "primeiro": "30/10/2022 08:08:45",
+     "ultimo": "30/10/2022 16:57:54"
+    }
+   ],
+   "recontagem_como_leitor": 274,
+   "soma_simples_das_partes": 274,
+   "so_logd_dat": 274,
+   "votos_por_urna": {
+    "2164194": 274
+   },
+   "votos_fora_do_dia": 273,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:57:54",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/68535/295/177",
+   "comparecimento_bu": 197,
+   "computado_parquet": 196,
+   "cert_urna": "ueao01331286",
+   "urna_efetivada_tabela": "1331286",
+   "encerramento": "2022-10-30 17:00:39",
+   "emissao_bu": "2022-10-30 17:02:28",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 196,
+     "votos_fora_do_dia": 202,
+     "novos_em_relacao_a_partes_anteriores": 196,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:35",
+     "ultimo": "30/10/2022 16:50:37"
+    }
+   ],
+   "recontagem_como_leitor": 196,
+   "soma_simples_das_partes": 196,
+   "so_logd_dat": 196,
+   "votos_por_urna": {
+    "67305985": 196
+   },
+   "votos_fora_do_dia": 202,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:50:37",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/71072/418/261",
+   "comparecimento_bu": 332,
+   "computado_parquet": 629,
+   "cert_urna": "UEAO02086436",
+   "urna_efetivada_tabela": "2086688",
+   "encerramento": "2022-10-30 17:05:41",
+   "emissao_bu": "2022-10-30 17:07:52",
+   "partes": [
+    {
+     "parte": "0208643630102022180301ME.jez/logd.dat",
+     "votos_no_dia": 297,
+     "votos_fora_do_dia": 299,
+     "novos_em_relacao_a_partes_anteriores": 297,
+     "urnas": [
+      "2086457"
+     ],
+     "primeiro": "30/10/2022 08:03:04",
+     "ultimo": "30/10/2022 16:49:04"
+    },
+    {
+     "parte": "0208643630102022185901ME.jez/logd.dat",
+     "votos_no_dia": 332,
+     "votos_fora_do_dia": 330,
+     "novos_em_relacao_a_partes_anteriores": 332,
+     "urnas": [
+      "2086688"
+     ],
+     "primeiro": "30/10/2022 08:00:57",
+     "ultimo": "30/10/2022 17:02:22"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 629,
+   "soma_simples_das_partes": 629,
+   "so_logd_dat": 297,
+   "votos_por_urna": {
+    "2086457": 297,
+    "2086688": 332
+   },
+   "votos_fora_do_dia": 629,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 17:02:22",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "SP/66192/424/1",
+   "comparecimento_bu": 185,
+   "computado_parquet": 184,
+   "cert_urna": "ueao01177024",
+   "urna_efetivada_tabela": "1177024",
+   "encerramento": "2022-10-30 17:01:39",
+   "emissao_bu": "2022-10-30 17:03:09",
+   "partes": [
+    {
+     "parte": "6730598530102022163401ME.jez/logd.dat",
+     "votos_no_dia": 175,
+     "votos_fora_do_dia": 185,
+     "novos_em_relacao_a_partes_anteriores": 175,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:52",
+     "ultimo": "30/10/2022 15:44:25"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 9,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 9,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 16:40:31",
+     "ultimo": "30/10/2022 16:52:49"
+    }
+   ],
+   "recontagem_como_leitor": 184,
+   "soma_simples_das_partes": 184,
+   "so_logd_dat": 175,
+   "votos_por_urna": {
+    "67305985": 184
+   },
+   "votos_fora_do_dia": 185,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:52:49",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "PR/78859/199/186",
+   "comparecimento_bu": 351,
+   "computado_parquet": 352,
+   "cert_urna": "UEAO02094633",
+   "urna_efetivada_tabela": "2094633",
+   "encerramento": "2022-10-30 17:01:29",
+   "emissao_bu": "2022-10-30 17:03:59",
+   "partes": [
+    {
+     "parte": "0209463330102022095438-01.jez/logd.dat",
+     "votos_no_dia": 68,
+     "votos_fora_do_dia": 352,
+     "novos_em_relacao_a_partes_anteriores": 68,
+     "urnas": [
+      "2124555"
+     ],
+     "primeiro": "30/10/2022 08:01:19",
+     "ultimo": "30/10/2022 09:19:23"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 284,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 284,
+     "urnas": [
+      "2094633"
+     ],
+     "primeiro": "30/10/2022 09:59:13",
+     "ultimo": "30/10/2022 16:55:18"
+    }
+   ],
+   "recontagem_como_leitor": 352,
+   "soma_simples_das_partes": 352,
+   "so_logd_dat": 68,
+   "votos_por_urna": {
+    "2124555": 68,
+    "2094633": 284
+   },
+   "votos_fora_do_dia": 352,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:55:18",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "PR/78050/130/41",
+   "comparecimento_bu": 286,
+   "computado_parquet": 287,
+   "cert_urna": "ueao01131637",
+   "urna_efetivada_tabela": "1131637",
+   "encerramento": "2022-10-30 17:00:16",
+   "emissao_bu": "2022-10-30 17:02:48",
+   "partes": [
+    {
+     "parte": "6730598530102022084047-01.jez/logd.dat",
+     "votos_no_dia": 8,
+     "votos_fora_do_dia": 285,
+     "novos_em_relacao_a_partes_anteriores": 8,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:04",
+     "ultimo": "30/10/2022 08:15:45"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 279,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 279,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:47:37",
+     "ultimo": "30/10/2022 16:46:42"
+    }
+   ],
+   "recontagem_como_leitor": 287,
+   "soma_simples_das_partes": 287,
+   "so_logd_dat": 8,
+   "votos_por_urna": {
+    "67305985": 287
+   },
+   "votos_fora_do_dia": 285,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:46:42",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "PR/76678/146/273",
+   "comparecimento_bu": 278,
+   "computado_parquet": 277,
+   "cert_urna": "ueao01662039",
+   "urna_efetivada_tabela": "1662039",
+   "encerramento": "2022-10-30 17:00:28",
+   "emissao_bu": "2022-10-30 17:04:46",
+   "partes": [
+    {
+     "parte": "6730598519102022132947-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 29,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598519102022133658-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 28,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022140151-02.jez/logd.dat",
+     "votos_no_dia": 201,
+     "votos_fora_do_dia": 271,
+     "novos_em_relacao_a_partes_anteriores": 201,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:14",
+     "ultimo": "30/10/2022 13:12:25"
+    },
+    {
+     "parte": "6730598530102022152203ME.jez/logd.dat",
+     "votos_no_dia": 25,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 25,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 14:09:12",
+     "ultimo": "30/10/2022 15:05:09"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 51,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 51,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:28:08",
+     "ultimo": "30/10/2022 16:51:44"
+    }
+   ],
+   "recontagem_como_leitor": 277,
+   "soma_simples_das_partes": 277,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 277
+   },
+   "votos_fora_do_dia": 328,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:51:44",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "PR/84670/147/417",
+   "comparecimento_bu": 258,
+   "computado_parquet": 259,
+   "cert_urna": "ueao01659156",
+   "urna_efetivada_tabela": "1659156",
+   "encerramento": "2022-10-30 17:00:18",
+   "emissao_bu": "2022-10-30 17:01:51",
+   "partes": [
+    {
+     "parte": "6730598530102022091201ME.jez/logd.dat",
+     "votos_no_dia": 39,
+     "votos_fora_do_dia": 260,
+     "novos_em_relacao_a_partes_anteriores": 39,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:12",
+     "ultimo": "30/10/2022 08:56:31"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 220,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 220,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 09:17:35",
+     "ultimo": "30/10/2022 16:51:41"
+    }
+   ],
+   "recontagem_como_leitor": 259,
+   "soma_simples_das_partes": 259,
+   "so_logd_dat": 39,
+   "votos_por_urna": {
+    "67305985": 259
+   },
+   "votos_fora_do_dia": 260,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:51:41",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "RS/87912/60/322",
+   "comparecimento_bu": 309,
+   "computado_parquet": 0,
+   "cert_urna": "UEAO02158647",
+   "urna_efetivada_tabela": "2158647",
+   "encerramento": "2022-10-30 17:00:29",
+   "emissao_bu": "2022-10-30 17:03:41",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "RS/85871/14/106",
+   "comparecimento_bu": 256,
+   "computado_parquet": 257,
+   "cert_urna": "ueao01100827",
+   "urna_efetivada_tabela": "1100827",
+   "encerramento": "2022-10-30 17:00:57",
+   "emissao_bu": "2022-10-30 17:03:37",
+   "partes": [
+    {
+     "parte": "6730598530102022090306-01.jez/logd.dat",
+     "votos_no_dia": 24,
+     "votos_fora_do_dia": 255,
+     "novos_em_relacao_a_partes_anteriores": 24,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:22",
+     "ultimo": "30/10/2022 08:32:34"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 233,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 233,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 09:10:17",
+     "ultimo": "30/10/2022 16:49:43"
+    }
+   ],
+   "recontagem_como_leitor": 257,
+   "soma_simples_das_partes": 257,
+   "so_logd_dat": 24,
+   "votos_por_urna": {
+    "67305985": 257
+   },
+   "votos_fora_do_dia": 255,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:49:43",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "BA/39535/198/43",
+   "comparecimento_bu": 252,
+   "computado_parquet": 253,
+   "cert_urna": "UEAO02175774",
+   "urna_efetivada_tabela": "2175774",
+   "encerramento": "2022-10-30 17:00:14",
+   "emissao_bu": "2022-10-30 17:02:49",
+   "partes": [
+    {
+     "parte": "0217577430102022124732-01.jez/logd.dat",
+     "votos_no_dia": 190,
+     "votos_fora_do_dia": 250,
+     "novos_em_relacao_a_partes_anteriores": 190,
+     "urnas": [
+      "2162483"
+     ],
+     "primeiro": "30/10/2022 08:01:00",
+     "ultimo": "30/10/2022 12:30:13"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 63,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 63,
+     "urnas": [
+      "2175774"
+     ],
+     "primeiro": "30/10/2022 12:51:38",
+     "ultimo": "30/10/2022 16:29:20"
+    }
+   ],
+   "recontagem_como_leitor": 253,
+   "soma_simples_das_partes": 253,
+   "so_logd_dat": 190,
+   "votos_por_urna": {
+    "2162483": 190,
+    "2175774": 63
+   },
+   "votos_fora_do_dia": 250,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:29:20",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "BA/34134/171/232",
+   "comparecimento_bu": 359,
+   "computado_parquet": 0,
+   "cert_urna": "UEAO02213308",
+   "urna_efetivada_tabela": "2213308",
+   "encerramento": "2022-10-30 17:01:41",
+   "emissao_bu": "2022-10-30 17:04:33",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "BA/38652/99/46",
+   "comparecimento_bu": 220,
+   "computado_parquet": 230,
+   "cert_urna": "ueao01128037",
+   "urna_efetivada_tabela": "1128037",
+   "encerramento": "2022-10-30 17:00:21",
+   "emissao_bu": "2022-10-30 17:02:37",
+   "partes": [
+    {
+     "parte": "6730598529092022162906-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022082801ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 209,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022094330-01.jez/logd.dat",
+     "votos_no_dia": 10,
+     "votos_fora_do_dia": 261,
+     "novos_em_relacao_a_partes_anteriores": 10,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:12",
+     "ultimo": "30/10/2022 08:12:03"
+    },
+    {
+     "parte": "6730598530102022133003ME.jez/logd.dat",
+     "votos_no_dia": 136,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 136,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:40:11",
+     "ultimo": "30/10/2022 12:20:11"
+    },
+    {
+     "parte": "6730598530102022152505ME.jez/logd.dat",
+     "votos_no_dia": 15,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 15,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 13:46:02",
+     "ultimo": "30/10/2022 15:01:40"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 69,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 69,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:32:55",
+     "ultimo": "30/10/2022 16:57:29"
+    }
+   ],
+   "recontagem_como_leitor": 230,
+   "soma_simples_das_partes": 230,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 230
+   },
+   "votos_fora_do_dia": 470,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:57:29",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "CE/13404/108/42",
+   "comparecimento_bu": 244,
+   "computado_parquet": 243,
+   "cert_urna": "ueao01235226",
+   "urna_efetivada_tabela": "1235226",
+   "encerramento": "2022-10-30 17:01:51",
+   "emissao_bu": "2022-10-30 17:03:10",
+   "partes": [
+    {
+     "parte": "6730598530102022095901ME.jez/logd.dat",
+     "votos_no_dia": 70,
+     "votos_fora_do_dia": 251,
+     "novos_em_relacao_a_partes_anteriores": 70,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:00",
+     "ultimo": "30/10/2022 09:26:05"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 173,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 173,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 10:05:14",
+     "ultimo": "30/10/2022 16:44:12"
+    }
+   ],
+   "recontagem_como_leitor": 243,
+   "soma_simples_das_partes": 243,
+   "so_logd_dat": 70,
+   "votos_por_urna": {
+    "67305985": 243
+   },
+   "votos_fora_do_dia": 251,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:44:12",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "RJ/58777/65/233",
+   "comparecimento_bu": 210,
+   "computado_parquet": 179,
+   "cert_urna": "ueao01295814",
+   "urna_efetivada_tabela": "1295814",
+   "encerramento": "2022-10-30 17:00:05",
+   "emissao_bu": "2022-10-30 17:03:07",
+   "partes": [
+    {
+     "parte": "6730598530102022140101ME.jez/logd.dat",
+     "votos_no_dia": 125,
+     "votos_fora_do_dia": 210,
+     "novos_em_relacao_a_partes_anteriores": 125,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:43",
+     "ultimo": "30/10/2022 11:54:52"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 54,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 54,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 14:10:10",
+     "ultimo": "30/10/2022 16:41:24"
+    }
+   ],
+   "recontagem_como_leitor": 179,
+   "soma_simples_das_partes": 179,
+   "so_logd_dat": 125,
+   "votos_por_urna": {
+    "67305985": 179
+   },
+   "votos_fora_do_dia": 210,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:41:24",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "RJ/58335/200/154",
+   "comparecimento_bu": 308,
+   "computado_parquet": 307,
+   "cert_urna": "ueao01086515",
+   "urna_efetivada_tabela": "1086515",
+   "encerramento": "2022-10-30 17:06:08",
+   "emissao_bu": "2022-10-30 17:09:36",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 307,
+     "votos_fora_do_dia": 307,
+     "novos_em_relacao_a_partes_anteriores": 307,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:18:31",
+     "ultimo": "30/10/2022 17:03:05"
+    }
+   ],
+   "recontagem_como_leitor": 307,
+   "soma_simples_das_partes": 307,
+   "so_logd_dat": 307,
+   "votos_por_urna": {
+    "67305985": 307
+   },
+   "votos_fora_do_dia": 307,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 17:03:05",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "RJ/58335/128/136",
+   "comparecimento_bu": 323,
+   "computado_parquet": 324,
+   "cert_urna": "ueao01023792",
+   "urna_efetivada_tabela": "1023792",
+   "encerramento": "2022-10-30 17:04:19",
+   "emissao_bu": "2022-10-30 17:06:44",
+   "partes": [
+    {
+     "parte": "6730598502102022080122-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022100902ME.jez/logd.dat",
+     "votos_no_dia": 80,
+     "votos_fora_do_dia": 309,
+     "novos_em_relacao_a_partes_anteriores": 80,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:51",
+     "ultimo": "30/10/2022 09:38:13"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 244,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 244,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 10:15:55",
+     "ultimo": "30/10/2022 16:58:54"
+    }
+   ],
+   "recontagem_como_leitor": 324,
+   "soma_simples_das_partes": 324,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 324
+   },
+   "votos_fora_do_dia": 309,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:58:54",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "RJ/60011/7/479",
+   "comparecimento_bu": 348,
+   "computado_parquet": 347,
+   "cert_urna": "UEAO02177183",
+   "urna_efetivada_tabela": "2177183",
+   "encerramento": "2022-10-30 17:03:59",
+   "emissao_bu": "2022-10-30 17:06:46",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 347,
+     "votos_fora_do_dia": 339,
+     "novos_em_relacao_a_partes_anteriores": 347,
+     "urnas": [
+      "2177183"
+     ],
+     "primeiro": "30/10/2022 08:06:17",
+     "ultimo": "30/10/2022 16:51:23"
+    }
+   ],
+   "recontagem_como_leitor": 347,
+   "soma_simples_das_partes": 347,
+   "so_logd_dat": 347,
+   "votos_por_urna": {
+    "2177183": 347
+   },
+   "votos_fora_do_dia": 339,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:51:23",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 2,
+   "secao": "MA/7650/28/30",
+   "comparecimento_bu": 263,
+   "computado_parquet": 262,
+   "cert_urna": "ueao01260453",
+   "urna_efetivada_tabela": "1260453",
+   "encerramento": "2022-10-30 17:02:03",
+   "emissao_bu": "2022-10-30 17:05:00",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 262,
+     "votos_fora_do_dia": 259,
+     "novos_em_relacao_a_partes_anteriores": 262,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:11:42",
+     "ultimo": "30/10/2022 16:47:57"
+    }
+   ],
+   "recontagem_como_leitor": 262,
+   "soma_simples_das_partes": 262,
+   "so_logd_dat": 262,
+   "votos_por_urna": {
+    "67305985": 262
+   },
+   "votos_fora_do_dia": 259,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:47:57",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "MA/7005/12/149",
+   "comparecimento_bu": 128,
+   "computado_parquet": 129,
+   "cert_urna": "ueao01056922",
+   "urna_efetivada_tabela": "1056922",
+   "encerramento": "2022-10-30 17:10:23",
+   "emissao_bu": "2022-10-30 17:13:28",
+   "partes": [
+    {
+     "parte": "6730598530102022083601ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 131,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022115219-01.jez/logd.dat",
+     "votos_no_dia": 1,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 1,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 09:04:35",
+     "ultimo": "30/10/2022 09:04:35"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 128,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 128,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 12:34:30",
+     "ultimo": "30/10/2022 16:46:47"
+    }
+   ],
+   "recontagem_como_leitor": 129,
+   "soma_simples_das_partes": 129,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 129
+   },
+   "votos_fora_do_dia": 131,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:46:47",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "MA/7668/101/98",
+   "comparecimento_bu": 191,
+   "computado_parquet": 179,
+   "cert_urna": "ueao01054482",
+   "urna_efetivada_tabela": "1054482",
+   "encerramento": "2022-10-30 17:00:19",
+   "emissao_bu": "2022-10-30 17:02:29",
+   "partes": [
+    {
+     "parte": "6730598530102022131101ME.jez/logd.dat",
+     "votos_no_dia": 117,
+     "votos_fora_do_dia": 207,
+     "novos_em_relacao_a_partes_anteriores": 117,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:00",
+     "ultimo": "30/10/2022 11:22:21"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 62,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 62,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 13:19:47",
+     "ultimo": "30/10/2022 16:42:05"
+    }
+   ],
+   "recontagem_como_leitor": 179,
+   "soma_simples_das_partes": 179,
+   "so_logd_dat": 117,
+   "votos_por_urna": {
+    "67305985": 179
+   },
+   "votos_fora_do_dia": 207,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:42:05",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "MA/7277/22/122",
+   "comparecimento_bu": 298,
+   "computado_parquet": 297,
+   "cert_urna": "ueao01256265",
+   "urna_efetivada_tabela": "1256265",
+   "encerramento": "2022-10-30 17:01:05",
+   "emissao_bu": "2022-10-30 17:03:25",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 297,
+     "votos_fora_do_dia": 300,
+     "novos_em_relacao_a_partes_anteriores": 297,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:13",
+     "ultimo": "30/10/2022 16:59:45"
+    }
+   ],
+   "recontagem_como_leitor": 297,
+   "soma_simples_das_partes": 297,
+   "so_logd_dat": 297,
+   "votos_por_urna": {
+    "67305985": 297
+   },
+   "votos_fora_do_dia": 300,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:59:45",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "PA/4154/43/914",
+   "comparecimento_bu": 310,
+   "computado_parquet": 309,
+   "cert_urna": "UEAO02200428",
+   "urna_efetivada_tabela": "2200428",
+   "encerramento": "2022-10-30 17:01:47",
+   "emissao_bu": "2022-10-30 17:07:09",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 309,
+     "votos_fora_do_dia": 308,
+     "novos_em_relacao_a_partes_anteriores": 309,
+     "urnas": [
+      "2200428"
+     ],
+     "primeiro": "30/10/2022 08:01:22",
+     "ultimo": "30/10/2022 17:00:41"
+    }
+   ],
+   "recontagem_como_leitor": 309,
+   "soma_simples_das_partes": 309,
+   "so_logd_dat": 309,
+   "votos_por_urna": {
+    "2200428": 309
+   },
+   "votos_fora_do_dia": 308,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 17:00:41",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 2,
+   "secao": "AM/2550/68/512",
+   "comparecimento_bu": 238,
+   "computado_parquet": 0,
+   "cert_urna": "UEAO02018631",
+   "urna_efetivada_tabela": "2018631",
+   "encerramento": "2022-10-30 16:04:02",
+   "emissao_bu": "2022-10-30 16:06:12",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 243,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 0,
+   "soma_simples_das_partes": 0,
+   "so_logd_dat": 0,
+   "votos_por_urna": {},
+   "votos_fora_do_dia": 243,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": null,
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "DF/97012/6/44",
+   "comparecimento_bu": 259,
+   "computado_parquet": 258,
+   "cert_urna": "ueao01823803",
+   "urna_efetivada_tabela": "1823803",
+   "encerramento": "2022-10-30 17:05:06",
+   "emissao_bu": "2022-10-30 17:07:39",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 258,
+     "votos_fora_do_dia": 251,
+     "novos_em_relacao_a_partes_anteriores": 258,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:53",
+     "ultimo": "30/10/2022 16:57:06"
+    }
+   ],
+   "recontagem_como_leitor": 258,
+   "soma_simples_das_partes": 258,
+   "so_logd_dat": 258,
+   "votos_por_urna": {
+    "67305985": 258
+   },
+   "votos_fora_do_dia": 251,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:57:06",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SC/80470/3/463",
+   "comparecimento_bu": 290,
+   "computado_parquet": 289,
+   "cert_urna": "UEAO02178234",
+   "urna_efetivada_tabela": "2178234",
+   "encerramento": "2022-10-30 17:00:51",
+   "emissao_bu": "2022-10-30 17:02:44",
+   "partes": [
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 289,
+     "votos_fora_do_dia": 294,
+     "novos_em_relacao_a_partes_anteriores": 289,
+     "urnas": [
+      "2178234"
+     ],
+     "primeiro": "30/10/2022 08:01:20",
+     "ultimo": "30/10/2022 17:00:06"
+    }
+   ],
+   "recontagem_como_leitor": 289,
+   "soma_simples_das_partes": 289,
+   "so_logd_dat": 289,
+   "votos_por_urna": {
+    "2178234": 289
+   },
+   "votos_fora_do_dia": 294,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 17:00:06",
+   "classe": "2b log menor que o comparecimento, com a urna efetivada no log"
+  },
+  {
+   "turno": 2,
+   "secao": "PE/23639/130/6",
+   "comparecimento_bu": 237,
+   "computado_parquet": 236,
+   "cert_urna": "ueao01127082",
+   "urna_efetivada_tabela": "1127082",
+   "encerramento": "2022-10-30 17:04:30",
+   "emissao_bu": "2022-10-30 17:09:22",
+   "partes": [
+    {
+     "parte": "6730598530102022095232-01.jez/logd.dat",
+     "votos_no_dia": 38,
+     "votos_fora_do_dia": 233,
+     "novos_em_relacao_a_partes_anteriores": 38,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:18",
+     "ultimo": "30/10/2022 09:31:47"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 198,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 198,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 10:06:27",
+     "ultimo": "30/10/2022 17:01:07"
+    }
+   ],
+   "recontagem_como_leitor": 236,
+   "soma_simples_das_partes": 236,
+   "so_logd_dat": 38,
+   "votos_por_urna": {
+    "67305985": 236
+   },
+   "votos_fora_do_dia": 233,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 17:01:07",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "PE/25216/83/416",
+   "comparecimento_bu": 279,
+   "computado_parquet": 278,
+   "cert_urna": "ueao01127066",
+   "urna_efetivada_tabela": "1127066",
+   "encerramento": "2022-10-30 17:07:56",
+   "emissao_bu": "2022-10-30 17:10:18",
+   "partes": [
+    {
+     "parte": "6730598530102022102801ME.jez/logd.dat",
+     "votos_no_dia": 48,
+     "votos_fora_do_dia": 279,
+     "novos_em_relacao_a_partes_anteriores": 48,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:32",
+     "ultimo": "30/10/2022 09:35:15"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 230,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 230,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 10:44:07",
+     "ultimo": "30/10/2022 16:54:43"
+    }
+   ],
+   "recontagem_como_leitor": 278,
+   "soma_simples_das_partes": 278,
+   "so_logd_dat": 48,
+   "votos_por_urna": {
+    "67305985": 278
+   },
+   "votos_fora_do_dia": 279,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:54:43",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "PE/24350/85/44",
+   "comparecimento_bu": 296,
+   "computado_parquet": 297,
+   "cert_urna": "UEAO02171259",
+   "urna_efetivada_tabela": "2171259",
+   "encerramento": "2022-10-30 17:00:21",
+   "emissao_bu": "2022-10-30 17:02:45",
+   "partes": [
+    {
+     "parte": "0217125930102022100902-01.jez/logd.dat",
+     "votos_no_dia": 48,
+     "votos_fora_do_dia": 288,
+     "novos_em_relacao_a_partes_anteriores": 48,
+     "urnas": [
+      "2181839"
+     ],
+     "primeiro": "30/10/2022 08:06:08",
+     "ultimo": "30/10/2022 09:31:08"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 249,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 249,
+     "urnas": [
+      "2171259"
+     ],
+     "primeiro": "30/10/2022 10:22:13",
+     "ultimo": "30/10/2022 16:49:56"
+    }
+   ],
+   "recontagem_como_leitor": 297,
+   "soma_simples_das_partes": 297,
+   "so_logd_dat": 48,
+   "votos_por_urna": {
+    "2181839": 48,
+    "2171259": 249
+   },
+   "votos_fora_do_dia": 288,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": true,
+   "ultimo_voto_no_log": "30/10/2022 16:49:56",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "PE/23973/91/99",
+   "comparecimento_bu": 119,
+   "computado_parquet": 198,
+   "cert_urna": "ueao01058499",
+   "urna_efetivada_tabela": "1058499",
+   "encerramento": "2022-10-30 17:00:13",
+   "emissao_bu": "2022-10-30 17:02:17",
+   "partes": [
+    {
+     "parte": "6730598530102022150323-01.jez/logd.dat",
+     "votos_no_dia": 166,
+     "votos_fora_do_dia": 302,
+     "novos_em_relacao_a_partes_anteriores": 166,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:02:55",
+     "ultimo": "30/10/2022 12:57:22"
+    },
+    {
+     "parte": "6730598530102022153034-01.jez/logd.dat",
+     "votos_no_dia": 2,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 2,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:16:56",
+     "ultimo": "30/10/2022 15:18:22"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 30,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 30,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 15:38:00",
+     "ultimo": "30/10/2022 16:57:07"
+    }
+   ],
+   "recontagem_como_leitor": 198,
+   "soma_simples_das_partes": 198,
+   "so_logd_dat": 166,
+   "votos_por_urna": {
+    "67305985": 198
+   },
+   "votos_fora_do_dia": 302,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:57:07",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "ES/56251/54/618",
+   "comparecimento_bu": 276,
+   "computado_parquet": 216,
+   "cert_urna": "ueao01334962",
+   "urna_efetivada_tabela": "1334962",
+   "encerramento": "2022-10-30 17:01:15",
+   "emissao_bu": "2022-10-30 17:02:43",
+   "partes": [
+    {
+     "parte": "6730598530102022101501ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022123002ME.jez/logd.dat",
+     "votos_no_dia": 86,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 86,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 10:21:53",
+     "ultimo": "30/10/2022 12:19:38"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 130,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 130,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 12:36:14",
+     "ultimo": "30/10/2022 16:45:22"
+    }
+   ],
+   "recontagem_como_leitor": 216,
+   "soma_simples_das_partes": 216,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 216
+   },
+   "votos_fora_do_dia": 0,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:45:22",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "ES/56634/25/89",
+   "comparecimento_bu": 311,
+   "computado_parquet": 312,
+   "cert_urna": "ueao01162543",
+   "urna_efetivada_tabela": "1162543",
+   "encerramento": "2022-10-30 17:00:10",
+   "emissao_bu": "2022-10-30 17:02:40",
+   "partes": [
+    {
+     "parte": "6730598530092022101420-01.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022080601ME.jez/logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 303,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    },
+    {
+     "parte": "6730598530102022115702ME.jez/logd.dat",
+     "votos_no_dia": 162,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 162,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:16:45",
+     "ultimo": "30/10/2022 11:27:15"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 150,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 150,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 12:04:10",
+     "ultimo": "30/10/2022 16:51:30"
+    }
+   ],
+   "recontagem_como_leitor": 312,
+   "soma_simples_das_partes": 312,
+   "so_logd_dat": 0,
+   "votos_por_urna": {
+    "67305985": 312
+   },
+   "votos_fora_do_dia": 303,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:51:30",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  },
+  {
+   "turno": 2,
+   "secao": "TO/73440/29/229",
+   "comparecimento_bu": 270,
+   "computado_parquet": 269,
+   "cert_urna": "ueao01232263",
+   "urna_efetivada_tabela": "1232263",
+   "encerramento": "2022-10-30 17:00:26",
+   "emissao_bu": "2022-10-30 17:02:50",
+   "partes": [
+    {
+     "parte": "6730598530102022144020-01.jez/logd.dat",
+     "votos_no_dia": 214,
+     "votos_fora_do_dia": 277,
+     "novos_em_relacao_a_partes_anteriores": 214,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:37",
+     "ultimo": "30/10/2022 13:52:46"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 55,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 55,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 14:52:10",
+     "ultimo": "30/10/2022 16:57:26"
+    }
+   ],
+   "recontagem_como_leitor": 269,
+   "soma_simples_das_partes": 269,
+   "so_logd_dat": 214,
+   "votos_por_urna": {
+    "67305985": 269
+   },
+   "votos_fora_do_dia": 277,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:57:26",
+   "classe": "2 log da urna efetivada ausente (o log publicado é de outra urna)"
+  },
+  {
+   "turno": 2,
+   "secao": "SE/31690/12/92",
+   "comparecimento_bu": 246,
+   "computado_parquet": 921,
+   "cert_urna": "ueao01673156",
+   "urna_efetivada_tabela": "1673156",
+   "encerramento": "2022-10-30 18:27:29",
+   "emissao_bu": "2022-10-30 18:28:44",
+   "partes": [
+    {
+     "parte": "6730598530102022174129-01.jez/logd.dat",
+     "votos_no_dia": 224,
+     "votos_fora_do_dia": 229,
+     "novos_em_relacao_a_partes_anteriores": 224,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:00:46",
+     "ultimo": "30/10/2022 16:57:57"
+    },
+    {
+     "parte": "6730598530102022180101ME.jez/logd.dat",
+     "votos_no_dia": 252,
+     "votos_fora_do_dia": 257,
+     "novos_em_relacao_a_partes_anteriores": 252,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:11",
+     "ultimo": "30/10/2022 16:45:34"
+    },
+    {
+     "parte": "6730598530102022181412-03.jez/logd.dat",
+     "votos_no_dia": 199,
+     "votos_fora_do_dia": 202,
+     "novos_em_relacao_a_partes_anteriores": 199,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:33",
+     "ultimo": "30/10/2022 16:34:52"
+    },
+    {
+     "parte": "6730598530102022182408-04.jez/logd.dat",
+     "votos_no_dia": 246,
+     "votos_fora_do_dia": 244,
+     "novos_em_relacao_a_partes_anteriores": 246,
+     "urnas": [
+      "67305985"
+     ],
+     "primeiro": "30/10/2022 08:01:05",
+     "ultimo": "30/10/2022 16:49:42"
+    },
+    {
+     "parte": "logd.dat",
+     "votos_no_dia": 0,
+     "votos_fora_do_dia": 0,
+     "novos_em_relacao_a_partes_anteriores": 0,
+     "urnas": [],
+     "primeiro": null,
+     "ultimo": null
+    }
+   ],
+   "recontagem_como_leitor": 921,
+   "soma_simples_das_partes": 921,
+   "so_logd_dat": 224,
+   "votos_por_urna": {
+    "67305985": 921
+   },
+   "votos_fora_do_dia": 932,
+   "validacao_recontagem_igual_parquet": true,
+   "urna_efetivada_tem_votos_no_log": false,
+   "ultimo_voto_no_log": "30/10/2022 16:57:57",
+   "classe": "3 log com votos de mais de uma urna ou fora do dia"
+  }
+ ],
+ "revisao_da_classificacao": {
+  "problema": "em 2022 o terceiro campo da linha do log (usado pelo leitor como número da urna) não é o número da urna em parte dos logs (o mesmo valor 67305985 aparece em seções de vários estados); a classificação por urna (categorias 2, 2b, 3) não é válida e foi substituída pela descrição abaixo",
+  "descricao_por_padrao": {
+   "menor | uma parte com votos | sem sobreposição | nenhum subconjunto bate": 67,
+   "maior | várias partes com votos | horários sobrepostos | subconjunto de partes = comparecimento": 18,
+   "maior | várias partes com votos | sem sobreposição | nenhum subconjunto bate": 18,
+   "menor | várias partes com votos | sem sobreposição | nenhum subconjunto bate": 39,
+   "maior | várias partes com votos | sem sobreposição | subconjunto de partes = comparecimento": 11
+  },
+  "exemplos": {
+   "menor | uma parte com votos | sem sobreposição | nenhum subconjunto bate": "MG/45136/100/231",
+   "maior | várias partes com votos | horários sobrepostos | subconjunto de partes = comparecimento": "MG/51071/235/52",
+   "maior | várias partes com votos | sem sobreposição | nenhum subconjunto bate": "MG/44830/303/70",
+   "menor | várias partes com votos | sem sobreposição | nenhum subconjunto bate": "SP/71072/417/95",
+   "maior | várias partes com votos | sem sobreposição | subconjunto de partes = comparecimento": "SP/66230/223/23"
+  },
+  "totais": {
+   "log_menor": 106,
+   "log_maior": 47,
+   "votos_sem_registro_no_log": 5287,
+   "votos_no_log_alem_do_comparecimento": 2503
+  }
+ }
+}

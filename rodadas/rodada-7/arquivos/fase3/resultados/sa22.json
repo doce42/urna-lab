@@ -1,0 +1,29 @@
+{
+ "pergunta": "SA22",
+ "secoes_turno": 159,
+ "por_turno": {
+  "1": 116,
+  "2": 43
+ },
+ "exterior": 132,
+ "por_classe": {
+  "concorda (boletim, texto impresso e assinatura)": 159
+ },
+ "busa_lidos": 159,
+ "imgbusa_lidos": 159,
+ "com_rdv": 159,
+ "com_log_sa": 159,
+ "com_log_urna": 11,
+ "assinatura_lista_ok": 159,
+ "algoritmos": {
+  "ECDSA-P521": 156,
+  "Ed521": 3
+ },
+ "emissores": {
+  "AC URNA": 156,
+  "AC UE2020": 3
+ },
+ "com_arquivos_listados_e_ausentes": 8,
+ "comparecimento_publicado_total": 27692,
+ "votos_presidente_publicados_total": 27692
+}

@@ -1,0 +1,29 @@
+{
+ "ano": "2022",
+ "custo_ab": 0.24724644809027474,
+ "a_local": 0.05,
+ "b_zona": 0.05,
+ "reps": 20,
+ "alarmes": {
+  "d1_pos_4": 0.0,
+  "d1_neg_4": 0.0,
+  "d2l_pos": 0.0,
+  "d2l_neg": 0.0,
+  "d2z_pos": 1.0,
+  "d2z_neg": 0.0,
+  "d3_pos": 0.0,
+  "d3_neg": 0.0,
+  "d4_pos": 0.0,
+  "d5_alarme": 0.0,
+  "d6_subdispersao": 0.0,
+  "d7_estrutura_local": 0.0,
+  "alarme_qualquer_lado": 1.0
+ },
+ "escalas_relativas": {
+  "z": 0.8954295289505669,
+  "local": 1.0716153037818885,
+  "zona": 1.0282511725381345
+ },
+ "margem_nacional_media": 2126199.9,
+ "margem_real": 2131560.0
+}

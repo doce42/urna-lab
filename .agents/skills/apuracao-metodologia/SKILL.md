@@ -32,3 +32,11 @@ Só depois disso a afirmação entra no relatório.
 - **Pré-registro de cada lote:** em `fase3/PREREG_*.md`, com emenda no PROTOCOLO.
 - **Regra adversarial e escala de sinal:** na skill apuracao-investigacao.
 - **Resultado:** "Passou" não é conclusão. Todo resultado tem sinal (S0 a S5, ponto cego, método) e impacto em votos (`scripts/impacto_votos.py`, campo `impacto_votos`).
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **Escada de verificação:** hash correto ≠ assinatura válida ≠ cadeia autenticada ≠ voto fiel à intenção do eleitor. Diga em qual degrau cada resultado está.
+- **Alegação pública vira pré-registro antes de contar** (`fase3/PREREG_*.md` + emenda no PROTOCOLO + `testes/registro.json`), com leitura pré-fixada. A origem da pergunta (matéria, post, vídeo) não é fonte; a resposta entra como pergunta no capítulo "Alegações públicas testadas".
+- **Poder é condicional à base:** simulação sobre a base real mede alteração **adicional**; não diz que a base está limpa; a soma das anomalias nunca é teto.
+- **Mudança de desenho depois de ver algo (teste de fumaça, resultado intermediário) vira emenda datada e declarada**, com o que foi visto e por quê; a versão anterior fica preservada (ex.: fabricante de estrutura v1 e v2 no T63).
+- **Erros do comparador antes de anomalia:** ausente = 0 em BU e RDV, hora de qualquer dia, cache de zip, eventos de log de outras seções. Cada correção é declarada (máx. 2 por teste).
+- **Revisão dos próprios vereditos** (`operacao_veracidade/09_*.md`): frase por frase, com situação (preservada, reforçada, enfraquecida, refutada, não avaliável) e redação sugerida.

@@ -1,0 +1,62 @@
+{
+ "pergunta": "P13",
+ "sem_exterior/aptos_1t": {
+  "F_L_min": 20.0,
+  "F_L_max": 43529627.0,
+  "L_F_min": 24.0,
+  "L_F_max": 39427431.0
+ },
+ "sem_exterior/aptos_2t": {
+  "F_L_min": 79.0,
+  "F_L_max": 43529627.0,
+  "L_F_min": 123.0,
+  "L_F_max": 39427431.0
+ },
+ "sem_exterior/comparecimento_2t": {
+  "F_L_min": 110035.0,
+  "F_L_max": 43529627.0,
+  "L_F_min": 31875.0,
+  "L_F_max": 39427431.0
+ },
+ "sem_exterior/comparecimento_1t": {
+  "F_L_min": 325828.0,
+  "F_L_max": 43529627.0,
+  "L_F_min": 7914.0,
+  "L_F_max": 39427431.0
+ },
+ "com_exterior/aptos_1t": {
+  "F_L_min": NaN,
+  "F_L_max": NaN,
+  "L_F_min": NaN,
+  "L_F_max": NaN
+ },
+ "com_exterior/aptos_2t": {
+  "F_L_min": NaN,
+  "F_L_max": NaN,
+  "L_F_min": NaN,
+  "L_F_max": NaN
+ },
+ "com_exterior/comparecimento_2t": {
+  "F_L_min": NaN,
+  "F_L_max": NaN,
+  "L_F_min": NaN,
+  "L_F_max": NaN
+ },
+ "com_exterior/comparecimento_1t": {
+  "F_L_min": NaN,
+  "F_L_max": NaN,
+  "L_F_min": NaN,
+  "L_F_max": NaN
+ },
+ "registrado_C06b": {
+  "F_L": [
+   79,
+   43600000.0
+  ],
+  "L_F": [
+   123,
+   39500000.0
+  ]
+ },
+ "tempo_s": 1.0
+}

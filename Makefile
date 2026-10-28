@@ -8,7 +8,7 @@ NPROC   ?= 12
 ANO     ?= 2026
 T       ?=
 
-.PHONY: ajuda ambiente dados-do-zero base dados bateria comportamento integridade totalizacao teste relatorio pdf servir verificar registro
+.PHONY: ajuda ambiente dados-do-zero base dados bateria comportamento integridade totalizacao teste relatorio pdf servir verificar registro veracidade-certs veracidade-sim veracidade-zeros veracidade-externo
 
 ajuda:
 	@echo "make ambiente        cria .venv e instala requirements.txt"
@@ -23,6 +23,10 @@ ajuda:
 	@echo "make relatorio       dados do relatório; make pdf gera o PDF; make servir abre em localhost:8765"
 	@echo "make verificar       conferências rápidas (totais, registro, cobertura)"
 	@echo "make registro        lista os testes e a situação de cada um"
+	@echo "make veracidade-certs   T60a: cadeia de certificados de todas as urnas (4 combinações, ~1 h)"
+	@echo "make veracidade-sim     T63: poder adversarial (ANO=2026|2022) e fabricação"
+	@echo "make veracidade-zeros   T64: zeros e poucos votos, três famílias de modelo"
+	@echo "make veracidade-externo T61, T62, T65: boletins de terceiros, identificabilidade, hipótese dos votos extras"
 
 ambiente:
 	python3 -m venv .venv && $(PY) -m pip install -q -r requirements.txt
@@ -68,3 +72,22 @@ verificar:
 
 registro:
 	@$(PY) scripts/rodar_teste.py --lista
+
+veracidade-certs:
+	for a in 2026 2022; do for t in 1 2; do $(BAIXO) $(PY) operacao_veracidade/scripts/cert_extrai.py $$a $$t $(NPROC); done; done
+	$(BAIXO) $(PY) operacao_veracidade/scripts/cert_analise.py
+	$(BAIXO) $(PY) operacao_veracidade/scripts/casos_certificado.py
+
+veracidade-sim:
+	$(BAIXO) $(PY) operacao_veracidade/scripts/sim_adversarial.py $(ANO) 6 20
+	$(BAIXO) $(PY) operacao_veracidade/scripts/sim_fabricacao_v2.py $(ANO) 20
+
+veracidade-zeros:
+	$(BAIXO) $(PY) operacao_veracidade/scripts/zeros_contagens.py
+	$(BAIXO) $(PY) operacao_veracidade/scripts/zeros_locais.py
+
+veracidade-externo:
+	$(BAIXO) $(PY) operacao_veracidade/scripts/terceiros_qr.py
+	$(BAIXO) $(PY) operacao_veracidade/scripts/republicacao_bu.py
+	$(BAIXO) $(PY) operacao_veracidade/scripts/identificabilidade.py
+	$(BAIXO) $(PY) operacao_veracidade/scripts/hipotese_video.py

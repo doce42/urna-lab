@@ -1,0 +1,2075 @@
+{
+ "gerado": "2026-10-28",
+ "situacao": "V1.5 (rodada 7, Operação Veracidade Geral), congelada em 28/10/2026",
+ "margem": "Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022.",
+ "aviso": "Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.",
+ "capitulos": [
+  {
+   "id": "integridade",
+   "titulo": "Integridade dos resultados oficiais",
+   "perguntas": [
+    {
+     "id": "Q1",
+     "pergunta": "Os votos oficiais por seção são iguais aos boletins de urna?",
+     "resposta": "Sim, em todas as seções cujo boletim foi lido, nos dois anos e nos dois turnos: 0 diferenças entre a tabela publicada e o bu.dat.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/inv_r1_integridade.py",
+      "fase3/resultados/r1_integridade.json",
+      "fase3/resultados/sa22.json",
+      "fase3/resultados/R1_20_dataurnas.json"
+     ],
+     "numeros": "2026: 499.198 de 499.206 (1º turno) e 499.201 de 499.205 (2º) boletins lidos, 0 diferenças. 2022: 471.907 (1º) e 471.980 (2º) lidos, 0 diferenças, mais 159 seções-turno do Sistema de Apuração lidas à parte (0 diferenças); 10 seções-turno de 2022 sem boletim lido pelo projeto (7 do exterior, 2 do Pará, 1 do Rio Grande do Sul), na fila.",
+     "demonstra": "Os votos da tabela publicada são os mesmos dos boletins digitais assinados pelas urnas.",
+     "nao_demonstra": "Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado. Não exclui comprometimento anterior à geração do boletim (H2).",
+     "robustez": "Releitura direta de 100 seções sorteadas dos zips: 100/100 idênticas. Decodificação independente de terceiro (DataUrnas-BR): 0 diferenças em 2026 1º turno e em 99,96% das seções do Brasil em 2022.",
+     "causa": "não aplicável",
+     "alcance": "Todas as seções com boletim publicado; votos de Presidente.",
+     "mudaria": "Uma seção com boletim lido e votos diferentes da tabela; boletim impresso coletado por terceiro com valores diferentes.",
+     "validacao": "Executado e reproduzido (R1, releitura).",
+     "por_ano": {
+      "2022": "0 diferenças em 471.907 + 471.980 seções + 159 do Sistema de Apuração; 10 sem boletim lido.",
+      "2026": "0 diferenças em 499.198 + 499.201 seções."
+     },
+     "reabertura": "",
+     "em_votos": "0 voto de diferença entre a tabela e os boletins em todos os ~128 milhões de votos de 2026 (2º turno) e ~124 milhões de 2022 conferidos. As 5 seções de 2022 sem arquivo somam 5 votos de comparecimento."
+    },
+    {
+     "id": "Q2",
+     "pergunta": "Os votos publicados podem ser reconstruídos a partir dos RDVs disponíveis?",
+     "resposta": "Sim, em todas as seções com RDV lido: a recontagem voto a voto dá os mesmos totais de candidatos, brancos e nulos da tabela.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/r1_integridade.json",
+      "testes/registro.json (T17, T17b)"
+     ],
+     "numeros": "2026: 499.167 (1º) e 499.174 (2º) RDVs lidos, 0 diferenças. 2022: 471.851 e 471.980, 0 diferenças (o leitor de 2022 já soma o nulo por suspensão no nulo; a primeira comparação somava de novo e acusou 42.764 e 7.410 diferenças falsas; corrigido e declarado).",
+     "demonstra": "A tabela pode ser recomposta voto a voto pelo RDV publicado.",
+     "nao_demonstra": "O RDV é gravado pela mesma urna e pelo mesmo software que geram o boletim: a recontagem não é contagem independente do que o eleitor digitou.",
+     "robustez": "Duas correções do comparador declaradas (R1); releitura direta 100/100.",
+     "causa": "não aplicável",
+     "alcance": "Seções com RDV publicado.",
+     "mudaria": "Divergência RDV × tabela com o arquivo lido; RDV ausente em seções relevantes.",
+     "validacao": "Executado (R1).",
+     "por_ano": {
+      "2022": "0 diferenças em 471.851 + 471.980 seções.",
+      "2026": "0 diferenças em 499.167 + 499.174 seções."
+     },
+     "reabertura": "",
+     "em_votos": "0 voto de diferença entre a recontagem pelo RDV e a tabela, nos dois anos."
+    },
+    {
+     "id": "Q3",
+     "pergunta": "Existem divergências verificáveis entre boletins, RDV, logs, tabelas e totalização?",
+     "resposta": "Nos votos, não. Entre arquivos e entre log e comparecimento, sim: há divergências objetivas pontuais, preservadas como achados, sem efeito demonstrado sobre votos.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/resultados/r1_integridade.json",
+      "fase3/resultados/adv_log_x_comparecimento.json",
+      "fase3/RELATORIO_ADVERSARIAL.md",
+      "analise/resultado_casos_integridade_1t.json",
+      "testes/registro.json (T32, T36)"
+     ],
+     "numeros": "Totalização: 638 de 638 itens iguais ao total oficial (T32). Log × comparecimento: 2022, log com menos votos em 70 (1º) e 36 (2º) seções (3.618 e 1.669 votos sem registro no log publicado) e com mais em 34 e 13 (fila F1: recontagem confirmada em 153/153; em 29 das 47 com log maior, um subconjunto exato das partes arquivadas do log soma o comparecimento, compatível com partes de outra sessão no log publicado); 2026, 9 e 7 seções (59 e 54 votos), no T36. Imagem × boletim: RS 88013/2/199 (2022): imagem assinada com 196 votos, boletim e tabela com 288; log da urna 2215062 com 196 votos (último às 13:53). T36 (2026): 186 e 75 casos de contas que não fecham, compatíveis com registros (troca de urna, RED, reinício), 1 sem explicação (RJ 60011/8/61).",
+     "demonstra": "Há divergências documentais objetivas, todas pequenas e sem deslocamento de votos detectável nas seções envolvidas.",
+     "nao_demonstra": "A causa de cada divergência. As explicações operacionais vêm do próprio sistema (compatíveis, não verificadas).",
+     "robustez": "Teste de votação nas seções com explicação registrada (T36, contingências): sem deslocamento (adv_casos.json). Exploratório em 2022 (log ≠ comparecimento): sem deslocamento, poder baixo.",
+     "causa": "não demonstrada",
+     "alcance": "Seções com arquivos; Presidente.",
+     "mudaria": "Logs das urnas substitutas; boletins impressos da seção; esclarecimento do TSE por seção.",
+     "validacao": "Executado (R1, auditoria adversarial).",
+     "por_ano": {
+      "2022": "Votos: 0. Log × comparecimento: 153 seções-turno; imagem × boletim: 1 seção.",
+      "2026": "Votos: 0. Log × comparecimento: 16 seções-turno (T36); imagem da urna × tabela: 1 seção explicada como contingência registrada (Sistema de Apuração), compatível, não verificada."
+     },
+     "reabertura": "",
+     "em_votos": "Nenhuma divergência muda um voto da tabela. Divergências de registro: 2022, 5.287 votos sem registro no log publicado e 2.503 a mais no log (0,25% e 0,12% da margem de 2022); RS 88013/2/199, 92 votos entre a imagem do boletim (196) e o boletim digital (288); 2026, 113 votos em 16 seções-turno do T36 (0,003% da margem)."
+    },
+    {
+     "id": "Q4",
+     "pergunta": "Existem arquivos ausentes, seções não cobertas ou versões conflitantes? Qual o alcance?",
+     "resposta": "Sim, arquivos ausentes e algumas seções não cobertas; versões conflitantes não foram encontradas no que foi possível comparar.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/resultados/a173.json",
+      "fase3/resultados/sa22.json",
+      "fase3/resultados/a1.json",
+      "fase3/resultados/r1_integridade.json",
+      "fase3/resultados/r2_curva_publica.json"
+     ],
+     "numeros": "2022: 173 arquivos assinados (RDV, log, imagem; 64 seções, 54 do exterior) e 485 auxiliares fora do pacote de dados abertos; das 10 seções sem boletim lido, 5 foram lidas na fila F3 (conferem) e 5 do exterior não têm arquivo nenhum no pacote. 2026: 1 log assinado e não publicado (SP, 2º turno); seções do Sistema de Apuração (31 e 29) conferidas na fila F2: lista assinada válida em 60/60, boletim = tabela; 3 seções do exterior fora da tabela com comparecimento 0 (P12); a imagem parcial da urna em MG 50075/47/41 não consta de lista assinada publicada. Versões: uma só captura de cada arquivo; os totais divulgados ao vivo (39 capturas) batem com a base final.",
+     "demonstra": "Ausências de publicação objetivas e de alcance pequeno; os boletins dessas seções coincidem com a tabela.",
+     "nao_demonstra": "O conteúdo dos arquivos ausentes; republicação de arquivos entre datas (só há uma versão local).",
+     "robustez": "Duas cópias do pacote de 2022 (14/10 e 27/10/2026) com as mesmas ausências.",
+     "causa": "não demonstrada",
+     "alcance": "Pacotes de dados abertos do TSE.",
+     "mudaria": "Os 173 arquivos por outro canal; versões datadas dos pacotes.",
+     "validacao": "Executado (A173, SA22, R1, R2).",
+     "por_ano": {
+      "2022": "173 + 485 arquivos ausentes; 10 seções sem boletim lido.",
+      "2026": "1 log ausente; assinatura do Sistema de Apuração não conferida pelo leitor."
+     },
+     "reabertura": "",
+     "em_votos": "Seções com arquivos ausentes: 64 seções com 21.112 comparecimentos em 2022 (boletim presente e igual à tabela); o Sistema de Apuração soma 27.692 votos em 2022 e as seções de 2026 também conferem; as 5 seções sem arquivo somam 5 votos."
+    },
+    {
+     "id": "Q5",
+     "pergunta": "Os registros foram autenticados criptograficamente até uma fonte de confiança apropriada?",
+     "resposta": "Não até a raiz: as assinaturas das urnas são válidas até a autoridade certificadora emissora em 100% das urnas de 2022 e 2026 (cadeia verificada por completo em 28/10/2026, T60a; antes, só em 200 seções e em 5% por terceiro), mas a ligação dessa autoridade a uma âncora do TSE não foi verificada: a raiz não é pública.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "testes/registro.json (T16, T60a, T60b)",
+      "fase2/resultados/P11.json",
+      "fase3/resultados/sa22.json",
+      "fase3/resultados/r1_integridade.json",
+      "operacao_veracidade/resultados/cert_analise.json"
+     ],
+     "numeros": "2026: hash e assinatura válidos em 499.176 (1º) e 499.178 (2º) boletins. 2022: 471.908 e 471.984 boletins e as 159 seções do Sistema de Apuração. Cadeia até a AC emissora (T60a, 28/10/2026): 1.942.246 de 1.942.246 pares seção × turno, 0 falhas, todos válidos no dia, nenhuma chave repetida. Certificados de AC obtidos de terceiro (DataUrnas-BR); AC URNA v2 e AC RAIZ UE não obtidas por canal do TSE.",
+     "demonstra": "Os arquivos presentes não foram alterados depois de assinados pela chave da urna, e todo certificado de urna é assinado pela AC emissora que temos.",
+     "nao_demonstra": "Que a chave pertence a uma urna autêntica do TSE (sem âncora); que a AC usada é a oficial (cópia de terceiro); qualquer coisa anterior à assinatura.",
+     "robustez": "Verificação Ed521 e ECDSA P-521 própria; chaves degeneradas rejeitadas.",
+     "causa": "não aplicável",
+     "alcance": "Arquivos presentes.",
+     "mudaria": "Certificados raiz obtidos do TSE por canal verificável.",
+     "validacao": "Bloqueado no elo final (fonte externa).",
+     "por_ano": {
+      "2022": "Assinatura válida até a AC emissora nos arquivos presentes; cadeia em 943.892 de 943.892 pares seção × turno (T60a).",
+      "2026": "Idem; cadeia em 998.354 de 998.354 (T60a)."
+     },
+     "reabertura": "",
+     "em_votos": "Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora (100% das urnas, verificação completa em 28/10/2026, T60a)."
+    },
+    {
+     "id": "Q6",
+     "pergunta": "Existem evidências externas independentes que confirmem ou contradigam os registros publicados?",
+     "resposta": "Sim, duas, e as duas confirmam: capturas do Internet Archive dos totais nacionais divulgados durante a apuração confirmam a base publicada nos instantes capturados; e 404 boletins impressos lidos por terceiros no 2º turno de 2026 (22 UFs) são iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas (T61). Os boletins são amostra de conveniência (0,08% das seções), não sorteada; de 2022 não há boletins de terceiros.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/inv_r2_curva_publica.py",
+      "fase3/resultados/r2_curva_publica.json",
+      "fase3/externos/wayback_capturas/",
+      "testes/registro.json (T61)",
+      "operacao_veracidade/resultados/terceiros_qr.json"
+     ],
+     "numeros": "39 capturas (2022: 2 e 27; 2026: 6 e 4): diferença máxima de 0,083 ponto percentual entre a proporção divulgada e a recomposta pela base final no mesmo número de seções; mesmo líder em todas; votos nunca diminuem; a última captura é igual ao total oficial onde existe.",
+     "demonstra": "Que a base publicada depois corresponde ao que foi divulgado ao vivo, no agregado nacional e nos instantes capturados (contraria alteração posterior que mudasse esses totais).",
+     "nao_demonstra": "Correspondência seção a seção com fonte externa fora das 404 seções; o que aconteceu antes da geração do boletim; instantes não capturados.",
+     "robustez": "Custódia de terceiro (Internet Archive); escopo de busca fixado antes; capturas brutas guardadas com SHA-256.",
+     "causa": "não aplicável",
+     "alcance": "Totais nacionais de Presidente em 39 instantes; 404 seções do 2º turno de 2026.",
+     "mudaria": "Boletins impressos de uma amostra sorteada de seções; capturas por UF.",
+     "validacao": "Executado (R2, T61), com bloqueio parcial do Internet Archive registrado.",
+     "por_ano": {
+      "2022": "29 capturas consistentes; sem boletins de terceiros.",
+      "2026": "10 capturas consistentes; 404 de 404 boletins de terceiros iguais."
+     },
+     "reabertura": "",
+     "em_votos": "Nas 404 seções com boletim de terceiro, 0 voto de diferença. Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder."
+    },
+    {
+     "id": "Q7",
+     "pergunta": "Os testes conseguem detectar mecanismos plausíveis de alteração, e em quais condições falham?",
+     "resposta": "Detectam alguns, em condições limitadas: nos cenários simulados, trocas dispersas de ~123 mil votos e concentradas de ~62 mil em locais ou municípios de até ~5 mil seções foram detectadas no sentido certo; trocas de ~25 mil não foram detectadas; no município inteiro das 5 maiores cidades, a bateria original não detecta, mas o teste T44 (histórico de 2022 e perfil do 1º turno) detecta a partir de 2% dos válidos (31 mil a 139 mil votos). A grade adversarial do T63 (15 mecanismos, dois sentidos) mostra o resto do mapa: seções, locais, zonas e municípios são vistos a partir de 25 a 50 mil votos; UFs inteiras, os cinco grandes juntos, macrorregião, lote tardio, conversão de brancos e nulos, enchimento abaixo de 250 mil e deslocamento uniforme só a partir de 0,5 a 2,2 milhões, ou nunca; e o poder é assimétrico entre os sentidos.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/rev_i1_poder.py",
+      "fase3/rev_a2_poder.py",
+      "fase3/resultados/rev_a2_2026.json",
+      "fase3/resultados/rev_a2_2022.json",
+      "testes/registro.json (T63)",
+      "operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md"
+     ],
+     "numeros": "2026, 30 réplicas, limiar calibrado, falso alarme 0 em 30 (não é taxa zero: limite superior de 95% ≈ 11,6%); na grade do T63, a união dos detectores tem falso alarme medido de 4% a 14,5% conforme o ano e o sentido: dispersa 10% (~123 mil) 30/30; locais e municípios até ~5 mil seções a 5% (~62 mil) 30/30; região a 5% 26/30 e 23/30; 2% (~25 mil) 0 a 1/30; 5 maiores cidades a 10% (155 mil a 696 mil votos) 10 a 13/30 (E02 completo), Brasília e Fortaleza 0/12. T44: troca de 2% dos válidos no município inteiro detectável nas 5 cidades (4,0 a 5,2 desvios; falso alarme 3/200).",
+     "demonstra": "O alcance dos testes nos cenários simulados.",
+     "nao_demonstra": "Detecção fora dos cenários simulados; mecanismos que preservam medianas, mexem no comparecimento ou atuam antes do boletim; que a base real esteja limpa (o poder é medido sobre ela); votos simulados não são votos encontrados.",
+     "robustez": "Validação em 2022 com o mesmo padrão; direção conferida.",
+     "causa": "não aplicável",
+     "alcance": "4 mecanismos + grandes cidades (I1, A2); 15 mecanismos, 7 magnitudes e 2 sentidos (T63).",
+     "mudaria": "Novos mecanismos ou coberturas simulados.",
+     "validacao": "Executado (I1, A2).",
+     "por_ano": {
+      "2022": "Mesmo padrão; limiar ancorado no real com 23% de falso alarme.",
+      "2026": "Ver números."
+     },
+     "reabertura": "",
+     "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). No T63, UFs, região, lote e deslocamento uniforme passam sem alarme até ~0,5 a 2,2 mi votos, ou sempre (uniforme em logit). Inverter 2026 exigiria trocar ~2,22 mi votos de lado."
+    }
+   ]
+  },
+  {
+   "id": "curvas",
+   "titulo": "Curvas, viradas e periodicidade",
+   "perguntas": [
+    {
+     "id": "Q8",
+     "pergunta": "Quantas vezes a liderança mudou na ordem de recebimento dos boletins?",
+     "resposta": "Depois dos primeiros 10% de urnas: 2022, 1º turno 1 vez (aos 68,2%); 2022, 2º turno 1 vez (aos 67,6%, adversário → Lula); 2026, 1º turno nenhuma; 2026, 2º turno 2 vezes (aos 13,5%, Lula → adversário, e aos 47,2%, adversário → Lula).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/f3_curvas.py",
+      "fase3/resultados/E2_curvas.json"
+     ],
+     "numeros": "A contagem urna a urna (S1) registra 3 e 21 trocas em 2022 porque soma oscilações no ponto de cruzamento; em grade de 1% são 1 e 1.",
+     "demonstra": "O número de viradas na ordem de recebimento (reconstrução).",
+     "nao_demonstra": "Antes dos 10% das urnas; a ordem é de recebimento, não de divulgação (ver Q9).",
+     "robustez": "Grade de 0,5% e 2% como sensibilidade.",
+     "causa": "não aplicável",
+     "alcance": "Votos de Presidente, ordem por DT_BU_RECEBIDO.",
+     "mudaria": "—",
+     "validacao": "Executado (E2).",
+     "por_ano": {
+      "2022": "1 e 1.",
+      "2026": "0 e 2."
+     },
+     "reabertura": "",
+     "em_votos": "A ordem de apuração não muda nenhum voto: a mesma soma final em qualquer ordem. A virada do 2º turno de 2022 ocorreu com 67,6% das urnas; a de 2026, com 47,2%."
+    },
+    {
+     "id": "Q9",
+     "pergunta": "Quantas vezes a liderança mudou na sequência pública efetivamente divulgada?",
+     "resposta": "Nas capturas disponíveis: 2022, 1º turno pelo menos 1; 2022, 2º turno 1 (adversário até 18:22, com 49,53% para Lula; Lula a partir de 19:43); 2026, 1º turno 0; 2026, 2º turno pelo menos 2 (Lula às 19:36 com 50,55%, adversário às 20:07 com 49,56%, Lula às 21:25). A sequência capturada é amostrada: os números são limites inferiores entre capturas.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/resultados/r2_curva_publica.json",
+      "fase3/externos/wayback_capturas/"
+     ],
+     "numeros": "Capturas: 2022 1º turno 2; 2º turno 27; 2026 1º turno 6; 2º turno 4.",
+     "demonstra": "As viradas observadas na divulgação coincidem em sentido e momento com a reconstrução.",
+     "nao_demonstra": "Viradas entre capturas não observadas; 2022 1º turno e 2026 têm poucas capturas.",
+     "robustez": "Mesmo resultado por número de seções e por horário (defasagem de 0 minuto).",
+     "causa": "não aplicável",
+     "alcance": "Totais nacionais divulgados.",
+     "mudaria": "Mais capturas (por UF, outras janelas).",
+     "validacao": "Executado (R2).",
+     "por_ano": {
+      "2022": "1º turno ≥ 1; 2º turno 1.",
+      "2026": "1º turno 0; 2º turno ≥ 2."
+     },
+     "reabertura": "",
+     "em_votos": "Idem: a sequência divulgada é a soma parcial dos mesmos votos; 0 voto de diferença no total final."
+    },
+    {
+     "id": "Q10",
+     "pergunta": "Uma quantidade pequena de viradas é incomum sob modelos realistas de chegada dos boletins?",
+     "resposta": "Não determinado: nenhum dos cinco nulos de permutação é calibrado, e o modelo de chegada com as horas reais de emissão e atraso de transmissão sorteado (fila F4) não foi validado em 2022 (última troca e maior vale fora da faixa; 0 de 27 capturas na faixa). O número de trocas observado cabe no modelo nos quatro casos, mas isso não é confirmatório.",
+     "classificacao": "Não determinado com as evidências disponíveis",
+     "evidencias": [
+      "fase3/resultados/E2_curvas.json",
+      "fase3/resultados/E2b_curvas.json"
+     ],
+     "numeros": "Nulos: irrestrito, por UF, por município, UF × hora de encerramento, UF × hora × tamanho; 200 permutações cada.",
+     "demonstra": "—",
+     "nao_demonstra": "Que as viradas sejam comuns ou incomuns.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "—",
+     "mudaria": "Um modelo de chegada que reproduza 2022 e as capturas.",
+     "validacao": "Tentado (E2, E2b, F4); nenhum validado. Parado pelo critério.",
+     "por_ano": {},
+     "reabertura": "Construir modelo de chegada por lotes e validá-lo com as 27 capturas do 2º turno de 2022.",
+     "em_votos": "Não se traduz em votos: trata da ordem de chegada, não do total."
+    },
+    {
+     "id": "Q11",
+     "pergunta": "Os vales aparentemente periódicos e os trechos lineares são reproduzíveis com os dados brutos?",
+     "resposta": "A curva divulgada é reproduzível com os dados por seção nos 39 instantes capturados (diferença ≤ 0,083 pp); periodicidade não foi testada com estatística validada.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/resultados/r2_curva_publica.json",
+      "fase3/resultados/E2_curvas.json"
+     ],
+     "numeros": "S3 (maior vale), S4 (oscilações), S5 (maior trecho linear) calculados; sem nulo calibrado.",
+     "demonstra": "Que os pontos divulgados saem dos dados publicados por seção.",
+     "nao_demonstra": "Que vales ou trechos lineares sejam anômalos ou normais.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Curvas de 2022 e 2026.",
+     "mudaria": "Modelo de chegada validado; teste espectral pré-registrado.",
+     "validacao": "Parcial.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: forma da curva."
+    },
+    {
+     "id": "Q12",
+     "pergunta": "Os padrões continuam anômalos após controles por geografia, lotes, horários, arredondamento e dependência territorial?",
+     "resposta": "Não determinado: com controles por UF, município, hora de encerramento e tamanho, os nulos continuam rejeitando também em 2022, então não discriminam.",
+     "classificacao": "Não determinado com as evidências disponíveis",
+     "evidencias": [
+      "fase3/resultados/E2b_curvas.json"
+     ],
+     "numeros": "η² da ordem por UF × hora × tamanho: 0,36 (2026 1º turno).",
+     "demonstra": "—",
+     "nao_demonstra": "Anomalia ou normalidade da curva.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "—",
+     "mudaria": "Modelo de chegada validado (fila).",
+     "validacao": "Tentado.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: forma da curva."
+    },
+    {
+     "id": "Q13",
+     "pergunta": "2022 e 2026 apresentam semelhanças estatisticamente relevantes depois desses controles?",
+     "resposta": "Não determinado estatisticamente. Descritivamente: nos dois anos a última troca de liderança vem mais tarde do que nos modelos nulos e do que o modelo de atraso de transmissão prevê (2022 2º turno: 68% contra 39% a 42%; 2026 2º turno: 48% contra 30% a 34%); em 2026 a ordem de chegada é mais territorial (η² por UF 0,39 contra 0,24).",
+     "classificacao": "Não determinado com as evidências disponíveis",
+     "evidencias": [
+      "fase3/resultados/E2_curvas.json"
+     ],
+     "numeros": "—",
+     "demonstra": "Semelhanças descritivas.",
+     "nao_demonstra": "Semelhança estatística após controles.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "—",
+     "mudaria": "Depende de Q10.",
+     "validacao": "Parcial.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: comparação da forma das curvas."
+    },
+    {
+     "id": "Q14",
+     "pergunta": "Há divergência objetiva entre a sequência publicada e os registros históricos disponíveis?",
+     "resposta": "Não: nas 39 capturas históricas, a sequência divulgada é igual à recomposta pela base final (≤ 0,083 pp, mesmo líder, votos que nunca diminuem, total final igual).",
+     "classificacao": "Refutado no escopo definido (a hipótese de divergência)",
+     "evidencias": [
+      "fase3/resultados/r2_curva_publica.json"
+     ],
+     "numeros": "2022 2º turno: 27/27 consistentes; 2026 2º turno: 4/4; 2022 1º turno: 2/2; 2026 1º turno: 6/6.",
+     "demonstra": "Ausência de divergência nos instantes capturados (custódia independente).",
+     "nao_demonstra": "Instantes não capturados; divergência seção a seção que preserve o total nacional.",
+     "robustez": "Duas formas de comparação (por seções e por horário).",
+     "causa": "não aplicável",
+     "alcance": "Totais nacionais.",
+     "mudaria": "Captura histórica com valor incompatível.",
+     "validacao": "Executado (R2).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "0 voto de diferença entre a sequência divulgada e a base nas capturas finais."
+    }
+   ]
+  },
+  {
+   "id": "zeros",
+   "titulo": "Zeros de votos",
+   "perguntas": [
+    {
+     "id": "Q15",
+     "pergunta": "Quantas seções tiveram zero votos para Flávio Bolsonaro em cada turno de 2026?",
+     "resposta": "79 no 1º turno e 106 no 2º.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/E3_zeros.json"
+     ],
+     "numeros": "Universo: seções fora do exterior com votos válidos nos dois turnos (497.897). Comparação: Bolsonaro 2022, 160 e 141; Lula 2026, 8 e 4.",
+     "demonstra": "A contagem.",
+     "nao_demonstra": "—",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Seções do Brasil.",
+     "mudaria": "—",
+     "validacao": "Executado (E3).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Nas 79 seções do 1º turno, 9.542 votos foram para Lula; nas 106 do 2º turno, 14.860 (todos os válidos dessas seções). São 0,34% da margem de 2026."
+    },
+    {
+     "id": "Q16",
+     "pergunta": "Quantas tiveram comparecimento positivo e registros válidos?",
+     "resposta": "Todas: 79 e 106 com comparecimento positivo, e boletim, RDV, imagem e tabela consistentes entre si em todas.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/E3_zeros.json",
+      "fase3/resultados/bu1.json"
+     ],
+     "numeros": "Mediana de 102 e 124 votos válidos nessas seções (geral: 245 e 254); 62 e 67 municípios, concentradas em AM, PA, MA.",
+     "demonstra": "Que não são seções vazias nem erros de leitura.",
+     "nao_demonstra": "Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Seções do Brasil.",
+     "mudaria": "—",
+     "validacao": "Executado.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Os votos dessas seções conferem nos registros: 0 voto de diferença."
+    },
+    {
+     "id": "Q17",
+     "pergunta": "Como essas seções mudaram entre o primeiro e o segundo turno?",
+     "resposta": "Das seções com zero em algum turno: 50 com zero nos dois, 56 passaram de votos a zero e 29 de zero a votos.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/E3_zeros.json"
+     ],
+     "numeros": "2022 (Bolsonaro): 84 nos dois, 57 de votos a zero, 76 de zero a votos.",
+     "demonstra": "As transições.",
+     "nao_demonstra": "Por quê.",
+     "robustez": "—",
+     "causa": "não demonstrada",
+     "alcance": "Seções do Brasil.",
+     "mudaria": "—",
+     "validacao": "Executado.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: transições entre turnos."
+    },
+    {
+     "id": "Q18",
+     "pergunta": "O fenômeno é estatisticamente incomum depois de controlar tamanho, município, local e heterogeneidade?",
+     "resposta": "Não determinado: nenhum modelo de cauda baixa passou na calibração. O modelo do R3 (que previa 79,1 e 101,5 zeros contra 79 e 106) falhou o critério pré-registrado, então não sustenta nem excesso nem ausência de excesso; as três famílias novas do T64 também falham (por município, 1,3 zeros previstos contra 106; por local de votação, 66,7 contra 106). Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total.",
+     "classificacao": "Não determinado com as evidências disponíveis",
+     "evidencias": [
+      "fase3/inv_r3_zeros.py",
+      "fase3/resultados/r3_zeros.json",
+      "fase3/resultados/rev_i2.json",
+      "testes/registro.json (T41, T64)",
+      "operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md"
+     ],
+     "numeros": "Intervalos de predição: [63, 98] e [88, 115]. Falhas do critério: teste de Hosmer–Lemeshow rejeita desvios mínimos nos controles grandes (dezenas de milhares de seções), razões por decil de 1,25 a 1,27 (limite 1,25) e controles de Lula com 1 a 8 zeros. O modelo anterior (I2) também falhou.",
+     "demonstra": "Só a descrição: onde estão e que os registros conferem.",
+     "nao_demonstra": "Excesso ou ausência de excesso (nenhum modelo calibrou); ausência de excesso em seções específicas.",
+     "robustez": "Sensibilidade sem a covariável do 1º turno: mesmo resultado.",
+     "causa": "não demonstrada",
+     "alcance": "Seções do Brasil; Flávio 2026.",
+     "mudaria": "Modelo que passe em critério de calibração adequado a controles grandes e pequenos.",
+     "validacao": "Executado (R3); validação formal falhou.",
+     "por_ano": {},
+     "reabertura": "Refazer o critério de calibração (controles com esperado ≥ 20; tolerância por decil adequada a n grande) antes de nova tentativa.",
+     "em_votos": "Se os zeros fossem anomalia, os votos em jogo seriam os que o candidato teria nessas seções: de ~44 a ~4.800 votos conforme o modelo (2026, 2º turno), no máximo 0,11% da margem de 4,43 mi."
+    },
+    {
+     "id": "Q19",
+     "pergunta": "O mesmo método identifica padrões semelhantes em 2022?",
+     "resposta": "Sim, com o mesmo resultado: não determinado. Bolsonaro 2022 teve 160 e 141 zeros; o modelo do R3 previa 162,9 e 136,5, mas falhou o mesmo critério formal, e no T64 o modelo por município prevê 4,3 contra 141 e o por local, 63,3 contra 141, ambos reprovados. Descritivamente, os zeros de 2022 também são locais de uma só seção, com menos de 1% do total.",
+     "classificacao": "Não determinado com as evidências disponíveis",
+     "evidencias": [
+      "fase3/resultados/r3_zeros.json",
+      "testes/registro.json (T64)"
+     ],
+     "numeros": "Intervalos do R3: [140, 187] e [118, 153] (modelo reprovado).",
+     "demonstra": "Que 2026 e 2022 têm a mesma descrição e a mesma falha dos modelos.",
+     "nao_demonstra": "Excesso ou normalidade (nenhum modelo calibrou).",
+     "robustez": "—",
+     "causa": "não demonstrada",
+     "alcance": "Bolsonaro 2022.",
+     "mudaria": "Ver Q18.",
+     "validacao": "Executado (R3).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "2022: de ~66 a ~4.300 votos esperados para Bolsonaro nessas seções, no máximo 0,2% da margem de 2,14 mi."
+    },
+    {
+     "id": "Q20",
+     "pergunta": "Existem divergências objetivas nos boletins ou apenas resultados numéricos extremos?",
+     "resposta": "Apenas resultados numéricos extremos: 0 divergências de votos entre boletim, RDV, imagem e tabela nas 486 seções-turno com zero votos para um finalista.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/E3_zeros.json",
+      "fase3/resultados/bu1.json"
+     ],
+     "numeros": "2026: 185; 2022: 301 (incluindo a seção do Sistema de Apuração verificada no BU1).",
+     "demonstra": "Ausência de divergência documental nessas seções.",
+     "nao_demonstra": "Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Seções com zero.",
+     "mudaria": "Boletim impresso de terceiro diferente.",
+     "validacao": "Executado.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "0 voto de diferença nos registros dessas seções."
+    }
+   ]
+  },
+  {
+   "id": "turnos",
+   "titulo": "Mudança entre o primeiro e o segundo turno",
+   "perguntas": [
+    {
+     "id": "Q21",
+     "pergunta": "Quantos votos cada finalista ganhou ou perdeu entre os turnos?",
+     "resposta": "2022: Lula +3.086.495, Bolsonaro +7.134.009. 2026: Lula +10.376.694, Flávio +3.721.538 (base por seção, com exterior).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/entre_turnos_contas.json"
+     ],
+     "numeros": "1º → 2º turno, 2022: Lula 57.259.504 → 60.345.999; Bolsonaro 51.072.345 → 58.206.354. 2026: Lula 53.879.538 → 64.256.232; Flávio 56.104.503 → 59.826.041.",
+     "demonstra": "As variações.",
+     "nao_demonstra": "Quem mudou de voto.",
+     "robustez": "Soma das urnas = total oficial (T32).",
+     "causa": "não aplicável",
+     "alcance": "Brasil e exterior.",
+     "mudaria": "—",
+     "validacao": "Executado.",
+     "por_ano": {
+      "2022": "Lula +3,09 mi; Bolsonaro +7,13 mi.",
+      "2026": "Lula +10,38 mi; Flávio +3,72 mi."
+     },
+     "reabertura": "",
+     "em_votos": "2022: Lula +3,09 mi, Bolsonaro +7,13 mi. 2026: Lula +10,38 mi, Flávio +3,72 mi."
+    },
+    {
+     "id": "Q22",
+     "pergunta": "Quanto da mudança corresponde a comparecimento, votos dos eliminados, brancos e nulos?",
+     "resposta": "Toda a mudança fecha exatamente: ganho dos finalistas = votos dos eliminados no 1º turno + variação do comparecimento − variação de brancos e nulos.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/entre_turnos_contas.json"
+     ],
+     "numeros": "2022: 10.220.504 = 9.897.870 + 570.424 − 247.790. 2026: 14.098.232 = 9.321.993 + 2.960.239 + 1.816.000 (brancos e nulos caíram 1,82 mi).",
+     "demonstra": "A identidade contábil.",
+     "nao_demonstra": "A divisão dos eliminados entre os finalistas (ver Q24).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Totais.",
+     "mudaria": "—",
+     "validacao": "Executado.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "2026: os finalistas somaram +14,10 mi = 9,32 mi dos eliminados + 2,96 mi de comparecimento + 1,82 mi de brancos e nulos a menos. 2022: +10,22 mi = 9,90 mi + 0,57 mi − 0,25 mi."
+    },
+    {
+     "id": "Q23",
+     "pergunta": "Existem diferenças impossíveis de reconciliar com os totais oficiais?",
+     "resposta": "Não: as contas fecham nacionalmente e nenhuma seção tem mais votos que comparecimento ou mais comparecimento que aptos.",
+     "classificacao": "Refutado no escopo definido (a hipótese de diferença impossível)",
+     "evidencias": [
+      "fase3/resultados/entre_turnos_contas.json",
+      "testes/registro.json (T32)"
+     ],
+     "numeros": "0 seções inconsistentes; 638/638 itens iguais ao total oficial.",
+     "demonstra": "Ausência de impossibilidade contábil.",
+     "nao_demonstra": "Que os números reflitam os votos dados (ver integridade).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Todas as seções.",
+     "mudaria": "Seção com contagem impossível.",
+     "validacao": "Executado.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "0 voto inconsistente: nenhuma seção com mais votos que comparecimento."
+    },
+    {
+     "id": "Q24",
+     "pergunta": "Quais fluxos entre escolhas são matematicamente possíveis?",
+     "resposta": "Um intervalo amplo: os dados agregados admitem desde fluxos quase nulos até milhões de votos em cada direção; só limites, não um fluxo.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase2/resultados/P13.json",
+      "fase2/resultados/P15.json",
+      "fase2/sessao_limitada_2026-10-28/p1_resultado_principal.json"
+     ],
+     "numeros": "2026: trocas diretas entre finalistas com mínimo garantido de 79 (Flávio → Lula) e 123 (Lula → Flávio) votos e máximos de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi (Fréchet). O estimador C06 dá razão ~4:1 entre abstencionistas, frágil (1,7 a 11,8 sob heterogeneidade).",
+     "demonstra": "Os limites matemáticos.",
+     "nao_demonstra": "Qual fluxo ocorreu.",
+     "robustez": "Sensibilidade do C06 sob heterogeneidade sintética.",
+     "causa": "não aplicável",
+     "alcance": "Seções do Brasil.",
+     "mudaria": "—",
+     "validacao": "Executado (F2).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Trocas diretas entre finalistas em 2026: mínimo garantido de 79 e 123 votos, máximo de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi. A razão do C06 erra de ±0,5 a ±1,5 mi votos."
+    },
+    {
+     "id": "Q25",
+     "pergunta": "O padrão territorial de crescimento apresenta desvios persistentes após controles?",
+     "resposta": "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44), a única entre as 27 capitais e não explicada pelo perfil do eleitorado; Fortaleza tem desvio de tamanho parecido no sentido oposto.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase2/resultados/P17.json",
+      "fase3/resultados/rev_i3.json",
+      "fase3/resultados/p19.json",
+      "fase3/inv_r4_zona251.py",
+      "fase3/resultados/r4_zona251.json",
+      "fase3/teste_grandes_cidades.py",
+      "fase3/resultados/teste_grandes_cidades.json"
+     ],
+     "numeros": "Zona 251: desvio de 0,58 z cai para 0,42 (IC 95% 0,23 a 0,62; 26% explicado) com escolaridade, idade, sexo e estado civil; sensibilidade 0,37 (36%). Zona 259: explicado em parte. Moran's I 0,16 a 0,20. Locais: 61 (2026) e 84 (2022) contra o entorno.",
+     "demonstra": "Que há desvios territoriais persistentes, inclusive na zona 251 depois do perfil.",
+     "nao_demonstra": "A causa; que sejam irregularidades.",
+     "robustez": "R² do perfil 0,02; sensibilidade com todas as zonas.",
+     "causa": "não demonstrada",
+     "alcance": "Brasil; SP capital para a zona 251.",
+     "mudaria": "Covariáveis de campanha, renda, migração; dados externos da zona.",
+     "validacao": "Executado (R4, I3, P17, P19).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos."
+    },
+    {
+     "id": "Q26",
+     "pergunta": "É possível demonstrar transferência individual entre candidatos com os dados existentes?",
+     "resposta": "Não. Com dados agregados e voto secreto, transferências individuais não são identificáveis; só os limites de Q24.",
+     "classificacao": "Demonstrado no escopo definido (a impossibilidade)",
+     "evidencias": [
+      "fase2/resultados/P15.json"
+     ],
+     "numeros": "Limites de Fréchet: razão entre abstencionistas de ~0 a 1,7 mi.",
+     "demonstra": "A não identificabilidade com estes dados.",
+     "nao_demonstra": "—",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "—",
+     "mudaria": "Só dados individuais (inexistentes por sigilo).",
+     "validacao": "Encerrada no escopo.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: limite de identificabilidade (os limites estão na Q24)."
+    }
+   ]
+  },
+  {
+   "id": "alegacoes",
+   "titulo": "Alegações públicas testadas",
+   "perguntas": [
+    {
+     "id": "Q27",
+     "pergunta": "A live de 4/11/2022 dizia que urnas anteriores a 2020 deram mais votos a Lula. Isso é verdade?",
+     "resposta": "A diferença existe, mas é de lugar, não de urna: no 1º turno de 2022 Lula teve 50,3% nas antigas e 46,0% nas UE2020, e a diferença persiste dentro do município; comparando urnas do mesmo local de votação, ela some (equivalente a zero em ±0,02 logit nos dois turnos).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_LIVE_2022.md",
+      "fase3/live_2022.py",
+      "fase3/resultados/live_2022.json",
+      "docs/pesquisas/2026-10-28_live_cerimedo_2022.md"
+     ],
+     "numeros": "Conta da live (eleitorado < 77 mil): 54,5% × 52,3%, antigas maiores em 18 de 23 UFs. Dentro do município: +0,031 × −0,035 logit (fora da margem). Dentro do local: +0,008 [−0,002; 0,017] × −0,008. Calibração por permutação 0% fora; fraude sintética de 1% detectada.",
+     "demonstra": "Que o modelo de urna não muda o voto quando se compara o mesmo lugar.",
+     "nao_demonstra": "A causa da distribuição desigual dos modelos.",
+     "robustez": "Calibração e poder medidos; placebo de 2018 não rodado.",
+     "causa": "verificável: localização",
+     "alcance": "2022, Brasil.",
+     "mudaria": "Diferença persistente dentro do local de votação.",
+     "validacao": "T47 (pré-registrado, emenda 7); P5/T20.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Dentro do local: ~600 votos (1º turno) e ~440 (2º), contra margem de 2,14 mi (2022)."
+    },
+    {
+     "id": "Q28",
+     "pergunta": "O log das urnas antigas não identifica a urna, como alegou o PL em 2022?",
+     "resposta": "O bug existe: nas 279.291 seções com urnas UE2009 a UE2015 o campo de identificação do log traz o valor fixo 67305985. Mas o log se liga ao boletim e ao RDV pela assinatura da urna e pelo número do certificado em 279.285 delas; as 6 restantes são trocas de urna e arquivos faltantes já catalogados. Em 2026 o bug não aparece.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_LIVE_2022.md",
+      "fase3/live_2022.py",
+      "fase3/resultados/live_2022.json",
+      "docs/pesquisas/2026-10-28_live_cerimedo_2022.md"
+     ],
+     "numeros": "2º turno de 2022: 279.291 com ID fixo; 279.285 com assinaturas válidas, certificado = urna efetivada e BU = RDV = tabela. 2026: 0 com ID fixo.",
+     "demonstra": "Que o log se liga ao BU apesar do bug.",
+     "nao_demonstra": "Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado.",
+     "robustez": "Correção única de artefato do comparador (ausente = 0).",
+     "causa": "não aplicável",
+     "alcance": "2022 e 2026, dois turnos.",
+     "mudaria": "Seção com ID fixo sem ligação e sem explicação.",
+     "validacao": "T45 (emenda 7).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "As 6 seções sem ligação completa somam menos de 2 mil votos."
+    },
+    {
+     "id": "Q29",
+     "pergunta": "Contando só as urnas UE2020, Bolsonaro teria vencido 2022 com 51,05%?",
+     "resposta": "A conta está certa (51,0508%), mas mede o voto das cidades que tinham UE2020, não o efeito do modelo: 220 mil seções com urnas antigas estavam em municípios sem nenhuma UE2020. Comparando dentro do mesmo município, Lula continua vencendo (Bolsonaro 49,25%).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_LIVE_2022.md",
+      "fase3/live_2022.py",
+      "fase3/resultados/live_2022.json",
+      "docs/pesquisas/2026-10-28_live_cerimedo_2022.md"
+     ],
+     "numeros": "Só UE2020: Bolsonaro 26.189.721 × Lula 25.111.550. Contrafactual em 311 municípios com os dois grupos.",
+     "demonstra": "Que o 51,05% é efeito de seleção geográfica.",
+     "nao_demonstra": "O voto de quem não votou em UE2020.",
+     "robustez": "—",
+     "causa": "verificável: localização",
+     "alcance": "2º turno de 2022.",
+     "mudaria": "Contrafactual dentro do município invertendo o resultado.",
+     "validacao": "T46 (emenda 7).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Contrafactual dentro do município: −179 mil votos de Lula, menos que metade da margem de 2022 (1,07 mi)."
+    },
+    {
+     "id": "Q30",
+     "pergunta": "Em 2022 havia dois softwares diferentes ou unanimidades ligadas ao modelo de urna?",
+     "resposta": "Não: a mesma versão 8.26.0.0 em todas as seções de todos os modelos; as seções 100% de um candidato aparecem em cada modelo na proporção da sua presença nos mesmos municípios.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_LIVE_2022.md",
+      "fase3/live_2022.py",
+      "fase3/resultados/live_2022.json",
+      "docs/pesquisas/2026-10-28_live_cerimedo_2022.md"
+     ],
+     "numeros": "141 seções 100% Lula no 2º turno (16.418 votos), 4 de Bolsonaro; UE2015 49 × 40,7 esperadas, UE2010 37 × 39,0, UE2020 11 × 13,0. 1 seção (SC) com versão antiga a mais no log.",
+     "demonstra": "Software único segundo o log; unanimidade sem relação com modelo.",
+     "nao_demonstra": "Versão lida do próprio log (compatível com o registro).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "2022.",
+     "mudaria": "Versão diferente por modelo.",
+     "validacao": "T48 (emenda 7).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Unânimes de Lula: 16.418 votos (0,8% da margem de 2022)."
+    },
+    {
+     "id": "Q31",
+     "pergunta": "Flávio teve zero voto em 106 urnas no 2º turno de 2026. Isso é anormal?",
+     "resposta": "O número está certo (106 seções, 14.860 votos de Lula), e não há sinal de ruptura nem de erro de registro: em 2022 foram 141 seções com Bolsonaro zerado; são aldeias e comunidades do Norte e do Nordeste que já votavam quase só em Lula em 2022 (nenhuma com Bolsonaro acima de 11%) e no 1º turno; os 106 boletins conferem com o RDV e têm assinaturas válidas. Se o número é estatisticamente excepcional não foi determinado: nenhum modelo de cauda baixa calibrou (Q18, T64).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_ZEROS_FLAVIO.md",
+      "fase3/zeros_flavio.py",
+      "fase3/resultados/zeros_flavio.json"
+     ],
+     "numeros": "Norte 65, Nordeste 29, Centro-Oeste 6, Sudeste 3, Sul 3; 23 também zeradas em 2022; 50 com Flávio zerado no 1º turno. 211 municípios viraram para Lula; em 2022, 251 viraram para Bolsonaro. O '644 mil' no Rio não se reproduz (cidade: Lula +113 mil).",
+     "demonstra": "Continuidade e integridade das seções.",
+     "nao_demonstra": "Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado.",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "2º turno de 2026 e 2022.",
+     "mudaria": "Seção zerada sem histórico ou com divergência de arquivo.",
+     "validacao": "T49 (emenda 8); Q15, Q20.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "14.860 votos (0,34% da margem de 2026)."
+    },
+    {
+     "id": "Q32",
+     "pergunta": "O voto de Lula ficou mais concentrado em seções de mais de 80%?",
+     "resposta": "Não, ficou menos: 35.591 seções com Lula acima de 80% em 2026, contra 40.046 em 2022; o saldo vindo dessas seções caiu de 6,19 mi para 5,56 mi. Os números da thread que levantou a pergunta se reproduzem.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_THREAD_CONCENTRACAO.md",
+      "fase3/thread_concentracao.py",
+      "fase3/resultados/thread_concentracao.json"
+     ],
+     "numeros": "95,6% delas no Norte e Nordeste; 82% já acima de 80% em 2022; Lula venceu 250.108 seções, +19,28 mi; Flávio +14,88 mi; saldo 4,40 mi (4,43 mi com exterior).",
+     "demonstra": "As contagens.",
+     "nao_demonstra": "Fraude ou ausência dela (descritivo).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "2º turno, 2022 e 2026.",
+     "mudaria": "—",
+     "validacao": "T50 (emenda 9).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Descritivo; não se traduz em votos suspeitos."
+    },
+    {
+     "id": "Q33",
+     "pergunta": "Lula cresceu mais que Flávio em 93% dos municípios e em todos os estados. Isso é estatisticamente impossível?",
+     "resposta": "Não: em 2022 Bolsonaro cresceu mais que Lula em 87,1% dos municípios e no agregado das 27 UFs; em proporção, 2022 foi até mais uniforme (98,0% dos municípios contra 97,1%). Crescimento quase universal do candidato que avança é o padrão do 2º turno. Em 2026 o candidato de trás precisava de 1,02 ponto e cresceu 2,80; em 2022 precisava de 2,85 e cresceu 1,95.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_CRESCIMENTO_ENTRE_TURNOS.md",
+      "fase3/crescimento_turnos.py",
+      "fase3/resultados/crescimento_turnos.json"
+     ],
+     "numeros": "2026: 5.228 de 5.571 municípios. 2022: 4.849 de 5.570 (Ceará é a única UF em que a maioria dos municípios foi para Lula).",
+     "demonstra": "Que a uniformidade se repete em 2022.",
+     "nao_demonstra": "Anos anteriores a 2022 (sem dados no projeto).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "2022 e 2026.",
+     "mudaria": "Uniformidade só em 2026.",
+     "validacao": "T51 (emenda 10); Q21, Q22.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Descritivo; não se traduz em votos suspeitos."
+    },
+    {
+     "id": "Q34",
+     "pergunta": "Os boletins ficaram parados duas horas antes de chegar ao TSE no 2º turno de 2026?",
+     "resposta": "Sim: o recebimento parou às 17:07 e voltou às 19:03 (116 minutos), só em 2026; voltou junto com o fechamento das urnas prorrogadas (99% fecharam até 19:10). Isso não muda votos: o boletim é assinado pela urna na emissão (mediana 17:03) e confere com a tabela e o RDV. A causa administrativa da pausa não está nos dados.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/PREREG_POSTS_ARVOR.md",
+      "fase3/posts_arvor.py",
+      "fase3/resultados/posts_arvor.json"
+     ],
+     "numeros": "2026: recebimento mediano 20:26 (2022: 18:26); 1.092 BUs antes das 19h (0,22%); 7.604 urnas prorrogadas; 34.327 votos depois das 17h (2022: 41.025).",
+     "demonstra": "O vazio e a coincidência com o fim da prorrogação.",
+     "nao_demonstra": "Quem decidiu a pausa e por quê.",
+     "robustez": "Fuso de cada campo decidido pelos dados.",
+     "causa": "compatível com suspensão durante a prorrogação",
+     "alcance": "2º turno, Brasil.",
+     "mudaria": "Documento do TSE sobre a recepção; BU recebido diferente do emitido.",
+     "validacao": "T52 (emenda 11); T09, T16, Q1.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "34.327 votos depois das 17h (0,8% da margem); a pausa não altera votos."
+    },
+    {
+     "id": "Q35",
+     "pergunta": "Há fortes evidências de votos sem biometria em 2026?",
+     "resposta": "Não no agregado: a liberação pelo código do mesário caiu de 8,1% (2022) para 6,8% (2026), e dentro do município, onde ela foi maior, Lula virou um pouco menos (correlação −0,058; em 2022, +0,056). Com o perfil do eleitorado o efeito é nulo (T12). Há 8 urnas com rajada sem biometria no fim do dia (99 votos), padrão também presente em 2022 (T28/P10).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_POSTS_ARVOR.md",
+      "fase3/posts_arvor.py",
+      "fase3/resultados/posts_arvor.json",
+      "fase2/resultados/P10.json"
+     ],
+     "numeros": "Biometria 87,6% em 2026 contra 75,9% em 2022; 8,63 mi liberações pelo mesário contra 10,01 mi.",
+     "demonstra": "Que a liberação sem biometria não favorece Lula no agregado.",
+     "nao_demonstra": "Quem foi cada eleitor liberado (só ata e caderno).",
+     "robustez": "T12 com perfil; T28 com 2022.",
+     "causa": "não aplicável",
+     "alcance": "2º turno, 2022 e 2026.",
+     "mudaria": "Relação positiva e forte com a virada depois do perfil.",
+     "validacao": "T53 (emenda 11); T12, T28, P10.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Sem votos suspeitos no agregado; rajadas do T28: 99 votos."
+    },
+    {
+     "id": "Q36",
+     "pergunta": "Flávio teve menos votos no 2º turno do que no 1º em 938 municípios. Isso é anormal?",
+     "resposta": "Não: em 2022 aconteceu o espelho, de tamanho parecido; Lula perdeu votos em 981 municípios (114.916 votos) enquanto Bolsonaro ganhava 236.690 neles. O candidato que perde fôlego no 2º turno perde votos em cerca de mil municípios.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_POSTS_ARVOR.md",
+      "fase3/posts_arvor.py",
+      "fase3/resultados/posts_arvor.json"
+     ],
+     "numeros": "2026: 937 municípios, 133.852 votos, 13,40 mi de aptos; Lula +486.832 neles; comparecimento caiu em 727. Lula perdeu em 79 (16.115).",
+     "demonstra": "Que o padrão se repete em 2022.",
+     "nao_demonstra": "Quem trocou de voto (Q26).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "2022 e 2026.",
+     "mudaria": "Padrão só em 2026.",
+     "validacao": "T54 (emenda 11); Q22, Q24.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "133.852 votos perdidos por Flávio (3% da margem), contra 114.916 de Lula em 2022."
+    },
+    {
+     "id": "Q37",
+     "pergunta": "E o grupo atípico do algoritmo de mistura gaussiana, a totalização paralela e as pesquisas?",
+     "resposta": "O grupo atípico (10.850 seções) não foi reproduzido aqui, mas o próprio dossiê que o criou mede que a fatia de Flávio nele não mudou (−0,05 ponto, IC −0,19 a +0,07) e que ele não se liga a região nem a modelo; nossos testes de locais atípicos (E02/I3) acham ~0,1% de locais sem causa demonstrada. A totalização paralela tem 286 boletins iguais ao TSE, como os nossos 0 de diferença; a amostra é de voluntários e o placar dela não estima nada. Pesquisas ficam fora do escopo (não são dado oficial).",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/PREREG_POSTS_ARVOR.md",
+      "fase2/resultados/P17.json",
+      "fase3/resultados/rev_i3.json"
+     ],
+     "numeros": "Grupo atípico: 2,18% das seções, V de Cramér 0,044 (região) e 0,012 (modelo), segundo o autor.",
+     "demonstra": "Que nenhuma das três alegações aponta divergência nos dados.",
+     "nao_demonstra": "O modelo de mistura do autor (não rodado aqui).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "2º turno de 2026.",
+     "mudaria": "Grupo com deslocamento de voto fora do intervalo; boletim de terceiro diferente.",
+     "validacao": "Respondida com testes existentes (E02, I3, Q1, T39).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q38",
+     "pergunta": "Cabo Frio, onde Lula ganhou 50 votos para cada 1 de Flávio no 2º turno, é estatisticamente impossível?",
+     "resposta": "Não. Os números estão certos (Lula +9.169, Flávio +342), mas cabem exatamente nos votos que estavam disponíveis: 8.822 dos candidatos eliminados no 1º turno mais 1.229 de brancos e nulos a menos, menos 540 de comparecimento (9.511). Lula ficou com 96% disso; 11% dos municípios do país tiveram fração igual ou maior. Em 2022 houve 28 municípios fortemente de Lula em que Bolsonaro levou mais de 90% do ganho.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_CABO_FRIO.md",
+      "fase3/cabo_frio.py",
+      "fase3/resultados/cabo_frio.json"
+     ],
+     "numeros": "Nenhum dos 5.571 municípios ganhou mais que o disponível. Campos: Lula +24.822, Flávio −1.389 (percentil 95). São Gonçalo: +45.217 × +8.156. Santana de Parnaíba: +9.244 × +4.825. 4.044 de 4.044 seções dessas cidades com arquivos íntegros.",
+     "demonstra": "Que o resultado é aritmeticamente possível e não é único.",
+     "nao_demonstra": "Quem eram os eleitores dos eliminados (Q26).",
+     "robustez": "—",
+     "causa": "não aplicável",
+     "alcance": "Municípios, 2022 e 2026.",
+     "mudaria": "Ganho acima do disponível ou divergência de arquivo.",
+     "validacao": "T55 (emenda 12); Q22, Q26.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Cabo Frio: 9.169 votos ganhos por Lula (0,2% da margem), todos cobertos pelos 9.511 disponíveis."
+    },
+    {
+     "id": "Q39",
+     "pergunta": "Os brancos e nulos do 1º turno foram quase todos para Lula em 2026? Isso é uma anomalia?",
+     "resposta": "Não é anomalia, e a maior parte tem causa medida. O estimador de fluxos aponta essa direção (cerca de 62% para Lula), mas a leitura do número digitado em cada nulo (Q40) mostra o mecanismo: no 1º turno de 2026, onde Lula é forte, sobrou nulo de presidente porque muita gente digitou o número do governador no campo de presidente (erro de campo); no 2º turno, sem governador na maioria dos estados, essas pessoas votaram normalmente. E em 2022 metade do eleitorado tinha 2º turno de governador, que gera esse mesmo erro, contra 8% em 2026. Sobra uma queda pequena e uniforme (~0,6 ponto). A magnitude dos fluxos estimados deve ser lida só como direção (Q41).",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/resultados/brancos_nulos.json",
+      "fase3/resultados/nulos_governador.json",
+      "fase3/resultados/rdv_nulos_analise.json"
+     ],
+     "numeros": "Totais: 2022, 5.452.653 → 5.700.443; 2026, 5.969.801 → 4.153.801. Nulos com número de governador no 1º turno: 697.773 (2026) × 422.104 (2022); excesso por quintil de Lula só nessa classe (+0,08 a +0,45 ponto). 2º turno com governador: 1,18 ponto (2026) e 0,97 (2022) dos votos.",
+     "demonstra": "O mecanismo (erro de campo) e a composição de UFs com governador.",
+     "nao_demonstra": "Em quem a pessoa queria votar.",
+     "robustez": "Leitura de todos os RDVs, conferida voto a voto com o leitor original.",
+     "causa": "verificável: erro de campo e 2º turno de governador",
+     "alcance": "Brasil, 2022 e 2026.",
+     "mudaria": "Resíduo concentrado onde Lula é forte depois do erro de campo.",
+     "validacao": "T56, T57, T58 (emendas 13 a 15); C06, Q22, Q26.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Queda de brancos e nulos de 1,82 mi entre os turnos de 2026, explicada em grande parte por erro de campo (número de governador no campo de presidente) e por haver menos 2º turno de governador; resto uniforme."
+    },
+    {
+     "id": "Q40",
+     "pergunta": "O que os eleitores digitaram nos votos nulos para presidente?",
+     "resposta": "Mais da metade digitou '00'. Uma parte grande digitou o número de um candidato a governador do próprio estado: 698 mil no 1º turno de 2026 (422 mil em 2022). No 2º turno, onde havia governador, cerca de 1 em cada 100 eleitores fez isso, o que explica todo o excesso de nulos desses estados. No 2º turno de 2026, 246 mil digitaram o número de um candidato a presidente já eliminado, 143 mil deles o 14 do Renan.",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_RDV_NULOS.md",
+      "fase3/rdv_nulos.py",
+      "fase3/rdv_nulos_analise.py",
+      "fase3/resultados/rdv_nulos_analise.json"
+     ],
+     "numeros": "Nulos de presidente: 2022, 3,49 mi e 3,93 mi; 2026, 3,67 mi e 2,72 mi. Mais digitados no 1º turno de 2026: 00, 10, 15, 11, 12; no 2º: 00, 11, 14, 12, 99.",
+     "demonstra": "Os números digitados, voto a voto, conferidos com a contagem dos boletins.",
+     "nao_demonstra": "A intenção do eleitor.",
+     "robustez": "0 diferenças contra o leitor original nos 4 conjuntos.",
+     "causa": "não aplicável",
+     "alcance": "Todas as seções, 2022 e 2026.",
+     "mudaria": "—",
+     "validacao": "T58 (emenda 15).",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "698 mil nulos com número de governador no 1º turno de 2026; 143 mil digitando 14 no 2º turno."
+    },
+    {
+     "id": "Q41",
+     "pergunta": "O estimador de fluxos de votos (para onde foi cada eleitor) acerta quando a origem é conhecida?",
+     "resposta": "Em parte. Quem digitou 14 no 2º turno de 2026 quase certamente votou no Renan no 1º; o estimador atribui 90% desses votos ao Renan, e 69% dos que digitaram 70 ao Cury. Mas erra outros casos (55 em 2026; 12 e 15 em 2022). Pela regra fixada antes, os números de fluxo (por exemplo, '62% dos brancos e nulos para Lula') valem só como direção, não como tamanho.",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "fase3/PREREG_RDV_NULOS.md",
+      "fase3/resultados/rdv_nulos_analise.json",
+      "analise/resultado_comportamento_2026.json"
+     ],
+     "numeros": "Fração atribuída à origem certa: 14 → 90% (22 de 27 UFs), 70 → 69% (15), 55 → 20%, 12 → 9%, 15 → 13%.",
+     "demonstra": "O desempenho do estimador com dado real.",
+     "nao_demonstra": "Qual fluxo ocorreu (Q26).",
+     "robustez": "Mesma implementação do C06; destinos com número também de governador são menos limpos.",
+     "causa": "não aplicável",
+     "alcance": "2º turno, 2022 e 2026.",
+     "mudaria": "Calibração com destinos mais limpos.",
+     "validacao": "T59 (emenda 15); C06, T37, Q24.",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos; muda a leitura das magnitudes de fluxo."
+    }
+   ]
+  },
+  {
+   "id": "operacao",
+   "titulo": "Operação Veracidade: os dados são fiéis ao que aconteceu?",
+   "perguntas": [
+    {
+     "id": "Q42",
+     "pergunta": "A conta dos \"votos extras\" (98,12%) mostra que o crescimento de Lula entre os turnos não fecha?",
+     "resposta": "Não. A aritmética do vídeo está certa, mas o 98% é a premissa de 60% devolvida: é o mínimo possível para a parcela dos outros que vai a Lula e deixa Flávio sem nenhum voto dos extras. Com 85% dos outros indo a Lula, os extras se dividem 51/49. O mesmo método dá 370% para Bolsonaro em 2022. O que é real: o candidato que mais cresceu recebeu mais que a divisão proporcional nos dois anos, em todas as UFs, e em 2026 mais (26,2% do disponível contra 19,6%). (no relatório da operação: N9)",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "operacao_veracidade/scripts/hipotese_video.py",
+      "operacao_veracidade/scripts/hipotese_video_m6.py",
+      "operacao_veracidade/resultados/hipotese_video.json",
+      "operacao_veracidade/resultados/hipotese_video_m6.json",
+      "operacao_veracidade/10_HIPOTESE_DO_VIDEO.md"
+     ],
+     "numeros": "totais nacionais com exterior (identidade exata) e 5.570 municípios sem exterior, 2022 e 2026",
+     "demonstra": "Que o 98,12% decorre da premissa; que os extras não precisam ter ido todos a Lula; que o método não discrimina (2022: 370%); que a abstenção também caiu em 2022.",
+     "nao_demonstra": "Para onde foi cada eleitor (Q26); causa do resíduo de 3,68 mi acima do proporcional; a afirmação 'nunca aconteceu' para anos anteriores a 2022 (sem dados no projeto).",
+     "robustez": "identidade exata (diferença 0); regressão ecológica com bootstrap de municípios; controle proporcional (M6) declarado como exploratório",
+     "causa": "—",
+     "alcance": "totais nacionais com exterior (identidade exata) e 5.570 municípios sem exterior, 2022 e 2026",
+     "mudaria": "Pesquisa de painel 1º→2º turno ou dado individual (inexistente por sigilo)",
+     "validacao": "Aritmética exata sobre totais do TSE; ecológica (associação, frágil: T37 e T59)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Resíduo acima do proporcional: +3,68 mi para Lula em 2026 (26,2% do disponível) e +1,99 mi para Bolsonaro em 2022 (19,6%); não é limite de fraude nem evidência dela."
+    },
+    {
+     "id": "Q43",
+     "pergunta": "Os certificados de todas as urnas de 2022 e 2026 verificam até a AC emissora, estavam válidos no dia da eleição e são únicos?",
+     "resposta": "Sim: nos 1.942.246 pares seção × turno (2022 e 2026, dois turnos) a assinatura da AC emissora verifica, 0 falhas, todos válidos no dia, nenhum emitido depois da eleição, nenhuma chave pública repetida. A raiz não é pública. (no relatório da operação: N1)",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "operacao_veracidade/scripts/cert_extrai.py",
+      "operacao_veracidade/resultados/cert_analise.json",
+      "operacao_veracidade/resultados/certs_2026_1t.parquet",
+      "operacao_veracidade/resultados/certs_2022_2t.parquet"
+     ],
+     "numeros": "499.176 + 499.178 seções (2026) e 471.908 + 471.984 (2022), 0 erros de leitura; exterior e Sistema de Apuração sem vota.vsc ficam fora",
+     "demonstra": "Que toda chave de urna pertence à cadeia das ACs que temos e que nenhuma chave se repete entre urnas. Fecha a lacuna dos 200 casos do P11.",
+     "nao_demonstra": "Que a raiz é do TSE (AC RAIZ UE e AC URNA v2 não são públicas); que a cópia das ACs é a oficial (página do TSE bloqueada a este ambiente); fidelidade do voto.",
+     "robustez": "Ed521 só com M = TBS (sem busca de variantes); ECDSA por biblioteca padrão; controles positivos e negativos em T60b; testes unitários do Ed521 (9 de 9)",
+     "causa": "—",
+     "alcance": "499.176 + 499.178 seções (2026) e 471.908 + 471.984 (2022), 0 erros de leitura; exterior e Sistema de Apuração sem vota.vsc ficam fora",
+     "mudaria": "AC RAIZ UE e AC URNA v2 obtidas por canal oficial verificável",
+     "validacao": "Interna (certificados e lista vêm da mesma urna) com ACs obtidas de terceiro; **externa quanto à AC só por cópia de terceiro**",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q44",
+     "pergunta": "O verificador de assinaturas rejeita arquivos adulterados, e o que cada degrau (hash, assinatura do arquivo, assinatura da lista, cadeia) prova?",
+     "resposta": "Sim: 0 de 40 genuínos rejeitados; 40 de 40 rejeitados em cada uma de 7 mutações, em 2026 e em 2022. A assinatura do arquivo sozinha não detecta alteração do arquivo; o hash detecta. Um certificado sintético autoassinado passa pela verificação de lista e só a cadeia o rejeita. (no relatório da operação: N2)",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "operacao_veracidade/scripts/controles_mutacao.py",
+      "operacao_veracidade/resultados/controles_mutacao_2026_AC.json",
+      "operacao_veracidade/resultados/controles_mutacao_2022_AL.json",
+      "operacao_veracidade/resultados/ed521_unitarios.json"
+     ],
+     "numeros": "40 seções reais de AC (2026) e 40 de AL (2022); 9 testes unitários do Ed521",
+     "demonstra": "Que o verificador do projeto não aceita as adulterações testadas e que nenhum resultado herdado depende de `assin_ok` isolado.",
+     "nao_demonstra": "Que o verificador seja correto contra todo ataque; que a chave seja de uma urna autêntica.",
+     "robustez": "controle positivo (genuíno) e 8 negativos; chave descartável em memória",
+     "causa": "—",
+     "alcance": "40 seções reais de AC (2026) e 40 de AL (2022); 9 testes unitários do Ed521",
+     "mudaria": "Revisão externa do código de verificação por criptógrafo independente",
+     "validacao": "Sintética (mutações em cópias em memória)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q45",
+     "pergunta": "Os boletins impressos lidos por terceiros (QR Code) concordam com a base do TSE e têm assinatura válida?",
+     "resposta": "Sim, nos 404 boletins do 2º turno de 2026 obtidos: assinatura da urna válida, cadeia até a AC, votos iguais à tabela e ao BU do TSE, identidade da urna igual. É amostra de conveniência (0,08% das seções). (no relatório da operação: N3)",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "operacao_veracidade/scripts/terceiros_qr.py",
+      "operacao_veracidade/resultados/terceiros_qr.json",
+      "operacao_veracidade/externo/arvor_totalizacao/SHA256SUMS.txt"
+     ],
+     "numeros": "404 de 499.207 seções (0,08%), 22 UFs, 167 de SP, só 2º turno de 2026",
+     "demonstra": "Que o boletim impresso na seção coincide com o que o TSE publicou nas 404 seções; 77 deles já estavam no servidor de terceiros entre 18:10 e 18:47, 45 minutos ou mais antes do TSE registrar o recebimento.",
+     "nao_demonstra": "Veracidade do voto; representatividade; qualquer coisa fora da amostra; o relógio do servidor de terceiros não é auditado.",
+     "robustez": "verificador próprio da assinatura; `hash_final` = SHA-512 do conteúdo em 404; comparação com tabela, BU do pacote e certificado do vota.vsc",
+     "causa": "—",
+     "alcance": "404 de 499.207 seções (0,08%), 22 UFs, 167 de SP, só 2º turno de 2026",
+     "mudaria": "Boletins impressos de amostra probabilística, com lista de seções sorteada antes da eleição",
+     "validacao": "**Externa parcial**: cadeia de obtenção diferente (QR do boletim impresso), mas a assinatura é da mesma urna; coletor e publicador são o mesmo projeto",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos: 404 seções sem diferença."
+    },
+    {
+     "id": "Q46",
+     "pergunta": "Que alterações cada verificação de consistência consegue ver, e um registro coerente gerado por fonte comprometida seria distinguível de um genuíno?",
+     "resposta": "Alterar só a tabela é visto pela comparação com o BU; BU e tabela, pelo RDV, pela imagem e pelo hash; tudo sem reassinar, só pelo hash da lista assinada; registros coerentes assinados pelo próprio gerador **não são vistos por nenhuma verificação interna**. (no relatório da operação: N4)",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "operacao_veracidade/scripts/identificabilidade.py",
+      "operacao_veracidade/resultados/identificabilidade.json"
+     ],
+     "numeros": "52.062 seções reais de MG, 2º turno de 2026, 2.497 alteradas (59.499 votos); 6 cenários e 6 verificações",
+     "demonstra": "O que cada consistência interna pode e não pode ver.",
+     "nao_demonstra": "Que alguém consiga produzir registros coerentes assinados na prática; só mede o limite.",
+     "robustez": "controle sem alteração: 0 em todas as verificações",
+     "causa": "—",
+     "alcance": "52.062 seções reais de MG, 2º turno de 2026, 2.497 alteradas (59.499 votos); 6 cenários e 6 verificações",
+     "mudaria": "Amostra probabilística de boletins impressos ou auditoria do software da urna (as únicas que separam os dois mundos)",
+     "validacao": "Sintética",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q47",
+     "pergunta": "Que mecanismos de alteração a bateria estatística consegue ver, com que poder, e quais passam sem alarme?",
+     "resposta": "Vê com 80% de poder a partir de 25 a 50 mil votos: seções dispersas, poucas seções, locais, zonas e municípios inteiros, redutos. Só vê a partir de 0,5 a 2,2 milhões, ou nunca: UFs, os cinco grandes juntos, macrorregião, lote tardio, conversão de brancos e nulos, deslocamento uniforme. O poder é assimétrico entre sentidos. Um atacante de estrutura completa passa D1 a D7 em 2026. (no relatório da operação: N5)",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "operacao_veracidade/scripts/sim_adversarial.py",
+      "operacao_veracidade/scripts/sim_fabricacao_v2.py",
+      "operacao_veracidade/resultados/sim_2026_resumo.json",
+      "operacao_veracidade/resultados/sim_2022_resumo.json",
+      "operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md"
+     ],
+     "numeros": "2026 e 2022; 15 mecanismos, 2 sentidos, 7 magnitudes, 20 réplicas; limiares do bootstrap por município",
+     "demonstra": "Quais mecanismos a bateria vê e em que escala; que a ausência de alarme em mecanismos de UF, região, lote e uniforme não exclui alterações de centenas de milhares de votos.",
+     "nao_demonstra": "Que a base real foi ou não alterada (alteração já presente é absorvida pelo limiar); que a soma das anomalias seja teto de fraude.",
+     "robustez": "falso alarme em bootstrap independente (4% a 14,5% a união); sensibilidade do D1 (z de 3 e 5); fabricação em três níveis",
+     "causa": "—",
+     "alcance": "2026 e 2022; 15 mecanismos, 2 sentidos, 7 magnitudes, 20 réplicas; limiares do bootstrap por município",
+     "mudaria": "Detectores com referência externa (histórico, boletins impressos)",
+     "validacao": "Sintética (base real é referência, não verdade conhecida)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Poder ≥ 80% só a partir de 25 mil (locais, zonas) a 2,22 mi votos movidos (UFs, uniforme); ver tabela em 03."
+    },
+    {
+     "id": "Q48",
+     "pergunta": "Os zeros de votos de um finalista são excepcionais depois de modelos calibrados (2022 e 2026)?",
+     "resposta": "Não determinável: três famílias de modelo (município, zona, local de votação) falharam o critério fixado antes; os zeros são, na descrição, locais de uma seção só com menos de 1% do total, nos dois anos (141 em 2022 e 106 em 2026 para o candidato da direita; 2 e 4 para Lula). (no relatório da operação: N6)",
+     "classificacao": "Não determinado com as evidências disponíveis",
+     "evidencias": [
+      "operacao_veracidade/scripts/zeros_contagens.py",
+      "operacao_veracidade/scripts/zeros_locais.py",
+      "operacao_veracidade/resultados/zeros_contagens.json",
+      "operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md"
+     ],
+     "numeros": "todas as seções com comparecimento positivo, 2022 e 2026, dois turnos, dois finalistas",
+     "demonstra": "As contagens (0, 1, 2, 3 a 5 votos) e o perfil descritivo dos zeros.",
+     "nao_demonstra": "Excesso ou ausência de excesso de zeros; o modelo por local reproduz 45% a 63% e falha.",
+     "robustez": "beta-binomial com UF retida, 500 sorteios Monte Carlo; critério: 80% das UFs com esperado ≥ 1 dentro do intervalo de 95%",
+     "causa": "—",
+     "alcance": "todas as seções com comparecimento positivo, 2022 e 2026, dois turnos, dois finalistas",
+     "mudaria": "Modelo de cauda baixa que passe no critério (nenhum das 3 famílias passou)",
+     "validacao": "Interna (tabela do TSE)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "14.860 votos de Lula nas 106 seções de 2026 (0,34% da margem); 16.418 em 2022."
+    },
+    {
+     "id": "Q49",
+     "pergunta": "Os arquivos que o TSE publicou mudaram entre downloads independentes?",
+     "resposta": "Não, nos 404 boletins: o SHA-256 do `bu.dat` baixado por terceiros do TSE (a partir de 25/10) é igual ao do nosso download (27 e 28/10) em 404 de 404. (no relatório da operação: N7)",
+     "classificacao": "Demonstrado no escopo definido",
+     "evidencias": [
+      "operacao_veracidade/scripts/republicacao_bu.py",
+      "operacao_veracidade/resultados/republicacao_bu.json"
+     ],
+     "numeros": "404 BU de 22 UFs",
+     "demonstra": "Nenhuma republicação nesses arquivos entre os dois downloads.",
+     "nao_demonstra": "Que o arquivo seja o que a urna gerou; arquivos fora dos 404; mudanças antes do primeiro download.",
+     "robustez": "comparação byte a byte (SHA-256) entre duas origens de download",
+     "causa": "—",
+     "alcance": "404 BU de 22 UFs",
+     "mudaria": "Capturas de arquivos do TSE em horários de resolução fina por terceiros",
+     "validacao": "Externa parcial: hash declarado por terceiro, confirmado por igualdade com o nosso",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q50",
+     "pergunta": "Há divergência objetiva nova nos dados publicados pelo TSE?",
+     "resposta": "Nenhuma divergência de votos. Há lacunas documentais: 98 certificados emitidos depois da validade do certificado público da AC URNA; certificado ≠ urna da tabela em 17 seções de 2026 e 22 de 2022 (1 com três identificações diferentes); regra de emissão por modelo não pública; raiz ausente. (no relatório da operação: N8)",
+     "classificacao": "Parcialmente demonstrado",
+     "evidencias": [
+      "operacao_veracidade/resultados/casos_certificado.csv",
+      "operacao_veracidade/resultados/casos_A_relidos_por_id_e_data.csv",
+      "operacao_veracidade/evidencia/caso_ES_57932_9_85_112.json",
+      "operacao_veracidade/06_ANOMALIAS_E_LOGS.md"
+     ],
+     "numeros": "2026 e 2022, dois turnos, todas as seções com certificado",
+     "demonstra": "As lacunas e o artefato do leitor (log de pacote traz logs arquivados de outras urnas e seções).",
+     "nao_demonstra": "Causa de cada caso; os explicados vêm do próprio log (compatível, não verificado).",
+     "robustez": "releitura por ID de urna, data e seção, com segundo método de leitura do log (caso ES)",
+     "causa": "—",
+     "alcance": "2026 e 2022, dois turnos, todas as seções com certificado",
+     "mudaria": "Ata e caderno de votação das seções citadas; documentação de contingência do TSE; certificado renovado da AC URNA",
+     "validacao": "Interna (certificado da AC, tabela e log têm origens parcialmente distintas)",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Menos de 30 mil votos válidos nas seções dos tipos A e D (cerca de 0,6% da margem de 2026)."
+    }
+   ]
+  }
+ ],
+ "inventario": [
+  {
+   "id": "P1",
+   "pergunta": "P1 (respondida na F2)",
+   "resposta": "O estimador de fluxos C06 recupera a verdade? Em parte: a ordem dos fluxos e o contraste com 2022 resistem; a magnitude '4:1' não (erro de ±0,5 a ±1,5 mi votos).",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q24"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/sessao_limitada_2026-10-28/p1_c06_adversarial.py",
+    "fase2/sessao_limitada_2026-10-28/p1_resultado_principal.json",
+    "fase2/sessao_limitada_2026-10-28/p1_resultado_sensibilidade.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Erro de ±0,5 a ±1,5 mi votos na razão estimada.",
+   "historico": [],
+   "detalhe": "Com taxas homogêneas por UF o C06 recupera a verdade (razão Abs→Lula:Abs→Adv de 2026: 4,12 contra 4,01). Com heterogeneidade contextual a razão estimada vai de 1,7 a 11,8 contra 3 a 4 verdadeiro. A ordem de 2026 e o contraste com 2022 (razão 0,56) resistem; a magnitude '4:1' não. Em votos: ±0,5 mi (estresse moderado) a ±1,5 mi (forte) na célula Abs→Lula, contra 3,18 mi estimados."
+  },
+  {
+   "id": "P2",
+   "pergunta": "P2 (respondida na F2)",
+   "resposta": "A bateria detecta trocas de votos? Só nos cenários e tamanhos da Q7.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q7"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase2/f2_completa.py",
+    "fase2/resultados/P2_principal.json",
+    "fase2/resultados/P2_sensibilidade.json",
+    "fase3/resultados/p18.json",
+    "fase3/resultados/rev_i1_2026.json",
+    "fase3/resultados/rev_a2_2026.json"
+   ],
+   "limitacao": "Ver P18.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). No T63, UFs, região, lote e deslocamento uniforme passam sem alarme até ~0,5 a 2,2 mi votos, ou sempre (uniforme em logit). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida (revisada pelo P18)",
+     "resposta": "Com 1% das urnas e 10% dos válidos movidos (~125 mil votos), a regra do T13 detecta Flávio→Lula em 30 de 30 réplicas e Lula→Flávio em 0 de 30; a 2% e 5% não detecta em nenhum sentido; a referência não alarma. O T1 e o T3 só contam o lado a favor de Lula. A detecção do T13 original a 5% não se repete em mundo com ruído só binomial. A sensibilidade do T13 vale só para um sentido. Revisado pelo P18, I1 e A2: ver P18 (no sentido certo, ~123 mil dispersos e ~62 mil concentrados em municípios de até ~5 mil seções são vistos; ~25 mil e municípios inteiros das 5 maiores cidades não)."
+    },
+    {
+     "etapa": "verificações finais (A1, A2, A4)",
+     "estado": "respondida parcialmente",
+     "resposta": "Revisada pelo P18 e pelo I1: a bateria não exclui troca de até ~25 mil votos (2% em 1% das seções) em nenhuma forma testada, nem troca dispersa de ~62 mil votos (5%); detecta ~62 mil concentrados em locais ou municípios e ~123 mil dispersos."
+    }
+   ],
+   "detalhe": "Revisado pelo P18, pelo I1 e pelo A2: no sentido correto, a bateria não detecta troca de até ~25 mil votos (2% em 1% das seções) em nenhuma forma testada, nem troca dispersa de ~62 mil votos, nem troca no município inteiro das 5 maiores cidades com confiabilidade (até ~700 mil votos em São Paulo a 10%); detecta ~123 mil dispersos e ~62 mil concentrados em locais ou municípios de até ~5 mil seções."
+  },
+  {
+   "id": "P3",
+   "pergunta": "As inconsistências aparentes dependem do canal e da versão de publicação?",
+   "resposta": "As inconsistências dependem de canal e versão? Nos canais comparados (tabela, BU, decodificação de terceiro, divulgação ao vivo) não há inconsistência de votos; versões datadas dos arquivos não existem localmente.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q1",
+    "Q4",
+    "Q6",
+    "Q14"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/f3_reconcilia.py",
+    "fase3/resultados/R1_20_dataurnas.json",
+    "fase3/resultados/E3_zeros.json",
+    "fase2/resultados/P16.json"
+   ],
+   "limitacao": "Versões datadas dos arquivos.",
+   "em_votos": "0 voto de diferença entre os canais comparados.",
+   "historico": [
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "respondida parcialmente",
+     "resposta": "Canais e decodificadores diferentes (BU decodificado por terceiro × tabela publicada) concordam em todas as seções comparáveis. Falta a dimensão de versão: só há uma captura de cada arquivo, então não se sabe se houve republicação. A origem comum (TSE) não pode ser removida."
+    }
+   ],
+   "detalhe": "Canais comparados: tabela × bu.dat × RDV × imagem (R1: 0 diferenças de votos nos dois anos), decodificação de terceiro (T43), divulgação ao vivo × base final (R2: consistente em 39 instantes). Versões datadas dos arquivos: só uma cópia local. Concordância entre arquivos da mesma urna é consistência interna."
+  },
+  {
+   "id": "P4",
+   "pergunta": "A curva pública pode ser reconstruída pelos BUs recebidos, dentro da latência esperada?",
+   "resposta": "A curva pública pode ser reconstruída pelos boletins recebidos? Sim, nos 39 instantes capturados: a recomposição pela ordem de recebimento reproduz o total divulgado (≤ 0,083 pp), sem defasagem.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q9",
+    "Q11",
+    "Q14"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/inv_r2_curva_publica.py",
+    "fase3/resultados/r2_curva_publica.json",
+    "fase3/externos/wayback_capturas/"
+   ],
+   "limitacao": "Capturas por UF e mais instantes (o Internet Archive limitou o acesso durante a coleta).",
+   "em_votos": "Nas 404 seções com boletim de terceiro, 0 voto de diferença. Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder.",
+   "historico": [
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "bloqueada por evidência externa",
+     "resposta": "Bloqueada: não há dado histórico independente local. A curva retrospectiva (E2) não é observação histórica."
+    }
+   ],
+   "detalhe": "R2: 39 capturas do Internet Archive dos totais nacionais divulgados durante a apuração (2022: 2 e 27; 2026: 6 e 4). A recomposição pela base final, na ordem de recebimento, reproduz cada captura com diferença máxima de 0,083 ponto percentual, mesmo líder, sem defasagem; votos nunca diminuem; a última captura é igual ao total oficial. A curva pública pode ser reconstruída a partir dos boletins recebidos nos instantes capturados."
+  },
+  {
+   "id": "P5",
+   "pergunta": "P5 (respondida na F2)",
+   "resposta": "O modelo de urna afeta a virada? Não, dentro de ±0,02 logit (2º turno, municípios com 2 ou mais modelos).",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P5.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Maior efeito +0,004 logit, ~2,7 mil votos se fosse real.",
+   "historico": [],
+   "detalhe": "Dentro dos 1.436 municípios (2026) e 1.779 (2022) com mais de um modelo de urna, a diferença entre modelos é equivalente a zero em ±0,02 logit; o maior efeito é +0,004 logit (UE2013, 2026), cerca de 2,7 mil votos se fosse real. A associação do T20 é efeito do território, não do modelo."
+  },
+  {
+   "id": "P6",
+   "pergunta": "O que boletins coletados por terceiros permitiriam validar?",
+   "resposta": "Boletins de terceiros validam os arquivos? Em parte: 404 boletins impressos lidos por terceiros no 2º turno de 2026 (22 UFs) são iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas (T61); é amostra de conveniência, não sorteada; de 2022 não há.",
+   "classificacao": "Parcialmente demonstrado (404 boletins, amostra de conveniência)",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q6",
+    "Q45"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "operacao_veracidade/resultados/terceiros_qr.json",
+    "operacao_veracidade/resultados/republicacao_bu.json",
+    "RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"
+   ],
+   "limitacao": "Boletins impressos de uma amostra sorteada de seções.",
+   "em_votos": "0 voto de diferença nas 404 seções com boletim impresso de terceiro (amostra de conveniência, 0,08%).",
+   "historico": [
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "bloqueada por evidência externa",
+     "resposta": "Bloqueada: fontes secundárias, sem dados."
+    }
+   ],
+   "detalhe": "T61: 404 boletins impressos lidos por terceiros (QR Code) no 2º turno de 2026, em 22 UFs: assinatura da urna válida, cadeia até a AC, votos iguais à tabela e ao BU do TSE e mesma urna em 404 de 404. Amostra de conveniência (0,08% das seções), não sorteada; de 2022 não há boletins de terceiros neste estudo."
+  },
+  {
+   "id": "P7",
+   "pergunta": "P7 (respondida na F2)",
+   "resposta": "A urna trocada vota diferente? Não, equivalente na margem de ±0,10 z fixada antes.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P7.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Diferença de −0,029 z, desprezível; não convertida em votos.",
+   "historico": [],
+   "detalhe": "Equivalência declarada na margem de ±0,10 z fixada antes: 2026 −0,029 (IC 90% −0,054 a −0,003, 4.432 urnas); 2022 −0,008 (−0,023 a +0,008, 12.653 urnas)."
+  },
+  {
+   "id": "P8",
+   "pergunta": "P8 (respondida na F2)",
+   "resposta": "A virada depende da ordem de chegada? Efeito desprezível (|r| ≤ 0,05); em 2022, −0,028, diferente de zero.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P8.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Efeito desprezível.",
+   "historico": [],
+   "detalhe": "Com bootstrap por município, 2026 tem r = +0,004 (IC 95% −0,004 a +0,012) e 2022 r = −0,028 (−0,040 a −0,019): efeitos desprezíveis (|r| ≤ 0,05), de sinais opostos."
+  },
+  {
+   "id": "P9",
+   "pergunta": "Os locais de votação do E02 permanecem significativos com p-valores calibrados e com dependência espacial?",
+   "resposta": "Os locais atípicos do E02 resistem? Cerca de 0,1% dos locais, em três métodos; a lista depende do método; causa não demonstrada.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q25"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase2/resultados/P9.json",
+    "fase3/resultados/p19.json",
+    "fase3/rev_i3_espacial.py",
+    "fase3/resultados/rev_i3.json"
+   ],
+   "limitacao": "Nulo geográfico no nível do local (sem coordenadas de locais no material); causa dos locais significativos.",
+   "em_votos": "Cada local atípico: dezenas a poucas centenas de votos.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida parcialmente",
+     "resposta": "Há dependência espacial forte (I ≈ 0,16 a 0,20) nos dois anos; agrupamentos residuais específicos não foram mapeados."
+    }
+   ],
+   "detalhe": "I3 (rev_i3_espacial.py): com o entorno como referência (zona sem o local, nulo empírico por faixa de tamanho, BH), 61 locais de 59.885 seguem significativos em 2026 (36 pró-Lula, 25 pró-adversário) e 84 de 56.164 em 2022 (46 e 38); com o município como referência, 63 e 80. A correção só por ρ do P9 dava 55 (28 e 27) e 102 (30 e 72). Só 28 (2026) e 41 (2022) locais são significativos nos dois métodos: a lista depende do método; a ordem de grandeza (cerca de 0,1% dos locais) e o equilíbrio de sentidos em 2026 não. O sentido de 2022 muda (72 pró-adversário com ρ; 38 com o entorno)."
+  },
+  {
+   "id": "P10",
+   "pergunta": "P10 (respondida na F2)",
+   "resposta": "A rajada sem biometria do T28 resiste? 8 urnas do 1º turno de 2026 seguem sinalizadas pelo critério beta-binomial (99 votos); em 2022 o mesmo critério sinaliza 18 e 21 urnas (23 e 25 pelo T28 original).",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P10.json",
+    "analise/resultado_logs_2022_1t.json",
+    "analise/resultado_logs_2022_2t.json",
+    "fase3/resultados/a4_t28.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "99 votos nos últimos 30 min das 8 urnas (2026, 1º turno).",
+   "historico": [
+    {
+     "etapa": "verificações finais (A1, A2, A4)",
+     "estado": "respondida",
+     "resposta": "Com taxa incerta (beta-binomial por UF e modelo), 8 das 13 urnas do 1º turno de 2026 continuam sinalizadas (99 votos nos últimos 30 min); 2º turno: 0. Em 2022 o método sinaliza 18 e 21: o padrão não é específico de 2026."
+    }
+   ],
+   "detalhe": "8 de 13 urnas do 1º turno de 2026 seguem sinalizadas (99 votos); 2022 sinaliza 18 e 21. A4: a regra do T28 de 2022 reproduz exatamente 23 e 25 urnas sinalizadas; nenhuma é do Sistema de Apuração. Denominador efetivo do T28 em 2022: 471.851 e 471.979 urnas com votos nos últimos 30 min; o total declarado 'urnas' (472.024 e 472.027) inclui 109 e 39 seções do Sistema de Apuração sem sequência de log (148)."
+  },
+  {
+   "id": "P11",
+   "pergunta": "Os certificados das urnas se ligam a uma âncora do TSE?",
+   "resposta": "Os certificados se ligam a uma âncora do TSE? Não foi possível determinar: válidos até a AC emissora em 100% das urnas (T60a); raiz não obtida.",
+   "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
+   "perguntas_relacionadas": [
+    "Q5",
+    "Q43"
+   ],
+   "estado_inventario": "bloqueada por evidência externa",
+   "evidencias": [
+    "operacao_veracidade/resultados/cert_analise.json",
+    "fase2/resultados/P11.json",
+    "fase2/externos/certificados/"
+   ],
+   "limitacao": "Certificados da AC URNA v2 e da AC RAIZ UE por canal do TSE.",
+   "em_votos": "Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora (100% das urnas, verificação completa em 28/10/2026, T60a).",
+   "historico": [
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "bloqueada por evidência externa",
+     "resposta": "Bloqueada para o elo final; o elo urna → AC segue verificado."
+    }
+   ],
+   "detalhe": "T60a: a cadeia urna → AC emissora verifica em 1.942.246 de 1.942.246 pares seção × turno (2022 e 2026), 0 falhas, todos válidos no dia, nenhuma chave repetida. O elo AC → raiz do TSE continua sem verificação: AC URNA v2 e AC RAIZ UE não são públicas (página oficial com HTTP 403)."
+  },
+  {
+   "id": "P12",
+   "pergunta": "P12 (respondida na F2)",
+   "resposta": "Diferença do eleitorado do exterior? Explicada: 423 de seções não instaladas + 72 + 30 de seções só nos arquivos de urna.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P12.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Eleitores aptos do exterior (−495 e −525), não votos.",
+   "historico": [],
+   "detalhe": "Explicada: −495 = 423 (41 seções não instaladas) + 72 (uma seção com boletim só nos arquivos das urnas); −525 = 423 + 72 + 30 (outra seção, no 2º turno). Resíduo zero. São eleitores aptos, não votos."
+  },
+  {
+   "id": "P13",
+   "pergunta": "P13 (respondida na F2)",
+   "resposta": "O C06b é reproduzível? Sim: 79 e 123 reproduzidos.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q24"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P13.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Trocas diretas entre finalistas em 2026: mínimo garantido de 79 e 123 votos, máximo de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi. A razão do C06 erra de ±0,5 a ±1,5 mi votos.",
+   "historico": [],
+   "detalhe": "Script reproduzível reproduz exatamente 79 (Flávio→Lula) e 123 (Lula→Flávio) como mínimos garantidos, com os aptos do 2º turno, sem exterior; máximos 43,5 mi e 39,4 mi."
+  },
+  {
+   "id": "P14",
+   "pergunta": "P14 (respondida na F2)",
+   "resposta": "Qual a causa da assimetria do T02 em 2022? Não demonstrada; o desvio está no nível da zona (251, 259) e persiste na 251 depois do perfil do eleitorado.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q25"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase2/resultados/P14.json",
+    "fase3/resultados/p20.json",
+    "fase3/resultados/rev_i3.json",
+    "fase3/inv_r4_zona251.py",
+    "fase3/resultados/r4_zona251.json"
+   ],
+   "limitacao": "Covariáveis de campanha, renda, migração; dados externos.",
+   "em_votos": "Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida",
+     "resposta": "Em 2022, 29 das 90 seções pró-Lula atípicas estão na capital de São Paulo e 8 locais de votação têm 2 ou mais (esperado 0,15 por sorteio na UF): concentração local. Em 2026 as 32 estão espalhadas (31 municípios, nenhum local repetido). Revisão F3: a pergunta é a causa, que não foi demonstrada; a classificação 'respondida' excedia a evidência. I3: contra a própria zona, nenhum dos 15 locais de São Paulo é atípico; o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida)."
+    },
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "respondida parcialmente",
+     "resposta": "Localização feita na F2 e no P20; causa não demonstrada. I3: os 15 locais de São Paulo capital com seções atípicas em 2022 não resistem ao entorno: nenhum é significativo contra a própria zona (z de −1,3 a 2,9) e, sem as seções que os selecionaram, ficam entre −1,7 e 1,5. O local SP 251/1074 (10 das 29 seções) está no nível da sua zona (z −0,3). o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). Em 2026, 1 dos 15 (o mesmo 251/1074) tem z acima de 2 com a zona como referência (2,03) e nenhum com o município."
+    }
+   ],
+   "detalhe": "Causa não demonstrada. R4: o desvio da zona 251 (0,58 z) persiste depois de controlar escolaridade, idade, sexo e estado civil da seção (0,42 z, IC 95% 0,23 a 0,62; 26% explicado); zona 259 explicada em parte."
+  },
+  {
+   "id": "P15",
+   "pergunta": "P15 (respondida na F2)",
+   "resposta": "Os limites de Fréchet estreitam a razão? Não: a razão não é identificada.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q24",
+    "Q26"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P15.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Abstencionistas para Lula entre 4.116 e 32,3 mi votos.",
+   "historico": [],
+   "detalhe": "Limites de Fréchet por seção para quem se absteve em 2026: para Lula entre 4.116 e 32,3 mi; para o adversário entre 19 e 31,3 mi; a razão não é identificada (de ~0 a 1,7 mi). A estimativa do C06 cai dentro dos limites, mas só o modelo a escolhe."
+  },
+  {
+   "id": "P16",
+   "pergunta": "P16 (respondida na F2)",
+   "resposta": "200 seções conferem? Sim, 200/200 no 1º turno de 2026 (consistência interna); o 2º turno é coberto pelo T17b e pelo R1.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q1",
+    "Q2"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P16.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "0 voto de diferença nas 200 seções.",
+   "historico": [
+    {
+     "etapa": "verificações finais (A1, A2, A4)",
+     "estado": "respondida",
+     "resposta": "200 seções sorteadas do 1º turno: arquivos, hashes, assinaturas, RDV, imagem, BU na Web e log concordam em 200 de 200. Na primeira execução 14 seções acusaram diferença por erro do comparador; corrigido e repetido uma vez."
+    }
+   ],
+   "detalhe": "200 de 200 seções sorteadas do 1º turno de 2026 concordam em todos os arquivos. A amostra é só do 1º turno; o 2º turno é coberto nacionalmente pelo T17b (BU = RDV = publicado em todas as urnas eletrônicas), não por amostra com todos os arquivos."
+  },
+  {
+   "id": "P17",
+   "pergunta": "P17 (respondida na F2)",
+   "resposta": "A assimetria de cauda do T02 é real? Sim, nos dois anos.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q25"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase2/resultados/P17.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "~740 votos (2026) e ~2.600 (2022) na cauda pró-Lula.",
+   "historico": [],
+   "detalhe": "A assimetria de cauda do T02 é estatisticamente real com bootstrap por município (IC 95% da razão acima de 1 em 3, 4 e 5 desvios, nos dois anos). Isto confirma que a característica existe; não explica a causa."
+  },
+  {
+   "id": "P18",
+   "pergunta": "Com o T1 e o T3 de duas caudas, a regra do T13 enxerga os dois sentidos?",
+   "resposta": "O T13 bilateral vê os dois sentidos? Sim, para troca dispersa; limites na Q7.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q7"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/f3_pendencias.py",
+    "fase3/resultados/p18.json",
+    "fase3/rev_i1_poder.py",
+    "fase3/resultados/rev_i1_2026.json",
+    "fase3/resultados/rev_i1_2022.json",
+    "fase3/rev_a2_poder.py",
+    "fase3/resultados/rev_a2_2026.json",
+    "fase3/resultados/rev_a2_2022.json"
+   ],
+   "limitacao": "Mecanismos não simulados (preservar medianas, mexer no comparecimento, anteriores ao BU) e outras coberturas não testados.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). No T63, UFs, região, lote e deslocamento uniforme passam sem alarme até ~0,5 a 2,2 mi votos, ou sempre (uniforme em logit). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida",
+     "resposta": "Com duas caudas a detecção é simétrica: 10% dos válidos em 1% das urnas é visto em 30 de 30 nos dois sentidos; 5%, em 0 de 30; falsos alarmes 0 de 30. Em 2022 o limiar ancorado nos dados reais deixa o sentido pró-Lula em 0 de 30 (a cauda real já é grande); com limiar calibrado no mundo simulado é 30 de 30. A sensibilidade depende da calibração e não cobre outros mecanismos."
+    },
+    {
+     "etapa": "verificações finais (A1, A2, A4)",
+     "estado": "respondida parcialmente",
+     "resposta": "Duas caudas: detecção simétrica para troca dispersa (P18). I1 (rev_i1_poder.py, 30 mundos de avaliação separados dos 20 de calibração): em 2026, 10% dos válidos em 1% das seções sorteadas (~123 mil votos) é detectado em 30 de 30 nos dois sentidos; 5% (~62 mil), em 0 a 2 de 30. Em locais ou municípios inteiros, 5% (~62 mil) é detectado em 30 de 30 pelo E02; em região contígua, 27 a 29 de 30 com limiar calibrado (16 a 19 de 30 com o limiar ancorado no real). 2% (~25 mil) não é detectado em nenhuma forma (no máximo 4 de 30). O T02 sozinho não vê troca em município ou região inteiros (0 de 30 a 10%), porque a mediana municipal absorve o deslocamento. Falso alarme: 0 de 30 (ancorado) e 1 de 30 (calibrado) em 2026; em 2022 o limiar ancorado no real dá 7 de 30 falsos alarmes e o calibrado 3 de 30. Correção da auditoria: no P18 os falsos alarmes do limiar calibrado foram medidos nos mesmos mundos da calibração (0 por construção)."
+    }
+   ],
+   "detalhe": "A2 (rev_a2_poder.py; mesmos mundos e cenários do I1), detecção só no sentido correto, limiar calibrado, 2026: troca dispersa de 10% dos válidos em 1% das seções (~123 mil votos) 30/30; locais ou municípios de até ~5 mil seções a 5% (~62 mil) 30/30, com E02 simples e completo; região a 5% 26/30 e 23/30 (simples) ou 27/30 e 25/30 (completo): detecção incerta; 2% (~25 mil) 0/30 em todas as formas; dispersa a 5% 0/30. Falso alarme no sentido correto 0/30 (IC até 11%). Município inteiro das 5 maiores cidades (antes excluídas): a 5% (77 mil a 348 mil votos) o E02 completo detecta 0 a 1 de 30 e o simples 13 a 21 de 30; a 10% (155 mil a 696 mil votos) 10 a 13 de 30 (completo) e 24 de 30 (simples), pelo completo, 0 de 12 em Brasília e Fortaleza e 1 de 12 em São Paulo (6 réplicas por cidade e sentido; Brasília é o único município da UF, e o modelo por UF absorve a troca). A 10% concentrado, o E02 também acusa locais no sentido oposto em 10% a 80% das réplicas. 2022 (validação): padrão semelhante; região a 5% detectável no sentido para Lula (30/30) e 27/30 (simples) ou 28/30 (completo) no outro."
+  },
+  {
+   "id": "P19",
+   "pergunta": "Há dependência espacial entre municípios nos resíduos do E02?",
+   "resposta": "Há dependência espacial entre municípios? Sim, Moran's I 0,16 a 0,20; causa não distinguida.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q25"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase3/resultados/p19.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "Não se traduz em votos.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida",
+     "resposta": "Moran's I = 0,161 (2026) e 0,179 (2022) pela vizinhança por arco; 0,172 e 0,198 por 5 vizinhos; p = 0,001 (piso de 999 permutações); sem os 5% mais extremos: 0,157 e 0,170. Há autocorrelação espacial real; ela mede estrutura regional não modelada, não manipulação."
+    }
+   ],
+   "detalhe": "Moran's I = 0,161 (2026) e 0,179 (2022) pela vizinhança por arco; 0,172 e 0,198 por 5 vizinhos; p = 0,001 (piso de 999 permutações); sem os 5% mais extremos, 0,157 e 0,170. Variável: z médio municipal do modelo de virada por UF (divergencias_municipios_*_completo.csv). Há dependência espacial nos dois anos. O teste não distingue a causa (estrutura regional legítima ou não)."
+  },
+  {
+   "id": "P20",
+   "pergunta": "O que explica a concentração de seções atípicas em São Paulo capital em 2022?",
+   "resposta": "O que há nos locais de SP 2022? Desvio no nível da zona, que persiste na 251 após o perfil; arquivos conferem; causa não demonstrada.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q25"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/resultados/p20.json",
+    "fase3/resultados/rev_i3.json"
+   ],
+   "limitacao": "Ver P14.",
+   "em_votos": "Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida parcialmente",
+     "resposta": "As 29 estão em 15 locais, 10 delas em um só local (zona 251). As outras seções desses locais também têm z médio +3,6: é efeito do local inteiro. Com controle de tamanho e histórico só 4 das 29 passam de 5 desvios; em 2026 as mesmas seções têm z médio +0,62 (r = 0,45 com 2022). Os 29 conjuntos de arquivos conferem (hash, assinatura, RDV, log). A causa do deslocamento dos locais não é identificável com estes dados."
+    },
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "respondida parcialmente",
+     "resposta": "29 seções em 15 locais (10 em SP 251/1074); as outras seções desses locais têm z médio +3,6 contra a mediana municipal. I3: contra a própria zona, nenhum dos 15 locais é atípico (todos com z entre −1,3 e 2,9; sem as seções selecionadas, entre −1,7 e 1,5): o deslocamento acompanha a zona: a zona 251 inteira tem o 2º maior z médio das 58 zonas da capital e a 259 o 7º (vizinhança entre zonas não foi medida). Arquivos 29/29 conferem. Causa não identificada."
+    }
+   ],
+   "detalhe": "29 seções em 15 locais; os locais não se destacam da própria zona; a zona 251 mantém desvio após o perfil do eleitorado (R4); arquivos conferem (consistência interna); causa não demonstrada."
+  },
+  {
+   "id": "P21",
+   "pergunta": "Evidências externas e certificados por canal oficial confirmam os arquivos?",
+   "resposta": "Fontes externas e cadeia autenticada confirmam os arquivos? Em parte: no agregado nacional ao vivo e em 404 boletins impressos de terceiros iguais ao TSE (Q6, T61; amostra de conveniência); a cadeia fecha até a AC emissora em 100% das urnas (T60a), mas a raiz não foi obtida.",
+   "classificacao": "Parcialmente demonstrado (404 boletins, amostra de conveniência)",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
+   "perguntas_relacionadas": [
+    "Q5",
+    "Q6",
+    "Q45"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "operacao_veracidade/resultados/terceiros_qr.json",
+    "operacao_veracidade/resultados/cert_analise.json",
+    "RELATORIO_F3.md (E7)",
+    "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"
+   ],
+   "limitacao": "Amostra sorteada de boletins impressos; AC URNA v2 e AC RAIZ UE.",
+   "em_votos": "Nas 404 seções com boletim de terceiro, 0 voto de diferença. Na captura final de cada eleição, 0 voto de diferença entre o total divulgado ao vivo e a base. A maior diferença em capturas parciais equivale a ~1,7 mil a ~3 mil votos naquele instante (seções com o mesmo horário de recebimento ordenadas de forma diferente), e não muda o líder.",
+   "historico": [
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "bloqueada por evidência externa",
+     "resposta": "Bloqueada."
+    },
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "respondida parcialmente",
+     "resposta": "Fonte externa de custódia independente obtida: capturas do Internet Archive dos totais divulgados (R2), consistentes com a base. Boletins de terceiros e certificados raiz continuam não obtidos."
+    }
+   ],
+   "detalhe": "Fontes externas obtidas: capturas do Internet Archive dos totais divulgados (R2) e 404 boletins impressos de terceiros iguais ao TSE (T61, amostra de conveniência); 404 arquivos iguais entre downloads independentes. Cadeia até a AC emissora em 100% das urnas (T60a); a raiz não foi obtida."
+  },
+  {
+   "id": "R1-20",
+   "pergunta": "Reconciliação com o DataUrnas e outros projetos externos.",
+   "resposta": "A base coincide com decodificação independente? Sim, nas seções comuns (99,96% em 2022, 100% em 2026 1º turno); o 2º turno de 2026 não tem comparação de terceiro.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q1"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/f3_reconcilia.py",
+    "fase3/resultados/R1_20_dataurnas.json",
+    "fase3/resultados/R1_20_dataurnas_reproducao.json",
+    "fase3/externos/DATAURNAS.md",
+    "fase3/ver_a1.py",
+    "fase3/resultados/a1.csv",
+    "fase3/resultados/a1.json"
+   ],
+   "limitacao": "Decodificação independente do 2º turno de 2026.",
+   "em_votos": "0 voto de diferença nas seções comuns (~119 mi em 2026, 1º turno; ~118 mi por turno em 2022).",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida",
+     "resposta": "Concordância total com decodificação independente de terceiro em todas as seções comuns; diferença só de cobertura em 2022. Não cobre o 2º turno de 2026 (o repositório não o inclui)."
+    },
+    {
+     "etapa": "auditoria da F3",
+     "estado": "respondida parcialmente",
+     "resposta": "Execução original sem commit e hashes registrados (lacuna em fase3/externos/DATAURNAS.md). Corrigido: f3_reconcilia.py confere o commit 12f0433 e os SHA-256 das entradas; a reexecução a partir do clone guardado deu resultado idêntico (0 diferenças em 499.206 seções de 2026, 1º turno, e ~470,8 mil por turno de 2022). Continua sem cobrir o 2º turno de 2026 e 1.194 a 1.292 seções de 2022 (334 mil votos, exterior e agregadas)."
+    },
+    {
+     "etapa": "verificações finais (A1, A2, A4)",
+     "estado": "respondida parcialmente",
+     "resposta": "Execução original sem commit e hashes registrados (lacuna em fase3/externos/DATAURNAS.md). Corrigido: f3_reconcilia.py confere o commit 12f0433 e os SHA-256 das entradas; a reexecução deu resultado idêntico (0 diferenças em 499.206 seções de 2026, 1º turno, e ~470,8 mil por turno de 2022). Sem cobertura: o 2º turno de 2026 e as seções de 2022 que só a base tem. Destas, 1.018 (1º turno) são do exterior; das 191 do Brasil no 1º turno (176 no 2º), 17 (10) são do Sistema de Apuração, que nenhum dos dois leitores decodificava, e 174 (166) não foram explicadas (a frase anterior 'exterior e agregadas' não tinha sido verificada)."
+    }
+   ],
+   "detalhe": "0 diferenças em 499.206 seções (2026, 1º turno) e nas seções comuns de 2022, com reprodução idêntica e commit e hashes conferidos. A1 (fase3/ver_a1.py, a1.csv): as 191 (1º turno) e 176 (2º) seções do Brasil sem par em 2022 são: 17 e 10 do Sistema de Apuração (SA22); 167 e 166 em 5 zonas da Bahia (as mesmas nos dois turnos) que estão na tabela de seções do DataUrnas-BR sem nenhum voto (167 das 769 seções dessas zonas; lacuna do acervo do terceiro, motivo não identificado); 7 (1º turno) que o DataUrnas-BR registra como 'seção fora do banco'. Os 367 boletins locais foram lidos e conferem com a tabela (0 divergências). Cobertura da comparação com implementação independente em 2022: 470.819 de 471.010 seções do Brasil (1º turno) e 470.834 de 471.010 (2º), 99,96%; as demais só com o leitor do projeto. Sem cobertura independente: o 2º turno de 2026."
+  },
+  {
+   "id": "C1",
+   "pergunta": "As curvas públicas da apuração (2022 e 2026) são compatíveis com processos plausíveis de recepção e publicação?",
+   "resposta": "As curvas são compatíveis com processos plausíveis de chegada? Não determinado (nenhum modelo de chegada validado). A curva divulgada é reproduzível com os dados por seção.",
+   "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
+   "perguntas_relacionadas": [
+    "Q10",
+    "Q11",
+    "Q12"
+   ],
+   "estado_inventario": "não decidível com os modelos disponíveis",
+   "evidencias": [
+    "fase3/f3_curvas.py",
+    "fase3/f3_curvas2.py",
+    "fase3/resultados/E2_curvas.json",
+    "fase3/resultados/E2b_curvas.json"
+   ],
+   "limitacao": "Modelo de chegada validado contra as capturas do R2.",
+   "em_votos": "Não se traduz em votos: trata da ordem de chegada, não do total.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "não identificável com estes dados",
+     "resposta": "A permutação irrestrita é um nulo inadequado (rejeita tudo: oscilações 44 contra 4 a 11 observadas). Os nulos condicionados por UF e município rejeitam alguma estatística nos dois anos, inclusive em 2022 e no 1º turno de 2026 sem inversão: a ordem real tem estrutura que nenhum nulo disponível captura. Não se demonstra incompatibilidade nem compatibilidade. Modelo com snapshots bloqueado. Com UF, hora de fechamento e tamanho a rejeição persiste, inclusive em 2022: as curvas não permitem concluir nem compatibilidade nem incompatibilidade."
+    },
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "não decidível com os modelos disponíveis",
+     "resposta": "Nenhum dos cinco modelos de chegada testados é calibrado, nem em 2022: a forma da curva não permite concluir compatibilidade nem incompatibilidade. A curva analisada é reconstrução retrospectiva pela hora de recebimento do boletim (DT_BU_RECEBIDO), não a curva divulgada. A estatística S1 conta trocas de sinal urna a urna (ruído no cruzamento). Ficam abertas: momento e contexto das viradas, periodicidade de vales, mudanças de regime e diferenças entre 2022 e 2026, que dependem de snapshots históricos ou de um modelo de chegada adequado."
+    }
+   ],
+   "detalhe": "Nenhum modelo de chegada validado (cinco nulos rejeitam também 2022). R2: a curva divulgada é reproduzida pelos dados por seção nos 39 instantes capturados; viradas observadas na divulgação coincidem com a reconstrução."
+  },
+  {
+   "id": "C1a",
+   "pergunta": "Quando e em que contexto ocorreram as viradas de liderança durante a apuração, em 2022 e 2026?",
+   "resposta": "Quando ocorreram as viradas? Ver Q8 e Q9.",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q8",
+    "Q9"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/resultados/E2_curvas.json"
+   ],
+   "limitacao": "Snapshots datados da divulgação.",
+   "em_votos": "A ordem de apuração não muda nenhum voto: a mesma soma final em qualquer ordem. A virada do 2º turno de 2022 ocorreu com 67,6% das urnas; a de 2026, com 47,2%.",
+   "historico": [],
+   "detalhe": "Na reconstrução pela hora de recebimento do boletim: 2º turno de 2026, Lula lidera aos 10% apurados, perde aos 13,5% e retoma aos 47,2%; 2º turno de 2022, o adversário lidera até 67,6%. A última troca vem mais tarde do que nos nulos nos dois anos. É descrição da ordem de recebimento; não explica nem refuta nada."
+  },
+  {
+   "id": "C1b",
+   "pergunta": "As curvas têm periodicidade, vales ou trechos lineares anômalos?",
+   "resposta": "Há periodicidade ou trechos lineares anômalos? Não determinado.",
+   "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
+   "perguntas_relacionadas": [
+    "Q11",
+    "Q12"
+   ],
+   "estado_inventario": "não decidível com os modelos disponíveis",
+   "evidencias": [
+    "fase3/resultados/E2_curvas.json",
+    "fase3/resultados/E2b_curvas.json"
+   ],
+   "limitacao": "Modelo de chegada por lote de recepção ou snapshots.",
+   "em_votos": "Não se traduz em votos: forma da curva.",
+   "historico": [],
+   "detalhe": "Estatísticas calculadas, sem leitura possível: nenhum dos 5 nulos é calibrado, nem em 2022; S1 mede ruído no cruzamento."
+  },
+  {
+   "id": "C2",
+   "pergunta": "As curvas de 2022 e 2026 têm as mesmas características?",
+   "resposta": "2022 e 2026 têm as mesmas características? Diferem na descrição; semelhança estatística não determinada.",
+   "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
+   "perguntas_relacionadas": [
+    "Q13"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/resultados/E2_curvas.json"
+   ],
+   "limitacao": "Mais anos ou snapshots externos.",
+   "em_votos": "Não se traduz em votos: comparação da forma das curvas.",
+   "historico": [],
+   "detalhe": "Diferem: no 2º turno de 2026 a liderança muda duas vezes (Lula 10%, perde aos 13,5%, retoma aos 47,2%); em 2022 o adversário lidera até 67,6% apurado e Lula assume. A ordem de chegada é mais territorial em 2026 (η² por UF 0,39 contra 0,24; por município 0,71 contra 0,59). 1º turno parecido. Semelhança visual não é estatística."
+  },
+  {
+   "id": "M1",
+   "pergunta": "O crescimento de votos entre turnos é reconciliável?",
+   "resposta": "O crescimento entre turnos é reconciliável? Sim, contabilmente (identidade exata); fluxos individuais não identificáveis.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q21",
+    "Q22",
+    "Q23",
+    "Q24",
+    "Q26"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase2/sessao_limitada_2026-10-28/p1_resultado_principal.json",
+    "fase2/resultados/P13.json",
+    "fase2/resultados/P15.json",
+    "fase2/sessao_limitada_2026-10-28/h1_resultado.json"
+   ],
+   "limitacao": "Dados individuais (não existem).",
+   "em_votos": "2026: os finalistas somaram +14,10 mi = 9,32 mi dos eliminados + 2,96 mi de comparecimento + 1,82 mi de brancos e nulos a menos. 2022: +10,22 mi = 9,90 mi + 0,57 mi − 0,25 mi.",
+   "historico": [],
+   "detalhe": "A identidade contábil fecha em 2022 e 2026 e nenhuma combinação observada é matematicamente impossível; quais transferências ocorreram não é identificável."
+  },
+  {
+   "id": "Z1",
+   "pergunta": "Seções com zero votos para um finalista (Flávio em 2026; Bolsonaro em 2022) indicam anomalia?",
+   "resposta": "Os zeros indicam anomalia? Sem divergência documental; não determinado: nenhum modelo de cauda baixa calibrou (R3 e T64); descritivamente, são locais de uma só seção, com menos de 1% do total.",
+   "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
+   "perguntas_relacionadas": [
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q18",
+    "Q19",
+    "Q20"
+   ],
+   "estado_inventario": "não identificável com estes dados",
+   "evidencias": [
+    "operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md",
+    "fase3/f3_zeros.py",
+    "fase3/resultados/E3_zeros.json",
+    "fase3/rev_i2_zeros.py",
+    "fase3/resultados/rev_i2.json",
+    "fase3/resultados/bu1.json",
+    "fase3/inv_r3_zeros.py",
+    "fase3/resultados/r3_zeros.json"
+   ],
+   "limitacao": "Modelo de cauda baixa que passe em critério fixado antes.",
+   "em_votos": "Se os zeros fossem anomalia, os votos em jogo seriam os que o candidato teria nessas seções: de ~44 a ~4.800 votos conforme o modelo (2026, 2º turno), no máximo 0,11% da margem de 4,43 mi.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida parcialmente",
+     "resposta": "Com prior municipal o modelo falha (observado 79 contra 1,2); com prior de local de votação o esperado é 65 a 83 (2026) e 85 a 95 (2022), razão 1,2 a 1,7, comparável à razão do controle (zeros de Lula 2026: 8 contra 3,8). Os zeros concentram-se em AM, PA, MA e BA, 47% (2026) e 60% (2022) persistem entre turnos, e 0 divergências entre BU, RDV, imagem e tabela publicada. Não há evidência de que os zeros excedam o esperado; o modelo não é preciso o bastante para excluir um excesso modesto."
+    },
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "respondida parcialmente",
+     "resposta": "Arquivos: 0 divergências de votos entre BU, RDV, imagem e tabela nas 185 seções-turno de 2026 e nas 301 de 2022 (a seção com BU não lido foi verificada no BU1). Estatística: I2 (rev_i2_zeros.py, beta-binomial com ρ ajustado sem a célula zero) não passou na calibração pré-registrada: os controles (Lula e candidatos menores) caem fora do intervalo de predição (ex.: Lula 2026 1º turno, 8 observados contra 0,4 esperados; candidato 14, 30.724 contra 39.452), então o resultado é não interpretável. Descritivo: o modelo subestima toda a cauda baixa dos finalistas, não só o zero: seções com 1, 2 e 3 a 5 votos também ficam acima do previsto, decrescendo (Flávio 2026 1º turno: 20, 12, 7 e 4 vezes), com o mesmo formato em Bolsonaro 2022 (14, 8, 5 e 3 vezes). Nem excesso nem ausência de excesso de zeros foram demonstrados."
+    },
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "respondida parcialmente",
+     "resposta": "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística (R3): fora da amostra, um modelo de covariáveis locais prevê 79,1 e 101,5 zeros para Flávio (observados 79 e 106) e 162,9 e 136,5 para Bolsonaro 2022 (160 e 141), dentro dos intervalos; pelo critério pré-registrado o modelo não foi validado (teste de Hosmer–Lemeshow com n muito grande, razões por decil 1,25 a 1,27, controles de Lula com 1 a 8 zeros). Excepcionalidade não determinada formalmente; sem excesso agregado na descrição."
+    }
+   ],
+   "detalhe": "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística: nenhum modelo de cauda baixa passou na calibração. O modelo do R3 (79,1 e 101,5 previstos para Flávio; 162,9 e 136,5 para Bolsonaro 2022) falhou o critério; as três famílias do T64 também (por município, 1,3 contra 106 e 4,3 contra 141; por local, 66,7 contra 106 e 63,3 contra 141). Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total, nos dois anos."
+  },
+  {
+   "id": "MET",
+   "pergunta": "Os métodos usados nas perguntas ativas resistem à revisão?",
+   "resposta": "Os métodos resistem à revisão? Com limites registrados: T10/T11 descritivos; T02 cego a município inteiro; E02 dependente do método; zeros sem modelo validado; concordância entre registros é consistência interna.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q7"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/AUDITORIA_F3.md",
+    "fase3/RELATORIO_ACEITACAO_F3.md",
+    "fase3/PARECER_CONSOLIDACAO_F3.md",
+    "fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md"
+   ],
+   "limitacao": "Modelos de chegada e de cauda baixa.",
+   "em_votos": "Detectado nos cenários simulados: ~123 mil votos dispersos (2,8% da margem de 2026) e ~62 mil concentrados (1,4%). Não detectado: ~25 mil (0,6%). No município inteiro de uma grande cidade, a bateria original falha até ~696 mil votos, mas o teste T44 vê a partir de 31 mil a 139 mil (2% dos válidos). No T63, UFs, região, lote e deslocamento uniforme passam sem alarme até ~0,5 a 2,2 mi votos, ou sempre (uniforme em logit). Inverter 2026 exigiria trocar ~2,22 mi votos de lado.",
+   "historico": [
+    {
+     "etapa": "V1.2 (rodada 4, congelada)",
+     "estado": "respondida parcialmente",
+     "resposta": "T11/T10: nenhum nulo de permutação testado (irrestrito, UF, município, UF×hora, UF×hora×tamanho) é calibrado; ficam como descrições, não como testes. T13: simetrizado, resiste com ressalva de calibração. E02: enfraquecido (F2). T02: assimetria real, sem causa. Zeros: modelo municipal refutado, modelo de local resiste com ressalva."
+    },
+    {
+     "etapa": "verificações finais (A1, A2, A4)",
+     "estado": "respondida parcialmente",
+     "resposta": "T10/T11: nenhum nulo de permutação é calibrado; ficam como descrição. T13: simétrico; o limiar ancorado no real dá 23% de falso alarme em 2022 (I1). T02: cego a deslocamento de município ou região inteiros (I1). E02: lista de locais depende do método (I3). Zeros: nenhum modelo calibrado (I2)."
+    },
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "respondida parcialmente",
+     "resposta": "T10/T11 descritivos. T02 só vê trocas dentro do município. E02: lista de locais depende do método; sinal do E02 não identifica sozinho o beneficiário (alarmes opostos frequentes a 10% concentrado); E02 completo detecta menos que o simples quando a troca cobre um município grande inteiro. Zeros sem modelo calibrado. Regra 'qualquer alarme' superestima a detecção; a regra válida é a do sentido correto (A2)."
+    }
+   ],
+   "detalhe": "T10/T11 descritivos; T02 cego a município inteiro; E02 dependente do método; zeros sem modelo validado; regra de detecção válida é a do sentido correto; 'explicado pelo log' passa a 'compatível com os registros'; concordância BU/RDV/imagem/log é consistência interna; 'certificado ≠ log' não indica troca de urna em 2022."
+  },
+  {
+   "id": "AUT",
+   "pergunta": "Os arquivos publicados (BU, RDV, log, imagem) são íntegros e autênticos, e até onde vai essa verificação?",
+   "resposta": "Os arquivos são autênticos? Íntegros e assinados até a AC emissora; consistentes entre si; a autenticidade integral do processo não é verificável com dados públicos.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
+   "perguntas_relacionadas": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q5",
+    "Q6"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "testes/registro.json (T14 a T17b)",
+    "fase3/inv_r1_integridade.py",
+    "fase3/resultados/r1_integridade.json",
+    "fase3/RELATORIO_ADVERSARIAL.md",
+    "fase3/resultados/adv_casos.json",
+    "fase3/resultados/adv_log_x_comparecimento.json",
+    "fase2/resultados/P16.json",
+    "fase2/resultados/P11.json",
+    "fase3/resultados/a173.json",
+    "fase3/resultados/sa22.json"
+   ],
+   "limitacao": "Âncora do TSE; boletins de terceiros; logs das urnas substitutas.",
+   "em_votos": "0 voto de diferença entre a tabela e os boletins em todos os ~128 milhões de votos de 2026 (2º turno) e ~124 milhões de 2022 conferidos. As 5 seções de 2022 sem arquivo somam 5 votos de comparecimento. Alcança todos os votos: nenhum voto, de 2022 ou 2026, tem a assinatura verificada até a raiz do TSE; todos estão verificados até a AC emissora (100% das urnas, verificação completa em 28/10/2026, T60a).",
+   "historico": [
+    {
+     "etapa": "missão de resolução e auditoria adversarial",
+     "estado": "respondida parcialmente",
+     "resposta": "2026: hash, assinatura, RDV e BU conferem nacionalmente nos dois turnos (T14 a T17b; T17b cobre o 2º turno). 2022: arquivos presentes conferem; as 159 seções-turno do Sistema de Apuração conferem à parte (SA22); 173 arquivos assinados e 485 auxiliares não estão no pacote de dados abertos. Origem autenticada só até a AC emissora (P11). Não alcança alteração anterior à geração do boletim: BU, RDV e log saem do mesmo equipamento."
+    }
+   ],
+   "detalhe": "R1: tabela = bu.dat = RDV = imagem em todas as seções lidas de 2022 e 2026, com hash e assinatura válidos até a AC emissora. Auditoria adversarial: isso é consistência interna (mesma urna, mesma chave); a única custódia independente é o R2 (agregado nacional). Divergências documentais preservadas: RS 88013/2/199 (imagem 196 × boletim 288; log só com 196 votos) e 153 seções-turno de 2022 com log diferente do comparecimento (5.287 votos sem registro no log publicado)."
+  },
+  {
+   "id": "A173",
+   "pergunta": "Os 173 arquivos assinados pela urna que o DataUrnas-BR aponta como ausentes do pacote de dados abertos de 2022 (64 seções, a maioria do exterior) afetam a base do projeto?",
+   "resposta": "Os 173 arquivos estão ausentes da publicação? Sim, do pacote de dados abertos (duas cópias); conteúdo não verificado; outro canal do TSE inacessível.",
+   "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
+   "perguntas_relacionadas": [
+    "Q4"
+   ],
+   "estado_inventario": "respondida parcialmente",
+   "evidencias": [
+    "fase3/ver_a173.py",
+    "fase3/resultados/a173.csv",
+    "fase3/resultados/a173.json"
+   ],
+   "limitacao": "Consulta ao TSE sobre os 173 arquivos; site de resultados de 2022 acessível.",
+   "em_votos": "64 seções com 21.112 comparecimentos; votos do boletim iguais à tabela.",
+   "historico": [
+    {
+     "etapa": "auditoria da F3",
+     "estado": "não executada nesta sessão",
+     "resposta": "Não confrontado."
+    }
+   ],
+   "detalhe": "Os 173 arquivos (61 .logjez, 56 .rdv, 56 .imgbu) em 64 seções (54 do exterior, 1º turno, cada uma sem .imgbu, .logjez e .rdv; 10 no Brasil, sem 1 ou 2 arquivos) estão listados no .vscmr do pacote local com o mesmo SHA-512 informado pelo DataUrnas-BR, com assinatura da lista válida, e também faltam no pacote oficial baixado pelo projeto em 27/10/2026 (o DataUrnas-BR baixou em 14/10). Não é diferença de nome, de coleta nem de processamento: nenhum outro arquivo da seção tem o mesmo SHA-512. São registros únicos (RDV voto a voto, log, imagem) sem substituto no pacote. O BU está presente nas 64 seções, e os votos do BU são iguais aos da tabela publicada em todas (0 diferenças; 44.983 aptos, 21.112 comparecimentos). O outro canal do TSE (arquivos por urna no site de resultados de 2022) devolveu 404 em duas consultas; não se sabe se esses arquivos estão publicados em outro lugar."
+  },
+  {
+   "id": "BU1",
+   "pergunta": "A seção MG 49050/196/173 (2022, 1º turno), cujo BU não foi lido pelo leitor do projeto, concorda com a tabela publicada?",
+   "resposta": "A seção com BU não lido concorda? Sim (boletim do Sistema de Apuração, assinatura válida; consistência interna).",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q20"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase3/ver_bu1.py",
+    "fase3/resultados/bu1.json"
+   ],
+   "limitacao": "—",
+   "em_votos": "16 votos, iguais à tabela.",
+   "historico": [
+    {
+     "etapa": "auditoria da F3",
+     "estado": "não executada nesta sessão",
+     "resposta": "Não verificada: não é divergência demonstrada nem concordância."
+    }
+   ],
+   "detalhe": "Arquivos da seção no pacote local: .busa, .imgbusa, .logsajez, .rdv e .vscsa (seção apurada pelo Sistema de Apuração, BU emitido às 23:47). A falha era do leitor de 2022, que não reconhece essas extensões; o arquivo não está danificado. Lista .vscsa assinada (ECDSA P-521, certificado ueao01293146 emitido pela AC URNA) com hash e assinatura válidos para os 4 arquivos. Boletim decodificado: 109 aptos, 16 comparecimentos, 16 votos para Lula, 0 para os demais; leitura independente do texto impresso (.imgbusa): 16 para Lula, 0 brancos, 0 nulos. Igual à tabela publicada (0 diferenças). Com isso as 301 seções-turno de 2022 com zero votos para Bolsonaro estão verificadas."
+  },
+  {
+   "id": "SA22",
+   "pergunta": "As 159 seções-turno de 2022 apuradas pelo Sistema de Apuração (arquivos .busa, .imgbusa, .logsajez, .vscsa) foram verificadas pelos arquivos de urna do projeto?",
+   "resposta": "As 159 seções do Sistema de Apuração de 2022 conferem? Sim, 159/159 (consistência interna).",
+   "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
+   "perguntas_relacionadas": [
+    "Q1"
+   ],
+   "estado_inventario": "respondida",
+   "evidencias": [
+    "fase3/ver_sa22.py",
+    "fase3/resultados/sa22.csv",
+    "fase3/resultados/sa22.json"
+   ],
+   "limitacao": "Saber se os auxiliares .hash, .ver, .chvtp e .jufa ficam fora do pacote por regra de publicação.",
+   "em_votos": "27.692 votos, iguais à tabela.",
+   "historico": [
+    {
+     "etapa": "auditoria da F3",
+     "estado": "não executada nesta sessão",
+     "resposta": "Registrada para análise futura; não executada (fora do escopo autorizado)."
+    }
+   ],
+   "detalhe": "fase3/ver_sa22.py leu as 159 seções-turno de 2022 apuradas pelo Sistema de Apuração (116 no 1º turno, 99 do exterior; 43 no 2º, 33 do exterior; 27 no Brasil), uma por uma (lista em fase3/resultados/sa22.csv). Em todas há .busa, .imgbusa, .logsajez, .rdv e .vscsa (11 também com log da urna, .logjez). Motivo da falha: o leitor de 2022 não reconhecia essas extensões. Resultado: 159 de 159 com boletim decodificado igual à tabela publicada (votos e comparecimento; 27.692 votos no total), texto impresso (.imgbusa, segunda leitura) igual e lista .vscsa com assinatura válida (156 ECDSA P-521 pela AC URNA, 3 Ed521 pela AC UE2020), conferindo tamanho, SHA-512 e assinatura de todos os arquivos presentes. 0 divergências objetivas; 0 seções sem leitura. Limites: comparação interna (mesma origem, TSE; o texto impresso é outra leitura, não outra fonte); cadeia de certificados só até a AC emissora (ver P11); as listas assinadas citam arquivos ausentes do pacote: .hash, .ver e .chvtp nas 159 e .jufa em 8 (485 arquivos), sem efeito sobre votos, sem explicação verificada."
+  }
+ ],
+ "achados_sem_causa": [
+  "Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as zonas, única entre as 27 capitais, não explicada pelo perfil do eleitorado (T44, final_salvador.json); sem 2º turno estadual na Bahia; Fortaleza com desvio parecido no sentido oposto.",
+  "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
+  "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
+  "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).",
+  "173 arquivos assinados e 485 auxiliares fora do pacote de dados abertos de 2022.",
+  "8 urnas com rajada sem biometria no fim do dia (2026, 1º turno; 99 votos), padrão também presente em 2022.",
+  "Queda uniforme de ~0,6 ponto de brancos e nulos no 2º turno de 2026 nas UFs sem 2º turno de governador nos dois anos, sem relação com a força de Lula (T57); o erro de campo (T58) explica a parte ligada a Lula.",
+  "Recebimento de boletins parado das 17:07 às 19:03 no 2º turno de 2026 (T52): coincide com a prorrogação; a regra que o acionou não está nos dados.",
+  "Certificados (T60a): 98 emitidos depois da validade do certificado público da AC URNA (todos verificam com a chave publicada); certificado de outra urna que a da tabela em 17 seções de 2026 e 22 de 2022, um caso com três identificações diferentes e votos iguais; a regra de emissão por modelo não é pública.",
+  "Última troca de liderança mais tardia que nos modelos nulos e que o modelo de atraso de transmissão prevê, nos dois anos (fila F4)."
+ ],
+ "limites": [
+  "Autenticidade só até a AC emissora, agora em 100% das urnas (T60a), sem âncora do TSE.",
+  "BU, RDV, imagem e log não são testemunhas independentes entre si.",
+  "Comprometimento anterior à geração dos registros (H2) não é distinguível com dados públicos.",
+  "Fontes externas: capturas do Internet Archive (agregado nacional, instantes amostrados) e 404 boletins impressos de terceiros (amostra de conveniência, 0,08%, só 2º turno de 2026).",
+  "O poder de detecção é medido sobre a base real, que pode já conter alteração; e é assimétrico entre os sentidos (T63).",
+  "Registros coerentes gerados por fonte comprometida passam por todas as verificações internas (T62).",
+  "Fluxos individuais entre turnos não identificáveis.",
+  "Sem modelo de chegada validado (curvas) e sem modelo de cauda baixa validado (zeros)."
+ ]
+}

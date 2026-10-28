@@ -108,6 +108,19 @@ for x in ITENS:
         e, resp, prox, motivo = REV4[x["id"]]
         x.setdefault("historico", []).append({"etapa": "missão de resolução e auditoria adversarial", "estado": x["estado_final"], "resposta": x["resposta_ou_motivo"]})
         x["estado_final"] = ESTADOS[e]; x["resposta_ou_motivo"] = resp; x["proxima_evidencia"] = prox; x["revisao"] = motivo
+# ---- Operação Veracidade Geral (28/10/2026, operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md, itens 10, 14 e 17) ----
+OV = "operacao_veracidade/resultados/"
+REV5 = {
+ "P6": ("RP", "T61: 404 boletins impressos lidos por terceiros (QR Code) no 2º turno de 2026, em 22 UFs: assinatura da urna válida, cadeia até a AC, votos iguais à tabela e ao BU do TSE e mesma urna em 404 de 404. Amostra de conveniência (0,08% das seções), não sorteada; de 2022 não há boletins de terceiros neste estudo.", "Boletins impressos de uma amostra sorteada de seções.", "Operação Veracidade (T61)"),
+ "P11": ("B", "T60a: a cadeia urna → AC emissora verifica em 1.942.246 de 1.942.246 pares seção × turno (2022 e 2026), 0 falhas, todos válidos no dia, nenhuma chave repetida. O elo AC → raiz do TSE continua sem verificação: AC URNA v2 e AC RAIZ UE não são públicas (página oficial com HTTP 403).", "Certificados da AC URNA v2 e da AC RAIZ UE por canal do TSE.", "Operação Veracidade (T60a)"),
+ "P21": ("RP", "Fontes externas obtidas: capturas do Internet Archive dos totais divulgados (R2) e 404 boletins impressos de terceiros iguais ao TSE (T61, amostra de conveniência); 404 arquivos iguais entre downloads independentes. Cadeia até a AC emissora em 100% das urnas (T60a); a raiz não foi obtida.", "Amostra sorteada de boletins impressos; AC URNA v2 e AC RAIZ UE.", "Operação Veracidade (T60a, T61)"),
+ "Z1": ("NI", "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística: nenhum modelo de cauda baixa passou na calibração. O modelo do R3 (79,1 e 101,5 previstos para Flávio; 162,9 e 136,5 para Bolsonaro 2022) falhou o critério; as três famílias do T64 também (por município, 1,3 contra 106 e 4,3 contra 141; por local, 66,7 contra 106 e 63,3 contra 141). Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total, nos dois anos.", "Modelo de cauda baixa que passe em critério fixado antes.", "Operação Veracidade (T64)"),
+}
+for x in ITENS:
+    if x["id"] in REV5:
+        e, resp, prox, motivo = REV5[x["id"]]
+        x.setdefault("historico", []).append({"etapa": "Operação Veracidade Geral", "estado": x["estado_final"], "resposta": x["resposta_ou_motivo"]})
+        x["estado_final"] = ESTADOS[e]; x["resposta_ou_motivo"] = resp; x["proxima_evidencia"] = prox; x["revisao"] = motivo
 # ---- Evidência rastreável por item (arquivos que sustentam o estado atual) ----
 F2R, F3R, SL = "fase2/resultados/", "fase3/resultados/", "fase2/sessao_limitada_2026-10-28/"
 EVID = {
@@ -116,27 +129,27 @@ EVID = {
  "P3": ["fase3/f3_reconcilia.py", F3R + "R1_20_dataurnas.json", F3R + "E3_zeros.json", F2R + "P16.json"],
  "P4": ["fase3/inv_r2_curva_publica.py", "fase3/resultados/r2_curva_publica.json", "fase3/externos/wayback_capturas/"],
  "P5": [F2R + "P5.json"], "P7": [F2R + "P7.json"], "P8": [F2R + "P8.json"],
- "P6": ["RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"],
+ "P6": [OV + "terceiros_qr.json", OV + "republicacao_bu.json", "RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"],
  "P9": [F2R + "P9.json", F3R + "p19.json", "fase3/rev_i3_espacial.py", F3R + "rev_i3.json"],
  "P10": [F2R + "P10.json", "analise/resultado_logs_2022_1t.json", "analise/resultado_logs_2022_2t.json", F3R + "a4_t28.json"],
- "P11": [F2R + "P11.json", "fase2/externos/certificados/"],
+ "P11": [OV + "cert_analise.json", F2R + "P11.json", "fase2/externos/certificados/"],
  "P12": [F2R + "P12.json"], "P13": [F2R + "P13.json"], "P15": [F2R + "P15.json"], "P16": [F2R + "P16.json"], "P17": [F2R + "P17.json"],
  "P14": [F2R + "P14.json", F3R + "p20.json", F3R + "rev_i3.json", "fase3/inv_r4_zona251.py", F3R + "r4_zona251.json"],
  "P18": ["fase3/f3_pendencias.py", F3R + "p18.json", "fase3/rev_i1_poder.py", F3R + "rev_i1_2026.json", F3R + "rev_i1_2022.json", "fase3/rev_a2_poder.py", F3R + "rev_a2_2026.json", F3R + "rev_a2_2022.json"],
  "P19": [F3R + "p19.json"], "P20": [F3R + "p20.json", F3R + "rev_i3.json"],
- "P21": ["RELATORIO_F3.md (E7)", "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"],
+ "P21": [OV + "terceiros_qr.json", OV + "cert_analise.json", "RELATORIO_F3.md (E7)", "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"],
  "R1-20": ["fase3/f3_reconcilia.py", F3R + "R1_20_dataurnas.json", F3R + "R1_20_dataurnas_reproducao.json", "fase3/externos/DATAURNAS.md", "fase3/ver_a1.py", F3R + "a1.csv", F3R + "a1.json"],
  "C1": ["fase3/f3_curvas.py", "fase3/f3_curvas2.py", F3R + "E2_curvas.json", F3R + "E2b_curvas.json"],
  "C1a": [F3R + "E2_curvas.json"], "C1b": [F3R + "E2_curvas.json", F3R + "E2b_curvas.json"], "C2": [F3R + "E2_curvas.json"],
  "M1": [SL + "p1_resultado_principal.json", F2R + "P13.json", F2R + "P15.json", SL + "h1_resultado.json"],
- "Z1": ["fase3/f3_zeros.py", F3R + "E3_zeros.json", "fase3/rev_i2_zeros.py", F3R + "rev_i2.json", F3R + "bu1.json", "fase3/inv_r3_zeros.py", F3R + "r3_zeros.json"],
+ "Z1": ["operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md", "fase3/f3_zeros.py", F3R + "E3_zeros.json", "fase3/rev_i2_zeros.py", F3R + "rev_i2.json", F3R + "bu1.json", "fase3/inv_r3_zeros.py", F3R + "r3_zeros.json"],
  "MET": ["fase3/AUDITORIA_F3.md", "fase3/RELATORIO_ACEITACAO_F3.md", "fase3/PARECER_CONSOLIDACAO_F3.md", "fase3/RELATORIO_VERIFICACOES_FINAIS_F3.md"],
  "AUT": ["testes/registro.json (T14 a T17b)", "fase3/inv_r1_integridade.py", F3R + "r1_integridade.json", "fase3/RELATORIO_ADVERSARIAL.md", F3R + "adv_casos.json", F3R + "adv_log_x_comparecimento.json", F2R + "P16.json", F2R + "P11.json", F3R + "a173.json", F3R + "sa22.json"],
  "A173": ["fase3/ver_a173.py", F3R + "a173.csv", F3R + "a173.json"], "BU1": ["fase3/ver_bu1.py", F3R + "bu1.json"], "SA22": ["fase3/ver_sa22.py", F3R + "sa22.csv", F3R + "sa22.json"],
 }
 for x in ITENS: x["evidencia_arquivos"] = EVID.get(x["id"], [])
-json.dump({"gerado": "2026-10-28", "situacao": "em revisão (auditoria e I1 a I3)", "itens": ITENS}, open(f"{R}/fase3/inventario.json", "w"), ensure_ascii=False, indent=1)
-L = ["# Inventário mestre da F3 (28/10/2026; em revisão)", "", "Gerado por `fase3/f3_inventario.py`. Estados: respondida, respondida parcialmente, não identificável com estes dados, bloqueada por evidência externa, não executada nesta sessão, em revisão, refutada.", "",
+json.dump({"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) em preparação; Operação Veracidade Geral integrada", "itens": ITENS}, open(f"{R}/fase3/inventario.json", "w"), ensure_ascii=False, indent=1)
+L = ["# Inventário mestre da F3 (28/10/2026; atualizado pela Operação Veracidade Geral)", "", "Gerado por `fase3/f3_inventario.py`. Estados: respondida, respondida parcialmente, não identificável com estes dados, bloqueada por evidência externa, não executada nesta sessão, em revisão, refutada.", "",
      "| Id | Pergunta | Estado inicial | Estado final | Resposta ou motivo | Próxima evidência |", "|---|---|---|---|---|---|"]
 for x in ITENS:
     ant = f" (V1.2: {x['historico'][0]['estado']})" if x.get("historico") else ""

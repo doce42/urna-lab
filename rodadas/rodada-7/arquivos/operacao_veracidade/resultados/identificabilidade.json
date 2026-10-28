@@ -1,0 +1,66 @@
+{
+ "uf": "MG",
+ "secoes": 52062,
+ "secoes_alteradas": 2497,
+ "votos_movidos_de_flavio_para_lula": 59499,
+ "semente": 20261028,
+ "cenarios": {
+  "0_sem_alteracao": {
+   "C1_tabela=BU": 0,
+   "C2_BU=RDV": 0,
+   "C3_BU=imagem": 0,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 0,
+   "C6_assinatura_e_cadeia": 0
+  },
+  "A1_so_tabela": {
+   "C1_tabela=BU": 2497,
+   "C2_BU=RDV": 0,
+   "C3_BU=imagem": 0,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 0,
+   "C6_assinatura_e_cadeia": 0
+  },
+  "A2_tabela_e_BU_sem_reassinar": {
+   "C1_tabela=BU": 0,
+   "C2_BU=RDV": 2497,
+   "C3_BU=imagem": 2497,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 2497,
+   "C6_assinatura_e_cadeia": 0
+  },
+  "A3_BU_e_RDV_sem_tabela_sem_reassinar": {
+   "C1_tabela=BU": 2497,
+   "C2_BU=RDV": 0,
+   "C3_BU=imagem": 2497,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 2497,
+   "C6_assinatura_e_cadeia": 0
+  },
+  "A4_tabela_BU_RDV_imagem_sem_reassinar": {
+   "C1_tabela=BU": 0,
+   "C2_BU=RDV": 0,
+   "C3_BU=imagem": 0,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 2497,
+   "C6_assinatura_e_cadeia": 0
+  },
+  "B1_tudo_regenerado_e_assinado_pelo_gerador (voto trocado)": {
+   "C1_tabela=BU": 0,
+   "C2_BU=RDV": 0,
+   "C3_BU=imagem": 0,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 0,
+   "C6_assinatura_e_cadeia": 0
+  },
+  "B2_tudo_regenerado_e_assinado_pelo_gerador (enchimento: comparecimento sobe)": {
+   "C1_tabela=BU": 0,
+   "C2_BU=RDV": 0,
+   "C3_BU=imagem": 0,
+   "C4_log=comparecimento": 0,
+   "C5_hash_x_lista_assinada": 0,
+   "C6_assinatura_e_cadeia": 0
+  }
+ },
+ "nota": "B1 e B2 representam registros internamente coerentes gerados por um gerador comprometido (assinados pela própria urna): nenhuma consistência interna os separa de registros genuínos. Isso mede o limite de identificabilidade e não a possibilidade operacional de comprometer urnas reais."
+}

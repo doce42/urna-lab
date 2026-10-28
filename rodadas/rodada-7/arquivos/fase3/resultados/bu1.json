@@ -1,0 +1,164 @@
+{
+ "pergunta": "BU1",
+ "secao": "MG 49050/196/173, 2022, 1º turno",
+ "pacote": "bu_imgbu_logjez_rdv_vscmr_2022_1t_MG.zip",
+ "pacote_bytes": 7639923232,
+ "arquivos": [
+  {
+   "nome": "o00406-4905001960173.busa",
+   "bytes": 1246,
+   "data_zip": "2022-10-02 23:52:54",
+   "sha512": "6b9890b5b6ed04b77df7f156ca28cdc0bb08d3b7075a8497c55b53d982dfe4bfbdd46c5b4b9acc8f9598f6d63a35ec8997ea546d542415378af7c4b27329e302",
+   "sha256": "0f8cf19b383de3d2e17354f9f62c5d42e9213a29b142fcdfcbad7726002a1954"
+  },
+  {
+   "nome": "o00406-4905001960173.imgbusa",
+   "bytes": 6270,
+   "data_zip": "2022-10-03 00:46:36",
+   "sha512": "89d503e48a1fd31c4bf1e9537153d9b0835463f0d4d636659afc2299ccbf2d54405343a7847df22ca1f97829d1450136178f3e770db74ca5187aa028ec8e4ade",
+   "sha256": "b01bb207d35be4a4d5a541ef5e266c5cbe0cb795fcf3332d9e9489e829be7eff"
+  },
+  {
+   "nome": "o00406-4905001960173.logsajez",
+   "bytes": 92063,
+   "data_zip": "2022-10-03 00:48:06",
+   "sha512": "70abb5386dcb1abb71252c7d6094cbd82ae6aa9b9b23e06a6f23e73403dc9517d3cddaf992fc752da3798084621f3c98711c70c6a98a02e574b058278063d94b",
+   "sha256": "40bc4a5a973f3851da8514a861be60aac2f788e018aec7517befbe7d6ba08a74"
+  },
+  {
+   "nome": "o00406-4905001960173.rdv",
+   "bytes": 1115,
+   "data_zip": "2022-10-03 00:47:00",
+   "sha512": "3e04ede0397d7280e9c883be4bdf6f93d0bd0eb882aeb00c00ff277b8520565de1a029712173f0a563c1d8d8e3fbefda4a7fc2da800523b814ca032c7f62fa9d",
+   "sha256": "56f60c0bcf831dc0d437ab50827376da6239a6ab0055e0e1a02e8973083152c8"
+  },
+  {
+   "nome": "o00406-4905001960173.vscsa",
+   "bytes": 41702,
+   "data_zip": "2022-10-02 23:52:54",
+   "sha512": "be4a562da35c50101bf9997d3fd7045cfd43c98ab3e31b01d7b5968d2bf0350a5f138f673c657238a9bd7360d1ca2706d87cbb9d5176d2de53b4ea5c2c517c22",
+   "sha256": "b2a94e55d3b5339b982e2dff1872a4da17d8795a2228eb5c675cdc28b7d99c2a"
+  }
+ ],
+ "reconhecidos_pelo_leitor_2022": {
+  "o00406-4905001960173.busa": null,
+  "o00406-4905001960173.imgbusa": null,
+  "o00406-4905001960173.logsajez": null,
+  "o00406-4905001960173.rdv": [
+   [
+    "MG",
+    "49050",
+    "196",
+    "173"
+   ],
+   "rdv"
+  ],
+  "o00406-4905001960173.vscsa": null
+ },
+ "busa_decodificado": {
+  "bu_aptos": 109,
+  "bu_comparecimento": 16,
+  "bu_v13": 16
+ },
+ "imgbusa_lido": {
+  "img_v13": 16,
+  "img_branco": 0,
+  "img_nulo": 0,
+  "img_total": 16,
+  "img_comparecimento": null
+ },
+ "vscsa": {
+  "resumo": {
+   "algoritmo": "ECDSA-P521",
+   "cert_urna": "ueao01293146",
+   "cert_emissor": "AC URNA",
+   "assin_lista_ok": true
+  },
+  "arquivos_listados": [
+   "o00406-4905001960173.busa",
+   "o00406-4905001960173.chvtp",
+   "o00406-4905001960173.hash",
+   "o00406-4905001960173.imgbusa",
+   "o00406-4905001960173.logsajez",
+   "o00406-4905001960173.rdv",
+   "o00406-4905001960173.ver"
+  ],
+  "confere": {
+   "o00406-4905001960173.busa": {
+    "tamanho_e_sha512": true,
+    "assinatura": true
+   },
+   "o00406-4905001960173.imgbusa": {
+    "tamanho_e_sha512": true,
+    "assinatura": true
+   },
+   "o00406-4905001960173.logsajez": {
+    "tamanho_e_sha512": true,
+    "assinatura": true
+   },
+   "o00406-4905001960173.rdv": {
+    "tamanho_e_sha512": true,
+    "assinatura": true
+   }
+  }
+ },
+ "publicado": {
+  "votos": {
+   "v12_1": 0,
+   "v13_1": 16,
+   "v14_1": 0,
+   "v15_1": 0,
+   "v16_1": 0,
+   "v21_1": 0,
+   "v22_1": 0,
+   "v27_1": 0,
+   "v30_1": 0,
+   "v44_1": 0,
+   "v80_1": 0,
+   "branco_1": 0,
+   "nulo_1": 0
+  },
+  "comparecimento": 16,
+  "aptos": 109,
+  "emissao_bu": "2022-10-02 23:47:31"
+ },
+ "busa_x_publicado": {},
+ "busa_comparecimento": 16,
+ "secoes_2022_so_com_boletim_do_sistema_de_apuracao": {
+  "por_turno_uf": {
+   "1T AM": 4,
+   "1T BA": 1,
+   "1T CE": 2,
+   "1T MG": 2,
+   "1T MS": 1,
+   "1T MT": 1,
+   "1T PE": 1,
+   "1T PR": 1,
+   "1T RN": 1,
+   "1T RS": 1,
+   "1T SP": 2,
+   "1T ZZ": 99,
+   "2T BA": 1,
+   "2T DF": 1,
+   "2T GO": 1,
+   "2T PA": 4,
+   "2T PE": 1,
+   "2T RS": 1,
+   "2T SC": 1,
+   "2T ZZ": 33
+  },
+  "total": 159,
+  "exemplos": [
+   "1T AM 0255000400454",
+   "1T AM 0269000040129",
+   "1T BA 3747801310222",
+   "1T CE 1527000060206",
+   "1T CE 1587300890181",
+   "1T MG 4787201670041",
+   "1T MG 4905001960173",
+   "1T MS 9073500430027",
+   "1T MT 9819100270126",
+   "1T PE 2349300990039"
+  ]
+ }
+}

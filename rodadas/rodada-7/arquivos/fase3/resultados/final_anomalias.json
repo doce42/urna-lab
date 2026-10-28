@@ -1,0 +1,367 @@
+{
+ "pre_registro": "fase3/PREREG_FINAL.md (Z3)",
+ "T28_2026": {
+  "urnas": [
+   {
+    "secao": "MA/7285/66/121",
+    "votos_ult30": 14,
+    "sem_biometria_ult30": 14,
+    "resto_do_dia": 211,
+    "sem_biometria_resto": 48,
+    "ultimo_voto": "04/10/2026 17:17:27",
+    "lula_1T_secao": 0.6026785714285714,
+    "lula_1T_municipio": 0.7010703363914373,
+    "z_virada_T02": 1.8858659139793306
+   },
+   {
+    "secao": "MA/7285/66/63",
+    "votos_ult30": 10,
+    "sem_biometria_ult30": 10,
+    "resto_do_dia": 217,
+    "sem_biometria_resto": 45,
+    "ultimo_voto": "04/10/2026 17:21:15",
+    "lula_1T_secao": 0.5515695067264574,
+    "lula_1T_municipio": 0.7010703363914373,
+    "z_virada_T02": 1.9226765254050604
+   },
+   {
+    "secao": "MA/9210/10/282",
+    "votos_ult30": 11,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 214,
+    "sem_biometria_resto": 54,
+    "ultimo_voto": "04/10/2026 17:17:45",
+    "lula_1T_secao": 0.5116279069767442,
+    "lula_1T_municipio": 0.5450720416427174,
+    "z_virada_T02": 0.03134372705632721
+   },
+   {
+    "secao": "PR/74993/159/9",
+    "votos_ult30": 12,
+    "sem_biometria_ult30": 12,
+    "resto_do_dia": 179,
+    "sem_biometria_resto": 42,
+    "ultimo_voto": "04/10/2026 17:19:27",
+    "lula_1T_secao": 0.42780748663101603,
+    "lula_1T_municipio": 0.5043727142629989,
+    "z_virada_T02": 0.846019373254942
+   },
+   {
+    "secao": "PR/75574/65/6",
+    "votos_ult30": 14,
+    "sem_biometria_ult30": 14,
+    "resto_do_dia": 223,
+    "sem_biometria_resto": 63,
+    "ultimo_voto": "04/10/2026 17:51:31",
+    "lula_1T_secao": 0.4649122807017544,
+    "lula_1T_municipio": 0.46634225466342255,
+    "z_virada_T02": -2.235144230149759
+   },
+   {
+    "secao": "BA/36854/180/426",
+    "votos_ult30": 15,
+    "sem_biometria_ult30": 12,
+    "resto_do_dia": 258,
+    "sem_biometria_resto": 25,
+    "ultimo_voto": "04/10/2026 18:37:22",
+    "lula_1T_secao": 0.6995515695067265,
+    "lula_1T_municipio": 0.5905503234239368,
+    "z_virada_T02": 0.9588615970298728
+   },
+   {
+    "secao": "BA/36854/180/175",
+    "votos_ult30": 11,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 295,
+    "sem_biometria_resto": 72,
+    "ultimo_voto": "04/10/2026 18:30:16",
+    "lula_1T_secao": 0.6917808219178082,
+    "lula_1T_municipio": 0.5905503234239368,
+    "z_virada_T02": -1.2312529371554164
+   },
+   {
+    "secao": "RS/87572/99/35",
+    "votos_ult30": 12,
+    "sem_biometria_ult30": 9,
+    "resto_do_dia": 237,
+    "sem_biometria_resto": 11,
+    "ultimo_voto": "04/10/2026 16:51:13",
+    "lula_1T_secao": 0.35864978902953587,
+    "lula_1T_municipio": 0.3985117817279868,
+    "z_virada_T02": 1.3808622551289662
+   }
+  ],
+  "votos_ult30_total": 99,
+  "lula_acima_do_municipio": 2,
+  "lula_abaixo": 6
+ },
+ "T02_2026_pro_lula": {
+  "secoes": 33,
+  "locais_distintos": 33,
+  "ufs": {
+   "AM": 6,
+   "CE": 4,
+   "PA": 4,
+   "AC": 3,
+   "MA": 2,
+   "MG": 2
+  },
+  "z_medio_das_outras_secoes_do_local": 0.962685567646799,
+  "dcomparecimento_medio_pp": -3.0038504803468813,
+  "dcomparecimento_geral_pp": 1.715723428891812,
+  "excesso_votos_lula": 773.4109142500525
+ },
+ "T02_2026_pro_adversario": {
+  "secoes": 13,
+  "locais_distintos": 7,
+  "ufs": {
+   "SP": 6,
+   "PA": 2,
+   "PI": 2,
+   "AC": 1,
+   "MG": 1,
+   "PR": 1
+  },
+  "z_medio_das_outras_secoes_do_local": -4.2062148650084215,
+  "dcomparecimento_medio_pp": 2.462191143265724,
+  "dcomparecimento_geral_pp": 1.715723428891812,
+  "excesso_votos_lula": -414.6915540665683
+ },
+ "T28_2022": {
+  "urnas": [
+   {
+    "secao": "MG/44172/100/269",
+    "votos_ult30": 11,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 227,
+    "sem_biometria_resto": 48,
+    "ultimo_voto": "02/10/2022 16:58:24",
+    "lula_1T_secao": 0.5265486725663717,
+    "lula_1T_municipio": 0.5084749650221335,
+    "z_virada_T02": -2.321751608181587
+   },
+   {
+    "secao": "SP/71072/247/761",
+    "votos_ult30": 15,
+    "sem_biometria_ult30": 15,
+    "resto_do_dia": 305,
+    "sem_biometria_resto": 111,
+    "ultimo_voto": "02/10/2022 17:42:02",
+    "lula_1T_secao": 0.5286195286195287,
+    "lula_1T_municipio": 0.4753625770463529,
+    "z_virada_T02": -2.1507535591887565
+   },
+   {
+    "secao": "SP/66192/65/255",
+    "votos_ult30": 14,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 269,
+    "sem_biometria_resto": 30,
+    "ultimo_voto": "02/10/2022 16:50:42",
+    "lula_1T_secao": 0.3473282442748092,
+    "lula_1T_municipio": 0.3185144102208577,
+    "z_virada_T02": -0.49782245493527433
+   },
+   {
+    "secao": "PR/76678/41/307",
+    "votos_ult30": 8,
+    "sem_biometria_ult30": 8,
+    "resto_do_dia": 292,
+    "sem_biometria_resto": 43,
+    "ultimo_voto": "02/10/2022 17:06:48",
+    "lula_1T_secao": 0.19081272084805653,
+    "lula_1T_municipio": 0.244667071111184,
+    "z_virada_T02": 0.793980563069896
+   },
+   {
+    "secao": "BA/34290/127/314",
+    "votos_ult30": 13,
+    "sem_biometria_ult30": 10,
+    "resto_do_dia": 213,
+    "sem_biometria_resto": 27,
+    "ultimo_voto": "02/10/2022 16:45:37",
+    "lula_1T_secao": 0.7731481481481481,
+    "lula_1T_municipio": 0.8008678689438273,
+    "z_virada_T02": 2.4261706898485813
+   },
+   {
+    "secao": "BA/36978/65/91",
+    "votos_ult30": 12,
+    "sem_biometria_ult30": 12,
+    "resto_do_dia": 213,
+    "sem_biometria_resto": 57,
+    "ultimo_voto": "02/10/2022 17:42:17",
+    "lula_1T_secao": 0.8925233644859814,
+    "lula_1T_municipio": 0.7785855915399867,
+    "z_virada_T02": -2.6431996012083623
+   },
+   {
+    "secao": "RJ/58475/254/207",
+    "votos_ult30": 14,
+    "sem_biometria_ult30": 13,
+    "resto_do_dia": 263,
+    "sem_biometria_resto": 43,
+    "ultimo_voto": "02/10/2022 18:16:55",
+    "lula_1T_secao": 0.41796875,
+    "lula_1T_municipio": 0.4294482878169469,
+    "z_virada_T02": -0.13723242260612853
+   },
+   {
+    "secao": "GO/94390/95/5",
+    "votos_ult30": 11,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 240,
+    "sem_biometria_resto": 36,
+    "ultimo_voto": "02/10/2022 17:02:26",
+    "lula_1T_secao": 0.4327731092436975,
+    "lula_1T_municipio": 0.39441680486456604,
+    "z_virada_T02": 0.500864778158526
+   },
+   {
+    "secao": "GO/92282/57/47",
+    "votos_ult30": 15,
+    "sem_biometria_ult30": 15,
+    "resto_do_dia": 276,
+    "sem_biometria_resto": 50,
+    "ultimo_voto": "02/10/2022 17:27:13",
+    "lula_1T_secao": 0.4652777777777778,
+    "lula_1T_municipio": 0.5099846390168971,
+    "z_virada_T02": -1.2057222407949522
+   },
+   {
+    "secao": "GO/94714/79/105",
+    "votos_ult30": 16,
+    "sem_biometria_ult30": 16,
+    "resto_do_dia": 273,
+    "sem_biometria_resto": 115,
+    "ultimo_voto": "02/10/2022 18:56:50",
+    "lula_1T_secao": 0.39285714285714285,
+    "lula_1T_municipio": 0.3913128165173354,
+    "z_virada_T02": 1.1215963007344585
+   },
+   {
+    "secao": "GO/95753/34/104",
+    "votos_ult30": 13,
+    "sem_biometria_ult30": 13,
+    "resto_do_dia": 208,
+    "sem_biometria_resto": 41,
+    "ultimo_voto": "02/10/2022 17:46:01",
+    "lula_1T_secao": 0.5,
+    "lula_1T_municipio": 0.4212460944679287,
+    "z_virada_T02": -0.12268859317448275
+   },
+   {
+    "secao": "MA/7927/101/78",
+    "votos_ult30": 17,
+    "sem_biometria_ult30": 17,
+    "resto_do_dia": 287,
+    "sem_biometria_resto": 79,
+    "ultimo_voto": "02/10/2022 16:48:59",
+    "lula_1T_secao": 0.9967105263157895,
+    "lula_1T_municipio": 0.7760920306768923,
+    "z_virada_T02": 1.0767939132156448
+   },
+   {
+    "secao": "MA/7277/22/184",
+    "votos_ult30": 14,
+    "sem_biometria_ult30": 14,
+    "resto_do_dia": 294,
+    "sem_biometria_resto": 111,
+    "ultimo_voto": "02/10/2022 17:07:26",
+    "lula_1T_secao": 0.5757575757575758,
+    "lula_1T_municipio": 0.5164680146382352,
+    "z_virada_T02": 0.8499534706481716
+   },
+   {
+    "secao": "PA/4219/15/211",
+    "votos_ult30": 12,
+    "sem_biometria_ult30": 9,
+    "resto_do_dia": 181,
+    "sem_biometria_resto": 20,
+    "ultimo_voto": "02/10/2022 17:06:25",
+    "lula_1T_secao": 0.7407407407407407,
+    "lula_1T_municipio": 0.7540843383799504,
+    "z_virada_T02": -0.7272724328532107
+   },
+   {
+    "secao": "DF/97012/4/551",
+    "votos_ult30": 13,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 257,
+    "sem_biometria_resto": 45,
+    "ultimo_voto": "02/10/2022 17:32:21",
+    "lula_1T_secao": 0.44573643410852715,
+    "lula_1T_municipio": 0.36851424762066864,
+    "z_virada_T02": -1.1779437805460684
+   },
+   {
+    "secao": "MS/91316/52/43",
+    "votos_ult30": 9,
+    "sem_biometria_ult30": 9,
+    "resto_do_dia": 214,
+    "sem_biometria_resto": 46,
+    "ultimo_voto": "02/10/2022 15:53:52",
+    "lula_1T_secao": 0.2626728110599078,
+    "lula_1T_municipio": 0.3669920384968995,
+    "z_virada_T02": -0.3491288226160845
+   },
+   {
+    "secao": "MS/91715/19/166",
+    "votos_ult30": 12,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 225,
+    "sem_biometria_resto": 46,
+    "ultimo_voto": "02/10/2022 15:38:47",
+    "lula_1T_secao": 0.2680851063829787,
+    "lula_1T_municipio": 0.46827643630308075,
+    "z_virada_T02": -1.9233269562045405
+   },
+   {
+    "secao": "PE/24775/24/14",
+    "votos_ult30": 12,
+    "sem_biometria_ult30": 11,
+    "resto_do_dia": 237,
+    "sem_biometria_resto": 42,
+    "ultimo_voto": "02/10/2022 17:23:42",
+    "lula_1T_secao": 0.6584362139917695,
+    "lula_1T_municipio": 0.706056466302368,
+    "z_virada_T02": 0.14155320823033216
+   }
+  ],
+  "votos_ult30_total": 231,
+  "lula_acima_do_municipio": 10,
+  "lula_abaixo": 8
+ },
+ "T02_2022_pro_lula": {
+  "secoes": 90,
+  "locais_distintos": 72,
+  "ufs": {
+   "SP": 32,
+   "CE": 13,
+   "AM": 9,
+   "PA": 9,
+   "MA": 8,
+   "AC": 6
+  },
+  "z_medio_das_outras_secoes_do_local": 3.411837317155219,
+  "dcomparecimento_medio_pp": -1.686867559724827,
+  "dcomparecimento_geral_pp": 0.2636175411600366,
+  "excesso_votos_lula": 2610.6648599708883
+ },
+ "T02_2022_pro_adversario": {
+  "secoes": 13,
+  "locais_distintos": 13,
+  "ufs": {
+   "PR": 3,
+   "CE": 2,
+   "MA": 2,
+   "PI": 2,
+   "AC": 1,
+   "BA": 1
+  },
+  "z_medio_das_outras_secoes_do_local": -3.584475323267519,
+  "dcomparecimento_medio_pp": -0.19923782009829438,
+  "dcomparecimento_geral_pp": 0.2636175411600366,
+  "excesso_votos_lula": -346.9439420035245
+ }
+}

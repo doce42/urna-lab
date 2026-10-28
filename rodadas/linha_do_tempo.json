@@ -157,6 +157,42 @@
    "resumo": "Rodada 6 (V1.4), 28/10/2026: alegações públicas (live de 4/11/2022 e pedido do PL, matérias e posts no X) transformadas em perguntas, pré-registradas (emendas 7 a 14) e testadas com dados oficiais (T45 a T57; perguntas Q27 a Q39). Todos os números citados se reproduziram, menos o '644 mil' do Rio; nenhuma alegação apontou divergência nos arquivos. O bug do ID 67305985 no log das urnas antigas existe em 2022 e não aparece em 2026; a diferença de voto por modelo some no mesmo local de votação; o recebimento de boletins ficou parado das 17:07 às 19:03 no 2º turno de 2026, junto com a prorrogação; a queda de brancos e nulos tem causa estrutural em grande parte (marca no 1º turno e menos 2º turno de governador), com resíduo uniforme. A resposta central de 2026 não muda.",
    "etapas": [],
    "historico": []
+  },
+  {
+   "id": "OV",
+   "rodada": 7,
+   "versao": "V1.5",
+   "titulo": "Operação Veracidade Geral",
+   "status": "concluida",
+   "inicio": "2026-10-28",
+   "resumo": "Rodada 7 (V1.5), 28/10/2026: auditoria adversarial dos dados e do próprio veredito. Pergunta: os dados oficiais usados pelo estudo são fiéis ao que aconteceu? O que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta. A cadeia de certificados verifica em 100% das urnas de 2022 e 2026 (1.942.246 pares seção × turno, 0 falhas); 404 boletins impressos lidos por terceiros no 2º turno de 2026 são iguais ao TSE (amostra de conveniência, 0,08%). As simulações adversariais mostram pontos cegos maiores do que o veredito dizia: UFs, região, lote e deslocamento uniforme só são vistos a partir de ~0,5 a 2,2 milhões de votos, ou nunca, e registros coerentes gerados pela própria fonte passam em todas as verificações internas. Testes T60a a T65, perguntas Q42 a Q50 (com T58, T59, Q40 e Q41 da mesma rodada). A resposta central fica mais estreita: não encontramos sinal nos mecanismos que os dados públicos conseguem examinar, com o poder medido.",
+   "etapas": [
+    {
+     "titulo": "Pré-registro da operação",
+     "texto": "Protocolo e emendas 1 a 4 escritos antes de ver os resultados da grade (operacao_veracidade/PROTOCOLO_PRE_EXECUCAO.md)."
+    },
+    {
+     "titulo": "Cadeia de certificados (T60a, T60b)",
+     "texto": "1.942.246 de 1.942.246 certificados verificam até a AC emissora; o verificador rejeita 7 mutações em 40 de 40 e não rejeita nenhum arquivo genuíno."
+    },
+    {
+     "titulo": "Boletins de terceiros (T61)",
+     "texto": "404 de 404 iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas; 404 arquivos iguais entre downloads independentes."
+    },
+    {
+     "titulo": "Simulações adversariais (T62, T63)",
+     "texto": "15 mecanismos, 2 sentidos, 7 magnitudes e 2 anos: o que a bateria vê, a partir de quantos votos, e o que passa sem alarme."
+    },
+    {
+     "titulo": "Zeros (T64) e a conta do vídeo (T65)",
+     "texto": "Três famílias de modelo de zeros falham a calibração; o '98,12% dos votos extras' é a premissa devolvida e o mesmo método dá 370% em 2022."
+    },
+    {
+     "titulo": "Impacto nos vereditos",
+     "texto": "22 afirmações confrontadas: 10 preservadas ou reforçadas, 6 enfraquecidas, 2 refutadas como redigidas (H7 e T05), 1 superada, 1 não avaliável (operacao_veracidade/09)."
+    }
+   ],
+   "historico": []
   }
  ],
  "marcos": [
@@ -345,6 +381,12 @@
    "hora": "",
    "titulo": "Alegações públicas testadas (V1.4)",
    "texto": "13 testes pré-registrados (T45–T57) e 13 perguntas novas (Q27–Q39), congelados na rodada 6 com aprovação do responsável."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "Operação Veracidade Geral (V1.5)",
+   "texto": "7 testes novos (T60a a T65) e 9 perguntas (Q42 a Q50); cadeia de certificados em 100% das urnas e 404 boletins de terceiros iguais ao TSE; veredito revisto: H7 e T05 viram ponto cego, a resposta central passa a dizer o alcance por mecanismo. Rodada 7 a congelar."
   }
  ],
  "etapas_do_caminho": [
@@ -381,11 +423,27 @@
    "link": "#fase2"
   },
   {
+   "id": "f3",
+   "titulo": "Pendências, curvas e zeros",
+   "status": "concluida",
+   "versao": "V1.3",
+   "texto": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, congelada na rodada 5 (V1.3).",
+   "link": "#fase3"
+  },
+  {
    "id": "alegacoes",
    "titulo": "Alegações públicas",
    "status": "concluida",
    "versao": "V1.4",
    "texto": "Live de 2022, pedido do PL, matérias e posts testados com pré-registro (T45–T57, Q27–Q39). Rodada 6.",
+   "link": "#/respostas"
+  },
+  {
+   "id": "veracidade",
+   "titulo": "Operação Veracidade",
+   "status": "concluida",
+   "versao": "V1.5",
+   "texto": "Auditoria adversarial dos dados e do veredito: cadeia em 100% das urnas, 404 boletins de terceiros, pontos cegos medidos (T60a a T65, Q42 a Q50). Rodada 7.",
    "link": "#/respostas"
   },
   {
@@ -406,6 +464,36 @@
   }
  ],
  "conclusoes_recentes": [
+  {
+   "titulo": "Cadeia de certificados fecha em 100% das urnas",
+   "texto": "1.942.246 pares seção × turno de 2022 e 2026, 0 falhas, todos válidos no dia, nenhuma chave repetida (antes, 200 seções). Reforça a integridade dos arquivos, não a veracidade dos votos; a raiz do TSE não é pública.",
+   "teste": "T60a"
+  },
+  {
+   "titulo": "404 boletins de terceiros iguais ao TSE",
+   "texto": "Boletins impressos lidos por terceiros no 2º turno de 2026 (22 UFs): assinatura, cadeia e votos iguais em 404 de 404. Amostra de conveniência (0,08%).",
+   "teste": "T61"
+  },
+  {
+   "titulo": "A bateria tem pontos cegos de escala",
+   "texto": "Seções, locais, zonas e municípios são vistos a partir de 25 a 50 mil votos; UFs, os cinco grandes juntos, região, lote e deslocamento uniforme só a partir de ~0,5 a 2,2 mi, ou nunca. O poder é assimétrico entre os sentidos.",
+   "teste": "T63"
+  },
+  {
+   "titulo": "Registros coerentes passam em todas as verificações internas",
+   "texto": "Se tabela, BU, RDV, imagem e log são regenerados coerentes e reassinados pela fonte, nenhuma das seis verificações acusa; só evidência de fora distingue.",
+   "teste": "T62"
+  },
+  {
+   "titulo": "Zeros de votos: não determinado",
+   "texto": "Três famílias de modelo falham a calibração; descritivamente, os zeros são locais de uma seção só, com menos de 1% do total, em 2022 e em 2026.",
+   "teste": "T64"
+  },
+  {
+   "titulo": "O '98% dos votos extras' é a premissa devolvida",
+   "texto": "A aritmética do vídeo está certa, mas 60% dos outros para Lula é o mínimo possível; com 85%, os extras se dividem perto de 51/49. O mesmo método dá 370% para Bolsonaro em 2022.",
+   "teste": "T65"
+  },
   {
    "titulo": "Urna antiga não muda voto no mesmo local",
    "texto": "Lula teve 50,3% nas urnas anteriores a 2020 e 46,0% nas UE2020 (1º turno de 2022), mas dentro do mesmo local de votação a diferença é equivalente a zero.",
@@ -487,5 +575,5 @@
    "teste": "T32"
   }
  ],
- "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 (V1.3) · Alegações públicas testadas (V1.4) em 28/10/2026"
+ "situacao_atual": "Baseline V1.0 · Fase 2 (V1.1) · Fase 3 (V1.3) · Alegações públicas testadas (V1.4) · Operação Veracidade Geral (V1.5, rodada 7, a congelar) em 28/10/2026"
 }

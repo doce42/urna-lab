@@ -5,8 +5,20 @@ export type Nivel = { id: string; nome: string; cor: string; o_que_e: string };
 export type Hipotese = { id: string; mecanismo: string; o_que_deixaria: string; escala_necessaria: string; testes: string[]; resultado: string; status: string; em_votos: string };
 export type Veredito = {
   margem_2026: number; votos_para_inverter: number; niveis: Nivel[]; sinal_por_teste: Record<string, { nivel: string; motivo: string }>; hipoteses: Hipotese[];
-  resposta_central: { aviso?: { titulo: string; itens: string[]; nota_autor?: string }; pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[] };
+  resposta_central: { aviso?: { titulo: string; itens: string[]; nota_autor?: string }; pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[];
+    avisos?: string[]; nota_anomalias?: string; operacao?: Operacao };
 };
+export type Operacao = { titulo: string; data: string; versao: string; pergunta: string; resposta: string; achados: { titulo: string; texto: string; teste: string }[]; pontos_cegos: string[]; perguntas: string[]; capitulo: string; documentos: { slug: string; titulo: string }[] };
+
+// Avisos que acompanham os resultados (Operação Veracidade Geral, RECOMENDACOES_SITE.md seção 3)
+export function AvisosAlcance({ avisos }: { avisos: string[] }) {
+  return (
+    <div className="cartao p-5 md:p-6 border-l-[3px]" style={{ borderLeftColor: 'var(--warn)' }}>
+      <div className="text-[12px] font-mono uppercase tracking-wider" style={{ color: 'var(--warn)' }}>Leia junto com os resultados</div>
+      <ul className="mt-2 grid gap-1.5 text-[15px] leading-relaxed text-muted list-disc pl-5">{avisos.map((a) => <li key={a}>{a}</li>)}</ul>
+    </div>
+  );
+}
 
 export const COR_SINAL: Record<string, string> = {
   S0: 'var(--ok)', S1: 'color-mix(in srgb, var(--ok) 70%, var(--text-subtle))', S2: 'var(--warn)',
@@ -55,6 +67,7 @@ export function RespostaCentral({ v, compacto }: { v: Veredito; compacto?: boole
         {!compacto && <ol className="mt-4 grid gap-1.5 text-[15px] text-muted list-decimal pl-5">{r.deducao.map((d) => <li key={d}>{d}</li>)}</ol>}
         <p className="mt-4 text-[14px] text-muted"><b className="font-medium text-text">O que fecharia o que resta: </b>{r.o_que_seria_preciso}</p>
       </div>
+      {r.avisos && r.avisos.length > 0 && <AvisosAlcance avisos={r.avisos} />}
       <div>
         <h3 className="t-h3">As hipóteses de fraude examinadas</h3>
         <p className="text-muted text-[14.5px] mt-1">Cada mecanismo concreto, o que ele deixaria nos dados e o que encontramos. Inverter 2026 exigiria trocar ~{(v.votos_para_inverter / 1e6).toFixed(2).replace('.', ',')} mi votos de lado.</p>
@@ -71,10 +84,10 @@ export function RespostaCentral({ v, compacto }: { v: Veredito; compacto?: boole
       </div>
       <div>
         <h3 className="t-h3">Anomalias reais em 2026</h3>
-        <p className="text-muted text-[14.5px] mt-1">O que encontramos fora do esperado, com o tamanho em votos. Nenhuma tem causa demonstrada; nenhuma, sozinha ou somada, chega perto dos ~2,2 mi votos que inverteriam o resultado.</p>
+        <p className="text-muted text-[14.5px] mt-1">O que encontramos fora do esperado, com o tamanho em votos. {r.nota_anomalias || 'Nenhuma tem causa demonstrada.'}</p>
         <ul className="mt-3 grid gap-1.5">{r.anomalias_2026.map((a) => (
           <li key={a.o_que} className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14.5px] border-b border-border py-2">
-            <SeloSinal nivel={a.sinal} nome={nivel(a.sinal)} /><span className="flex-1 min-w-[12rem] text-text">{a.o_que}</span><span className="font-mono text-[13.5px] text-muted">{a.votos} votos</span>
+            <SeloSinal nivel={a.sinal} nome={nivel(a.sinal)} /><span className="flex-1 min-w-[12rem] text-text">{a.o_que}</span><span className="font-mono text-[13.5px] text-muted">{/^[~\d]/.test(a.votos) && !/votos/.test(a.votos) ? `${a.votos} votos` : a.votos}</span>
             <a href={`#/testes/${a.teste}`} className="text-accent-text underline underline-offset-2 text-[13px]">{a.teste}</a>
           </li>
         ))}</ul>

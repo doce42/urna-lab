@@ -1,0 +1,25 @@
+{
+ "rotulo": "exploratorio_pos_hoc",
+ "2022": {
+  "candidato": "Bolsonaro",
+  "secoes_zero": 141,
+  "locais_com_zero": 136,
+  "zeros_em_locais_com_mais_de_um_zero": 10,
+  "zeros_em_locais_onde_todas_as_secoes_sao_zero": 121,
+  "zeros_em_locais_com_participacao_total_menor_que_1pct": 131,
+  "mediana_votos_validos_da_secao_zero": 92.0,
+  "mediana_votos_validos_todas": 257.0,
+  "secoes_zero_com_menos_de_100_validos": 78
+ },
+ "2026": {
+  "candidato": "Flavio",
+  "secoes_zero": 106,
+  "locais_com_zero": 98,
+  "zeros_em_locais_com_mais_de_um_zero": 15,
+  "zeros_em_locais_onde_todas_as_secoes_sao_zero": 84,
+  "zeros_em_locais_com_participacao_total_menor_que_1pct": 104,
+  "mediana_votos_validos_da_secao_zero": 124.5,
+  "mediana_votos_validos_todas": 254.0,
+  "secoes_zero_com_menos_de_100_validos": 42
+ }
+}

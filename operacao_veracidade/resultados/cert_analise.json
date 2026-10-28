@@ -1,0 +1,296 @@
+{
+ "acs_usadas": {
+  "AC URNA": {
+   "nao_antes": "2011-07-22T21:59:57+00:00",
+   "nao_depois": "2026-07-18T21:59:57+00:00"
+  },
+  "AC UE2020": {
+   "nao_antes": "2021-07-05T21:31:56+00:00",
+   "nao_depois": "2037-07-01T21:31:56+00:00"
+  },
+  "AC UE2022": {
+   "nao_antes": "2023-02-28T13:46:49+00:00",
+   "nao_depois": "2039-02-24T13:46:49+00:00"
+  }
+ },
+ "conjuntos": {
+  "2022_1t": {
+   "secoes_com_certificado": 471908,
+   "erros_de_leitura": 0,
+   "certificados_unicos": 471906,
+   "cadeia": {
+    "verifica": 471908,
+    "falha": 0,
+    "sem_AC_disponivel": 0
+   },
+   "cadeia_por_emissor": {
+    "AC UE2020": {
+     "ok": 192643,
+     "falha": 0
+    },
+    "AC URNA": {
+     "ok": 279265,
+     "falha": 0
+    }
+   },
+   "validade": {
+    "validos_no_dia": 471908,
+    "nao_validos_no_dia": 0,
+    "emitidos_depois_da_eleicao": 0,
+    "emitidos_nos_30_dias_antes": 178,
+    "emitidos_nos_90_dias_antes": 12580
+   },
+   "emissor_por_modelo": {
+    "UE2009": {
+     "AC UE2020": 0,
+     "AC URNA": 44571
+    },
+    "UE2010": {
+     "AC UE2020": 0,
+     "AC URNA": 94895
+    },
+    "UE2011": {
+     "AC UE2020": 0,
+     "AC URNA": 28364
+    },
+    "UE2013": {
+     "AC UE2020": 0,
+     "AC URNA": 25356
+    },
+    "UE2015": {
+     "AC UE2020": 0,
+     "AC URNA": 86023
+    },
+    "UE2020": {
+     "AC UE2020": 192643,
+     "AC URNA": 0
+    }
+   },
+   "cn_em_mais_de_uma_secao": 2,
+   "cn_com_mais_de_um_certificado": 0,
+   "mesma_chave_publica_em_cn_diferentes": 0,
+   "mesmo_certificado_em_cn_diferentes": 0,
+   "emitidos_depois_do_fim_de_validade_da_AC_publicada": {
+    "AC URNA": 0,
+    "AC UE2020": 0,
+    "AC UE2022": 0
+   },
+   "cert_igual_urna_no_log": {
+    "sim": 192618,
+    "nao": 279290
+   }
+  },
+  "2022_2t": {
+   "secoes_com_certificado": 471984,
+   "erros_de_leitura": 0,
+   "certificados_unicos": 471983,
+   "cadeia": {
+    "verifica": 471984,
+    "falha": 0,
+    "sem_AC_disponivel": 0
+   },
+   "cadeia_por_emissor": {
+    "AC UE2020": {
+     "ok": 192690,
+     "falha": 0
+    },
+    "AC URNA": {
+     "ok": 279294,
+     "falha": 0
+    }
+   },
+   "validade": {
+    "validos_no_dia": 471984,
+    "nao_validos_no_dia": 0,
+    "emitidos_depois_da_eleicao": 0,
+    "emitidos_nos_30_dias_antes": 26,
+    "emitidos_nos_90_dias_antes": 951
+   },
+   "emissor_por_modelo": {
+    "UE2009": {
+     "AC UE2020": 0,
+     "AC URNA": 44867
+    },
+    "UE2010": {
+     "AC UE2020": 0,
+     "AC URNA": 94746
+    },
+    "UE2011": {
+     "AC UE2020": 0,
+     "AC URNA": 28162
+    },
+    "UE2013": {
+     "AC UE2020": 0,
+     "AC URNA": 25376
+    },
+    "UE2015": {
+     "AC UE2020": 0,
+     "AC URNA": 86138
+    },
+    "UE2020": {
+     "AC UE2020": 192690,
+     "AC URNA": 0
+    }
+   },
+   "cn_em_mais_de_uma_secao": 1,
+   "cn_com_mais_de_um_certificado": 0,
+   "mesma_chave_publica_em_cn_diferentes": 0,
+   "mesmo_certificado_em_cn_diferentes": 0,
+   "emitidos_depois_do_fim_de_validade_da_AC_publicada": {
+    "AC URNA": 0,
+    "AC UE2020": 0,
+    "AC UE2022": 0
+   },
+   "cert_igual_urna_no_log": {
+    "sim": 192668,
+    "nao": 279316
+   }
+  },
+  "2022_entre_turnos": {
+   "secoes_nos_dois_turnos": 471894,
+   "mesmo_certificado": 459354,
+   "certificado_diferente_na_mesma_secao": 12540,
+   "mesmo_CN": 459354,
+   "CN_diferente": 12540
+  },
+  "2026_1t": {
+   "secoes_com_certificado": 499176,
+   "erros_de_leitura": 0,
+   "certificados_unicos": 499176,
+   "cadeia": {
+    "verifica": 499176,
+    "falha": 0,
+    "sem_AC_disponivel": 0
+   },
+   "cadeia_por_emissor": {
+    "AC UE2020": {
+     "ok": 200463,
+     "falha": 0
+    },
+    "AC UE2022": {
+     "ok": 198757,
+     "falha": 0
+    },
+    "AC URNA": {
+     "ok": 99956,
+     "falha": 0
+    }
+   },
+   "validade": {
+    "validos_no_dia": 499176,
+    "nao_validos_no_dia": 0,
+    "emitidos_depois_da_eleicao": 0,
+    "emitidos_nos_30_dias_antes": 83,
+    "emitidos_nos_90_dias_antes": 285
+   },
+   "emissor_por_modelo": {
+    "UE2013": {
+     "AC UE2020": 0,
+     "AC UE2022": 0,
+     "AC URNA": 11442
+    },
+    "UE2015": {
+     "AC UE2020": 0,
+     "AC UE2022": 0,
+     "AC URNA": 88514
+    },
+    "UE2020": {
+     "AC UE2020": 200376,
+     "AC UE2022": 132,
+     "AC URNA": 0
+    },
+    "UE2022": {
+     "AC UE2020": 87,
+     "AC UE2022": 198625,
+     "AC URNA": 0
+    }
+   },
+   "cn_em_mais_de_uma_secao": 0,
+   "cn_com_mais_de_um_certificado": 0,
+   "mesma_chave_publica_em_cn_diferentes": 0,
+   "mesmo_certificado_em_cn_diferentes": 0,
+   "emitidos_depois_do_fim_de_validade_da_AC_publicada": {
+    "AC URNA": 45,
+    "AC UE2020": 0,
+    "AC UE2022": 0
+   },
+   "cert_igual_urna_no_log": {
+    "sim": 499150,
+    "nao": 26
+   }
+  },
+  "2026_2t": {
+   "secoes_com_certificado": 499178,
+   "erros_de_leitura": 0,
+   "certificados_unicos": 499177,
+   "cadeia": {
+    "verifica": 499178,
+    "falha": 0,
+    "sem_AC_disponivel": 0
+   },
+   "cadeia_por_emissor": {
+    "AC UE2020": {
+     "ok": 200504,
+     "falha": 0
+    },
+    "AC UE2022": {
+     "ok": 198746,
+     "falha": 0
+    },
+    "AC URNA": {
+     "ok": 99928,
+     "falha": 0
+    }
+   },
+   "validade": {
+    "validos_no_dia": 499178,
+    "nao_validos_no_dia": 0,
+    "emitidos_depois_da_eleicao": 0,
+    "emitidos_nos_30_dias_antes": 21,
+    "emitidos_nos_90_dias_antes": 257
+   },
+   "emissor_por_modelo": {
+    "UE2013": {
+     "AC UE2020": 0,
+     "AC UE2022": 0,
+     "AC URNA": 11576
+    },
+    "UE2015": {
+     "AC UE2020": 0,
+     "AC UE2022": 0,
+     "AC URNA": 88351
+    },
+    "UE2020": {
+     "AC UE2020": 200322,
+     "AC UE2022": 216,
+     "AC URNA": 0
+    },
+    "UE2022": {
+     "AC UE2020": 182,
+     "AC UE2022": 198530,
+     "AC URNA": 0
+    }
+   },
+   "cn_em_mais_de_uma_secao": 1,
+   "cn_com_mais_de_um_certificado": 0,
+   "mesma_chave_publica_em_cn_diferentes": 0,
+   "mesmo_certificado_em_cn_diferentes": 0,
+   "emitidos_depois_do_fim_de_validade_da_AC_publicada": {
+    "AC URNA": 53,
+    "AC UE2020": 0,
+    "AC UE2022": 0
+   },
+   "cert_igual_urna_no_log": {
+    "sim": 499161,
+    "nao": 17
+   }
+  },
+  "2026_entre_turnos": {
+   "secoes_nos_dois_turnos": 499176,
+   "mesmo_certificado": 494747,
+   "certificado_diferente_na_mesma_secao": 4429,
+   "mesmo_CN": 494747,
+   "CN_diferente": 4429
+  }
+ }
+}

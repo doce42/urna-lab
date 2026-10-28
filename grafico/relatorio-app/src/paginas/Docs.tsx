@@ -5,7 +5,7 @@ import type { Docs as DocsDados, Doc, Meta } from '@/lib/tipos';
 import { useDados } from '@/lib/dados';
 import { Eyebrow, BotaoLink, SkeletonBloco, Skeleton, Erro, Nota } from '@/ui/base';
 
-const GRUPOS: [string, string[]][] = [['Começar', ['visao-geral', 'diretriz']], ['Método', ['protocolo', 'metodologia', 'autoauditoria']], ['Dados e reprodução', ['catalogo', 'pipeline', 'referencias']], ['Projeto', ['consumo', 'contribuir']]];
+const GRUPOS: [string, string[]][] = [['Começar', ['visao-geral', 'diretriz']], ['Operação Veracidade Geral', ['ov-geral', 'ov-impacto', 'ov-simulacoes', 'ov-criptografia', 'ov-confianca', 'ov-estado', 'ov-curvas', 'ov-zeros', 'ov-anomalias', 'ov-respostas', 'ov-check', 'ov-video', 'ov-protocolo', 'ov-reproducao', 'ov-recomendacoes']], ['Método', ['protocolo', 'metodologia', 'autoauditoria']], ['Dados e reprodução', ['catalogo', 'pipeline', 'referencias']], ['Projeto', ['consumo', 'contribuir']]];
 
 export function Docs({ partes, meta }: { partes: string[]; meta: Meta | null }) {
   const { dados, erro, recarregar } = useDados<DocsDados>('docs');

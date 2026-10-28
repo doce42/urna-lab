@@ -25,3 +25,6 @@ Abra uma *issue* descrevendo o ponto, com o código e os dados que o sustentam. 
 
 ## Licenças
 Ao contribuir, você concorda que o seu código fica sob a licença MIT e os seus textos e resultados sob a CC BY 4.0 (ver `LICENSE`, `LICENSE-DOCS` e `THIRD_PARTY.md`).
+
+## Alegações públicas
+Se você viu uma alegação (matéria, post, vídeo, relatório) que acha que os dados confirmam ou desmentem, abra uma *issue* com o texto ou a transcrição e o que ela afirma em números. O estudo a transforma em pergunta pré-registrada (`fase3/PREREG_*.md`), testa com dados do TSE e responde no capítulo "Alegações públicas testadas". A alegação em si não é tratada como fonte.

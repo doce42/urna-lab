@@ -23,7 +23,9 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 8. **Resultado com contexto em votos.** Todo teste tem `impacto_votos` no registro: quanto o resultado representa em número de votos (ou por que não se traduz em votos), comparado à margem do 2º turno. `scripts/impacto_votos.py` preenche; atualize ao mudar um resultado.
 
 ## Estado atual e por onde continuar
-- **Estado:** Fase 3 concluída (V1.3, rodada 5); alegações públicas testadas (V1.4, rodada 6: T45–T57, Q27–Q39).
+- **Estado:** Fase 3 concluída (V1.3, rodada 5); alegações públicas testadas (V1.4, rodada 6: T45–T57, Q27–Q39); **Operação Veracidade Geral (V1.5, rodada 7: T58–T65, Q40–Q50)**, integrada ao registro vivo (78 testes, 50 perguntas).
+  - Operação Veracidade Geral: `operacao_veracidade/` (somente leitura; comece por `OPERACAO_VERACIDADE_GERAL.md` e `09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`). Resultados novos: cadeia de certificados verificada em 100% das urnas (T60a); 404 boletins de terceiros iguais ao TSE (T61, amostra de conveniência). Pontos cegos: escala de UF, região, lote ou uniforme abaixo de ~0,5 a 2,2 mi votos (T63); registros coerentes de fonte comprometida passam em todas as verificações internas (T62); poder assimétrico entre os sentidos.
+  - Resposta central atual: "não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um". Não escreva "deixariam sinais muito maiores" nem "restam dois caminhos" sem o alcance por mecanismo (T63).
   - Pergunta central e resposta: `fase3/VEREDITO_2026.md`.
   - Respostas pergunta a pergunta: `fase3/RESPOSTAS_F3.md`.
   - Fila de investigações em aberto: skill `apuracao-investigacao`.
@@ -70,6 +72,8 @@ Estudo imparcial e reproduzível da apuração presidencial brasileira de 2026 (
 - **Sem GitHub Actions e sem Git LFS** (têm limites pagos): toda a computação roda na máquina local; o repositório guarda só código, documentação, listas de download e resultados pequenos.
 - **Publicar** só com `python scripts/publicar.py "mensagem"` (copia, higieniza caminhos, varre atrás de dados pessoais e segredos, aborta se achar algo, commita com o e-mail de privacidade do GitHub). Nunca dê `git push` direto do diretório de trabalho. Teste antes com `--simular`.
 
+
+- **Rodada 7 (28/10/2026):** `rodada.py fechar --incluir` ignora arquivos fora do git; dados derivados grandes (parquets de certificados e de nulos do RDV) e arquivos de terceiros ficam fora do git (`.gitignore`); `publicar.py` recusa arquivo > 20 MB e total > 120 MB. Contar eventos de log por data, ID de urna e seção (o log de um pacote traz logs de outras urnas). Verificação de lista é autoconsistência: só a cadeia autentica. Poder medido sobre a base real não diz que ela está limpa. Alegação pública vira pré-registro antes de contar.
 
 ## Versões, revisões e rodadas (evolução da pesquisa)
 As regras completas estão em `RODADAS.md` e `revisoes/README.md`. Em resumo: versão congelada não se edita; revisão externa fica guardada inteira em `revisoes/RN-*/`, com `achados.json`; toda contestação vai para `provas` do teste, com alvo e resultado; toda mudança vai para `mudancas`, com causa; detecção em dados reais não se chama falso positivo; pergunta nova da Fase 2 entra em `FASE2.md` antes de rodar.

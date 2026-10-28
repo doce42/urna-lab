@@ -35,3 +35,9 @@ dados/brutos/doc/*.zip
 revisoes/*/original/fontes/
 !dados/listas/MANIFESTO_hash_oficial.csv
 dados_leves/
+
+# Rodada 7 / Operação Veracidade: dados derivados grandes, reproduzíveis pelos scripts (o publicar.py recusa arquivo > 20 MB e total > 120 MB)
+fase3/resultados/rdv_nulos_*.parquet
+operacao_veracidade/resultados/certs_*.parquet
+operacao_veracidade/externo/arvor_totalizacao/*.csv
+operacao_veracidade/externo/arvor_totalizacao/*.json

@@ -1,0 +1,207 @@
+{
+ "totais": {
+  "2026": {
+   "L1": 53879538.0,
+   "L2": 64256232.0,
+   "D1": 56104503.0,
+   "D2": 59826041.0,
+   "val1": 119306034.0,
+   "T1": 125275835.0,
+   "T2": 128236074.0,
+   "BN1": 5969801.0,
+   "BN2": 4153801.0,
+   "A1": 158745007.0,
+   "A2": 158744977.0,
+   "E1": 9321993.0,
+   "X": 4776239.0,
+   "dL": 10376694.0,
+   "dD": 3721538.0,
+   "dcomp": 2960239.0,
+   "dBN": -1816000.0,
+   "abst1_pct": 21.083606113041398,
+   "abst2_pct": 19.218814715630337,
+   "identidade": 0.0
+  },
+  "2022": {
+   "L1": 57259504.0,
+   "L2": 60345999.0,
+   "D1": 51072345.0,
+   "D2": 58206354.0,
+   "val1": 118229719.0,
+   "T1": 123682372.0,
+   "T2": 124252796.0,
+   "BN1": 5452653.0,
+   "BN2": 5700443.0,
+   "A1": 156453354.0,
+   "A2": 156453354.0,
+   "E1": 9897870.0,
+   "X": 322634.0,
+   "dL": 3086495.0,
+   "dD": 7134009.0,
+   "dcomp": 570424.0,
+   "dBN": 247790.0,
+   "abst1_pct": 20.94616776320436,
+   "abst2_pct": 20.581570913462166,
+   "identidade": 0.0
+  }
+ },
+ "M1": {
+  "outros_1t": 9321993.0,
+  "extras": 4776239.0,
+  "dcomp": 2960239.0,
+  "reducao_bn": 1816000.0,
+  "ganho_lula": 10376694.0,
+  "60pct_dos_outros": 5593195.8,
+  "faltam": 4783498.2,
+  "fracao_dos_extras_com_numeros_exatos": 1.0015198569418322,
+  "fracao_com_os_numeros_arredondados_do_video": 1.0000000000000002,
+  "ganho_flavio": 3721538.0,
+  "flavio_igual_a_40pct_dos_outros": 3728797.2
+ },
+ "M2": {
+  "s_minimo_para_extras_no_maximo_100pct": 0.6007787175982646,
+  "tabela": [
+   {
+    "parcela_dos_outros_para_Lula": 0.5,
+    "fracao_dos_extras_para_Lula": 1.196694198091846,
+    "ganho_de_Flavio_conferido": 3721538.0
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.55,
+    "fracao_dos_extras_para_Lula": 1.099107027516839,
+    "ganho_de_Flavio_conferido": 3721537.9999999995
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.6,
+    "fracao_dos_extras_para_Lula": 1.0015198569418322,
+    "ganho_de_Flavio_conferido": 3721537.9999999995
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.65,
+    "fracao_dos_extras_para_Lula": 0.9039326863668252,
+    "ganho_de_Flavio_conferido": 3721538.0
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.7,
+    "fracao_dos_extras_para_Lula": 0.8063455157918183,
+    "ganho_de_Flavio_conferido": 3721538.0
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.75,
+    "fracao_dos_extras_para_Lula": 0.7087583452168115,
+    "ganho_de_Flavio_conferido": 3721538.0
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.8,
+    "fracao_dos_extras_para_Lula": 0.6111711746418045,
+    "ganho_de_Flavio_conferido": 3721538.0
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.85,
+    "fracao_dos_extras_para_Lula": 0.5135840040667976,
+    "ganho_de_Flavio_conferido": 3721538.0
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.9,
+    "fracao_dos_extras_para_Lula": 0.41599683349179073,
+    "ganho_de_Flavio_conferido": 3721537.9999999995
+   },
+   {
+    "parcela_dos_outros_para_Lula": 0.95,
+    "fracao_dos_extras_para_Lula": 0.3184096629167838,
+    "ganho_de_Flavio_conferido": 3721537.9999999995
+   },
+   {
+    "parcela_dos_outros_para_Lula": 1.0,
+    "fracao_dos_extras_para_Lula": 0.22082249234177692,
+    "ganho_de_Flavio_conferido": 3721537.999999999
+   }
+  ]
+ },
+ "M3": {
+  "ano": 2022,
+  "candidato": "Bolsonaro",
+  "ganho": 7134009.0,
+  "outros": 9897870.0,
+  "extras": 322634.0,
+  "60pct_dos_outros": 5938722.0,
+  "faltam": 1195287.0,
+  "fracao_dos_extras_com_60pct": 3.7047769298957953,
+  "s_minimo_para_extras_no_maximo_100pct": 0.6881657366685964,
+  "extras_de_2022_sao_so_o_saldo_de_comparecimento_e_brancos_e_nulos": {
+   "dcomp": 570424.0,
+   "dBN": 247790.0
+  }
+ },
+ "M4": {
+  "2022": {
+   "abst_1t_pct": 20.94616776320436,
+   "abst_2t_pct": 20.581570913462166,
+   "queda_de_comparecimento_negativa_ou_positiva": 570424.0
+  },
+  "2026": {
+   "abst_1t_pct": 21.083606113041398,
+   "abst_2t_pct": 19.218814715630337,
+   "dcomp": 2960239.0
+  },
+  "nota": "o projeto só tem 2022 e 2026; a alegação 'nunca aconteceu' não é testável além de 2022 com os dados do projeto"
+ },
+ "M5": {
+  "2026": {
+   "municipios": 5571,
+   "Lula": {
+    "coef_dos_eliminados": 0.607207904394994,
+    "ic95_eliminados": [
+     0.5762131674972925,
+     0.6464764845273654
+    ],
+    "coef_dos_extras": 0.7220106864932467,
+    "ic95_extras": [
+     0.6881742067736591,
+     0.7983583945849055
+    ]
+   },
+   "Flavio": {
+    "coef_dos_eliminados": 0.39279209560500683,
+    "ic95_eliminados": [
+     0.3535235154726347,
+     0.42378683250270754
+    ],
+    "coef_dos_extras": 0.27798931350675304,
+    "ic95_extras": [
+     0.20164160541509268,
+     0.3118257932263397
+    ]
+   },
+   "soma_dos_coeficientes_extras_(deve_ser_perto_de_1_pela_identidade)": 0.9999999999999998
+  },
+  "2022": {
+   "municipios": 5570,
+   "Lula": {
+    "coef_dos_eliminados": 0.4927872467900548,
+    "ic95_eliminados": [
+     0.43641796695544877,
+     0.5330693556950928
+    ],
+    "coef_dos_extras": 0.47247125159360354,
+    "ic95_extras": [
+     0.44677572813384675,
+     0.5110345337928458
+    ]
+   },
+   "Bolsonaro": {
+    "coef_dos_eliminados": 0.5072127532099449,
+    "ic95_eliminados": [
+     0.46693064430490705,
+     0.5635820330445533
+    ],
+    "coef_dos_extras": 0.5275287484063977,
+    "ic95_extras": [
+     0.48896546620715364,
+     0.5532242718661541
+    ]
+   },
+   "soma_dos_coeficientes_extras_(deve_ser_perto_de_1_pela_identidade)": 1.0000000000000013
+  }
+ }
+}

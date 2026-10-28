@@ -1,0 +1,32 @@
+data: 2026-10-28T18:00:13-03:00
+--- clone publico
+7c71fd8 T58: campo script
+fbc9b86 Rodada 7 (registro vivo): T58 dígitos dos nulos no RDV, T59 calibração do C06; Q39 a Q41
+1cd1874 V1.4 (rodada 6): alegações públicas testadas, T45–T57, perguntas Q27–Q39
+main
+v1.4 v1.3 v1.2 v1.1 v1.0 rodada-1 
+--- projeto (git local)
+?? .agents/
+?? .claude/
+?? .firebase/
+fatal: your current branch 'master' does not have any commits yet
+--- processos
+doce      418221  0.0  0.0 595908  6044 ?        S    00:16   0:08 python3 -m http.server 57885 --bind 127.0.0.1 --directory grafico/web
+--- rodadas
+linha_do_tempo.json
+rodada-1
+rodada-2
+rodada-3
+rodada-4
+rodada-4-desvio.md
+rodada-5
+rodada-6
+[('F1', 'V1.0-rc1', 'concluida'), ('R1', None, 'concluida'), ('V1.0', 'V1.0', 'concluida'), ('F2', 'V1.1', 'concluida'), ('F3', 'V1.3', 'concluida'), ('AP', 'V1.4', 'concluida')]
+71 ['T46', 'T47', 'T48', 'T49', 'T50', 'T51', 'T52', 'T53', 'T54', 'T55', 'T56', 'T57', 'T58', 'T59']
+['fase3/PREREG.md', 'fase3/PREREG_ADVERSARIAL.md', 'fase3/PREREG_BRANCOS_NULOS.md', 'fase3/PREREG_CABO_FRIO.md', 'fase3/PREREG_CRESCIMENTO_ENTRE_TURNOS.md', 'fase3/PREREG_FILA.md', 'fase3/PREREG_FINAL.md', 'fase3/PREREG_GRANDES_CIDADES.md', 'fase3/PREREG_LIVE_2022.md', 'fase3/PREREG_NULOS_GOVERNADOR.md', 'fase3/PREREG_POSTS_ARVOR.md', 'fase3/PREREG_RDV_NULOS.md', 'fase3/PREREG_RESPOSTAS.md', 'fase3/PREREG_REVISAO.md', 'fase3/PREREG_THREAD_CONCENTRACAO.md', 'fase3/PREREG_ZEROS_FLAVIO.md']
+ls: cannot access 'fase4': No such file or directory
+ls: cannot access 'fase5': No such file or directory
+ls: cannot access 'fase6': No such file or directory
+35d37583c68de700c16764b94c386c2812ffe6d08c7e6068dc28117ead8b0b9c  rodadas/rodada-6/resumo.json
+/dev/nvme1n1p1  932G  439G  493G  48% <DISCO_GRANDE>
+Mem:              23           9           4           0          10          13

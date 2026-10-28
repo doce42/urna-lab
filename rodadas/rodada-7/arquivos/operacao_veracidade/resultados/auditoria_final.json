@@ -1,0 +1,78 @@
+{
+ "certificados": {
+  "por_conjunto": {
+   "2022_1t": {
+    "n": 471908,
+    "cadeia_ok": 471908,
+    "falha": 0,
+    "invalidos_no_dia": 0
+   },
+   "2022_2t": {
+    "n": 471984,
+    "cadeia_ok": 471984,
+    "falha": 0,
+    "invalidos_no_dia": 0
+   },
+   "2026_1t": {
+    "n": 499176,
+    "cadeia_ok": 499176,
+    "falha": 0,
+    "invalidos_no_dia": 0
+   },
+   "2026_2t": {
+    "n": 499178,
+    "cadeia_ok": 499178,
+    "falha": 0,
+    "invalidos_no_dia": 0
+   }
+  },
+  "soma_n": 1942246,
+  "soma_cadeia_ok": 1942246,
+  "soma_falhas": 0
+ },
+ "terceiros_por_votos_csv": {
+  "boletins": 404,
+  "pareados": 404,
+  "v13_iguais": 404,
+  "v22_iguais": 404
+ },
+ "zeros_recontagem": {
+  "2022": {
+   "direita_zero_2t": 141,
+   "lula_zero_2t": 2,
+   "comparecimento_positivo": 471010
+  },
+  "2026": {
+   "direita_zero_2t": 106,
+   "lula_zero_2t": 4,
+   "comparecimento_positivo": 497897
+  }
+ },
+ "estabilidade_t63_2026": {
+  "dispersa|1|50000": {
+   "poder_grade": 1.0,
+   "poder_sementes_novas": 1.0,
+   "n": 20
+  },
+  "municipios|1|50000": {
+   "poder_grade": 0.95,
+   "poder_sementes_novas": 0.95,
+   "n": 20
+  },
+  "zonas|-1|25000": {
+   "poder_grade": 1.0,
+   "poder_sementes_novas": 1.0,
+   "n": 20
+  },
+  "uniforme_logit|1|2220000": {
+   "poder_grade": 0.0,
+   "poder_sementes_novas": 0.0,
+   "n": 1
+  },
+  "cinco_grandes|1|500000": {
+   "poder_grade": 0.0,
+   "poder_sementes_novas": 0.0,
+   "n": 1
+  }
+ }
+}

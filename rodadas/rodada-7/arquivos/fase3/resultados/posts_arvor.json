@@ -1,0 +1,253 @@
+{
+ "pre_registro": "fase3/PREREG_POSTS_ARVOR.md",
+ "T52": {
+  "2026": {
+   "recebido_em_hora_de_brasilia": true,
+   "teste_fuso": {
+    "fuso_0": {
+     "p01_min_recebido_local": 120.28333333333333,
+     "p01_min_recebido_brasilia": 120.28333333333333
+    },
+    "fuso_1": {
+     "p01_min_recebido_local": 177.98666666666665,
+     "p01_min_recebido_brasilia": 117.98666666666665
+    },
+    "fuso_2": {
+     "p01_min_recebido_local": 236.92916666666667,
+     "p01_min_recebido_brasilia": 116.92916666666667
+    }
+   },
+   "emissao_mediana": "17:03",
+   "encerramento_mediana": "17:01",
+   "recebimento_p10": "19:38",
+   "recebimento_mediana": "20:26",
+   "recebimento_p90": "21:01",
+   "intervalo_mediano_min": 200.5,
+   "recebidos_antes_19h": 1092,
+   "frac_antes_19h": 0.0021932687537533618,
+   "ultimo_antes_do_vazio": "17:07",
+   "primeiro_depois_do_vazio": "19:03",
+   "maior_vazio_17_21h_min": 116.16666666666667,
+   "urnas_prorrogadas_fecharam_apos_17h30": 7604,
+   "ultima_urna_fechou": "23:04",
+   "fechamento_p99_prorrogadas": "19:10",
+   "primeiro_recebimento_por_uf": {
+    "AC": "17:05",
+    "AL": "17:05",
+    "AM": "17:05",
+    "AP": "17:05",
+    "BA": "17:05",
+    "CE": "17:05",
+    "DF": "17:05",
+    "ES": "17:06",
+    "GO": "17:05",
+    "MA": "17:05",
+    "MG": "17:05",
+    "MS": "17:06",
+    "MT": "17:05",
+    "PA": "17:05",
+    "PB": "17:05",
+    "PE": "17:07",
+    "PI": "17:07",
+    "PR": "17:05",
+    "RJ": "19:03",
+    "RN": "17:06",
+    "RO": "17:05",
+    "RR": "17:05",
+    "RS": "17:06",
+    "SC": "17:05",
+    "SE": "19:34",
+    "SP": "19:03",
+    "TO": "17:05"
+   },
+   "votos_log_apos_17h": 34327,
+   "votos_log_dia": 127852348
+  },
+  "2022": {
+   "recebido_em_hora_de_brasilia": true,
+   "teste_fuso": {
+    "fuso_0": {
+     "p01_min_recebido_local": 9.65,
+     "p01_min_recebido_brasilia": 9.65
+    },
+    "fuso_1": {
+     "p01_min_recebido_local": 65.76666666666667,
+     "p01_min_recebido_brasilia": 5.766666666666666
+    },
+    "fuso_2": {
+     "p01_min_recebido_local": 130.07166666666666,
+     "p01_min_recebido_brasilia": 10.071666666666662
+    }
+   },
+   "emissao_mediana": "17:03",
+   "encerramento_mediana": "17:01",
+   "recebimento_p10": "17:33",
+   "recebimento_mediana": "18:26",
+   "recebimento_p90": "19:08",
+   "intervalo_mediano_min": 81.65,
+   "recebidos_antes_19h": 396404,
+   "frac_antes_19h": 0.8416202937998009,
+   "ultimo_antes_do_vazio": "17:03",
+   "primeiro_depois_do_vazio": "17:03",
+   "maior_vazio_17_21h_min": 0.55,
+   "urnas_prorrogadas_fecharam_apos_17h30": 334,
+   "ultima_urna_fechou": "22:44",
+   "fechamento_p99_prorrogadas": "20:23",
+   "primeiro_recebimento_por_uf": {
+    "AC": "17:10",
+    "AL": "17:14",
+    "AM": "17:03",
+    "AP": "17:11",
+    "BA": "17:06",
+    "CE": "17:06",
+    "DF": "17:02",
+    "ES": "17:09",
+    "GO": "17:05",
+    "MA": "17:06",
+    "MG": "17:05",
+    "MS": "17:07",
+    "MT": "17:05",
+    "PA": "17:03",
+    "PB": "17:07",
+    "PE": "17:07",
+    "PI": "17:08",
+    "PR": "17:01",
+    "RJ": "17:12",
+    "RN": "17:07",
+    "RO": "17:06",
+    "RR": "17:08",
+    "RS": "17:02",
+    "SC": "17:06",
+    "SE": "17:20",
+    "SP": "17:06",
+    "TO": "17:03"
+   },
+   "votos_log_apos_17h": 41025,
+   "votos_log_dia": 123937369
+  }
+ },
+ "T53": {
+  "2026": {
+   "habilitacoes": {
+    "seq_hab_biometrica": 111970134,
+    "seq_hab_manual": 0,
+    "seq_hab_mesario": 8632459,
+    "seq_hab_outro": 7252020,
+    "seq_sem_habilitacao": 0
+   },
+   "frac_biometrica": 0.8757613931380012,
+   "frac_mesario_ou_manual": 0.06751777505282504,
+   "frac_mesario_ou_manual_por_uf": {
+    "AC": 0.0499,
+    "AL": 0.0696,
+    "AM": 0.0543,
+    "AP": 0.0458,
+    "BA": 0.0745,
+    "CE": 0.0713,
+    "DF": 0.045,
+    "ES": 0.0628,
+    "GO": 0.0664,
+    "MA": 0.063,
+    "MG": 0.0681,
+    "MS": 0.0725,
+    "MT": 0.066,
+    "PA": 0.0556,
+    "PB": 0.0727,
+    "PE": 0.0652,
+    "PI": 0.09,
+    "PR": 0.0699,
+    "RJ": 0.0745,
+    "RN": 0.081,
+    "RO": 0.0627,
+    "RR": 0.041,
+    "RS": 0.0845,
+    "SC": 0.0751,
+    "SE": 0.0697,
+    "SP": 0.0596,
+    "TO": 0.0495
+   },
+   "dentro_do_municipio_inclinacao_virada_por_fracao_sem_biometria": -0.20069228966965805,
+   "dentro_do_municipio_correlacao": -0.05812048462913709,
+   "secoes": 497819
+  },
+  "2022": {
+   "habilitacoes": {
+    "seq_hab_biometrica": 94032591,
+    "seq_hab_manual": 0,
+    "seq_hab_mesario": 10011433,
+    "seq_hab_outro": 19895434,
+    "seq_sem_habilitacao": 0
+   },
+   "frac_biometrica": 0.7586977748442308,
+   "frac_mesario_ou_manual": 0.08077680152514465,
+   "frac_mesario_ou_manual_por_uf": {
+    "AC": 0.0722,
+    "AL": 0.1089,
+    "AM": 0.0642,
+    "AP": 0.0688,
+    "BA": 0.1,
+    "CE": 0.0963,
+    "DF": 0.0513,
+    "ES": 0.0325,
+    "GO": 0.0944,
+    "MA": 0.0809,
+    "MG": 0.0755,
+    "MS": 0.0966,
+    "MT": 0.0752,
+    "PA": 0.0644,
+    "PB": 0.0803,
+    "PE": 0.0786,
+    "PI": 0.1134,
+    "PR": 0.0848,
+    "RJ": 0.0842,
+    "RN": 0.1116,
+    "RO": 0.1022,
+    "RR": 0.0328,
+    "RS": 0.0963,
+    "SC": 0.0854,
+    "SE": 0.0939,
+    "SP": 0.0678,
+    "TO": 0.081
+   },
+   "dentro_do_municipio_inclinacao_virada_por_fracao_sem_biometria": 0.15367639660751356,
+   "dentro_do_municipio_correlacao": 0.056178062437955464,
+   "secoes": 470944
+  }
+ },
+ "T54": {
+  "2026": {
+   "municipios": 5570,
+   "13_perdeu_votos": {
+    "municipios": 79,
+    "votos_perdidos": 16115,
+    "aptos": 1039512,
+    "outro_ganhou_votos_nesses": -31853,
+    "comparecimento_caiu_em": 79
+   },
+   "22_perdeu_votos": {
+    "municipios": 937,
+    "votos_perdidos": 133852,
+    "aptos": 13401756,
+    "outro_ganhou_votos_nesses": 486832,
+    "comparecimento_caiu_em": 727
+   }
+  },
+  "2022": {
+   "municipios": 5569,
+   "13_perdeu_votos": {
+    "municipios": 981,
+    "votos_perdidos": 114916,
+    "aptos": 10482432,
+    "outro_ganhou_votos_nesses": 236690,
+    "comparecimento_caiu_em": 783
+   },
+   "22_perdeu_votos": {
+    "municipios": 92,
+    "votos_perdidos": 9852,
+    "aptos": 959495,
+    "outro_ganhou_votos_nesses": -28029,
+    "comparecimento_caiu_em": 92
+   }
+  }
+ }
+}

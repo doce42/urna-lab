@@ -1,0 +1,78 @@
+{
+ "ano": "2022",
+ "uf": "AL",
+ "secoes_avaliadas": 40,
+ "semente": 20263050,
+ "controles": {
+  "0_genuino": {
+   "total": 40,
+   "hash_rejeita": 0,
+   "assinatura_do_arquivo_rejeita": 0,
+   "assinatura_da_lista_rejeita": 0,
+   "rejeitado_por_algum_controle": 0
+  },
+  "1_byte_alterado_no_BU": {
+   "total": 40,
+   "hash_rejeita": 40,
+   "assinatura_do_arquivo_rejeita": 0,
+   "assinatura_da_lista_rejeita": 0,
+   "rejeitado_por_algum_controle": 40
+  },
+  "2_BU_truncado": {
+   "total": 40,
+   "hash_rejeita": 40,
+   "assinatura_do_arquivo_rejeita": 0,
+   "assinatura_da_lista_rejeita": 0,
+   "rejeitado_por_algum_controle": 40
+  },
+  "3_byte_alterado_na_lista": {
+   "total": 40,
+   "hash_rejeita": 0,
+   "assinatura_do_arquivo_rejeita": 0,
+   "assinatura_da_lista_rejeita": 40,
+   "rejeitado_por_algum_controle": 40
+  },
+  "4_byte_alterado_na_assinatura_da_lista": {
+   "total": 40,
+   "hash_rejeita": 0,
+   "assinatura_do_arquivo_rejeita": 0,
+   "assinatura_da_lista_rejeita": 40,
+   "rejeitado_por_algum_controle": 40
+  },
+  "5_certificado_de_outra_urna": {
+   "total": 40,
+   "hash_rejeita": 0,
+   "assinatura_do_arquivo_rejeita": 40,
+   "assinatura_da_lista_rejeita": 40,
+   "rejeitado_por_algum_controle": 40
+  },
+  "6_arquivo_fora_da_lista": {
+   "total": 40,
+   "hash_rejeita": 40,
+   "assinatura_do_arquivo_rejeita": 40,
+   "assinatura_da_lista_rejeita": 0,
+   "rejeitado_por_algum_controle": 40
+  },
+  "7_nome_trocado_entre_arquivos": {
+   "total": 40,
+   "hash_rejeita": 40,
+   "assinatura_do_arquivo_rejeita": 0,
+   "assinatura_da_lista_rejeita": 0,
+   "rejeitado_por_algum_controle": 40
+  }
+ },
+ "controle_hostil_sintetico": {
+  "emissor_desconhecido": {
+   "verificacao_de_lista_aceita": true,
+   "cadeia_ok": null,
+   "emissor_declarado": "TESTE-SINTETICO-EMISSOR",
+   "leitura": "autoconsistente; a cadeia é o que separa de um certificado oficial"
+  },
+  "emissor_declara_ser_AC_URNA": {
+   "verificacao_de_lista_aceita": true,
+   "cadeia_ok": false,
+   "emissor_declarado": "AC URNA",
+   "leitura": "autoconsistente; a cadeia é o que separa de um certificado oficial"
+  }
+ }
+}

@@ -31,3 +31,9 @@ Atualizar o gráfico ou o relatório, acrescentar uma seção, gerar o PDF.
   - **Evolução** (`LinhaDoTempo.tsx`).
   - **Docs:** lista em `build-dados.mjs`.
 - **Deploy:** `firebase deploy --only hosting`, depois de conferir com o Playwright. A Home mostra só a fase atual; o detalhe fica em Evolução.
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **Site:** `build-dados.mjs` inclui os `.md` de `operacao_veracidade/` em `docs.json` (slugs `ov-*`), e a página Docs tem o grupo "Operação Veracidade Geral". As Respostas têm 6 capítulos (50 perguntas, filtro por classificação, âncora `#/respostas/<id>`). O veredito mostra os avisos (`avisos` em `f3_veredito.py`) e a nota das anomalias.
+- **Crédito do autor no rodapé:** vem de `grafico/relatorio-app/credito.local.json` (fora do git); não escrever em arquivo versionado.
+- **Ao mudar uma conclusão:** editar `fase3/f3_veredito.py`, `f3_respostas.py`, `f3_inventario.py` (o detalhe das Respostas vem do `inventario.json`), `README.md`, `CONCLUSAO.md`, `AGENTS.md`, `rodadas/linha_do_tempo.json`; regerar, `verificar.py`, `npm run build`; conferir as páginas em 390 e 1280 px.
+- Mostrar o aviso: "o poder é medido sobre uma base real que pode já conter alteração", e o da assimetria entre sentidos.

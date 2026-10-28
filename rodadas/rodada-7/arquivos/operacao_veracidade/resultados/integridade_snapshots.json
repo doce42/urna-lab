@@ -1,0 +1,75 @@
+{
+ "rodadas": {
+  "1": {
+   "versao": null,
+   "arquivos": 28,
+   "ok": 28,
+   "diferentes": 0,
+   "ausentes": 0,
+   "exemplos_problema": [],
+   "nota_do_resumo": null
+  },
+  "2": {
+   "versao": "V1.0",
+   "arquivos": 30,
+   "ok": 30,
+   "diferentes": 0,
+   "ausentes": 0,
+   "exemplos_problema": [],
+   "nota_do_resumo": null
+  },
+  "3": {
+   "versao": "V1.1",
+   "arquivos": 45,
+   "ok": 45,
+   "diferentes": 0,
+   "ausentes": 0,
+   "exemplos_problema": [],
+   "nota_do_resumo": null
+  },
+  "4": {
+   "versao": "V1.2",
+   "arquivos": 30,
+   "ok": 30,
+   "diferentes": 0,
+   "ausentes": 0,
+   "exemplos_problema": [],
+   "nota_do_resumo": null
+  },
+  "5": {
+   "versao": "V1.3",
+   "arquivos": 196,
+   "ok": 196,
+   "diferentes": 0,
+   "ausentes": 0,
+   "exemplos_problema": [],
+   "nota_do_resumo": null
+  },
+  "6": {
+   "versao": "V1.4",
+   "arquivos": 278,
+   "ok": 278,
+   "diferentes": 0,
+   "ausentes": 0,
+   "exemplos_problema": [],
+   "nota_do_resumo": "Retirados antes da publicação, por terem sido copiados por engano pelo --incluir: scripts/.privado.txt (lista local de termos pessoais) e 43 arquivos locais de dados/listas ignorados pelo git (logs de download), ausentes também da rodada 5. Nenhum outro arquivo mudou; rodada.py passou a ignorar arquivos fora do git."
+  }
+ },
+ "manifesto": {
+  "colunas": [
+   "caminho",
+   "bytes",
+   "modificado",
+   "sha256",
+   "hash_oficial",
+   "url_origem"
+  ],
+  "linhas": 51883,
+  "amostra": 25,
+  "ok": 25,
+  "diferentes": 0,
+  "ausentes": 0,
+  "problemas": [],
+  "semente": 20261028
+ }
+}

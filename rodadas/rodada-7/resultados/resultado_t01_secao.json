@@ -1,0 +1,28 @@
+{
+ "1t": {
+  "pares_secao_votavel": 3800511,
+  "iguais": 3800511,
+  "diferentes": 0,
+  "so_no_bu": 0,
+  "so_na_votacao_por_secao": 0,
+  "secoes_bu": 499206,
+  "secoes_votacao_por_secao": 499206,
+  "secoes_em_comum": 499206,
+  "exemplos_diferentes": [],
+  "exemplos_so_bu": [],
+  "exemplos_so_secao": []
+ },
+ "2t": {
+  "pares_secao_votavel": 1931103,
+  "iguais": 1931103,
+  "diferentes": 0,
+  "so_no_bu": 0,
+  "so_na_votacao_por_secao": 0,
+  "secoes_bu": 499205,
+  "secoes_votacao_por_secao": 499205,
+  "secoes_em_comum": 499205,
+  "exemplos_diferentes": [],
+  "exemplos_so_bu": [],
+  "exemplos_so_secao": []
+ }
+}

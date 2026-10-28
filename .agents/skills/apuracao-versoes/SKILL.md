@@ -29,3 +29,10 @@ Não use `pgrep` ou `pkill -f` com padrão que apareça na própria linha. Mate 
 
 ## Dados leves para terceiros
 `scripts/dados_leves.py` → `dados_leves/` (fora do git), anexado ao release. Contém tabelas por seção, resumo por urna dos arquivos de urna, votos por minuto, perfil por seção, resultados, capturas da divulgação, manifesto e SHA256SUMS. Leia `DADOS_LEVES.md`: é preliminar e regerado a cada versão.
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **Rodada 7 fechada como V1.5** (28/10/2026): Operação Veracidade Geral (T58 a T65, Q40 a Q50). `rodada.py fechar --incluir` agora **ignora arquivos que o git ignora**.
+- **Documentos de método atualizados depois do congelamento** (METODOLOGIA, PIPELINE, MAPA_SKILLS, REFERENCIAS, AUTOAUDITORIA, DADOS_PRESERVACAO, DIRETRIZ, CONTRIBUTING, Makefile, skills): a raiz tem a versão vigente; a cópia congelada na rodada 7 é anterior, e a rodada 8 congela a vigente. Rodada fechada não se reescreve.
+- **Publicar:** `publicar.py` recusa arquivo > 20 MB e total > 120 MB; derivados grandes estão no `.gitignore`. Depois: tag `v1.5` no clone público, `gh release create`, `firebase deploy --only hosting`, `carimbo.py criar rodadas/rodada-7/resumo.json` (e `atualizar` horas depois).
+- **Rodada 8 permanece aberta**: nada de `rodada.py fechar 8` sem aprovação explícita do responsável.
+- Nunca `pkill -f` com padrão presente na própria linha de comando; mate por PID em comando separado.

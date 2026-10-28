@@ -1,8 +1,8 @@
 // Perguntas e respostas científicas: uma resposta explícita por pergunta, com evidências, números, o que demonstra e o que não
 // demonstra, validação, histórico e condições de reabertura. Lê fase3/respostas_f3.json (via dados/respostas.json).
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Registro } from '@/lib/tipos';
-import { RespostaCentral, SeloSinal, useVeredito, type Veredito } from '@/ui/Sinal';
+import { RespostaCentral, SeloSinal, useVeredito, type Veredito, type Operacao } from '@/ui/Sinal';
 import { Eyebrow, SkeletonBloco, Erro } from '@/ui/base';
 import { useDados } from '@/lib/dados';
 
@@ -25,7 +25,8 @@ const PARADAS = new Set('a o os as de da do das dos e em no na nos nas um uma un
 const SIN: Record<string, string[]> = { fraude: ['fraude', 'manipul', 'irregular', 'alter', 'troca'], fraudada: ['fraude', 'manipul', 'alter'], urna: ['urna', 'boletim', 'bu'], urnas: ['urna', 'boletim'],
   zero: ['zero', 'zeros'], zerada: ['zero'], virada: ['virada', 'lideranca', 'curva'], curva: ['curva', 'virada', 'apuracao'], biometria: ['biometria', 'biometr'], log: ['log'],
   assinatura: ['assinatura', 'certificado', 'criptograf'], hacker: ['manipul', 'software', 'alter'], software: ['software'], flavio: ['flavio', 'adversario'], bolsonaro: ['bolsonaro', 'adversario'],
-  salvador: ['salvador'], manipulada: ['manipul', 'fabric', 'alter'], manipulado: ['manipul', 'fabric', 'alter'], alterado: ['alter', 'manipul'], alterados: ['alter', 'manipul'], batem: ['bate', 'iguais', 'conferem', 'coincid', 'diferen'], boletins: ['boletim', 'boletins', 'bu'], paulo: ['paulo', 'sp'], turno: ['turno', 'turnos'], abstencao: ['abstenc', 'comparecimento'], comparecimento: ['comparecimento', 'abstenc'] };
+  salvador: ['salvador'], veracidade: ['veracidade', 'fiei', 'fiel', 'adulter'], fieis: ['fiei', 'fiel', 'adulter'], certificado: ['certificado', 'cadeia'], certificados: ['certificado', 'cadeia'], cadeia: ['cadeia', 'certificado'],
+  terceiros: ['terceiro', 'qr'], impresso: ['impresso', 'boletim', 'qr'], impressos: ['impresso', 'boletim', 'qr'], video: ['video', 'extras'], extras: ['extras', 'video'], adulterados: ['adulter', 'alter'], adulteracao: ['adulter', 'alter'], manipulada: ['manipul', 'fabric', 'alter'], manipulado: ['manipul', 'fabric', 'alter'], alterado: ['alter', 'manipul'], alterados: ['alter', 'manipul'], batem: ['bate', 'iguais', 'conferem', 'coincid', 'diferen'], boletins: ['boletim', 'boletins', 'bu'], paulo: ['paulo', 'sp'], turno: ['turno', 'turnos'], abstencao: ['abstenc', 'comparecimento'], comparecimento: ['comparecimento', 'abstenc'] };
 type Achado = { tipo: string; id: string; titulo: string; texto: string; link: string; pontos: number; sinal?: string };
 function buscar(q: string, d: Dados, reg: Registro | undefined, v: Veredito | null): Achado[] {
   const toks = norm(q).split(/[^a-z0-9]+/).filter((t) => t.length > 2 && !PARADAS.has(t));
@@ -89,16 +90,38 @@ function CartaoPergunta({ p }: { p: Pergunta }) {
   );
 }
 
-export function Respostas({ reg }: { reg?: Registro }) {
+// Bloco da Operação Veracidade Geral no topo do capítulo novo: o que a auditoria adversarial respondeu e onde ler os documentos
+function OperacaoResumo({ o }: { o: Operacao }) {
+  return (
+    <div className="cartao p-4 md:p-5 mt-5 border-l-[3px]" style={{ borderLeftColor: 'var(--accent)' }}>
+      <div className="text-[12px] font-mono uppercase tracking-wider text-accent-text">{o.titulo} · {o.versao}</div>
+      <p className="mt-1.5 text-[15px] text-text leading-relaxed"><b className="font-medium">{o.pergunta}</b> {o.resposta}</p>
+      <div className="mt-2 text-[13.5px] text-muted"><b className="font-medium text-text">Pontos cegos: </b>{o.pontos_cegos.join(' ')}</div>
+      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13.5px]">{o.documentos.map((dc) => <a key={dc.slug} href={`#/docs/${dc.slug}`} className="text-accent-text underline underline-offset-4">{dc.titulo}</a>)}</div>
+    </div>
+  );
+}
+
+const FILTROS = ['', 'Demonstrado', 'Refutado', 'Parcialmente', 'Não determinado'];
+const Chips = ({ atual, mudar }: { atual: string; mudar: (f: string) => void }) => (
+  <div className="mt-3 flex flex-wrap gap-1.5 text-xs">{FILTROS.map((f) => <button key={f || 'todos'} onClick={() => mudar(f)} aria-pressed={atual === f} className={`h-7 px-2.5 rounded-full border ${atual === f ? 'border-accent text-accent-text' : 'border-border text-muted'}`}>{f || 'todos'}</button>)}</div>
+);
+
+export function Respostas({ reg, partes = [] }: { reg?: Registro; partes?: string[] }) {
   const { dados: d, erro, recarregar } = useDados<Dados>('respostas');
   const v = useVeredito();
   const [filtro, setFiltro] = useState('');
+  const [filtroQ, setFiltroQ] = useState('');
+  // #/respostas/<âncora> (capítulo, pergunta ou item): rola até o alvo depois de carregar
+  const alvo = partes[0];
+  useEffect(() => { if (!d || !alvo) return; const t = setTimeout(() => document.getElementById(alvo)?.scrollIntoView({ block: 'start' }), 60); return () => clearTimeout(t); }, [d, alvo]);
   if (erro) return <div className="container py-16"><Erro erro={erro} aoTentar={recarregar} /></div>;
   if (!d) return <div className="container py-16 grid gap-4"><SkeletonBloco altura={220} /><SkeletonBloco altura={320} /></div>;
   const todas = d.capitulos.flatMap((c) => c.perguntas);
   const cont: Record<string, number> = {};
   todas.forEach((p) => { const k = p.classificacao.split(' (')[0]; cont[k] = (cont[k] || 0) + 1; });
   const inv = d.inventario.filter((i) => !filtro || i.classificacao.startsWith(filtro));
+  const capitulos = d.capitulos.map((c) => ({ ...c, perguntas: c.perguntas.filter((p) => !filtroQ || p.classificacao.startsWith(filtroQ)) }));
   return (
     <div className="container pb-24">
       <header className="pt-10 md:pt-16 max-w-[54rem]">
@@ -112,10 +135,15 @@ export function Respostas({ reg }: { reg?: Registro }) {
       </header>
       <section className="mt-8"><Busca d={d} reg={reg} v={v} /></section>
       {v && <section id="hipoteses" className="mt-12 scroll-mt-20"><RespostaCentral v={v} /></section>}
-      {d.capitulos.map((c) => (
-        <section key={c.id} id={c.id} className="mt-14 md:mt-16 scroll-mt-20">
+      <section id="perguntas" className="mt-14 md:mt-16 scroll-mt-20">
+        <div className="text-[13px] text-muted">Filtrar as {todas.length} perguntas pela classificação</div>
+        <Chips atual={filtroQ} mudar={setFiltroQ} />
+      </section>
+      {capitulos.map((c) => (
+        <section key={c.id} id={c.id} className="mt-10 md:mt-12 scroll-mt-20">
           <h2 className="t-h2">{c.titulo}</h2>
-          <ul className="mt-5 grid gap-3">{c.perguntas.map((p) => <CartaoPergunta key={p.id} p={p} />)}</ul>
+          {v?.resposta_central.operacao && c.id === v.resposta_central.operacao.capitulo && <OperacaoResumo o={v.resposta_central.operacao} />}
+          {c.perguntas.length ? <ul className="mt-5 grid gap-3">{c.perguntas.map((p) => <CartaoPergunta key={p.id} p={p} />)}</ul> : <p className="mt-3 text-[14px] text-muted">Nenhuma pergunta deste capítulo com essa classificação.</p>}
         </section>
       ))}
       <section id="sem-causa" className="mt-14 scroll-mt-20 max-w-[54rem]">
@@ -127,7 +155,7 @@ export function Respostas({ reg }: { reg?: Registro }) {
       <section id="inventario" className="mt-14 scroll-mt-20">
         <h2 className="t-h2">Os 33 itens do inventário</h2>
         <p className="text-muted text-[15px] mt-2 max-w-[48rem]">Cada pergunta herdada da Fase 2 e cada pergunta nova da Fase 3, com a resposta direta, a ligação com as perguntas acima e o histórico de correções.</p>
-        <div className="mt-3 flex flex-wrap gap-1.5 text-xs">{['', 'Demonstrado', 'Refutado', 'Parcialmente', 'Não determinado'].map((f) => <button key={f || 'todos'} onClick={() => setFiltro(f)} className={`h-7 px-2.5 rounded-full border ${filtro === f ? 'border-accent text-accent-text' : 'border-border text-muted'}`}>{f || 'todos'}</button>)}</div>
+        <Chips atual={filtro} mudar={setFiltro} />
         <ul className="mt-4 grid gap-2">{inv.map((i) => (
           <li key={i.id} id={`inv-${i.id}`} className="cartao p-4 scroll-mt-20">
             <div className="flex flex-wrap items-start gap-x-3 gap-y-2"><span className="font-mono text-sm font-semibold w-12 shrink-0 pt-0.5">{i.id}</span><span className="text-[15px] text-text font-medium leading-snug flex-1 min-w-[14rem]">{i.pergunta}</span><Selo c={i.classificacao} /></div>

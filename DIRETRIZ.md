@@ -112,3 +112,9 @@ Não precisa haver uma resposta única. Os produtos podem ser:
 
 ## Princípio central
 Não procure uma conclusão: procure explicações testáveis. Não force os dados a responder o que não conseguem. Não ignore o inesperado: investigue. Não confunda suspeita, correlação, anomalia, inconsistência e prova. Permita que qualquer pessoa reproduza e tente refutar.
+
+## Acréscimos da rodada 7 (28/10/2026)
+- **Escada de verificação:** hash correto ≠ assinatura válida ≠ cadeia autenticada ≠ voto fiel à intenção do eleitor. Cada degrau é medido e dito separadamente.
+- **Poder é condicional à base:** um experimento com alterações sintéticas sobre a base real mede a capacidade de ver uma alteração **adicional**; não diz que a base está limpa. A soma das anomalias encontradas nunca é teto para o que passou sem alarme.
+- **Origem não é fonte:** alegação de matéria, post ou vídeo vira pergunta pré-registrada; só o dado oficial responde.
+- **Evidência externa tem proveniência:** amostra de conveniência não se extrapola; mesma assinatura (mesma urna) não é independência de origem.

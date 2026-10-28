@@ -10,33 +10,40 @@
 
 **Pergunta testada:** A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?
 
-**Resposta:** Não encontramos. Para inverter o resultado seria preciso trocar ~2,2 milhões de votos de lado. Os mecanismos que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores do que os encontrados. As anomalias reais que achamos somam dezenas de milhares de votos, não milhões, e não têm causa demonstrada. Restam dois caminhos que nenhum dado público consegue examinar: um deslocamento pequeno e uniforme em quase todas as urnas, e uma alteração da urna antes de gerar os registros. Ambos só podem ser checados com evidência de fora do sistema, como boletins impressos coletados por fiscais ou auditoria independente da urna.
+**Resposta:** Não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um. Para inverter o resultado seria preciso trocar ~2,2 milhões de votos de lado. Troca dispersa, em locais, zonas ou municípios, de dezenas de milhares de votos deixaria sinal; troca de escala de UF, região ou lote, ou deslocamento uniforme, só seria vista a partir de algumas centenas de milhares a milhões de votos. As anomalias que encontramos somam dezenas de milhares de votos e não têm causa demonstrada; isso descreve o que foi achado e não limita o que pode ter passado sem alarme. Restam caminhos fora do alcance: um deslocamento pequeno e uniforme em quase todas as urnas (H9), uma alteração da urna antes de gerar os registros (H10) e alterações de escala regional, de UF, de lote ou uniformes abaixo de ~0,5 a 2,2 milhões de votos (T63). Só evidência de fora do sistema resolve: boletins impressos de uma amostra sorteada de seções, auditoria independente da urna e a raiz da cadeia de certificados.
+
+**Leia junto com os resultados:**
+
+- O poder de detecção é medido sobre uma base real que pode já conter alteração; o experimento não consegue dizer que a base está limpa.
+- O poder é assimétrico entre os sentidos, por causa da cauda pró-Lula presente na base nos dois anos.
+- Registros internamente coerentes gerados por uma fonte comprometida passam por todas as verificações internas; só evidência de fora distingue.
+- Os 404 boletins de terceiros são uma amostra de conveniência (0,08%).
 
 ## Dedução
 
 1. Inverter 2026 exige trocar ~2,22 mi votos (metade da margem de 4,43 mi).
-2. Isso não aconteceu depois da apuração: os totais divulgados ao vivo, guardados por terceiro, batem com a base final (H1).
-3. Também não na soma: boletins, tabela e total oficial coincidem em todas as seções (H2).
-4. Se tivesse sido feito trocando muitos votos em poucas urnas, locais, municípios ou numa grande cidade, os testes simulados veriam a partir de ~31 mil (2% numa grande cidade inteira) a ~123 mil votos (troca dispersa), e ~62 mil concentrados em locais ou municípios; o que aparece são ~740 votos em seções atípicas, ~0,1% de locais com dezenas a centenas de votos, e ~30 mil votos em Salvador (H3, H4, H5).
-5. Encher urnas ou apagar votos do adversário também deixaria rastro, que não aparece além de ~100 votos e de zeros no nível previsto (H6, H7).
-6. Sobram os mecanismos que não deixam rastro nos dados públicos: deslocamento pequeno e uniforme (H9) e alteração da urna antes dos registros (H10). Não podemos excluí-los nem confirmá-los com estes dados.
+2. Não há diferença entre o que o TSE divulgou na noite e o que publicou depois: 39 capturas guardadas por terceiro batem com a base final, e 404 arquivos são iguais entre downloads independentes (H1). Isso não testa o que aconteceu antes da primeira publicação.
+3. Também não na soma: boletins, tabela e total oficial coincidem em todas as seções, e 404 boletins impressos lidos por terceiros são iguais ao TSE, numa amostra de conveniência de 0,08% (H2).
+4. Troca em seções dispersas, em poucas seções, em locais, zonas ou municípios (fora os 5 maiores) seria vista a partir de 25 a 50 mil votos (T63), e numa grande cidade, uma por vez, a partir de 2% dos válidos (31 mil a 139 mil, T44). O que aparece são ~740 votos em seções atípicas, ~0,1% de locais com dezenas a centenas de votos e ~30 mil votos em Salvador (H3, H4, H5). Em 2022, a favor de Lula, a troca dispersa só é vista a partir de 500 mil: o poder é assimétrico entre os sentidos.
+5. Encher urnas só é visto pela bateria a partir de 250 mil votos (T63); abaixo disso, o rastro que aparece não passa de ~100 votos com sinal (H6). Os zeros de votos ficam não determinados: nenhum modelo de cauda baixa calibrou (H7).
+6. Ficam fora do alcance: deslocamento uniforme (H9; em logit, nunca visto), alteração da urna antes dos registros (H10; registros coerentes assinados pela própria fonte passam por todas as verificações internas, T62) e alterações em UFs inteiras, nos cinco grandes municípios juntos, numa macrorregião, num lote tardio ou por conversão de brancos e nulos, vistas só a partir de ~0,5 a 2,2 mi votos, ou nunca (T63). Não podemos excluí-las nem confirmá-las com estes dados.
 
-**O que fecharia o que resta:** Para fechar H9 e H10: comparar com boletins impressos afixados nas seções (coletados por fiscais ou terceiros) em amostra aleatória, auditoria independente do software e da urna, e a cadeia de certificados até a raiz do TSE.
+**O que fecharia o que resta:** Para fechar o que resta: boletins impressos afixados nas seções, de uma amostra sorteada (os 404 de terceiros são amostra de conveniência); auditoria independente do software e da urna; a raiz da cadeia de certificados do TSE (a cadeia já fecha até a AC emissora em 100% das urnas); e o resultado do teste de integridade com votos conhecidos, que não foi obtido.
 
 ## Hipóteses de fraude examinadas
 
 | Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |
 |---|---|---|---|---|---|
-| H1 | Alterar os votos depois da apuração (base publicada diferente do que foi divulgado na noite) | Totais divulgados ao vivo diferentes da soma das seções publicadas depois | 39 capturas independentes (Internet Archive) dos totais divulgados ao vivo batem com a base final; diferença 0 no fim. | **Contrariada pela evidência** | 0 voto de diferença no total final. |
-| H2 | Trocar votos na totalização (boletins certos, soma errada) | Soma dos boletins diferente do total oficial | Soma das urnas = total oficial em 638/638 itens; tabela = boletim em todas as seções; decodificação de terceiro igual. | **Contrariada pela evidência** | 0 voto de diferença. |
-| H3 | Trocar votos no boletim de urnas espalhadas (algumas urnas com muitos votos trocados) | Excesso de seções com virada fora do padrão do município (T02, T13) | Há excesso real de seções pró-Lula (T02), mas soma ~740 votos em 2026; uma troca do tamanho necessário para inverter seria ~18 vezes maior que o limite de detecção simulado. | **Sinal encontrado, sem causa** | ~740 votos na cauda pró-Lula (0,02% da margem). |
+| H1 | Alterar os votos depois da apuração (base publicada diferente do que foi divulgado na noite) | Totais divulgados ao vivo diferentes da soma das seções publicadas depois | Não há diferença entre o que o TSE divulgou na noite e o que publicou depois: 39 capturas independentes (Internet Archive) dos totais divulgados ao vivo batem com a base final, e 404 arquivos bu.dat são iguais entre dois downloads independentes (T61). Isso não testa alteração antes da primeira publicação. | **Contrariada pela evidência** | 0 voto de diferença no total final. |
+| H2 | Trocar votos na totalização (boletins certos, soma errada) | Soma dos boletins diferente do total oficial | Soma das urnas = total oficial em 638/638 itens; tabela = boletim em todas as seções; decodificação de terceiro igual. 404 boletins impressos lidos por terceiros no 2º turno de 2026 são iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas (T61; amostra de conveniência, 0,08% das seções). | **Contrariada pela evidência** | 0 voto de diferença. |
+| H3 | Trocar votos no boletim de urnas espalhadas (algumas urnas com muitos votos trocados) | Excesso de seções com virada fora do padrão do município (T02, T13, T63) | Há excesso real de seções pró-Lula (T02), mas soma ~740 votos em 2026. Em 2026, uma troca do tamanho necessário para inverter seria ~44 vezes maior que o limite de detecção de seções dispersas (~50 mil). O poder é assimétrico entre os sentidos: em 2022, a favor de Lula, o limite é 500 mil (4,4 vezes menor que 2,22 mi), porque a base já tem uma cauda pró-Lula pesada. | **Sinal encontrado, sem causa** | ~740 votos na cauda pró-Lula (0,02% da margem). |
 | H4 | Trocar votos concentrados em locais de votação ou municípios pequenos | Locais ou municípios com virada muito fora do entorno (E02, I3) | Cerca de 0,1% dos locais são atípicos, com dezenas a poucas centenas de votos cada; sem assinatura de enchimento. | **Sinal encontrado, sem causa** | Dezenas a centenas de votos por local. |
-| H5 | Trocar votos na cidade inteira de uma grande cidade | Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44) | São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos. | **Sinal encontrado, sem causa** | Salvador: ~30 mil votos (0,7% da margem). |
-| H6 | Encher urnas (votos de eleitores que não votaram) | Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria | Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido. | **Sinal encontrado, sem causa** | ~100 votos com sinal. |
-| H7 | Apagar votos do adversário em seções inteiras (zeros) | Mais seções com zero votos do que o perfil local prevê | 79 e 106 seções com zero para Flávio, exatamente o previsto fora da amostra (79,1 e 101,5); registros conferem. | **Sem sinal no alcance testado** | No máximo ~4.800 votos se fosse anomalia (0,11% da margem). |
-| H8 | Manipular a ordem ou o ritmo da divulgação (virada 'fabricada') | Sequência divulgada diferente da base; curva impossível de reproduzir | A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada. | **Sem sinal no alcance testado** | A ordem não altera nenhum voto. |
-| H9 | Deslocar um pouco de votos em quase todas as urnas (uniforme) | Nada estatístico: um deslocamento pequeno e uniforme é indistinguível de uma mudança real de opinião | Não testável com dados agregados. Só boletins impressos coletados por fiscais (amostra) ou auditoria independente da urna examinam isto. | **Ponto cego dos dados públicos** | Até ~2,2 mi votos sem rastro estatístico. |
-| H10 | Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes) | Nada nos arquivos: tudo concorda entre si | Assinaturas válidas até a AC emissora, sem âncora do TSE verificada (busca externa sem resultado); erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos. | **Ponto cego dos dados públicos** | Até o total; sem rastro nos dados públicos. |
+| H5 | Trocar votos na cidade inteira de uma grande cidade (uma por vez) | Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44) | São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos. | **Sinal encontrado, sem causa** | Salvador: ~30 mil votos (0,7% da margem). |
+| H6 | Encher urnas (votos de eleitores que não votaram) | Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria | Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido. Enchimento abaixo de 250 mil votos não é excluído pela bateria estatística (T63). | **Sinal encontrado, sem causa** | ~100 votos com sinal. |
+| H7 | Apagar votos do adversário em seções inteiras (zeros) | Mais seções com zero votos do que o perfil local prevê | Não determinado: nenhum modelo de cauda baixa passou na calibração (T41, R3). As três famílias novas do T64 também falham: o modelo por município prevê 1,3 zeros contra 106 observados (2022: 4,3 contra 141); o por local de votação, 66,7 contra 106. Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total, em 2022 (141) e em 2026 (106); os registros dessas seções conferem. | **Não determinado (ponto cego)** | Se fossem anomalia, de ~44 a ~4.800 votos conforme o modelo (no máximo 0,11% da margem); nenhum modelo calibrou. |
+| H8 | Manipular a ordem ou o ritmo da divulgação (virada 'fabricada') | Sequência divulgada diferente da base; curva impossível de reproduzir | A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada, e a curva continua não determinada. Fato medido: o TSE não registrou recebimento de boletins das 17:07 às 19:03 (116 minutos) no 2º turno de 2026, só em 2026; 77 boletins de terceiros estavam registrados fora do TSE entre 18:10 e 18:47 (T52, T61). Isso não altera votos; a causa não está nos dados. | **Sem sinal no alcance testado** | A ordem não altera nenhum voto. |
+| H9 | Deslocar um pouco de votos em quase todas as urnas (uniforme) | Nada estatístico: um deslocamento pequeno e uniforme é indistinguível de uma mudança real de opinião | Não testável com dados agregados. Quantificado no T63: um deslocamento uniforme em logit nunca é visto, em nenhuma magnitude, nos dois anos; em fatia de voto, só a partir de 1 a 2,22 mi votos, e nunca no sentido contrário. Só boletins impressos coletados em amostra sorteada ou auditoria independente da urna examinam isto. | **Ponto cego dos dados públicos** | Até ~2,2 mi votos sem rastro estatístico (em logit, nunca visto). |
+| H10 | Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes) | Nada nos arquivos: tudo concorda entre si | A cadeia de certificados verifica até a AC emissora em 100% das urnas (1.942.246 pares seção × turno, 0 falhas, T60a), sem âncora do TSE: a raiz não é pública. Registros coerentes gerados e assinados pela própria fonte passam por todas as verificações internas (T62). Erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos. | **Ponto cego dos dados públicos** | Até o total; sem rastro nos dados públicos. |
 
 ## Anomalias reais em 2026
 
@@ -49,6 +56,30 @@
 | 2 votos sem habilitação em urna com log corrompido | 2 | S4 | T31 |
 | Erros de verificação de assinatura do software no log, seguidos de sucesso | não se traduz (sem efeito nos votos) | S2 | T33 |
 | Cerca de 0,1% dos locais com virada atípica | dezenas a centenas por local | S3 | E02 |
+| 106 seções com zero voto para Flávio, sem modelo calibrado para dizer se é muito ou pouco | 14.860 votos de Lula nessas seções | PC | T64 |
+| 17 seções com certificado de outra urna que a da tabela (votos iguais) | não se traduz (votos iguais) | S4 | T60a |
+| Recebimento de boletins parado das 17:07 às 19:03 (116 minutos), fato medido; coincide com a prorrogação e a regra que o acionou não está nos dados | não altera votos | S1 | T52 |
+
+_Nenhuma tem causa demonstrada. A soma descreve o que foi achado e não limita o que pode ter passado sem alarme: há mecanismos em que centenas de milhares de votos passam sem alarme (T63)._
+
+## Operação Veracidade Geral (V1.5, rodada 7, 28/10/2026)
+
+**Os dados oficiais usados pelo estudo são fiéis ao que aconteceu?** O que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta.
+
+- **Cadeia de certificados em 100% das urnas (T60a):** 1.942.246 pares seção × turno de 2022 e 2026, 0 falhas, todos válidos no dia, nenhuma chave repetida. Reforça a integridade dos arquivos, não a veracidade dos votos; a raiz do TSE não é pública.
+- **404 boletins de terceiros iguais ao TSE (T61):** Boletins impressos lidos por terceiros no 2º turno de 2026 (22 UFs): assinatura, cadeia e votos iguais em 404 de 404; os 404 arquivos também são iguais entre downloads independentes. Amostra de conveniência (0,08%).
+- **Pontos cegos da bateria maiores do que o veredito dizia (T63):** UFs inteiras, os cinco grandes juntos, macrorregião, lote tardio, conversão de brancos e nulos, enchimento abaixo de 250 mil e deslocamento uniforme só são vistos a partir de 0,5 a 2,2 milhões de votos, ou nunca. O poder é assimétrico entre os sentidos.
+- **Registros coerentes passam em tudo (T62):** Registros coerentes assinados pelo próprio gerador passam por todas as verificações internas; alterar só a tabela, ou tudo sem reassinar, é visto.
+- **Zeros sem modelo calibrado (T64):** Três famílias de modelo falham a calibração; os zeros são locais de uma seção só, com menos de 1% do total, nos dois anos.
+
+**Pontos cegos:**
+
+- Escala de UF, região, lote ou deslocamento uniforme: sem alarme abaixo de ~0,5 a 2,2 milhões de votos (T63).
+- Registros coerentes gerados por fonte comprometida antes da assinatura passam por todas as verificações internas (H10, T62).
+- Poder assimétrico: em 2022, troca dispersa a favor de Lula só é vista a partir de 500 mil votos; a favor de Bolsonaro, de 50 mil (T63).
+- Raiz da cadeia de certificados e teste de integridade com votos conhecidos: não obtidos.
+
+Perguntas Q42 a Q50 em `fase3/RESPOSTAS_F3.md`; documentos em `operacao_veracidade/` (comece por `OPERACAO_VERACIDADE_GERAL.md` e `09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`).
 
 ## Escala de sinal
 
@@ -69,7 +100,7 @@
 | T02 | S3 | Excesso de seções com virada pró-Lula muito acima do esperado: em 2026, 33 seções em 33 locais diferentes, com comparecimento caindo (−3,0 pp; contrário de enchimento), ~773 votos; em 2022, 90 seções, ~2.600 votos. Real, sem causa. |
 | T03 | S0 | Efeito desprezível da hora de chegada. |
 | T04 | S0 | Urna trocada vota igual (equivalência). |
-| T05 | S0 | Dígitos uniformes. |
+| T05 | PC | Dígitos uniformes, mas o teste não tinha poder para quase nenhum mecanismo: na grade do T63 o dígito final só reage a alterações escancaradas (21% a 27% das réplicas de 'poucas seções' com 250 mil votos ou mais, onde os outros detectores já têm 100%) e é nulo nos demais. |
 | T07 | S0 | Sem assinatura de enchimento. |
 | T08 | S0 | Nenhum boletim antes do fim da votação. |
 | T09 | S1 | Prorrogação em 6.748 seções; virada igual com e sem. |
@@ -80,7 +111,7 @@
 | T13b | M | Poder dos testes de log. |
 | T14 | S4 | Log com contagem diferente do comparecimento: 16 seções-turno em 2026 (113 votos); 153 em 2022 (5.287 votos sem registro). |
 | T15 | S4 | Imagem do boletim diferente do boletim digital em RS 88013/2/199 (2022, 92 votos); em 2026, 1 caso compatível com contingência registrada. |
-| T16 | S0 | Assinaturas válidas até a AC emissora; a raiz do TSE é ponto cego. |
+| T16 | S0 | Assinaturas válidas até a AC emissora (cadeia conferida em 100% das urnas no T60a); a raiz do TSE é ponto cego. |
 | T16c | M | Teste da implementação criptográfica. |
 | T17 | S0 | RDV = boletim (consistência interna). |
 | T17b | S0 | bu.dat = RDV = tabela em todas as urnas (consistência interna). |
@@ -135,4 +166,11 @@
 | T57 | S1 | 2º turno de governador eleva nulos de presidente (+1,58 ponto em 2022, +0,78 em 2026); 53% dos votos nessas UFs em 2022 contra 8% em 2026: ~0,69 mi da queda de nulos; resto uniforme. |
 | T58 | S1 | Nulos com número de governador no campo de presidente explicam o excesso de nulos nas UFs com governador no 2º turno e a marca do 1º turno de 2026 onde Lula é forte (erro de campo). |
 | T59 | M | Calibração do C06 com origem conhecida: acerta 14 (90%) e 70 (69%) de 2026, erra 55, 12 e 15; magnitudes de fluxo só como direção. |
+| T60a | S4 | Cadeia de certificados verifica em 1.942.246 de 1.942.246 pares seção × turno (0 falhas). Lacunas objetivas pequenas, sem efeito em votos: 98 certificados emitidos depois da validade do certificado público da AC URNA; certificado de outra urna que a da tabela em 17 seções de 2026 e 22 de 2022; a raiz não é pública. |
+| T60b | M | Controles do verificador: 0 falso positivo; mutações rejeitadas em 40 de 40; a assinatura do arquivo sozinha não detecta alteração, o hash detecta; só a cadeia rejeita certificado forjado. |
+| T61 | S0 | 404 boletins impressos lidos por terceiros iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas; 404 arquivos iguais entre downloads independentes (amostra de conveniência, 0,08%). |
+| T62 | M | Identificabilidade: registros coerentes assinados pelo próprio gerador passam por todas as verificações internas; alterar só a tabela, ou tudo sem reassinar, é visto. |
+| T63 | M | Poder da bateria contra 15 mecanismos: visto a partir de 25 a 50 mil votos em seções, locais, zonas e municípios; só a partir de 0,5 a 2,2 mi, ou nunca, em UFs, cinco grandes juntos, região, lote, conversão de brancos e nulos, enchimento e deslocamento uniforme; poder assimétrico entre sentidos. |
+| T64 | PC | Zeros: três famílias de modelo falham a calibração; os zeros são locais de uma seção só com menos de 1% do total, em 2022 e em 2026. |
+| T65 | S1 | O '98,12% dos votos extras' do vídeo é a premissa de 60% devolvida (mínimo possível); o mesmo método dá 370% para Bolsonaro em 2022; a abstenção também caiu em 2022; resíduo acima do proporcional de sinal conhecido (Lula +3,68 mi em 2026, Bolsonaro +1,99 mi em 2022). |
 | T44 | S3 | Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto. |

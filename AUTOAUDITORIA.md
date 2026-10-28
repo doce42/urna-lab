@@ -121,3 +121,14 @@ O usuário baixou do portal do TSE (Eleições 2022, "Documentação técnica do
 - **BU (2026):** os arquivos de 2026 trazem campos que a especificação de 2022 não descreve (habilitação em três contagens: sem biometria, biométrica, biográfica; campos extras na eleição). A versão de 2026 da especificação não está publicada; o leitor de 2026 segue validado por resultado (totais 638/638, assinatura e RDV), não por especificação.
 - **Lista de hashes do QR Code:** são hashes das chaves públicas do QR Code por UF, não da chave por urna que está no BU (testado em 3 BU do AC de 2022: nenhum bate, como esperado). Só serviriam para validar o QR Code impresso, que este estudo não lê. Sem uso por ora.
 - **Cadeia de certificados até a raiz:** continua não publicada nesse material; segue como limite.
+
+### Atualização de 28/10/2026 (rodada 7, Operação Veracidade)
+| Ameaça ou limite | O que foi feito | O que continua aberto |
+|---|---|---|
+| Autenticidade dos arquivos (só hash e lista) | T60a: cadeia até a AC emissora em 1.942.246 de 1.942.246 pares seção × turno; T60b: controles positivos e negativos | Raiz (AC RAIZ UE, AC URNA v2) não é pública; ACs vêm de cópia de terceiro |
+| Registros coerentes e incorretos (comprometimento antes da geração) | T62: nenhuma verificação interna os separa de genuínos | Só boletins impressos de amostra probabilística ou auditoria do software distinguem |
+| Poder da bateria estatística | T63: 15 mecanismos, dois sentidos, 7 magnitudes; cega a UF, região, lote e uniforme abaixo de ~0,5 a 2,2 mi; poder **assimétrico**; fabricação de estrutura completa passa D1 a D7 em 2026 | O poder é medido sobre uma base real que pode já conter alteração; T44 não foi repetido por cidade |
+| Evidência de origem diferente | T61: 404 boletins de terceiros e republicação de 404 arquivos | Amostra de conveniência (0,08%); relógio de terceiro não auditado; teste de integridade com votos conhecidos não obtido |
+| Zeros | T64: três famílias de modelo falham | Nenhum modelo de cauda baixa calibrado |
+| **Artefato do leitor de log** | Log de pacote traz logs arquivados de outras urnas e seções (ES 57932/9/85) | Reler os 16 casos do T14 por data, ID de urna e seção |
+| Frases do próprio projeto acima da evidência | `operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md` (22 itens): H7, T05, "sinais muito maiores", "dois caminhos", Q5, Q7 corrigidos | A soma das anomalias **não** é teto; a base de referência pode estar alterada |

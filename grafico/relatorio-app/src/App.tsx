@@ -50,7 +50,7 @@ export default function App() {
         {reg && (
           rota.pagina === 'home' ? <HomeCarregada reg={reg} meta={meta} /> :
           rota.pagina === 'testes' ? <Testes reg={reg} meta={meta} partes={rota.partes} /> :
-          rota.pagina === 'mapas' ? <Mapas /> : rota.pagina === 'linha' ? <LinhaDoTempo reg={reg} /> : rota.pagina === 'respostas' ? <Respostas reg={reg} /> : <Docs partes={rota.partes} meta={meta} />
+          rota.pagina === 'mapas' ? <Mapas /> : rota.pagina === 'linha' ? <LinhaDoTempo reg={reg} /> : rota.pagina === 'respostas' ? <Respostas reg={reg} partes={rota.partes} /> : <Docs partes={rota.partes} meta={meta} />
         )}
       </main>
       <Rodape meta={meta} />

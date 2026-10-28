@@ -183,7 +183,7 @@ export const MODS: Record<string, [string, string]> = {
   D: ['Forense estatística', 'Testes clássicos de padrões em números de votos, sempre com a medida de quanto cada teste consegue (ou não) enxergar.'],
   E: ['Divergências e agrupamento', 'Seções ou locais que fogem do esperado, se se agrupam no espaço e que explicações existem.'],
   F: ['Referência: 2022', 'A mesma bateria no pleito de 2022, para saber se um número de 2026 é incomum.'],
-  H: ['Fase 3: curvas, zeros e dependência espacial', 'Investigações da F3, com nulos explícitos e o que significam em votos.'],
+  H: ['Fase 3, alegações públicas e Operação Veracidade', 'Investigações da F3, alegações públicas testadas e a auditoria adversarial (T60a a T65), com nulos explícitos e o que significam em votos.'],
   G: ['Fase 2: investigações aprofundadas', 'Testes novos, com pré-registro, que tentam derrubar métodos e conclusões anteriores. Cada um traz o que significa em número de votos.'],
 };
 export const ESTADO_TXT: Record<string, string> = { concluido: 'concluído', em_andamento: 'em andamento', a_fazer: 'a fazer', concluido_excluido_da_conclusao: 'concluído, excluído da conclusão', concluido_2t: 'concluído (2º turno)', concluido_1t: 'concluído (1º turno)', concluido_2026: 'concluído (2026)' };

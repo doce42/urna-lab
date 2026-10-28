@@ -1,0 +1,134 @@
+{
+ "protocolo": "operacao_veracidade/PROTOCOLO_PRE_EXECUCAO.md",
+ "boletins": 404,
+ "ufs": 22,
+ "sem_secao_repetida": true,
+ "assinatura": {
+  "conteudo_igual_ao_hash": 404,
+  "assinatura_valida": 404,
+  "invalida": 0,
+  "der_nao_canonico": 0,
+  "por_algoritmo": {
+   "ECDSA-P521": 85,
+   "Ed521": 319
+  }
+ },
+ "certificado": {
+  "cadeia_ok": 404,
+  "cadeia_falha": 0,
+  "emissor_sem_ac": 0,
+  "validos_no_dia": 404,
+  "emitidos_depois_da_eleicao": 0,
+  "emissores": {
+   "AC UE2022": 173,
+   "AC UE2020": 146,
+   "AC URNA": 85
+  },
+  "emitidos_depois_de_18_07_2026_ac_urna": 0,
+  "mesmo_certificado_em_duas_secoes": 0,
+  "turno_qr": {
+   "2": 404
+  }
+ },
+ "pareamento": {
+  "com_par_na_base": 404,
+  "sem_par": 0
+ },
+ "votos": {
+  "diferencas_por_campo_contra_tabela_e_bu": {
+   "dif_tab_v13": 0,
+   "dif_bu_v13": 0,
+   "dif_tab_v22": 0,
+   "dif_bu_v22": 0,
+   "dif_tab_branco": 0,
+   "dif_bu_branco": 0,
+   "dif_tab_nulo": 0,
+   "dif_bu_nulo": 0,
+   "dif_tab_comp": 0,
+   "dif_bu_comp": 0,
+   "dif_apto": 0
+  },
+  "boletins_com_alguma_diferenca": 0,
+  "votos_13_total": 50437,
+  "votos_22_total": 61542,
+  "secoes_com_voto_zero_flavio": 0
+ },
+ "identidade_da_urna": {
+  "idue_igual_cn_do_qr": 404,
+  "idue_igual_urna_efetivada_da_tabela": 404,
+  "cn_do_qr_igual_cn_do_vota_vsc": 404,
+  "secoes_com_vota_vsc_comparavel": 404,
+  "modelos": {
+   "UE2022": 173,
+   "UE2020": 146,
+   "UE2015": 74,
+   "UE2013": 11
+  }
+ },
+ "relogio": {
+  "impressao_menos_emissao_na_base_min": {
+   "mediana": -1.9,
+   "p05": -3.34,
+   "p95": -1.1025000000000007,
+   "iguais_dentro_de_2min": 234
+  },
+  "impressao_mediana": "17:02:03",
+  "app_recebeu_mediana_brasilia": "18:42:35.228056",
+  "tse_recebeu_mediana_brasilia": "20:39:21",
+  "tse_menos_app_min": {
+   "mediana": -1213.8560215833334,
+   "p05": -3934.62483449,
+   "p95": 153.26606229166666,
+   "app_antes_do_tse": 156,
+   "app_depois_do_tse": 248
+  },
+  "app_recebeu_antes_de_19h_no_dia_da_eleicao": 77,
+  "tse_recebeu_antes_de_19h": 0,
+  "nota": "o app de terceiros registra o horário no próprio servidor; o relógio dele não é auditado"
+ },
+ "cobertura": {
+  "secoes_do_brasil": 499207,
+  "fracao": 0.0008092835236685383,
+  "por_uf": {
+   "SP": 167,
+   "MG": 38,
+   "RJ": 36,
+   "PR": 29,
+   "CE": 29,
+   "RS": 15,
+   "SC": 14,
+   "MA": 13,
+   "MS": 11,
+   "ZZ": 9,
+   "PI": 8,
+   "ES": 7,
+   "PA": 6,
+   "GO": 4,
+   "AL": 4,
+   "PE": 3,
+   "BA": 3,
+   "PB": 2,
+   "DF": 2,
+   "MT": 2,
+   "RN": 1,
+   "SE": 1
+  },
+  "aviso": "amostra de conveniência: coletores e publicador são o mesmo projeto; sem desenho probabilístico; só 2º turno de 2026"
+ },
+ "divergencias_lista": [],
+ "relogio_antes_das_19h": {
+  "boletins_registrados_pelo_app_antes_de_19h_de_25_10": 77,
+  "recebimento_no_tse_antes_de_19h_entre_eles": 0,
+  "tse_menos_app_min": {
+   "mediana": 112.60260073333333,
+   "p05": 62.05088361,
+   "p95": 166.54522576666668,
+   "minimo": 45.02635375
+  },
+  "tse_recebeu_depois_das_19h03_entre_eles": 77,
+  "app_primeiro_registro": "2026-10-25 18:10:11.708440",
+  "app_ultimo_antes_de_19h": "2026-10-25 18:47:13.418775",
+  "conteudo": "estes boletins coincidem em votos e assinatura com o arquivo que o TSE registrou depois (T61)",
+  "limite": "o relógio do app de terceiros não é auditado; o tempo de recebimento do TSE é o campo DT_BU_RECEBIDO_2 da tabela dele"
+ }
+}

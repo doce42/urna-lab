@@ -304,3 +304,15 @@ Pré-registro `fase3/PREREG_RDV_NULOS.md` (emenda 15). Extração de todos os RD
 - **Artefato (corrigido):** a conferência acusou 541 e 14 seções em 2022; causa: o leitor original soma o nulo tipo 6, e seções só com tipo 6 ficavam fora do comparador. Depois: 0 diferenças nos 4 conjuntos.
 - **T58:** nulos com número de governador no campo de presidente: 698 mil no 1º turno de 2026 (422 mil em 2022); explicam a marca do T56 e o efeito do T57 (S1).
 - **T59:** C06 contra origem conhecida: acerta 14 (90%) e 70 (69%), erra 55, 12 e 15; magnitudes de fluxo só como direção (prova "ajustado" no C06).
+
+## Operação Veracidade Geral e rodada 7 (28/10/2026, V1.5)
+Documentos em `operacao_veracidade/` (protocolo, relatórios 00 a 10, executivo). Testes T60a a T65, perguntas Q42 a Q50. Emenda 16 do PROTOCOLO.
+- **T60a:** cadeia de certificados em 1.942.246 de 1.942.246 pares seção × turno (2022 e 2026), 0 falhas; lacunas sem efeito em votos (98 certificados após a validade do certificado público da AC URNA; 17 e 22 seções com certificado de outra urna).
+- **T60b:** 0 falso positivo e 40 de 40 mutações rejeitadas; só a cadeia rejeita certificado forjado.
+- **T61:** 404 boletins impressos de terceiros iguais ao TSE; 404 arquivos iguais entre downloads; 77 registrados fora do TSE antes de o TSE registrar o recebimento.
+- **T62 e T63:** registros coerentes assinados pela fonte passam por todas as verificações; bateria cega a UF, região, lote e uniforme abaixo de ~0,5 a 2,2 mi; poder assimétrico.
+- **T64:** zeros, três famílias de modelo falham; locais de uma seção só.
+- **T65:** o "98,12%" do vídeo é a premissa de 60% devolvida; resíduo acima do proporcional de +3,68 mi (2026) e +1,99 mi (2022).
+- **Artefatos e erros meus:** contagem de eventos de logs de outras seções (ES 57932/9/85); "antes das 19h" de qualquer dia (216 em vez de 77); cache de zip reabrindo o arquivo; fabricante calibrado com a direção errada; `pkill -f` auto-casado.
+- **Dados derivados grandes fora do git** (`.gitignore`): parquets de certificados e de nulos do RDV (reproduzíveis por script) e arquivos estáticos de terceiros (licença não verificada).
+- **Documentação e skills da rodada 7, atualizadas depois do congelamento (28/10/2026):** METODOLOGIA, PIPELINE, MAPA_SKILLS, REFERENCIAS, AUTOAUDITORIA, DADOS_PRESERVACAO, DIRETRIZ, CONTRIBUTING, AGENTS (regras), Makefile e as 8 skills (`.agents/skills/`). A cópia congelada desses arquivos em `rodadas/rodada-7/arquivos/` é a anterior a esta atualização; a raiz tem a vigente, e a rodada 8 congelará a vigente. Rodada fechada não se reescreve.

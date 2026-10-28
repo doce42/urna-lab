@@ -18,12 +18,12 @@ NIVEIS = [
 S = lambda n, m: {"nivel": n, "motivo": m}
 SINAL = {
  "T01": S("S0", "Tabelas do TSE iguais voto a voto (consistência interna)."), "T02": S("S3", "Excesso de seções com virada pró-Lula muito acima do esperado: em 2026, 33 seções em 33 locais diferentes, com comparecimento caindo (−3,0 pp; contrário de enchimento), ~773 votos; em 2022, 90 seções, ~2.600 votos. Real, sem causa."),
- "T03": S("S0", "Efeito desprezível da hora de chegada."), "T04": S("S0", "Urna trocada vota igual (equivalência)."), "T05": S("S0", "Dígitos uniformes."), "T07": S("S0", "Sem assinatura de enchimento."),
+ "T03": S("S0", "Efeito desprezível da hora de chegada."), "T04": S("S0", "Urna trocada vota igual (equivalência)."), "T05": S("PC", "Dígitos uniformes, mas o teste não tinha poder para quase nenhum mecanismo: na grade do T63 o dígito final só reage a alterações escancaradas (21% a 27% das réplicas de 'poucas seções' com 250 mil votos ou mais, onde os outros detectores já têm 100%) e é nulo nos demais."), "T07": S("S0", "Sem assinatura de enchimento."),
  "T08": S("S0", "Nenhum boletim antes do fim da votação."), "T09": S("S1", "Prorrogação em 6.748 seções; virada igual com e sem."), "T10": S("PC", "Curva sem modelo de chegada validado; não decide."),
  "T11": S("PC", "Idem."), "T12": S("S1", "Associação some ao controlar idade."), "T13": S("M", "Poder dos testes (simulação)."), "T13b": S("M", "Poder dos testes de log."),
  "T14": S("S4", "Log com contagem diferente do comparecimento: 16 seções-turno em 2026 (113 votos); 153 em 2022 (5.287 votos sem registro)."),
  "T15": S("S4", "Imagem do boletim diferente do boletim digital em RS 88013/2/199 (2022, 92 votos); em 2026, 1 caso compatível com contingência registrada."),
- "T16": S("S0", "Assinaturas válidas até a AC emissora; a raiz do TSE é ponto cego."), "T16c": S("M", "Teste da implementação criptográfica."), "T17": S("S0", "RDV = boletim (consistência interna)."),
+ "T16": S("S0", "Assinaturas válidas até a AC emissora (cadeia conferida em 100% das urnas no T60a); a raiz do TSE é ponto cego."), "T16c": S("M", "Teste da implementação criptográfica."), "T17": S("S0", "RDV = boletim (consistência interna)."),
  "T17b": S("S0", "bu.dat = RDV = tabela em todas as urnas (consistência interna)."), "T19": S("M", "Bateria em 2022."), "T20": S("S0", "Modelo de urna sem efeito."), "T21": S("S0", "Sem excesso de percentuais inteiros."),
  "T22": S("S0", "Sem assinatura de fraude incremental."), "T23": S("M", "Classificador; poder medido."), "T24": S("S2", "Urnas substituídas no meio do dia, conforme o log."), "T25": S("S0", "Impressão digital como 2022."),
  "T26": S("M", "Método excluído (inadequado)."), "T27": S("S0", "Dígitos de comparecimento uniformes."), "T28": S("S3", "8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); em 6 delas Lula tem proporção abaixo do município; o mesmo método marca 18 urnas em 2022."),
@@ -52,32 +52,39 @@ SINAL = {
  "T57": S("S1", "2º turno de governador eleva nulos de presidente (+1,58 ponto em 2022, +0,78 em 2026); 53% dos votos nessas UFs em 2022 contra 8% em 2026: ~0,69 mi da queda de nulos; resto uniforme."),
  "T58": S("S1", "Nulos com número de governador no campo de presidente explicam o excesso de nulos nas UFs com governador no 2º turno e a marca do 1º turno de 2026 onde Lula é forte (erro de campo)."),
  "T59": S("M", "Calibração do C06 com origem conhecida: acerta 14 (90%) e 70 (69%) de 2026, erra 55, 12 e 15; magnitudes de fluxo só como direção."),
+ "T60a": S("S4", "Cadeia de certificados verifica em 1.942.246 de 1.942.246 pares seção × turno (0 falhas). Lacunas objetivas pequenas, sem efeito em votos: 98 certificados emitidos depois da validade do certificado público da AC URNA; certificado de outra urna que a da tabela em 17 seções de 2026 e 22 de 2022; a raiz não é pública."),
+ "T60b": S("M", "Controles do verificador: 0 falso positivo; mutações rejeitadas em 40 de 40; a assinatura do arquivo sozinha não detecta alteração, o hash detecta; só a cadeia rejeita certificado forjado."),
+ "T61": S("S0", "404 boletins impressos lidos por terceiros iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas; 404 arquivos iguais entre downloads independentes (amostra de conveniência, 0,08%)."),
+ "T62": S("M", "Identificabilidade: registros coerentes assinados pelo próprio gerador passam por todas as verificações internas; alterar só a tabela, ou tudo sem reassinar, é visto."),
+ "T63": S("M", "Poder da bateria contra 15 mecanismos: visto a partir de 25 a 50 mil votos em seções, locais, zonas e municípios; só a partir de 0,5 a 2,2 mi, ou nunca, em UFs, cinco grandes juntos, região, lote, conversão de brancos e nulos, enchimento e deslocamento uniforme; poder assimétrico entre sentidos."),
+ "T64": S("PC", "Zeros: três famílias de modelo falham a calibração; os zeros são locais de uma seção só com menos de 1% do total, em 2022 e em 2026."),
+ "T65": S("S1", "O '98,12% dos votos extras' do vídeo é a premissa de 60% devolvida (mínimo possível); o mesmo método dá 370% para Bolsonaro em 2022; a abstenção também caiu em 2022; resíduo acima do proporcional de sinal conhecido (Lula +3,68 mi em 2026, Bolsonaro +1,99 mi em 2022)."),
  "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."),
 }
 H = lambda id, mec, deixaria, escala, testes, resultado, status, votos: {"id": id, "mecanismo": mec, "o_que_deixaria": deixaria, "escala_necessaria": escala, "testes": testes, "resultado": resultado, "status": status, "em_votos": votos}
-CONTR, SEMS, SINALC, CEGO = "Contrariada pela evidência", "Sem sinal no alcance testado", "Sinal encontrado, sem causa", "Ponto cego dos dados públicos"
+CONTR, SEMS, SINALC, CEGO, NDPC = "Contrariada pela evidência", "Sem sinal no alcance testado", "Sinal encontrado, sem causa", "Ponto cego dos dados públicos", "Não determinado (ponto cego)"
 HIP = [
  H("H1", "Alterar os votos depois da apuração (base publicada diferente do que foi divulgado na noite)", "Totais divulgados ao vivo diferentes da soma das seções publicadas depois",
-   "Qualquer escala", ["R2", "T32"], "39 capturas independentes (Internet Archive) dos totais divulgados ao vivo batem com a base final; diferença 0 no fim.", CONTR, "0 voto de diferença no total final."),
- H("H2", "Trocar votos na totalização (boletins certos, soma errada)", "Soma dos boletins diferente do total oficial", "Qualquer escala", ["T32", "T17b", "R1", "T43"],
-   "Soma das urnas = total oficial em 638/638 itens; tabela = boletim em todas as seções; decodificação de terceiro igual.", CONTR, "0 voto de diferença."),
- H("H3", "Trocar votos no boletim de urnas espalhadas (algumas urnas com muitos votos trocados)", "Excesso de seções com virada fora do padrão do município (T02, T13)",
-   "Para inverter: ~2,2 mi votos; nos cenários simulados, ~123 mil já são vistos (10% dos válidos em 1% das urnas)", ["T02", "T13", "A2"],
-   "Há excesso real de seções pró-Lula (T02), mas soma ~740 votos em 2026; uma troca do tamanho necessário para inverter seria ~18 vezes maior que o limite de detecção simulado.", SINALC, "~740 votos na cauda pró-Lula (0,02% da margem)."),
- H("H4", "Trocar votos concentrados em locais de votação ou municípios pequenos", "Locais ou municípios com virada muito fora do entorno (E02, I3)", "Nos cenários simulados, ~62 mil já são vistos",
-   ["E02", "I3", "A2", "T38"], "Cerca de 0,1% dos locais são atípicos, com dezenas a poucas centenas de votos cada; sem assinatura de enchimento.", SINALC, "Dezenas a centenas de votos por local."),
- H("H5", "Trocar votos na cidade inteira de uma grande cidade", "Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44)", "Troca de 2% dos válidos já seria vista nas 5 maiores cidades (31 mil a 139 mil votos)",
-   ["T44", "A2"], "São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos.", SINALC, "Salvador: ~30 mil votos (0,7% da margem)."),
- H("H6", "Encher urnas (votos de eleitores que não votaram)", "Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria", "Proporcional ao enchimento",
-   ["T38", "T07", "T14", "T28", "T31"], "Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido.", SINALC, "~100 votos com sinal."),
- H("H7", "Apagar votos do adversário em seções inteiras (zeros)", "Mais seções com zero votos do que o perfil local prevê", "Dezenas a milhares de votos", ["T41", "R3", "E3"],
-   "79 e 106 seções com zero para Flávio, exatamente o previsto fora da amostra (79,1 e 101,5); registros conferem.", SEMS, "No máximo ~4.800 votos se fosse anomalia (0,11% da margem)."),
- H("H8", "Manipular a ordem ou o ritmo da divulgação (virada 'fabricada')", "Sequência divulgada diferente da base; curva impossível de reproduzir", "Não muda votos", ["R2", "T40", "F4"],
-   "A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada.", SEMS, "A ordem não altera nenhum voto."),
+   "Qualquer escala", ["R2", "T32", "T61"], "Não há diferença entre o que o TSE divulgou na noite e o que publicou depois: 39 capturas independentes (Internet Archive) dos totais divulgados ao vivo batem com a base final, e 404 arquivos bu.dat são iguais entre dois downloads independentes (T61). Isso não testa alteração antes da primeira publicação.", CONTR, "0 voto de diferença no total final."),
+ H("H2", "Trocar votos na totalização (boletins certos, soma errada)", "Soma dos boletins diferente do total oficial", "Qualquer escala", ["T32", "T17b", "R1", "T43", "T61"],
+   "Soma das urnas = total oficial em 638/638 itens; tabela = boletim em todas as seções; decodificação de terceiro igual. 404 boletins impressos lidos por terceiros no 2º turno de 2026 são iguais à tabela e ao BU do TSE, com assinatura e cadeia válidas (T61; amostra de conveniência, 0,08% das seções).", CONTR, "0 voto de diferença."),
+ H("H3", "Trocar votos no boletim de urnas espalhadas (algumas urnas com muitos votos trocados)", "Excesso de seções com virada fora do padrão do município (T02, T13, T63)",
+   "Para inverter: ~2,2 mi votos. Na grade do T63, troca em seções dispersas é vista com 80% de poder a partir de ~50 mil votos em 2026, nos dois sentidos; em 2022, a partir de 50 mil a favor de Bolsonaro e só de 500 mil a favor de Lula", ["T02", "T13", "A2", "T63"],
+   "Há excesso real de seções pró-Lula (T02), mas soma ~740 votos em 2026. Em 2026, uma troca do tamanho necessário para inverter seria ~44 vezes maior que o limite de detecção de seções dispersas (~50 mil). O poder é assimétrico entre os sentidos: em 2022, a favor de Lula, o limite é 500 mil (4,4 vezes menor que 2,22 mi), porque a base já tem uma cauda pró-Lula pesada.", SINALC, "~740 votos na cauda pró-Lula (0,02% da margem)."),
+ H("H4", "Trocar votos concentrados em locais de votação ou municípios pequenos", "Locais ou municípios com virada muito fora do entorno (E02, I3)", "Na grade do T63, locais, zonas e municípios inteiros (fora os 5 maiores) são vistos a partir de 25 a 50 mil votos",
+   ["E02", "I3", "A2", "T38", "T63"], "Cerca de 0,1% dos locais são atípicos, com dezenas a poucas centenas de votos cada; sem assinatura de enchimento.", SINALC, "Dezenas a centenas de votos por local."),
+ H("H5", "Trocar votos na cidade inteira de uma grande cidade (uma por vez)", "Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44)", "Troca de 2% dos válidos já seria vista em cada uma das 5 maiores cidades, uma por vez (31 mil a 139 mil votos, T44). Os cinco grandes juntos só são vistos pela bateria a partir de 1 a 2,22 mi votos (T63; o T44 não foi repetido para esse caso)",
+   ["T44", "A2", "T63"], "São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos.", SINALC, "Salvador: ~30 mil votos (0,7% da margem)."),
+ H("H6", "Encher urnas (votos de eleitores que não votaram)", "Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria", "Na grade do T63, enchimento só é visto a partir de 250 mil votos; abaixo disso passa sem alarme",
+   ["T38", "T07", "T14", "T28", "T31", "T63"], "Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido. Enchimento abaixo de 250 mil votos não é excluído pela bateria estatística (T63).", SINALC, "~100 votos com sinal."),
+ H("H7", "Apagar votos do adversário em seções inteiras (zeros)", "Mais seções com zero votos do que o perfil local prevê", "Dezenas a milhares de votos", ["T41", "T64", "R3", "E3"],
+   "Não determinado: nenhum modelo de cauda baixa passou na calibração (T41, R3). As três famílias novas do T64 também falham: o modelo por município prevê 1,3 zeros contra 106 observados (2022: 4,3 contra 141); o por local de votação, 66,7 contra 106. Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total, em 2022 (141) e em 2026 (106); os registros dessas seções conferem.", NDPC, "Se fossem anomalia, de ~44 a ~4.800 votos conforme o modelo (no máximo 0,11% da margem); nenhum modelo calibrou."),
+ H("H8", "Manipular a ordem ou o ritmo da divulgação (virada 'fabricada')", "Sequência divulgada diferente da base; curva impossível de reproduzir", "Não muda votos", ["R2", "T40", "F4", "T52", "T61"],
+   "A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada, e a curva continua não determinada. Fato medido: o TSE não registrou recebimento de boletins das 17:07 às 19:03 (116 minutos) no 2º turno de 2026, só em 2026; 77 boletins de terceiros estavam registrados fora do TSE entre 18:10 e 18:47 (T52, T61). Isso não altera votos; a causa não está nos dados.", SEMS, "A ordem não altera nenhum voto."),
  H("H9", "Deslocar um pouco de votos em quase todas as urnas (uniforme)", "Nada estatístico: um deslocamento pequeno e uniforme é indistinguível de uma mudança real de opinião",
-   "~4 a 5 votos por urna bastariam para inverter", ["T13"], "Não testável com dados agregados. Só boletins impressos coletados por fiscais (amostra) ou auditoria independente da urna examinam isto.", CEGO, "Até ~2,2 mi votos sem rastro estatístico."),
+   "~4 a 5 votos por urna bastariam para inverter", ["T13", "T63"], "Não testável com dados agregados. Quantificado no T63: um deslocamento uniforme em logit nunca é visto, em nenhuma magnitude, nos dois anos; em fatia de voto, só a partir de 1 a 2,22 mi votos, e nunca no sentido contrário. Só boletins impressos coletados em amostra sorteada ou auditoria independente da urna examinam isto.", CEGO, "Até ~2,2 mi votos sem rastro estatístico (em logit, nunca visto)."),
  H("H10", "Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes)", "Nada nos arquivos: tudo concorda entre si", "Qualquer escala",
-   ["T16", "T33", "auditoria adversarial"], "Assinaturas válidas até a AC emissora, sem âncora do TSE verificada (busca externa sem resultado); erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos.", CEGO, "Até o total; sem rastro nos dados públicos."),
+   ["T16", "T60a", "T62", "T33", "auditoria adversarial"], "A cadeia de certificados verifica até a AC emissora em 100% das urnas (1.942.246 pares seção × turno, 0 falhas, T60a), sem âncora do TSE: a raiz não é pública. Registros coerentes gerados e assinados pela própria fonte passam por todas as verificações internas (T62). Erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos.", CEGO, "Até o total; sem rastro nos dados públicos."),
 ]
 # Aviso que vem antes da pergunta em todo lugar (site, VEREDITO, README, release): a pergunta é testada, não é a premissa.
 AVISO = {
@@ -92,16 +99,23 @@ AVISO = {
 RESPOSTA = {
  "aviso": AVISO,
  "pergunta": "A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?",
- "resposta": "Não encontramos. Para inverter o resultado seria preciso trocar ~2,2 milhões de votos de lado. Os mecanismos que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores do que os encontrados. As anomalias reais que achamos somam dezenas de milhares de votos, não milhões, e não têm causa demonstrada. Restam dois caminhos que nenhum dado público consegue examinar: um deslocamento pequeno e uniforme em quase todas as urnas, e uma alteração da urna antes de gerar os registros. Ambos só podem ser checados com evidência de fora do sistema, como boletins impressos coletados por fiscais ou auditoria independente da urna.",
+ "resposta": "Não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um. Para inverter o resultado seria preciso trocar ~2,2 milhões de votos de lado. Troca dispersa, em locais, zonas ou municípios, de dezenas de milhares de votos deixaria sinal; troca de escala de UF, região ou lote, ou deslocamento uniforme, só seria vista a partir de algumas centenas de milhares a milhões de votos. As anomalias que encontramos somam dezenas de milhares de votos e não têm causa demonstrada; isso descreve o que foi achado e não limita o que pode ter passado sem alarme. Restam caminhos fora do alcance: um deslocamento pequeno e uniforme em quase todas as urnas (H9), uma alteração da urna antes de gerar os registros (H10) e alterações de escala regional, de UF, de lote ou uniformes abaixo de ~0,5 a 2,2 milhões de votos (T63). Só evidência de fora do sistema resolve: boletins impressos de uma amostra sorteada de seções, auditoria independente da urna e a raiz da cadeia de certificados.",
  "deducao": [
    "Inverter 2026 exige trocar ~2,22 mi votos (metade da margem de 4,43 mi).",
-   "Isso não aconteceu depois da apuração: os totais divulgados ao vivo, guardados por terceiro, batem com a base final (H1).",
-   "Também não na soma: boletins, tabela e total oficial coincidem em todas as seções (H2).",
-   "Se tivesse sido feito trocando muitos votos em poucas urnas, locais, municípios ou numa grande cidade, os testes simulados veriam a partir de ~31 mil (2% numa grande cidade inteira) a ~123 mil votos (troca dispersa), e ~62 mil concentrados em locais ou municípios; o que aparece são ~740 votos em seções atípicas, ~0,1% de locais com dezenas a centenas de votos, e ~30 mil votos em Salvador (H3, H4, H5).",
-   "Encher urnas ou apagar votos do adversário também deixaria rastro, que não aparece além de ~100 votos e de zeros no nível previsto (H6, H7).",
-   "Sobram os mecanismos que não deixam rastro nos dados públicos: deslocamento pequeno e uniforme (H9) e alteração da urna antes dos registros (H10). Não podemos excluí-los nem confirmá-los com estes dados.",
+   "Não há diferença entre o que o TSE divulgou na noite e o que publicou depois: 39 capturas guardadas por terceiro batem com a base final, e 404 arquivos são iguais entre downloads independentes (H1). Isso não testa o que aconteceu antes da primeira publicação.",
+   "Também não na soma: boletins, tabela e total oficial coincidem em todas as seções, e 404 boletins impressos lidos por terceiros são iguais ao TSE, numa amostra de conveniência de 0,08% (H2).",
+   "Troca em seções dispersas, em poucas seções, em locais, zonas ou municípios (fora os 5 maiores) seria vista a partir de 25 a 50 mil votos (T63), e numa grande cidade, uma por vez, a partir de 2% dos válidos (31 mil a 139 mil, T44). O que aparece são ~740 votos em seções atípicas, ~0,1% de locais com dezenas a centenas de votos e ~30 mil votos em Salvador (H3, H4, H5). Em 2022, a favor de Lula, a troca dispersa só é vista a partir de 500 mil: o poder é assimétrico entre os sentidos.",
+   "Encher urnas só é visto pela bateria a partir de 250 mil votos (T63); abaixo disso, o rastro que aparece não passa de ~100 votos com sinal (H6). Os zeros de votos ficam não determinados: nenhum modelo de cauda baixa calibrou (H7).",
+   "Ficam fora do alcance: deslocamento uniforme (H9; em logit, nunca visto), alteração da urna antes dos registros (H10; registros coerentes assinados pela própria fonte passam por todas as verificações internas, T62) e alterações em UFs inteiras, nos cinco grandes municípios juntos, numa macrorregião, num lote tardio ou por conversão de brancos e nulos, vistas só a partir de ~0,5 a 2,2 mi votos, ou nunca (T63). Não podemos excluí-las nem confirmá-las com estes dados.",
  ],
- "o_que_seria_preciso": "Para fechar H9 e H10: comparar com boletins impressos afixados nas seções (coletados por fiscais ou terceiros) em amostra aleatória, auditoria independente do software e da urna, e a cadeia de certificados até a raiz do TSE.",
+ "o_que_seria_preciso": "Para fechar o que resta: boletins impressos afixados nas seções, de uma amostra sorteada (os 404 de terceiros são amostra de conveniência); auditoria independente do software e da urna; a raiz da cadeia de certificados do TSE (a cadeia já fecha até a AC emissora em 100% das urnas); e o resultado do teste de integridade com votos conhecidos, que não foi obtido.",
+ "avisos": [
+   "O poder de detecção é medido sobre uma base real que pode já conter alteração; o experimento não consegue dizer que a base está limpa.",
+   "O poder é assimétrico entre os sentidos, por causa da cauda pró-Lula presente na base nos dois anos.",
+   "Registros internamente coerentes gerados por uma fonte comprometida passam por todas as verificações internas; só evidência de fora distingue.",
+   "Os 404 boletins de terceiros são uma amostra de conveniência (0,08%).",
+ ],
+ "nota_anomalias": "Nenhuma tem causa demonstrada. A soma descreve o que foi achado e não limita o que pode ter passado sem alarme: há mecanismos em que centenas de milhares de votos passam sem alarme (T63).",
  "anomalias_2026": [
    {"o_que": "Salvador: virada de Lula acima do previsto", "votos": "~30 mil", "sinal": "S3", "teste": "T44"},
    {"o_que": "33 seções com virada pró-Lula muito fora do padrão, em locais diferentes e com comparecimento em queda", "votos": "~773", "sinal": "S3", "teste": "T02"},
@@ -110,14 +124,51 @@ RESPOSTA = {
    {"o_que": "2 votos sem habilitação em urna com log corrompido", "votos": "2", "sinal": "S4", "teste": "T31"},
    {"o_que": "Erros de verificação de assinatura do software no log, seguidos de sucesso", "votos": "não se traduz (sem efeito nos votos)", "sinal": "S2", "teste": "T33"},
    {"o_que": "Cerca de 0,1% dos locais com virada atípica", "votos": "dezenas a centenas por local", "sinal": "S3", "teste": "E02"},
+   {"o_que": "106 seções com zero voto para Flávio, sem modelo calibrado para dizer se é muito ou pouco", "votos": "14.860 votos de Lula nessas seções", "sinal": "PC", "teste": "T64"},
+   {"o_que": "17 seções com certificado de outra urna que a da tabela (votos iguais)", "votos": "não se traduz (votos iguais)", "sinal": "S4", "teste": "T60a"},
+   {"o_que": "Recebimento de boletins parado das 17:07 às 19:03 (116 minutos), fato medido; coincide com a prorrogação e a regra que o acionou não está nos dados", "votos": "não altera votos", "sinal": "S1", "teste": "T52"},
  ],
 }
-OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; não congelado", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
+# Operação Veracidade Geral (28/10/2026): resumo para o site (Home e Respostas). Números de operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md.
+OPERACAO = {
+ "titulo": "Operação Veracidade Geral",
+ "data": "2026-10-28",
+ "versao": "V1.5, rodada 7",
+ "pergunta": "Os dados oficiais usados pelo estudo são fiéis ao que aconteceu?",
+ "resposta": "O que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta.",
+ "achados": [
+   {"titulo": "Cadeia de certificados em 100% das urnas", "texto": "1.942.246 pares seção × turno de 2022 e 2026, 0 falhas, todos válidos no dia, nenhuma chave repetida. Reforça a integridade dos arquivos, não a veracidade dos votos; a raiz do TSE não é pública.", "teste": "T60a"},
+   {"titulo": "404 boletins de terceiros iguais ao TSE", "texto": "Boletins impressos lidos por terceiros no 2º turno de 2026 (22 UFs): assinatura, cadeia e votos iguais em 404 de 404; os 404 arquivos também são iguais entre downloads independentes. Amostra de conveniência (0,08%).", "teste": "T61"},
+   {"titulo": "Pontos cegos da bateria maiores do que o veredito dizia", "texto": "UFs inteiras, os cinco grandes juntos, macrorregião, lote tardio, conversão de brancos e nulos, enchimento abaixo de 250 mil e deslocamento uniforme só são vistos a partir de 0,5 a 2,2 milhões de votos, ou nunca. O poder é assimétrico entre os sentidos.", "teste": "T63"},
+   {"titulo": "Registros coerentes passam em tudo", "texto": "Registros coerentes assinados pelo próprio gerador passam por todas as verificações internas; alterar só a tabela, ou tudo sem reassinar, é visto.", "teste": "T62"},
+   {"titulo": "Zeros sem modelo calibrado", "texto": "Três famílias de modelo falham a calibração; os zeros são locais de uma seção só, com menos de 1% do total, nos dois anos.", "teste": "T64"},
+ ],
+ "pontos_cegos": [
+   "Escala de UF, região, lote ou deslocamento uniforme: sem alarme abaixo de ~0,5 a 2,2 milhões de votos (T63).",
+   "Registros coerentes gerados por fonte comprometida antes da assinatura passam por todas as verificações internas (H10, T62).",
+   "Poder assimétrico: em 2022, troca dispersa a favor de Lula só é vista a partir de 500 mil votos; a favor de Bolsonaro, de 50 mil (T63).",
+   "Raiz da cadeia de certificados e teste de integridade com votos conhecidos: não obtidos.",
+ ],
+ "perguntas": ["Q42", "Q43", "Q44", "Q45", "Q46", "Q47", "Q48", "Q49", "Q50"],
+ "capitulo": "operacao",
+ "documentos": [
+   {"slug": "ov-geral", "titulo": "Relatório executivo"},
+   {"slug": "ov-impacto", "titulo": "Impacto nos vereditos anteriores"},
+   {"slug": "ov-simulacoes", "titulo": "Simulações adversariais"},
+   {"slug": "ov-criptografia", "titulo": "Auditoria documental e criptográfica"},
+   {"slug": "ov-video", "titulo": "A hipótese do vídeo (T65)"},
+ ],
+}
+RESPOSTA["operacao"] = OPERACAO
+OUT = {"gerado": "2026-10-28", "situacao": "V1.5 (rodada 7) em preparação; não congelado", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
 json.dump(OUT, open(R + "/fase3/veredito_2026.json", "w"), ensure_ascii=False, indent=1)
-L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Nota do autor:** {AVISO['nota_autor']}", "", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
+L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Nota do autor:** {AVISO['nota_autor']}", "", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "**Leia junto com os resultados:**", ""] + [f"- {x}" for x in RESPOSTA["avisos"]] + ["", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
      "## Hipóteses de fraude examinadas", "", "| Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |", "|---|---|---|---|---|---|"]
 L += [f"| {h['id']} | {h['mecanismo']} | {h['o_que_deixaria']} | {h['resultado']} | **{h['status']}** | {h['em_votos']} |" for h in HIP]
 L += ["", "## Anomalias reais em 2026", "", "| O que | Votos | Sinal | Teste |", "|---|---|---|---|"] + [f"| {a['o_que']} | {a['votos']} | {a['sinal']} | {a['teste']} |" for a in RESPOSTA["anomalias_2026"]]
+L += ["", f"_{RESPOSTA['nota_anomalias']}_", "", f"## {OPERACAO['titulo']} ({OPERACAO['versao']}, 28/10/2026)", "", f"**{OPERACAO['pergunta']}** {OPERACAO['resposta']}", ""]
+L += [f"- **{x['titulo']} ({x['teste']}):** {x['texto']}" for x in OPERACAO["achados"]] + ["", "**Pontos cegos:**", ""] + [f"- {x}" for x in OPERACAO["pontos_cegos"]]
+L += ["", "Perguntas Q42 a Q50 em `fase3/RESPOSTAS_F3.md`; documentos em `operacao_veracidade/` (comece por `OPERACAO_VERACIDADE_GERAL.md` e `09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`)."]
 L += ["", "## Escala de sinal", ""] + [f"- **{n['id']} {n['nome']}:** {n['o_que_e']}" for n in NIVEIS]
 L += ["", "## Sinal de cada teste", "", "| Teste | Sinal | Motivo |", "|---|---|---|"] + [f"| {k} | {v['nivel']} | {v['motivo']} |" for k, v in SINAL.items()]
 open(R + "/fase3/VEREDITO_2026.md", "w").write("\n".join(L) + "\n")

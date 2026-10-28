@@ -1,0 +1,124 @@
+{
+ "ano": "2026",
+ "reps": 20,
+ "base": {
+  "secoes": 497830,
+  "municipios": 5571,
+  "locais": 94475,
+  "zonas": 6106,
+  "escalas_robustas": {
+   "z_secao": 0.5052428989125088,
+   "turnout": 0.01972055575096093,
+   "municipio": 0.047370844020093034
+  }
+ },
+ "limiares_p97_5": {
+  "d1_pos_3": 1899.4,
+  "d1_neg_3": 893.0,
+  "d1_pos_4": 190.12500000000003,
+  "d1_neg_4": 79.07500000000002,
+  "d1_pos_5": 35.0,
+  "d1_neg_5": 31.0,
+  "d2l_pos": 49.0,
+  "d2l_neg": 139.07500000000002,
+  "d2z_pos": 73.025,
+  "d2z_neg": 93.025,
+  "d3_pos": 26.0,
+  "d3_neg": 14.0,
+  "d4_pos": 729.075
+ },
+ "contagens_base": {
+  "d1_pos_3": 1608.0,
+  "d1_neg_3": 723.0,
+  "d1_pos_4": 156.0,
+  "d1_neg_4": 53.0,
+  "d1_pos_5": 25.0,
+  "d1_neg_5": 14.0,
+  "d2l_pos": 32.0,
+  "d2l_neg": 64.0,
+  "d2z_pos": 42.0,
+  "d2z_neg": 60.0,
+  "d3_pos": 18.0,
+  "d3_neg": 8.0,
+  "d4_pos": 622.0,
+  "esc_local": 1.2964285349763434,
+  "esc_zona": 1.4362355027140252,
+  "d5_p": 0.8486386234863941,
+  "escala_z": 1.0
+ },
+ "falso_alarme_conjunto_2a_amostra_bootstrap": {
+  "pos": 0.1,
+  "neg": 0.04,
+  "qualquer_lado": 0.115
+ },
+ "fabricante_estrutura_ab": {
+  "custo": 0.8812586792412362,
+  "a_local": 0.0,
+  "b_zona": 0.049999999999999996
+ },
+ "fabricada": {
+  "fabricada_calibrada": {
+   "escala_z_media": 0.993,
+   "alarme_d1_a_d4": 0.0,
+   "d5": 0.0,
+   "d6": 0.0,
+   "d7": 1.0,
+   "esc_local_rel": 0.746,
+   "esc_zona_rel": 0.271,
+   "n": 20
+  },
+  "fabricada_calibrada_estrutura": {
+   "escala_z_media": 0.906,
+   "alarme_d1_a_d4": 1.0,
+   "d5": 0.0,
+   "d6": 0.0,
+   "d7": 1.0,
+   "esc_local_rel": 0.949,
+   "esc_zona_rel": 2.05,
+   "n": 20
+  },
+  "fabricada_ingenua": {
+   "escala_z_media": 1.372,
+   "alarme_d1_a_d4": 1.0,
+   "d5": 0.0,
+   "d6": 1.0,
+   "d7": 1.0,
+   "esc_local_rel": 1.031,
+   "esc_zona_rel": 0.38,
+   "n": 20
+  }
+ },
+ "menor_X_com_poder_80": {
+  "dispersa|Flavio→Lula": 50000,
+  "dispersa|Lula→Flavio": 50000,
+  "poucas_secoes|Flavio→Lula": 25000,
+  "poucas_secoes|Lula→Flavio": 25000,
+  "locais|Flavio→Lula": 25000,
+  "locais|Lula→Flavio": 25000,
+  "zonas|Flavio→Lula": 25000,
+  "zonas|Lula→Flavio": 25000,
+  "municipios|Flavio→Lula": 50000,
+  "municipios|Lula→Flavio": 25000,
+  "cinco_grandes|Flavio→Lula": 1000000,
+  "cinco_grandes|Lula→Flavio": 2220000,
+  "ufs|Flavio→Lula": 1000000,
+  "ufs|Lula→Flavio": 2220000,
+  "macrorregiao|Flavio→Lula": 500000,
+  "macrorregiao|Lula→Flavio": 2220000,
+  "reduto_alvo|Flavio→Lula": 25000,
+  "reduto_alvo|Lula→Flavio": 25000,
+  "reduto_oponente|Flavio→Lula": 25000,
+  "reduto_oponente|Lula→Flavio": 25000,
+  "uniforme|Flavio→Lula": 2220000,
+  "uniforme|Lula→Flavio": null,
+  "uniforme_logit|Flavio→Lula": null,
+  "uniforme_logit|Lula→Flavio": null,
+  "lote_tardio|Flavio→Lula": 500000,
+  "lote_tardio|Lula→Flavio": 1000000,
+  "enchimento|Flavio→Lula": 250000,
+  "enchimento|Lula→Flavio": 250000,
+  "bn_conversao|Flavio→Lula": 500000,
+  "bn_conversao|Lula→Flavio": 500000
+ },
+ "tempo_s": 67
+}

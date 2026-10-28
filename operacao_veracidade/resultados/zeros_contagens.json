@@ -1,0 +1,351 @@
+{
+ "descritivo": {
+  "2022_1t_Lula": {
+   "secoes_com_comparecimento": 471010,
+   "zero": 1,
+   "um": 3,
+   "dois": 5,
+   "tres_a_cinco": 33,
+   "votos_dos_zeros_do_outro": 58
+  },
+  "2022_1t_Direita": {
+   "secoes_com_comparecimento": 471010,
+   "zero": 160,
+   "um": 255,
+   "dois": 326,
+   "tres_a_cinco": 1323,
+   "votos_dos_zeros_do_outro": 17527
+  },
+  "2022_2t_Lula": {
+   "secoes_com_comparecimento": 471010,
+   "zero": 2,
+   "um": 3,
+   "dois": 3,
+   "tres_a_cinco": 28,
+   "votos_dos_zeros_do_outro": 118,
+   "dos_zeros_tambem_zero_no_1t": 0,
+   "por_uf_top5": {
+    "PA": 1,
+    "RS": 1
+   }
+  },
+  "2022_2t_Direita": {
+   "secoes_com_comparecimento": 471010,
+   "zero": 141,
+   "um": 207,
+   "dois": 264,
+   "tres_a_cinco": 967,
+   "votos_dos_zeros_do_outro": 16418,
+   "dos_zeros_tambem_zero_no_1t": 84,
+   "por_uf_top5": {
+    "MA": 47,
+    "AM": 23,
+    "BA": 19,
+    "MG": 9,
+    "CE": 8
+   }
+  },
+  "2026_1t_Lula": {
+   "secoes_com_comparecimento": 497897,
+   "zero": 8,
+   "um": 3,
+   "dois": 16,
+   "tres_a_cinco": 62,
+   "votos_dos_zeros_do_outro": 507
+  },
+  "2026_1t_Direita": {
+   "secoes_com_comparecimento": 497897,
+   "zero": 79,
+   "um": 129,
+   "dois": 150,
+   "tres_a_cinco": 705,
+   "votos_dos_zeros_do_outro": 9542
+  },
+  "2026_2t_Lula": {
+   "secoes_com_comparecimento": 497897,
+   "zero": 4,
+   "um": 6,
+   "dois": 3,
+   "tres_a_cinco": 50,
+   "votos_dos_zeros_do_outro": 296,
+   "dos_zeros_tambem_zero_no_1t": 4,
+   "por_uf_top5": {
+    "PA": 2,
+    "RS": 2
+   }
+  },
+  "2026_2t_Direita": {
+   "secoes_com_comparecimento": 497897,
+   "zero": 106,
+   "um": 123,
+   "dois": 162,
+   "tres_a_cinco": 759,
+   "votos_dos_zeros_do_outro": 14860,
+   "dos_zeros_tambem_zero_no_1t": 50,
+   "por_uf_top5": {
+    "AM": 30,
+    "MA": 20,
+    "PA": 16,
+    "RR": 8,
+    "TO": 7
+   }
+  }
+ },
+ "modelo": {
+  "municipio_2022_Lula": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 2,
+   "zeros_esperados": 0.4,
+   "ufs_fora": [],
+   "rho_mediano": 0.0199632613705978
+  },
+  "municipio_2022_Direita": {
+   "ufs_elegiveis_esperado_ge_1": 2,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": 0.0,
+   "adequado": false,
+   "zeros_observados": 141,
+   "zeros_esperados": 4.3,
+   "ufs_fora": [
+    {
+     "uf": "BA",
+     "rho": 0.019420670041892837,
+     "esperado": 1.026215384350781,
+     "observado": 19,
+     "pi95": [
+      0.0,
+      3.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "PI",
+     "rho": 0.019808029184688863,
+     "esperado": 1.1985517011833027,
+     "observado": 7,
+     "pi95": [
+      0.0,
+      4.0
+     ],
+     "dentro": false
+    }
+   ],
+   "rho_mediano": 0.019963261370597795
+  },
+  "zona_2022_Lula": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 2,
+   "zeros_esperados": 0.4,
+   "ufs_fora": [],
+   "rho_mediano": 0.016195552970268087
+  },
+  "zona_2022_Direita": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 141,
+   "zeros_esperados": 2.9,
+   "ufs_fora": [],
+   "rho_mediano": 0.016195552970268087
+  },
+  "local_2022_Lula": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 2,
+   "zeros_esperados": 0.4,
+   "ufs_fora": [],
+   "rho_mediano": 0.004798260566013978
+  },
+  "local_2022_Direita": {
+   "ufs_elegiveis_esperado_ge_1": 14,
+   "ufs_dentro_do_pi95": 7,
+   "fracao": 0.5,
+   "adequado": false,
+   "zeros_observados": 141,
+   "zeros_esperados": 63.3,
+   "ufs_fora": [
+    {
+     "uf": "BA",
+     "rho": 0.004778587918204277,
+     "esperado": 5.646408598827476,
+     "observado": 19,
+     "pi95": [
+      2.0,
+      10.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "CE",
+     "rho": 0.004773228289902708,
+     "esperado": 2.1178549421498287,
+     "observado": 8,
+     "pi95": [
+      0.0,
+      5.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "MA",
+     "rho": 0.004658116408393248,
+     "esperado": 15.165433350767193,
+     "observado": 47,
+     "pi95": [
+      10.0,
+      20.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "MG",
+     "rho": 0.004846010004548852,
+     "esperado": 3.083103725547156,
+     "observado": 9,
+     "pi95": [
+      2.0,
+      5.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "MT",
+     "rho": 0.00477106280086825,
+     "esperado": 2.2099374388872897,
+     "observado": 5,
+     "pi95": [
+      1.0,
+      4.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "PA",
+     "rho": 0.004616751049796186,
+     "esperado": 1.919962708406619,
+     "observado": 8,
+     "pi95": [
+      0.0,
+      4.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "PI",
+     "rho": 0.004753456180040567,
+     "esperado": 1.8649725603644778,
+     "observado": 7,
+     "pi95": [
+      0.0,
+      5.0
+     ],
+     "dentro": false
+    }
+   ],
+   "rho_mediano": 0.004798260566013978
+  },
+  "municipio_2026_Lula": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 4,
+   "zeros_esperados": 0.2,
+   "ufs_fora": [],
+   "rho_mediano": 0.019532916236859283
+  },
+  "municipio_2026_Direita": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 106,
+   "zeros_esperados": 1.3,
+   "ufs_fora": [],
+   "rho_mediano": 0.019532916236859287
+  },
+  "zona_2026_Lula": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 4,
+   "zeros_esperados": 0.2,
+   "ufs_fora": [],
+   "rho_mediano": 0.01605306403297347
+  },
+  "zona_2026_Direita": {
+   "ufs_elegiveis_esperado_ge_1": 0,
+   "ufs_dentro_do_pi95": 0,
+   "fracao": null,
+   "adequado": false,
+   "zeros_observados": 106,
+   "zeros_esperados": 0.9,
+   "ufs_fora": [],
+   "rho_mediano": 0.01605306403297347
+  },
+  "local_2026_Lula": {
+   "ufs_elegiveis_esperado_ge_1": 1,
+   "ufs_dentro_do_pi95": 1,
+   "fracao": 1.0,
+   "adequado": true,
+   "zeros_observados": 4,
+   "zeros_esperados": 2.2,
+   "ufs_fora": [],
+   "rho_mediano": 0.004650871093956954
+  },
+  "local_2026_Direita": {
+   "ufs_elegiveis_esperado_ge_1": 12,
+   "ufs_dentro_do_pi95": 9,
+   "fracao": 0.75,
+   "adequado": false,
+   "zeros_observados": 106,
+   "zeros_esperados": 66.7,
+   "ufs_fora": [
+    {
+     "uf": "MA",
+     "rho": 0.004531389512740079,
+     "esperado": 9.764059835230807,
+     "observado": 20,
+     "pi95": [
+      5.0,
+      15.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "PA",
+     "rho": 0.004439538663205098,
+     "esperado": 3.0373233289599395,
+     "observado": 16,
+     "pi95": [
+      1.0,
+      5.0
+     ],
+     "dentro": false
+    },
+    {
+     "uf": "RR",
+     "rho": 0.004631836130456545,
+     "esperado": 4.474603271376375,
+     "observado": 8,
+     "pi95": [
+      3.0,
+      5.0
+     ],
+     "dentro": false
+    }
+   ],
+   "rho_mediano": 0.004650871093956954
+  }
+ }
+}

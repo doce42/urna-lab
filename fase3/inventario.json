@@ -1,6 +1,6 @@
 {
  "gerado": "2026-10-28",
- "situacao": "em revisão (auditoria e I1 a I3)",
+ "situacao": "V1.5 (rodada 7) em preparação; Operação Veracidade Geral integrada",
  "itens": [
   {
    "id": "P3",
@@ -73,10 +73,20 @@
    "alcance_em_votos": "n/a",
    "estado_inicial_f3": "inventariada",
    "trabalho_na_f3": "Busca: há comparações relatadas pela imprensa (Defesa: 442 e 501 urnas em 2022, 0% de inconsistência; TCU: 4.577 seções) e o aplicativo QRTot do TRE-SC, mas sem os dados primários e sem proveniência verificável por nós; não incorporadas como evidência.",
-   "estado_final": "bloqueada por evidência externa",
-   "resposta_ou_motivo": "Bloqueada: fontes secundárias, sem dados.",
-   "proxima_evidencia": "Dados primários dessas comparações (relatórios completos e listas de seções).",
+   "estado_final": "respondida parcialmente",
+   "resposta_ou_motivo": "T61: 404 boletins impressos lidos por terceiros (QR Code) no 2º turno de 2026, em 22 UFs: assinatura da urna válida, cadeia até a AC, votos iguais à tabela e ao BU do TSE e mesma urna em 404 de 404. Amostra de conveniência (0,08% das seções), não sorteada; de 2022 não há boletins de terceiros neste estudo.",
+   "proxima_evidencia": "Boletins impressos de uma amostra sorteada de seções.",
+   "historico": [
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "bloqueada por evidência externa",
+     "resposta": "Bloqueada: fontes secundárias, sem dados."
+    }
+   ],
+   "revisao": "Operação Veracidade (T61)",
    "evidencia_arquivos": [
+    "operacao_veracidade/resultados/terceiros_qr.json",
+    "operacao_veracidade/resultados/republicacao_bu.json",
     "RELATORIO_F3.md (E7: busca de boletins de terceiros, só imprensa)"
    ]
   },
@@ -123,9 +133,18 @@
    "estado_inicial_f3": "parcial",
    "trabalho_na_f3": "Busca e uma tentativa de leitura de página do TSE (403). Nenhum certificado de AC URNA v2 ou AC RAIZ UE obtido por canal do TSE.",
    "estado_final": "bloqueada por evidência externa",
-   "resposta_ou_motivo": "Bloqueada para o elo final; o elo urna → AC segue verificado.",
-   "proxima_evidencia": "Certificados da AC URNA v2 e da AC RAIZ UE publicados pelo TSE.",
+   "resposta_ou_motivo": "T60a: a cadeia urna → AC emissora verifica em 1.942.246 de 1.942.246 pares seção × turno (2022 e 2026), 0 falhas, todos válidos no dia, nenhuma chave repetida. O elo AC → raiz do TSE continua sem verificação: AC URNA v2 e AC RAIZ UE não são públicas (página oficial com HTTP 403).",
+   "proxima_evidencia": "Certificados da AC URNA v2 e da AC RAIZ UE por canal do TSE.",
+   "historico": [
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "bloqueada por evidência externa",
+     "resposta": "Bloqueada para o elo final; o elo urna → AC segue verificado."
+    }
+   ],
+   "revisao": "Operação Veracidade (T60a)",
    "evidencia_arquivos": [
+    "operacao_veracidade/resultados/cert_analise.json",
     "fase2/resultados/P11.json",
     "fase2/externos/certificados/"
    ]
@@ -243,17 +262,24 @@
    "estado_inicial_f3": "inventariada",
    "trabalho_na_f3": "Ver P4, P6 e P11: sem acesso a canal oficial (403) e sem dados primários externos.",
    "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "Fonte externa de custódia independente obtida: capturas do Internet Archive dos totais divulgados (R2), consistentes com a base. Boletins de terceiros e certificados raiz continuam não obtidos.",
-   "proxima_evidencia": "Boletins de terceiros; AC URNA v2 e AC RAIZ UE.",
+   "resposta_ou_motivo": "Fontes externas obtidas: capturas do Internet Archive dos totais divulgados (R2) e 404 boletins impressos de terceiros iguais ao TSE (T61, amostra de conveniência); 404 arquivos iguais entre downloads independentes. Cadeia até a AC emissora em 100% das urnas (T60a); a raiz não foi obtida.",
+   "proxima_evidencia": "Amostra sorteada de boletins impressos; AC URNA v2 e AC RAIZ UE.",
    "historico": [
     {
      "etapa": "missão de resolução e auditoria adversarial",
      "estado": "bloqueada por evidência externa",
      "resposta": "Bloqueada."
+    },
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "respondida parcialmente",
+     "resposta": "Fonte externa de custódia independente obtida: capturas do Internet Archive dos totais divulgados (R2), consistentes com a base. Boletins de terceiros e certificados raiz continuam não obtidos."
     }
    ],
-   "revisao": "R2",
+   "revisao": "Operação Veracidade (T60a, T61)",
    "evidencia_arquivos": [
+    "operacao_veracidade/resultados/terceiros_qr.json",
+    "operacao_veracidade/resultados/cert_analise.json",
     "RELATORIO_F3.md (E7)",
     "fase3/RELATORIO_ACEITACAO_F3.md (consultas ao site de resultados de 2022: HTTP 404)"
    ]
@@ -389,9 +415,9 @@
    "alcance_em_votos": "2026: 79 e 106 seções (9,7 mil e 14,9 mil votos válidos); 2022: 160 e 141 seções (17,8 mil e 16,4 mil)",
    "estado_inicial_f3": "nova na F3",
    "trabalho_na_f3": "E3 (f3_zeros.py).",
-   "estado_final": "respondida parcialmente",
-   "resposta_ou_motivo": "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística (R3): fora da amostra, um modelo de covariáveis locais prevê 79,1 e 101,5 zeros para Flávio (observados 79 e 106) e 162,9 e 136,5 para Bolsonaro 2022 (160 e 141), dentro dos intervalos; pelo critério pré-registrado o modelo não foi validado (teste de Hosmer–Lemeshow com n muito grande, razões por decil 1,25 a 1,27, controles de Lula com 1 a 8 zeros). Excepcionalidade não determinada formalmente; sem excesso agregado na descrição.",
-   "proxima_evidencia": "Critério de calibração refeito e modelo validado.",
+   "estado_final": "não identificável com estes dados",
+   "resposta_ou_motivo": "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística: nenhum modelo de cauda baixa passou na calibração. O modelo do R3 (79,1 e 101,5 previstos para Flávio; 162,9 e 136,5 para Bolsonaro 2022) falhou o critério; as três famílias do T64 também (por município, 1,3 contra 106 e 4,3 contra 141; por local, 66,7 contra 106 e 63,3 contra 141). Descritivamente, os zeros são locais de uma só seção, com menos de 1% do total, nos dois anos.",
+   "proxima_evidencia": "Modelo de cauda baixa que passe em critério fixado antes.",
    "historico": [
     {
      "etapa": "V1.2 (rodada 4, congelada)",
@@ -402,10 +428,16 @@
      "etapa": "missão de resolução e auditoria adversarial",
      "estado": "respondida parcialmente",
      "resposta": "Arquivos: 0 divergências de votos entre BU, RDV, imagem e tabela nas 185 seções-turno de 2026 e nas 301 de 2022 (a seção com BU não lido foi verificada no BU1). Estatística: I2 (rev_i2_zeros.py, beta-binomial com ρ ajustado sem a célula zero) não passou na calibração pré-registrada: os controles (Lula e candidatos menores) caem fora do intervalo de predição (ex.: Lula 2026 1º turno, 8 observados contra 0,4 esperados; candidato 14, 30.724 contra 39.452), então o resultado é não interpretável. Descritivo: o modelo subestima toda a cauda baixa dos finalistas, não só o zero: seções com 1, 2 e 3 a 5 votos também ficam acima do previsto, decrescendo (Flávio 2026 1º turno: 20, 12, 7 e 4 vezes), com o mesmo formato em Bolsonaro 2022 (14, 8, 5 e 3 vezes). Nem excesso nem ausência de excesso de zeros foram demonstrados."
+    },
+    {
+     "etapa": "Operação Veracidade Geral",
+     "estado": "respondida parcialmente",
+     "resposta": "Arquivos: 0 divergências nas 486 seções-turno com zero. Estatística (R3): fora da amostra, um modelo de covariáveis locais prevê 79,1 e 101,5 zeros para Flávio (observados 79 e 106) e 162,9 e 136,5 para Bolsonaro 2022 (160 e 141), dentro dos intervalos; pelo critério pré-registrado o modelo não foi validado (teste de Hosmer–Lemeshow com n muito grande, razões por decil 1,25 a 1,27, controles de Lula com 1 a 8 zeros). Excepcionalidade não determinada formalmente; sem excesso agregado na descrição."
     }
    ],
-   "revisao": "R3",
+   "revisao": "Operação Veracidade (T64)",
    "evidencia_arquivos": [
+    "operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md",
     "fase3/f3_zeros.py",
     "fase3/resultados/E3_zeros.json",
     "fase3/rev_i2_zeros.py",

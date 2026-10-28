@@ -1,6 +1,6 @@
 ---
 name: apuracao-forense
-description: Testes estatísticos forenses de eleição (seções fora do padrão, curva real x prevista, dígitos, percentuais inteiros, impressão digital de Klimek, fraude incremental, poder com fraude sintética) com o mesmo código para 2026 e 2022. Use para rodar, interpretar ou acrescentar um teste do módulo D.
+description: Testes estatísticos forenses de eleição (seções fora do padrão, curva real x prevista, dígitos, percentuais inteiros, impressão digital de Klimek, fraude incremental, poder com fraude sintética) com o mesmo código para 2026 e 2022. Use para rodar, interpretar ou acrescentar um teste do módulo D. Desde a rodada 7: poder adversarial por mecanismo (T63, 15 mecanismos, assimetria entre sentidos), fabricação coerente e modelos de zeros (T64).
 ---
 # Testes forenses
 
@@ -34,3 +34,9 @@ Troca uniforme no país inteiro não deixa diferença entre urnas: nenhum teste 
 - **Ponto cego e teste próprio:** o T02 não vê troca em município inteiro (a mediana absorve). Para isso há o T44, `fase3/teste_grandes_cidades.py` (histórico de 2022).
 - **Curvas (T40):** `f3_curvas.py`, `f3_curvas2.py`, `fila_f4_chegada.py`. Nenhum modelo de chegada validado; T10 e T11 são descritivos. A curva divulgada ao vivo está no R2 (`inv_r2_curva_publica.py`, capturas do Internet Archive).
 - **Zeros (T41):** `f3_zeros.py`, `rev_i2_zeros.py`, `inv_r3_zeros.py`. Nenhum modelo calibrado. Fora da amostra, previsto ≈ observado.
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **T63** (`operacao_veracidade/scripts/sim_adversarial.py <ano> 6 20`): 15 mecanismos (dispersa, poucas seções, locais, zonas, municípios, cinco grandes, UFs, macrorregião, redutos, uniforme em voto e em logit, lote tardio, enchimento, conversão de brancos e nulos), dois sentidos, 7 magnitudes, detectores D1 a D7; limiar = percentil 97,5 do bootstrap por município da base real; falso alarme da **união** em segunda amostra, com Clopper-Pearson (4% a 14,5%, não 2,5%).
+- **Resultados que valem para qualquer teste futuro:** poder ≥ 80% a partir de 25 a 50 mil votos em seções, locais, zonas e municípios; só de 0,5 a 2,2 mi, ou nunca, em UF, cinco grandes juntos, região, lote, conversão e uniforme em logit; **poder assimétrico entre os sentidos** (a base real já tem cauda pró-Lula); o dígito final (D5) só reage a alterações escancaradas.
+- **Para acrescentar um mecanismo:** função em `escolhe`/`aplica` do script, entrada em `MEC` (e em `DET` se aleatório), emenda no protocolo antes de rodar. Fabricação: `ingênua`, `calibrada` e de `estrutura completa` (efeitos centrados, total municipal corrigido; `sim_fabricacao_v2.py`).
+- **T64 (zeros):** três famílias beta-binomiais (município, zona, local) com UF retida falham o critério; modelo que falha não é usado como prova. Descrição: zeros são locais de uma seção só com menos de 1% do total.

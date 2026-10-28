@@ -1,0 +1,398 @@
+{
+ "pergunta": "fila F3",
+ "secoes": [
+  {
+   "turno": 1,
+   "secao": "ZZ/29505/1/78",
+   "arquivos": [],
+   "publicado": {
+    "v12": 0,
+    "v13": 0,
+    "v14": 0,
+    "v15": 0,
+    "v16": 0,
+    "v21": 0,
+    "v22": 0,
+    "v27": 0,
+    "v30": 0,
+    "v44": 0,
+    "v80": 0,
+    "branco": 0,
+    "nulo": 4,
+    "comparecimento": 4,
+    "tipo_urna": "ANULADA",
+    "agregadas": "891"
+   },
+   "classe": "não verificável: nenhum arquivo da seção no pacote"
+  },
+  {
+   "turno": 1,
+   "secao": "ZZ/29564/1/91",
+   "arquivos": [],
+   "publicado": {
+    "v12": 0,
+    "v13": 0,
+    "v14": 0,
+    "v15": 0,
+    "v16": 0,
+    "v21": 0,
+    "v22": 0,
+    "v27": 0,
+    "v30": 0,
+    "v44": 0,
+    "v80": 0,
+    "branco": 0,
+    "nulo": 0,
+    "comparecimento": 0,
+    "tipo_urna": "ANULADA",
+    "agregadas": "#NULO#"
+   },
+   "classe": "não verificável: nenhum arquivo da seção no pacote"
+  },
+  {
+   "turno": 1,
+   "secao": "ZZ/29505/1/79",
+   "arquivos": [],
+   "publicado": {
+    "v12": 0,
+    "v13": 0,
+    "v14": 0,
+    "v15": 0,
+    "v16": 0,
+    "v21": 0,
+    "v22": 0,
+    "v27": 0,
+    "v30": 0,
+    "v44": 0,
+    "v80": 0,
+    "branco": 0,
+    "nulo": 1,
+    "comparecimento": 1,
+    "tipo_urna": "ANULADA",
+    "agregadas": "561 / 713"
+   },
+   "classe": "não verificável: nenhum arquivo da seção no pacote"
+  },
+  {
+   "turno": 1,
+   "secao": "ZZ/29416/1/38",
+   "arquivos": [],
+   "publicado": {
+    "v12": 0,
+    "v13": 0,
+    "v14": 0,
+    "v15": 0,
+    "v16": 0,
+    "v21": 0,
+    "v22": 0,
+    "v27": 0,
+    "v30": 0,
+    "v44": 0,
+    "v80": 0,
+    "branco": 0,
+    "nulo": 0,
+    "comparecimento": 0,
+    "tipo_urna": "ANULADA",
+    "agregadas": "1217"
+   },
+   "classe": "não verificável: nenhum arquivo da seção no pacote"
+  },
+  {
+   "turno": 1,
+   "secao": "PA/4383/91/73",
+   "arquivos": [
+    "o00406-0438300910073.bu",
+    "o00406-0438300910073.imgbu",
+    "o00406-0438300910073.logjez",
+    "o00406-0438300910073.rdv",
+    "o00406-0438300910073.vscmr"
+   ],
+   "publicado": {
+    "v12": 0,
+    "v13": 0,
+    "v14": 0,
+    "v15": 0,
+    "v16": 0,
+    "v21": 0,
+    "v22": 58,
+    "v27": 0,
+    "v30": 0,
+    "v44": 0,
+    "v80": 0,
+    "branco": 0,
+    "nulo": 0,
+    "comparecimento": 58,
+    "tipo_urna": "APURADA",
+    "agregadas": "#NULO#"
+   },
+   "boletim": {
+    "bu_aptos": 91,
+    "bu_comparecimento": 58,
+    "bu_v22": 58
+   },
+   "boletim_x_tabela": {},
+   "assinatura": {
+    "algoritmo": "ECDSA-P521",
+    "cert_urna": "ueao01659547",
+    "cert_emissor": "AC URNA",
+    "assin_lista_ok": true
+   },
+   "arquivos_conferidos": {
+    "o00406-0438300910073.bu": true,
+    "o00406-0438300910073.imgbu": true,
+    "o00406-0438300910073.logjez": true,
+    "o00406-0438300910073.rdv": true
+   },
+   "listados_e_ausentes": [
+    "o00406-0438300910073.chvtp",
+    "o00406-0438300910073.hash",
+    "o00406-0438300910073.jufa",
+    "o00406-0438300910073.ver",
+    "o00406-0438300910073.wsqbio",
+    "o00406-0438300910073.wsqman",
+    "o00406-0438300910073.wsqmes"
+   ],
+   "imagem": {
+    "img_v22": 58,
+    "img_branco": 0,
+    "img_nulo": 0,
+    "img_total": 58,
+    "img_comparecimento": 58
+   },
+   "classe": "boletim lido e igual à tabela (consistência interna)"
+  },
+  {
+   "turno": 2,
+   "secao": "RS/86568/100/15",
+   "arquivos": [
+    "o00407-8656801000015.bu",
+    "o00407-8656801000015.imgbu",
+    "o00407-8656801000015.logjez",
+    "o00407-8656801000015.rdv",
+    "o00407-8656801000015.vscmr"
+   ],
+   "publicado": {
+    "v13": 0,
+    "v22": 79,
+    "branco": 1,
+    "nulo": 2,
+    "comparecimento": 82,
+    "tipo_urna": "APURADA",
+    "agregadas": "#NULO#"
+   },
+   "boletim": {
+    "bu_aptos": 91,
+    "bu_comparecimento": 82,
+    "bu_v22": 79,
+    "bu_branco": 1,
+    "bu_nulo": 2
+   },
+   "boletim_x_tabela": {},
+   "assinatura": {
+    "algoritmo": "ECDSA-P521",
+    "cert_urna": "ueao01341381",
+    "cert_emissor": "AC URNA",
+    "assin_lista_ok": true
+   },
+   "arquivos_conferidos": {
+    "o00407-8656801000015.bu": true,
+    "o00407-8656801000015.rdv": true,
+    "o00407-8656801000015.imgbu": true,
+    "o00407-8656801000015.logjez": true
+   },
+   "listados_e_ausentes": [
+    "o00407-8656801000015.chvtp",
+    "o00407-8656801000015.hash",
+    "o00407-8656801000015.jufa",
+    "o00407-8656801000015.ver",
+    "o00407-8656801000015.wsqbio",
+    "o00407-8656801000015.wsqman",
+    "o00407-8656801000015.wsqmes"
+   ],
+   "imagem": {
+    "img_v22": 79,
+    "img_branco": 1,
+    "img_nulo": 2,
+    "img_total": 82,
+    "img_comparecimento": 82
+   },
+   "classe": "boletim lido e igual à tabela (consistência interna)"
+  },
+  {
+   "turno": 2,
+   "secao": "PA/4499/17/41",
+   "arquivos": [
+    "o00407-0449900170041.bu",
+    "o00407-0449900170041.imgbu",
+    "o00407-0449900170041.logjez",
+    "o00407-0449900170041.rdv",
+    "o00407-0449900170041.vscmr"
+   ],
+   "publicado": {
+    "v13": 0,
+    "v22": 39,
+    "branco": 1,
+    "nulo": 0,
+    "comparecimento": 40,
+    "tipo_urna": "APURADA",
+    "agregadas": "#NULO#"
+   },
+   "boletim": {
+    "bu_aptos": 63,
+    "bu_comparecimento": 40,
+    "bu_v22": 39,
+    "bu_branco": 1
+   },
+   "boletim_x_tabela": {},
+   "assinatura": {
+    "algoritmo": "ECDSA-P521",
+    "cert_urna": "ueao01796671",
+    "cert_emissor": "AC URNA",
+    "assin_lista_ok": true
+   },
+   "arquivos_conferidos": {
+    "o00407-0449900170041.imgbu": true,
+    "o00407-0449900170041.rdv": true,
+    "o00407-0449900170041.logjez": true,
+    "o00407-0449900170041.bu": true
+   },
+   "listados_e_ausentes": [
+    "o00407-0449900170041.chvtp",
+    "o00407-0449900170041.hash",
+    "o00407-0449900170041.jufa",
+    "o00407-0449900170041.ver",
+    "o00407-0449900170041.wsqbio",
+    "o00407-0449900170041.wsqman",
+    "o00407-0449900170041.wsqmes"
+   ],
+   "imagem": {
+    "img_v22": 39,
+    "img_branco": 1,
+    "img_nulo": 0,
+    "img_total": 40,
+    "img_comparecimento": 40
+   },
+   "classe": "boletim lido e igual à tabela (consistência interna)"
+  },
+  {
+   "turno": 2,
+   "secao": "ZZ/29505/1/78",
+   "arquivos": [
+    "o00407-2950500010078.bu",
+    "o00407-2950500010078.imgbu",
+    "o00407-2950500010078.logjez",
+    "o00407-2950500010078.rdv",
+    "o00407-2950500010078.vscmr"
+   ],
+   "publicado": {
+    "v13": 0,
+    "v22": 5,
+    "branco": 0,
+    "nulo": 0,
+    "comparecimento": 5,
+    "tipo_urna": "APURADA",
+    "agregadas": "891"
+   },
+   "boletim": {
+    "bu_aptos": 564,
+    "bu_comparecimento": 5,
+    "bu_v22": 5
+   },
+   "boletim_x_tabela": {},
+   "assinatura": {
+    "algoritmo": "ECDSA-P521",
+    "cert_urna": "ueao01192991",
+    "cert_emissor": "AC URNA",
+    "assin_lista_ok": true
+   },
+   "arquivos_conferidos": {
+    "o00407-2950500010078.bu": true,
+    "o00407-2950500010078.rdv": true,
+    "o00407-2950500010078.logjez": true,
+    "o00407-2950500010078.imgbu": true
+   },
+   "listados_e_ausentes": [
+    "o00407-2950500010078.chvtp",
+    "o00407-2950500010078.hash",
+    "o00407-2950500010078.jufa",
+    "o00407-2950500010078.ver"
+   ],
+   "imagem": {
+    "img_v22": 5,
+    "img_branco": 0,
+    "img_nulo": 0,
+    "img_total": 5,
+    "img_comparecimento": 5
+   },
+   "classe": "boletim lido e igual à tabela (consistência interna)"
+  },
+  {
+   "turno": 2,
+   "secao": "ZZ/29564/1/91",
+   "arquivos": [],
+   "publicado": {
+    "v13": 0,
+    "v22": 0,
+    "branco": 0,
+    "nulo": 0,
+    "comparecimento": 0,
+    "tipo_urna": "ANULADA",
+    "agregadas": "#NULO#"
+   },
+   "classe": "não verificável: nenhum arquivo da seção no pacote"
+  },
+  {
+   "turno": 2,
+   "secao": "ZZ/29505/1/79",
+   "arquivos": [
+    "o00407-2950500010079.bu",
+    "o00407-2950500010079.imgbu",
+    "o00407-2950500010079.logjez",
+    "o00407-2950500010079.rdv",
+    "o00407-2950500010079.vscmr"
+   ],
+   "publicado": {
+    "v13": 0,
+    "v22": 1,
+    "branco": 0,
+    "nulo": 0,
+    "comparecimento": 1,
+    "tipo_urna": "APURADA",
+    "agregadas": "561 / 713"
+   },
+   "boletim": {
+    "bu_aptos": 678,
+    "bu_comparecimento": 1,
+    "bu_v22": 1
+   },
+   "boletim_x_tabela": {},
+   "assinatura": {
+    "algoritmo": "ECDSA-P521",
+    "cert_urna": "ueao01051441",
+    "cert_emissor": "AC URNA",
+    "assin_lista_ok": true
+   },
+   "arquivos_conferidos": {
+    "o00407-2950500010079.bu": true,
+    "o00407-2950500010079.rdv": true,
+    "o00407-2950500010079.imgbu": true,
+    "o00407-2950500010079.logjez": true
+   },
+   "listados_e_ausentes": [
+    "o00407-2950500010079.chvtp",
+    "o00407-2950500010079.hash",
+    "o00407-2950500010079.jufa",
+    "o00407-2950500010079.ver"
+   ],
+   "imagem": {
+    "img_v22": 1,
+    "img_branco": 0,
+    "img_nulo": 0,
+    "img_total": 1,
+    "img_comparecimento": 1
+   },
+   "classe": "boletim lido e igual à tabela (consistência interna)"
+  }
+ ],
+ "nota": "As 5 seções lidas agora têm linha no parquet geral de 2022 (analise/brutos/2022_*t) com hash do boletim válido mas sem votos: o parquet foi gerado com versão anterior do leitor de boletim (antes da correção da 'lista de eleições', T17b); o leitor atual lê os 5 boletins e eles coincidem com a tabela. As 5 do exterior não têm nenhum arquivo no pacote local (não verificáveis)."
+}

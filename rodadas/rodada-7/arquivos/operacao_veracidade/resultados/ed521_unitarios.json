@@ -1,0 +1,48 @@
+{
+ "0_controle_genuino": {
+  "resultado": true,
+  "esperado": true,
+  "ok": true
+ },
+ "1_hash_diferente": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "2_bit_alterado_em_R": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "3_bit_alterado_em_S": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "4_S_mais_L_(nao_canonica)": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "5_assinatura_truncada": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "6_chave_neutra_com_R_neutro_e_S_zero": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "7_chave_de_outra_urna": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "8_chave_vazia": {
+  "resultado": false,
+  "esperado": false,
+  "ok": true
+ },
+ "todos_conforme_esperado": true
+}

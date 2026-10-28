@@ -14,7 +14,7 @@
 >
 > Não quero provar nem refutar nada. Também não afirmo nem nego que os dados oficiais sejam verdadeiros: peguei o que está disponível publicamente e analisei o que dava para analisar. A gente vê muita coisa sobre urna na internet e quase ninguém para e analisa os dados de verdade. Então eu fiz essa análise até onde os dados públicos permitiram ir. Daqui em diante é com vocês: em vez de reclamar, usem o projeto, rodem os dados, coloquem nos seus agentes de IA, contribuam com o que encontrarem e tirem as suas próprias conclusões.
 
-**Site:** [urna-lab.web.app](https://urna-lab.web.app) · **Versão:** V1.4, alegações públicas testadas e congeladas em 28/10/2026 (tag [`v1.4`](https://github.com/doce42/urna-lab/releases/tag/v1.4)); Fase 3 em V1.3
+**Site:** [urna-lab.web.app](https://urna-lab.web.app) · **Versão:** V1.5, rodada 7, Operação Veracidade Geral (28/10/2026); antes, V1.4 com as alegações públicas (tag [`v1.4`](https://github.com/doce42/urna-lab/releases/tag/v1.4)) e Fase 3 em V1.3
 
 ![Página inicial do site](docs/img/home_topo.jpg)
 
@@ -22,9 +22,17 @@
 
 **Pergunta:** a apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?
 
-**Resposta: não encontramos.** Para inverter o resultado seria preciso trocar **~2,2 milhões de votos** de lado (metade da margem de 4.430.191). Os mecanismos que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores do que os encontrados. As anomalias reais que achamos somam **dezenas de milhares de votos, não milhões**, e não têm causa demonstrada.
+**Resposta: não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um.** Para inverter o resultado seria preciso trocar **~2,2 milhões de votos** de lado (metade da margem de 4.430.191). Troca dispersa, em locais, zonas ou municípios, de dezenas de milhares de votos deixaria sinal; troca de escala de UF, região ou lote, ou deslocamento uniforme, só seria vista a partir de algumas centenas de milhares a milhões de votos (T63). As anomalias que achamos somam **dezenas de milhares de votos** e não têm causa demonstrada. Isso descreve o que foi achado e não limita o que pode ter passado sem alarme.
 
-Restam dois caminhos que **nenhum dado público consegue examinar**: um deslocamento pequeno e uniforme em quase todas as urnas, e uma alteração da urna antes de gerar os registros. Para eles, o estudo **não exclui nem confirma**. Só evidência de fora do sistema resolve: boletins impressos coletados por fiscais ou auditoria independente da urna.
+Restam **caminhos fora do alcance** dos dados públicos: um deslocamento pequeno e uniforme em quase todas as urnas (H9), uma alteração da urna antes de gerar os registros (H10) e alterações de escala regional, de UF, de lote ou uniformes abaixo de ~0,5 a 2,2 milhões de votos. Para eles, o estudo **não exclui nem confirma**. Só evidência de fora do sistema resolve: boletins impressos de uma amostra sorteada de seções, auditoria independente da urna e a raiz da cadeia de certificados.
+
+> [!WARNING]
+> **Leia junto com os resultados**
+>
+> - O poder de detecção é medido sobre uma base real que pode já conter alteração; o experimento não consegue dizer que a base está limpa.
+> - O poder é assimétrico entre os sentidos, por causa da cauda pró-Lula presente na base nos dois anos.
+> - Registros internamente coerentes gerados por uma fonte comprometida passam por todas as verificações internas; só evidência de fora distingue.
+> - Os 404 boletins de terceiros são uma amostra de conveniência (0,08%).
 
 A dedução passo a passo está em [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md).
 
@@ -36,20 +44,31 @@ Cada hipótese diz que rastro deixaria, quantos votos precisaria mover e o que o
 
 | # | Mecanismo | Status | Em votos |
 |---|---|---|---|
-| H1 | Alterar os votos depois da apuração | Contrariada | 0 voto de diferença: os totais divulgados ao vivo, guardados pelo Internet Archive, batem com a base final |
-| H2 | Trocar votos na totalização (boletins certos, soma errada) | Contrariada | 0 voto de diferença entre boletins, tabela e total oficial |
+| H1 | Alterar os votos depois da apuração | Contrariada | 0 voto de diferença: os totais divulgados ao vivo, guardados pelo Internet Archive, batem com a base final; 404 arquivos iguais entre downloads independentes |
+| H2 | Trocar votos na totalização (boletins certos, soma errada) | Contrariada | 0 voto de diferença entre boletins, tabela e total oficial; 404 boletins impressos de terceiros iguais ao TSE |
 | H3 | Muitos votos trocados em algumas urnas espalhadas | Sinal sem causa | ~740 votos na cauda pró-Lula (0,02% da margem) |
 | H4 | Troca concentrada em locais ou municípios pequenos | Sinal sem causa | dezenas a centenas de votos por local |
-| H5 | Troca na cidade inteira de uma grande cidade | Sinal sem causa | Salvador: ~30 mil votos acima do previsto (0,7% da margem) |
-| H6 | Encher urnas | Sinal sem causa | ~100 votos com sinal |
-| H7 | Apagar votos do adversário (seções zeradas) | Sem sinal | no máximo ~4.800 votos, se fosse anomalia |
+| H5 | Troca na cidade inteira de uma grande cidade (uma por vez) | Sinal sem causa | Salvador: ~30 mil votos acima do previsto (0,7% da margem) |
+| H6 | Encher urnas | Sinal sem causa | ~100 votos com sinal; abaixo de 250 mil votos a bateria não vê enchimento |
+| H7 | Apagar votos do adversário (seções zeradas) | **Não determinado (ponto cego)** | nenhum modelo calibrou; de ~44 a ~4.800 votos, se fosse anomalia |
 | H8 | Fabricar a ordem ou o ritmo da divulgação | Sem sinal | a ordem não altera nenhum voto |
-| H9 | Deslocar um pouco em quase todas as urnas | **Ponto cego** | até ~2,2 mi sem rastro estatístico |
-| H10 | Comprometer o software ou a urna antes dos registros | **Ponto cego** | sem rastro nos dados públicos |
+| H9 | Deslocar um pouco em quase todas as urnas | **Ponto cego** | até ~2,2 mi sem rastro estatístico; em logit, nunca visto (T63) |
+| H10 | Comprometer o software ou a urna antes dos registros | **Ponto cego** | sem rastro nos dados públicos; cadeia de certificados verifica em 100% das urnas, sem raiz |
 
-"Sinal sem causa" é uma anomalia real que o estudo não conseguiu explicar. **Não é indício de fraude.** Todas juntas ficam duas ordens de grandeza abaixo do necessário para mudar o resultado.
+"Sinal sem causa" é uma anomalia real que o estudo não conseguiu explicar. **Não é indício de fraude.** Juntas, somam dezenas de milhares de votos; isso descreve o que foi achado e não limita o que pode ter passado sem alarme.
 
 ![Hipóteses de fraude no site](docs/img/hipoteses.jpg)
+
+## Operação Veracidade Geral (28/10/2026, V1.5)
+
+Uma auditoria adversarial do próprio estudo perguntou: **os dados oficiais usados aqui são fiéis ao que aconteceu?** A resposta direta: o que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta. Foram 7 testes novos (T60a a T65) e 9 perguntas (Q42 a Q50).
+
+- **Cadeia de certificados em 100% das urnas (T60a):** 1.942.246 pares seção × turno de 2022 e 2026, 0 falhas, todos válidos no dia, nenhuma chave repetida. Reforça a integridade dos arquivos, não a veracidade dos votos. A raiz do TSE não é pública.
+- **404 boletins de terceiros iguais ao TSE (T61):** boletins impressos lidos por terceiros no 2º turno de 2026, em 22 UFs, com assinatura, cadeia e votos iguais em 404 de 404; os mesmos 404 arquivos são idênticos entre downloads independentes. É amostra de conveniência (0,08%).
+- **Pontos cegos (T62, T63):** alterações em UFs inteiras, nos cinco grandes municípios juntos, numa macrorregião, num lote tardio ou por deslocamento uniforme só seriam vistas a partir de ~0,5 a 2,2 milhões de votos, ou nunca; registros coerentes gerados pela própria fonte passam em todas as verificações internas; e o poder é assimétrico entre os sentidos.
+- **Fato novo:** no 2º turno de 2026 o TSE não registrou recebimento de boletins das 17:07 às 19:03 (116 minutos). Não altera votos; a causa não está nos dados.
+
+O que mudou no veredito por causa disso está em [`operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`](operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md). O relatório executivo é [`operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md`](operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md); as simulações, [`03_SIMULACOES_ADVERSARIAIS.md`](operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md); a criptografia, [`02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md`](operacao_veracidade/02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md); e a conta do vídeo dos "98% dos votos extras", [`10_HIPOTESE_DO_VIDEO.md`](operacao_veracidade/10_HIPOTESE_DO_VIDEO.md).
 
 ## O que você encontra no site
 
@@ -61,7 +80,7 @@ Cada hipótese diz que rastro deixaria, quantos votos precisaria mover e o que o
 
 ![Resposta em número de votos](docs/img/resposta_em_votos.jpg)
 
-**56 testes com escala de sinal.** Os testes não são "verdes" ou "vermelhos". Cada um tem um nível de suspeita:
+**78 testes com escala de sinal, e 50 perguntas respondidas.** Os testes não são "verdes" ou "vermelhos". Cada um tem um nível de suspeita:
 
 | Nível | Significado |
 |---|---|
@@ -72,6 +91,7 @@ Cada hipótese diz que rastro deixaria, quantos votos precisaria mover e o que o
 | S4 | divergência ou lacuna objetiva |
 | S5 | indício (nenhum hoje) |
 | PC | ponto cego |
+| M | método ou descrição (não é sinal sobre a eleição) |
 
 ![Testes com nível de sinal](docs/img/testes_sinal.jpg)
 
@@ -95,11 +115,11 @@ O site funciona no celular, em tema claro e escuro.
 
 O estudo está aberto a quem quiser contradizer, completar ou repetir. As perguntas abertas, por ordem de impacto:
 
-1. **Boletins impressos de 2026 (H9 e H10).** Fotos de boletins afixados nas seções, com seção identificável, coletadas por fiscais, partidos ou projetos independentes. Uma amostra aleatória comparada com a tabela do TSE é o único teste que alcança os dois pontos cegos. Se você conhece um conjunto aberto, abra uma *issue*.
+1. **Boletins impressos de 2026 (H9 e H10).** 404 boletins lidos por terceiros já conferem com o TSE (T61), mas são amostra de conveniência. Falta uma amostra sorteada: fotos de boletins afixados nas seções, com seção identificável, coletadas por fiscais, partidos ou projetos independentes. É o único teste que alcança os dois pontos cegos. Se você conhece um conjunto aberto, abra uma *issue*.
 2. **Salvador (H5).** A virada de Lula ficou ~30 mil votos acima do previsto, sem explicação pelo perfil do eleitorado. Fortaleza tem um desvio parecido no sentido oposto no teste por seção. Falta uma causa: campanha local, mudança de zonas, transporte ou outra. Ver `fase3/resultados/final_salvador.json`.
 3. **Modelo de chegada dos boletins (H8).** A curva de divulgação ao vivo bate com a base, mas o modelo de chegada não foi validado. Por isso as perguntas sobre a forma da curva ficam indeterminadas (`fase3/resultados/fila_f4_chegada.json`).
-4. **Zeros na cauda baixa (H7).** O critério de calibração pré-registrado não serviu. Um modelo melhor para seções com poucos votos fecharia o item (`fase3/resultados/r3_zeros.json`).
-5. **Cadeia de certificados (P11).** A assinatura de cada arquivo de urna foi conferida até a autoridade emissora, mas não até a raiz do TSE. O pacote oficial de 2022 traz uma lista de hashes das chaves públicas (`anexo_2179302`) que ainda não foi usada.
+4. **Zeros na cauda baixa (H7).** Nenhum modelo calibrou: nem o do R3 nem as três famílias do T64. Um modelo melhor para seções com poucos votos fecharia o item (`fase3/resultados/r3_zeros.json`, `operacao_veracidade/05_ZEROS_E_ENTRE_TURNOS.md`).
+5. **Cadeia de certificados (P11).** O certificado de cada urna foi conferido até a autoridade emissora em 100% das urnas (T60a), mas não até a raiz do TSE. O pacote oficial de 2022 traz uma lista de hashes das chaves públicas (`anexo_2179302`) que ainda não foi usada.
 
 Cada pergunta tem o que já foi tentado em [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md) e no site, aba *Respostas*. Para propor um teste, veja [CONTRIBUTING.md](CONTRIBUTING.md) e use os modelos de *issue* do repositório.
 
@@ -143,6 +163,7 @@ Tudo roda na máquina local: o projeto **não usa GitHub Actions nem Git LFS**.
 |---|---|
 | [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md) | **A resposta central**, as 10 hipóteses e a escala de sinal |
 | [`fase3/RESPOSTAS_F3.md`](fase3/RESPOSTAS_F3.md) | Cada pergunta respondida, com o impacto em votos |
+| [`operacao_veracidade/`](operacao_veracidade/) | Operação Veracidade Geral: auditoria adversarial dos dados e do próprio veredito (comece por `OPERACAO_VERACIDADE_GERAL.md`) |
 | [`CONCLUSAO.md`](CONCLUSAO.md) | A conclusão em três níveis: provado, mostrado pela estatística, fora do alcance dos dados |
 | [`RODADAS.md`](RODADAS.md) | Evolução da pesquisa: versões congeladas, revisões e a história de cada teste |
 | [`fase3/RELATORIO_ADVERSARIAL.md`](fase3/RELATORIO_ADVERSARIAL.md) | Por que coerência com o log não é verificação |

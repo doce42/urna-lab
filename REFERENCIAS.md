@@ -71,3 +71,13 @@ Consultadas em 27/10/2026.
   - Perfil do eleitorado por seção: https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitor_secao/
 - [D] IBGE, API de malhas territoriais (só para desenho dos mapas): https://servicodados.ibge.gov.br/api/docs/malhas
 - [D] Site de resultados (arquivos por urna): https://resultados.tse.jus.br/oficial/ele2026/arquivo-urna/
+
+## 7. Rodada 7 e Operação Veracidade (consultadas em 28/10/2026)
+- [T] DataUrnas-BR, auditoria independente e reprodutível dos arquivos das urnas (A. Linneker, MIT): https://github.com/alissonlinneker/DataUrnas-BR. Usada para decodificação independente e como origem das cópias dos certificados de AC. Só implementação independente (mesma origem TSE); a cadeia lá foi validada em 5% das seções.
+- [D] Estrutura dos arquivos das urnas (BU, RDV, assinatura) e lista de hashes das chaves públicas do QR Code por UF (29/08/2022), em `dados/brutos/doc/`.
+- [D] Página oficial de certificados do TSE, `dpc.acue2020.tse.jus.br`: **não acessada** (HTTP 403); a raiz (AC RAIZ UE) e a AC URNA v2 não são públicas, segundo [T] acima.
+- [T] Totalização paralela de terceiros (arquivos estáticos abertos; 404 boletins do 2º turno de 2026 lidos do QR Code impresso): amostra de conveniência, coletor e publicador são o mesmo projeto; relógio do servidor não auditado.
+- [I] Auditoria do TCU da totalização de 2022 (Gazeta do Povo, 26/12/2023): 1.163 boletins conciliados; relatório não lido.
+- [I] Notícia do teste de integridade do TSE de 2026 (26 capitais e DF): resultado numérico não obtido (página com HTTP 403).
+- [P/T] Estudo sobre o ecossistema da urna eletrônica (SBSeg, SBC): encontrado, não lido.
+- [G] Posts, vídeos, matérias e relatórios sobre a apuração de 2022 e 2026 (X, YouTube): **origem de perguntas, nunca fonte**; cada alegação foi testada com dados do TSE (`fase3/PREREG_*.md` e `operacao_veracidade/`).

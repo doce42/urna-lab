@@ -1,0 +1,317 @@
+{
+ "pre_registro": "fase3/PREREG_CRESCIMENTO_ENTRE_TURNOS.md",
+ "2026": {
+  "municipios": 5571,
+  "lula_cresceu_mais": 5228,
+  "rival_cresceu_mais": 339,
+  "empate": 4,
+  "frac_lula_mais": 0.9384311613713875,
+  "frac_rival_mais": 0.06085083467959074,
+  "variante_proporcao_lula_subiu": 5411,
+  "variante_proporcao_rival_subiu": 160,
+  "ufs_lula_mais_agregado": 27,
+  "ufs_rival_mais_agregado": 0,
+  "ufs_maioria_municipios_lula": 27,
+  "por_uf": {
+   "AC": {
+    "lula_mais": 21,
+    "rival_mais": 1,
+    "empate": 0
+   },
+   "AL": {
+    "lula_mais": 101,
+    "rival_mais": 1,
+    "empate": 0
+   },
+   "AM": {
+    "lula_mais": 58,
+    "rival_mais": 4,
+    "empate": 0
+   },
+   "AP": {
+    "lula_mais": 15,
+    "rival_mais": 1,
+    "empate": 0
+   },
+   "BA": {
+    "lula_mais": 413,
+    "rival_mais": 4,
+    "empate": 0
+   },
+   "CE": {
+    "lula_mais": 184,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "DF": {
+    "lula_mais": 1,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "ES": {
+    "lula_mais": 78,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "GO": {
+    "lula_mais": 213,
+    "rival_mais": 33,
+    "empate": 0
+   },
+   "MA": {
+    "lula_mais": 212,
+    "rival_mais": 5,
+    "empate": 0
+   },
+   "MG": {
+    "lula_mais": 838,
+    "rival_mais": 15,
+    "empate": 0
+   },
+   "MS": {
+    "lula_mais": 79,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "MT": {
+    "lula_mais": 137,
+    "rival_mais": 4,
+    "empate": 1
+   },
+   "PA": {
+    "lula_mais": 141,
+    "rival_mais": 3,
+    "empate": 0
+   },
+   "PB": {
+    "lula_mais": 223,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "PE": {
+    "lula_mais": 185,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "PI": {
+    "lula_mais": 217,
+    "rival_mais": 7,
+    "empate": 0
+   },
+   "PR": {
+    "lula_mais": 372,
+    "rival_mais": 27,
+    "empate": 0
+   },
+   "RJ": {
+    "lula_mais": 92,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "RN": {
+    "lula_mais": 167,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "RO": {
+    "lula_mais": 49,
+    "rival_mais": 3,
+    "empate": 0
+   },
+   "RR": {
+    "lula_mais": 15,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "RS": {
+    "lula_mais": 354,
+    "rival_mais": 141,
+    "empate": 2
+   },
+   "SC": {
+    "lula_mais": 215,
+    "rival_mais": 79,
+    "empate": 1
+   },
+   "SE": {
+    "lula_mais": 75,
+    "rival_mais": 0,
+    "empate": 0
+   },
+   "SP": {
+    "lula_mais": 636,
+    "rival_mais": 9,
+    "empate": 0
+   },
+   "TO": {
+    "lula_mais": 137,
+    "rival_mais": 2,
+    "empate": 0
+   }
+  },
+  "grafico": {
+   "de_tras_no_1t": "lula",
+   "prop_1t_pct": 48.98,
+   "prop_2t_pct": 51.78,
+   "cresceu_pp": 2.8,
+   "precisava_pp": 1.02
+  }
+ },
+ "2022": {
+  "municipios": 5570,
+  "lula_cresceu_mais": 715,
+  "rival_cresceu_mais": 4849,
+  "empate": 6,
+  "frac_lula_mais": 0.12836624775583483,
+  "frac_rival_mais": 0.8705565529622981,
+  "variante_proporcao_lula_subiu": 114,
+  "variante_proporcao_rival_subiu": 5456,
+  "ufs_lula_mais_agregado": 0,
+  "ufs_rival_mais_agregado": 27,
+  "ufs_maioria_municipios_lula": 1,
+  "por_uf": {
+   "AC": {
+    "lula_mais": 2,
+    "rival_mais": 20,
+    "empate": 0
+   },
+   "AL": {
+    "lula_mais": 8,
+    "rival_mais": 94,
+    "empate": 0
+   },
+   "AM": {
+    "lula_mais": 5,
+    "rival_mais": 57,
+    "empate": 0
+   },
+   "AP": {
+    "lula_mais": 0,
+    "rival_mais": 16,
+    "empate": 0
+   },
+   "BA": {
+    "lula_mais": 143,
+    "rival_mais": 274,
+    "empate": 0
+   },
+   "CE": {
+    "lula_mais": 100,
+    "rival_mais": 84,
+    "empate": 0
+   },
+   "DF": {
+    "lula_mais": 0,
+    "rival_mais": 1,
+    "empate": 0
+   },
+   "ES": {
+    "lula_mais": 0,
+    "rival_mais": 78,
+    "empate": 0
+   },
+   "GO": {
+    "lula_mais": 2,
+    "rival_mais": 244,
+    "empate": 0
+   },
+   "MA": {
+    "lula_mais": 86,
+    "rival_mais": 130,
+    "empate": 1
+   },
+   "MG": {
+    "lula_mais": 93,
+    "rival_mais": 758,
+    "empate": 2
+   },
+   "MS": {
+    "lula_mais": 0,
+    "rival_mais": 79,
+    "empate": 0
+   },
+   "MT": {
+    "lula_mais": 1,
+    "rival_mais": 140,
+    "empate": 0
+   },
+   "PA": {
+    "lula_mais": 3,
+    "rival_mais": 141,
+    "empate": 0
+   },
+   "PB": {
+    "lula_mais": 83,
+    "rival_mais": 139,
+    "empate": 1
+   },
+   "PE": {
+    "lula_mais": 37,
+    "rival_mais": 148,
+    "empate": 0
+   },
+   "PI": {
+    "lula_mais": 57,
+    "rival_mais": 165,
+    "empate": 2
+   },
+   "PR": {
+    "lula_mais": 0,
+    "rival_mais": 399,
+    "empate": 0
+   },
+   "RJ": {
+    "lula_mais": 2,
+    "rival_mais": 90,
+    "empate": 0
+   },
+   "RN": {
+    "lula_mais": 52,
+    "rival_mais": 115,
+    "empate": 0
+   },
+   "RO": {
+    "lula_mais": 0,
+    "rival_mais": 52,
+    "empate": 0
+   },
+   "RR": {
+    "lula_mais": 6,
+    "rival_mais": 9,
+    "empate": 0
+   },
+   "RS": {
+    "lula_mais": 0,
+    "rival_mais": 497,
+    "empate": 0
+   },
+   "SC": {
+    "lula_mais": 0,
+    "rival_mais": 295,
+    "empate": 0
+   },
+   "SE": {
+    "lula_mais": 27,
+    "rival_mais": 48,
+    "empate": 0
+   },
+   "SP": {
+    "lula_mais": 4,
+    "rival_mais": 641,
+    "empate": 0
+   },
+   "TO": {
+    "lula_mais": 4,
+    "rival_mais": 135,
+    "empate": 0
+   }
+  },
+  "grafico": {
+   "de_tras_no_1t": "rival",
+   "prop_1t_pct": 47.15,
+   "prop_2t_pct": 49.1,
+   "cresceu_pp": 1.95,
+   "precisava_pp": 2.85
+  }
+ }
+}

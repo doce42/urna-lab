@@ -1,0 +1,196 @@
+{
+ "1": {
+  "secoes": 499176,
+  "cert_diferente_da_urna_efetivada_da_tabela": 14,
+  "desses_com_cert_no_log": 0,
+  "votos_validos": 3089,
+  "exemplos": [
+   {
+    "SG_UF": "AL",
+    "CD_MUNICIPIO": "27057",
+    "NR_ZONA": "22",
+    "NR_SECAO": "581",
+    "cn": "UEAO02072552",
+    "NR_URNA_EFETIVADA_1": "2073355",
+    "ids_urna_log": "02073355",
+    "computado": "303.0",
+    "QT_COMPARECIMENTO_1": "303"
+   },
+   {
+    "SG_UF": "BA",
+    "CD_MUNICIPIO": "38857",
+    "NR_ZONA": "108",
+    "NR_SECAO": "148",
+    "cn": "ueao01672673",
+    "NR_URNA_EFETIVADA_1": "1768711",
+    "ids_urna_log": "01768711",
+    "computado": "70.0",
+    "QT_COMPARECIMENTO_1": "70"
+   },
+   {
+    "SG_UF": "ES",
+    "CD_MUNICIPIO": "56995",
+    "NR_ZONA": "53",
+    "NR_SECAO": "28",
+    "cn": "ueao01656698",
+    "NR_URNA_EFETIVADA_1": "1677012",
+    "ids_urna_log": "01677012",
+    "computado": "241.0",
+    "QT_COMPARECIMENTO_1": "241"
+   },
+   {
+    "SG_UF": "ES",
+    "CD_MUNICIPIO": "57053",
+    "NR_ZONA": "1",
+    "NR_SECAO": "46",
+    "cn": "UEAO02353044",
+    "NR_URNA_EFETIVADA_1": "2036425",
+    "ids_urna_log": "02036425",
+    "computado": "247.0",
+    "QT_COMPARECIMENTO_1": "247"
+   },
+   {
+    "SG_UF": "ES",
+    "CD_MUNICIPIO": "57053",
+    "NR_ZONA": "1",
+    "NR_SECAO": "413",
+    "cn": "UEAO02036277",
+    "NR_URNA_EFETIVADA_1": "2036420",
+    "ids_urna_log": "02036420",
+    "computado": "210.0",
+    "QT_COMPARECIMENTO_1": "210"
+   },
+   {
+    "SG_UF": "ES",
+    "CD_MUNICIPIO": "56472",
+    "NR_ZONA": "24",
+    "NR_SECAO": "100",
+    "cn": "ueao01771857",
+    "NR_URNA_EFETIVADA_1": "1840092",
+    "ids_urna_log": "01840092",
+    "computado": "140.0",
+    "QT_COMPARECIMENTO_1": "140"
+   },
+   {
+    "SG_UF": "MS",
+    "CD_MUNICIPIO": "91570",
+    "NR_ZONA": "31",
+    "NR_SECAO": "7",
+    "cn": "UEAO02152596",
+    "NR_URNA_EFETIVADA_1": "2150794",
+    "ids_urna_log": "02150794",
+    "computado": "241.0",
+    "QT_COMPARECIMENTO_1": "241"
+   },
+   {
+    "SG_UF": "PR",
+    "CD_MUNICIPIO": "75280",
+    "NR_ZONA": "133",
+    "NR_SECAO": "34",
+    "cn": "UEAO02077196",
+    "NR_URNA_EFETIVADA_1": "2081583",
+    "ids_urna_log": "02081583",
+    "computado": "257.0",
+    "QT_COMPARECIMENTO_1": "257"
+   },
+   {
+    "SG_UF": "PR",
+    "CD_MUNICIPIO": "76236",
+    "NR_ZONA": "93",
+    "NR_SECAO": "83",
+    "cn": "UEAO02056331",
+    "NR_URNA_EFETIVADA_1": "2060632",
+    "ids_urna_log": "02089535",
+    "computado": "252.0",
+    "QT_COMPARECIMENTO_1": "252"
+   },
+   {
+    "SG_UF": "RN",
+    "CD_MUNICIPIO": "18813",
+    "NR_ZONA": "9",
+    "NR_SECAO": "144",
+    "cn": "UEAO02052038",
+    "NR_URNA_EFETIVADA_1": "2348402",
+    "ids_urna_log": "02348402",
+    "computado": "293.0",
+    "QT_COMPARECIMENTO_1": "293"
+   },
+   {
+    "SG_UF": "SE",
+    "CD_MUNICIPIO": "31054",
+    "NR_ZONA": "1",
+    "NR_SECAO": "346",
+    "cn": "ueao01791133",
+    "NR_URNA_EFETIVADA_1": "1751434",
+    "ids_urna_log": "01751434",
+    "computado": "245.0",
+    "QT_COMPARECIMENTO_1": "245"
+   },
+   {
+    "SG_UF": "SE",
+    "CD_MUNICIPIO": "32417",
+    "NR_ZONA": "22",
+    "NR_SECAO": "133",
+    "cn": "UEAO02273651",
+    "NR_URNA_EFETIVADA_1": "2044616",
+    "ids_urna_log": "02044616",
+    "computado": "199.0",
+    "QT_COMPARECIMENTO_1": "199"
+   }
+  ],
+  "ufs": {
+   "ES": 4,
+   "PR": 2,
+   "SE": 2,
+   "SP": 2,
+   "AL": 1,
+   "BA": 1
+  }
+ },
+ "2": {
+  "secoes": 499178,
+  "cert_diferente_da_urna_efetivada_da_tabela": 3,
+  "desses_com_cert_no_log": 0,
+  "votos_validos": 785,
+  "exemplos": [
+   {
+    "SG_UF": "ES",
+    "CD_MUNICIPIO": "57932",
+    "NR_ZONA": "9",
+    "NR_SECAO": "85",
+    "cn": "ueao01758779",
+    "NR_URNA_EFETIVADA_2": "1841837",
+    "ids_urna_log": "01750820,01841837",
+    "computado": "612.0",
+    "QT_COMPARECIMENTO_2": "308.0"
+   },
+   {
+    "SG_UF": "RJ",
+    "CD_MUNICIPIO": "58696",
+    "NR_ZONA": "27",
+    "NR_SECAO": "139",
+    "cn": "UEAO02189420",
+    "NR_URNA_EFETIVADA_2": "2179194",
+    "ids_urna_log": "02179194",
+    "computado": "249.0",
+    "QT_COMPARECIMENTO_2": "249.0"
+   },
+   {
+    "SG_UF": "SP",
+    "CD_MUNICIPIO": "64777",
+    "NR_ZONA": "393",
+    "NR_SECAO": "312",
+    "cn": "UEAO02399743",
+    "NR_URNA_EFETIVADA_2": "2396114",
+    "ids_urna_log": "02396114",
+    "computado": "262.0",
+    "QT_COMPARECIMENTO_2": "262.0"
+   }
+  ],
+  "ufs": {
+   "ES": 1,
+   "RJ": 1,
+   "SP": 1
+  }
+ }
+}

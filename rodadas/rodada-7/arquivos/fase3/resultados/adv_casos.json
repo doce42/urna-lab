@@ -1,0 +1,310 @@
+{
+ "pre_registro": "fase3/PREREG_ADVERSARIAL.md",
+ "nperm": 10000,
+ "caso_B_T36_1T_2026": {
+  "todos": {
+   "secoes_no_universo": 185,
+   "media_z": 0.06592543646323759,
+   "media_z_esperada_mesma_UF": 0.026822588838272692,
+   "diferenca": 0.039102847624964895,
+   "ic95_nulo_da_media": [
+    -0.11860402858692068,
+    0.17625434650978747
+   ],
+   "p_bilateral_media": 0.6033396660333966,
+   "fracao_abs_z_maior_3": 0.010810810810810811,
+   "fracao_esperada": 0.005383783783783785,
+   "p_excesso_cauda": 0.2646735326467353,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 2,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "declarado_oficialmente": {
+   "secoes_no_universo": 37,
+   "media_z": 0.06490589864184251,
+   "media_z_esperada_mesma_UF": 0.023925449372264148,
+   "diferenca": 0.04098044926957836,
+   "ic95_nulo_da_media": [
+    -0.30692995698849956,
+    0.3579299658588331
+   ],
+   "p_bilateral_media": 0.7973202679732027,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.004816216216216216,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "compativel": {
+   "secoes_no_universo": 5,
+   "media_z": -0.04374538792915248,
+   "media_z_esperada_mesma_UF": 0.0261540740028399,
+   "diferenca": -0.06989946193199238,
+   "ic95_nulo_da_media": [
+    -0.8700955347127324,
+    0.9608486236851287
+   ],
+   "p_bilateral_media": 0.9009099090090991,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.005259999999999999,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "inferido": {
+   "secoes_no_universo": 142,
+   "media_z": 0.0723305859364106,
+   "media_z_esperada_mesma_UF": 0.027304077215342695,
+   "diferenca": 0.04502650872106791,
+   "ic95_nulo_da_media": [
+    -0.14002197125155763,
+    0.19762037255490483
+   ],
+   "p_bilateral_media": 0.5953404659534046,
+   "fracao_abs_z_maior_3": 0.014084507042253521,
+   "fracao_esperada": 0.0054549295774647885,
+   "p_excesso_cauda": 0.1802819718028197,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 2,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "sem_explicacao": {
+   "secoes_no_universo": 1,
+   "media_z": -0.25752876737376185,
+   "media_z_esperada_mesma_UF": 0.04361317626921336,
+   "diferenca": -0.3011419436429752,
+   "ic95_nulo_da_media": [
+    -1.8308951223738263,
+    2.151678868728076
+   ],
+   "p_bilateral_media": 0.7995200479952005,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.0054,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "casos_listados": 186
+ },
+ "caso_B_T36_2T_2026": {
+  "todos": {
+   "secoes_no_universo": 73,
+   "media_z": 0.06587929594972207,
+   "media_z_esperada_mesma_UF": 0.025540120347097992,
+   "diferenca": 0.04033917560262408,
+   "ic95_nulo_da_media": [
+    -0.20017414722146304,
+    0.258110006090896
+   ],
+   "p_bilateral_media": 0.7297270272972702,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.005216438356164383,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "declarado_oficialmente": {
+   "secoes_no_universo": 28,
+   "media_z": -0.06064544421077352,
+   "media_z_esperada_mesma_UF": 0.023104169485973644,
+   "diferenca": -0.08374961369674716,
+   "ic95_nulo_da_media": [
+    -0.36035365960673477,
+    0.40712250051954607
+   ],
+   "p_bilateral_media": 0.6639336066393361,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.005364285714285714,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "compativel": {
+   "secoes_no_universo": 3,
+   "media_z": -0.35836235797565363,
+   "media_z_esperada_mesma_UF": 0.031095472867667104,
+   "diferenca": -0.38945783084332075,
+   "ic95_nulo_da_media": [
+    -1.1300825853536616,
+    1.2485986141287473
+   ],
+   "p_bilateral_media": 0.525947405259474,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.007,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "inferido": {
+   "secoes_no_universo": 41,
+   "media_z": 0.171480260476823,
+   "media_z_esperada_mesma_UF": 0.024625995984341714,
+   "diferenca": 0.1468542644924813,
+   "ic95_nulo_da_media": [
+    -0.2822962387683016,
+    0.34150496155088705
+   ],
+   "p_bilateral_media": 0.36296370362963704,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.005370731707317073,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.3
+  },
+  "sem_explicacao": {
+   "secoes_no_universo": 0
+  },
+  "casos_listados": 75
+ },
+ "caso_C_contingencias_2T_2026": {
+  "qualquer_contingencia": {
+   "secoes_no_universo": 1448,
+   "media_z": -0.013702211251335104,
+   "media_z_esperada_mesma_UF": 0.025000372233092604,
+   "diferenca": -0.038702583484427705,
+   "ic95_nulo_da_media": [
+    -0.029428662261937834,
+    0.07809308524037996
+   ],
+   "p_bilateral_media": 0.1573842615738426,
+   "fracao_abs_z_maior_3": 0.004143646408839779,
+   "fracao_esperada": 0.005371477900552486,
+   "p_excesso_cauda": 0.785921407859214,
+   "pro_lula_z_maior_3": 5,
+   "pro_adv_z_menor_menos_3": 1,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.1
+  },
+  "duas_urnas_no_log": {
+   "secoes_no_universo": 1417,
+   "media_z": -0.013954283070418166,
+   "media_z_esperada_mesma_UF": 0.025228925419043372,
+   "diferenca": -0.03918320848946154,
+   "ic95_nulo_da_media": [
+    -0.028784402265618632,
+    0.07909102246828284
+   ],
+   "p_bilateral_media": 0.15078492150784922,
+   "fracao_abs_z_maior_3": 0.004234297812279464,
+   "fracao_esperada": 0.005310656316160903,
+   "p_excesso_cauda": 0.7581241875812419,
+   "pro_lula_z_maior_3": 5,
+   "pro_adv_z_menor_menos_3": 1,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.1
+  },
+  "certificado_diferente_do_log": {
+   "secoes_no_universo": 17,
+   "media_z": -0.21152187820746504,
+   "media_z_esperada_mesma_UF": 0.028994428823274642,
+   "diferenca": -0.24051630703073967,
+   "ic95_nulo_da_media": [
+    -0.45236853577244696,
+    0.5238838648703361
+   ],
+   "p_bilateral_media": 0.33796620337966204,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.0052647058823529404,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.1
+  },
+  "RED_ou_sistema_de_apuracao": {
+   "secoes_no_universo": 17,
+   "media_z": 0.0,
+   "media_z_esperada_mesma_UF": 0.01661246403689146,
+   "diferenca": -0.01661246403689146,
+   "ic95_nulo_da_media": [
+    -0.49526288965797227,
+    0.5611111456132202
+   ],
+   "p_bilateral_media": 0.9599040095990401,
+   "fracao_abs_z_maior_3": 0.0,
+   "fracao_esperada": 0.011094117647058824,
+   "p_excesso_cauda": 1.0,
+   "pro_lula_z_maior_3": 0,
+   "pro_adv_z_menor_menos_3": 0,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.1
+  },
+  "definicao": "urnas_com_voto_no_log ≥ 2, ou certificado lido ≠ urna do log, ou origem RED/Sistema de Apuração"
+ },
+ "caso_C_contingencias_2T_2022": {
+  "qualquer_contingencia": {
+   "secoes_no_universo": 279719,
+   "media_z": -0.003164755955768661,
+   "media_z_esperada_mesma_UF": 0.014012295469813713,
+   "diferenca": -0.017177051425582374,
+   "ic95_nulo_da_media": [
+    0.010077306527372086,
+    0.01795184765193029
+   ],
+   "p_bilateral_media": 0.00019998000199980003,
+   "fracao_abs_z_maior_3": 0.007671985099331829,
+   "fracao_esperada": 0.007710120871302986,
+   "p_excesso_cauda": 0.5938406159384062,
+   "pro_lula_z_maior_3": 1424,
+   "pro_adv_z_menor_menos_3": 722,
+   "leitura": "diferença estatística abaixo do limiar de relevância",
+   "limiar": 0.1
+  },
+  "duas_urnas_no_log": {
+   "secoes_no_universo": 439,
+   "media_z": 0.03520236106862605,
+   "media_z_esperada_mesma_UF": 0.01334920713644974,
+   "diferenca": 0.02185315393217631,
+   "ic95_nulo_da_media": [
+    -0.08533180196972383,
+    0.1134540798546049
+   ],
+   "p_bilateral_media": 0.6619338066193381,
+   "fracao_abs_z_maior_3": 0.009111617312072893,
+   "fracao_esperada": 0.007864464692482915,
+   "p_excesso_cauda": 0.4527547245275472,
+   "pro_lula_z_maior_3": 2,
+   "pro_adv_z_menor_menos_3": 2,
+   "leitura": "sem deslocamento detectável",
+   "limiar": 0.1
+  },
+  "certificado_diferente_do_log": {
+   "secoes_no_universo": 279282,
+   "media_z": -0.0032238581905929702,
+   "media_z_esperada_mesma_UF": 0.01401091873716894,
+   "diferenca": -0.01723477692776191,
+   "ic95_nulo_da_media": [
+    0.010135926475131602,
+    0.017903200744343404
+   ],
+   "p_bilateral_media": 0.00019998000199980003,
+   "fracao_abs_z_maior_3": 0.00766966721808065,
+   "fracao_esperada": 0.007709825552667198,
+   "p_excesso_cauda": 0.6037396260373963,
+   "pro_lula_z_maior_3": 1422,
+   "pro_adv_z_menor_menos_3": 720,
+   "leitura": "diferença estatística abaixo do limiar de relevância",
+   "limiar": 0.1
+  },
+  "RED_ou_sistema_de_apuracao": {
+   "secoes_no_universo": 0
+  },
+  "definicao": "urnas_com_voto_no_log ≥ 2, ou certificado lido ≠ urna do log, ou origem RED/Sistema de Apuração"
+ }
+}

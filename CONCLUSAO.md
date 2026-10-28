@@ -13,12 +13,23 @@ Resultados novos, com o que significam em votos. A baseline V1.0 abaixo permanec
 - **Verificação de 20 seções (T39):** nenhuma divergência objetiva nova nas 19 com arquivos de urna; vale só para a amostra. Não houve confronto independente (sem material externo disponível).
 - **Fase 2 completa (V1.1):** o E02 original superestimava o agrupamento (766 e 683 locais viram 102 e 55 após corrigir a correlação dentro do local); a regra do T13 só enxerga troca a favor de Lula (10% dos válidos em 1% das urnas: 100% contra 0% no sentido contrário); a diferença de eleitorado do exterior (−495 e −525) está explicada (423 de seções não instaladas mais 72 e 30 de boletins só nos arquivos das urnas); em 200 seções e 200 certificados sorteados tudo concorda, mas a âncora de certificados e fontes externas continuam sem verificação. A assimetria de cauda do T02 é estatisticamente real, sem causa, e em 2022 concentrada na capital de São Paulo.
 
-## A pergunta e a resposta (28/10/2026)
-**A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?** Não encontramos.
+## Operação Veracidade Geral (28/10/2026, rodada 7, V1.5)
+Auditoria adversarial dos dados e do próprio veredito. Pergunta: **os dados oficiais usados pelo estudo são fiéis ao que aconteceu?** Resposta direta: o que se pôde testar não mostra adulteração; o que não se pôde testar é exatamente a parte que responderia à pergunta. Testes T60a a T65, perguntas Q42 a Q50.
+- **Cadeia de certificados em 100% das urnas (T60a):** 1.942.246 pares seção × turno, 0 falhas, todos válidos no dia, nenhuma chave repetida (antes, 200 seções). Reforça a integridade dos arquivos, não a veracidade dos votos; a raiz do TSE não é pública.
+- **404 boletins de terceiros iguais ao TSE (T61):** 2º turno de 2026, 22 UFs, assinatura, cadeia e votos iguais em 404 de 404; os 404 arquivos são idênticos entre downloads independentes. Amostra de conveniência (0,08%).
+- **Pontos cegos (T62, T63):** escala de UF, região, lote ou uniforme passa sem alarme abaixo de ~0,5 a 2,2 milhões de votos; registros coerentes gerados pela própria fonte passam em todas as verificações internas; o poder, medido sobre uma base que pode já conter alteração, é assimétrico entre os sentidos.
+- **Revisões do veredito:** H7 passa a "não determinado (ponto cego)"; T05 passa a ponto cego (o dígito final não tinha poder); a frase "deixariam sinais muito maiores" passa a valer só para os mecanismos em que a bateria tem poder; "restam dois caminhos" passa a "restam caminhos fora do alcance". Lista completa em [`operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md`](operacao_veracidade/09_IMPACTO_NOS_VEREDITOS_ANTERIORES.md).
+
+Relatório executivo: [`operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md`](operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md). Simulações: [`03_SIMULACOES_ADVERSARIAIS.md`](operacao_veracidade/03_SIMULACOES_ADVERSARIAIS.md). Criptografia: [`02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md`](operacao_veracidade/02_AUDITORIA_DOCUMENTAL_CRIPTOGRAFICA.md).
+
+## A pergunta e a resposta (28/10/2026, revista na V1.5)
+**A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?** Não encontramos sinal de fraude nos mecanismos que os dados públicos conseguem examinar, com o poder medido para cada um.
 - **Escala:** inverter o resultado exigiria trocar ~2,2 milhões de votos de lado.
-- **Mecanismos examináveis:** os que os dados públicos permitem examinar foram contrariados ou deixariam sinais muito maiores que os encontrados. Exemplos: alteração depois da apuração, troca na totalização, troca concentrada em urnas, locais, municípios ou numa grande cidade, enchimento e apagamento de votos.
-- **Anomalias reais:** as encontradas somam dezenas de milhares de votos, sem causa demonstrada. A maior é Salvador, com ~30 mil.
-- **O que resta sem exame:** dois mecanismos que nenhum dado público examina, que são um deslocamento pequeno e uniforme em quase todas as urnas e uma alteração da urna antes de gerar os registros. Só boletins impressos coletados por fiscais ou uma auditoria independente da urna os examinam.
+- **O que a bateria vê:** troca dispersa, em poucas seções, em locais, zonas ou municípios (fora os 5 maiores), de dezenas de milhares de votos (a partir de 25 a 50 mil, T63), e numa grande cidade, uma por vez, a partir de 2% dos válidos (T44). Alteração depois da publicação e troca na totalização foram contrariadas.
+- **O que ela só vê em escala grande ou nunca:** UFs inteiras, os cinco grandes municípios juntos, macrorregião, lote tardio, conversão de brancos e nulos, enchimento abaixo de 250 mil e deslocamento uniforme, a partir de ~0,5 a 2,2 milhões de votos, ou nunca (T63). O poder é assimétrico entre os sentidos.
+- **Anomalias reais:** as encontradas somam dezenas de milhares de votos, sem causa demonstrada; a maior é Salvador, com ~30 mil. Isso descreve o que foi achado e não limita o que pode ter passado sem alarme.
+- **O que resta fora do alcance:** um deslocamento pequeno e uniforme em quase todas as urnas (H9), uma alteração da urna antes de gerar os registros (H10) e as alterações de escala listadas acima. Só boletins impressos de uma amostra sorteada de seções, uma auditoria independente da urna e a raiz da cadeia de certificados os examinam.
+- **Zeros de votos (H7):** não determinado; nenhum modelo de cauda baixa calibrou (T41, T64).
 
 Hipótese por hipótese, com o sinal de cada teste, em [`fase3/VEREDITO_2026.md`](fase3/VEREDITO_2026.md).
 

@@ -1,0 +1,806 @@
+{
+ "pergunta": "E2 curvas",
+ "nperm": 200,
+ "resultados": {
+  "2026_1t": {
+   "urnas": 499206,
+   "observado": {
+    "S1_inversoes": 0,
+    "S2_fracao_ultima_inversao": 0.0,
+    "S3_maior_vale_pp": 0.1684852604241911,
+    "S4_oscilacoes": 5,
+    "S5_maior_trecho_linear_faixas": 10,
+    "_margem_final_pp": -1.8649224397149937
+   },
+   "primeiras_inversoes_fracao_apurada": [],
+   "eta2_ordem_de_chegada_por_UF": 0.2183018579144867,
+   "eta2_ordem_de_chegada_por_municipio": 0.5575174746040695,
+   "margem_aos_10pct_pp": -10.109475527950867,
+   "lider_aos_10pct": "adversário",
+   "lider_final": "adversário",
+   "A_permutacao_irrestrita": {
+    "S1_inversoes": {
+     "observado": 0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.1684852604241911,
+     "sim_media": 0.143388451956119,
+     "sim_p2_5_p97_5": [
+      0.05591058041111247,
+      0.2892454002425584
+     ],
+     "p_bilateral": 0.6169154228855721
+    },
+    "S4_oscilacoes": {
+     "observado": 5,
+     "sim_media": 43.975,
+     "sim_p2_5_p97_5": [
+      36.0,
+      52.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 10,
+     "sim_media": 30.875,
+     "sim_p2_5_p97_5": [
+      20.0,
+      44.025000000000006
+     ],
+     "p_bilateral": 0.009950248756218905
+    }
+   },
+   "B_dentro_de_UF": {
+    "S1_inversoes": {
+     "observado": 0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.1684852604241911,
+     "sim_media": 0.016211416376180822,
+     "sim_p2_5_p97_5": [
+      0.0009644250605908678,
+      0.035951163884763986
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 5,
+     "sim_media": 6.625,
+     "sim_p2_5_p97_5": [
+      2.0,
+      10.0
+     ],
+     "p_bilateral": 0.5074626865671642
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 10,
+     "sim_media": 10.975,
+     "sim_p2_5_p97_5": [
+      9.975000000000001,
+      13.0
+     ],
+     "p_bilateral": 0.5970149253731343
+    }
+   },
+   "C_dentro_de_municipio": {
+    "S1_inversoes": {
+     "observado": 0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.0,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.1684852604241911,
+     "sim_media": 0.09865364518776382,
+     "sim_p2_5_p97_5": [
+      0.0723339476293515,
+      0.12427676813928126
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 5,
+     "sim_media": 5.26,
+     "sim_p2_5_p97_5": [
+      5.0,
+      7.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 10,
+     "sim_media": 11.27,
+     "sim_p2_5_p97_5": [
+      10.0,
+      12.0
+     ],
+     "p_bilateral": 0.15920398009950248
+    }
+   },
+   "sensibilidade_grade_modelo_B": {
+    "0.5": {
+     "S3_maior_vale_pp": {
+      "observado": 0.20423511745977585,
+      "sim_media": 0.024649884172614166,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S4_oscilacoes": {
+      "observado": 7,
+      "sim_media": 16.68,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 16,
+      "sim_media": 20.19,
+      "p_bilateral": 0.06965174129353234
+     }
+    },
+    "2.0": {
+     "S3_maior_vale_pp": {
+      "observado": 0.09767970103175827,
+      "sim_media": 0.0010324597494082877,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S4_oscilacoes": {
+      "observado": 3,
+      "sim_media": 0.25,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 7,
+      "sim_media": 6.045,
+      "p_bilateral": 0.25870646766169153
+     }
+    }
+   }
+  },
+  "2026_2t": {
+   "urnas": 499205,
+   "observado": {
+    "S1_inversoes": 2,
+    "S2_fracao_ultima_inversao": 0.4717921495177332,
+    "S3_maior_vale_pp": 1.8170656882368954,
+    "S4_oscilacoes": 11,
+    "S5_maior_trecho_linear_faixas": 8,
+    "_margem_final_pp": 3.5703657685252104
+   },
+   "primeiras_inversoes_fracao_apurada": [
+    0.13533718612594026,
+    0.4717921495177332
+   ],
+   "eta2_ordem_de_chegada_por_UF": 0.38658264698375605,
+   "eta2_ordem_de_chegada_por_municipio": 0.7130906859200966,
+   "margem_aos_10pct_pp": 0.9566594439854901,
+   "lider_aos_10pct": "Lula",
+   "lider_final": "Lula",
+   "A_permutacao_irrestrita": {
+    "S1_inversoes": {
+     "observado": 2,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.4717921495177332,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 1.8170656882368954,
+     "sim_media": 0.14612657312784075,
+     "sim_p2_5_p97_5": [
+      0.05384224013404618,
+      0.3081309494056903
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 11,
+     "sim_media": 43.985,
+     "sim_p2_5_p97_5": [
+      35.0,
+      53.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 29.45,
+     "sim_p2_5_p97_5": [
+      19.0,
+      45.025000000000006
+     ],
+     "p_bilateral": 0.009950248756218905
+    }
+   },
+   "B_dentro_de_UF": {
+    "S1_inversoes": {
+     "observado": 2,
+     "sim_media": 64.03,
+     "sim_p2_5_p97_5": [
+      7.950000000000001,
+      148.20000000000005
+     ],
+     "p_bilateral": 0.029850746268656716
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.4717921495177332,
+     "sim_media": 0.25945769773940563,
+     "sim_p2_5_p97_5": [
+      0.24624643182660433,
+      0.28013541531034347
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 1.8170656882368954,
+     "sim_media": 0.574877334906756,
+     "sim_p2_5_p97_5": [
+      0.47195692644434784,
+      0.6805847812022535
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 11,
+     "sim_media": 11.09,
+     "sim_p2_5_p97_5": [
+      7.0,
+      16.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 6.63,
+     "sim_p2_5_p97_5": [
+      6.0,
+      9.0
+     ],
+     "p_bilateral": 0.208955223880597
+    }
+   },
+   "C_dentro_de_municipio": {
+    "S1_inversoes": {
+     "observado": 2,
+     "sim_media": 52.77,
+     "sim_p2_5_p97_5": [
+      7.950000000000001,
+      122.15000000000003
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.4717921495177332,
+     "sim_media": 0.4142799651445799,
+     "sim_p2_5_p97_5": [
+      0.408334902494967,
+      0.42204920824110337
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 1.8170656882368954,
+     "sim_media": 1.2557618973952855,
+     "sim_p2_5_p97_5": [
+      1.1779381761951764,
+      1.3471379401486276
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 11,
+     "sim_media": 11.55,
+     "sim_p2_5_p97_5": [
+      9.0,
+      13.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 8.89,
+     "sim_p2_5_p97_5": [
+      7.0,
+      12.0
+     ],
+     "p_bilateral": 0.6169154228855721
+    }
+   },
+   "sensibilidade_grade_modelo_B": {
+    "0.5": {
+     "S3_maior_vale_pp": {
+      "observado": 1.92233886541383,
+      "sim_media": 0.585314102947758,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S4_oscilacoes": {
+      "observado": 27,
+      "sim_media": 29.0,
+      "p_bilateral": 0.5373134328358209
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 11,
+      "sim_media": 11.855,
+      "p_bilateral": 0.4975124378109453
+     }
+    },
+    "2.0": {
+     "S3_maior_vale_pp": {
+      "observado": 1.5896908753311492,
+      "sim_media": 0.519098154122436,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S4_oscilacoes": {
+      "observado": 3,
+      "sim_media": 2.09,
+      "p_bilateral": 0.09950248756218906
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 6,
+      "sim_media": 4.765,
+      "p_bilateral": 0.21890547263681592
+     }
+    }
+   }
+  },
+  "2022_1t": {
+   "urnas": 472024,
+   "observado": {
+    "S1_inversoes": 3,
+    "S2_fracao_ultima_inversao": 0.6815691575004661,
+    "S3_maior_vale_pp": 0.11948003402038498,
+    "S4_oscilacoes": 4,
+    "S5_maior_trecho_linear_faixas": 8,
+    "_margem_final_pp": 5.233167305421745
+   },
+   "primeiras_inversoes_fracao_apurada": [
+    0.6815649204277748,
+    0.6815670389641205,
+    0.6815691575004661
+   ],
+   "eta2_ordem_de_chegada_por_UF": 0.22025398835904064,
+   "eta2_ordem_de_chegada_por_municipio": 0.5600360002837955,
+   "margem_aos_10pct_pp": -5.450414941900436,
+   "lider_aos_10pct": "adversário",
+   "lider_final": "Lula",
+   "A_permutacao_irrestrita": {
+    "S1_inversoes": {
+     "observado": 3,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6815691575004661,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.11948003402038498,
+     "sim_media": 0.14913323535534875,
+     "sim_p2_5_p97_5": [
+      0.05338899662365966,
+      0.32052752031273324
+     ],
+     "p_bilateral": 0.8557213930348259
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 43.805,
+     "sim_p2_5_p97_5": [
+      35.0,
+      52.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 29.965,
+     "sim_p2_5_p97_5": [
+      18.0,
+      45.05000000000001
+     ],
+     "p_bilateral": 0.009950248756218905
+    }
+   },
+   "B_dentro_de_UF": {
+    "S1_inversoes": {
+     "observado": 3,
+     "sim_media": 16.23,
+     "sim_p2_5_p97_5": [
+      1.0,
+      69.40000000000009
+     ],
+     "p_bilateral": 0.47761194029850745
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6815691575004661,
+     "sim_media": 0.35259824712302756,
+     "sim_p2_5_p97_5": [
+      0.33341355524295374,
+      0.3677975590224226
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.11948003402038498,
+     "sim_media": 0.1485655946039814,
+     "sim_p2_5_p97_5": [
+      0.08735755535988311,
+      0.2106546640109921
+     ],
+     "p_bilateral": 0.3383084577114428
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 3.98,
+     "sim_p2_5_p97_5": [
+      2.0,
+      6.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 11.95,
+     "sim_p2_5_p97_5": [
+      9.0,
+      14.025000000000006
+     ],
+     "p_bilateral": 0.009950248756218905
+    }
+   },
+   "C_dentro_de_municipio": {
+    "S1_inversoes": {
+     "observado": 3,
+     "sim_media": 7.01,
+     "sim_p2_5_p97_5": [
+      1.0,
+      25.05000000000001
+     ],
+     "p_bilateral": 0.9751243781094527
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6815691575004661,
+     "sim_media": 0.5716590893683372,
+     "sim_p2_5_p97_5": [
+      0.5677568301611782,
+      0.5763215959357999
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.11948003402038498,
+     "sim_media": 0.19501011021061865,
+     "sim_p2_5_p97_5": [
+      0.14476747874849932,
+      0.24548838645234203
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 3.63,
+     "sim_p2_5_p97_5": [
+      2.0,
+      6.0
+     ],
+     "p_bilateral": 1.0
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 8,
+     "sim_media": 9.485,
+     "sim_p2_5_p97_5": [
+      7.0,
+      13.0
+     ],
+     "p_bilateral": 0.27860696517412936
+    }
+   },
+   "sensibilidade_grade_modelo_B": {
+    "0.5": {
+     "S3_maior_vale_pp": {
+      "observado": 0.1499972067862565,
+      "sim_media": 0.15247456325615066,
+      "p_bilateral": 0.9253731343283582
+     },
+     "S4_oscilacoes": {
+      "observado": 6,
+      "sim_media": 9.41,
+      "p_bilateral": 0.3383084577114428
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 16,
+      "sim_media": 22.2,
+      "p_bilateral": 0.06965174129353234
+     }
+    },
+    "2.0": {
+     "S3_maior_vale_pp": {
+      "observado": 0.11948003402038498,
+      "sim_media": 0.11035769333654588,
+      "p_bilateral": 0.835820895522388
+     },
+     "S4_oscilacoes": {
+      "observado": 2,
+      "sim_media": 2.09,
+      "p_bilateral": 1.0
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 5,
+      "sim_media": 6.9,
+      "p_bilateral": 0.009950248756218905
+     }
+    }
+   }
+  },
+  "2022_2t": {
+   "urnas": 472027,
+   "observado": {
+    "S1_inversoes": 21,
+    "S2_fracao_ultima_inversao": 0.6761986072830579,
+    "S3_maior_vale_pp": 0.009525135596955003,
+    "S4_oscilacoes": 4,
+    "S5_maior_trecho_linear_faixas": 27,
+    "_margem_final_pp": 1.8048102343443153
+   },
+   "primeiras_inversoes_fracao_apurada": [
+    0.6760291254525694,
+    0.6760397180669749,
+    0.6760439551127372,
+    0.6760460736356183,
+    0.6760481921584994,
+    0.6760905626161215,
+    0.6760969181847648,
+    0.6760990367076459,
+    0.6761075107991704,
+    0.6761138663678137,
+    0.6761159848906948,
+    0.6761181034135759,
+    0.6761308145508625,
+    0.6761477627339114,
+    0.6761498812567925
+   ],
+   "eta2_ordem_de_chegada_por_UF": 0.23890080797080668,
+   "eta2_ordem_de_chegada_por_municipio": 0.5874142107523146,
+   "margem_aos_10pct_pp": -4.024690803555344,
+   "lider_aos_10pct": "adversário",
+   "lider_final": "Lula",
+   "A_permutacao_irrestrita": {
+    "S1_inversoes": {
+     "observado": 21,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6761986072830579,
+     "sim_media": 0.0,
+     "sim_p2_5_p97_5": [
+      0.0,
+      0.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.009525135596955003,
+     "sim_media": 0.15947122930444968,
+     "sim_p2_5_p97_5": [
+      0.05731089110665757,
+      0.36330104398026
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 43.905,
+     "sim_p2_5_p97_5": [
+      34.0,
+      53.0
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 27,
+     "sim_media": 28.305,
+     "sim_p2_5_p97_5": [
+      20.0,
+      44.05000000000001
+     ],
+     "p_bilateral": 1.0
+    }
+   },
+   "B_dentro_de_UF": {
+    "S1_inversoes": {
+     "observado": 21,
+     "sim_media": 12.61,
+     "sim_p2_5_p97_5": [
+      1.0,
+      45.05000000000001
+     ],
+     "p_bilateral": 0.39800995024875624
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6761986072830579,
+     "sim_media": 0.3798862776917422,
+     "sim_p2_5_p97_5": [
+      0.36510676296059336,
+      0.39121766339637354
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.009525135596955003,
+     "sim_media": 0.032277085352720086,
+     "sim_p2_5_p97_5": [
+      0.01732943178141537,
+      0.04625335839930739
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 5.56,
+     "sim_p2_5_p97_5": [
+      2.0,
+      10.0
+     ],
+     "p_bilateral": 0.8557213930348259
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 27,
+     "sim_media": 18.915,
+     "sim_p2_5_p97_5": [
+      15.975000000000001,
+      25.025000000000006
+     ],
+     "p_bilateral": 0.029850746268656716
+    }
+   },
+   "C_dentro_de_municipio": {
+    "S1_inversoes": {
+     "observado": 21,
+     "sim_media": 9.72,
+     "sim_p2_5_p97_5": [
+      1.0,
+      31.05000000000001
+     ],
+     "p_bilateral": 0.19900497512437812
+    },
+    "S2_fracao_ultima_inversao": {
+     "observado": 0.6761986072830579,
+     "sim_media": 0.4826864353098445,
+     "sim_p2_5_p97_5": [
+      0.4771227069637966,
+      0.488712139347961
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S3_maior_vale_pp": {
+     "observado": 0.009525135596955003,
+     "sim_media": 0.025950875077631653,
+     "sim_p2_5_p97_5": [
+      0.016980062265427285,
+      0.034525064972234065
+     ],
+     "p_bilateral": 0.009950248756218905
+    },
+    "S4_oscilacoes": {
+     "observado": 4,
+     "sim_media": 6.25,
+     "sim_p2_5_p97_5": [
+      4.0,
+      8.0
+     ],
+     "p_bilateral": 0.3482587064676617
+    },
+    "S5_maior_trecho_linear_faixas": {
+     "observado": 27,
+     "sim_media": 21.78,
+     "sim_p2_5_p97_5": [
+      16.0,
+      28.0
+     ],
+     "p_bilateral": 0.1691542288557214
+    }
+   },
+   "sensibilidade_grade_modelo_B": {
+    "0.5": {
+     "S3_maior_vale_pp": {
+      "observado": 0.0530450970677947,
+      "sim_media": 0.035941363257822996,
+      "p_bilateral": 0.03980099502487562
+     },
+     "S4_oscilacoes": {
+      "observado": 16,
+      "sim_media": 17.605,
+      "p_bilateral": 0.8955223880597015
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 54,
+      "sim_media": 34.935,
+      "p_bilateral": 0.029850746268656716
+     }
+    },
+    "2.0": {
+     "S3_maior_vale_pp": {
+      "observado": 0.0,
+      "sim_media": 0.03169095177024642,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S4_oscilacoes": {
+      "observado": 0,
+      "sim_media": 2.04,
+      "p_bilateral": 0.009950248756218905
+     },
+     "S5_maior_trecho_linear_faixas": {
+      "observado": 10,
+      "sim_media": 9.915,
+      "p_bilateral": 0.8955223880597015
+     }
+    }
+   }
+  }
+ },
+ "tempo_s": 331.5
+}

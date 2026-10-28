@@ -29,3 +29,9 @@ O carimbo confirma que esses hashes existiam na data, pela blockchain do Bitcoin
 - Hash e carimbo **detectam** troca, mas **não guardam** o conteúdo. Sem a camada 4, uma versão retirada pelo TSE não pode ser recuperada daqui.
 - A assinatura da urna prova integridade desde a urna, não que a urna seja autêntica até a raiz (P11).
 - O manifesto cobre os arquivos baixados. Os 173 arquivos de 2022 que nunca estiveram no pacote do TSE não podem ser preservados (A173).
+
+## Atualização de 28/10/2026 (rodada 7)
+- **Cobertura de hash oficial:** no `MANIFESTO.csv` (51.883 arquivos), só 331 têm hash oficial de download conferido ("conferido"), 173 são "não publicado pelo TSE" e 51.379 estão "sem registro de download" (só o hash local). A integridade desses arquivos apoia-se na lista assinada pela própria urna.
+- **Dados derivados grandes ficam fora do git** (`.gitignore`): certificados por seção e nulos do RDV em parquet (reproduzíveis pelos scripts; ver `PIPELINE.md`, seção 7).
+- **Arquivos de terceiros** (`operacao_veracidade/externo/`): ficam fora do git; só o `SHA256SUMS.txt` e a data de download são versionados. Licença de redistribuição não verificada.
+- **Carimbo:** `carimbo.py criar rodadas/rodada-7/resumo.json` na publicação da V1.5; `atualizar` algumas horas depois.

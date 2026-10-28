@@ -1,6 +1,6 @@
 ---
 name: apuracao-integridade
-description: Ler e verificar os arquivos gravados por cada urna (log, BU, RDV, imagem do BU, assinaturas vota.vsc) — assinatura Ed521/ECDSA, hashes, recontagem do RDV, sequência eleitor a eleitor do log. Use para os testes T14–T17, T24, T28–T31, T33–T35 ou ao mexer em analise/processar_brutos.py, der.py, ed521.py, seqlog.py.
+description: Ler e verificar os arquivos gravados por cada urna (log, BU, RDV, imagem do BU, assinaturas vota.vsc) — assinatura Ed521/ECDSA, hashes, recontagem do RDV, sequência eleitor a eleitor do log. Use para os testes T14–T17, T24, T28–T31, T33–T35 ou ao mexer em analise/processar_brutos.py, der.py, ed521.py, seqlog.py. Desde a rodada 7: cadeia de certificados em 100% das urnas (T60a), controles de mutação (T60b), boletins de terceiros (T61), identificabilidade (T62) e a regra de que o log de um pacote traz logs de outras urnas e seções.
 ---
 # Integridade dos arquivos das urnas
 
@@ -52,3 +52,12 @@ Um resultado abaixo de 100% é, primeiro, suspeita de erro de leitura (aconteceu
 - **"Verificação de assinatura … [ERRO]" no log:** quase sempre fora do dia da eleição, e as do dia são seguidas de sucesso (`fase3/final_t33.py`). O leitor conta como falha qualquer linha sem SUCESSO.
 - **Investigações por arquivo:** `fase3/inv_r1_integridade.py` (tabela × bu × RDV × imagem, 2022 e 2026), `ver_a173.py`, `ver_bu1.py`, `fila_f1_log2022.py` (log × comparecimento 2022).
 - **Regra adversarial:** concordância entre arquivos da mesma urna é consistência interna (skill apuracao-investigacao).
+
+## Atualização da rodada 7 (28/10/2026, V1.5)
+- **T60a:** `operacao_veracidade/scripts/cert_extrai.py` verifica a assinatura da AC emissora de cada certificado (Ed521 com M = TBS fixo; **não** tente variantes) em todas as urnas; 1.942.246 de 1.942.246 em 2022 e 2026. As ACs são cópia de terceiro em `fase2/externos/certificados/`; a raiz não é pública.
+- **`assin_lista_ok` é autoconsistência** (certificado embutido no mesmo arquivo). `assin_ok_<tipo>` assina o hash da lista, não o arquivo: use sempre com `hash_ok_<tipo>` (T60b: byte alterado no BU, 40 de 40 pelo hash e 0 pela assinatura do arquivo).
+- **Verificação em três vias:** certificado (emitido antes pela AC), tabela do TSE (urna efetivada) e log (ID da urna) têm origens parcialmente distintas; diferença entre elas é achado (17 seções em 2026, 22 em 2022), lido por data, ID e seção.
+- **Log de pacote traz logs de outras urnas e seções** (contingência): conte eventos de voto por data da eleição, ID e seção declarada.
+- **T61:** boletim de terceiros pelo QR Code: `hash_final` = SHA-512 do conteúdo; mesma assinatura da urna, cadeia de obtenção diferente; amostra de conveniência não se extrapola; relógio do servidor de terceiros não é auditado.
+- **T62:** verificações de consistência não separam registros coerentes assinados pela fonte dos genuínos; mede o limite, não a possibilidade operacional.
+- A página oficial de certificados do TSE responde HTTP 403 a este ambiente: não contornar.
