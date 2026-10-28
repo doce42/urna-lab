@@ -570,7 +570,7 @@
     {
      "id": "Q25",
      "pergunta": "O padrão territorial de crescimento apresenta desvios persistentes após controles?",
-     "resposta": "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44); as outras 4 maiores cidades estão dentro do esperado.",
+     "resposta": "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44), a única entre as 27 capitais e não explicada pelo perfil do eleitorado; Fortaleza tem desvio de tamanho parecido no sentido oposto.",
      "classificacao": "Parcialmente demonstrado",
      "evidencias": [
       "fase2/resultados/P17.json",
@@ -622,6 +622,7 @@
    "pergunta": "P1 (respondida na F2)",
    "resposta": "O estimador de fluxos C06 recupera a verdade? Em parte: a ordem dos fluxos e o contraste com 2022 resistem; a magnitude '4:1' não (erro de ±0,5 a ±1,5 mi votos).",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q24"
    ],
@@ -641,6 +642,7 @@
    "pergunta": "P2 (respondida na F2)",
    "resposta": "A bateria detecta trocas de votos? Só nos cenários e tamanhos da Q7.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q7"
    ],
@@ -674,6 +676,7 @@
    "pergunta": "As inconsistências aparentes dependem do canal e da versão de publicação?",
    "resposta": "As inconsistências dependem de canal e versão? Nos canais comparados (tabela, BU, decodificação de terceiro, divulgação ao vivo) não há inconsistência de votos; versões datadas dos arquivos não existem localmente.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q1",
     "Q4",
@@ -703,6 +706,7 @@
    "pergunta": "A curva pública pode ser reconstruída pelos BUs recebidos, dentro da latência esperada?",
    "resposta": "A curva pública pode ser reconstruída pelos boletins recebidos? Sim, nos 39 instantes capturados: a recomposição pela ordem de recebimento reproduz o total divulgado (≤ 0,083 pp), sem defasagem.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q9",
     "Q11",
@@ -730,6 +734,7 @@
    "pergunta": "P5 (respondida na F2)",
    "resposta": "O modelo de urna afeta a virada? Não, dentro de ±0,02 logit (2º turno, municípios com 2 ou mais modelos).",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [],
    "estado_inventario": "respondida",
    "evidencias": [
@@ -745,6 +750,7 @@
    "pergunta": "O que boletins coletados por terceiros permitiriam validar?",
    "resposta": "Boletins de terceiros validam os arquivos? Não foi possível determinar: não há boletins de terceiros com dados primários.",
    "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
    "perguntas_relacionadas": [
     "Q6"
    ],
@@ -762,6 +768,7 @@
    "pergunta": "P7 (respondida na F2)",
    "resposta": "A urna trocada vota diferente? Não, equivalente na margem de ±0,10 z fixada antes.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [],
    "estado_inventario": "respondida",
    "evidencias": [
@@ -777,6 +784,7 @@
    "pergunta": "P8 (respondida na F2)",
    "resposta": "A virada depende da ordem de chegada? Efeito desprezível (|r| ≤ 0,05); em 2022, −0,028, diferente de zero.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [],
    "estado_inventario": "respondida",
    "evidencias": [
@@ -792,6 +800,7 @@
    "pergunta": "Os locais de votação do E02 permanecem significativos com p-valores calibrados e com dependência espacial?",
    "resposta": "Os locais atípicos do E02 resistem? Cerca de 0,1% dos locais, em três métodos; a lista depende do método; causa não demonstrada.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q25"
    ],
@@ -818,6 +827,7 @@
    "pergunta": "P10 (respondida na F2)",
    "resposta": "A rajada sem biometria do T28 resiste? 8 urnas do 1º turno de 2026 seguem sinalizadas pelo critério beta-binomial (99 votos); em 2022 o mesmo critério sinaliza 18 e 21 urnas (23 e 25 pelo T28 original).",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [],
    "estado_inventario": "respondida",
    "evidencias": [
@@ -842,6 +852,7 @@
    "pergunta": "Os certificados das urnas se ligam a uma âncora do TSE?",
    "resposta": "Os certificados se ligam a uma âncora do TSE? Não foi possível determinar: válidos até a AC emissora; raiz não obtida.",
    "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
    "perguntas_relacionadas": [
     "Q5"
    ],
@@ -860,6 +871,7 @@
    "pergunta": "P12 (respondida na F2)",
    "resposta": "Diferença do eleitorado do exterior? Explicada: 423 de seções não instaladas + 72 + 30 de seções só nos arquivos de urna.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [],
    "estado_inventario": "respondida",
    "evidencias": [
@@ -875,6 +887,7 @@
    "pergunta": "P13 (respondida na F2)",
    "resposta": "O C06b é reproduzível? Sim: 79 e 123 reproduzidos.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q24"
    ],
@@ -892,6 +905,7 @@
    "pergunta": "P14 (respondida na F2)",
    "resposta": "Qual a causa da assimetria do T02 em 2022? Não demonstrada; o desvio está no nível da zona (251, 259) e persiste na 251 depois do perfil do eleitorado.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q25"
    ],
@@ -924,6 +938,7 @@
    "pergunta": "P15 (respondida na F2)",
    "resposta": "Os limites de Fréchet estreitam a razão? Não: a razão não é identificada.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q24",
     "Q26"
@@ -942,6 +957,7 @@
    "pergunta": "P16 (respondida na F2)",
    "resposta": "200 seções conferem? Sim, 200/200 no 1º turno de 2026 (consistência interna); o 2º turno é coberto pelo T17b e pelo R1.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q1",
     "Q2"
@@ -966,6 +982,7 @@
    "pergunta": "P17 (respondida na F2)",
    "resposta": "A assimetria de cauda do T02 é real? Sim, nos dois anos.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q25"
    ],
@@ -983,6 +1000,7 @@
    "pergunta": "Com o T1 e o T3 de duas caudas, a regra do T13 enxerga os dois sentidos?",
    "resposta": "O T13 bilateral vê os dois sentidos? Sim, para troca dispersa; limites na Q7.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q7"
    ],
@@ -1018,6 +1036,7 @@
    "pergunta": "Há dependência espacial entre municípios nos resíduos do E02?",
    "resposta": "Há dependência espacial entre municípios? Sim, Moran's I 0,16 a 0,20; causa não distinguida.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q25"
    ],
@@ -1041,6 +1060,7 @@
    "pergunta": "O que explica a concentração de seções atípicas em São Paulo capital em 2022?",
    "resposta": "O que há nos locais de SP 2022? Desvio no nível da zona, que persiste na 251 após o perfil; arquivos conferem; causa não demonstrada.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q25"
    ],
@@ -1070,6 +1090,7 @@
    "pergunta": "Evidências externas e certificados por canal oficial confirmam os arquivos?",
    "resposta": "Fontes externas e cadeia autenticada confirmam os arquivos? Só no agregado nacional ao vivo (Q6); boletins de terceiros e raiz não obtidos.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
    "perguntas_relacionadas": [
     "Q5",
     "Q6"
@@ -1095,6 +1116,7 @@
    "pergunta": "Reconciliação com o DataUrnas e outros projetos externos.",
    "resposta": "A base coincide com decodificação independente? Sim, nas seções comuns (99,96% em 2022, 100% em 2026 1º turno); o 2º turno de 2026 não tem comparação de terceiro.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q1"
    ],
@@ -1134,6 +1156,7 @@
    "pergunta": "As curvas públicas da apuração (2022 e 2026) são compatíveis com processos plausíveis de recepção e publicação?",
    "resposta": "As curvas são compatíveis com processos plausíveis de chegada? Não determinado (nenhum modelo de chegada validado). A curva divulgada é reproduzível com os dados por seção.",
    "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
    "perguntas_relacionadas": [
     "Q10",
     "Q11",
@@ -1167,6 +1190,7 @@
    "pergunta": "Quando e em que contexto ocorreram as viradas de liderança durante a apuração, em 2022 e 2026?",
    "resposta": "Quando ocorreram as viradas? Ver Q8 e Q9.",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q8",
     "Q9"
@@ -1185,6 +1209,7 @@
    "pergunta": "As curvas têm periodicidade, vales ou trechos lineares anômalos?",
    "resposta": "Há periodicidade ou trechos lineares anômalos? Não determinado.",
    "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
    "perguntas_relacionadas": [
     "Q11",
     "Q12"
@@ -1204,6 +1229,7 @@
    "pergunta": "As curvas de 2022 e 2026 têm as mesmas características?",
    "resposta": "2022 e 2026 têm as mesmas características? Diferem na descrição; semelhança estatística não determinada.",
    "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
    "perguntas_relacionadas": [
     "Q13"
    ],
@@ -1221,6 +1247,7 @@
    "pergunta": "O crescimento de votos entre turnos é reconciliável?",
    "resposta": "O crescimento entre turnos é reconciliável? Sim, contabilmente (identidade exata); fluxos individuais não identificáveis.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q21",
     "Q22",
@@ -1245,6 +1272,7 @@
    "pergunta": "Seções com zero votos para um finalista (Flávio em 2026; Bolsonaro em 2022) indicam anomalia?",
    "resposta": "Os zeros indicam anomalia? Sem divergência documental; excepcionalidade estatística não determinada pelo critério; sem excesso agregado descritivamente.",
    "classificacao": "Não determinado com as evidências disponíveis",
+   "fechamento": "Encerrada: não determinável com estes dados ou métodos",
    "perguntas_relacionadas": [
     "Q15",
     "Q16",
@@ -1284,6 +1312,7 @@
    "pergunta": "Os métodos usados nas perguntas ativas resistem à revisão?",
    "resposta": "Os métodos resistem à revisão? Com limites registrados: T10/T11 descritivos; T02 cego a município inteiro; E02 dependente do método; zeros sem modelo validado; concordância entre registros é consistência interna.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q7"
    ],
@@ -1320,6 +1349,7 @@
    "pergunta": "Os arquivos publicados (BU, RDV, log, imagem) são íntegros e autênticos, e até onde vai essa verificação?",
    "resposta": "Os arquivos são autênticos? Íntegros e assinados até a AC emissora; consistentes entre si; a autenticidade integral do processo não é verificável com dados públicos.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Encerrada: demonstrada em parte, limite registrado",
    "perguntas_relacionadas": [
     "Q1",
     "Q2",
@@ -1356,6 +1386,7 @@
    "pergunta": "Os 173 arquivos assinados pela urna que o DataUrnas-BR aponta como ausentes do pacote de dados abertos de 2022 (64 seções, a maioria do exterior) afetam a base do projeto?",
    "resposta": "Os 173 arquivos estão ausentes da publicação? Sim, do pacote de dados abertos (duas cópias); conteúdo não verificado; outro canal do TSE inacessível.",
    "classificacao": "Parcialmente demonstrado",
+   "fechamento": "Bloqueada por fonte externa (tentativas registradas)",
    "perguntas_relacionadas": [
     "Q4"
    ],
@@ -1381,6 +1412,7 @@
    "pergunta": "A seção MG 49050/196/173 (2022, 1º turno), cujo BU não foi lido pelo leitor do projeto, concorda com a tabela publicada?",
    "resposta": "A seção com BU não lido concorda? Sim (boletim do Sistema de Apuração, assinatura válida; consistência interna).",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q20"
    ],
@@ -1405,6 +1437,7 @@
    "pergunta": "As 159 seções-turno de 2022 apuradas pelo Sistema de Apuração (arquivos .busa, .imgbusa, .logsajez, .vscsa) foram verificadas pelos arquivos de urna do projeto?",
    "resposta": "As 159 seções do Sistema de Apuração de 2022 conferem? Sim, 159/159 (consistência interna).",
    "classificacao": "Demonstrado no escopo definido",
+   "fechamento": "Encerrada: respondida no escopo",
    "perguntas_relacionadas": [
     "Q1"
    ],
@@ -1427,7 +1460,7 @@
   }
  ],
  "achados_sem_causa": [
-  "Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as zonas da cidade (T44); sem 2º turno estadual na Bahia.",
+  "Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as zonas, única entre as 27 capitais, não explicada pelo perfil do eleitorado (T44, final_salvador.json); sem 2º turno estadual na Bahia; Fortaleza com desvio parecido no sentido oposto.",
   "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
   "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
   "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).",

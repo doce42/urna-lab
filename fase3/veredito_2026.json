@@ -60,7 +60,7 @@
   },
   "T02": {
    "nivel": "S3",
-   "motivo": "Excesso de seções com virada pró-Lula muito acima do esperado (~740 votos em 2026; também em 2022, ~2.600). Real, sem causa."
+   "motivo": "Excesso de seções com virada pró-Lula muito acima do esperado: em 2026, 33 seções em 33 locais diferentes, com comparecimento caindo (−3,0 pp; contrário de enchimento), ~773 votos; em 2022, 90 seções, ~2.600 votos. Real, sem causa."
   },
   "T03": {
    "nivel": "S0",
@@ -168,7 +168,7 @@
   },
   "T28": {
    "nivel": "S3",
-   "motivo": "8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); o mesmo método marca urnas em 2022."
+   "motivo": "8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); em 6 delas Lula tem proporção abaixo do município; o mesmo método marca 18 urnas em 2022."
   },
   "T29": {
    "nivel": "S1",
@@ -188,7 +188,7 @@
   },
   "T33": {
    "nivel": "S2",
-   "motivo": "Verificações de assinatura do software sem sucesso registradas no log em 128 urnas (1º turno) e 162 (2º); explicação só pelo próprio log."
+   "motivo": "Linhas 'Verificação de assinatura … [ERRO]' no log de 128 e 162 urnas, quase todas fora do dia da eleição; as 19 e 8 do dia da eleição (inclusive em arquivos de sistema) são seguidas de verificação com sucesso do mesmo arquivo; urnas sem deslocamento de votos. Compatível com nova tentativa registrada, não verificado de forma independente."
   },
   "T34": {
    "nivel": "S2",
@@ -276,7 +276,7 @@
   },
   "T44": {
    "nivel": "S3",
-   "motivo": "Salvador: virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as 19 zonas; as outras 4 grandes cidades dentro do esperado."
+   "motivo": "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."
   }
  },
  "hipoteses": [
@@ -346,7 +346,7 @@
     "T44",
     "A2"
    ],
-   "resultado": "São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, sem causa demonstrada.",
+   "resultado": "São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos.",
    "status": "Sinal encontrado, sem causa",
    "em_votos": "Salvador: ~30 mil votos (0,7% da margem)."
   },
@@ -362,7 +362,7 @@
     "T28",
     "T31"
    ],
-   "resultado": "Sem assinatura de enchimento; 8 urnas com rajada sem biometria (99 votos), padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido.",
+   "resultado": "Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido.",
    "status": "Sinal encontrado, sem causa",
    "em_votos": "~100 votos com sinal."
   },
@@ -416,7 +416,7 @@
     "T33",
     "auditoria adversarial"
    ],
-   "resultado": "Assinaturas válidas até a AC emissora, sem âncora do TSE verificada; 128 e 162 urnas com verificação de assinatura do software sem sucesso no log (explicação só do sistema).",
+   "resultado": "Assinaturas válidas até a AC emissora, sem âncora do TSE verificada (busca externa sem resultado); erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos.",
    "status": "Ponto cego dos dados públicos",
    "em_votos": "Até o total; sem rastro nos dados públicos."
   }
@@ -441,8 +441,8 @@
     "teste": "T44"
    },
    {
-    "o_que": "Excesso de seções com virada pró-Lula muito fora do padrão",
-    "votos": "~740",
+    "o_que": "33 seções com virada pró-Lula muito fora do padrão, em locais diferentes e com comparecimento em queda",
+    "votos": "~773",
     "sinal": "S3",
     "teste": "T02"
    },
@@ -465,8 +465,8 @@
     "teste": "T31"
    },
    {
-    "o_que": "Verificações de assinatura do software sem sucesso no log",
-    "votos": "não se traduz",
+    "o_que": "Erros de verificação de assinatura do software no log, seguidos de sucesso",
+    "votos": "não se traduz (sem efeito nos votos)",
     "sinal": "S2",
     "teste": "T33"
    },

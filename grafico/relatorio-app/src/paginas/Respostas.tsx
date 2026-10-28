@@ -9,7 +9,7 @@ import { useDados } from '@/lib/dados';
 type Pergunta = { id: string; pergunta: string; resposta: string; classificacao: string; evidencias: string[]; numeros: string; demonstra: string; nao_demonstra: string;
   robustez: string; causa: string; alcance: string; mudaria: string; validacao: string; por_ano: Record<string, string>; reabertura: string; em_votos: string };
 type Item = { id: string; pergunta: string; resposta: string; classificacao: string; perguntas_relacionadas: string[]; evidencias: string[]; limitacao: string;
-  historico: { etapa: string; estado: string; resposta: string }[]; detalhe: string; em_votos: string };
+  historico: { etapa: string; estado: string; resposta: string }[]; detalhe: string; em_votos: string; fechamento?: string };
 type Dados = { gerado: string; situacao: string; aviso: string; margem: string; capitulos: { id: string; titulo: string; perguntas: Pergunta[] }[]; inventario: Item[]; achados_sem_causa: string[]; limites: string[] };
 
 const COR = (c: string) => c.startsWith('Demonstrado') ? 'var(--ok)' : c.startsWith('Refutado') ? 'var(--accent)' : c.startsWith('Parcialmente') ? 'var(--warn)' : c.startsWith('Não executado') ? 'var(--erro)' : 'var(--text-subtle)';
@@ -133,6 +133,7 @@ export function Respostas({ reg }: { reg?: Registro }) {
             <div className="flex flex-wrap items-start gap-x-3 gap-y-2"><span className="font-mono text-sm font-semibold w-12 shrink-0 pt-0.5">{i.id}</span><span className="text-[15px] text-text font-medium leading-snug flex-1 min-w-[14rem]">{i.pergunta}</span><Selo c={i.classificacao} /></div>
             <p className="mt-1.5 text-[14.5px] text-muted leading-relaxed">{i.resposta}</p>
             <EmVotos t={i.em_votos} />
+            {i.fechamento && <div className="mt-1.5 text-[13px] text-subtle"><b className="font-medium text-muted">Fechamento: </b>{i.fechamento}</div>}
             {i.perguntas_relacionadas.length > 0 && <div className="mt-1 text-[13px] text-subtle">Ver {i.perguntas_relacionadas.map((q, k) => <span key={q}>{k ? ', ' : ''}<a href={`#${q}`} onClick={(e) => { e.preventDefault(); document.getElementById(q)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-accent-text underline underline-offset-2">{q}</a></span>)}</div>}
             <details className="mt-1.5 group/q">
               <summary className="cursor-pointer list-none text-[12.5px] text-subtle hover:text-text"><span className="group-open/q:hidden">detalhe, evidências e histórico</span><span className="hidden group-open/q:inline">recolher</span></summary>

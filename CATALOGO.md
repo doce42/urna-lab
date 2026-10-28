@@ -276,3 +276,9 @@ Preservado como foi escrito. Desatualizado depois das 19h20: assinatura, RDV e l
   - **Escala de sinal:** sem sinal, explicado, compatível só com o registro, anomalia sem causa, divergência, indício, ponto cego. Fica separada de "concluído".
   - **Teste novo T44** (grandes cidades, `PREREG_GRANDES_CIDADES.md`): falso alarme 1,5%; troca de 2% no município inteiro detectável; Salvador desviante, ~30 mil votos, em todas as 19 zonas, sem 2º turno estadual.
   - **No site:** resposta central na Home, selo de sinal nos testes e busca por pergunta na página Respostas.
+- **Investigações finais da F3** (`fase3/PREREG_FINAL.md`):
+  - **Z1, Salvador:** única capital desviante (z 6,1) e não explicada pelo perfil; Fortaleza desvia do mesmo tamanho no sentido oposto.
+  - **Z2, T33:** os erros de assinatura do software no log são quase todos fora do dia; os do dia são seguidos de sucesso; sem efeito nos votos.
+  - **Z3, anomalias pequenas:** as 8 urnas do T28 têm Lula abaixo do município em 6; as 33 seções extremas do T02 estão espalhadas e com comparecimento em queda.
+  - **Z4, fontes externas:** sem dado primário.
+  - **Fechamento:** cada item com resposta final.

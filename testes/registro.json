@@ -193,6 +193,14 @@
      "alvo": "metodo",
      "descricao": "Com a mediana municipal como referência, o T02 não detecta troca de 10% dos válidos aplicada a municípios ou regiões inteiros (0 de 30 no lado afetado, 2026): a mediana absorve o deslocamento. O alcance do T02 vale para trocas dentro do município.",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Z3: as seções extremas de 2026",
+     "alvo": "evidencia",
+     "descricao": "As 33 seções pró-Lula com |z| > 5 estão em 33 locais diferentes, outras seções do mesmo local com z médio +0,96, comparecimento caindo 3,0 pp (geral +1,7): contrário da assinatura de enchimento; ~773 votos. As 13 pró-adversário concentram-se em 7 locais (−415 votos para Lula).",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -1918,6 +1926,14 @@
      "alvo": "rastreabilidade",
      "descricao": "As verificações por arquivo de 2022 não incluíam 159 seções-turno do Sistema de Apuração (o leitor de 2022 não reconhecia .busa/.vscsa). Lidas à parte: 159 de 159 com assinatura válida (156 ECDSA P-521, AC URNA; 3 Ed521, AC UE2020) e boletim igual à tabela. Ainda em 2022: 173 arquivos assinados (RDV, log, imagem; 64 seções) ausentes do pacote de dados abertos, e 485 arquivos auxiliares listados e ausentes nas seções do Sistema de Apuração. Conferência interna (mesma origem).",
      "resultado": "ajustado"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Z4: âncora dos certificados",
+     "alvo": "rastreabilidade",
+     "descricao": "Busca por certificados AC URNA v2 / AC RAIZ UE em páginas oficiais: nada encontrado (fase3/final_externo.md). Elo até a raiz do TSE continua bloqueado por fonte externa.",
+     "resultado": "em_andamento"
     }
    ],
    "versoes": [
@@ -3295,6 +3311,14 @@
      "alvo": "rastreabilidade",
      "descricao": "A regra reproduz exatamente 23 e 25 urnas sinalizadas em 2022; nenhuma é do Sistema de Apuração. Denominador efetivo: 471.851 e 471.979 urnas com votos nos últimos 30 min. O total declarado 'urnas' (472.024 e 472.027) inclui 109 e 39 seções do Sistema de Apuração sem sequência de log.",
      "resultado": "resistiu"
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Z3: as 8 urnas da rajada",
+     "alvo": "evidencia",
+     "descricao": "As 8 urnas sinalizadas em 2026 (99 votos nos últimos 30 min): em 6, a proporção de Lula está abaixo da do município; em 2022, 18 urnas pelo mesmo critério. Não indica direção a favor de um candidato.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -3811,6 +3835,14 @@
      "alvo": "interpretacao",
      "resultado": "ajustado",
      "descricao": "'O software foi o mesmo' trocado por 'mesma versão declarada no log'."
+    },
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Z2: o que são os erros de assinatura do software",
+     "alvo": "evidencia",
+     "descricao": "As linhas 'Verificação de assinatura … [ERRO]' são quase todas fora do dia da eleição (127 de 146 e 173 de 181); as 19 e 8 do dia da eleição, inclusive em arquivos de sistema (avboot, avlib, avusrbin), são todas seguidas de verificação com sucesso do mesmo arquivo no mesmo dia. Sem deslocamento de votos nessas urnas (+0,07 e +0,10 z; p 0,42 e 0,24). Compatível com nova tentativa registrada; não verificado de forma independente.",
+     "resultado": "resistiu"
     }
    ],
    "versoes": [
@@ -5836,7 +5868,16 @@
    "referencia": "",
    "pressupostos": "",
    "anotacoes": [],
-   "provas": [],
+   "provas": [
+    {
+     "data": "2026-10-28",
+     "rodada": 5,
+     "tipo": "Z1: Salvador entre as capitais e com perfil",
+     "alvo": "evidencia",
+     "descricao": "Única capital desviante entre as 27 no modelo municipal (z 6,1). Por seção, o perfil do eleitorado (escolaridade, idade, sexo) não explica o excesso (0,077 → 0,121 logit). Validação: Fortaleza tem desvio de tamanho parecido no sentido oposto (−0,105), então o teste por seção não isola Salvador. Causa não demonstrada.",
+     "resultado": "resistiu"
+    }
+   ],
    "versoes": [],
    "metodo_versao": 1,
    "pre_especificacao": "fase3/PREREG_GRANDES_CIDADES.md",

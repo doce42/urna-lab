@@ -347,7 +347,7 @@
 - **Evidências:** `fase2/resultados/P13.json`, `fase2/resultados/P15.json`, `fase2/sessao_limitada_2026-10-28/p1_resultado_principal.json`
 
 ### Q25. O padrão territorial de crescimento apresenta desvios persistentes após controles?
-**Resposta:** Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44); as outras 4 maiores cidades estão dentro do esperado.
+**Resposta:** Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44), a única entre as 27 capitais e não explicada pelo perfil do eleitorado; Fortaleza tem desvio de tamanho parecido no sentido oposto.
 **Classificação:** Parcialmente demonstrado
 **Em votos:** Salvador 2026: ~30 mil votos de Lula acima do previsto (0,7% da margem de 2026). Zona 251 (SP, 2022): ~4,2 mil votos de Lula acima da virada mediana da capital (0,2% da margem de 2022); zona 259: ~6,2 mil. Cauda pró-Lula do T02: ~740 votos (2026) e ~2.600 (2022). Cada local atípico: dezenas a poucas centenas de votos.
 - **Números:** Zona 251: desvio de 0,58 z cai para 0,42 (IC 95% 0,23 a 0,62; 26% explicado) com escolaridade, idade, sexo e estado civil; sensibilidade 0,37 (36%). Zona 259: explicado em parte. Moran's I 0,16 a 0,20. Locais: 61 (2026) e 84 (2022) contra o entorno.
@@ -412,7 +412,7 @@
 
 ## Achados que persistem sem causa demonstrada
 
-- Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as zonas da cidade (T44); sem 2º turno estadual na Bahia.
+- Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as zonas, única entre as 27 capitais, não explicada pelo perfil do eleitorado (T44, final_salvador.json); sem 2º turno estadual na Bahia; Fortaleza com desvio parecido no sentido oposto.
 - Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.
 - RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.
 - 2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).

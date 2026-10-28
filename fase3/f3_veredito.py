@@ -17,7 +17,7 @@ NIVEIS = [
 ]
 S = lambda n, m: {"nivel": n, "motivo": m}
 SINAL = {
- "T01": S("S0", "Tabelas do TSE iguais voto a voto (consistência interna)."), "T02": S("S3", "Excesso de seções com virada pró-Lula muito acima do esperado (~740 votos em 2026; também em 2022, ~2.600). Real, sem causa."),
+ "T01": S("S0", "Tabelas do TSE iguais voto a voto (consistência interna)."), "T02": S("S3", "Excesso de seções com virada pró-Lula muito acima do esperado: em 2026, 33 seções em 33 locais diferentes, com comparecimento caindo (−3,0 pp; contrário de enchimento), ~773 votos; em 2022, 90 seções, ~2.600 votos. Real, sem causa."),
  "T03": S("S0", "Efeito desprezível da hora de chegada."), "T04": S("S0", "Urna trocada vota igual (equivalência)."), "T05": S("S0", "Dígitos uniformes."), "T07": S("S0", "Sem assinatura de enchimento."),
  "T08": S("S0", "Nenhum boletim antes do fim da votação."), "T09": S("S1", "Prorrogação em 6.748 seções; virada igual com e sem."), "T10": S("PC", "Curva sem modelo de chegada validado; não decide."),
  "T11": S("PC", "Idem."), "T12": S("S1", "Associação some ao controlar idade."), "T13": S("M", "Poder dos testes (simulação)."), "T13b": S("M", "Poder dos testes de log."),
@@ -26,10 +26,10 @@ SINAL = {
  "T16": S("S0", "Assinaturas válidas até a AC emissora; a raiz do TSE é ponto cego."), "T16c": S("M", "Teste da implementação criptográfica."), "T17": S("S0", "RDV = boletim (consistência interna)."),
  "T17b": S("S0", "bu.dat = RDV = tabela em todas as urnas (consistência interna)."), "T19": S("M", "Bateria em 2022."), "T20": S("S0", "Modelo de urna sem efeito."), "T21": S("S0", "Sem excesso de percentuais inteiros."),
  "T22": S("S0", "Sem assinatura de fraude incremental."), "T23": S("M", "Classificador; poder medido."), "T24": S("S2", "Urnas substituídas no meio do dia, conforme o log."), "T25": S("S0", "Impressão digital como 2022."),
- "T26": S("M", "Método excluído (inadequado)."), "T27": S("S0", "Dígitos de comparecimento uniformes."), "T28": S("S3", "8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); o mesmo método marca urnas em 2022."),
+ "T26": S("M", "Método excluído (inadequado)."), "T27": S("S0", "Dígitos de comparecimento uniformes."), "T28": S("S3", "8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); em 6 delas Lula tem proporção abaixo do município; o mesmo método marca 18 urnas em 2022."),
  "T29": S("S1", "Muitos votos rápidos no 2º turno: há só um cargo; mesma diferença em 2022."), "T30": S("S2", "1 urna por turno com voto antes da abertura registrada, com troca de urna no log."),
  "T31": S("S4", "2 votos sem habilitação em 1 urna (RJ 60011/8/61, log corrompido pela urna)."), "T32": S("S0", "Soma das urnas = total oficial (638/638)."),
- "T33": S("S2", "Verificações de assinatura do software sem sucesso registradas no log em 128 urnas (1º turno) e 162 (2º); explicação só pelo próprio log."),
+ "T33": S("S2", "Linhas 'Verificação de assinatura … [ERRO]' no log de 128 e 162 urnas, quase todas fora do dia da eleição; as 19 e 8 do dia da eleição (inclusive em arquivos de sistema) são seguidas de verificação com sucesso do mesmo arquivo; urnas sem deslocamento de votos. Compatível com nova tentativa registrada, não verificado de forma independente."),
  "T34": S("S2", "Urna usada ≠ preparada em 3.060 seções, declaradas pelo TSE como contingência."), "T35": S("S4", "3 máquinas de geração de mídia sem log publicado (2026)."),
  "C01": S("M", "Descritivo."), "C02": S("M", "Descritivo."), "C03": S("M", "Descritivo."), "C06": S("M", "Estimativa de fluxos; frágil na magnitude."), "C06b": S("M", "Limites matemáticos."),
  "C07": S("M", "Descritivo."), "C08": S("M", "Descritivo."), "E01": S("S0", "Agrupamento local, como em 2022."), "E02": S("S3", "Cerca de 0,1% dos locais de votação atípicos; lista depende do método; dezenas a centenas de votos cada."),
@@ -37,7 +37,7 @@ SINAL = {
  "T37": S("M", "Teste do estimador."), "T38": S("S0", "Sem assinatura de enchimento nas seções pró-Lula atípicas."), "T39": S("S0", "20 seções sem divergência (amostra)."),
  "T40": S("PC", "Curvas: nenhum modelo de chegada validado."), "T41": S("PC", "Zeros: sem modelo calibrado; sem excesso agregado na descrição."), "T42": S("M", "Dependência espacial (estrutura, não sinal)."),
  "T43": S("S0", "Decodificação independente igual (implementação de terceiro)."),
- "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as 19 zonas; as outras 4 grandes cidades dentro do esperado."),
+ "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."),
 }
 H = lambda id, mec, deixaria, escala, testes, resultado, status, votos: {"id": id, "mecanismo": mec, "o_que_deixaria": deixaria, "escala_necessaria": escala, "testes": testes, "resultado": resultado, "status": status, "em_votos": votos}
 CONTR, SEMS, SINALC, CEGO = "Contrariada pela evidência", "Sem sinal no alcance testado", "Sinal encontrado, sem causa", "Ponto cego dos dados públicos"
@@ -52,9 +52,9 @@ HIP = [
  H("H4", "Trocar votos concentrados em locais de votação ou municípios pequenos", "Locais ou municípios com virada muito fora do entorno (E02, I3)", "Nos cenários simulados, ~62 mil já são vistos",
    ["E02", "I3", "A2", "T38"], "Cerca de 0,1% dos locais são atípicos, com dezenas a poucas centenas de votos cada; sem assinatura de enchimento.", SINALC, "Dezenas a centenas de votos por local."),
  H("H5", "Trocar votos na cidade inteira de uma grande cidade", "Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44)", "Troca de 2% dos válidos já seria vista nas 5 maiores cidades (31 mil a 139 mil votos)",
-   ["T44", "A2"], "São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, sem causa demonstrada.", SINALC, "Salvador: ~30 mil votos (0,7% da margem)."),
+   ["T44", "A2"], "São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos.", SINALC, "Salvador: ~30 mil votos (0,7% da margem)."),
  H("H6", "Encher urnas (votos de eleitores que não votaram)", "Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria", "Proporcional ao enchimento",
-   ["T38", "T07", "T14", "T28", "T31"], "Sem assinatura de enchimento; 8 urnas com rajada sem biometria (99 votos), padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido.", SINALC, "~100 votos com sinal."),
+   ["T38", "T07", "T14", "T28", "T31"], "Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido.", SINALC, "~100 votos com sinal."),
  H("H7", "Apagar votos do adversário em seções inteiras (zeros)", "Mais seções com zero votos do que o perfil local prevê", "Dezenas a milhares de votos", ["T41", "R3", "E3"],
    "79 e 106 seções com zero para Flávio, exatamente o previsto fora da amostra (79,1 e 101,5); registros conferem.", SEMS, "No máximo ~4.800 votos se fosse anomalia (0,11% da margem)."),
  H("H8", "Manipular a ordem ou o ritmo da divulgação (virada 'fabricada')", "Sequência divulgada diferente da base; curva impossível de reproduzir", "Não muda votos", ["R2", "T40", "F4"],
@@ -62,7 +62,7 @@ HIP = [
  H("H9", "Deslocar um pouco de votos em quase todas as urnas (uniforme)", "Nada estatístico: um deslocamento pequeno e uniforme é indistinguível de uma mudança real de opinião",
    "~4 a 5 votos por urna bastariam para inverter", ["T13"], "Não testável com dados agregados. Só boletins impressos coletados por fiscais (amostra) ou auditoria independente da urna examinam isto.", CEGO, "Até ~2,2 mi votos sem rastro estatístico."),
  H("H10", "Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes)", "Nada nos arquivos: tudo concorda entre si", "Qualquer escala",
-   ["T16", "T33", "auditoria adversarial"], "Assinaturas válidas até a AC emissora, sem âncora do TSE verificada; 128 e 162 urnas com verificação de assinatura do software sem sucesso no log (explicação só do sistema).", CEGO, "Até o total; sem rastro nos dados públicos."),
+   ["T16", "T33", "auditoria adversarial"], "Assinaturas válidas até a AC emissora, sem âncora do TSE verificada (busca externa sem resultado); erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos.", CEGO, "Até o total; sem rastro nos dados públicos."),
 ]
 RESPOSTA = {
  "pergunta": "A apuração presidencial de 2026 tem sinais de fraude capaz de mudar o resultado?",
@@ -78,11 +78,11 @@ RESPOSTA = {
  "o_que_seria_preciso": "Para fechar H9 e H10: comparar com boletins impressos afixados nas seções (coletados por fiscais ou terceiros) em amostra aleatória, auditoria independente do software e da urna, e a cadeia de certificados até a raiz do TSE.",
  "anomalias_2026": [
    {"o_que": "Salvador: virada de Lula acima do previsto", "votos": "~30 mil", "sinal": "S3", "teste": "T44"},
-   {"o_que": "Excesso de seções com virada pró-Lula muito fora do padrão", "votos": "~740", "sinal": "S3", "teste": "T02"},
+   {"o_que": "33 seções com virada pró-Lula muito fora do padrão, em locais diferentes e com comparecimento em queda", "votos": "~773", "sinal": "S3", "teste": "T02"},
    {"o_que": "8 urnas com rajada sem biometria no fim do dia", "votos": "99", "sinal": "S3", "teste": "T28"},
    {"o_que": "Log com contagem diferente do comparecimento", "votos": "113", "sinal": "S4", "teste": "T14"},
    {"o_que": "2 votos sem habilitação em urna com log corrompido", "votos": "2", "sinal": "S4", "teste": "T31"},
-   {"o_que": "Verificações de assinatura do software sem sucesso no log", "votos": "não se traduz", "sinal": "S2", "teste": "T33"},
+   {"o_que": "Erros de verificação de assinatura do software no log, seguidos de sucesso", "votos": "não se traduz (sem efeito nos votos)", "sinal": "S2", "teste": "T33"},
    {"o_que": "Cerca de 0,1% dos locais com virada atípica", "votos": "dezenas a centenas por local", "sinal": "S3", "teste": "E02"},
  ],
 }

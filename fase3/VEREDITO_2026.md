@@ -21,23 +21,23 @@
 | H2 | Trocar votos na totalização (boletins certos, soma errada) | Soma dos boletins diferente do total oficial | Soma das urnas = total oficial em 638/638 itens; tabela = boletim em todas as seções; decodificação de terceiro igual. | **Contrariada pela evidência** | 0 voto de diferença. |
 | H3 | Trocar votos no boletim de urnas espalhadas (algumas urnas com muitos votos trocados) | Excesso de seções com virada fora do padrão do município (T02, T13) | Há excesso real de seções pró-Lula (T02), mas soma ~740 votos em 2026; uma troca do tamanho necessário para inverter seria ~18 vezes maior que o limite de detecção simulado. | **Sinal encontrado, sem causa** | ~740 votos na cauda pró-Lula (0,02% da margem). |
 | H4 | Trocar votos concentrados em locais de votação ou municípios pequenos | Locais ou municípios com virada muito fora do entorno (E02, I3) | Cerca de 0,1% dos locais são atípicos, com dezenas a poucas centenas de votos cada; sem assinatura de enchimento. | **Sinal encontrado, sem causa** | Dezenas a centenas de votos por local. |
-| H5 | Trocar votos na cidade inteira de uma grande cidade | Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44) | São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, sem causa demonstrada. | **Sinal encontrado, sem causa** | Salvador: ~30 mil votos (0,7% da margem). |
-| H6 | Encher urnas (votos de eleitores que não votaram) | Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria | Sem assinatura de enchimento; 8 urnas com rajada sem biometria (99 votos), padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido. | **Sinal encontrado, sem causa** | ~100 votos com sinal. |
+| H5 | Trocar votos na cidade inteira de uma grande cidade | Virada da cidade fora do previsto pelo histórico de 2022 e pelo perfil (T44) | São Paulo, Rio, Brasília e Fortaleza dentro do esperado; Salvador ~30 mil votos de Lula acima do previsto, em todas as zonas, a única entre as 27 capitais; o perfil do eleitorado não explica; Fortaleza mostra deslocamento de tamanho parecido no sentido oposto (Lula abaixo), então variações desse porte numa cidade inteira ocorrem nos dois sentidos. | **Sinal encontrado, sem causa** | Salvador: ~30 mil votos (0,7% da margem). |
+| H6 | Encher urnas (votos de eleitores que não votaram) | Comparecimento subindo nas seções pró-Lula; log com mais votos que habilitações; rajadas sem biometria | Sem assinatura de enchimento: nas 33 seções pró-Lula extremas o comparecimento caiu; 8 urnas com rajada sem biometria (99 votos), 6 delas com Lula abaixo do município, padrão também em 2022; 2 votos sem habilitação em 1 urna com log corrompido. | **Sinal encontrado, sem causa** | ~100 votos com sinal. |
 | H7 | Apagar votos do adversário em seções inteiras (zeros) | Mais seções com zero votos do que o perfil local prevê | 79 e 106 seções com zero para Flávio, exatamente o previsto fora da amostra (79,1 e 101,5); registros conferem. | **Sem sinal no alcance testado** | No máximo ~4.800 votos se fosse anomalia (0,11% da margem). |
 | H8 | Manipular a ordem ou o ritmo da divulgação (virada 'fabricada') | Sequência divulgada diferente da base; curva impossível de reproduzir | A sequência divulgada é reproduzida pela base nos 39 instantes capturados; a virada tardia também ocorre em 2022; o modelo de chegada não explica o momento da virada. | **Sem sinal no alcance testado** | A ordem não altera nenhum voto. |
 | H9 | Deslocar um pouco de votos em quase todas as urnas (uniforme) | Nada estatístico: um deslocamento pequeno e uniforme é indistinguível de uma mudança real de opinião | Não testável com dados agregados. Só boletins impressos coletados por fiscais (amostra) ou auditoria independente da urna examinam isto. | **Ponto cego dos dados públicos** | Até ~2,2 mi votos sem rastro estatístico. |
-| H10 | Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes) | Nada nos arquivos: tudo concorda entre si | Assinaturas válidas até a AC emissora, sem âncora do TSE verificada; 128 e 162 urnas com verificação de assinatura do software sem sucesso no log (explicação só do sistema). | **Ponto cego dos dados públicos** | Até o total; sem rastro nos dados públicos. |
+| H10 | Comprometer o software ou a urna antes de gerar os registros (BU, RDV e log já nascem alterados e coerentes) | Nada nos arquivos: tudo concorda entre si | Assinaturas válidas até a AC emissora, sem âncora do TSE verificada (busca externa sem resultado); erros de verificação de assinatura do software no log seguidos de sucesso registrado, sem efeito em votos. | **Ponto cego dos dados públicos** | Até o total; sem rastro nos dados públicos. |
 
 ## Anomalias reais em 2026
 
 | O que | Votos | Sinal | Teste |
 |---|---|---|---|
 | Salvador: virada de Lula acima do previsto | ~30 mil | S3 | T44 |
-| Excesso de seções com virada pró-Lula muito fora do padrão | ~740 | S3 | T02 |
+| 33 seções com virada pró-Lula muito fora do padrão, em locais diferentes e com comparecimento em queda | ~773 | S3 | T02 |
 | 8 urnas com rajada sem biometria no fim do dia | 99 | S3 | T28 |
 | Log com contagem diferente do comparecimento | 113 | S4 | T14 |
 | 2 votos sem habilitação em urna com log corrompido | 2 | S4 | T31 |
-| Verificações de assinatura do software sem sucesso no log | não se traduz | S2 | T33 |
+| Erros de verificação de assinatura do software no log, seguidos de sucesso | não se traduz (sem efeito nos votos) | S2 | T33 |
 | Cerca de 0,1% dos locais com virada atípica | dezenas a centenas por local | S3 | E02 |
 
 ## Escala de sinal
@@ -56,7 +56,7 @@
 | Teste | Sinal | Motivo |
 |---|---|---|
 | T01 | S0 | Tabelas do TSE iguais voto a voto (consistência interna). |
-| T02 | S3 | Excesso de seções com virada pró-Lula muito acima do esperado (~740 votos em 2026; também em 2022, ~2.600). Real, sem causa. |
+| T02 | S3 | Excesso de seções com virada pró-Lula muito acima do esperado: em 2026, 33 seções em 33 locais diferentes, com comparecimento caindo (−3,0 pp; contrário de enchimento), ~773 votos; em 2022, 90 seções, ~2.600 votos. Real, sem causa. |
 | T03 | S0 | Efeito desprezível da hora de chegada. |
 | T04 | S0 | Urna trocada vota igual (equivalência). |
 | T05 | S0 | Dígitos uniformes. |
@@ -83,12 +83,12 @@
 | T25 | S0 | Impressão digital como 2022. |
 | T26 | M | Método excluído (inadequado). |
 | T27 | S0 | Dígitos de comparecimento uniformes. |
-| T28 | S3 | 8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); o mesmo método marca urnas em 2022. |
+| T28 | S3 | 8 urnas com rajada de liberação sem biometria no fim do dia (99 votos, 2026 1º turno); em 6 delas Lula tem proporção abaixo do município; o mesmo método marca 18 urnas em 2022. |
 | T29 | S1 | Muitos votos rápidos no 2º turno: há só um cargo; mesma diferença em 2022. |
 | T30 | S2 | 1 urna por turno com voto antes da abertura registrada, com troca de urna no log. |
 | T31 | S4 | 2 votos sem habilitação em 1 urna (RJ 60011/8/61, log corrompido pela urna). |
 | T32 | S0 | Soma das urnas = total oficial (638/638). |
-| T33 | S2 | Verificações de assinatura do software sem sucesso registradas no log em 128 urnas (1º turno) e 162 (2º); explicação só pelo próprio log. |
+| T33 | S2 | Linhas 'Verificação de assinatura … [ERRO]' no log de 128 e 162 urnas, quase todas fora do dia da eleição; as 19 e 8 do dia da eleição (inclusive em arquivos de sistema) são seguidas de verificação com sucesso do mesmo arquivo; urnas sem deslocamento de votos. Compatível com nova tentativa registrada, não verificado de forma independente. |
 | T34 | S2 | Urna usada ≠ preparada em 3.060 seções, declaradas pelo TSE como contingência. |
 | T35 | S4 | 3 máquinas de geração de mídia sem log publicado (2026). |
 | C01 | M | Descritivo. |
@@ -110,4 +110,4 @@
 | T41 | PC | Zeros: sem modelo calibrado; sem excesso agregado na descrição. |
 | T42 | M | Dependência espacial (estrutura, não sinal). |
 | T43 | S0 | Decodificação independente igual (implementação de terceiro). |
-| T44 | S3 | Salvador: virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as 19 zonas; as outras 4 grandes cidades dentro do esperado. |
+| T44 | S3 | Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto. |

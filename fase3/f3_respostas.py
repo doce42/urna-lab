@@ -143,7 +143,7 @@ TUR = [
    "2026: trocas diretas entre finalistas com mínimo garantido de 79 (Flávio → Lula) e 123 (Lula → Flávio) votos e máximos de 43,5 mi e 39,4 mi; abstencionistas para Lula entre 4.116 e 32,3 mi (Fréchet). O estimador C06 dá razão ~4:1 entre abstencionistas, frágil (1,7 a 11,8 sob heterogeneidade).",
    "Os limites matemáticos.", "Qual fluxo ocorreu.", "Sensibilidade do C06 sob heterogeneidade sintética.", "não aplicável", "Seções do Brasil.", "—", "Executado (F2)."),
  q("Q25", "O padrão territorial de crescimento apresenta desvios persistentes após controles?",
-   "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44); as outras 4 maiores cidades estão dentro do esperado.",
+   "Sim, em parte: a assimetria de cauda do T02 é real nos dois anos; cerca de 0,1% dos locais são atípicos (lista depende do método); há dependência espacial entre municípios; em São Paulo 2022 a zona 251 mantém desvio depois de controlar o perfil do eleitorado; em 2026, Salvador tem virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as 19 zonas (T44), a única entre as 27 capitais e não explicada pelo perfil do eleitorado; Fortaleza tem desvio de tamanho parecido no sentido oposto.",
    PAR, ["fase2/resultados/P17.json", "fase3/resultados/rev_i3.json", "fase3/resultados/p19.json", "fase3/inv_r4_zona251.py", "fase3/resultados/r4_zona251.json", "fase3/teste_grandes_cidades.py", "fase3/resultados/teste_grandes_cidades.json"],
    "Zona 251: desvio de 0,58 z cai para 0,42 (IC 95% 0,23 a 0,62; 26% explicado) com escolaridade, idade, sexo e estado civil; sensibilidade 0,37 (36%). Zona 259: explicado em parte. Moran's I 0,16 a 0,20. Locais: 61 (2026) e 84 (2022) contra o entorno.",
    "Que há desvios territoriais persistentes, inclusive na zona 251 depois do perfil.", "A causa; que sejam irregularidades.", "R² do perfil 0,02; sensibilidade com todas as zonas.", "não demonstrada",
@@ -234,7 +234,11 @@ inv = {i["id"]: i for i in json.load(open(R + "/fase3/inventario.json"))["itens"
 itens = []
 for k, (resp, classe, qs) in INV.items():
     i = inv.get(k, {})
-    itens.append({"id": k, "pergunta": i.get("pergunta", ""), "resposta": resp, "classificacao": classe, "perguntas_relacionadas": qs, "estado_inventario": i.get("estado_final"),
+    BLOQ = {"P6", "P11", "P21", "A173"}
+    fech = ("Bloqueada por fonte externa (tentativas registradas)" if k in BLOQ and not classe.startswith(("Demonstrado", "Refutado")) else
+            "Encerrada: respondida no escopo" if classe.startswith(("Demonstrado", "Refutado")) else
+            "Encerrada: demonstrada em parte, limite registrado" if classe.startswith("Parcialmente") else "Encerrada: não determinável com estes dados ou métodos")
+    itens.append({"id": k, "pergunta": i.get("pergunta", ""), "resposta": resp, "classificacao": classe, "fechamento": fech, "perguntas_relacionadas": qs, "estado_inventario": i.get("estado_final"),
                   "evidencias": i.get("evidencia_arquivos", []), "limitacao": i.get("proxima_evidencia", ""), "em_votos": EMV_INV[k], "historico": i.get("historico", []), "detalhe": i.get("resposta_ou_motivo", "")})
 assert len(itens) == 33, len(itens)
 OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; respostas não congeladas",
@@ -245,7 +249,7 @@ OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; respostas não conge
                      {"id": "zeros", "titulo": "Zeros de votos", "perguntas": ZER},
                      {"id": "turnos", "titulo": "Mudança entre o primeiro e o segundo turno", "perguntas": TUR}],
        "inventario": itens,
-       "achados_sem_causa": ["Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico e pelo perfil, em todas as zonas da cidade (T44); sem 2º turno estadual na Bahia.", "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
+       "achados_sem_causa": ["Salvador (2026): virada de Lula ~30 mil votos acima do previsto pelo histórico, em todas as zonas, única entre as 27 capitais, não explicada pelo perfil do eleitorado (T44, final_salvador.json); sem 2º turno estadual na Bahia; Fortaleza com desvio parecido no sentido oposto.", "Assimetria de cauda do T02 (pró-Lula) real nos dois anos; em SP 2022, desvio da zona 251 que persiste após o perfil do eleitorado.",
                              "RS 88013/2/199 (2022): imagem do boletim (196 votos) diferente do boletim digital e da tabela (288); log publicado só cobre 196 votos.",
                              "2022: 153 seções-turno com log diferente do comparecimento (5.287 votos sem registro no log publicado; 2.503 votos a mais no log em 47 seções), recontagem confirmada (fila F1).",
                              "173 arquivos assinados e 485 auxiliares fora do pacote de dados abertos de 2022.",

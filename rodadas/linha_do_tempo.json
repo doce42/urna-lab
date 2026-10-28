@@ -126,13 +126,18 @@
    "titulo": "Pendências, curvas e zeros",
    "status": "em_revisao",
    "inicio": "2026-10-28",
-   "resumo": "A F3 foi encerrada e congelada (V1.2, rodada 4) antes de uma auditoria científica. A auditoria de 28/10/2026 encontrou classificações acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19) e falhas de registro; com aprovação do responsável a fase voltou a 'em revisão'. A V1.2 e a tag v1.2 ficam como registro do que foi publicado. A revisão executou três investigações (poder contra trocas concentradas, zeros com modelo calibrado, locais com nulo espacial). Não há nova conclusão definitiva: o encerramento depende de aprovação.",
+   "resumo": "A F3 foi congelada cedo demais (V1.2) e reaberta para revisão. Na revisão: auditoria, investigações de integridade, curva divulgada, zeros, zona 251, auditoria adversarial, veredito de 2026 com 10 hipóteses de fraude, teste das grandes cidades e investigações finais. Todas as 33 perguntas e as 26 da missão têm resposta final (respondida, em parte com limite, não determinável ou bloqueada por fonte externa). Aguarda aprovação do responsável para congelar.",
    "etapas": [],
    "historico": [
     {
      "etapa": "V1.2 (rodada 4)",
      "status": "concluida",
      "resumo": "Fase 3 concluída em 28/10/2026 com aprovação do responsável, em duas sessões. 27 itens inventariados: 0 diferenças contra a decodificação independente do DataUrnas-BR (R1-20); curvas de apuração sem nulo que discrimine (inclusive 2022); zeros de votos sem evidência de excesso; regra do T13 simétrica; dependência espacial medida. P4, P6, P11 e P21 ficam bloqueadas por fonte externa (certificados AC URNA v2 e AC RAIZ UE, snapshots históricos, boletins de terceiros). Congelada na rodada 4 (V1.2)."
+    },
+    {
+     "etapa": "revisão (antes do fechamento)",
+     "status": "em_revisao",
+     "resumo": "A F3 foi encerrada e congelada (V1.2, rodada 4) antes de uma auditoria científica. A auditoria de 28/10/2026 encontrou classificações acima da evidência (P9, P14, P18, R1-20, C1, Z1, P19) e falhas de registro; com aprovação do responsável a fase voltou a 'em revisão'. A V1.2 e a tag v1.2 ficam como registro do que foi publicado. A revisão executou três investigações (poder contra trocas concentradas, zeros com modelo calibrado, locais com nulo espacial). Não há nova conclusão definitiva: o encerramento depende de aprovação."
     }
    ]
   }
@@ -305,6 +310,12 @@
    "hora": "",
    "titulo": "Verificações finais da F3 (A1, A2, A4)",
    "texto": "Seções de 2022 sem par explicadas e conferidas; poder recontado no sentido correto: grandes municípios inteiros fora do alcance da bateria; denominador do T28 de 2022 corrigido. F3 segue em revisão."
+  },
+  {
+   "data": "2026-10-28",
+   "hora": "",
+   "titulo": "F3: todas as perguntas com resposta final",
+   "texto": "Salvador única capital desviante, não explicada pelo perfil; erros de assinatura do software no log seguidos de sucesso; anomalias pequenas descritas; fontes externas bloqueadas. Aguarda aprovação para congelar."
   }
  ],
  "etapas_do_caminho": [
