@@ -18,3 +18,8 @@ grafico/web/relatorio.pdf
 
 # termos pessoais bloqueados na publicação
 scripts/.privado.txt
+
+# resultados gigantes (regerados por analise/relatorio_dados.py) e backups locais
+grafico/web/relatorio_dados.json
+analise/historico_v1_log_duplicado/
+grafico/web/relatorio_v1_backup.html

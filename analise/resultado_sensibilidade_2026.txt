@@ -1,0 +1,13 @@
+ minimo_validos nivel escala  secoes  acima_5_lula  acima_5_adversario  T03_spearman
+             20   mun    mad  499127            33                  13      0.004314
+             20   mun     dp  499127            26                  12      0.004314
+             20  zona    mad  499127            33                  23      0.001544
+             20  zona     dp  499127            28                  19      0.001544
+             50   mun    mad  498416            33                  13      0.004484
+             50   mun     dp  498416            27                  12      0.004484
+             50  zona    mad  498416            33                  23      0.001783
+             50  zona     dp  498416            28                  19      0.001783
+            100   mun    mad  493277            30                  13      0.004704
+            100   mun     dp  493277            23                  12      0.004704
+            100  zona    mad  493277            29                  23      0.001889
+            100  zona     dp  493277            24                  20      0.001889

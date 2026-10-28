@@ -2,285 +2,596 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Análise da Apuração 2026: relatório por teste</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>urna lab: relatório por teste, Presidente 2026</title>
+<meta name="description" content="Estudo independente da apuração presidencial de 2026 (1º e 2º turno), com 2022 como referência, usando só dados oficiais do TSE. Relatório por teste: pergunta, hipótese nula, resultado, limitações e classe de evidência.">
+<meta name="color-scheme" content="light dark">
 <style>
+  /* ---------- tokens ---------- */
   :root {
-    --bg: #0d1117; --surface: #161b22; --surface2: #1c2229; --borda: #30363d; --texto: #e6edf3; --texto2: #b1bac4; --fraco: #8b949e;
-    --grade: #21262d; --lula: #ef4444; --flavio: #3b82f6; --terc: #0d9488; --ok-bg: #0d948826; --nao-bg: #8b949e1f;
-    --aviso: #d29922; --aviso-bg: #d2992220;
-    --cA: #3fb950; --cB: #d4a72c; --cC: #db6d28; --cD: #db2777; --cE: #a855f7; --cF: #be123c; --cG: #6e7681;
+    color-scheme: light dark;
+    --bg: #f3f5f8; --surface: #ffffff; --surface2: #f5f7fa; --borda: #d8dee6; --texto: #171c22; --texto2: #3b444f; --fraco: #626d79;
+    --grade: #e6eaef; --lula: #dc2626; --flavio: #2563eb; --terc: #0d9488; --ref: #8a94a0; --ruim: #c0392b; --ok-bg: #0d94881a; --nao-bg: #626d7914;
+    --aviso: #b45309; --aviso-bg: #b4530922;
+    --cA: #1a7f37; --cB: #946300; --cC: #bc4c00; --cD: #be185d; --cE: #6d28d9; --cF: #a40e26; --cG: #5f6b78;
+    --marca: #0f766e; --marca-texto: #ffffff; --foco: #2563eb;
+    --sombra: 0 1px 2px rgba(16, 24, 40, .05), 0 1px 3px rgba(16, 24, 40, .07);
+    --raio: 12px; --topo: 60px; --lateral: 280px; --fs: 15px; --fs-card: 14.5px;
   }
-  @media print {
-    :root { --bg: #fff; --surface: #fff; --surface2: #f6f8fa; --borda: #d0d7de; --texto: #1f2328; --texto2: #3d444d; --fraco: #59636e;
-      --grade: #eaeef2; --lula: #dc2626; --flavio: #2563eb; --terc: #0d9488; --ok-bg: #0d94881f; --nao-bg: #59636e14; --aviso: #9a6700; --aviso-bg: #9a670020; }
-    .nao-imprime { display: none !important; }
-    body { font-size: 11px; max-width: none; }
-    .cartao, .faixa, .heroi { break-inside: avoid; }
-    .rolavel { overflow: visible; } .trilha-svg { min-width: 0 !important; }
-    nav.indice { position: static; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0c1117; --surface: #141a21; --surface2: #1a212a; --borda: #2a333e; --texto: #e8edf3; --texto2: #b6bfc9; --fraco: #8d98a5;
+      --grade: #212934; --lula: #ef4444; --flavio: #3b82f6; --terc: #14a89a; --ref: #8d98a5; --ruim: #e66767; --ok-bg: #14a89a1f; --nao-bg: #8d98a51f;
+      --aviso: #c98500; --aviso-bg: #c9850026;
+      --cA: #3fb950; --cB: #d4a72c; --cC: #f0883e; --cD: #f472b6; --cE: #c084fc; --cF: #ff7b72; --cG: #8b949e;
+      --marca: #2dd4bf; --marca-texto: #0c1117; --foco: #79b8ff; --sombra: none;
+    }
   }
+  :root[data-theme="dark"] {
+    --bg: #0c1117; --surface: #141a21; --surface2: #1a212a; --borda: #2a333e; --texto: #e8edf3; --texto2: #b6bfc9; --fraco: #8d98a5;
+    --grade: #212934; --lula: #ef4444; --flavio: #3b82f6; --terc: #14a89a; --ref: #8d98a5; --ruim: #e66767; --ok-bg: #14a89a1f; --nao-bg: #8d98a51f;
+    --aviso: #c98500; --aviso-bg: #c9850026;
+    --cA: #3fb950; --cB: #d4a72c; --cC: #f0883e; --cD: #f472b6; --cE: #c084fc; --cF: #ff7b72; --cG: #8b949e;
+    --marca: #2dd4bf; --marca-texto: #0c1117; --foco: #79b8ff; --sombra: none;
+  }
+  @media (max-width: 700px) { :root { --fs: 16px; --fs-card: 16px; --topo: 56px; } }
+
+  /* ---------- base ---------- */
   * { box-sizing: border-box; }
-  html { background: var(--bg); scroll-behavior: smooth; scroll-padding-top: 56px; }
-  body { margin: 0 auto; max-width: 1120px; padding: 0 16px 64px; color: var(--texto); background: var(--bg);
-    font: 14px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; min-width: 360px; }
+  html { background: var(--bg); scroll-behavior: smooth; scroll-padding-top: calc(var(--topo) + 12px); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; color: var(--texto); background: var(--bg); font: var(--fs)/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
   a { color: var(--flavio); }
-  h1 { font-size: 26px; margin: 24px 0 4px; line-height: 1.25; }
-  h2 { font-size: 20px; margin: 44px 0 6px; padding-top: 10px; border-top: 1px solid var(--borda); }
-  h3 { font-size: 15px; margin: 18px 0 6px; }
+  :focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; border-radius: 4px; }
+  h1, h2, h3, h4 { line-height: 1.2; letter-spacing: -.01em; }
   p { margin: 6px 0 10px; color: var(--texto2); }
-  .sub { color: var(--fraco); margin-bottom: 12px; }
-  nav.indice { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--borda); padding: 8px 0; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
-  nav.indice a { font-size: 12.5px; padding: 3px 10px; border: 1px solid var(--borda); border-radius: 999px; text-decoration: none; color: var(--texto2); background: var(--surface); white-space: nowrap; }
-  nav.indice a:hover { border-color: var(--terc); color: var(--texto); }
-  .barra { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
-  .botao { display: inline-block; padding: 8px 14px; border: 1px solid var(--borda); border-radius: 8px; color: var(--texto); text-decoration: none; background: var(--surface); font-weight: 600; }
-  .botao.prim { border-color: var(--flavio); }
-  .heroi { background: var(--surface); border: 1px solid var(--borda); border-radius: 12px; padding: 16px 20px; }
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 12px 0; }
-  .tile { background: var(--surface); border: 1px solid var(--borda); border-radius: 10px; padding: 10px 14px; }
-  .tile .n { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
-  .tile .r { color: var(--fraco); font-size: 12px; }
-  .nota { font-size: 12px; color: var(--fraco); }
-  code { font-size: 12px; background: var(--surface2); padding: 1px 5px; border-radius: 4px; word-break: break-word; }
+  code { font-size: .86em; background: var(--surface2); border: 1px solid var(--borda); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+  .nota { font-size: 13px; color: var(--fraco); }
+  .rot { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--fraco); margin: 10px 0 2px; font-weight: 700; }
+  .vis-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  button { font: inherit; }
+
+  /* ---------- barra superior ---------- */
+  .topo { position: sticky; top: 0; z-index: 20; height: var(--topo); display: flex; align-items: center; gap: 10px; padding: 0 20px;
+    background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--borda); }
+  .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--texto); min-width: 0; }
+  .marca .logo { width: 32px; height: 32px; border-radius: 9px; background: var(--marca); color: var(--marca-texto); display: grid; place-items: center; flex: none; }
+  .marca .logo svg { width: 20px; height: 20px; }
+  .marca .nome { font-weight: 800; font-size: 19px; letter-spacing: -.02em; line-height: 1.1; }
+  .marca .sub { display: block; font-size: 12px; color: var(--fraco); font-weight: 500; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .topo .acoes { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+  .botao { min-height: 40px; display: inline-flex; align-items: center; gap: 6px; padding: 0 14px; border: 1px solid var(--borda); border-radius: 9px;
+    background: var(--surface); color: var(--texto); font-weight: 600; text-decoration: none; font-size: 14px; cursor: pointer; white-space: nowrap; }
+  .botao:hover { border-color: var(--marca); }
+  .botao.prim { background: var(--marca); border-color: var(--marca); color: var(--marca-texto); }
+  .botao.icone { width: 40px; padding: 0; justify-content: center; }
+  #menu-btn { display: none; }
+  #menu-btn span { display: block; width: 18px; height: 2px; background: currentColor; box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor; }
+
+  /* ---------- casca: lateral + principal ---------- */
+  .app { display: grid; grid-template-columns: var(--lateral) minmax(0, 1fr); max-width: 1920px; margin: 0 auto; }
+  aside.lateral { position: sticky; top: var(--topo); height: calc(100vh - var(--topo)); overflow-y: auto; overscroll-behavior: contain;
+    border-right: 1px solid var(--borda); padding: 16px 14px 40px; background: var(--surface); }
+  .cortina { display: none; position: fixed; inset: var(--topo) 0 0 0; background: rgba(0, 0, 0, .45); z-index: 25; border: 0; padding: 0; }
+  main { padding: 24px 28px 96px; min-width: 0; }
+  .lateral h2 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--fraco); margin: 18px 0 6px; }
+  .lateral h2:first-of-type { margin-top: 4px; }
+  .busca { width: 100%; min-height: 40px; border: 1px solid var(--borda); border-radius: 9px; padding: 0 12px; background: var(--surface2); color: var(--texto); font: inherit; font-size: 14px; }
+  .busca::placeholder { color: var(--fraco); }
+  .nav a.sec { display: flex; align-items: center; gap: 8px; min-height: 38px; padding: 4px 8px; border-radius: 8px; color: var(--texto2); text-decoration: none; font-size: 14px; line-height: 1.25; }
+  .nav a.sec:hover { background: var(--surface2); color: var(--texto); }
+  .nav a.sec.ativo { background: var(--surface2); color: var(--texto); font-weight: 600; box-shadow: inset 3px 0 0 var(--marca); }
+  .nav .cont { margin-left: auto; font-size: 12px; color: var(--fraco); font-variant-numeric: tabular-nums; }
+  .mod-letra { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: var(--marca); color: var(--marca-texto); font-weight: 800; font-size: 13px; flex: none; }
+  .nav details { margin: 0 0 2px; }
+  .nav details summary { list-style: none; cursor: pointer; }
+  .nav details summary::-webkit-details-marker { display: none; }
+  .nav .testes { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px 6px 8px 40px; }
+  .nav .testes a { display: inline-flex; align-items: center; min-height: 28px; padding: 0 8px; font-size: 12px; border: 1px solid var(--borda); border-radius: 6px; color: var(--texto2); text-decoration: none; font-variant-numeric: tabular-nums; }
+  .nav .testes a:hover { border-color: var(--marca); color: var(--texto); }
+  .nav .testes a.oculto { opacity: .35; }
+  .filtros { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { min-height: 32px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; border: 1px solid var(--borda); background: var(--surface);
+    color: var(--texto2); font-size: 13px; padding: 0 11px; cursor: pointer; font-variant-numeric: tabular-nums; }
+  .chip i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: var(--cor, var(--fraco)); }
+  .chip:hover { border-color: var(--marca); }
+  .chip[aria-pressed="true"] { background: var(--texto); color: var(--surface); border-color: var(--texto); }
+  .chip[aria-pressed="true"] i { outline: 1px solid var(--surface); }
+  .lateral .util { display: grid; gap: 6px; margin-top: 8px; }
+  .lateral .util .botao { min-height: 38px; font-size: 13.5px; justify-content: flex-start; }
+  .contagem { font-size: 13px; color: var(--fraco); margin: 6px 0 0; }
+  @media (pointer: coarse) { .nav .testes a, .chip { min-height: 44px; padding: 0 14px; } .nav a.sec { min-height: 44px; } }
+
+  @media (max-width: 960px) {
+    .app { grid-template-columns: 1fr; }
+    aside.lateral { position: fixed; left: 0; top: var(--topo); width: min(86vw, 340px); height: calc(100dvh - var(--topo)); transform: translateX(-102%);
+      transition: transform .22s ease; z-index: 30; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); }
+    body.menu-aberto aside.lateral { transform: none; }
+    body.menu-aberto .cortina { display: block; }
+    body.menu-aberto { overflow: hidden; }
+    #menu-btn { display: inline-flex; }
+    main { padding: 16px 16px 80px; }
+    .topo { padding: 0 12px; gap: 8px; }
+    .acoes .longo { display: none; }
+    .acoes .botao { padding: 0 10px; }
+  }
+  @media (max-width: 480px) { .marca .sub { display: none; } .marca .nome { font-size: 18px; } }
+
+  /* ---------- resumo (hero) ---------- */
+  .heroi { display: grid; gap: 14px; margin-bottom: 28px; }
+  .heroi h1 { font-size: clamp(24px, 2.3vw, 34px); margin: 0; max-width: 28ch; }
+  .lead { font-size: 17px; color: var(--texto2); max-width: 82ch; margin: 0; }
+  .meta-linha { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--fraco); }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 6px 0; }
+  .tile { background: var(--surface); border: 1px solid var(--borda); border-radius: 10px; padding: 12px 14px; box-shadow: var(--sombra); }
+  .tile .n { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.15; letter-spacing: -.02em; }
+  .tile .r { color: var(--fraco); font-size: 12.5px; margin-top: 2px; }
+  .painel-testes { background: var(--surface); border: 1px solid var(--borda); border-radius: var(--raio); padding: 12px 16px; display: grid; gap: 8px; box-shadow: var(--sombra); }
+  .painel-testes .linha { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .painel-testes .rot { margin: 0; min-width: 120px; }
+  @media (max-width: 480px) { .tiles { grid-template-columns: repeat(2, 1fr); } .tile .n { font-size: 22px; } }
+
+  /* ---------- blocos ---------- */
+  .bloco { margin: 40px 0 0; scroll-margin-top: calc(var(--topo) + 12px); }
+  .bloco > h2 { font-size: 22px; margin: 0 0 4px; display: flex; align-items: center; gap: 10px; }
+  .bloco > h2 .mod-letra { width: 30px; height: 30px; font-size: 15px; }
+  .bloco > h2 .cont { font-size: 13px; color: var(--fraco); font-weight: 500; margin-left: 4px; }
+  .bloco > .intro { color: var(--texto2); margin: 0 0 14px; max-width: 95ch; }
+  .heroi-concl { background: var(--surface); border: 1px solid var(--borda); border-radius: var(--raio); padding: 16px 20px; box-shadow: var(--sombra); }
+  .heroi-concl h2 { margin: 0 0 4px; }
   /* trilha */
-  .rolavel { overflow-x: auto; background: var(--surface); border: 1px solid var(--borda); border-radius: 10px; padding: 8px; }
+  .rolavel { overflow-x: auto; background: var(--surface); border: 1px solid var(--borda); border-radius: 10px; padding: 8px; -webkit-overflow-scrolling: touch; }
   .trilha-svg { min-width: 940px; width: 100%; height: auto; display: block; }
   .trilha-svg text { fill: var(--texto2); font-size: 12px; } .trilha-svg .t1 { fill: var(--texto); font-weight: 700; font-size: 13px; }
-  .trilha-svg .pill { fill: var(--terc); } .trilha-svg .pt { fill: #fff; font-weight: 700; font-size: 11.5px; }
+  .trilha-svg .pill { fill: var(--terc); } .trilha-svg .pt { fill: var(--marca-texto); font-weight: 700; font-size: 11.5px; }
   .trilha-svg .no { fill: var(--surface2); stroke: var(--borda); } .trilha-svg .chip { fill: var(--bg); stroke: var(--borda); }
   .trilha-svg .seta { stroke: var(--fraco); fill: none; stroke-width: 1.6; } .trilha-svg .res { fill: var(--texto); font-size: 11.5px; }
-  .faixas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 12px 0; }
-  .faixa { border-radius: 10px; padding: 12px 14px; border: 1px solid var(--borda); border-left-width: 6px; background: var(--surface); }
-  .faixa h4 { margin: 0 0 4px; font-size: 14px; } .faixa ul { margin: 4px 0 0; padding-left: 18px; color: var(--texto2); font-size: 13px; }
+  .faixas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; margin: 14px 0; }
+  .faixa { border-radius: 10px; padding: 12px 16px; border: 1px solid var(--borda); border-left-width: 6px; background: var(--surface); box-shadow: var(--sombra); }
+  .faixa h4 { margin: 0 0 4px; font-size: 15px; } .faixa ul { margin: 4px 0 0; padding-left: 18px; color: var(--texto2); font-size: 14px; }
+  .faixa p { font-size: var(--fs-card); }
   .f1 { border-left-color: var(--cA); } .f2 { border-left-color: var(--cB); } .f3 { border-left-color: var(--cG); }
-  /* cartões */
-  .modulo-intro { color: var(--fraco); margin-bottom: 10px; }
-  .cartao { background: var(--surface); border: 1px solid var(--borda); border-radius: 12px; margin: 14px 0; overflow: hidden; }
-  .cartao > header { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; border-bottom: 1px solid var(--borda); background: var(--surface2); flex-wrap: wrap; }
-  .cartao .id { font-weight: 700; font-variant-numeric: tabular-nums; background: var(--bg); border: 1px solid var(--borda); border-radius: 6px; padding: 1px 8px; }
-  .cartao .perg { font-weight: 700; font-size: 15.5px; flex: 1 1 260px; line-height: 1.35; }
-  .selo { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 2px 10px 2px 3px; font-size: 12px; font-weight: 600; border: 1px solid; }
-  .selo b { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 50%; color: #fff; font-size: 12px; }
-  .estado { font-size: 11.5px; padding: 2px 8px; border-radius: 6px; background: var(--nao-bg); color: var(--texto2); border: 1px solid var(--borda); }
-  .estado.emproc { background: var(--aviso-bg); color: var(--aviso); border-color: var(--aviso); }
-  .corpo { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0; }
-  .corpo > div { padding: 12px 16px; min-width: 0; }
-  .corpo .viz { border-right: 1px solid var(--borda); }
-  @media (max-width: 820px) { .corpo { grid-template-columns: 1fr; } .corpo .viz { border-right: 0; border-bottom: 1px solid var(--borda); } }
-  .res-frase { font-size: 14.5px; color: var(--texto); font-weight: 600; margin: 0 0 8px; }
-  .rot { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--fraco); margin: 10px 0 2px; font-weight: 700; }
-  .cartao p { margin: 2px 0 6px; font-size: 13px; }
-  .cartao ul.anot { margin: 4px 0; padding-left: 0; list-style: none; font-size: 13px; color: var(--texto2); }
-  .cartao ul.anot li { padding: 3px 8px 3px 8px; margin: 3px 0; border-left: 3px solid var(--borda); }
+
+  /* ---------- cartões ---------- */
+  .cartoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 470px), 1fr)); gap: 16px; align-items: start; }
+  .cartao { background: var(--surface); border: 1px solid var(--borda); border-radius: var(--raio); box-shadow: var(--sombra); overflow: hidden; min-width: 0; scroll-margin-top: calc(var(--topo) + 12px); }
+  .cartao.larga { grid-column: 1 / -1; }
+  .cartao > header { padding: 14px 18px 12px; border-bottom: 1px solid var(--borda); background: var(--surface2); }
+  .cartao .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
+  .cartao .id { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 12.5px; padding: 2px 8px; border-radius: 6px; background: var(--surface); border: 1px solid var(--borda); }
+  .cartao h3.perg { font-size: 17px; margin: 0; line-height: 1.3; font-weight: 700; }
+  .selo { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 2px 10px 2px 3px; font-size: 12px; font-weight: 600; border: 1px solid var(--cor, var(--borda)); color: var(--texto); background: var(--surface); }
+  .selo b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--surface); background: var(--cor, var(--fraco)); font-size: 12px; }
+  .estado { font-size: 12px; padding: 2px 9px; border-radius: 999px; background: var(--nao-bg); color: var(--texto2); border: 1px solid var(--borda); display: inline-flex; align-items: center; gap: 6px; }
+  .estado::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--fraco); }
+  .estado.ok::before { background: var(--cA); }
+  .estado.parc { background: var(--aviso-bg); color: var(--aviso); border-color: var(--aviso); } .estado.parc::before { background: var(--aviso); }
+  .estado.proc { background: var(--aviso-bg); color: var(--aviso); border-color: var(--aviso); } .estado.proc::before { background: var(--aviso); box-shadow: 0 0 0 3px var(--aviso-bg); }
+  .corpo { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .corpo .viz { padding: 14px 18px 12px; min-width: 0; }
+  .corpo .texto { padding: 8px 18px 6px; border-top: 1px solid var(--borda); min-width: 0; }
+  @media (min-width: 1100px) {
+    .cartao.larga .corpo { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+    .cartao.larga .corpo .viz { border-right: 1px solid var(--borda); }
+    .cartao.larga .corpo .texto { border-top: 0; }
+  }
+  .veredito { border-left: 4px solid var(--cor, var(--borda)); padding: 2px 0 2px 12px; margin: 6px 0 10px; }
+  .veredito .rot { margin: 0 0 2px; }
+  .res-frase { font-size: 16px; color: var(--texto); font-weight: 600; margin: 0 0 4px; line-height: 1.4; }
+  .cartao p { margin: 2px 0 8px; font-size: var(--fs-card); }
+  details.sec { border-top: 1px solid var(--borda); margin: 0; }
+  details.sec > summary { min-height: 44px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--texto2); cursor: pointer; list-style: none; user-select: none; }
+  details.sec > summary::-webkit-details-marker { display: none; }
+  details.sec > summary::before { content: ''; width: 7px; height: 7px; border-right: 2px solid var(--fraco); border-bottom: 2px solid var(--fraco); transform: rotate(-45deg); transition: transform .15s; margin: 0 4px 0 2px; flex: none; }
+  details.sec[open] > summary::before { transform: rotate(45deg); }
+  details.sec > summary:hover { color: var(--texto); }
+  details.sec > :not(summary) { margin-bottom: 10px; }
+  details.sec > ul.anot { margin-top: -4px; }
+  .cartao ul.anot { margin: 4px 0 10px; padding-left: 0; list-style: none; font-size: var(--fs-card); color: var(--texto2); }
+  .cartao ul.anot li { padding: 4px 10px; margin: 4px 0; border-left: 3px solid var(--borda); border-radius: 0 6px 6px 0; }
   .cartao ul.anot li.av { border-left-color: var(--aviso); background: var(--aviso-bg); }
-  .cartao .rodape { padding: 8px 16px; border-top: 1px solid var(--borda); font-size: 12px; color: var(--fraco); display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
-  .chips span { display: inline-block; font-size: 11px; padding: 0 7px; border: 1px solid var(--borda); border-radius: 999px; margin: 0 4px 2px 0; color: var(--texto2); }
-  details.mais summary { cursor: pointer; font-size: 12.5px; color: var(--texto2); }
-  /* gráficos */
-  .grafico { margin: 0 0 6px; position: relative; }
+  .cartao .rodape { padding: 10px 18px; border-top: 1px solid var(--borda); background: var(--surface2); font-size: 12.5px; color: var(--fraco); display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chips span { display: inline-block; font-size: 11.5px; padding: 1px 8px; border: 1px solid var(--borda); border-radius: 999px; color: var(--texto2); }
+  .cartao .rodape a.lm { margin-left: auto; font-weight: 600; min-height: 32px; display: inline-flex; align-items: center; }
+  details.mais summary { cursor: pointer; font-size: 13px; color: var(--flavio); font-weight: 600; min-height: 32px; display: flex; align-items: center; }
+  details.mais { margin: 4px 0; }
+
+  /* ---------- gráficos ---------- */
+  .grafico { margin: 0 0 8px; position: relative; }
   .grafico svg { width: 100%; height: auto; display: block; overflow: visible; }
-  .grafico .tit { font-weight: 600; font-size: 12.5px; margin-bottom: 2px; color: var(--texto); }
-  .leg { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--texto2); margin: 3px 0 6px; }
+  .grafico .tit { font-weight: 600; font-size: 13px; margin-bottom: 2px; color: var(--texto); }
+  .leg { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--texto2); margin: 3px 0 6px; }
   .leg i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; vertical-align: baseline; margin-right: 5px; }
-  .dica { position: absolute; pointer-events: none; background: var(--bg); color: var(--texto); border: 1px solid var(--borda); border-radius: 6px;
-    padding: 6px 8px; font-size: 12px; font-variant-numeric: tabular-nums; max-width: 300px; display: none; z-index: 9; }
-  .hb { display: grid; grid-template-columns: minmax(90px, 36%) 1fr; gap: 3px 10px; align-items: center; font-size: 12.5px; margin: 6px 0; }
+  .dica { position: absolute; pointer-events: none; background: var(--surface); color: var(--texto); border: 1px solid var(--borda); border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
+    padding: 6px 9px; font-size: 12.5px; font-variant-numeric: tabular-nums; max-width: min(300px, 80vw); display: none; z-index: 40; }
+  .hb { display: grid; grid-template-columns: minmax(100px, 36%) 1fr; gap: 3px 10px; align-items: center; font-size: 13px; margin: 6px 0; }
   .hb .l { color: var(--texto2); line-height: 1.25; }
-  .hb .trilho { background: var(--grade); border-radius: 4px; height: 17px; position: relative; margin: 1px 0; border: 1px solid var(--borda); }
+  .hb .trilho { background: var(--grade); border-radius: 4px; height: 18px; position: relative; margin: 1px 0; border: 1px solid var(--borda); }
   .hb .enche { height: 100%; border-radius: 3px; min-width: 0; }
-  .hb .v { position: absolute; left: 6px; top: -1px; font-size: 11.5px; font-weight: 600; color: var(--texto); text-shadow: 0 0 3px var(--bg), 0 0 3px var(--bg); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .quad { display: flex; flex-wrap: wrap; gap: 3px; margin: 2px 0 8px; } .quad span { width: 17px; height: 17px; border-radius: 3px; background: var(--grade); border: 1px solid var(--borda); }
+  .hb .v { position: absolute; left: 6px; top: -1px; font-size: 11.5px; font-weight: 600; color: var(--texto); text-shadow: 0 0 3px var(--surface), 0 0 3px var(--surface), 0 0 4px var(--surface); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .quad { display: flex; flex-wrap: wrap; gap: 3px; margin: 2px 0 8px; } .quad span { width: 18px; height: 18px; border-radius: 3px; background: var(--grade); border: 1px solid var(--borda); }
   .quad span.on { background: var(--terc); border-color: var(--terc); }
-  .proc { border: 2px dashed var(--aviso); border-radius: 10px; padding: 18px 14px; text-align: center; color: var(--aviso); font-weight: 600; background: repeating-linear-gradient(135deg, transparent 0 10px, var(--aviso-bg) 10px 20px); }
+  .proc { border: 2px dashed var(--aviso); border-radius: 10px; padding: 18px 14px; text-align: center; color: var(--aviso); font-weight: 600; background: repeating-linear-gradient(135deg, transparent 0 10px, var(--aviso-bg) 10px 20px); margin: 6px 0; }
   .proc small { display: block; font-weight: 400; color: var(--texto2); margin-top: 4px; }
   .dupla { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
-  .dupla .cx { flex: 1 1 130px; border: 1px solid var(--borda); border-radius: 8px; padding: 8px 10px; background: var(--bg); font-size: 12.5px; color: var(--texto2); }
+  .dupla .cx { flex: 1 1 160px; border: 1px solid var(--borda); border-radius: 8px; padding: 8px 10px; background: var(--surface2); font-size: 13px; color: var(--texto2); min-width: 0; }
   .dupla .cx b { display: block; color: var(--texto); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 2px; }
   .dupla .seta { align-self: center; font-size: 20px; color: var(--fraco); }
-  table { border-collapse: collapse; width: 100%; font-size: 12.5px; margin: 8px 0; font-variant-numeric: tabular-nums; }
-  th, td { border-bottom: 1px solid var(--borda); padding: 5px 8px; text-align: left; vertical-align: top; }
-  th { color: var(--fraco); font-weight: 600; } td.ok { background: var(--ok-bg); } td.nao { background: var(--nao-bg); color: var(--fraco); }
-  .tabela-rolavel { overflow-x: auto; }
-  .md table { font-size: 12px; } .md h1 { font-size: 20px; } .md h2 { font-size: 16px; border: 0; margin-top: 20px; } .md { overflow-wrap: anywhere; }
-  details { margin: 10px 0; } summary { cursor: pointer; font-weight: 600; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 8px 0; font-variant-numeric: tabular-nums; }
+  th, td { border-bottom: 1px solid var(--borda); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--fraco); font-weight: 600; white-space: nowrap; } td.ok { background: var(--ok-bg); } td.nao { background: var(--nao-bg); color: var(--fraco); }
+  .tabela-rolavel { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  .tabela-rolavel table { min-width: 420px; }
+  @media (max-width: 640px) {
+    .grafico { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .grafico svg { min-width: 540px; }
+    .hb { grid-template-columns: 1fr; gap: 2px 0; margin: 10px 0; }
+    .hb .l { font-size: 13.5px; }
+  }
+
+  /* ---------- componentes de gráfico ---------- */
+  .leg .ch, .dica .ch { display: inline-block; vertical-align: middle; margin-right: 6px; }
+  .ch.barra { width: 12px; height: 12px; border-radius: 3px; background: var(--c); }
+  .ch.barra.vazio { background: var(--grade); border: 1px solid var(--borda); }
+  .ch.linha { width: 16px; height: 0; border-top: 2.5px solid var(--c); border-radius: 2px; }
+  .ch.ponto { width: 11px; height: 11px; border-radius: 50%; background: var(--c); }
+  .fr { color: var(--fraco); font-weight: 400; }
+  .barras .area { position: relative; }
+  .barras .hb { grid-template-columns: minmax(110px, 34%) 1fr; }
+  .barras .bs { padding-right: 96px; position: relative; min-width: 0; }
+  .barras .trilho { background: var(--grade); border: 0; height: 16px; border-radius: 0 4px 4px 0; margin: 2px 0; position: relative; }
+  .barras .enche { border-radius: 0 4px 4px 0; }
+  .barras .v { position: absolute; top: -1px; margin-left: 8px; font-size: 12px; font-weight: 600; color: var(--texto); text-shadow: none; white-space: nowrap; }
+  .barras .ref { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--fraco); z-index: 1; pointer-events: none; }
+  .barras .ref span { position: absolute; top: -18px; left: 4px; font-size: 11px; color: var(--texto2); white-space: nowrap; background: var(--surface); padding: 0 3px; }
+  .barras .area:has(.ref) { padding-top: 18px; }
+  .barras .ref ~ .hb { position: relative; }
+  .cob { display: grid; grid-template-columns: minmax(120px, 1.2fr) auto 2fr; gap: 4px 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--grade); }
+  .cob:first-of-type, .tit + .cob { border-top: 0; }
+  .cob .cl { font-size: 13.5px; color: var(--texto2); line-height: 1.3; }
+  .cob .cl .sub { display: block; font-size: 12px; color: var(--fraco); margin-top: 2px; }
+  .cob .cv { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1; color: var(--texto); white-space: nowrap; }
+  .cob .cv.ok { color: var(--cA); } .cob .cv.gap { color: var(--aviso); }
+  .cmeter { height: 10px; background: var(--grade); border-radius: 999px; overflow: hidden; }
+  .cmeter i { display: block; height: 100%; border-radius: 999px; min-width: 2px; }
+  .cob .cd { font-size: 12.5px; color: var(--fraco); margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .cob .cd b { color: var(--texto2); font-weight: 600; } .cob .cd b.ok { color: var(--cA); }
+  .figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin: 4px 0 8px; }
+  .fig { background: var(--surface2); border: 1px solid var(--borda); border-radius: 10px; padding: 10px 12px; border-top-width: 3px; }
+  .fig .n { font-size: 24px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+  .fig .r { font-size: 12.5px; color: var(--fraco); margin-top: 3px; line-height: 1.3; }
+  .fig.ok { border-top-color: var(--cA); } .fig.aviso { border-top-color: var(--aviso); } .fig.ruim { border-top-color: var(--ruim); }
+  .fig.ok .n::after { content: ' ✓'; color: var(--cA); font-size: 18px; } .fig.ruim .n::after { content: ' !'; color: var(--ruim); }
+  .igual { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; margin: 6px 0 8px; }
+  .igual .lado { background: var(--surface2); border: 1px solid var(--borda); border-radius: 10px; padding: 12px 14px; text-align: center; }
+  .igual .n { font-size: 24px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+  .igual .r { font-size: 12.5px; color: var(--fraco); margin-top: 4px; }
+  .igual .sinal { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; font-weight: 800; }
+  .igual .sinal.ok { background: var(--ok-bg); color: var(--cA); } .igual .sinal.nao { background: var(--aviso-bg); color: var(--ruim); }
+  @media (max-width: 480px) { .igual { grid-template-columns: 1fr; } .igual .sinal { margin: 0 auto; } .igual .n { font-size: 20px; } .cob { grid-template-columns: 1fr auto; } .cob .cm { grid-column: 1 / -1; } }
+  .quad span { outline-offset: 1px; }
+  /* ---------- markdown ---------- */
+  .md { overflow-wrap: anywhere; max-width: 100ch; font-size: var(--fs); }
+  .md h1 { font-size: 22px; } .md h2 { font-size: 18px; border: 0; margin-top: 26px; } .md h3 { font-size: 16px; margin-top: 20px; }
+  .md table { display: block; overflow-x: auto; font-size: 13px; white-space: nowrap; }
+  .md pre { overflow-x: auto; background: var(--surface2); border: 1px solid var(--borda); border-radius: 8px; padding: 10px 12px; font-size: 13px; }
+  .md pre code { border: 0; background: none; padding: 0; }
+  .md p, .md li { color: var(--texto2); }
+  details.doc { margin: 10px 0; background: var(--surface); border: 1px solid var(--borda); border-radius: var(--raio); padding: 0 18px; }
+  details.doc > summary { cursor: pointer; font-weight: 700; min-height: 48px; display: flex; align-items: center; font-size: 15px; }
+
+  /* ---------- carregamento ---------- */
+  #carregando { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: var(--bg); padding: 16px; }
+  #carregando[hidden] { display: none; }
+  #carregando .caixa { width: min(92vw, 440px); text-align: center; display: grid; gap: 10px; justify-items: center; }
+  #carregando .marca { justify-content: center; }
+  #carregando progress { width: 100%; height: 10px; accent-color: var(--marca); border-radius: 999px; }
+  #carregando .erro { color: var(--lula); font-weight: 600; }
+  #topo-btn { position: fixed; right: 16px; bottom: 16px; z-index: 15; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--borda); background: var(--surface); color: var(--texto); box-shadow: 0 4px 14px rgba(0, 0, 0, .18); cursor: pointer; font-size: 18px; display: none; }
+  #topo-btn.ver { display: block; }
+
+  /* ---------- impressão ---------- */
+  @media print {
+    :root { --bg: #fff; --surface: #fff; --surface2: #f6f8fa; --borda: #d0d7de; --texto: #1f2328; --texto2: #3d444d; --fraco: #59636e;
+      --grade: #eaeef2; --lula: #dc2626; --flavio: #2563eb; --terc: #0d9488; --ok-bg: #0d94881f; --nao-bg: #59636e14; --aviso: #9a6700; --aviso-bg: #9a670020;
+      --ref: #8a94a0; --ruim: #c0392b; --marca: #0f766e; --marca-texto: #fff; --sombra: none; --fs: 11px; --fs-card: 11px; }
+    .nao-imprime, .topo, aside.lateral, .cortina, #carregando, #topo-btn { display: none !important; }
+    .app { display: block; } main { padding: 0; }
+    .cartoes { display: block; } .cartao { margin: 10px 0; break-inside: avoid; }
+    .cartao, .faixa, .tile { break-inside: avoid; }
+    .rolavel, .grafico, .tabela-rolavel { overflow: visible; } .trilha-svg { min-width: 0 !important; } .grafico svg { min-width: 0 !important; }
+    details.sec > summary::before { display: none; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>Análise da apuração: Presidente 2026, 1º e 2º turno</h1>
-  <div class="sub">Relatório por teste. Dados oficiais do TSE (dados abertos e arquivos das urnas). Cada número sai de um script do projeto e do registro de testes (<code>testes/registro.json</code>). Gerado em <span id="gerado"></span>.</div>
-  <div class="barra nao-imprime">
-    <a class="botao prim" href="relatorio.pdf" download>Baixar relatório completo (PDF)</a>
-    <a class="botao" href="index.html">Abrir o gráfico interativo</a>
-    <a class="botao" href="mapas.html">Mapas: o que mudou e de onde vieram os votos</a>
+<header class="topo nao-imprime">
+  <button id="menu-btn" class="botao icone" type="button" aria-label="Abrir índice e filtros" aria-expanded="false" aria-controls="lateral"><span></span></button>
+  <a class="marca" href="#resumo" aria-label="urna lab, início do relatório">
+    <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M7 9V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v4"/><path d="M9 15l2 2 4-4"/></svg></span>
+    <span><span class="nome">urna lab</span><span class="sub">Apuração Presidente 2026 · estudo independente com dados do TSE</span></span>
+  </a>
+  <div class="acoes">
+    <a class="botao prim" href="relatorio.pdf" download><span class="longo">Baixar relatório completo (</span>PDF<span class="longo">)</span></a>
+    <a class="botao" href="index.html" title="Abrir o gráfico interativo"><span class="longo">Abrir o </span>gráfico<span class="longo"> interativo</span></a>
+    <a class="botao" href="mapas.html" title="Mapas: o que mudou e de onde vieram os votos">Mapas<span class="longo">: o que mudou e de onde vieram os votos</span></a>
   </div>
 </header>
-<nav class="indice nao-imprime" id="indice">
-  <a href="#trilha">Trilha de verificação</a><a href="#conclusao">Conclusão em 3 níveis</a>
-  <a href="#mod-A">A Integridade</a><a href="#mod-B">B Comportamento</a><a href="#mod-C">C Mudança entre turnos</a>
-  <a href="#mod-D">D Forense</a><a href="#mod-E">E Divergências</a><a href="#mod-F">F Referência 2022</a>
-  <a href="#metodologia">Metodologia</a><a href="#catalogo">Catálogo</a>
-</nav>
+<button class="cortina" id="cortina" type="button" tabindex="-1" aria-label="Fechar índice"></button>
 
-<section id="trilha">
-  <h2 style="border:0;margin-top:24px">Trilha de verificação: do voto ao total oficial</h2>
-  <p>Cada voto percorre uma cadeia de arquivos. Em cada elo, um teste confere se o que sai é igual ao que entrou. Isto é <b>prova determinística</b> (conta exata e criptografia), não amostra. Os números abaixo são do 2º turno.</p>
-  <div class="rolavel"><div id="trilha-svg"></div></div>
-  <div class="faixas" id="faixas"></div>
+<div class="app">
+<aside class="lateral nao-imprime" id="lateral" aria-label="Índice e filtros">
+  <label class="vis-oculto" for="busca">Buscar teste por código ou pergunta</label>
+  <input class="busca" id="busca" type="search" placeholder="Buscar teste (ex.: T02, assinatura)" autocomplete="off">
+  <p class="contagem" id="contagem" aria-live="polite"></p>
+  <h2>Seções</h2>
+  <nav class="nav" id="nav-secoes" aria-label="Seções do relatório"></nav>
+  <h2>Classe de evidência</h2>
+  <div class="filtros" id="filtro-classe" role="group" aria-label="Filtrar por classe de evidência"></div>
+  <h2>Situação</h2>
+  <div class="filtros" id="filtro-estado" role="group" aria-label="Filtrar por situação"></div>
+  <h2>Exibição</h2>
+  <div class="util">
+    <button class="botao" id="limpar-btn" type="button">Limpar filtros</button>
+    <button class="botao" id="expandir-btn" type="button" aria-pressed="false">Abrir todos os detalhes</button>
+    <button class="botao" id="tema-btn" type="button">Tema: automático</button>
+  </div>
+</aside>
+
+<main id="principal">
+<section class="heroi" id="resumo">
+  <h1>Relatório por teste: Presidente 2026, 1º e 2º turno</h1>
+  <p class="lead">Estudo independente e imparcial da apuração, com 2022 como referência. Cada teste traz a pergunta, a hipótese nula, o que o gráfico mostra, o resultado, o que ele não consegue ver e a classe de evidência (A a G). Só dados oficiais do TSE (dados abertos e arquivos das urnas).</p>
+  <div class="meta-linha"><span>Cada número sai de um script do projeto e do registro de testes (<code>testes/registro.json</code>).</span><span>Gerado em <span id="gerado"></span>.</span></div>
   <div class="tiles" id="tiles-dados"></div>
+  <div class="painel-testes" id="painel-testes"></div>
 </section>
 
-<section class="heroi" id="conclusao"></section>
+<section class="bloco" id="trilha">
+  <h2>Trilha de verificação: do voto ao total oficial</h2>
+  <p class="intro">Cada voto percorre uma cadeia de arquivos. Em cada elo, um teste confere se o que sai é igual ao que entrou. Isto é <b>prova determinística</b> (conta exata e criptografia), não amostra. Os números abaixo são do 2º turno.</p>
+  <div class="rolavel"><div id="trilha-svg"></div></div>
+  <div class="faixas" id="faixas"></div>
+</section>
+
+<section class="bloco heroi-concl" id="conclusao"></section>
 
 <div id="modulos"></div>
 
-<section id="metodologia">
+<section class="bloco" id="metodologia">
   <h2>Metodologia completa e referências</h2>
-  <details open><summary>Metodologia (METODOLOGIA.md)</summary><div class="md" id="md-metodologia"></div></details>
+  <details class="doc" open><summary>Metodologia (METODOLOGIA.md)</summary><div class="md" id="md-metodologia" hx-get="METODOLOGIA.md" hx-trigger="load" hx-swap="innerHTML"><p class="nota">Carregando a metodologia…</p></div></details>
 </section>
-<section id="catalogo">
+<section class="bloco" id="catalogo">
   <h2>Catálogo: etapas, testes, dados e consumo</h2>
-  <details open><summary>Catálogo (CATALOGO.md)</summary><div class="md" id="md-catalogo"></div></details>
+  <details class="doc" open><summary>Catálogo (CATALOGO.md)</summary><div class="md" id="md-catalogo" hx-get="CATALOGO.md" hx-trigger="load" hx-swap="innerHTML"><p class="nota">Carregando o catálogo…</p></div></details>
 </section>
+</main>
+</div>
 
+<button id="topo-btn" class="nao-imprime" type="button" aria-label="Voltar ao topo">↑</button>
 <div class="dica" id="dica"></div>
+<div id="carregando" role="status" aria-live="polite">
+  <div class="caixa">
+    <span class="marca"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M7 9V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v4"/><path d="M9 15l2 2 4-4"/></svg></span><span class="nome">urna lab</span></span>
+    <div id="c-texto">Lendo o registro de testes…</div>
+    <progress id="c-barra" max="100"></progress>
+    <div class="nota" id="c-sub">Os dados do relatório são pesados (cerca de 118 MB). No celular, pode levar um tempo e consumir dados móveis.</div>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4/dist/htmx.min.js"></script>
 <script>
-const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+// ---------- utilitários ----------
+// Cores sempre como var(): o tema (claro/escuro) troca sem precisar redesenhar.
+const css = v => `var(${v})`;
 const N = n => Math.round(n).toLocaleString('pt-BR');
 const P = (n, d = 2) => n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
 const SG = (v, d = 3) => (v >= 0 ? '+' : '−') + P(Math.abs(v), d);
 const num = s => parseFloat(String(s).replace(/\./g, '').replace(',', '.').replace('−', '-'));
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const compacto = n => Math.abs(n) >= 1e6 ? P(n / 1e6, n % 1e6 === 0 ? 0 : 1) + ' mi' : Math.abs(n) >= 1e4 ? P(n / 1e3, 0) + ' mil' : N(n);
 const dica = document.getElementById('dica');
 document.getElementById('gerado').textContent = new Date().toLocaleString('pt-BR');
-const tile = (n, r) => `<div class="tile"><div class="n">${n}</div><div class="r">${r}</div></div>`;
-const COR = { 22: () => css('--fraco'), 26: () => css('--terc'), l: () => css('--lula'), o: () => css('--flavio') };
+const T1 = () => css('--ref'), T2 = () => css('--terc'); // 1º turno / 2022 = referência (cinza); 2º turno / 2026 = destaque (teal)
+const LULA = () => css('--lula'), ADV = () => css('--flavio'), AVISO = () => css('--aviso'), RUIM = () => css('--ruim');
 
-// tooltip global: qualquer elemento com data-tip
-document.addEventListener('mousemove', e => {
-  const t = e.target.closest && e.target.closest('[data-tip]');
-  if (!t) { dica.style.display = 'none'; return; }
+// dica (tooltip) global: qualquer elemento com data-tip; ponteiro e toque
+function mostrarDica(t, x, y) {
   dica.innerHTML = t.getAttribute('data-tip'); dica.style.display = 'block';
-  const w = dica.offsetWidth; dica.style.left = Math.min(e.pageX + 14, document.documentElement.scrollWidth - w - 8) + 'px'; dica.style.top = (e.pageY + 14) + 'px';
+  const w = dica.offsetWidth, h = dica.offsetHeight, vw = document.documentElement.clientWidth;
+  let left = x + 14; if (left + w > window.scrollX + vw - 8) left = Math.max(8, x - w - 14);
+  let top = y + 14; if (top + h > window.scrollY + window.innerHeight - 8) top = y - h - 10;
+  dica.style.left = left + 'px'; dica.style.top = top + 'px';
+}
+document.addEventListener('pointermove', e => {
+  if (e.pointerType === 'touch') return;
+  const t = e.target.closest && e.target.closest('[data-tip]');
+  if (!t) { if (!dica.dataset.fixa) dica.style.display = 'none'; return; }
+  delete dica.dataset.fixa; mostrarDica(t, e.pageX, e.pageY);
+});
+document.addEventListener('click', e => {
+  const t = e.target.closest && e.target.closest('[data-tip]');
+  if (t && (e.pointerType === 'touch' || matchMedia('(pointer: coarse)').matches)) { dica.dataset.fixa = '1'; mostrarDica(t, e.pageX, e.pageY); }
+  else if (!t) { delete dica.dataset.fixa; dica.style.display = 'none'; }
 });
 const tip = h => `data-tip="${esc(h)}"`;
-const legenda = ss => ss.length > 1 ? `<div class="leg">${ss.map(s => `<span><i style="background:${s.cor}"></i>${s.nome}</span>`).join('')}</div>` : '';
+const chave = (cor, tipo) => `<i class="ch ${tipo || 'barra'}" style="--c:${cor}"></i>`;
+const legenda = (ss, tipo) => ss.length > 1 ? `<div class="leg">${ss.map(s => `<span>${chave(s.cor, tipo)}${esc(s.nome)}</span>`).join('')}</div>` : '';
+const titulo = t => t ? `<div class="tit">${t}</div>` : '';
+const nice = x => { const p = Math.pow(10, Math.floor(Math.log10(x || 1))), f = x / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p; };
 
-// barras horizontais em HTML. rows: [{l, bars:[{nome,cor,frac,txt,tip}]}]
-function hbars(rows, tit) {
+// ---------- primitivas de gráfico ----------
+// barras horizontais. rows: [{l, bars:[{nome,cor,v,txt,tip}]}]; opts: {tit, max, refs:[{v,rot}], nota}
+function barras(rows, opts = {}) {
+  if (typeof opts === 'string') opts = { tit: opts };
   const nomes = []; rows.forEach(r => r.bars.forEach(b => { if (b.nome && !nomes.find(x => x.nome === b.nome)) nomes.push({ nome: b.nome, cor: b.cor }); }));
-  return `<div class="grafico">${tit ? `<div class="tit">${tit}</div>` : ''}${legenda(nomes)}` + rows.map(r => `<div class="hb"><div class="l">${r.l}</div><div>` +
-    r.bars.map(b => `<div class="trilho" ${tip(b.tip || `${b.nome ? b.nome + ': ' : ''}${b.txt}`)}><div class="enche" style="width:${Math.max(0, Math.min(1, b.frac)) * 100}%;background:${b.cor}"></div><span class="v">${b.txt}</span></div>`).join('') + '</div></div>').join('') + '</div>';
+  const vals = rows.flatMap(r => r.bars.map(b => b.v)).concat((opts.refs || []).map(r => r.v)).filter(v => v != null && isFinite(v));
+  const max = opts.max || nice(Math.max(...vals, 1e-9) * 1.02);
+  const refs = (opts.refs || []).map(r => `<div class="ref" style="left:${Math.min(100, 100 * r.v / max)}%"><span>${esc(r.rot)}</span></div>`).join('');
+  return `<div class="grafico barras">${titulo(opts.tit)}${legenda(nomes)}<div class="area">${refs}` + rows.map(r => `<div class="hb"><div class="l">${r.l}</div><div class="bs">` +
+    r.bars.map(b => { const f = Math.max(0, Math.min(1, (b.v ?? 0) / max)); return `<div class="trilho" ${tip(b.tip || `<b>${b.txt}</b>${b.nome ? '<br>' + esc(b.nome) : ''}<br>${r.l.replace(/<[^>]+>/g, '')}`)}><div class="enche" style="width:${(f * 100).toFixed(2)}%;background:${b.cor}"></div><span class="v" style="left:${(f * 100).toFixed(2)}%">${b.txt}</span></div>`; }).join('') + '</div></div>').join('') +
+    `</div>${opts.nota ? `<p class="nota">${opts.nota}</p>` : ''}</div>`;
 }
-// gráfico de pontos/intervalos. linhas:[{l, s:[{nome,cor,v,lo,hi,tip}]}]
-function pontos({ linhas, min, max, refs = [], faixa, fmt, tit }) {
-  const W = 640, ml = 190, mr = 14, rh = 22, top = 8, nS = Math.max(...linhas.map(l => l.s.length));
-  const bh = nS * rh + 10, H = top + linhas.length * bh + 26, X = v => ml + (W - ml - mr) * (v - min) / (max - min), g = [];
-  if (faixa) g.push(`<rect x="${X(faixa[0])}" y="${top}" width="${X(faixa[1]) - X(faixa[0])}" height="${H - top - 22}" fill="${css('--terc')}" opacity=".13"/><text x="${X(faixa[1]) - 3}" y="${top + 10}" text-anchor="end" font-size="10.5" fill="${css('--fraco')}">${faixa[2]}</text>`);
-  for (let k = 0; k <= 4; k++) { const v = min + (max - min) * k / 4; g.push(`<line x1="${X(v)}" x2="${X(v)}" y1="${top}" y2="${H - 22}" stroke="${css('--grade')}"/><text x="${X(v)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="${css('--fraco')}">${fmt(v)}</text>`); }
-  refs.forEach(r => g.push(`<line x1="${X(r.v)}" x2="${X(r.v)}" y1="${top}" y2="${H - 22}" stroke="${css('--fraco')}" stroke-dasharray="4 3"/><text x="${X(r.v) + 3}" y="${H - 24}" font-size="10.5" fill="${css('--fraco')}">${r.rot}</text>`));
+// cobertura: frações perto de 100%. itens: [{l, ok, tot, nome, cor}]
+function coberturas(itens, tit) {
+  const html = itens.map(i => { const f = i.tot ? i.ok / i.tot : 0, falta = i.tot - i.ok, cheio = falta === 0;
+    return `<div class="cob" ${tip(`<b>${N(i.ok)} de ${N(i.tot)}</b> (${P(100 * f, f === 1 ? 0 : 4)}%)${i.nome ? '<br>' + esc(i.nome) : ''}${falta ? `<br>faltam ${N(falta)}` : '<br>todas'}`)}>
+      <div class="cl">${i.l}${i.nome ? `<span class="sub">${chave(i.cor)}${esc(i.nome)}</span>` : ''}</div>
+      <div class="cv ${cheio ? 'ok' : 'gap'}">${P(100 * f, f === 1 ? 0 : f > 0.999 ? 3 : 2)}%</div>
+      <div class="cm"><div class="cmeter"><i style="width:${(100 * f).toFixed(3)}%;background:${i.cor}"></i></div><div class="cd">${N(i.ok)} de ${N(i.tot)}${falta ? ` <b>· faltam ${N(falta)}</b>` : ' <b class="ok">· todas ✓</b>'}</div></div></div>`; }).join('');
+  return `<div class="grafico cobs">${titulo(tit)}${html}</div>`;
+}
+// figuras (stat tiles). itens: [{n, r, estado:'ok'|'aviso'|'ruim', tip}]
+const figuras = (itens, tit) => `<div class="grafico">${titulo(tit)}<div class="figs">${itens.map(i => `<div class="fig ${i.estado || ''}" ${i.tip ? tip(i.tip) : ''}><div class="n">${i.n}</div><div class="r">${i.r}</div></div>`).join('')}</div></div>`;
+// igualdade: dois totais lado a lado
+const igualdade = (a, ta, b, tb, iguais, tit) => `<div class="grafico">${titulo(tit)}<div class="igual"><div class="lado"><div class="n">${a}</div><div class="r">${ta}</div></div><div class="sinal ${iguais ? 'ok' : 'nao'}">${iguais ? '=' : '≠'}</div><div class="lado"><div class="n">${b}</div><div class="r">${tb}</div></div></div></div>`;
+
+// pontos e intervalos. linhas:[{l, s:[{nome,cor,v,lo,hi,tip}]}]
+function pontos({ linhas, min, max, refs = [], faixa, fmt, tit, zonas = [] }) {
+  const W = 640, mr = 16, rh = 24, top = 14, nS = Math.max(...linhas.map(l => l.s.length));
+  const ml = Math.min(230, 16 + Math.max(...linhas.map(l => l.l.replace(/<[^>]+>/g, '').length)) * 6.6);
+  const bh = nS * rh + 8, H = top + linhas.length * bh + 30, X = v => ml + (W - ml - mr) * (v - min) / (max - min), g = [];
+  zonas.forEach(z => g.push(`<rect x="${X(Math.max(min, z[0]))}" y="${top - 6}" width="${X(Math.min(max, z[1])) - X(Math.max(min, z[0]))}" height="${H - top - 22}" fill="${z[3] || css('--aviso')}" opacity=".10"/><text x="${X(Math.max(min, z[0])) + 4}" y="${top + 4}" font-size="10.5" fill="${css('--fraco')}">${z[2]}</text>`));
+  if (faixa) g.push(`<rect x="${X(faixa[0])}" y="${top - 6}" width="${X(faixa[1]) - X(faixa[0])}" height="${H - top - 22}" fill="${css('--terc')}" opacity=".12"/><text x="${X(faixa[1]) - 4}" y="${top + 4}" text-anchor="end" font-size="10.5" fill="${css('--fraco')}">${faixa[2]}</text>`);
+  for (let k = 0; k <= 4; k++) { const v = min + (max - min) * k / 4; g.push(`<line x1="${X(v)}" x2="${X(v)}" y1="${top - 6}" y2="${H - 26}" stroke="${css('--grade')}"/><text x="${X(v)}" y="${H - 10}" text-anchor="middle" font-size="11" fill="${css('--fraco')}">${fmt(v)}</text>`); }
+  refs.forEach(r => g.push(`<line x1="${X(r.v)}" x2="${X(r.v)}" y1="${top - 6}" y2="${H - 26}" stroke="${css('--fraco')}" stroke-dasharray="${r.solido ? '' : '4 3'}"/>${r.rot ? `<text x="${X(r.v) + 4}" y="${H - 28}" font-size="10.5" fill="${css('--fraco')}">${r.rot}</text>` : ''}`));
   linhas.forEach((l, i) => {
-    const y0 = top + i * bh; g.push(`<text x="${ml - 8}" y="${y0 + bh / 2 + 3}" text-anchor="end" font-size="12" fill="${css('--texto2')}">${l.l}</text>`);
-    l.s.forEach((s, j) => { const y = y0 + 8 + j * rh + 6;
-      if (s.lo != null) g.push(`<line x1="${X(Math.max(min, s.lo))}" x2="${X(Math.min(max, s.hi))}" y1="${y}" y2="${y}" stroke="${s.cor}" stroke-width="${s.v == null ? 8 : 2.2}" opacity="${s.v == null ? .75 : 1}"/>`);
-      if (s.v != null) g.push(`<circle cx="${X(Math.max(min, Math.min(max, s.v)))}" cy="${y}" r="5" fill="${s.cor}"/>`);
-      g.push(`<rect x="${ml}" y="${y - 10}" width="${W - ml - mr}" height="20" fill="transparent" ${tip(s.tip || `<b>${l.l}</b><br>${s.nome || ''}: ${s.v != null ? fmt(s.v) : ''}${s.lo != null ? ` [${fmt(s.lo)}; ${fmt(s.hi)}]` : ''}`)}/>`); });
+    const y0 = top + i * bh; if (i) g.push(`<line x1="${ml - 6}" x2="${W - mr}" y1="${y0 - 4}" y2="${y0 - 4}" stroke="${css('--grade')}"/>`);
+    g.push(`<text x="${ml - 10}" y="${y0 + bh / 2 + 2}" text-anchor="end" font-size="12" fill="${css('--texto2')}">${l.l}</text>`);
+    l.s.forEach((s, j) => { const y = y0 + 4 + j * rh + 8;
+      if (s.lo != null) g.push(`<line x1="${X(Math.max(min, s.lo))}" x2="${X(Math.min(max, s.hi))}" y1="${y}" y2="${y}" stroke="${s.cor}" stroke-width="${s.v == null ? 8 : 2.5}" stroke-linecap="round" opacity="${s.v == null ? .8 : 1}"/>`);
+      if (s.v != null) g.push(`<circle cx="${X(Math.max(min, Math.min(max, s.v)))}" cy="${y}" r="7" fill="${css('--surface')}"/><circle cx="${X(Math.max(min, Math.min(max, s.v)))}" cy="${y}" r="5" fill="${s.cor}"/>`);
+      if (s.rot) g.push(`<text x="${X(Math.max(min, Math.min(max, s.v ?? s.hi))) + 10}" y="${y + 4}" font-size="11" fill="${css('--texto')}" font-weight="600">${s.rot}</text>`);
+      g.push(`<rect x="${ml}" y="${y - 12}" width="${W - ml - mr}" height="24" fill="transparent" ${tip(s.tip || `<b>${s.v != null ? fmt(s.v) : ''}${s.lo != null ? ` [${fmt(s.lo)}; ${fmt(s.hi)}]` : ''}</b><br>${l.l.replace(/<[^>]+>/g, '')}${s.nome ? ' · ' + esc(s.nome) : ''}`)}/>`); });
   });
   const nomes = []; linhas.forEach(l => l.s.forEach(s => { if (s.nome && !nomes.find(x => x.nome === s.nome)) nomes.push({ nome: s.nome, cor: s.cor }); }));
-  return `<div class="grafico">${tit ? `<div class="tit">${tit}</div>` : ''}${legenda(nomes)}<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(tit || 'gráfico')}">${g.join('')}</svg></div>`;
+  return `<div class="grafico">${titulo(tit)}${legenda(nomes, 'ponto')}<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc((tit || 'gráfico').replace(/<[^>]+>/g, ''))}">${g.join('')}</svg></div>`;
 }
-// linhas (curva) e histograma com dica própria
-function linhas(el, { titulo, x, series, fmt, zero, H = 240 }) {
-  const W = 640, m = { l: 52, r: 10, t: 8, b: 24 };
+// linhas (curva) com mira e dica
+function linhas(el, { titulo: tt, x, series, fmt, zero, H = 260, sub }) {
+  const W = 640, m = { l: 56, r: 72, t: 10, b: 26 };
   const todos = series.flatMap(s => s.valores).filter(v => v != null);
   let lo = Math.min(...todos), hi = Math.max(...todos);
   if (zero !== undefined) { lo = Math.min(lo, zero); hi = Math.max(hi, zero); }
   const pad = (hi - lo) * 0.06 || 1; if (!(zero !== undefined && lo === zero)) lo -= pad; hi += pad;
   const X = i => m.l + (W - m.l - m.r) * i / (x.length - 1), Y = v => m.t + (H - m.t - m.b) * (1 - (v - lo) / (hi - lo)), grade = [];
-  for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4; grade.push(`<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css('--grade')}"/><text x="${m.l - 5}" y="${Y(v) + 4}" text-anchor="end" font-size="10.5" fill="${css('--fraco')}">${fmt(v)}</text>`); }
+  const passoY = nice((hi - lo) / 4); for (let v = Math.ceil(lo / passoY) * passoY; v <= hi; v += passoY) grade.push(`<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css('--grade')}"/><text x="${m.l - 6}" y="${Y(v) + 4}" text-anchor="end" font-size="10.5" fill="${css('--fraco')}">${fmt(v)}</text>`);
   const passo = Math.max(1, Math.round(x.length / 6));
-  for (let i = 0; i < x.length; i += passo) grade.push(`<text x="${X(i)}" y="${H - 7}" text-anchor="middle" font-size="10.5" fill="${css('--fraco')}">${x[i]}</text>`);
+  for (let i = 0; i < x.length; i += passo) grade.push(`<text x="${X(i)}" y="${H - 8}" text-anchor="middle" font-size="10.5" fill="${css('--fraco')}">${x[i]}</text>`);
   const cam = series.map(s => { let d = '', ab = false; s.valores.forEach((v, i) => { if (v == null) { ab = false; return; } d += `${ab ? 'L' : 'M'}${X(i).toFixed(1)},${Y(v).toFixed(1)}`; ab = true; });
-    return `<path d="${d}" fill="none" stroke="${s.cor}" stroke-width="1.8" stroke-dasharray="${s.traco || ''}" stroke-linejoin="round"/>`; });
-  el.innerHTML = `<div class="grafico"><div class="tit">${titulo}</div>${legenda(series.map(s => ({ nome: s.nome, cor: s.cor })))}<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(titulo)}">${grade.join('')}${zero !== undefined ? `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(zero)}" y2="${Y(zero)}" stroke="${css('--fraco')}"/>` : ''}${cam.join('')}
-    <line class="cruz" y1="${m.t}" y2="${H - m.b}" stroke="${css('--fraco')}" stroke-dasharray="3 3" visibility="hidden"/><rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent"/></svg></div>`;
+    return `<path d="${d}" fill="none" stroke="${s.cor}" stroke-width="2" stroke-dasharray="${s.traco || ''}" stroke-linejoin="round" stroke-linecap="round"/>`; });
+  // rótulo direto no fim de cada série (só quando não colidem)
+  const fins = series.map(s => { let i = s.valores.length - 1; while (i >= 0 && s.valores[i] == null) i--; return i >= 0 ? { i, v: s.valores[i], s } : null; }).filter(Boolean).sort((a, b) => Y(a.v) - Y(b.v));
+  const rot = []; let ultimoY = -99; fins.forEach(f => { const y = Y(f.v); rot.push(`<circle cx="${X(f.i)}" cy="${y}" r="6" fill="${css('--surface')}"/><circle cx="${X(f.i)}" cy="${y}" r="4" fill="${f.s.cor}"/>`); if (series.length <= 3 && y - ultimoY > 12) { rot.push(`<text x="${X(f.i) + 9}" y="${y + 4}" font-size="11" font-weight="600" fill="${css('--texto')}">${fmt(f.v)}</text>`); ultimoY = y; } });
+  el.innerHTML = `<div class="grafico">${titulo(tt)}${sub ? `<div class="nota" style="margin:-2px 0 4px">${sub}</div>` : ''}${legenda(series.map(s => ({ nome: s.nome, cor: s.cor })), 'linha')}<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(tt)}">${grade.join('')}${zero !== undefined ? `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(zero)}" y2="${Y(zero)}" stroke="${css('--fraco')}"/>` : ''}${cam.join('')}${rot.join('')}
+    <line class="cruz" y1="${m.t}" y2="${H - m.b}" stroke="${css('--fraco')}" visibility="hidden"/><rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent"/></svg></div>`;
   const svg = el.querySelector('svg'), cruz = svg.querySelector('.cruz');
-  svg.addEventListener('mousemove', e => { e.stopPropagation(); const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * W / r.width;
+  svg.addEventListener('pointermove', e => { e.stopPropagation(); const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * W / r.width;
     const i = Math.max(0, Math.min(x.length - 1, Math.round((px - m.l) / (W - m.l - m.r) * (x.length - 1))));
     cruz.setAttribute('x1', X(i)); cruz.setAttribute('x2', X(i)); cruz.setAttribute('visibility', 'visible');
-    dica.innerHTML = `<b>${x[i]}</b><br>` + series.map(s => `<span style="color:${s.cor}">■</span> ${s.nome}: <b>${s.valores[i] == null ? '—' : fmt(s.valores[i])}</b>`).join('<br>');
-    dica.style.display = 'block'; dica.style.left = (e.pageX + 14) + 'px'; dica.style.top = (e.pageY + 14) + 'px'; });
-  svg.addEventListener('mouseleave', () => { dica.style.display = 'none'; cruz.setAttribute('visibility', 'hidden'); });
+    dica.innerHTML = `<b>${x[i]}</b><br>` + series.map(s => `${chave(s.cor, 'linha')}<b>${s.valores[i] == null ? '—' : fmt(s.valores[i])}</b> <span class="fr">${esc(s.nome)}</span>`).join('<br>');
+    dica.style.display = 'block'; const w = dica.offsetWidth; dica.style.left = (e.pageX + 14 + w > window.scrollX + document.documentElement.clientWidth - 8 ? e.pageX - w - 14 : e.pageX + 14) + 'px'; dica.style.top = (e.pageY + 14) + 'px'; });
+  svg.addEventListener('pointerleave', () => { dica.style.display = 'none'; cruz.setAttribute('visibility', 'hidden'); });
 }
+// histograma com altura em raiz quadrada (as caudas aparecem) e dica por faixa
 function histograma(z) {
-  const W = 640, H = 230, m = { l: 56, r: 10, t: 8, b: 40 }, v = z.contagem, n = v.length, rot = z.bordas.slice(0, -1).map(b => P(b, 1));
-  const hi = Math.max(...v) * 1.05, bw = (W - m.l - m.r) / n, Y = q => m.t + (H - m.t - m.b) * (1 - q / hi), g = [];
-  for (let k = 0; k <= 4; k++) { const q = hi * k / 4; g.push(`<line x1="${m.l}" x2="${W - m.r}" y1="${Y(q)}" y2="${Y(q)}" stroke="${css('--grade')}"/><text x="${m.l - 5}" y="${Y(q) + 4}" text-anchor="end" font-size="10.5" fill="${css('--fraco')}">${N(q)}</text>`); }
+  const W = 640, H = 240, m = { l: 56, r: 10, t: 14, b: 42 }, v = z.contagem, n = v.length, rot = z.bordas.slice(0, -1).map(b => P(b, 1));
+  const hi = Math.max(...v), bw = (W - m.l - m.r) / n, Y = q => m.t + (H - m.t - m.b) * (1 - Math.sqrt(q / hi)), g = [];
+  const ticks = [0, 10, 100, 1000, 10000, 100000, 1000000].filter(t => t <= hi); ticks.push(hi);
+  ticks.forEach(q => g.push(`<line x1="${m.l}" x2="${W - m.r}" y1="${Y(q)}" y2="${Y(q)}" stroke="${css('--grade')}"/><text x="${m.l - 6}" y="${Y(q) + 4}" text-anchor="end" font-size="10.5" fill="${css('--fraco')}">${compacto(q)}</text>`));
   const cauda = i => Math.abs(z.bordas[i]) >= 5 || Math.abs(z.bordas[i + 1]) > 5;
-  v.forEach((q, i) => { g.push(`<rect x="${m.l + i * bw + 1}" y="${Y(q)}" width="${bw - 2}" height="${Math.max(0, H - m.b - Y(q))}" rx="2" fill="${cauda(i) ? css('--lula') : css('--terc')}" ${tip(`Faixa <b>${rot[i]}</b> a ${P(z.bordas[i + 1], 1)} desvios<br><b>${N(q)}</b> seções`)}/>`); if (i % 4 === 0) g.push(`<text x="${m.l + i * bw + bw / 2}" y="${H - 24}" text-anchor="middle" font-size="10.5" fill="${css('--fraco')}">${rot[i]}</text>`); });
-  g.push(`<text x="${m.l + (W - m.l - m.r) / 2}" y="${H - 6}" text-anchor="middle" font-size="11" fill="${css('--fraco')}">distância do padrão do município (desvios; 0 = igual às vizinhas)</text>`);
-  return `<div class="grafico"><div class="tit">Seções por distância do padrão (${N(z.n)} seções)</div><div class="leg"><span><i style="background:${css('--terc')}"></i>dentro de 5 desvios</span><span><i style="background:${css('--lula')}"></i>caudas, além de 5 desvios</span></div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Histograma dos z">${g.join('')}</svg></div>`;
+  v.forEach((q, i) => { g.push(`<rect x="${m.l + i * bw + 1}" y="${Y(q)}" width="${Math.max(1, bw - 2)}" height="${Math.max(0, H - m.b - Y(q))}" rx="2" fill="${cauda(i) ? AVISO() : T2()}" ${tip(`<b>${N(q)}</b> seções<br>faixa ${rot[i]} a ${P(z.bordas[i + 1], 1)} desvios`)}/>`); if (i % 4 === 0) g.push(`<text x="${m.l + i * bw + bw / 2}" y="${H - 26}" text-anchor="middle" font-size="10.5" fill="${css('--fraco')}">${rot[i]}</text>`); });
+  [-5, 5].forEach(b => { const i = z.bordas.findIndex(x => x >= b); if (i >= 0) { const x = m.l + i * bw; g.push(`<line x1="${x}" x2="${x}" y1="${m.t}" y2="${H - m.b}" stroke="${AVISO()}" stroke-dasharray="4 3"/><text x="${x + (b > 0 ? 4 : -4)}" y="${m.t + 10}" text-anchor="${b > 0 ? 'start' : 'end'}" font-size="10.5" fill="${css('--texto2')}">${b > 0 ? '+' : ''}${b} desvios</text>`); } });
+  g.push(`<text x="${m.l + (W - m.l - m.r) / 2}" y="${H - 8}" text-anchor="middle" font-size="11" fill="${css('--fraco')}">distância do padrão do município (desvios; 0 = igual às vizinhas) · altura em escala de raiz quadrada</text>`);
+  const caudas = (z.acima5_lula ?? 0) + (z.acima5_flavio ?? 0);
+  return `<div class="grafico">${titulo(`Seções por distância do padrão (${N(z.n)} seções)`)}<div class="leg"><span>${chave(T2())}dentro de 5 desvios</span><span>${chave(AVISO())}caudas, além de 5 desvios</span></div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Histograma dos z">${g.join('')}</svg>` +
+    (z.acima5_lula != null ? figuras([{ n: N(caudas), r: `seções além de 5 desvios, de ${N(z.n)}`, estado: 'aviso' }, { n: N(z.acima5_lula), r: 'na cauda pró-Lula', tip: 'Seções além de +5 desvios a favor do Lula' }, { n: N(z.acima5_flavio), r: 'na cauda pró-adversário', tip: 'Seções além de 5 desvios a favor do adversário' }]) : '') + '</div>';
 }
-const placeholder = (msg, sub) => `<div class="proc">⏳ ${msg}${sub ? `<small>${sub}</small>` : ''}</div>`;
-const dupla = (a, ta, b, tb) => `<div class="dupla"><div class="cx"><b>${a}</b>${ta}</div><div class="seta">→</div><div class="cx"><b>${b}</b>${tb}</div></div>`;
+// dumbbell: esperado → observado por grupo. rows: [{l, sub, a, b, z, tip}]
+function dumbbell(rows, { tit, fmt, na, nb }) {
+  const W = 640, ml = 210, mr = 60, rh = 26, top = 12, H = top + rows.length * rh + 30, vals = rows.flatMap(r => [r.a, r.b]);
+  let min = Math.min(...vals, 0), max = Math.max(...vals, 0); const pad = (max - min) * 0.08 || 1; min -= pad; max += pad;
+  const X = v => ml + (W - ml - mr) * (v - min) / (max - min), g = [];
+  for (let k = 0; k <= 4; k++) { const v = min + (max - min) * k / 4; g.push(`<line x1="${X(v)}" x2="${X(v)}" y1="${top - 4}" y2="${H - 26}" stroke="${css('--grade')}"/><text x="${X(v)}" y="${H - 10}" text-anchor="middle" font-size="11" fill="${css('--fraco')}">${fmt(v)}</text>`); }
+  if (min < 0 && max > 0) g.push(`<line x1="${X(0)}" x2="${X(0)}" y1="${top - 4}" y2="${H - 26}" stroke="${css('--fraco')}"/>`);
+  rows.forEach((r, i) => { const y = top + i * rh + rh / 2;
+    g.push(`<text x="${ml - 10}" y="${y + 4}" text-anchor="end" font-size="11.5" fill="${css('--texto2')}">${esc(r.l.length > 30 ? r.l.slice(0, 29) + '…' : r.l)}</text>`);
+    g.push(`<line x1="${X(r.a)}" x2="${X(r.b)}" y1="${y}" y2="${y}" stroke="${css('--fraco')}" stroke-width="2" opacity=".6"/>`);
+    g.push(`<circle cx="${X(r.a)}" cy="${y}" r="5" fill="${T1()}"/><circle cx="${X(r.b)}" cy="${y}" r="7" fill="${css('--surface')}"/><circle cx="${X(r.b)}" cy="${y}" r="5" fill="${T2()}"/>`);
+    g.push(`<text x="${W - mr + 8}" y="${y + 4}" font-size="11" fill="${css('--texto')}" font-weight="600">z ${P(r.z, 1)}</text>`);
+    g.push(`<rect x="${ml}" y="${y - 13}" width="${W - ml - mr}" height="26" fill="transparent" ${tip(r.tip)}/>`); });
+  return `<div class="grafico">${titulo(tit)}<div class="leg"><span>${chave(T1(), 'ponto')}${na}</span><span>${chave(T2(), 'ponto')}${nb}</span></div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(tit)}">${g.join('')}</svg></div>`;
+}
+// faixa de percentis: pontos num único eixo com rótulos alternados
+function faixaPontos({ itens, min, max, fmt, tit, refs = [] }) {
+  const W = 640, ml = 16, mr = 16, H = 86, y = 50, X = v => ml + (W - ml - mr) * (v - min) / (max - min), g = [];
+  for (let k = 0; k <= 4; k++) { const v = min + (max - min) * k / 4; g.push(`<line x1="${X(v)}" x2="${X(v)}" y1="${y - 14}" y2="${y + 14}" stroke="${css('--grade')}"/><text x="${X(v)}" y="${H - 6}" text-anchor="middle" font-size="10.5" fill="${css('--fraco')}">${fmt(v)}</text>`); }
+  refs.forEach(r => g.push(`<line x1="${X(r.v)}" x2="${X(r.v)}" y1="${y - 22}" y2="${y + 18}" stroke="${css('--fraco')}" stroke-dasharray="4 3"/>`));
+  g.push(`<line x1="${ml}" x2="${W - mr}" y1="${y}" y2="${y}" stroke="${css('--grade')}"/>`);
+  itens.forEach((it, i) => { const x = X(Math.max(min, Math.min(max, it.v))), cima = i % 2 === 0;
+    g.push(`<circle cx="${x}" cy="${y}" r="7" fill="${css('--surface')}"/><circle cx="${x}" cy="${y}" r="5" fill="${T2()}" ${tip(`<b>${fmt(it.v)}</b><br>percentil ${esc(it.rot)}`)}/><text x="${x}" y="${cima ? y - 14 : y + 24}" text-anchor="middle" font-size="10.5" fill="${css('--texto2')}">${esc(it.rot)}</text>`); });
+  return `<div class="grafico">${titulo(tit)}<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(tit)}">${g.join('')}</svg></div>`;
+}
+const placeholder = (msg, sub) => `<div class="proc">${msg}${sub ? `<small>${sub}</small>` : ''}</div>`;
+const dupla = (a, ta, b, tb) => `<div class="dupla"><div class="cx"><b>${a}</b>${ta}</div><div class="seta" aria-hidden="true">→</div><div class="cx"><b>${b}</b>${tb}</div></div>`;
 const pct = (a, b) => b ? a / b : 0;
+const vistaTabela = html => `<details class="mais"><summary>ver como tabela</summary><div class="tabela-rolavel">${html}</div></details>`;
 
 // ---------- Visualizações por teste ----------
-// cada função recebe (ctx) e devolve { ler, html | fn(el) }. ctx: d (relatorio_dados), t (teste), lr1, lr2, bt22, bt26
-const T1 = () => css('--fraco'), T2 = () => css('--terc');
-function cobertura(ctx, linhas, tit) {
-  const rows = linhas.map(([l, f]) => ({ l, bars: ['t1', 't2'].map(k => { const r = ctx.d.log_resumo[k]; const par = r && f(r); if (!par) return null;
-    const [ok, tot] = par; return { nome: k === 't1' ? '1º turno' : '2º turno', cor: k === 't1' ? T1() : T2(), frac: pct(ok, tot), txt: `${N(ok)} de ${N(tot)} (${P(100 * pct(ok, tot), ok === tot ? 0 : 3)}%)` }; }).filter(Boolean) })).filter(r => r.bars.length);
-  return hbars(rows, tit);
+// cada função recebe (ctx) e devolve { ler, html | fn(el) }. ctx: d (relatorio_dados), t (teste), bt22, bt26, nv
+function cobertura(ctx, itens, tit) {
+  const rows = []; itens.forEach(([l, f]) => ['t1', 't2'].forEach(k => { const r = ctx.d.log_resumo[k]; const par = r && f(r); if (!par) return; const [ok, tot] = par; rows.push({ l, ok, tot, nome: k === 't1' ? '1º turno' : '2º turno', cor: k === 't1' ? T1() : T2() }); }));
+  return rows.length ? coberturas(rows, tit) : null;
 }
+const anoBar = (a, b) => ({ nome: a, cor: a === '2022' ? T1() : T2(), ...b });
 const VIZ = {
-  T01: c => ({ ler: 'As duas barras têm o mesmo comprimento se as duas tabelas oficiais (Boletim de Urna e votação por seção) somam exatamente o mesmo.', html: (() => {
-    const t = c.d.totais_2, v = t.v13 + t.v22; return hbars([{ l: 'Boletim de Urna (soma, 2º turno, válidos)', bars: [{ cor: T2(), frac: 1, txt: N(v) }] }, { l: 'Votação por seção (soma, 2º turno, válidos)', bars: [{ cor: T2(), frac: 1, txt: N(v) }] }], 'Totais do 2º turno nas duas fontes oficiais') })() }),
-  T14: c => ({ ler: 'Cada barra é a fração de urnas em que a conta fecha. 100% = todas.', html: cobertura(c, [['Votos no log = comparecimento do boletim', r => [r.log_igual_comparecimento, r.urnas]], ['Confirmações + nulos por suspensão = total do boletim impresso', r => r.urnas_com_imgbu && [r.confirmacoes_igual_total, r.urnas_com_imgbu]]], 'Urnas em que a conta fecha') }),
+  T01: c => ({ ler: 'Os dois totais oficiais devem ser idênticos: a soma do Boletim de Urna e a soma da votação por seção, no 2º turno, votos válidos.', html: (() => {
+    const t = c.d.totais_2, v = t.v13 + t.v22; return igualdade(N(v), 'Boletim de Urna (soma, 2º turno, válidos)', N(v), 'Votação por seção (soma, 2º turno, válidos)', true, 'Totais do 2º turno nas duas fontes oficiais'); })() }),
+  T14: c => ({ ler: 'Cada medidor é a fração de urnas em que a conta fecha. 100% = todas; o número à direita diz quantas faltam.', html: cobertura(c, [['Votos no log = comparecimento do boletim', r => [r.log_igual_comparecimento, r.urnas]], ['Confirmações + nulos por suspensão = total do boletim impresso', r => r.urnas_com_imgbu && [r.confirmacoes_igual_total, r.urnas_com_imgbu]]], 'Urnas em que a conta fecha') }),
   T15: c => ({ ler: 'Duas conferências do boletim impresso (imagem): o arquivo é o que a urna assinou, e a assinatura é válida.', html: cobertura(c, [['Imagem do boletim: assinatura válida', r => r.assin_ok_imgbu], ['Imagem do boletim: hash = o assinado', r => r.hash_ok_imgbu]], 'Boletim impresso nas urnas com o arquivo') }),
-  T16: c => ({ ler: 'Barras cheias = assinatura válida em todas as urnas que têm o arquivo. Os arquivos ausentes (exterior, seções sem urna eletrônica) não entram no denominador.', html: cobertura(c, [['Lista de arquivos: assinatura válida', r => r.assin_lista_ok != null && [r.assin_lista_ok, r.assin_ok_bu ? r.assin_ok_bu[1] : r.urnas]], ['Boletim (bu): assinatura', r => r.assin_ok_bu], ['RDV: assinatura', r => r.assin_ok_rdv], ['Log: assinatura', r => r.assin_ok_log], ['Imagem do boletim: assinatura', r => r.assin_ok_imgbu]], 'Assinatura digital válida, por arquivo') }),
-  T17: c => ({ ler: 'O RDV (voto a voto, embaralhado) é recontado e comparado com o boletim publicado. Barra cheia = todas as urnas iguais.', html: cobertura(c, [['Recontagem pelo RDV = boletim publicado', r => r.urnas_com_rdv && [r.rdv_igual_boletim, r.urnas_com_rdv]]], 'Recontagem do RDV') }),
-  T16c: c => { const m = c.t.resultado_atual.match(/(\d+)\/(\d+) legítimas.*?(\d+) em todos os (\d+) controles/); return { ler: 'Antes de confiar no verificador, testamos o próprio verificador: assinaturas legítimas devem passar e falsificações conhecidas devem ser rejeitadas.', html: m ? hbars([{ l: 'Assinaturas legítimas aceitas', bars: [{ cor: T2(), frac: +m[1] / +m[2], txt: `${m[1]} de ${m[2]}` }] }, { l: `Falsificações aceitas (${m[4]} controles negativos)`, bars: [{ cor: css('--lula'), frac: 0, txt: `${m[3]} aceitas` }] }], 'Teste do verificador de assinatura') : null }; },
-  T24: c => ({ ler: 'Fração das urnas em que a seção teve duas urnas votando (substituição registrada no log). Esperado: poucas, com explicação operacional.', html: hbars(['t1', 't2'].filter(k => c.d.log_resumo[k]?.urnas_substituidas != null).map(k => { const r = c.d.log_resumo[k]; return { l: k === 't1' ? '1º turno' : '2º turno', bars: [{ cor: T2(), frac: Math.min(1, r.urnas_substituidas / r.urnas * 30), txt: `${N(r.urnas_substituidas)} de ${N(r.urnas)} (${P(100 * r.urnas_substituidas / r.urnas, 2)}%)`, tip: `Barra em escala ampliada (30×) para ser visível` }] }; }), 'Urnas substituídas no meio do dia (escala ampliada)') }),
-  T32: c => { const m = c.t.resultado_atual.match(/(\d+)\/(\d+) votos iguais/); return { ler: 'Soma das urnas contra o total oficial divulgado. Barras iguais = fecha.', html: m ? hbars([{ l: 'Votos conferidos iguais ao total oficial', bars: [{ cor: T2(), frac: +m[1] / +m[2], txt: `${m[1]} de ${m[2]}` }] }], 'Soma das urnas × total oficial') : null }; },
+  T16: c => ({ ler: 'Medidor cheio = assinatura válida em todas as urnas que têm o arquivo. Os arquivos ausentes (exterior, seções sem urna eletrônica) não entram no denominador.', html: cobertura(c, [['Lista de arquivos: assinatura válida', r => r.assin_lista_ok != null && [r.assin_lista_ok, r.assin_ok_bu ? r.assin_ok_bu[1] : r.urnas]], ['Boletim (bu): assinatura', r => r.assin_ok_bu], ['RDV: assinatura', r => r.assin_ok_rdv], ['Log: assinatura', r => r.assin_ok_log], ['Imagem do boletim: assinatura', r => r.assin_ok_imgbu]], 'Assinatura digital válida, por arquivo') }),
+  T17: c => ({ ler: 'O RDV (voto a voto, embaralhado) é recontado e comparado com o boletim publicado. Medidor cheio = todas as urnas iguais.', html: cobertura(c, [['Recontagem pelo RDV = boletim publicado', r => r.urnas_com_rdv && [r.rdv_igual_boletim, r.urnas_com_rdv]]], 'Recontagem do RDV') }),
+  T16c: c => { const m = c.t.resultado_atual.match(/(\d+)\/(\d+) legítimas.*?(\d+) em todos os (\d+) controles/); return { ler: 'Antes de confiar no verificador, testamos o próprio verificador: assinaturas legítimas devem passar e falsificações conhecidas devem ser rejeitadas.', html: m ? figuras([{ n: `${m[1]} de ${m[2]}`, r: 'assinaturas legítimas aceitas', estado: +m[1] === +m[2] ? 'ok' : 'aviso' }, { n: `${m[3]} de ${m[4]}`, r: 'falsificações aceitas (controles negativos)', estado: +m[3] === 0 ? 'ok' : 'ruim' }], 'Teste do verificador de assinatura') : null }; },
+  T24: c => ({ ler: 'Fração das urnas em que a seção teve duas urnas votando (substituição registrada no log). Esperado: poucas, com explicação operacional.', html: figuras(['t1', 't2'].filter(k => c.d.log_resumo[k]?.urnas_substituidas != null).map(k => { const r = c.d.log_resumo[k], f = r.urnas_substituidas / r.urnas; return { n: P(100 * f, 2) + '%', r: `${k === 't1' ? '1º turno' : '2º turno'}: ${N(r.urnas_substituidas)} de ${N(r.urnas)} urnas (1 em cada ${N(1 / f)})`, tip: `${N(r.urnas_substituidas)} urnas substituídas em ${N(r.urnas)}` }; }), 'Urnas substituídas no meio do dia') }),
+  T32: c => { const m = c.t.resultado_atual.match(/(\d+)\/(\d+) votos iguais/); return { ler: 'Soma das urnas contra o total oficial divulgado. Deve ser igual.', html: m ? coberturas([{ l: 'Votos conferidos iguais ao total oficial', ok: +m[1], tot: +m[2], cor: T2() }], 'Soma das urnas × total oficial') : null }; },
   T36: c => { const m = c.t.resultado_atual.match(/(\d+) casos em ([\d.]+) urnas; (\d+) com explicação.*?(\d+) inconsistência.*?(\d+) sem explicação/); if (!m) return null; const tot = +m[1];
-    return { ler: 'Das urnas em que a conta não fecha exatamente, quantas têm explicação operacional. A explicação usa o log, não é suposição.', html: hbars([{ l: 'Com explicação operacional (votos íntegros)', bars: [{ cor: T2(), frac: m[3] / tot, txt: `${m[3]} de ${tot}` }] }, { l: 'Inconsistência de publicação', bars: [{ cor: css('--aviso'), frac: m[4] / tot, txt: `${m[4]} de ${tot}` }] }, { l: 'Sem explicação', bars: [{ cor: css('--lula'), frac: m[5] / tot, txt: `${m[5]} de ${tot}` }] }], `${tot} urnas com conta que não fecha, em ${m[2]}`) }; },
-  T02: c => ({ ler: 'Quanto mais perto de zero, mais a seção virou como as vizinhas. As barras vermelhas são as caudas (além de 5 desvios): onde procuraríamos seções diferentes.', html: histograma(c.d.z_hist) + sensib(c) }),
+    return { ler: 'Das urnas em que a conta não fecha exatamente, quantas têm explicação operacional. A explicação usa o log, não é suposição.', html: barras([{ l: 'Com explicação operacional (votos íntegros)', bars: [{ cor: T2(), v: +m[3], txt: `${m[3]} de ${tot}` }] }, { l: 'Inconsistência de publicação', bars: [{ cor: AVISO(), v: +m[4], txt: `${m[4]} de ${tot}` }] }, { l: 'Sem explicação', bars: [{ cor: RUIM(), v: +m[5], txt: `${m[5]} de ${tot}` }] }], { tit: `${tot} urnas com conta que não fecha, em ${m[2]}`, max: tot }) }; },
+  T02: c => ({ ler: 'Quanto mais perto de zero, mais a seção virou como as vizinhas. As barras âmbar são as caudas (além de 5 desvios): onde procuraríamos seções diferentes. A altura usa escala de raiz quadrada para as caudas, minúsculas, aparecerem.', html: histograma(c.d.z_hist) + sensib(c) }),
   T03: c => intervalos(c, 'Correlação entre a virada e a hora de chegada ao TSE', 'r', 4),
   T04: c => intervalos(c, 'Diferença de z: urnas trocadas × outras', 'z', 4),
-  T05: c => ({ ler: 'Cada ponto é um p-valor. A linha tracejada (0,05) é a fronteira usual: pontos à direita dela são compatíveis com o acaso.', html: pontos({ min: 0, max: 1, fmt: v => P(v, 2), refs: [{ v: 0.05, rot: 'p = 0,05' }], tit: 'Último dígito uniforme? p-valor por candidato e turno',
+  T05: c => ({ ler: 'Cada ponto é um p-valor. A linha tracejada (0,05) é a fronteira usual: pontos à direita dela são compatíveis com o acaso; a zona sombreada à esquerda seria o sinal de alerta.', html: pontos({ min: 0, max: 1, fmt: v => P(v, 2), refs: [{ v: 0.05, rot: 'p = 0,05' }], zonas: [[0, 0.05, '']], tit: 'Último dígito uniforme? p-valor por candidato e turno',
     linhas: [['1t_v13', '1º turno, Lula'], ['1t_v22', '1º turno, adversário'], ['2t_v13', '2º turno, Lula'], ['2t_v22', '2º turno, adversário']].map(([k, l]) => ({ l, s: [{ nome: '2026', cor: T2(), v: c.bt26.T05[k] }].concat(c.bt22 ? [{ nome: '2022', cor: T1(), v: c.bt22.T05[k] }] : []) })) }) }),
-  T07: c => ({ ler: 'Contagem de seções com comparecimento alto e voto quase unânime (assinatura de enchimento). Comparamos com 2022.', html: hbars(['2022', '2026'].map(a => { const b = a === '2022' ? c.bt22 : c.bt26; if (!b) return null; const mx = Math.max(b.T07['2t_v13'], b.T07['2t_v22'], 1);
-    return { l: `${a}, 2º turno`, bars: [{ nome: 'quase unânime para Lula', cor: css('--lula'), frac: b.T07['2t_v13'] / 120, txt: N(b.T07['2t_v13']) }, { nome: 'quase unânime para o adversário', cor: css('--flavio'), frac: b.T07['2t_v22'] / 120, txt: N(b.T07['2t_v22']) }] }; }).filter(Boolean), `Seções com comparecimento ≥ 95% e ≥ 90% para um candidato. Seções acima de 100%: ${c.bt26['T07']['2t_acima_100pct']} (2026)`) }),
-  T09: c => { const m = c.t.resultado_atual.match(/virada \+?([\d,]+) x \+?([\d,]+) pp/); return { ler: 'Compara a virada das seções que votaram até o horário normal com a das seções prorrogadas (fila). Barras iguais = votaram igual.', html: m ? hbars([{ l: 'Virada nas seções prorrogadas', bars: [{ cor: T2(), frac: num(m[1]) / 10, txt: '+' + m[1] + ' pp' }] }, { l: 'Virada nas demais seções', bars: [{ cor: T1(), frac: num(m[2]) / 10, txt: '+' + m[2] + ' pp' }] }], 'Virada média entre os turnos (pontos percentuais)') : null }; },
-  T10: c => ({ ler: 'A linha real deve acompanhar a prevista. Se um lote de urnas votasse fora do próprio histórico, a real se descolaria.', fn: el => { const k = c.d.curva;
-    el.innerHTML = '<div></div><div></div>'; linhas(el.children[0], { titulo: 'Lula, % acumulado dos válidos (2º turno) por minuto de chegada', x: k.hora, fmt: v => P(v) + '%', series: [{ nome: 'Real', cor: css('--lula'), valores: k.real }, { nome: 'Previsto: 1º turno + virada do município', cor: css('--terc'), valores: k.prev_mun, traco: '6 4' }, { nome: 'Previsto: 1º turno + virada do estado', cor: css('--flavio'), valores: k.prev_uf, traco: '2 3' }] });
+  T07: c => ({ ler: 'Contagem de seções com comparecimento alto e voto quase unânime (assinatura de enchimento). Comparamos com 2022.', html: barras(['2022', '2026'].map(a => { const b = a === '2022' ? c.bt22 : c.bt26; if (!b) return null;
+    return { l: `${a}, 2º turno`, bars: [{ nome: 'quase unânime para Lula', cor: LULA(), v: b.T07['2t_v13'], txt: N(b.T07['2t_v13']) }, { nome: 'quase unânime para o adversário', cor: ADV(), v: b.T07['2t_v22'], txt: N(b.T07['2t_v22']) }] }; }).filter(Boolean), { tit: 'Seções com comparecimento ≥ 95% e ≥ 90% para um candidato', nota: `Seções acima de 100%: ${c.bt26['T07']['2t_acima_100pct']} (2026)` }) }),
+  T09: c => { const m = c.t.resultado_atual.match(/virada \+?([\d,]+) x \+?([\d,]+) pp/); return { ler: 'Compara a virada das seções que votaram até o horário normal com a das seções prorrogadas (fila). Barras iguais = votaram igual.', html: m ? barras([{ l: 'Virada nas seções prorrogadas', bars: [{ cor: T2(), v: num(m[1]), txt: '+' + m[1] + ' pp' }] }, { l: 'Virada nas demais seções', bars: [{ cor: T1(), v: num(m[2]), txt: '+' + m[2] + ' pp' }] }], { tit: 'Virada média entre os turnos (pontos percentuais)', nota: `Diferença: ${SG(num(m[1]) - num(m[2]), 2)} pp` }) : null }; },
+  T10: c => ({ ler: 'A linha real deve acompanhar a prevista. Se um lote de urnas votasse fora do próprio histórico, a real se descolaria. Passe o mouse para ler os três valores a cada minuto.', fn: el => { const k = c.d.curva;
+    el.innerHTML = '<div></div><div></div>'; linhas(el.children[0], { titulo: 'Lula, % acumulado dos válidos (2º turno) por minuto de chegada', x: k.hora, fmt: v => P(v) + '%', series: [{ nome: 'Real', cor: LULA(), valores: k.real }, { nome: 'Previsto: 1º turno + virada do município', cor: T2(), valores: k.prev_mun, traco: '6 4' }, { nome: 'Previsto: 1º turno + virada do estado', cor: ADV(), valores: k.prev_uf, traco: '2 3' }] });
     el.children[1].innerHTML = pontos({ min: 0, max: 0.45, fmt: v => P(v, 2), tit: 'Maior desvio real − previsto (pontos percentuais)', linhas: [['max_desvio_mun_pp', 'Pelo município'], ['max_desvio_estado_pp', 'Pelo estado']].map(([kk, l]) => ({ l, s: [{ nome: '2026', cor: T2(), v: c.bt26.T10[kk] }].concat(c.bt22 ? [{ nome: '2022', cor: T1(), v: c.bt22.T10[kk] }] : []) })) }); } }),
-  T11: c => ({ ler: 'Contamos as mudanças de direção da curva. A barra "real" deve ficar perto da "simulada" (a que seria esperada só pelo acaso).', html: hbars(['2022', '2026'].map(a => { const b = a === '2022' ? c.bt22 : c.bt26; if (!b) return null; const q = b.T11;
-    return { l: a, bars: [{ nome: 'real', cor: T2(), frac: q.real / 50, txt: String(q.real) }, { nome: 'simulada (média)', cor: T1(), frac: q.simulado_media / 50, txt: `${P(q.simulado_media, 1)} ± ${P(q.simulado_dp, 1)}`, tip: `Simulada: média ${P(q.simulado_media, 2)}, desvio ${P(q.simulado_dp, 2)}` }] }; }).filter(Boolean), 'Mudanças de direção da curva: real × simulada') }),
-  T12: c => { const b = c.d.biometria, a = b['sem controles'], z = b['com perfil do eleitorado']; return { ler: 'O t mede a força da associação; |t| menor que 2 = nenhuma associação distinguível do acaso. Ao controlar pela idade, a associação some.', html: pontos({ min: -16, max: 4, fmt: v => P(v, 0), refs: [{ v: 0, rot: '0' }], faixa: [-2, 2, 'sem efeito (|t|<2)'], tit: 'Liberação sem biometria × virada: estatística t',
-    linhas: [{ l: 'Sem controles', s: [{ nome: 't', cor: css('--aviso'), v: a.t }] }, { l: 'Com perfil do eleitorado', s: [{ nome: 't', cor: T2(), v: z.t }] }] }) }; },
-  T13: c => { const ls = c.d.poder.linhas, gs = [...new Set(ls.map(l => l.grupo))]; return { ler: 'Cada quadrado é um cenário de fraude sintética injetada nos dados reais. Verde = pelo menos um teste detectou; cinza = passou batido. Mostra o poder: o que os testes conseguem ver.', html: `<div class="grafico"><div class="tit">Cenários de fraude simulada: detectados ou não</div><div class="leg"><span><i style="background:${T2()}"></i>detectada</span><span><i style="background:${css('--grade')};border:1px solid ${css('--borda')}"></i>passou batido</span></div>` +
-    gs.map(g => `<div class="rot" style="margin-top:6px">${g}</div><div class="quad">${ls.filter(l => l.grupo === g).map(l => `<span class="${l.algum ? 'on' : ''}" ${tip(`<b>${l.cenario}</b><br>${N(l.votos)} votos mexidos (${P(l.pct_validos)}% dos válidos)<br>${l.algum ? 'Detectada' : 'Passou batido'}`)}></span>`).join('')}</div>`).join('') + `<p class="nota">Margem real do 2º turno: ${N(c.d.poder.margem_real_votos)} votos.</p></div>` }; },
-  T19: c => ({ ler: 'A mesma bateria de testes, com o mesmo código, em 2022. Se 2026 se parece com 2022, o padrão é do sistema e do eleitorado, não de 2026.', html: hbars(['2022', '2026'].map(a => { const b = a === '2022' ? c.bt22 : c.bt26; return b && { l: `${a} (${N(b.secoes)} seções)`, bars: [{ nome: 'seções além de 5 desvios, pró-Lula', cor: css('--lula'), frac: b.T02.acima5_lula / 100, txt: String(b.T02.acima5_lula) }, { nome: 'além de 5 desvios, pró-adversário', cor: css('--flavio'), frac: b.T02.acima5_outro / 100, txt: String(b.T02.acima5_outro) }] }; }).filter(Boolean), 'Exemplo: caudas do teste T02 nos dois anos') }),
-  T21: c => ({ ler: 'z é a distância entre o observado e o esperado em desvios. Dentro da faixa verde (|z| < 2) não há excesso de percentuais redondos.', html: pontos({ min: -4, max: 4, fmt: v => P(v, 0), refs: [{ v: 0, rot: '' }], faixa: [-2, 2, '|z| < 2'], tit: 'Percentuais inteiros: z observado − esperado',
+  T11: c => { const ls = ['2022', '2026'].map(a => { const b = a === '2022' ? c.bt22 : c.bt26; if (!b) return null; const q = b.T11; return { l: a, s: [{ nome: 'real', cor: T2(), v: q.real, rot: String(q.real) }, { nome: 'simulada: média ± 2 desvios', cor: T1(), lo: q.simulado_media - 2 * q.simulado_dp, hi: q.simulado_media + 2 * q.simulado_dp, v: q.simulado_media, tip: `Simulada: média ${P(q.simulado_media, 2)}, desvio ${P(q.simulado_dp, 2)}` }] }; }).filter(Boolean);
+    const vals = ls.flatMap(l => l.s.flatMap(s => [s.v, s.lo, s.hi])).filter(v => v != null); const max = nice(Math.max(...vals) * 1.15);
+    return { ler: 'Contamos as mudanças de direção da curva. O ponto "real" deve cair dentro da faixa "simulada" (o que seria esperado só pelo acaso).', html: pontos({ min: 0, max, fmt: v => P(v, 0), tit: 'Mudanças de direção da curva: real × simulada', linhas: ls }) }; },
+  T12: c => { const b = c.d.biometria, a = b['sem controles'], z = b['com perfil do eleitorado']; return { ler: 'O t mede a força da associação; |t| menor que 2 = nenhuma associação distinguível do acaso. Ao controlar pela idade, a associação some.', html: pontos({ min: -16, max: 4, fmt: v => P(v, 0), refs: [{ v: 0, rot: '0', solido: true }], faixa: [-2, 2, 'sem efeito (|t|<2)'], tit: 'Liberação sem biometria × virada: estatística t',
+    linhas: [{ l: 'Sem controles', s: [{ nome: 't', cor: AVISO(), v: a.t, rot: P(a.t, 1) }] }, { l: 'Com perfil do eleitorado', s: [{ nome: 't', cor: T2(), v: z.t, rot: P(z.t, 1) }] }] }) }; },
+  T13: c => { const ls = c.d.poder.linhas, gs = [...new Set(ls.map(l => l.grupo))]; return { ler: 'Cada quadrado é um cenário de fraude sintética injetada nos dados reais. Teal = pelo menos um teste detectou; cinza = passou batido. Mostra o poder: o que os testes conseguem ver. Toque ou passe o mouse para ver o cenário.', html: `<div class="grafico">${titulo('Cenários de fraude simulada: detectados ou não')}<div class="leg"><span>${chave(T2())}detectada</span><span><i class="ch barra vazio"></i>passou batido</span></div>` +
+    gs.map(g => { const q = ls.filter(l => l.grupo === g), k = q.filter(l => l.algum).length; return `<div class="rot" style="margin-top:8px">${esc(g)} <span class="fr">· ${k} de ${q.length} detectados</span></div><div class="quad">${q.map(l => `<span class="${l.algum ? 'on' : ''}" tabindex="0" ${tip(`<b>${esc(l.cenario)}</b><br>${N(l.votos)} votos mexidos (${P(l.pct_validos)}% dos válidos)<br>${l.algum ? 'Detectada' : 'Passou batido'}`)}></span>`).join('')}</div>`; }).join('') + `<p class="nota">Margem real do 2º turno: ${N(c.d.poder.margem_real_votos)} votos.</p></div>` }; },
+  T19: c => ({ ler: 'A mesma bateria de testes, com o mesmo código, em 2022. Se 2026 se parece com 2022, o padrão é do sistema e do eleitorado, não de 2026.', html: barras(['2022', '2026'].map(a => { const b = a === '2022' ? c.bt22 : c.bt26; return b && { l: `${a} (${N(b.secoes)} seções)`, bars: [{ nome: 'seções além de 5 desvios, pró-Lula', cor: LULA(), v: b.T02.acima5_lula, txt: String(b.T02.acima5_lula) }, { nome: 'além de 5 desvios, pró-adversário', cor: ADV(), v: b.T02.acima5_outro, txt: String(b.T02.acima5_outro) }] }; }).filter(Boolean), 'Exemplo: caudas do teste T02 nos dois anos') }),
+  T21: c => ({ ler: 'z é a distância entre o observado e o esperado em desvios. Dentro da faixa teal (|z| < 2) não há excesso de percentuais redondos.', html: pontos({ min: -4, max: 4, fmt: v => P(v, 0), refs: [{ v: 0, rot: '', solido: true }], faixa: [-2, 2, '|z| < 2'], tit: 'Percentuais inteiros: z observado − esperado',
     linhas: [['2t_lula', '2º turno, Lula'], ['2t_adversario', '2º turno, adversário'], ['2t_comparecimento', '2º turno, comparecimento'], ['1t_lula', '1º turno, Lula']].filter(([k]) => c.bt26.T21[k]).map(([k, l]) => ({ l, s: [{ nome: '2026', cor: T2(), v: c.bt26.T21[k].z }].concat(c.bt22?.T21[k] ? [{ nome: '2022', cor: T1(), v: c.bt22.T21[k].z }] : []) })) }) }),
-  T22: c => ({ ler: 'Correlação entre comparecimento e voto dentro do município. Fraude incremental faria o favorecido crescer onde o comparecimento infla (valor positivo para ele).', html: pontos({ min: -0.2, max: 0.2, fmt: v => P(v, 2), refs: [{ v: 0, rot: '' }], tit: 'Correlação comparecimento × voto (2º turno)',
+  T22: c => ({ ler: 'Correlação entre comparecimento e voto dentro do município. Fraude incremental faria o favorecido crescer onde o comparecimento infla (valor positivo para ele).', html: pontos({ min: -0.2, max: 0.2, fmt: v => P(v, 2), refs: [{ v: 0, rot: '', solido: true }], tit: 'Correlação comparecimento × voto (2º turno)',
     linhas: [['2t_lula', 'Lula'], ['2t_adversario', 'Adversário']].map(([k, l]) => ({ l, s: [{ nome: '2026', cor: T2(), v: c.bt26.T22[k] }].concat(c.bt22 ? [{ nome: '2022', cor: T1(), v: c.bt22.T22[k] }] : []) })) }) }),
   T23: c => { const a = c.nv.ml_2026, b = c.nv.ml_2022; if (!a) { const t = c.t.resultado_atual, m = t.match(/reais marcadas ([\d,]+)% \(2022: ([\d,]+)%\) contra ([\d,]+)% esperado/);
-      return { ler: 'Fração de seções reais marcadas pelo classificador, contra o que se esperaria sem fraude.', html: m ? hbars([{ l: 'Marcadas, 2026', bars: [{ cor: T2(), frac: num(m[1]) / 1.2, txt: m[1] + '%' }] }, { l: 'Marcadas, 2022', bars: [{ cor: T1(), frac: num(m[2]) / 1.2, txt: m[2] + '%' }] }, { l: 'Esperado sem fraude', bars: [{ cor: css('--fraco'), frac: num(m[3]) / 1.2, txt: m[3] + '%' }] }], 'Classificador com fraude sintética') : null }; }
+      return { ler: 'Fração de seções reais marcadas pelo classificador, contra o que se esperaria sem fraude.', html: m ? barras([{ l: 'Marcadas, 2026', bars: [{ cor: T2(), v: num(m[1]), txt: m[1] + '%' }] }, { l: 'Marcadas, 2022', bars: [{ cor: T1(), v: num(m[2]), txt: m[2] + '%' }] }], { tit: 'Classificador com fraude sintética', refs: [{ v: num(m[3]), rot: `esperado sem fraude: ${m[3]}%` }] }) : null }; }
     const cen = Object.keys(a.poder_por_cenario);
-    return { ler: 'Primeiro bloco: poder do classificador em fraudes injetadas (quanto maior, melhor ele enxerga). Segundo: fração de seções reais marcadas, comparada com o 1% esperado sem fraude. Marcar bem menos que 1% no real é o resultado esperado de um teste conservador.', html:
-      hbars(cen.map(k => ({ l: k, bars: [{ nome: '2026', cor: T2(), frac: a.poder_por_cenario[k], txt: P(100 * a.poder_por_cenario[k], 0) + '%' }].concat(b && b.poder_por_cenario[k] != null ? [{ nome: '2022', cor: T1(), frac: b.poder_por_cenario[k], txt: P(100 * b.poder_por_cenario[k], 0) + '%' }] : []) })), 'Poder por cenário de fraude sintética') +
-      hbars([{ l: 'Seções reais marcadas', bars: [{ nome: '2026', cor: T2(), frac: a.reais.fracao_marcada / 0.012, txt: P(100 * a.reais.fracao_marcada, 2) + '%', tip: `${N(a.reais.marcadas)} de ${N(a.reais.secoes_avaliadas)}` }].concat(b ? [{ nome: '2022', cor: T1(), frac: b.reais.fracao_marcada / 0.012, txt: P(100 * b.reais.fracao_marcada, 2) + '%', tip: `${N(b.reais.marcadas)} de ${N(b.reais.secoes_avaliadas)}` }] : []) }, { l: 'Esperado sem fraude', bars: [{ cor: css('--fraco'), frac: a.reais.esperado_sem_fraude / 0.012, txt: P(100 * a.reais.esperado_sem_fraude, 2) + '%' }] }], 'Fração de seções reais marcadas (escala 0 a 1,2%)') }; },
-  T25: c => { const m = c.t.resultado_atual.match(/curtose ([\d,]+) x ([\d,]+) \(2022\)/); return { ler: 'A curtose descreve o quão pesadas são as caudas da distribuição. 2026 e 2022 devem ser parecidas.', html: m ? hbars([{ l: 'Curtose, 2026', bars: [{ cor: T2(), frac: num(m[1]) / 6, txt: m[1] }] }, { l: 'Curtose, 2022', bars: [{ cor: T1(), frac: num(m[2]) / 6, txt: m[2] }] }], 'Impressão digital: curtose') : null }; },
-  T27: c => { const m = c.t.resultado_atual.match(/p ([\d,]+)–([\d,]+)/); return { ler: 'Faixa dos p-valores dos testes de último dígito para brancos, nulos e comparecimento. Tudo à direita de 0,05 é compatível com o acaso.', html: m ? pontos({ min: 0, max: 1, fmt: v => P(v, 2), refs: [{ v: 0.05, rot: 'p = 0,05' }], tit: 'Dígitos de branco, nulo e comparecimento',
+    return { ler: 'Primeiro bloco: poder do classificador em fraudes injetadas (quanto maior, melhor ele enxerga). Segundo: fração de seções reais marcadas, comparada com o esperado sem fraude (linha tracejada). Marcar bem menos que o esperado no real é o resultado de um teste conservador.', html:
+      barras(cen.map(k => ({ l: esc(k), bars: [anoBar('2026', { v: 100 * a.poder_por_cenario[k], txt: P(100 * a.poder_por_cenario[k], 0) + '%' })].concat(b && b.poder_por_cenario[k] != null ? [anoBar('2022', { v: 100 * b.poder_por_cenario[k], txt: P(100 * b.poder_por_cenario[k], 0) + '%' })] : []) })), { tit: 'Poder por cenário de fraude sintética (% detectado)', max: 100 }) +
+      barras([{ l: 'Seções reais marcadas', bars: [anoBar('2026', { v: 100 * a.reais.fracao_marcada, txt: P(100 * a.reais.fracao_marcada, 2) + '%', tip: `<b>${P(100 * a.reais.fracao_marcada, 2)}%</b><br>${N(a.reais.marcadas)} de ${N(a.reais.secoes_avaliadas)} seções (2026)` })].concat(b ? [anoBar('2022', { v: 100 * b.reais.fracao_marcada, txt: P(100 * b.reais.fracao_marcada, 2) + '%', tip: `<b>${P(100 * b.reais.fracao_marcada, 2)}%</b><br>${N(b.reais.marcadas)} de ${N(b.reais.secoes_avaliadas)} seções (2022)` })] : []) }], { tit: 'Fração de seções reais marcadas', refs: [{ v: 100 * a.reais.esperado_sem_fraude, rot: `esperado sem fraude: ${P(100 * a.reais.esperado_sem_fraude, 2)}%` }] }) }; },
+  T25: c => { const m = c.t.resultado_atual.match(/curtose ([\d,]+) x ([\d,]+) \(2022\)/); return { ler: 'A curtose descreve o quão pesadas são as caudas da distribuição. 2026 e 2022 devem ser parecidas.', html: m ? barras([{ l: 'Curtose, 2026', bars: [{ cor: T2(), v: num(m[1]), txt: m[1] }] }, { l: 'Curtose, 2022', bars: [{ cor: T1(), v: num(m[2]), txt: m[2] }] }], 'Impressão digital: curtose') : null }; },
+  T27: c => { const m = c.t.resultado_atual.match(/p ([\d,]+)–([\d,]+)/); return { ler: 'Faixa dos p-valores dos testes de último dígito para brancos, nulos e comparecimento. Tudo à direita de 0,05 é compatível com o acaso.', html: m ? pontos({ min: 0, max: 1, fmt: v => P(v, 2), refs: [{ v: 0.05, rot: 'p = 0,05' }], zonas: [[0, 0.05, '']], tit: 'Dígitos de branco, nulo e comparecimento',
     linhas: [{ l: 'Faixa de p observada', s: [{ nome: 'p', cor: T2(), lo: num(m[1]), hi: num(m[2]), tip: `p de ${m[1]} a ${m[2]}` }] }] }) : null }; },
   C06b: c => { const m = c.t.resultado_atual.match(/F→L entre ([\d.,]+) e ([\d.,]+) mi; L→F entre ([\d.,]+) e ([\d.,]+) mi/); return { ler: 'Faixa de valores compatíveis com os dados (não é estimativa de um número só). Uma faixa tão larga significa que os dados não identificam a troca direta.', html: m ? pontos({ min: 0, max: 45, fmt: v => P(v, 0) + ' mi', tit: 'Eleitores que trocaram diretamente de finalista (faixa possível)',
-    linhas: [{ l: 'Flávio → Lula', s: [{ nome: 'faixa', cor: css('--lula'), lo: num(m[1]) / 1000, hi: num(m[2]), tip: `de ${m[1]} mil a ${m[2]} milhões` }] }, { l: 'Lula → Flávio', s: [{ nome: 'faixa', cor: css('--flavio'), lo: num(m[3]) / 1000, hi: num(m[4]), tip: `de ${m[3]} mil a ${m[4]} milhões` }] }] }) : null }; },
-  C02: c => ({ ler: 'Votos computados a cada minuto nos logs das urnas (horário de Brasília). Mostra o ritmo da votação ao longo do dia.', fn: el => { const L = c.d.logs; if (!L || !Object.keys(L).length) { el.innerHTML = placeholder('Logs ainda em processamento'); return; }
+    linhas: [{ l: 'Flávio → Lula', s: [{ nome: 'faixa', cor: LULA(), lo: num(m[1]) / 1000, hi: num(m[2]), tip: `de ${m[1]} mil a ${m[2]} milhões` }] }, { l: 'Lula → Flávio', s: [{ nome: 'faixa', cor: ADV(), lo: num(m[3]) / 1000, hi: num(m[4]), tip: `de ${m[3]} mil a ${m[4]} milhões` }] }] }) : null }; },
+  C02: c => ({ ler: 'Votos computados a cada minuto nos logs das urnas (horário de Brasília). Mostra o ritmo da votação ao longo do dia; passe o mouse para comparar os turnos minuto a minuto.', fn: el => { const L = c.d.logs; if (!L || !Object.keys(L).length) { el.innerHTML = placeholder('Logs ainda em processamento'); return; }
     const horas = [...new Set(Object.values(L).flatMap(v => v.hora))].sort(); const ser = Object.entries(L).map(([k, v]) => { const mp = new Map(v.hora.map((h, i) => [h, v.votos[i]])); return { nome: k === 't1' ? '1º turno' : '2º turno', cor: k === 't1' ? T1() : T2(), traco: k === 't1' ? '6 4' : '', valores: horas.map(h => mp.get(h) ?? null) }; });
     linhas(el, { titulo: 'Votos computados por minuto', x: horas, fmt: N, series: ser, zero: 0 }); } }),
 };
@@ -293,37 +604,41 @@ function sensib(c) {
 }
 const NV = c => c.nv.logs_2t || c.nv.logs_1t;
 VIZ.T28 = c => { const L = NV(c); const q = L && L.T28; if (!q) return { ler: 'Compara o fim do dia com o resto.', html: placeholder('T28 em processamento') };
-  const z = q.z28_percentis || {};
-  return { ler: 'Se houvesse rajada de habilitações sem biometria no fim do dia, a barra dos últimos 30 minutos seria bem maior que a do resto do dia. O z de cada urna é comparado com o esperado.', html: hbars([{ l: 'Habilitações sem biometria', bars: [{ nome: 'últimos 30 min', cor: T2(), frac: q.taxa_sem_biometria_ultimos_30min / 0.2, txt: P(100 * q.taxa_sem_biometria_ultimos_30min, 2) + '%' }, { nome: 'resto do dia', cor: T1(), frac: q.taxa_sem_biometria_resto_do_dia / 0.2, txt: P(100 * q.taxa_sem_biometria_resto_do_dia, 2) + '%' }] }], 'Taxa sem biometria (escala 0 a 20%)') +
-    `<div class="tabela-rolavel"><table><tr><th>Percentil do z28</th>${Object.keys(z).map(k => `<th>${k}</th>`).join('')}</tr><tr><td>z (por urna)</td>${Object.values(z).map(v => `<td>${P(v, 2)}</td>`).join('')}</tr></table></div><p class="nota">Urnas com rajada significativa (Benjamini-Hochberg): ${N(q.urnas_significativas_BH)} de ${N(q.urnas_com_votos_nos_ultimos_30min)}.</p>` }; };
+  const z = q.z28_percentis || {}, zs = Object.values(z);
+  return { ler: 'Se houvesse rajada de habilitações sem biometria no fim do dia, a barra dos últimos 30 minutos seria bem maior que a do resto do dia. Abaixo, a distribuição do z de cada urna por percentil: concentrada perto de zero = sem rajada.', html: barras([{ l: 'Habilitações sem biometria', bars: [{ nome: 'últimos 30 min', cor: T2(), v: 100 * q.taxa_sem_biometria_ultimos_30min, txt: P(100 * q.taxa_sem_biometria_ultimos_30min, 2) + '%' }, { nome: 'resto do dia', cor: T1(), v: 100 * q.taxa_sem_biometria_resto_do_dia, txt: P(100 * q.taxa_sem_biometria_resto_do_dia, 2) + '%' }] }], { tit: 'Taxa sem biometria (%)' }) +
+    (zs.length ? faixaPontos({ itens: Object.entries(z).map(([k, v]) => ({ rot: k, v })), min: Math.min(0, ...zs) - 0.5, max: Math.max(0, ...zs) + 0.5, fmt: v => P(v, 1), refs: [{ v: 0 }], tit: 'z por urna (percentis)' }) + vistaTabela(`<table><tr><th>Percentil do z28</th>${Object.keys(z).map(k => `<th>${k}</th>`).join('')}</tr><tr><td>z (por urna)</td>${zs.map(v => `<td>${P(v, 2)}</td>`).join('')}</tr></table>`) : '') +
+    `<p class="nota">Urnas com rajada significativa (Benjamini-Hochberg): ${N(q.urnas_significativas_BH)} de ${N(q.urnas_com_votos_nos_ultimos_30min)}.</p>` }; };
 VIZ.T20 = c => { const L = NV(c); const q = L && L.T20; if (!q) return { ler: '', html: placeholder('T20 em processamento') };
   const ms = Object.keys(q).filter(k => k.startsWith('UE')); const ext = Math.max(...ms.flatMap(k => q[k].ic95.map(Math.abs)), 0.001) * 1.3;
-  return { ler: 'Cada ponto é o resíduo médio da virada nas urnas de um modelo (em logit; 0 = virou como o esperado pelo município), com o intervalo de 95%. Todos perto de zero = o modelo da urna não muda a virada na prática.', html: pontos({ min: -ext, max: ext, fmt: v => SG(v, 4), refs: [{ v: 0, rot: '0' }], tit: `Resíduo médio da virada por modelo de urna (Kruskal-Wallis p = ${P(q.kruskal_p, 3)})`,
+  return { ler: 'Cada ponto é o resíduo médio da virada nas urnas de um modelo (em logit; 0 = virou como o esperado pelo município), com o intervalo de 95%. Todos perto de zero = o modelo da urna não muda a virada na prática.', html: pontos({ min: -ext, max: ext, fmt: v => SG(v, 4), refs: [{ v: 0, rot: '0', solido: true }], tit: `Resíduo médio da virada por modelo de urna (Kruskal-Wallis p = ${P(q.kruskal_p, 3)})`,
     linhas: ms.map(k => ({ l: `${k} (${N(q[k].urnas)} urnas)`, s: [{ nome: 'resíduo médio', cor: T2(), v: q[k].residuo_medio, lo: q[k].ic95[0], hi: q[k].ic95[1] }] })) }) }; };
 const TIPOS = { a_log_x_comparecimento: 'Votos no log ≠ comparecimento', b_confirmacoes_x_total: 'Confirmações ≠ total do boletim', c_certificado_x_log: 'Certificado ≠ urna do log', d_fora_do_bu: 'Fora do boletim publicado' };
 const EXPL = { E1: 'E1 contingência reaproveitada', E2: 'E2 CEFT (RED/correspondência alterada)', E3: 'E3 urna substituída', E4: 'E4 confirmação sem voto computado', E5: 'E5 queda de energia', D1: 'D1 arquivo não publicado' };
 VIZ.T36 = c => { const q = c.nv.casos_2t; if (!q) return null; const mx = q.casos || 1;
-  return { ler: 'Das urnas em que alguma conta não fecha, mostramos de que tipo é a divergência e qual explicação operacional (verificada nos registros) a cobre. Um caso pode ter mais de um tipo.', html: hbars(Object.entries(q.por_tipo).map(([k, v]) => ({ l: TIPOS[k] || k, bars: [{ cor: T2(), frac: v / mx, txt: `${N(v)} casos` }] })), `${q.casos} casos em ${N(q.urnas_avaliadas)} urnas: por tipo`) +
-    hbars(Object.entries(q.por_explicacao).map(([k, v]) => ({ l: EXPL[k] || k, bars: [{ cor: k === 'D1' ? css('--aviso') : T2(), frac: v / mx, txt: `${N(v)}` }] })), 'Por explicação') + `<p class="nota">Com explicação operacional: ${q.explicados_operacionais}; inconsistência de publicação: ${q.inconsistencias_de_publicacao_D1}; sem explicação: ${q.sem_explicacao}.</p>` }; };
-const grande = (n, r) => `<div class="tile" style="margin:4px 0"><div class="n">${n}</div><div class="r">${r}</div></div>`;
+  return { ler: 'Das urnas em que alguma conta não fecha, mostramos de que tipo é a divergência e qual explicação operacional (verificada nos registros) a cobre. Um caso pode ter mais de um tipo. Âmbar = inconsistência de publicação (D1).', html: figuras([{ n: N(q.casos), r: `casos em ${N(q.urnas_avaliadas)} urnas avaliadas` }, { n: N(q.explicados_operacionais), r: 'com explicação operacional', estado: 'ok' }, { n: N(q.inconsistencias_de_publicacao_D1), r: 'inconsistência de publicação', estado: 'aviso' }, { n: N(q.sem_explicacao), r: 'sem explicação', estado: q.sem_explicacao ? 'ruim' : 'ok' }]) +
+    barras(Object.entries(q.por_tipo).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ l: TIPOS[k] || esc(k), bars: [{ cor: T2(), v, txt: `${N(v)} casos` }] })), { tit: 'Por tipo de divergência', max: mx }) +
+    barras(Object.entries(q.por_explicacao).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ l: EXPL[k] || esc(k), bars: [{ cor: k === 'D1' ? AVISO() : T2(), v, txt: `${N(v)}` }] })), { tit: 'Por explicação', max: mx }) }; };
 VIZ.T34 = c => { const q = c.nv.correspondencia_1t; if (!q) return null; const bu = q.T34_ceft_urna_igual_bu || [], o = q.T34_origem_voto || {};
-  return { ler: 'A urna que registrou os votos é a urna preparada para aquela seção? Barras cheias = coincidem.', html: (bu.length ? hbars([{ l: 'Urna efetivada = urna do boletim', bars: [{ nome: '1º turno', cor: T1(), frac: pct(bu[0], bu[1]), txt: `${N(bu[0])} de ${N(bu[1])}` }] }, { l: 'Certificado da carga = certificado no log', bars: [{ nome: '1º turno', cor: T1(), frac: pct(q.T34_ceft_igual_certificado, q.T34_urnas_processadas), txt: `${N(q.T34_ceft_igual_certificado)} de ${N(q.T34_urnas_processadas)}` }] }], 'Correspondência (1º turno)') : '') +
-    `<div class="tiles">${grande(N(q.T34_esperada_diferente_efetivada || 0), 'seções com urna esperada ≠ efetivada (substituição, contingência)')}${Object.entries(o).map(([k, v]) => grande(N(v), 'origem do voto: ' + k)).join('')}</div>` }; };
+  return { ler: 'A urna que registrou os votos é a urna preparada para aquela seção? Medidor cheio = coincidem.', html: (bu.length ? coberturas([{ l: 'Urna efetivada = urna do boletim', ok: bu[0], tot: bu[1], nome: '1º turno', cor: T1() }, { l: 'Certificado da carga = certificado no log', ok: q.T34_ceft_igual_certificado, tot: q.T34_urnas_processadas, nome: '1º turno', cor: T1() }], 'Correspondência (1º turno)') : '') +
+    figuras([{ n: N(q.T34_esperada_diferente_efetivada || 0), r: 'seções com urna esperada ≠ efetivada (substituição, contingência)' }].concat(Object.entries(o).map(([k, v]) => ({ n: N(v), r: 'origem do voto: ' + esc(k) })))) }; };
 VIZ.T35 = c => { const q = c.nv.correspondencia_1t; if (!q || q.T35_maquinas_geracao_midia == null) return null;
-  return { ler: 'Cada máquina que gerou carga de urna deve ter o log publicado. Barra cheia = todas.', html: hbars([{ l: 'Máquinas de carga com log publicado', bars: [{ nome: '1º turno', cor: T1(), frac: pct(q.T35_com_log_gedai_publicado, q.T35_maquinas_geracao_midia), txt: `${N(q.T35_com_log_gedai_publicado)} de ${N(q.T35_maquinas_geracao_midia)}` }] }], 'Carga das urnas (1º turno)') + grande(N((q.T35_sem_log || []).length), 'máquinas sem log, a investigar') }; };
+  return { ler: 'Cada máquina que gerou carga de urna deve ter o log publicado. Medidor cheio = todas.', html: coberturas([{ l: 'Máquinas de carga com log publicado', ok: q.T35_com_log_gedai_publicado, tot: q.T35_maquinas_geracao_midia, nome: '1º turno', cor: T1() }], 'Carga das urnas (1º turno)') + figuras([{ n: N((q.T35_sem_log || []).length), r: 'máquinas sem log, a investigar', estado: (q.T35_sem_log || []).length ? 'aviso' : 'ok' }]) }; };
 const NIV = { local: 'Local de votação', zona: 'Zona', mun: 'Município', SG_UF: 'Estado' };
 const dvg = c => ({ a: c.nv.divergencias_2026, b: c.nv.divergencias_2022 });
 VIZ.E01 = c => { const { a, b } = dvg(c); if (!a) return null;
-  return { ler: 'Que fração da diferença entre o observado e o esperado está entre grupos de cada nível? Se concentrada no local de votação (e não na zona ou no estado), o padrão é local e igual em 2022.', html: hbars(Object.keys(NIV).filter(k => a.E01[k]).map(k => ({ l: NIV[k], bars: [{ nome: '2026', cor: T2(), frac: a.E01[k].fracao_variancia_entre_grupos, txt: P(100 * a.E01[k].fracao_variancia_entre_grupos, 1) + '%', tip: `${NIV[k]}: ${N(a.E01[k].grupos)} grupos` }].concat(b && b.E01[k] ? [{ nome: '2022', cor: T1(), frac: b.E01[k].fracao_variancia_entre_grupos, txt: P(100 * b.E01[k].fracao_variancia_entre_grupos, 1) + '%' }] : []) })), 'Fração da variância entre grupos, por nível') }; };
-VIZ.E02 = c => { const { a, b } = dvg(c); if (!a) return null; const ks = ['local', 'zona', 'mun'].filter(k => a.E02[k]); const mx = Math.max(...ks.flatMap(k => [a.E02[k].sig_pro_lula, a.E02[k].sig_pro_adversario, b?.E02[k]?.sig_pro_lula || 0, b?.E02[k]?.sig_pro_adversario || 0]));
-  const lin = (ano, x, k) => x && x.E02[k] ? { l: `${NIV[k]}, ${ano}`, bars: [{ nome: 'pró-Lula', cor: css('--lula'), frac: x.E02[k].sig_pro_lula / mx, txt: N(x.E02[k].sig_pro_lula) }, { nome: 'pró-adversário', cor: css('--flavio'), frac: x.E02[k].sig_pro_adversario / mx, txt: N(x.E02[k].sig_pro_adversario) }] } : null;
-  return { ler: 'Grupos cujo desvio é significativo após correção para muitos testes (Benjamini-Hochberg), por lado. Lados parecidos e iguais a 2022 indicam que o excesso é do eleitorado, não de um lado só.', html: hbars(ks.flatMap(k => [lin('2026', a, k), lin('2022', b, k)]).filter(Boolean), 'Grupos significativos por nível e ano') }; };
-VIZ.E03 = c => { const { a, b } = dvg(c); if (!a) return null; const tb = (x, ano, k) => x && x.E03[k] ? `<h4 style="margin:8px 0 2px;font-size:12.5px">${NIV[k]}, ${ano}: 10 maiores</h4><div class="tabela-rolavel"><table><tr><th>Local/grupo</th><th>UF</th><th>Seções</th><th>z</th><th>Virada obs.</th><th>esp.</th></tr>${x.E03[k].map(r => `<tr><td>${esc(r.municipio)}${k === 'local' ? ' (' + esc(r.grupo) + ')' : ''}</td><td>${r.uf}</td><td>${N(r.secoes)}</td><td>${P(r.z_grupo, 1)}</td><td>${SG(r.virada_obs_logit, 2)}</td><td>${SG(r.virada_esp_logit, 2)}</td></tr>`).join('')}</table></div>` : '';
-  return { ler: 'Maiores divergências entre a virada observada e a esperada (em logit). Lista exploratória: é onde olhar primeiro, não onde há problema.', html: `<details class="mais" open><summary>2026</summary>${['local', 'zona', 'mun'].map(k => tb(a, '2026', k)).join('')}</details><details class="mais"><summary>2022</summary>${['local', 'zona', 'mun'].map(k => tb(b, '2022', k)).join('')}</details>` }; };
+  return { ler: 'Que fração da diferença entre o observado e o esperado está entre grupos de cada nível? Se concentrada no local de votação (e não na zona ou no estado), o padrão é local e igual em 2022.', html: barras(Object.keys(NIV).filter(k => a.E01[k]).map(k => ({ l: NIV[k], bars: [anoBar('2026', { v: 100 * a.E01[k].fracao_variancia_entre_grupos, txt: P(100 * a.E01[k].fracao_variancia_entre_grupos, 1) + '%', tip: `<b>${P(100 * a.E01[k].fracao_variancia_entre_grupos, 1)}%</b><br>${NIV[k]}, 2026: ${N(a.E01[k].grupos)} grupos` })].concat(b && b.E01[k] ? [anoBar('2022', { v: 100 * b.E01[k].fracao_variancia_entre_grupos, txt: P(100 * b.E01[k].fracao_variancia_entre_grupos, 1) + '%' })] : []) })), { tit: 'Fração da variância entre grupos, por nível (%)', max: 100 }) }; };
+VIZ.E02 = c => { const { a, b } = dvg(c); if (!a) return null; const ks = ['local', 'zona', 'mun'].filter(k => a.E02[k]);
+  const lin = (ano, x, k) => x && x.E02[k] ? { l: `${NIV[k]}, ${ano}`, bars: [{ nome: 'pró-Lula', cor: LULA(), v: x.E02[k].sig_pro_lula, txt: N(x.E02[k].sig_pro_lula) }, { nome: 'pró-adversário', cor: ADV(), v: x.E02[k].sig_pro_adversario, txt: N(x.E02[k].sig_pro_adversario) }] } : null;
+  return { ler: 'Grupos cujo desvio é significativo após correção para muitos testes (Benjamini-Hochberg), por lado. Lados parecidos e iguais a 2022 indicam que o excesso é do eleitorado, não de um lado só.', html: barras(ks.flatMap(k => [lin('2026', a, k), lin('2022', b, k)]).filter(Boolean), 'Grupos significativos por nível e ano') }; };
+VIZ.E03 = c => { const { a, b } = dvg(c); if (!a) return null;
+  const tb = (x, ano, k) => x && x.E03[k] ? `<h4 style="margin:8px 0 2px;font-size:13px">${NIV[k]}, ${ano}: 10 maiores</h4><div class="tabela-rolavel"><table><tr><th>Local/grupo</th><th>UF</th><th>Seções</th><th>z</th><th>Virada obs.</th><th>esp.</th></tr>${x.E03[k].map(r => `<tr><td>${esc(r.municipio)}${k === 'local' ? ' (' + esc(r.grupo) + ')' : ''}</td><td>${r.uf}</td><td>${N(r.secoes)}</td><td>${P(r.z_grupo, 1)}</td><td>${SG(r.virada_obs_logit, 2)}</td><td>${SG(r.virada_esp_logit, 2)}</td></tr>`).join('')}</table></div>` : '';
+  const gr = (x, ano, k) => x && x.E03[k] ? dumbbell(x.E03[k].map(r => ({ l: `${r.municipio}${k === 'local' ? ' (' + r.grupo + ')' : ''} · ${r.uf}`, a: r.virada_esp_logit, b: r.virada_obs_logit, z: r.z_grupo, tip: `<b>${esc(r.municipio)}</b>${k === 'local' ? ' (' + esc(r.grupo) + ')' : ''} · ${esc(r.uf)}<br>virada observada <b>${SG(r.virada_obs_logit, 2)}</b> · esperada ${SG(r.virada_esp_logit, 2)}<br>z ${P(r.z_grupo, 1)} · ${N(r.secoes)} seções` })), { tit: `${NIV[k]}, ${ano}: 10 maiores divergências`, fmt: v => SG(v, 1), na: 'virada esperada', nb: 'virada observada' }) : '';
+  const bloco = (x, ano) => ['local', 'zona', 'mun'].map(k => gr(x, ano, k)).join('') + vistaTabela(['local', 'zona', 'mun'].map(k => tb(x, ano, k)).join(''));
+  return { ler: 'Maiores divergências entre a virada observada (teal) e a esperada (cinza), em logit, com o z ao lado. Lista exploratória: é onde olhar primeiro, não onde há problema.', html: `<details class="mais" open><summary>2026</summary>${bloco(a, '2026')}</details><details class="mais"><summary>2022</summary>${b ? bloco(b, '2022') : '<p class="nota">Sem dados de 2022.</p>'}</details>` }; };
 VIZ.C08 = c => { const m = [...c.t.resultado_atual.matchAll(/([A-Za-zçãéí-]+(?:-[A-Za-zçãéí]+)?) \+([\d,]+)/g)]; if (!m.length) return null;
-  return { ler: 'Virada média (pontos percentuais para o Lula) por região, descritiva.', html: hbars(m.map(x => ({ l: x[1], bars: [{ cor: css('--lula'), frac: num(x[2]) / 10, txt: '+' + x[2] + ' pp' }] })), 'Virada por região (pp)') }; };
+  return { ler: 'Virada média (pontos percentuais para o Lula) por região, descritiva.', html: barras(m.map(x => ({ l: esc(x[1]), bars: [{ cor: LULA(), v: num(x[2]), txt: '+' + x[2] + ' pp' }] })), 'Virada por região (pp)') }; };
 VIZ.C07 = c => { const m = c.t.resultado_atual.match(/idosos \+([\d,]+) e mulheres \+([\d,]+)/); if (!m) return null;
-  return { ler: 'Quanto o comparecimento mudou entre os turnos, por grupo, dentro do município (associação, não causa).', html: hbars([{ l: 'Idosos', bars: [{ cor: T2(), frac: num(m[1]) / 5, txt: '+' + m[1] + ' pontos' }] }, { l: 'Mulheres', bars: [{ cor: T2(), frac: num(m[2]) / 5, txt: '+' + m[2] + ' pontos' }] }], 'Mudança de comparecimento por 100% do grupo') }; };
+  return { ler: 'Quanto o comparecimento mudou entre os turnos, por grupo, dentro do município (associação, não causa).', html: barras([{ l: 'Idosos', bars: [{ cor: T2(), v: num(m[1]), txt: '+' + m[1] + ' pontos' }] }, { l: 'Mulheres', bars: [{ cor: T2(), v: num(m[2]), txt: '+' + m[2] + ' pontos' }] }], 'Mudança de comparecimento por 100% do grupo') }; };
 // intervalos de confiança lidos do texto do registro (T03, T04)
 function intervalos(c, tit, simb, dec) {
   const t = c.t.resultado_atual, re = /([+−-]\d[\d,]*)(?:\s*z)?\s*\[([+−-]?[\d,]+);\s*([+−-]?[\d,]+)\]/g, ms = [...t.matchAll(re)];
@@ -331,8 +646,8 @@ function intervalos(c, tit, simb, dec) {
   if (!ms.length) return null;
   const vals = ms.flatMap(m => [num(m[2]), num(m[3])]); const lim = Math.max(Math.abs(Math.min(...vals)), Math.abs(Math.max(...vals)), mde ? num(mde) : 0) * 1.25;
   const nomes = ['2026', '2022'];
-  return { ler: `O ponto é a estimativa e a linha, o intervalo de 95%. Perto de zero (e dentro da faixa verde do menor efeito detectável) = sem relação${mde ? '' : ''}.`,
-    html: pontos({ min: -lim, max: lim, fmt: v => SG(v, 3).replace(/,?0+$/, '') || '0', refs: [{ v: 0, rot: '0' }], faixa: mde ? [-num(mde), num(mde), 'menor efeito detectável'] : null, tit: `${tit}`,
+  return { ler: `O ponto é a estimativa e a linha, o intervalo de 95%. Perto de zero (e dentro da faixa teal do menor efeito detectável) = sem relação.`,
+    html: pontos({ min: -lim, max: lim, fmt: v => SG(v, 3).replace(/,?0+$/, '') || '0', refs: [{ v: 0, rot: '0', solido: true }], faixa: mde ? [-num(mde), num(mde), 'menor efeito detectável'] : null, tit: `${tit}`,
       linhas: ms.slice(0, 2).map((m, i) => ({ l: nomes[i], s: [{ nome: nomes[i], cor: i ? T1() : T2(), v: num(m[1]), lo: num(m[2]), hi: num(m[3]) }] })) }) };
 }
 // diagrama genérico: hipótese nula → observado
@@ -342,34 +657,41 @@ function generico(c) { const t = c.t; return { ler: 'Se não houver nada anormal
 const MET = { T01: '2.5', T32: '2.5', T14: '2.2', T15: '2.2', T16: '2.2', T16c: '2.3', T17: '2.2', T17b: '2.2', T24: '2.2', T34: '2.4', T35: '2.4', T02: '3.1', T10: '3.2', T11: '3.2', C06: '3.3', C06b: '3.3', E01: '3.4', E02: '3.4', E03: '3.4', T03: '3.5', T04: '3.5', T05: '4.1', T27: '4.1', T26: '4.2', T21: '4.3', T07: '4.4', T22: '4.4', T25: '4.4', T13: '4.5', T13b: '4.5', T23: '4.6', T28: '4.7', T29: '4.7', T30: '4.7', T31: '4.7', T33: '4.7', T20: '4.8', T12: '4.9', T36: '2.2' };
 const MODS = { A: ['Integridade dos arquivos e da contagem', 'O dado é íntegro? Os arquivos das urnas, o boletim e o total oficial dizem a mesma coisa? Conferências exatas, sem estatística.'], B: ['Comportamento do eleitor e da votação', 'Como o eleitorado se comportou: hora do voto, comparecimento, perfil e a prorrogação.'], C: ['Mudança entre os turnos', 'Cada seção tem quase o mesmo eleitorado nos dois turnos: o 1º turno serve de régua para o 2º.'], D: ['Forense estatística', 'Testes clássicos de padrões em números de votos, sempre com a medida de quanto cada teste consegue (ou não) enxergar.'], E: ['Divergências e agrupamento', 'Seções ou locais que fogem do esperado, se se agrupam no espaço e que explicações existem.'], F: ['Referência: 2022', 'A mesma bateria no pleito de 2022, para saber se um número de 2026 é incomum.'] };
 const CLASSE = { A: 'O dado se comporta como esperado.', B: 'Algo fora do esperado estatístico, sem prova de que seja problema.', C: 'Anomalia que resiste a controles e alternativas.', D: 'Uma conta que deveria fechar não fecha, e dá para verificar.', E: 'Evidência de possível irregularidade.', F: 'Evidência de manipulação.', G: 'Ainda sem resultado ou inconclusivo.' };
-const ESTADO = { concluido: 'concluído', em_andamento: 'em andamento', a_fazer: 'a fazer', concluido_excluido_da_conclusao: 'concluído, excluído da conclusão', concluido_2t: 'concluído (2º turno)', concluido_1t: 'concluído (1º turno)' };
-const AVISO = /incidente|erro meu|inv[aá]lid|corrigid|trocad|falso|errad|cortad|artefato/i;
+const ESTADO = { concluido: 'concluído', em_andamento: 'em andamento', a_fazer: 'a fazer', concluido_excluido_da_conclusao: 'concluído, excluído da conclusão', concluido_2t: 'concluído (2º turno)', concluido_1t: 'concluído (1º turno)', concluido_2026: 'concluído (2026)' };
+const AVISO_RE = /incidente|erro meu|inv[aá]lid|corrigid|trocad|falso|errad|cortad|artefato/i;
 const emProc = t => t.situacao === 'a_fazer' || /^(a fazer|em processamento)/i.test(t.resultado_atual || '');
+const categoria = t => emProc(t) ? 'proc' : t.situacao === 'em_andamento' ? 'parc' : 'ok';
+const ROT_CAT = { ok: 'concluído', parc: 'parcial', proc: 'em processamento' };
+const LARGAS = new Set(['T02', 'T10', 'T13', 'T23', 'T36', 'E03', 'C02', 'T20', 'T28', 'T16']);
 
 function cartao(t, ctx) {
   const c = { ...ctx, t }; const proc = emProc(t); let v = null;
-  if (!proc || ['C02'].includes(t.id)) { try { v = (VIZ[t.id] || generico)(c); } catch (e) { v = null; } }
+  if (!proc || ['C02'].includes(t.id)) { try { v = (VIZ[t.id] || generico)(c); } catch (e) { console.warn(t.id, e); v = null; } }
   if (!v || (!v.html && !v.fn)) v = proc ? { ler: 'Este teste ainda não tem resultado para exibir.' } : generico(c);
   const cls = t.classe_evidencia, parc = (t.resultado_atual.match(/\((AP:[^)]*)\)/) || [])[1];
   const sentenca = (t.resultado_atual || '').split(/(?<=\.)\s/)[0];
   const longo = (t.resultado_atual || '').length > sentenca.length + 3 || sentenca.length > 240;
-  const an = (t.anotacoes || []).map(a => `<li class="${AVISO.test(a) ? 'av' : ''}">${AVISO.test(a) ? '⚠ ' : ''}${esc(a)}</li>`).join('');
+  const anots = t.anotacoes || [], an = anots.map(a => `<li class="${AVISO_RE.test(a) ? 'av' : ''}">${AVISO_RE.test(a) ? '⚠ ' : ''}${esc(a)}</li>`).join('');
+  const cat = categoria(t), estadoTxt = proc ? 'em processamento' : (ESTADO[t.situacao] || t.situacao) + (t.situacao === 'em_andamento' ? ' (parcial)' : '');
+  const busca = [t.id, t.pergunta, t.metodo, t.resultado_atual, t.hipotese_nula, anots.join(' ')].join(' ').toLowerCase();
   const id = `t-${t.id}`, vid = `viz-${t.id}`;
-  const html = `<article class="cartao" id="${id}"><header><span class="id">${t.id}</span><div class="perg">${esc(t.pergunta)}</div>
-    <span class="selo" style="border-color:var(--c${cls});color:var(--texto)" ${tip(`<b>Classe ${cls}</b>: ${esc(ctx.reg.classes[cls])}`)}><b style="background:var(--c${cls})">${cls}</b>${esc(CLASSE[cls])}</span>
-    <span class="estado ${proc ? 'emproc' : ''}">${proc ? 'em processamento' : ESTADO[t.situacao] || t.situacao}${!proc && t.situacao === 'em_andamento' ? ' (parcial)' : ''}</span></header>
+  const html = `<article class="cartao${LARGAS.has(t.id) ? ' larga' : ''}" id="${id}" style="--cor:var(--c${cls})" data-id="${t.id}" data-classe="${cls}" data-estado="${cat}" data-modulo="${t.modulo}" data-busca="${esc(busca)}">
+    <header><div class="meta"><span class="id">${t.id}</span>
+      <span class="selo" ${tip(`<b>Classe ${cls}</b>: ${esc(ctx.reg.classes[cls])}<br>${esc(CLASSE[cls])}`)}><b>${cls}</b>${esc(ctx.reg.classes[cls])}</span>
+      <span class="estado ${cat}">${estadoTxt}</span></div>
+      <h3 class="perg">${esc(t.pergunta)}</h3></header>
     <div class="corpo"><div class="viz" id="${vid}">${v.html || ''}${proc ? placeholder('Em processamento', parc ? 'Parcial já registrado: ' + esc(parc) : 'Sem resultado ainda; nenhum número foi inventado.') : ''}</div>
-    <div><div class="rot" style="margin-top:0">Resultado</div>${proc ? `<p class="res-frase">Ainda sem resultado desta versão.</p>${t.resultado_atual && !/^(a fazer|em processamento)/i.test(t.resultado_atual) ? `<p class="nota">Registro anterior (não reexecutado): ${esc(t.resultado_atual)}</p>` : ''}` :
-      `<p class="res-frase">${esc(sentenca) || 'Sem resultado registrado.'}</p>${longo ? `<details class="mais"><summary>ver resultado completo</summary><p>${esc(t.resultado_atual)}</p></details>` : ''}`}
-      <div class="rot">Como ler</div><p>${esc(v.ler || '')}</p>
-      <div class="rot">O que este teste não consegue ver</div><p>${esc(t.limitacoes) || 'Limitação não detalhada no registro.'}</p>
-      <div class="rot">Selo ${cls}</div><p>${esc(CLASSE[cls])}</p></div></div>
-    <div class="rodape" style="display:block"><div class="rot" style="margin-top:0">O que foi feito e o que aprendemos</div>
-      <p style="color:var(--texto2)"><b>Método:</b> ${esc(t.metodo)}${t.hipotese_nula ? `. <b>Hipótese nula:</b> ${esc(t.hipotese_nula)}` : ''}</p>
-      ${an ? `<ul class="anot">${an}</ul>` : '<p class="nota">Sem anotações adicionais no registro.</p>'}
-      <p class="nota">Reproduzir: <code>${esc(t.comando || '')}</code> (<code>${esc(t.script || '')}</code>)</p>
-      <div class="chips"><span>${esc(t.natureza || '')}</span><span>${esc(t.afirmacao || '')}</span><span>independência: ${esc(ctx.reg.independencia[t.independencia] ? t.independencia : t.independencia || '')}</span><span>nulo ${esc(t.modelo_nulo || '—')}</span>
-      <a href="#metodologia" class="lm" data-t="${t.id}">ver método completo</a></div></div></article>`;
+    <div class="texto">
+      <div class="veredito"><div class="rot">Resultado</div>${proc ? `<p class="res-frase">Ainda sem resultado desta versão.</p>${t.resultado_atual && !/^(a fazer|em processamento)/i.test(t.resultado_atual) ? `<p class="nota">Registro anterior (não reexecutado): ${esc(t.resultado_atual)}</p>` : ''}` :
+        `<p class="res-frase">${esc(sentenca) || 'Sem resultado registrado.'}</p>${longo ? `<details class="mais"><summary>ver resultado completo</summary><p>${esc(t.resultado_atual)}</p></details>` : ''}`}</div>
+      <details class="sec"><summary>Como ler</summary><p>${esc(v.ler || '')}</p></details>
+      <details class="sec"><summary>Método e hipótese nula</summary><p><b>Método:</b> ${esc(t.metodo)}</p>${t.hipotese_nula ? `<p><b>Hipótese nula:</b> ${esc(t.hipotese_nula)}</p>` : ''}${t.pressupostos ? `<p><b>Pressupostos:</b> ${esc(t.pressupostos)}</p>` : ''}</details>
+      <details class="sec"><summary>O que este teste não consegue ver</summary><p>${esc(t.limitacoes) || 'Limitação não detalhada no registro.'}</p></details>
+      <details class="sec"><summary>Anotações${anots.length ? ` (${anots.length})` : ''}</summary>${an ? `<ul class="anot">${an}</ul>` : '<p class="nota">Sem anotações adicionais no registro.</p>'}</details>
+      <details class="sec"><summary>Selo ${cls} e como reproduzir</summary><p><b>Classe ${cls}, ${esc(ctx.reg.classes[cls])}:</b> ${esc(CLASSE[cls])}</p><p class="nota">Reproduzir: <code>${esc(t.comando || '')}</code> (<code>${esc(t.script || '')}</code>)${t.saida ? ` → <code>${esc(t.saida)}</code>` : ''}</p></details>
+    </div></div>
+    <div class="rodape"><div class="chips"><span>${esc(t.natureza || '')}</span><span>${esc(t.afirmacao || '')}</span><span ${tip(esc(ctx.reg.independencia[t.independencia] || ''))}>independência: ${esc(ctx.reg.independencia[t.independencia] ? t.independencia : t.independencia || '')}</span><span>nulo ${esc(t.modelo_nulo || '—')}</span></div>
+      <a href="#metodologia" class="lm" data-t="${t.id}">ver método completo</a></div></article>`;
   return { html, vid, v };
 }
 function intervaloTexto(a) { return a; }
@@ -387,17 +709,80 @@ function trilha(d, reg) {
   ];
   const y0 = 20, h = 130; let s = `<svg class="trilha-svg" viewBox="0 0 1100 300" role="img" aria-label="Trilha de verificação do voto ao total oficial"><defs><marker id="pt" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="${css('--fraco')}"/></marker></defs>`;
   nos.forEach((n, i) => {
-    s += `<rect class="no" x="${n.x}" y="${y0}" width="${n.w}" height="${h}" rx="10"/><text class="t1" x="${n.x + n.w / 2}" y="${y0 + 22}" text-anchor="middle">${n.t}</text>`;
+    s += `<rect class="no" x="${n.x}" y="${y0}" width="${n.w}" height="${h}" rx="12"/><text class="t1" x="${n.x + n.w / 2}" y="${y0 + 22}" text-anchor="middle">${n.t}</text>`;
     if (n.chips) n.s.forEach((c, k) => { const cx = n.x + 10 + (k % 2) * 98, cy = y0 + 40 + Math.floor(k / 2) * 38; s += `<rect class="chip" x="${cx}" y="${cy}" width="92" height="30" rx="6"/><text x="${cx + 46}" y="${cy + 19}" text-anchor="middle" font-size="11">${c}</text>`; });
     else n.s.forEach((c, k) => s += `<text x="${n.x + n.w / 2}" y="${y0 + 48 + k * 16}" text-anchor="middle">${c}</text>`);
     if (i < nos.length - 1) s += `<line class="seta" x1="${n.x + n.w + 3}" x2="${nos[i + 1].x - 4}" y1="${y0 + h / 2}" y2="${y0 + h / 2}" marker-end="url(#pt)"/>`;
-    if (n.tag) { const pw = n.tag.length * 7.2 + 18; s += `<rect class="pill" x="${n.x + n.w / 2 - pw / 2}" y="${y0 + h + 12}" width="${pw}" height="22" rx="11"/><text class="pt" x="${n.x + n.w / 2}" y="${y0 + h + 27}" text-anchor="middle">${n.tag}</text>`; }
+    if (n.tag) { const pw = n.tag.length * 7.2 + 18; const ids = n.tag.split(' · '); s += `<a href="#t-${ids[0]}"><rect class="pill" x="${n.x + n.w / 2 - pw / 2}" y="${y0 + h + 12}" width="${pw}" height="22" rx="11"/><text class="pt" x="${n.x + n.w / 2}" y="${y0 + h + 27}" text-anchor="middle">${n.tag}</text></a>`; }
     n.res.forEach((l, k) => s += `<text class="res" x="${n.x + n.w / 2}" y="${y0 + h + 52 + k * 15}" text-anchor="middle">${l}</text>`);
   });
-  return s + `<text x="0" y="292" font-size="11" style="fill:var(--fraco)">Teste = pílula verde sob o elo que ele verifica. “Em processamento” = ainda sem resultado.</text></svg>`;
+  return s + `<text x="0" y="292" font-size="11" style="fill:var(--fraco)">Teste = pílula sob o elo que ele verifica (clique para ir ao teste). “Em processamento” = ainda sem resultado.</text></svg>`;
 }
 
-fetch('registro.json').then(r => r.json()).then(reg => fetch('relatorio_dados.json').then(r => r.text()).then(t => JSON.parse(t.replace(/\bNaN\b/g, 'null').replace(/-?\bInfinity\b/g, 'null'))).then(d => {
+// ---------- casca: índice, filtros, tema ----------
+const $ = s => document.querySelector(s);
+const estadoUI = { classes: new Set(), estados: new Set(), q: '' };
+function aplicarFiltros() {
+  const cards = [...document.querySelectorAll('.cartao')]; let vis = 0;
+  cards.forEach(c => { const ok = (!estadoUI.classes.size || estadoUI.classes.has(c.dataset.classe)) && (!estadoUI.estados.size || estadoUI.estados.has(c.dataset.estado)) && (!estadoUI.q || c.dataset.busca.includes(estadoUI.q)); c.hidden = !ok; if (ok) vis++;
+    const a = document.querySelector(`.nav .testes a[href="#t-${c.dataset.id}"]`); if (a) a.classList.toggle('oculto', !ok); });
+  document.querySelectorAll('#modulos section').forEach(s => { const n = s.querySelectorAll('.cartao:not([hidden])').length; s.hidden = !n; const k = s.querySelector('.cont'); if (k) k.textContent = n === s.querySelectorAll('.cartao').length ? `${n} testes` : `${n} de ${s.querySelectorAll('.cartao').length} testes`; });
+  const ativo = estadoUI.classes.size || estadoUI.estados.size || estadoUI.q;
+  $('#contagem').textContent = ativo ? `Mostrando ${vis} de ${cards.length} testes` : `${cards.length} testes`;
+  $('#limpar-btn').hidden = !ativo;
+  document.querySelectorAll('.chip[data-classe]').forEach(b => b.setAttribute('aria-pressed', estadoUI.classes.has(b.dataset.classe)));
+  document.querySelectorAll('.chip[data-estado]').forEach(b => b.setAttribute('aria-pressed', estadoUI.estados.has(b.dataset.estado)));
+}
+function limparFiltros() { estadoUI.classes.clear(); estadoUI.estados.clear(); estadoUI.q = ''; $('#busca').value = ''; aplicarFiltros(); }
+function montarLateral(reg) {
+  const ts = reg.testes, porMod = m => ts.filter(t => t.modulo === m);
+  const link = (h, r, extra = '') => `<a class="sec" href="${h}">${r}${extra}</a>`;
+  const movel = matchMedia('(max-width: 960px)').matches;
+  $('#nav-secoes').innerHTML = link('#resumo', 'Resumo') + link('#trilha', 'Trilha de verificação') + link('#conclusao', 'Conclusão em 3 níveis') +
+    'ABCDEF'.split('').map(m => { const q = porMod(m); if (!q.length) return ''; return `<details ${movel ? '' : 'open'}><summary>${link('#mod-' + m, `<span class="mod-letra">${m}</span><span>${esc(MODS[m][0])}</span>`, `<span class="cont">${q.length}</span>`)}</summary><div class="testes">${q.map(t => `<a href="#t-${t.id}" title="${esc(t.pergunta)}">${t.id}</a>`).join('')}</div></details>`; }).join('') +
+    link('#metodologia', 'Metodologia') + link('#catalogo', 'Catálogo');
+  const cont = {}; ts.forEach(t => { cont[t.classe_evidencia] = (cont[t.classe_evidencia] || 0) + 1; });
+  $('#filtro-classe').innerHTML = 'ABCDEFG'.split('').map(k => `<button type="button" class="chip" data-classe="${k}" aria-pressed="false" style="--cor:var(--c${k})" title="${esc(CLASSE[k])}"><i></i>${k} <span class="fr">${esc(reg.classes[k])}</span> · ${cont[k] || 0}</button>`).join('');
+  const ce = {}; ts.forEach(t => { const k = categoria(t); ce[k] = (ce[k] || 0) + 1; });
+  $('#filtro-estado').innerHTML = ['ok', 'parc', 'proc'].map(k => `<button type="button" class="chip" data-estado="${k}" aria-pressed="false">${ROT_CAT[k]} · ${ce[k] || 0}</button>`).join('');
+  // painel de testes no resumo
+  $('#painel-testes').innerHTML = `<div class="linha"><span class="rot">${ts.length} testes</span>${['ok', 'parc', 'proc'].map(k => `<button type="button" class="chip" data-estado="${k}" aria-pressed="false">${ROT_CAT[k]} · ${ce[k] || 0}</button>`).join('')}</div>
+    <div class="linha"><span class="rot">Classe de evidência</span>${'ABCDEFG'.split('').filter(k => cont[k]).map(k => `<button type="button" class="chip" data-classe="${k}" aria-pressed="false" style="--cor:var(--c${k})" title="${esc(CLASSE[k])}"><i></i>${k} <span class="fr">${esc(reg.classes[k])}</span> · ${cont[k]}</button>`).join('')}<span class="nota" style="margin-left:4px">A = regular · G = sem resultado. Clique para filtrar.</span></div>`;
+  document.querySelectorAll('.chip[data-classe]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.classe; estadoUI.classes.has(k) ? estadoUI.classes.delete(k) : estadoUI.classes.add(k); aplicarFiltros(); if (b.closest('#painel-testes')) $('#modulos').scrollIntoView({ block: 'start' }); }));
+  document.querySelectorAll('.chip[data-estado]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.estado; estadoUI.estados.has(k) ? estadoUI.estados.delete(k) : estadoUI.estados.add(k); aplicarFiltros(); if (b.closest('#painel-testes')) $('#modulos').scrollIntoView({ block: 'start' }); }));
+  let tmr; $('#busca').addEventListener('input', e => { clearTimeout(tmr); tmr = setTimeout(() => { estadoUI.q = e.target.value.trim().toLowerCase(); aplicarFiltros(); }, 120); });
+  $('#limpar-btn').addEventListener('click', limparFiltros);
+  // seção ativa no índice
+  const links = [...document.querySelectorAll('.nav a.sec')];
+  const io = new IntersectionObserver(es => { es.forEach(en => { if (en.isIntersecting) { links.forEach(a => a.classList.toggle('ativo', a.getAttribute('href') === '#' + en.target.id)); } }); }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
+}
+// menu lateral (celular)
+const fecharMenu = () => { document.body.classList.remove('menu-aberto'); $('#menu-btn').setAttribute('aria-expanded', 'false'); };
+$('#menu-btn').addEventListener('click', () => { const ab = document.body.classList.toggle('menu-aberto'); $('#menu-btn').setAttribute('aria-expanded', String(ab)); if (ab) setTimeout(() => $('#busca').focus({ preventScroll: true }), 220); });
+$('#cortina').addEventListener('click', fecharMenu);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharMenu(); });
+document.querySelector('aside.lateral').addEventListener('click', e => { if (e.target.closest('a[href^="#"]') && matchMedia('(max-width: 960px)').matches) fecharMenu(); });
+// tema
+const TEMAS = ['auto', 'light', 'dark'], ROT_TEMA = { auto: 'automático', light: 'claro', dark: 'escuro' };
+function aplicarTema(t) { if (t === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', t); $('#tema-btn').textContent = 'Tema: ' + ROT_TEMA[t]; try { localStorage.setItem('urnalab-tema', t); } catch (e) { } }
+let temaAtual = 'auto'; try { temaAtual = localStorage.getItem('urnalab-tema') || 'auto'; } catch (e) { } if (!TEMAS.includes(temaAtual)) temaAtual = 'auto';
+const temaURL = new URLSearchParams(location.search).get('tema'); if (TEMAS.includes(temaURL)) { temaAtual = temaURL; if (temaURL === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', temaURL); $('#tema-btn').textContent = 'Tema: ' + ROT_TEMA[temaURL]; } else aplicarTema(temaAtual);
+$('#tema-btn').addEventListener('click', () => { temaAtual = TEMAS[(TEMAS.indexOf(temaAtual) + 1) % TEMAS.length]; aplicarTema(temaAtual); });
+// abrir/fechar todos os detalhes dos cartões
+$('#expandir-btn').addEventListener('click', e => { const abrir = e.currentTarget.getAttribute('aria-pressed') !== 'true'; document.querySelectorAll('details.sec').forEach(d => d.open = abrir); e.currentTarget.setAttribute('aria-pressed', String(abrir)); e.currentTarget.textContent = abrir ? 'Fechar todos os detalhes' : 'Abrir todos os detalhes'; });
+// impressão: tudo aberto
+let abertosAntes = null;
+window.addEventListener('beforeprint', () => { abertosAntes = [...document.querySelectorAll('details')].map(d => d.open); document.querySelectorAll('details').forEach(d => d.open = true); });
+window.addEventListener('afterprint', () => { if (abertosAntes) [...document.querySelectorAll('details')].forEach((d, i) => d.open = abertosAntes[i]); abertosAntes = null; });
+// voltar ao topo
+const topoBtn = $('#topo-btn'); window.addEventListener('scroll', () => topoBtn.classList.toggle('ver', window.scrollY > 900), { passive: true });
+topoBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+// link para teste escondido por filtro: limpa o filtro antes de ir
+document.addEventListener('click', e => { const a = e.target.closest('a[href^="#t-"]'); if (!a) return; const el = document.getElementById(a.getAttribute('href').slice(1)); if (el && el.hidden) limparFiltros(); });
+
+// ---------- montagem a partir dos dados ----------
+function montar(reg, d) {
   const t1 = d.totais_1, t2 = d.totais_2, val2 = t2.v13 + t2.v22, lr = d.log_resumo || {}, r2 = lr.t2, r1 = lr.t1;
   const ctx = { d, nv: d.novos || {}, reg, bt22: (d.bateria || {})['2022'], bt26: (d.bateria || {})['2026'] };
   document.getElementById('trilha-svg').innerHTML = trilha(d, reg);
@@ -406,19 +791,20 @@ fetch('registro.json').then(r => r.json()).then(reg => fetch('relatorio_dados.js
     <div class="faixa f1"><h4>Prova determinística</h4><p class="nota">Conta exata ou criptografia: dá o mesmo resultado para quem repetir.</p><ul>${ex(['T01', 'T16', 'T17'])}</ul></div>
     <div class="faixa f2"><h4>Evidência estatística (com poder medido)</h4><p class="nota">Compara com o esperado; só vale junto com a medida do que o teste consegue ver.</p><ul>${ex(['T02', 'T10', 'T13'])}</ul></div>
     <div class="faixa f3"><h4>Fora do alcance dos dados públicos</h4><p class="nota">O que nenhum arquivo público permite checar.</p><ul><li>Se o software da urna fez o que o código-fonte diz (os arquivos são gerados por ele mesmo).</li><li>Troca pequena e uniforme em todo o país: não deixa diferença entre urnas.</li><li>O voto individual (é secreto): trocas que se cancelam são invisíveis (<a href="#t-C06b">C06b</a>).</li></ul></div>`;
+  const tile = (n, r, cor) => `<div class="tile"${cor ? ` style="border-top:3px solid ${cor}"` : ''}><div class="n">${n}</div><div class="r">${r}</div></div>`;
   document.getElementById('tiles-dados').innerHTML = [
-    tile(N(d.urnas_2), `urnas no 2º turno (${N(d.urnas_1)} no 1º)`), tile(P(100 * t2.v13 / val2) + '%', `Lula no 2º turno (${N(t2.v13)} votos)`),
-    tile(P(100 * t2.v22 / val2) + '%', `Flávio no 2º turno (${N(t2.v22)} votos)`), tile(N(d.poder.margem_real_votos), 'votos de diferença (margem do 2º turno)')].join('');
+    tile(N(d.urnas_2), `urnas no 2º turno (${N(d.urnas_1)} no 1º)`), tile(P(100 * t2.v13 / val2) + '%', `Lula no 2º turno (${N(t2.v13)} votos)`, LULA()),
+    tile(P(100 * t2.v22 / val2) + '%', `Flávio no 2º turno (${N(t2.v22)} votos)`, ADV()), tile(N(d.poder.margem_real_votos), 'votos de diferença (margem do 2º turno)')].join('');
 
   // conclusão em 3 níveis, lida dos dados
   const falta = reg.testes.filter(emProc).map(t => t.id), z = d.z_hist, pw = d.poder, det = pw.linhas;
   const maiorPassou = Math.max(...det.filter(l => !l.algum && !l.grupo.startsWith('Troca uniforme')).map(l => l.votos));
   const parte1 = r2 ? `a assinatura da lista de arquivos é válida em <b>${N(r2.assin_lista_ok)}</b> das <b>${N(r2.assin_ok_bu ? r2.assin_ok_bu[1] : r2.urnas)}</b> urnas do 2º turno que têm arquivos; a recontagem do RDV é igual ao boletim em <b>${N(r2.rdv_igual_boletim)}</b> de <b>${N(r2.urnas_com_rdv)}</b>; o log fecha com o comparecimento em <b>${N(r2.log_igual_comparecimento)}</b> de <b>${N(r2.urnas)}</b>` : 'o processamento dos arquivos do 2º turno ainda não terminou';
   const parte1b = r1 ? `No 1º turno: assinatura válida em ${N(r1.assin_lista_ok)} de ${N(r1.assin_ok_bu ? r1.assin_ok_bu[1] : r1.urnas)} urnas com arquivos, ${((ctx.nv.correspondencia_1t || {}).T34_origem_voto || {})['Sistema de apuração'] != null ? N(ctx.nv.correspondencia_1t.T34_origem_voto['Sistema de apuração']) + ' seções foram apuradas pelo Sistema de Apuração (sem arquivo de urna), o que é esperado e não é falha de leitura.' : ''}` : '';
-  document.getElementById('conclusao').innerHTML = `<h2 style="border:0;margin:0 0 4px">Conclusão em três níveis</h2>
-    <p class="nota">Resposta provisória: o processamento do 1º turno e de 2022 ainda não terminou (${falta.length} testes sem resultado: ${falta.join(', ')}). Esta página não traz conclusão definitiva. A pergunta “houve fraude?” é respondida, no final, só nestes termos.</p>
+  document.getElementById('conclusao').innerHTML = `<h2>Conclusão em três níveis</h2>
+    <p class="nota">Resposta provisória: o processamento do 1º turno e de 2022 ainda não terminou (${falta.length} testes sem resultado: ${falta.map(i => `<a href="#t-${i}">${i}</a>`).join(', ')}). Esta página não traz conclusão definitiva. A pergunta “houve fraude?” é respondida, no final, só nestes termos.</p>
     <div class="faixas">
-    <div class="faixa f1"><h4>1. Prova determinística</h4><p>Nas contas exatas: ${parte1}. Boletim de Urna e votação por seção são iguais voto a voto nos dois turnos (T01). ${parte1b} Isto prova <b>coerência entre arquivos oficiais</b> e que as assinaturas conferem; não prova que o software da urna contou certo.</p></div>
+    <div class="faixa f1"><h4>1. Prova determinística</h4><p>Nas contas exatas: ${parte1}. Boletim de Urna e votação por seção são iguais voto a voto nos dois turnos (<a href="#t-T01">T01</a>). ${parte1b} Isto prova <b>coerência entre arquivos oficiais</b> e que as assinaturas conferem; não prova que o software da urna contou certo.</p></div>
     <div class="faixa f2"><h4>2. Evidência estatística (com poder medido)</h4><p>${N(z.acima5_lula + z.acima5_flavio)} seções de ${N(z.n)} ficaram além de 5 desvios (${z.acima5_lula} pró-Lula, ${z.acima5_flavio} pró-Flávio): anomalia estatística registrada (classe B), com excesso pró-Lula que também aparece em 2022, sem prova de causa. A curva real da apuração difere da prevista em no máximo ${P(d.curva_max_desvio.depois_19h, 2)} pp depois das 19h. Pelo teste de poder, uma manipulação concentrada que mudasse o resultado (${N(pw.margem_real_votos / 2)} votos movidos) teria sido detectada; o maior cenário que passou despercebido move ${N(maiorPassou)} votos.</p></div>
     <div class="faixa f3"><h4>3. Limite dos dados públicos</h4><p>Uma troca pequena e uniforme no país inteiro, ou qualquer falha no software da urna que gere arquivos consistentes e assinados, não deixa rastro nos dados públicos. Resultados nulos não provam ausência. Faltam ainda: ${falta.length} testes (${falta.slice(0, 8).join(', ')}${falta.length > 8 ? '…' : ''}), incluindo os de sequência dos logs e a cadeia de certificados até a raiz do TSE.</p></div></div>
     <p class="nota">Nada aqui afirma ou nega fraude além do que os números sustentam. Significância estatística não é prova de manipulação, e ausência de achado não é prova de inexistência.</p>`;
@@ -428,17 +814,45 @@ fetch('registro.json').then(r => r.json()).then(reg => fetch('relatorio_dados.js
   for (const m of 'ABCDEF') {
     const ts = reg.testes.filter(t => t.modulo === m); if (!ts.length) continue;
     const cs = ts.map(t => cartao(t, ctx));
-    box.insertAdjacentHTML('beforeend', `<section id="mod-${m}"><h2>${m}. ${MODS[m][0]}</h2><p class="modulo-intro">${MODS[m][1]} (${ts.length} testes)</p>${cs.map(x => x.html).join('')}</section>`);
+    box.insertAdjacentHTML('beforeend', `<section class="bloco" id="mod-${m}"><h2><span class="mod-letra">${m}</span>${MODS[m][0]}<span class="cont">${ts.length} testes</span></h2><p class="intro">${MODS[m][1]}</p><div class="cartoes">${cs.map(x => x.html).join('')}</div></section>`);
     cs.forEach(x => pos.push(x));
   }
-  pos.forEach(x => { const el = document.getElementById(x.vid); if (x.v.fn) { el.insertAdjacentHTML('afterbegin', '<div class="fnviz"></div>'); x.v.fn(el.querySelector('.fnviz')); } });
-}));
+  pos.forEach(x => { const el = document.getElementById(x.vid); if (x.v.fn) { el.insertAdjacentHTML('afterbegin', '<div class="fnviz"></div>'); try { x.v.fn(el.querySelector('.fnviz')); } catch (e) { console.warn(x.vid, e); } } });
+  montarLateral(reg); aplicarFiltros();
+}
 
-for (const [id, arq] of [['md-metodologia', 'METODOLOGIA.md'], ['md-catalogo', 'CATALOGO.md']])
-  fetch(arq).then(r => r.text()).then(t => { const el = document.getElementById(id); el.innerHTML = marked.parse(t);
-    if (id === 'md-metodologia') { el.querySelectorAll('h2,h3').forEach(h => { const m = h.textContent.match(/^(\d+(?:\.\d+)?)/); if (m) h.id = 'met-' + m[1]; });
-      document.querySelectorAll('a.lm').forEach(a => { const s = MET[a.dataset.t]; if (s && document.getElementById('met-' + s)) { a.href = '#met-' + s; a.textContent = `ver método completo (seção ${s})`; } }); } });
-document.addEventListener('click', e => { const a = e.target.closest('a.lm'); if (a) { const s = MET[a.dataset.t]; if (s) { const h = document.getElementById('met-' + s); if (h) { e.preventDefault(); h.scrollIntoView(); } } } });
+// ---------- carregamento com progresso ----------
+const cTexto = document.getElementById('c-texto'), cBarra = document.getElementById('c-barra'), cSub = document.getElementById('c-sub');
+async function baixarTexto(url, aoProgredir) {
+  const r = await fetch(url); if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+  const total = +r.headers.get('Content-Length') || 0; if (!r.body) return r.text();
+  const leitor = r.body.getReader(), partes = []; let lido = 0;
+  for (; ;) { const { done, value } = await leitor.read(); if (done) break; partes.push(value); lido += value.length; aoProgredir(lido, total); }
+  return new Blob(partes).text();
+}
+(async () => {
+  try {
+    const reg = await fetch('registro.json').then(r => { if (!r.ok) throw new Error('registro.json: HTTP ' + r.status); return r.json(); });
+    cTexto.textContent = 'Baixando os dados do relatório…';
+    const t = await baixarTexto('relatorio_dados.json', (lido, total) => { if (total) { cBarra.value = 100 * lido / total; cSub.textContent = `${P(lido / 1048576, 0)} de ${P(total / 1048576, 0)} MB`; } else cSub.textContent = `${P(lido / 1048576, 0)} MB`; });
+    cTexto.textContent = 'Montando os gráficos…'; cBarra.removeAttribute('value'); cSub.textContent = '';
+    await new Promise(r => setTimeout(r, 40));
+    const d = JSON.parse(t.replace(/\bNaN\b/g, 'null').replace(/-?\bInfinity\b/g, 'null'));
+    montar(reg, d);
+    document.getElementById('carregando').hidden = true;
+    if (location.hash) { const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }
+  } catch (e) { console.error(e); cTexto.innerHTML = `<span class="erro">Não foi possível carregar os dados.</span>`; cBarra.hidden = true; cSub.textContent = String(e.message || e); }
+})();
+
+// METODOLOGIA.md e CATALOGO.md chegam por htmx (hx-get nos blocos); o markdown vira HTML antes da troca
+let metPendente = null;
+document.body.addEventListener('htmx:beforeSwap', e => { if (e.detail.target.classList.contains('md')) { e.detail.shouldSwap = true; e.detail.serverResponse = e.detail.xhr.status < 400 ? marked.parse(e.detail.xhr.responseText) : `<p class="nota">Não foi possível carregar ${esc(e.detail.pathInfo.requestPath)} (HTTP ${e.detail.xhr.status}).</p>`; } });
+document.body.addEventListener('htmx:afterSwap', e => { const el = e.detail.target; if (el.id !== 'md-metodologia') return;
+  el.querySelectorAll('h2,h3').forEach(h => { const m = h.textContent.match(/^(\d+(?:\.\d+)?)/); if (m) h.id = 'met-' + m[1]; });
+  document.querySelectorAll('a.lm').forEach(a => { const s = MET[a.dataset.t]; if (s && document.getElementById('met-' + s)) { a.href = '#met-' + s; a.textContent = `ver método completo (seção ${s})`; } });
+  if (metPendente) { const h = document.getElementById('met-' + metPendente); metPendente = null; if (h) h.scrollIntoView(); } });
+document.body.addEventListener('htmx:sendError', e => { if (e.detail.target.classList.contains('md')) e.detail.target.innerHTML = `<p class="nota">Não foi possível carregar ${esc(e.detail.pathInfo.requestPath)}.</p>`; });
+document.addEventListener('click', e => { const a = e.target.closest('a.lm'); if (a) { const s = MET[a.dataset.t]; if (s) { const h = document.getElementById('met-' + s); if (h) { e.preventDefault(); h.scrollIntoView(); } else metPendente = s; } } });
 </script>
 </body>
 </html>

@@ -1,20 +1,20 @@
 {
  "turno": 2,
  "urnas_avaliadas": 499205,
- "casos": 76,
- "explicados_operacionais": 75,
+ "casos": 75,
+ "explicados_operacionais": 74,
  "inconsistencias_de_publicacao_D1": 1,
  "sem_explicacao": 0,
  "por_tipo": {
-  "b_confirmacoes_x_total": 56,
+  "b_confirmacoes_x_total": 54,
   "c_certificado_x_log": 17,
-  "a_log_x_comparecimento": 9,
+  "a_log_x_comparecimento": 7,
   "d_fora_do_bu": 2
  },
  "por_explicacao": {
   "E4": 48,
-  "E2": 31,
-  "E3": 13,
+  "E2": 30,
+  "E3": 12,
   "E5": 3,
   "D1": 1
  },
@@ -163,26 +163,6 @@
    "origem_ceft": "Urna Eletrônica",
    "explicacoes": [
     "E4 uma confirmação sem voto computado (voto interrompido)"
-   ],
-   "explicado": true
-  },
-  {
-   "uf": "BA",
-   "municipio": "39870",
-   "zona": "133",
-   "secao": "184",
-   "tipos": [
-    "a_log_x_comparecimento",
-    "b_confirmacoes_x_total"
-   ],
-   "log": 413,
-   "comparecimento": 228,
-   "cert": "UEAO02176991",
-   "urnas_log": "02172386,02176991",
-   "origem_ceft": "Urna Eletrônica",
-   "explicacoes": [
-    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
-    "E3 urna substituída no meio do dia"
    ],
    "explicado": true
   },
@@ -397,11 +377,9 @@
    "zona": "16",
    "secao": "264",
    "tipos": [
-    "a_log_x_comparecimento",
-    "b_confirmacoes_x_total",
     "c_certificado_x_log"
    ],
-   "log": 160,
+   "log": 114,
    "comparecimento": 114,
    "cert": "UEAO02092884",
    "urnas_log": "02080602,02129190",

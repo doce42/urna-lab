@@ -1,8 +1,8 @@
 """Testes sobre a sequência dos logs das urnas (T28–T31, T33), modelo de urna (T20) e confirmação, em dados
 independentes (logs), dos achados exploratórios das tabelas (cauda do T02).
 
-Uso: python analise_logs.py <turno>        (precisa de analise/brutos/<t>t/urnas_*.parquet com as colunas seq_*)
-Saída: resultado_logs_<t>t.json
+Uso: [ANO=2022] python analise_logs.py <turno>        (precisa de analise/brutos/<t>t/urnas_*.parquet com as colunas seq_*)
+Saída: resultado_logs_<t>t.json (2022: resultado_logs_2022_<t>t.json)
 
 T28  rajada de habilitações sem biometria no fim do dia: por urna, nº de habilitações não biométricas (biográfica +
      sem biometria cadastrada + manual) nos últimos 30 min x o esperado pela taxa da própria urna no resto do dia
@@ -25,7 +25,9 @@ from scipy import stats
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 T = int(sys.argv[1]) if len(sys.argv) > 1 else 2
-arqs = glob.glob(os.path.join(AQUI, "brutos", f"{T}t", "urnas_*.parquet"))
+ANO = os.environ.get("ANO", "2026")  # 2022: lê brutos/2022_<t>t e base_2022.parquet, grava resultado_logs_2022_<t>t.json
+SUF = "" if ANO == "2026" else f"{ANO}_"
+arqs = glob.glob(os.path.join(AQUI, "brutos", f"{T}t" if ANO == "2026" else f"{ANO}_{T}t", "urnas_*.parquet"))
 u = pd.concat([pd.read_parquet(a) for a in arqs], ignore_index=True)
 if "seq_votos_dia" not in u:
     sys.exit("sem colunas seq_* (rode processar_brutos.py com a versão que lê a sequência do log)")
@@ -67,11 +69,23 @@ R["T29"] = {"duracao_min_global_s": float(d.min()), "duracao_min_p01_s": float(n
             "intervalo_min_entre_votos_s_p01": float(np.percentile(u["seq_intervalo_min"].dropna(), 1)),
             "intervalo_min_entre_votos_s_min": float(u["seq_intervalo_min"].min())}
 # T30, T31
-# o log do 2º turno traz arquivado o do 1º (e testes de preparação): "fora do dia" cru NÃO é achado. O teste válido é o
-# horário do voto dentro do dia da eleição: votos antes das 07h00 locais e depois do encerramento (+ prorrogação)
-R["T30"] = {"votos_fora_do_dia_cru_NAO_USAR": int(u["seq_votos_fora_dia"].sum()),
-            "votos_antes_das_7h_locais_no_dia": int(u["seq_votos_antes_7h"].sum()),
-            "urnas_com_voto_antes_das_7h": int((u["seq_votos_antes_7h"] > 0).sum())}
+# T30 correto: horário do voto contra o horário LOCAL de abertura e encerramento da própria urna (BU). O corte fixo de 7h
+# estava errado: no Acre a votação abre às 06h locais (8h de Brasília). O valor cru de "fora do dia" é o log do turno
+# anterior arquivado dentro do log atual e não conta como achado.
+_ab = pd.read_parquet(os.path.join(AQUI, "base.parquet" if ANO == "2026" else f"base_{ANO}.parquet"),
+                      columns=["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO", f"DT_ABERTURA_{T}", f"DT_ENCERRAMENTO_{T}"])
+_t = u.merge(_ab, on=["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO"], how="left")
+_pv = pd.to_datetime(_t["primeiro_voto"], format="%d/%m/%Y %H:%M:%S", errors="coerce")
+_uv = pd.to_datetime(_t["ultimo_voto"], format="%d/%m/%Y %H:%M:%S", errors="coerce")
+_ok = _pv.notna() & _t[f"DT_ABERTURA_{T}"].notna()
+_antes = _ok & (_pv < _t[f"DT_ABERTURA_{T}"])
+_ok2 = _uv.notna() & _t[f"DT_ENCERRAMENTO_{T}"].notna()
+_depois = _ok2 & (_uv > _t[f"DT_ENCERRAMENTO_{T}"] + pd.Timedelta(seconds=60))
+R["T30"] = {"urnas_avaliadas": int(_ok.sum()), "urnas_com_voto_antes_da_abertura": int(_antes.sum()),
+            "urnas_com_voto_depois_do_encerramento_mais_1min": int(_depois.sum()),
+            "exemplos_antes": _t.loc[_antes, ["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO", "primeiro_voto", f"DT_ABERTURA_{T}"]].head(8).astype(str).to_dict("records"),
+            "exemplos_depois": _t.loc[_depois, ["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO", "ultimo_voto", f"DT_ENCERRAMENTO_{T}"]].head(8).astype(str).to_dict("records"),
+            "votos_fora_do_dia_cru_NAO_USAR": int(u["seq_votos_fora_dia"].sum())}
 R["T31"] = {"votos_sem_habilitacao": int(u["seq_sem_habilitacao"].sum()), "urnas": int((u["seq_sem_habilitacao"] > 0).sum())}
 # T33
 R["T33"] = {"versoes": u["sw_versoes"].value_counts().to_dict(),
@@ -79,7 +93,7 @@ R["T33"] = {"versoes": u["sw_versoes"].value_counts().to_dict(),
             "verificacoes_sem_sucesso": int(u["sw_verif_falha"].sum()), "verificacoes_ok": int(u["sw_verif_ok"].sum())}
 
 # T20 e CONF precisam da virada (base)
-b = pd.read_parquet(os.path.join(AQUI, "base.parquet"))
+b = pd.read_parquet(os.path.join(AQUI, "base.parquet" if ANO == "2026" else f"base_{ANO}.parquet"))
 b = b[(b["validos_1"] >= 20) & (b["validos_2"] >= 20)].copy()
 b["mun"] = b["SG_UF"] + b["CD_MUNICIPIO"]
 lg = lambda x, n: np.log((x + .5) / (n - x + .5))
@@ -117,6 +131,6 @@ for nome, sel in grupos.items():
                            "modelos": g["modelo"].value_counts().to_dict()}
 cauda = m[m["z"] > 5].sort_values("z", ascending=False)
 R["CONF_T02_lista"] = cauda[["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO", "z", "QT_APTOS_2", "sem_bio_frac", "z28", "seq_dur_mediana", "modelo"]].head(40).to_dict("records")
-json.dump(R, open(os.path.join(AQUI, f"resultado_logs_{T}t.json"), "w"), ensure_ascii=False, indent=1, default=str)
+json.dump(R, open(os.path.join(AQUI, f"resultado_logs_{SUF}{T}t.json"), "w"), ensure_ascii=False, indent=1, default=str)
 print(json.dumps({k: v for k, v in R.items() if k not in ("CONF_T02_lista",) and not (isinstance(v, dict) and "exemplos" in v)}, ensure_ascii=False, indent=1, default=str)[:4000])
 print("T28 exemplos:", R["T28"]["exemplos"][:3])

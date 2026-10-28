@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>urna lab · opções de identidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;800&family=Manrope:wght@400;500;700;800&family=Public+Sans:wght@400;500;600&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#EEEDEA; --page-2:#E4E3DF; --page-text:#17181B; --page-muted:#63666D; --page-line:#D3D1CC;
+  font-family:"Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{--page:#0D0E10;--page-2:#16171A;--page-text:#ECEBE8;--page-muted:#9A9DA4;--page-line:#2A2C30}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--page-text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.top{padding:56px 0 24px}
+.top h1{font:600 clamp(28px,4vw,44px)/1.1 "Inter Tight",sans-serif;letter-spacing:-.02em;margin:0 0 10px}
+.top p{margin:0;color:var(--page-muted);max-width:720px;line-height:1.55}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0}
+.toc a,.btn{font:500 13px/1 "Inter",sans-serif;text-decoration:none;padding:9px 13px;border:1px solid var(--page-line);border-radius:999px;background:transparent;color:var(--page-text);cursor:pointer}
+.toc a:hover,.btn:hover{background:var(--page-2)}
+h2.sec{font:600 22px/1.2 "Inter Tight",sans-serif;letter-spacing:-.01em;margin:48px 0 6px}
+.sec-sub{color:var(--page-muted);margin:0 0 18px;font-size:14px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* comparar */
+.cmp{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1000px){.cmp{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.cmp{grid-template-columns:1fr}}
+.tile{border-radius:16px;overflow:hidden;border:1px solid var(--page-line);background:var(--page-2);text-decoration:none;display:block}
+.tile .half{background:var(--bg);color:var(--text);padding:18px 16px;height:92px;display:flex;align-items:center}
+.tile .strip{display:flex;height:10px}.tile .strip i{flex:1}
+.tile .cap{padding:10px 14px;font:500 13px/1.3 "Inter",sans-serif;display:flex;justify-content:space-between;color:var(--page-text)}
+.tile .cap span{color:var(--page-muted)}
+.tile.mode-dark .half.l{display:none}.tile:not(.mode-dark) .half.d{display:none}
+.tile.both .half{display:flex!important}
+
+/* opção */
+.opt{margin:28px 0 0;border-radius:24px;overflow:hidden;border:1px solid var(--page-line);background:var(--page-2);scroll-margin-top:16px}
+.opt-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 26px;flex-wrap:wrap}
+.opt-head .n{font:600 12px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--page-muted)}
+.opt-head h3{font:600 24px/1.2 "Inter Tight",sans-serif;margin:6px 0 6px;letter-spacing:-.01em}
+.opt-head p{margin:0;color:var(--page-muted);max-width:680px;line-height:1.5;font-size:14px}
+.opt-body{display:grid;grid-template-columns:320px 1fr;gap:0;border-top:1px solid var(--page-line)}
+@media (max-width:980px){.opt-body{grid-template-columns:1fr}}
+.side{padding:22px 26px;display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--page-line)}
+.side h4{margin:0 0 10px;font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--page-muted)}
+.marks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mk{border-radius:12px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--bg)}
+.mk.wide{grid-column:1/-1;aspect-ratio:auto;padding:18px 14px}
+.favs{display:flex;gap:10px;align-items:end;margin-top:8px;color:var(--page-muted);font:12px "IBM Plex Mono",monospace}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 6px}
+.sw div{border-radius:8px;height:44px;position:relative;border:1px solid rgba(127,127,127,.18)}
+.sw div span{position:absolute;left:0;right:0;bottom:-15px;font:10px/1 "IBM Plex Mono",monospace;color:var(--page-muted);text-align:center}
+.swl{font:11px "IBM Plex Mono",monospace;color:var(--page-muted);margin:0 0 6px}
+.swg{margin-bottom:22px}
+.fonts{font-size:13px;line-height:1.6;color:var(--page-muted)}
+.fonts b{color:var(--page-text);font-weight:500}
+
+/* amostra */
+.demo{background:var(--bg);color:var(--text);font-family:var(--fb);transition:background .25s,color .25s;min-width:0}
+.d-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid var(--border);gap:12px}
+.d-nav nav{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+.d-nav nav a{text-decoration:none}.d-nav nav a.on{color:var(--text)}
+@media (max-width:640px){.d-nav nav{display:none}}
+.d-hero{padding:40px 28px 28px;display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:end}
+@media (max-width:820px){.d-hero{grid-template-columns:1fr}}
+.eyebrow{font:500 12px/1 var(--fn);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.d-hero h5{font-family:var(--fh);font-weight:var(--fhw);font-size:clamp(26px,3vw,36px);line-height:1.08;letter-spacing:var(--fhls);margin:12px 0 12px}
+.d-hero p{color:var(--muted);line-height:1.6;margin:0;font-size:15px;max-width:440px}
+.big{font-family:var(--fnum);font-weight:var(--fnumw);font-size:clamp(46px,8vw,104px);line-height:.9;letter-spacing:-.04em;color:var(--text)}
+.big small{font-size:.42em;letter-spacing:-.01em;color:var(--muted);margin-left:4px}
+.bigcap{color:var(--muted);font-size:13px;margin-top:10px}
+.d-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:16px;padding:0 28px 30px}
+@media (max-width:820px){.d-grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 18px 16px;box-shadow:var(--sh)}
+.card .t{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card .k{font:500 11px/1 var(--fn);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pill{font:500 12px/1 var(--fb);padding:6px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent-text);white-space:nowrap}
+.card h6{font-family:var(--fh);font-weight:var(--fhw);letter-spacing:var(--fhls);font-size:19px;margin:12px 0 6px;line-height:1.2}
+.card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+.stats{display:flex;gap:22px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+.stats div{font:500 18px/1.1 var(--fnum)}.stats span{display:block;font:12px var(--fb);color:var(--muted);margin-top:4px}
+.bar{height:6px;border-radius:9px;background:var(--border);margin-top:14px;overflow:hidden}.bar i{display:block;height:100%;width:41%;background:var(--brand-ui)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:6px}
+.legend b{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.chart text{font-family:var(--fn);font-size:10px;fill:var(--muted)}
+.tgl{font:500 13px/1 var(--fb);padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.d-foot{padding:12px 28px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.foot{padding:48px 0 64px;color:var(--page-muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>urna lab: 8 direções de identidade</h1>
+    <p>Cada opção é um conceito diferente: símbolo, tipografia, paleta (claro e escuro) e uma amostra real de uso. Nenhuma usa vermelho ou azul como cor de marca, verde com amarelo ou referências ao TSE e a partidos. Escolha uma e ela será refinada (SVG final, favicon, og-image, tokens).</p>
+    <div class="toc" id="toc"><a href="#comparar">Comparar lado a lado</a></div>
+  </header>
+
+  <section id="comparar">
+    <div class="row">
+      <div><h2 class="sec">Comparar lado a lado</h2><p class="sec-sub">Logo de cada opção no claro e no escuro, com a faixa de cores da marca e das séries.</p></div>
+      <div style="display:flex;gap:8px"><button class="btn" data-cmp="light">Claro</button><button class="btn" data-cmp="dark">Escuro</button><button class="btn" data-cmp="both">Os dois</button><button class="btn" id="allDark">Amostras: alternar todas</button></div>
+    </div>
+    <div class="cmp" id="cmp"></div>
+  </section>
+
+  <div id="opts"></div>
+  <p class="foot">urna lab · estudo independente da apuração presidencial 2026 com dados oficiais do TSE. Página de escolha de identidade, uso interno.</p>
+</div>
+
+<script>
+/* ---------- símbolos (usam variáveis CSS: --brand, --onbrand, --accent, --text) ---------- */
+const S = {
+  // 1 urna isométrica: caixa em perspectiva com a fenda no topo
+  iso: (s=40)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">
+    <path d="M24 5 L42 14.5 L24 24 L6 14.5Z" fill="var(--accent)"/>
+    <path d="M6 14.5 L24 24 V44 L6 34.5Z" fill="var(--brand)"/>
+    <path d="M42 14.5 L24 24 V44 L42 34.5Z" fill="var(--brand-2)"/>
+    <path d="M18.5 12.2 L29.5 17.8" stroke="var(--brand)" stroke-width="3.2" stroke-linecap="round"/></svg>`,
+  // 2 lupa sobre grade de pontos
+  lens: (s=40)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">
+    <g fill="var(--brand)" opacity=".35">${[8,16,24,32,40].map(x=>[8,16,24,32,40].map(y=>`<circle cx="${x}" cy="${y}" r="1.7"/>`).join('')).join('')}</g>
+    <circle cx="21" cy="21" r="10.5" fill="var(--bg)" stroke="var(--brand)" stroke-width="4"/>
+    <circle cx="21" cy="21" r="3" fill="var(--accent)"/>
+    <path d="M29 29 L40 40" stroke="var(--brand)" stroke-width="5" stroke-linecap="round"/></svg>`,
+  // 3 pixel de voto: um "U" de pixels e o voto caindo
+  pix: (s=40)=>{const p=(x,y,c)=>`<rect x="${4+x*10.5}" y="${4+y*10.5}" width="9" height="9" rx="1.2" fill="${c}"/>`;
+    return `<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">${p(0,1,'var(--brand)')+p(0,2,'var(--brand)')+p(0,3,'var(--brand)')+p(3,1,'var(--brand)')+p(3,2,'var(--brand)')+p(3,3,'var(--brand)')+p(1,3,'var(--brand)')+p(2,3,'var(--brand)')}<rect x="19.75" y="4" width="9" height="9" rx="1.2" fill="var(--accent)"/></svg>`},
+  // 4 selo / carimbo circular
+  seal: (s=40,id='')=>`<svg width="${s}" height="${s}" viewBox="0 0 100 100" aria-hidden="true">
+    <defs><path id="sc${id}" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs>
+    <circle cx="50" cy="50" r="47" fill="none" stroke="var(--brand)" stroke-width="3"/>
+    <circle cx="50" cy="50" r="27" fill="var(--brand)"/>
+    <text font-family="Fraunces,serif" font-size="10.5" font-weight="700" letter-spacing="2.6" fill="var(--brand)"><textPath href="#sc${id}">DADOS ABERTOS · VERIFICÁVEL · 2026 ·</textPath></text>
+    <rect x="38" y="38" width="24" height="4.5" rx="2.2" fill="var(--accent)"/>
+    <text x="50" y="64" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="20" fill="var(--onbrand)">ul</text></svg>`,
+  // 5 monograma "ul": o braço do u sobe e vira l
+  mono: (s=40)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">
+    <rect x="1" y="1" width="46" height="46" rx="13" fill="var(--brand)"/>
+    <path d="M14 17 V27.5 a7.5 7.5 0 0 0 15 0 V9" fill="none" stroke="var(--onbrand)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M36.5 9 V36" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/></svg>`,
+  // 6 tipográfico: u + traço
+  type: (s=40)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">
+    <rect x="1" y="1" width="46" height="46" rx="4" fill="var(--brand)"/>
+    <text x="24" y="31" text-anchor="middle" font-family="'Bricolage Grotesque',sans-serif" font-weight="800" font-size="30" fill="var(--onbrand)">u</text>
+    <rect x="12" y="36" width="24" height="4" fill="var(--accent)"/></svg>`,
+  // 7 abstrato de dados: histograma em sino
+  hist: (s=40)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">
+    ${[[5,30],[13,18],[21,8],[29,14],[37,26]].map(([x,y],i)=>`<rect x="${x}" y="${y}" width="6.5" height="${40-y}" rx="3.2" fill="${i==2?'var(--accent)':'var(--brand)'}"/>`).join('')}
+    <rect x="3" y="42" width="42" height="3" rx="1.5" fill="var(--brand)"/></svg>`,
+  // 8 linha contínua entrando na urna
+  line: (s=40)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true">
+    <path d="M8 24 V40 a3 3 0 0 0 3 3 H37 a3 3 0 0 0 3-3 V24" fill="none" stroke="var(--brand)" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M4 15 L13 9 L21 14 L29 5 L24 31" fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="24" cy="31" r="3.4" fill="var(--brand)"/></svg>`,
+};
+
+/* ---------- opções ---------- */
+const O = [
+ {id:1,name:"Urna isométrica",sym:'iso',
+  concept:"A urna como objeto 3D simples, vista de cima: três faces, uma fenda. Lê como caixa de dados, não como urna eletrônica. Técnico, amigável, bom em avatar.",
+  fh:"'Space Grotesk'",fhw:600,fhls:"-.02em",fb:"'Space Grotesk'",fn:"'Space Mono'",fnum:"'Space Grotesk'",fnumw:600,r:"14px",
+  word:`<span style="font:600 26px/1 'Space Grotesk';letter-spacing:-.03em">urna<span style="color:var(--accent-text)">.</span>lab</span>`,
+  L:{bg:"#F3F6F5",surface:"#FFFFFF",text:"#0F1F1E",muted:"#5A6B69",border:"#DCE5E3",brand:"#0E6E6B",brand2:"#0A4F4D",onbrand:"#FFFFFF",accent:"#F2994A",at:"#B4601A",soft:"#FCE9D8",s:["#0E6E6B","#F2994A","#8E7CC3"]},
+  D:{bg:"#0A1413",surface:"#111E1D",text:"#E6F0EE",muted:"#93A8A5",border:"#22403D",brand:"#2BB3AC",brand2:"#1A7F7A",onbrand:"#06201F",accent:"#F6AE6B",at:"#F6AE6B",soft:"#3A2A1B",s:["#2BB3AC","#F6AE6B","#B3A4E6"]}},
+ {id:2,name:"Lupa sobre a grade",sym:'lens',
+  concept:"Uma lupa examinando uma grade de pontos: cada ponto é uma seção eleitoral. Conceito direto de verificação, com cara de ferramenta de pesquisa.",
+  fh:"'Inter Tight'",fhw:600,fhls:"-.025em",fb:"'Inter Tight'",fn:"'IBM Plex Mono'",fnum:"'Inter Tight'",fnumw:500,r:"10px",
+  word:`<span style="font:600 25px/1 'Inter Tight';letter-spacing:-.03em">urna <span style="font-weight:400;color:var(--muted)">lab</span></span>`,
+  L:{bg:"#F7F6FB",surface:"#FFFFFF",text:"#17142B",muted:"#625E78",border:"#E3E0F0",brand:"#5B3FE0",brand2:"#3B2A9A",onbrand:"#FFFFFF",accent:"#00A88F",at:"#5B3FE0",soft:"#ECE8FF",s:["#5B3FE0","#00A88F","#E08A1E"]},
+  D:{bg:"#0E0C18",surface:"#171427",text:"#ECEAF7",muted:"#A19DBB",border:"#2A2645",brand:"#9D88FF",brand2:"#6E59E6",onbrand:"#120E26",accent:"#3FD9C0",at:"#B7A8FF",soft:"#241E44",s:["#9D88FF","#3FD9C0","#F0A848"]}},
+ {id:3,name:"Pixel de voto",sym:'pix',
+  concept:"Um U feito de pixels e um pixel laranja caindo dentro: o voto como unidade de dado. Visual de terminal, preto e branco com um único ponto quente.",
+  fh:"'JetBrains Mono'",fhw:800,fhls:"-.04em",fb:"'Inter'",fn:"'JetBrains Mono'",fnum:"'JetBrains Mono'",fnumw:800,r:"4px",
+  word:`<span style="font:800 24px/1 'JetBrains Mono';letter-spacing:-.05em">urna<span style="color:var(--accent)">_</span>lab</span>`,
+  L:{bg:"#FAFAF7",surface:"#FFFFFF",text:"#111111",muted:"#6B6B66",border:"#E6E5DF",brand:"#111111",brand2:"#3A3A3A",onbrand:"#FAFAF7",accent:"#FF5F1F",at:"#C2410C",soft:"#FFE7DB",s:["#FF5F1F","#2F2F2F","#A3A198"]},
+  D:{bg:"#0A0A0A",surface:"#151515",text:"#F2F2EE",muted:"#9A9A94",border:"#262626",brand:"#F2F2EE",brand2:"#CFCFCF",onbrand:"#0A0A0A",accent:"#FF7A3D",at:"#FF8A55",soft:"#2B1810",s:["#FF7A3D","#F2F2EE","#77756F"]}},
+ {id:4,name:"Selo de verificação",sym:'seal',
+  concept:"Um carimbo circular de laboratório com o texto ‘dados abertos · verificável’. Tom de publicação acadêmica, serifado, berinjela e ocre sobre papel.",
+  fh:"'Fraunces'",fhw:600,fhls:"-.01em",fb:"'Public Sans'",fn:"'IBM Plex Mono'",fnum:"'Fraunces'",fnumw:500,r:"6px",
+  word:`<span style="font:600 27px/1 'Fraunces';letter-spacing:-.01em">urna <i style="font-weight:500;color:var(--accent-text)">lab</i></span>`,
+  L:{bg:"#F5F0E8",surface:"#FBF8F3",text:"#2A1A2C",muted:"#6E5F6C",border:"#E2D8CB",brand:"#4B2350",brand2:"#6B3A70",onbrand:"#F5F0E8",accent:"#C08A2E",at:"#8A5E14",soft:"#F1E3C8",s:["#4B2350","#C08A2E","#5E8C7A"]},
+  D:{bg:"#160E17",surface:"#211622",text:"#F1E9EC",muted:"#B19FAE",border:"#3A2A3B",brand:"#D7A6DB",brand2:"#B07FB5",onbrand:"#1E1220",accent:"#E3B35A",at:"#E3B35A",soft:"#3A2B17",s:["#D7A6DB","#E3B35A","#7FB8A2"]}},
+ {id:5,name:"Monograma ul",sym:'mono',
+  concept:"As letras u e l numa só linha: o braço do u sobe e vira o l. Marca de produto, compacta, funciona sozinha como ícone de app. Grafite e cobre.",
+  fh:"'Sora'",fhw:600,fhls:"-.03em",fb:"'Sora'",fn:"'IBM Plex Mono'",fnum:"'Sora'",fnumw:600,r:"16px",
+  word:`<span style="font:600 25px/1 'Sora';letter-spacing:-.04em">urna lab</span>`,
+  L:{bg:"#F6F5F3",surface:"#FFFFFF",text:"#1B1D21",muted:"#61656E",border:"#E4E2DE",brand:"#1B1D21",brand2:"#33363C",onbrand:"#F6F5F3",accent:"#B5612F",at:"#9A4F22",soft:"#F4E4D9",s:["#B5612F","#1B1D21","#6E8A7F"]},
+  D:{bg:"#0F1012",surface:"#18191C",text:"#EEECE8",muted:"#9EA1A8",border:"#2A2C30",brand:"#EEECE8",brand2:"#CFCDC9",onbrand:"#0F1012",accent:"#E08A55",at:"#E8996A",soft:"#33221A",s:["#E08A55","#EEECE8","#8FB0A3"]}},
+ {id:6,name:"Wordmark editorial",sym:'type',
+  concept:"A força está no nome: grotesca pesada contra serifa itálica, como capa de revista de dados. Preto e branco com um marca-texto damasco.",
+  fh:"'Bricolage Grotesque'",fhw:800,fhls:"-.035em",fb:"'Geist'",fn:"'Geist'",fnum:"'Bricolage Grotesque'",fnumw:800,r:"2px",
+  word:`<span style="font:800 28px/1 'Bricolage Grotesque';letter-spacing:-.04em">urna<span style="font:400 italic 31px/1 'Instrument Serif';letter-spacing:0;margin-left:3px;background:var(--accent-soft);padding:0 4px">lab</span></span>`,
+  L:{bg:"#FFFFFF",surface:"#F4F4F2",text:"#0A0A0A",muted:"#6A6A6A",border:"#E5E5E2",brand:"#0A0A0A",brand2:"#2A2A2A",onbrand:"#FFFFFF",accent:"#F29A4A",at:"#0A0A0A",soft:"#FFD9B0",s:["#0A0A0A","#E3934A","#A0A09C"]},
+  D:{bg:"#0A0A0A",surface:"#141414",text:"#FAFAFA",muted:"#9A9A9A",border:"#262626",brand:"#FAFAFA",brand2:"#DADADA",onbrand:"#0A0A0A",accent:"#FFB16B",at:"#FFC58A",soft:"#4A3018",s:["#FAFAFA","#FFB16B","#7A7A7A"]}},
+ {id:7,name:"Distribuição",sym:'hist',
+  concept:"Um histograma em forma de sino: a estatística por trás de cada teste. Abstrato, calmo, sem objeto literal. Carvão com uma barra calêndula.",
+  fh:"'Manrope'",fhw:800,fhls:"-.03em",fb:"'Manrope'",fn:"'DM Mono'",fnum:"'Manrope'",fnumw:800,r:"12px",
+  word:`<span style="font:800 25px/1 'Manrope';letter-spacing:-.04em">urna<span style="font-weight:500;color:var(--muted)">lab</span></span>`,
+  L:{bg:"#F7F5EF",surface:"#FFFFFF",text:"#1E1F1C",muted:"#66675F",border:"#E4E1D6",brand:"#22231F",brand2:"#3A3B35",onbrand:"#F7F5EF",accent:"#E8A400",at:"#8C6200",soft:"#FBEBC2",s:["#E8A400","#22231F","#8B6FB3"]},
+  D:{bg:"#121310",surface:"#1B1C18",text:"#F0EEE6",muted:"#A2A196",border:"#2D2E28",brand:"#F0EEE6",brand2:"#D6D4CC",onbrand:"#121310",accent:"#FFC233",at:"#FFC233",soft:"#3A3016",s:["#FFC233","#F0EEE6","#B49BE0"]}},
+ {id:8,name:"Traço de apuração",sym:'line',
+  concept:"Uma linha de gráfico que termina dentro da urna: o dado entra, o resultado sai. Clima de caderno de campo científico, sálvia e ameixa, serifa clássica.",
+  fh:"'DM Serif Display'",fhw:400,fhls:"-.01em",fb:"'DM Sans'",fn:"'DM Mono'",fnum:"'DM Serif Display'",fnumw:400,r:"8px",
+  word:`<span style="font:400 28px/1 'DM Serif Display';letter-spacing:-.01em">urna <span style="font:500 15px/1 'DM Mono';letter-spacing:.06em;color:var(--accent-text);vertical-align:4px">LAB</span></span>`,
+  L:{bg:"#F3F2EC",surface:"#FBFAF6",text:"#1F241D",muted:"#5E6659",border:"#DDDCD2",brand:"#3F5A3C",brand2:"#56714F",onbrand:"#F3F2EC",accent:"#7D4E7A",at:"#7D4E7A",soft:"#EDE1EB",s:["#3F5A3C","#7D4E7A","#B08A5E"]},
+  D:{bg:"#10130F",surface:"#181C16",text:"#ECEDE4",muted:"#A0A797",border:"#2A3027",brand:"#9CBF95",brand2:"#7FA378",onbrand:"#10130F",accent:"#C99AC4",at:"#D3A9CE",soft:"#2E2230",s:["#9CBF95","#C99AC4","#CDB491"]}},
+];
+
+const vars = (p)=>({"--bg":p.bg,"--surface":p.surface,"--text":p.text,"--muted":p.muted,"--border":p.border,"--brand":p.brand,"--brand-2":p.brand2,"--onbrand":p.onbrand,"--accent":p.accent,"--accent-text":p.at,"--accent-soft":p.soft,"--brand-ui":p.s[0]});
+const styleStr = (p)=>Object.entries(vars(p)).map(([k,v])=>`${k}:${v}`).join(';');
+const sym = (o,s,id)=>S[o.sym](s,id);
+const lockup = (o,s=34,id='')=>`<span style="display:inline-flex;align-items:center;gap:11px;color:var(--text)">${sym(o,s,id)}${o.word}</span>`;
+
+/* gráfico: % de seções apuradas por hora */
+const SER=[[0,6,31,64,86,96,99.6,100],[0,9,38,70,90,98,99.8,100],[0,4,24,55,80,93,99,100]];
+const LAB=["2022 · 1º turno","2026 · 1º turno","2026 · 2º turno"];
+function chart(o){
+  const W=460,H=170,l=30,r=10,t=10,b=24,xs=i=>l+i*(W-l-r)/7,ys=v=>t+(100-v)*(H-t-b)/100;
+  let g='';[0,25,50,75,100].forEach(v=>g+=`<line x1="${l}" x2="${W-r}" y1="${ys(v)}" y2="${ys(v)}" stroke="var(--border)" stroke-width="1"/><text x="${l-6}" y="${ys(v)+3}" text-anchor="end">${v}</text>`);
+  ['17h','18h','19h','20h','21h','22h','23h','0h'].forEach((h,i)=>g+=`<text x="${xs(i)}" y="${H-6}" text-anchor="middle">${h}</text>`);
+  SER.forEach((s,k)=>{g+=`<polyline fill="none" stroke="var(--s${k+1})" stroke-width="${k==1?2.6:1.8}" stroke-linejoin="round" stroke-linecap="round" points="${s.map((v,i)=>xs(i)+','+ys(v)).join(' ')}"/>`;
+    g+=`<circle cx="${xs(3)}" cy="${ys(s[3])}" r="3" fill="var(--surface)" stroke="var(--s${k+1})" stroke-width="2"/>`});
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Percentual de seções apuradas por hora">${g}</svg>`;
+}
+function swatches(p,label){
+  const c=[[p.bg,'fundo'],[p.surface,'superf.'],[p.text,'texto'],[p.muted,'apoio'],[p.brand,'marca'],[p.accent,'acento'],[p.s[2],'série 3'],[p.border,'borda']];
+  return `<div class="swg"><p class="swl">${label}</p><div class="sw">${c.map(([h,n])=>`<div style="background:${h}" title="${n} ${h}"><span>${h.toUpperCase()}</span></div>`).join('')}</div></div>`;
+}
+function applyTheme(el,o,mode){
+  const p=mode==='dark'?o.D:o.L;
+  Object.entries(vars(p)).forEach(([k,v])=>el.style.setProperty(k,v));
+  p.s.forEach((c,i)=>el.style.setProperty('--s'+(i+1),c));
+  el.dataset.theme=mode;
+  const b=el.querySelector('.tgl');if(b)b.innerHTML=mode==='dark'?'☀ Claro':'☾ Escuro';
+}
+
+const opts=document.getElementById('opts'),cmp=document.getElementById('cmp'),toc=document.getElementById('toc');
+O.forEach(o=>{
+  toc.insertAdjacentHTML('beforeend',`<a href="#opcao-${o.id}">Opção ${o.id}</a>`);
+  cmp.insertAdjacentHTML('beforeend',`<a class="tile" href="#opcao-${o.id}">
+    <div class="half l" style="${styleStr(o.L)}">${lockup(o,34,'c'+o.id+'l')}</div>
+    <div class="half d" style="${styleStr(o.D)}">${lockup(o,34,'c'+o.id+'d')}</div>
+    <div class="strip">${[o.L.brand,o.L.accent,o.L.s[1],o.L.s[2],o.D.brand,o.D.accent].map(c=>`<i style="background:${c}"></i>`).join('')}</div>
+    <div class="cap">Opção ${o.id} · ${o.name}<span>${o.fh.replace(/'/g,'')}</span></div></a>`);
+  const fontLine=[...new Set([o.fh,o.fb,o.fn])].map(f=>f.replace(/'/g,'')).join(' · ');
+  opts.insertAdjacentHTML('beforeend',`<section class="opt" id="opcao-${o.id}">
+    <div class="opt-head"><div><div class="n">Opção ${o.id}</div><h3>${o.name}</h3><p>${o.concept}</p></div></div>
+    <div class="opt-body">
+      <aside class="side">
+        <div><h4>Símbolo e logo</h4>
+          <div class="marks">
+            <div class="mk" style="${styleStr(o.L)}">${sym(o,72,'a'+o.id)}</div>
+            <div class="mk" style="${styleStr(o.D)}">${sym(o,72,'b'+o.id)}</div>
+            <div class="mk wide" style="${styleStr(o.L)}">${lockup(o,36,'e'+o.id)}</div>
+            <div class="mk wide" style="${styleStr(o.D)}">${lockup(o,36,'f'+o.id)}</div>
+          </div>
+          <div class="favs"><span style="${styleStr(o.L)};display:flex;padding:4px;border-radius:5px;background:var(--bg)">${sym(o,16,'g'+o.id)}</span><span style="${styleStr(o.L)};display:flex;padding:4px;border-radius:6px;background:var(--bg)">${sym(o,32,'h'+o.id)}</span><span style="${styleStr(o.D)};display:flex;padding:4px;border-radius:5px;background:var(--bg)">${sym(o,16,'i'+o.id)}</span><span>favicon 16 / 32</span></div>
+        </div>
+        <div><h4>Paleta</h4>${swatches(o.L,'claro')}${swatches(o.D,'escuro')}</div>
+        <div><h4>Tipografia</h4><div class="fonts"><b>${o.fh.replace(/'/g,'')}</b> títulos e números<br><b>${o.fb.replace(/'/g,'')}</b> texto<br><b>${o.fn.replace(/'/g,'')}</b> rótulos e dados</div></div>
+      </aside>
+      <div class="demo" style="--fh:${o.fh};--fhw:${o.fhw};--fhls:${o.fhls};--fb:${o.fb};--fn:${o.fn};--fnum:${o.fnum};--fnumw:${o.fnumw};--r:${o.r};--sh:0 1px 2px rgba(0,0,0,.04)">
+        <div class="d-nav">${lockup(o,28,'n'+o.id)}<nav><a class="on" href="#opcao-${o.id}">Resultados</a><a href="#opcao-${o.id}">Método</a><a href="#opcao-${o.id}">Dados</a><a href="#opcao-${o.id}">Código</a></nav><button class="tgl" type="button"></button></div>
+        <div class="d-hero">
+          <div><div class="eyebrow">2º turno · apuração concluída</div>
+            <h5>Cada urna conferida contra o boletim oficial.</h5>
+            <p>Comparamos os boletins de urna publicados pelo TSE com o total divulgado, seção por seção. Todo o código e os dados estão abertos para refazer a conta.</p></div>
+          <div><div class="big">472.075<small>urnas</small></div><div class="bigcap">100% das seções comparadas · diferença encontrada: 0 votos</div></div>
+        </div>
+        <div class="d-grid">
+          <div class="card"><div class="t"><span class="k">Teste 04 · Benford</span><span class="pill">dentro do esperado</span></div>
+            <h6>Os dígitos dos votos por seção seguem a distribuição natural</h6>
+            <p>Desvio pequeno e compatível com o acaso, igual ao observado em 2022.</p>
+            <div class="bar"><i></i></div>
+            <div class="stats"><div>0,41<span>p-valor</span></div><div>1,8%<span>desvio máx.</span></div><div>2022<span>referência</span></div></div></div>
+          <div class="card"><div class="t"><span class="k">Ritmo da apuração</span><span class="k">% de seções</span></div>
+            ${chart(o)}
+            <div class="legend">${LAB.map((t,i)=>`<span><b style="background:var(--s${i+1})"></b>${t}</span>`).join('')}</div></div>
+        </div>
+        <div class="d-foot"><span>Fonte: dados abertos do TSE · código MIT · textos CC BY 4.0</span><span>valores ilustrativos · estudo independente, não oficial</span></div>
+      </div>
+    </div></section>`);
+  const demo=opts.lastElementChild.querySelector('.demo');
+  applyTheme(demo,o,'light');
+  demo.querySelector('.tgl').onclick=()=>applyTheme(demo,o,demo.dataset.theme==='dark'?'light':'dark');
+});
+document.querySelectorAll('[data-cmp]').forEach(b=>b.onclick=()=>document.querySelectorAll('.tile').forEach(t=>{t.classList.toggle('mode-dark',b.dataset.cmp==='dark');t.classList.toggle('both',b.dataset.cmp==='both')}));
+document.querySelector('[data-cmp="both"]').click();
+let allDark=false;document.getElementById('allDark').onclick=()=>{allDark=!allDark;document.querySelectorAll('.demo').forEach((d,i)=>applyTheme(d,O[i],allDark?'dark':'light'))};
+if(location.hash==='#escuro'){document.getElementById('allDark').click()}
+</script>
+</body>
+</html>

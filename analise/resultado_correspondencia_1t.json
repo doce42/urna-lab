@@ -20,12 +20,12 @@
   499206,
   499206
  ],
- "T34_urnas_processadas": 395551,
- "T34_ceft_igual_certificado": 395508,
- "T34_ceft_entre_urnas_do_log": 395510,
+ "T34_urnas_processadas": 499207,
+ "T34_ceft_igual_certificado": 499162,
+ "T34_ceft_entre_urnas_do_log": 499163,
  "T34_trocas_declaradas_com_2_urnas_no_log": [
-  1686,
-  2492
+  2099,
+  3060
  ],
  "T34_exemplos_diferenca": [
   {
@@ -169,14 +169,14 @@
    "ids_urna_log": "02044616"
   },
   {
-   "SG_UF": "ZZ",
-   "CD_MUNICIPIO": "29173",
-   "NR_ZONA": "1",
-   "NR_SECAO": "494",
-   "NR_URNA_ESPERADA": NaN,
-   "NR_URNA_EFETIVADA": "1808076",
-   "cert_urna": NaN,
-   "ids_urna_log": NaN
+   "SG_UF": "SP",
+   "CD_MUNICIPIO": "71072",
+   "NR_ZONA": "418",
+   "NR_SECAO": "73",
+   "NR_URNA_ESPERADA": "2001951",
+   "NR_URNA_EFETIVADA": "2001951",
+   "cert_urna": "UEAO02276282",
+   "ids_urna_log": "02001951"
   }
  ],
  "T35_maquinas_geracao_midia": 2453,

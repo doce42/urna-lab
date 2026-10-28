@@ -39,7 +39,9 @@ c["CD_MUNICIPIO"] = c["CD_MUNICIPIO"].astype(int).astype(str)
 c = c.sort_values("DT_GERACAO").drop_duplicates(k, keep="last")[k + ["DS_ORIGEM_VOTO", "TP_DIVERGENCIA", "NR_URNA_ESPERADA", "NR_URNA_EFETIVADA"]]
 x = x.merge(c, on=k, how="left")
 comp = x[f"QT_COMPARECIMENTO_{T}"]
-tot = x[["bu_v13", "bu_v22", "bu_branco", "bu_nulo"]].fillna(0).sum(axis=1) if "bu_v13" in x else None
+# total apurado de Presidente no bu.dat: TODOS os candidatos do turno (13 no 1º turno, 2 no 2º) + branco + nulo
+_bu_cols = [c for c in x.columns if c.startswith("bu_v")] + [c for c in ("bu_branco", "bu_nulo") if c in x]
+tot = x[_bu_cols].fillna(0).sum(axis=1) if "bu_v13" in x else None
 sa = x["origem"].eq("sistema_de_apuracao") if "origem" in x else pd.Series(False, index=x.index)
 casos = []
 # índice: comparecimento das seções por (UF, município, zona, urna efetivada)

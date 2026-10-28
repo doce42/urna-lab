@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>urna lab · apuração presidencial 2026, verificada com dados oficiais</title>
+<meta name="description" content="Estudo independente, imparcial e reproduzível da apuração presidencial de 2026 (1º e 2º turno), com 2022 como referência, usando só dados oficiais do TSE. Testes, metodologia e código abertos.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F6F5F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1012" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="urna lab · apuração presidencial 2026">
+<meta property="og:description" content="Estudo independente e reproduzível da apuração de 2026 com dados oficiais do TSE. Cada teste com pergunta, hipótese nula, resultado e limites.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://urna-lab.web.app/">
+<meta property="og:image" content="https://urna-lab.web.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+  // tema antes da primeira pintura (evita piscar)
+  try { var q = new URLSearchParams(location.search).get('tema'); var t = q || localStorage.getItem('urnalab-tema'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<style>
+  #raiz:empty + .pre { display: grid; }
+  .pre { display: none; position: fixed; inset: 0; z-index: 60; place-items: center; background: #F6F5F3; color: #1B1D21; font-family: 'Sora Variable', Sora, system-ui, sans-serif; }
+  :root[data-theme="dark"] .pre { background: #0F1012; color: #EEECE8; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pre { background: #0F1012; color: #EEECE8; } }
+  .pre .m { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 2rem; letter-spacing: -.04em; }
+  .pre .b { width: min(92vw, 380px); height: 6px; margin-top: 22px; border-radius: 999px; background: rgba(127,127,127,.18); overflow: hidden; }
+  .pre .b i { display: block; width: 40%; height: 100%; border-radius: 999px; background: #B5612F; animation: pre-i 1.3s cubic-bezier(.4,0,.2,1) infinite; }
+  @keyframes pre-i { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+  .pre .t { margin-top: 12px; font-size: 15px; opacity: .75; }
+</style>
+<div id="raiz"></div>
+<div class="pre" aria-hidden="true"><div style="display:flex;flex-direction:column;align-items:center">
+  <div class="m"><svg width="44" height="47" viewBox="4 3 40 43"><path fill="#B5612F" d="M24 5 L42 14.5 L24 24 L6 14.5Z"/><path fill="currentColor" d="M6 14.5 L24 24 V44 L6 34.5Z"/><path fill="currentColor" opacity=".72" d="M42 14.5 L24 24 V44 L42 34.5Z"/><path d="M18.5 12.2 L29.5 17.8" stroke="#1B1D21" stroke-width="3.4" stroke-linecap="round"/></svg>urna lab</div>
+  <div class="b"><i></i></div><div class="t">Carregando o site…</div>
+</div></div>
+<script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

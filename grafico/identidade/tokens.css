@@ -1,0 +1,70 @@
+/* urna lab — tokens de design. Fontes (opcional, Google Fonts):
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"> */
+:root {
+  color-scheme: light;
+  /* superfícies */
+  --bg: #F6F4EF;          /* papel */
+  --surface: #FFFFFF;
+  --surface-2: #EEEBE4;
+  --border: #DDD8CD;
+  --border-strong: #BDB6A8;
+  /* texto */
+  --text: #1C2129;        /* grafite (marca) */
+  --text-muted: #5B6270;
+  --text-subtle: #858B96;
+  /* marca */
+  --brand: #1C2129;       /* grafite */
+  --brand-contrast: #F6F4EF;
+  --accent: #D08A12;      /* âmbar: destaques, links de ênfase, cabo da lupa */
+  --accent-text: #9A6100; /* âmbar legível como texto sobre --bg (AA) */
+  --accent-soft: #F6E7C8;
+  --focus: #D08A12;
+  /* estados (fora da paleta categórica) */
+  --ok: #1F7A5A; --warn: #9A6100; --erro: #A23B2A;
+  /* paleta categórica (Okabe-Ito reordenada, segura para daltonismo) */
+  --cat-1: #009E73;  /* verde-azulado */
+  --cat-2: #E69F00;  /* laranja */
+  --cat-3: #CC79A7;  /* lilás-rosado */
+  --cat-4: #56B4E9;  /* céu */
+  --cat-5: #D55E00;  /* vermelhão */
+  --cat-6: #6B7280;  /* grafite */
+  /* tipografia */
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-xs: .75rem; --fs-sm: .875rem; --fs-base: 1rem; --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem; --fs-2xl: 1.75rem; --fs-3xl: 2.25rem;
+  --lh-tight: 1.2; --lh-base: 1.6;
+  --fw-regular: 400; --fw-medium: 500; --fw-bold: 600;
+  /* espaçamento (base 4px) */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  /* raios e sombras */
+  --radius-sm: 4px; --radius: 8px; --radius-lg: 14px; --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(28,33,41,.06);
+  --shadow: 0 2px 8px rgba(28,33,41,.08), 0 1px 2px rgba(28,33,41,.05);
+  --shadow-lg: 0 12px 32px rgba(28,33,41,.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #14181E; --surface: #1C2129; --surface-2: #232934;
+    --border: #2E3541; --border-strong: #454E5C;
+    --text: #EDEBE6; --text-muted: #A9AFB9; --text-subtle: #7D8491;
+    --brand: #F6F4EF; --brand-contrast: #1C2129;
+    --accent: #E9A93A; --accent-text: #E9A93A; --accent-soft: #3A2E17; --focus: #E9A93A;
+    --ok: #4CC495; --warn: #E9A93A; --erro: #E07A63;
+    --cat-1: #2BB98C; --cat-2: #EFAE2E; --cat-3: #D98DB8; --cat-4: #6CC0EE; --cat-5: #E8772A; --cat-6: #A3AAB5;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.3); --shadow: 0 2px 8px rgba(0,0,0,.35); --shadow-lg: 0 12px 32px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14181E; --surface: #1C2129; --surface-2: #232934;
+  --border: #2E3541; --border-strong: #454E5C;
+  --text: #EDEBE6; --text-muted: #A9AFB9; --text-subtle: #7D8491;
+  --brand: #F6F4EF; --brand-contrast: #1C2129;
+  --accent: #E9A93A; --accent-text: #E9A93A; --accent-soft: #3A2E17; --focus: #E9A93A;
+  --ok: #4CC495; --warn: #E9A93A; --erro: #E07A63;
+  --cat-1: #2BB98C; --cat-2: #EFAE2E; --cat-3: #D98DB8; --cat-4: #6CC0EE; --cat-5: #E8772A; --cat-6: #A3AAB5;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3); --shadow: 0 2px 8px rgba(0,0,0,.35); --shadow-lg: 0 12px 32px rgba(0,0,0,.45);
+}

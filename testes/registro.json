@@ -327,7 +327,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno 2026 completo (499.205 urnas): assinatura da lista válida em 100% das urnas eletrônicas com arquivos; RDV = bu.dat = imagem do BU = publicado; exterior: 1.281 urnas eletrônicas + 29 seções do Sistema de Apuração (RDV vazio; busa = publicado); divergências pontuais em T36",
+   "resultado_atual": "2º turno 2026 completo (499.205 urnas): assinatura da lista válida em 100% das urnas eletrônicas com arquivos; RDV = bu.dat = imagem do BU = publicado; exterior: 1.281 urnas eletrônicas + 29 seções do Sistema de Apuração (RDV vazio; busa = publicado); divergências pontuais em T36 (resultado refeito após as correções de leitura, ver T36)",
    "anotacoes": [
     "No 2º turno o log.jez de cada urna traz o log do 1º turno arquivado dentro: as contagens passaram a usar só o dia da eleição (RJ dava 19,9 mi antes da correção).",
     "Urna reiniciada ou trocada guarda o log anterior dentro do arquivo: leitura recursiva.",
@@ -684,7 +684,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.679 votos abaixo de 5 s em 273.451 urnas, distribuição igual nos grupos comparados; menor intervalo entre votos com valor negativo em alguma urna (relógio ajustado durante o dia): a investigar.",
+   "resultado_atual": "2º turno: menor tempo habilitação→voto de 2 s; percentil 1 de 3 s; 1.120.676 votos abaixo de 5 s em 273.451 urnas (no 1º turno, 1.311 em 945 urnas; em 2022, 306.528 no 2º turno e 779 no 1º). A diferença entre turnos se repete em 2022 e tem causa estrutural: no 1º turno o eleitor vota em vários cargos entre a habilitação e o voto computado, no 2º só em Presidente (e governador onde houve). O menor intervalo entre votos fica negativo em alguma urna (ordem das linhas do log e ajuste de relógio durante o dia); por isso o teste usa o percentil 1 do intervalo, não o mínimo. Corrigido após a remoção das linhas duplicadas entre partes do log.",
    "anotacoes": [
     "Menor tempo entre habilitação e voto: 2 segundos; 1.120.679 votos abaixo de 5 segundos (o limiar de 5 s é de referência, não regra). Distribuição semelhante em todos os grupos."
    ]
@@ -692,13 +692,13 @@
   {
    "id": "T30",
    "modulo": "A",
-   "pergunta": "Voto fora do dia/horário?",
-   "metodo": "Votos computados fora do dia da eleição; primeiro voto x abertura",
+   "pergunta": "Há voto antes da abertura ou depois do encerramento da própria urna?",
+   "metodo": "Primeiro e último voto computado no log (hora local, só no dia da eleição) contra o horário local de abertura e de encerramento registrado no Boletim de Urna; tolerância de 60 s no encerramento",
    "modelo_nulo": "N7",
    "script": "analise/seqlog.py",
    "comando": "make integridade",
    "saida": "→ seq_votos_fora_dia",
-   "situacao": "concluido_2t",
+   "situacao": "concluido_2026",
    "referencia": "",
    "hipotese_nula": "Sem voto fora do dia/horário",
    "pressupostos": "",
@@ -707,9 +707,10 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno: leitura correta é votos antes das 07h00 locais (ver resultado_logs_2t.json). O valor cru de 124 mi 'fora do dia' é o log do 1º turno arquivado e não conta.",
+   "resultado_atual": "1º e 2º turno de 2026: 0 votos depois do encerramento; 1 urna por turno com o primeiro voto 2 a 4 minutos antes da abertura registrada no boletim (RJ 60011/214/22 e SP 71374/172/98), as duas explicadas por urna substituída antes do primeiro voto: a urna que abriu e emitiu a zerésima não é a que registrou os votos.",
    "anotacoes": [
-    "O resultado cru (124 milhões de votos 'fora do dia') é o log do 1º turno arquivado dentro do log do 2º: não conta como achado. Análise correta a refazer só com o dia do turno."
+    "Erro meu em duas versões: o valor cru de 124 milhões de votos 'fora do dia' é o log do 1º turno arquivado dentro do log do 2º; e o corte fixo de 7h é errado porque a votação abre às 06h locais no Acre (fuso). O teste certo usa o horário local de abertura e de encerramento de cada urna, vindos do boletim (o subagente que adaptou o leitor a 2022 apontou o problema do corte de 7h).",
+    "Resultado: as duas únicas urnas com voto antes da abertura registrada são casos de urna substituída antes do primeiro voto."
    ]
   },
   {
@@ -1082,7 +1083,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "D",
-   "resultado_atual": "2º turno 2026: 76 casos em 499.205 urnas; 75 com explicação operacional (votos íntegros); 1 inconsistência de publicação (log de 1 urna de SP assinado pela urna e não publicado); 0 sem explicação",
+   "resultado_atual": "1º turno 2026: 186 casos em 499.206 urnas; 185 com explicação operacional (votos íntegros); 1 sem explicação (RJ 60011/8/61: linhas do log corrompidas pela própria urna; hash do arquivo, totais e assinatura conferem). 2º turno 2026: 75 casos em 499.205 urnas; 74 com explicação operacional; 1 inconsistência de publicação (log de 1 urna de SP assinado pela urna e não publicado); 0 sem explicação. Refeito após duas correções de leitura: linhas duplicadas entre partes do log e lista de eleições do bu.dat em estados com governador no 2º turno.",
    "anotacoes": [
     "76 casos de 499.205 urnas no 2º turno: 75 com explicação operacional, 1 log de São Paulo assinado pela urna e não publicado, 0 sem explicação."
    ]

@@ -132,6 +132,12 @@ for t in (1, 2):
     if r:
         r.pop("T34_exemplos_diferenca", None)
         novos[f"correspondencia_{t}t"] = r
+for t in (1, 2):  # análises dos arquivos das urnas de 2022 (mesmo código, ANO=2022)
+    r = _j(f"resultado_logs_2022_{t}t.json")
+    if r:
+        r["T28"].pop("exemplos", None)
+        r.pop("CONF_T02_lista", None)
+        novos[f"logs_2022_{t}t"] = r
 for a in ("2022", "2026"):
     r = _j(f"resultado_divergencias_{a}_completo.json")
     if r:
@@ -143,6 +149,54 @@ for a in ("2022", "2026"):
     r = _j(f"resultado_ml_{a}.json")
     if r:
         novos[f"ml_{a}"] = r
+
+# ---- comparação dos arquivos das urnas, 2022 x 2026, mesmas métricas e mesmo código ----
+def _resumo_urnas(ano, t):
+    pasta = os.path.join(AQUI, "brutos", f"{t}t" if ano == "2026" else f"{ano}_{t}t")
+    arqs = [a for a in glob.glob(os.path.join(pasta, "urnas_*.parquet")) if "parte" not in a]
+    if not arqs:
+        return None
+    u = pd.concat([pd.read_parquet(a) for a in arqs], ignore_index=True)
+    base = pd.read_parquet(os.path.join(AQUI, "base.parquet" if ano == "2026" else f"base_{ano}.parquet"))
+    base = base[base[f"total_{t}"].notna()].rename(columns={f"QT_COMPARECIMENTO_{t}": "comp", f"v13_{t}": "p13", f"v22_{t}": "p22"})
+    sa = int(u["origem"].eq("sistema_de_apuracao").sum()) if "origem" in u else 0
+    x = u.merge(base[["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO", "comp", "p13", "p22"]], on=["SG_UF", "CD_MUNICIPIO", "NR_ZONA", "NR_SECAO"])
+    if "origem" in x:
+        x = x[x["origem"].isna()]
+    f = lambda c: int(x[c].fillna(False).astype(bool).sum()) if c in x else None
+    n = len(x)
+    r = {"urnas_no_boletim": int(base.shape[0]), "urnas_com_arquivos": int(len(u)), "secoes_sistema_de_apuracao": sa,
+         "urnas_eletronicas_cruzadas": n, "erros_de_leitura": int(u["erro"].notna().sum()) if "erro" in u else 0,
+         "assinatura_lista_ok": f("assin_lista_ok"), "hash_bu_ok": f("hash_ok_bu"), "hash_rdv_ok": f("hash_ok_rdv"),
+         "hash_imgbu_ok": f("hash_ok_imgbu"), "hash_log_ok": f("hash_ok_log"),
+         "rdv_igual_publicado": int(((x.get("rdv_v13", 0).fillna(0) == x["p13"]) & (x.get("rdv_v22", 0).fillna(0) == x["p22"])).sum()) if "rdv_v13" in x else None,
+         "bu_igual_publicado": int(((x.get("bu_v13", 0).fillna(0) == x["p13"]) & (x.get("bu_v22", 0).fillna(0) == x["p22"])).sum()) if "bu_v13" in x else None,
+         "log_igual_comparecimento": int((x["computado"] == x["comp"]).sum()) if "computado" in x else None,
+         "certificado_entre_urnas_do_log": f("cert_igual_log"),
+         "urnas_substituidas": int((x["urnas_com_voto_no_log"] > 1).sum()) if "urnas_com_voto_no_log" in x else None,
+         "modelos": x["modelo"].value_counts().to_dict() if "modelo" in x else {}}
+    if "modelo" in x and "computado" in x:
+        x["div"] = x["computado"].notna() & (x["computado"] != x["comp"])
+        g = x.groupby("modelo")["div"].agg(["size", "sum"])
+        r["divergencia_log_por_modelo"] = {m: {"urnas": int(v["size"]), "divergentes": int(v["sum"])} for m, v in g.iterrows()}
+    j = _j(f"resultado_logs_{t}t.json" if ano == "2026" else f"resultado_logs_2022_{t}t.json")
+    if j:
+        r["T28"] = {k: j["T28"].get(k) for k in ("taxa_sem_biometria_resto_do_dia", "taxa_sem_biometria_ultimos_30min", "urnas_significativas_BH")}
+        r["T29"] = {k: j["T29"].get(k) for k in ("duracao_min_global_s", "duracao_min_p01_s", "votos_abaixo_5s")}
+        r["T30"] = {k: v for k, v in j["T30"].items() if not k.startswith("exemplos")}
+        r["T31"] = j["T31"]
+        r["T33"] = {"versoes": j["T33"]["versoes"], "urnas_com_verificacao_sem_sucesso": j["T33"]["urnas_com_verificacao_sem_sucesso"]}
+    return r
+
+
+comparacao = {}
+for _a in ("2022", "2026"):
+    for _t in (1, 2):
+        try:
+            comparacao[f"{_a}_{_t}t"] = _resumo_urnas(_a, _t)
+        except Exception as e:  # uma métrica que falha não pode derrubar o relatório inteiro
+            comparacao[f"{_a}_{_t}t"] = {"erro": str(e)[:200]}
+novos["comparacao_urnas"] = comparacao
 out["novos"] = novos
 
 def _limpa(x):

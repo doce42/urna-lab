@@ -14,6 +14,7 @@ Estudo independente, imparcial e reproduzível da apuração presidencial brasil
 | [`AUTOAUDITORIA.md`](AUTOAUDITORIA.md) | Mapa de ameaças, ameaças à validade, lacunas |
 | [`CATALOGO.md`](CATALOGO.md) | Linha do tempo, resultados, erros encontrados e corrigidos, consumo |
 | [`REFERENCIAS.md`](REFERENCIAS.md) | Bibliografia classificada |
+| [`CONSUMO_IA.md`](CONSUMO_IA.md) | Quantos tokens e quanto custo de IA o estudo gastou, por modelo |
 | [`testes/registro.json`](testes/registro.json) | Registro de todos os testes, legível por máquina |
 | `analise/`, `scripts/`, `grafico/` | Código, páginas interativas e resultados pequenos |
 

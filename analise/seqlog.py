@@ -16,6 +16,7 @@ Resumo por urna:
 import re
 from datetime import datetime
 
+ETAPA = re.compile(r"Verificação de assinatura - Etapa \[\d+\]\s*$")
 VERIF = re.compile(r"Verificação de assinatura.*\[(SUCESSO|[^\]]*)\]\s*$")
 
 
@@ -23,7 +24,7 @@ def _t(s):
     return datetime.strptime(s, "%d/%m/%Y %H:%M:%S")
 
 
-def analisa(linhas, dia):
+def analisa(linhas, dia, ano="2026"):
     """linhas: linhas do log (todas as partes); dia: 'dd/mm/aaaa' da eleição. Devolve dict de colunas por urna."""
     r = {"seq_votos_dia": 0, "seq_votos_fora_dia": 0, "seq_votos_antes_7h": 0, "seq_sem_habilitacao": 0,
          "seq_hab_biometrica": 0, "seq_hab_manual": 0, "seq_hab_mesario": 0, "seq_hab_outro": 0,
@@ -39,6 +40,8 @@ def analisa(linhas, dia):
         if msg.startswith("Versão da aplicação:"):
             versoes.add(msg.split(":", 1)[1].strip())
             continue
+        if ano == "2022" and ETAPA.match(msg):  # 2022: "Verificação de assinatura - Etapa [N]" é só andamento, não resultado
+            continue
         if msg.startswith("Verificação de assinatura"):
             m = VERIF.search(msg)
             if m and m.group(1) == "SUCESSO":
@@ -50,7 +53,7 @@ def analisa(linhas, dia):
             if msg.startswith("O voto do eleitor foi computado"):
                 r["seq_votos_fora_dia"] += 1
             continue
-        if msg.startswith("Aguardando digitação do identificador"):
+        if msg.startswith("Aguardando digitação do identificador") or (ano == "2022" and msg.startswith("Aguardando digitação do título")):
             pend_manual = pend_mesario = False
             tipo = None
         elif msg.startswith("Solicitação de dado pessoal do eleitor para habilitação manual"):

@@ -29,6 +29,7 @@ from cryptography import x509
 from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography.hazmat.primitives.asymmetric.utils import encode_dss_signature
 
 import der
 import ed521
@@ -40,7 +41,31 @@ DIA = {"2026": {1: "04/10/2026", 2: "25/10/2026"}, "2022": {1: "02/10/2022", 2: 
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 BRUTOS = os.path.join(AQUI, "..", "dados", "brutos") if ANO == "2026" else os.path.join(AQUI, "..", "dados", ANO, "brutos")
+# ---- nomes dos arquivos (muda de um ano para outro) ----
+# 2026: o<pleito 5>-<UF 2><município 5><zona 4><seção 4>-<tipo>.<ext>   ex.: o03221ac0100700090001-bu.dat
+# 2022: o<pleito 5>-<município 5><zona 4><seção 4>.<ext>, SEM UF no nome (vem do nome do pacote)   ex.: o00406-0111200060046.bu
 NOME = re.compile(r"o(\d{5})([a-z]{2})(\d{5})(\d{4})(\d{4})-(\w+)\.(\w+)$")
+NOME_2022 = re.compile(r"o(\d{5})-(\d{5})(\d{4})(\d{4})\.(\w+)$")
+TIPO_2022 = {"bu": "bu", "imgbu": "imgbu", "logjez": "log", "rdv": "rdv", "vscmr": "vota"}
+
+
+def analisa_nome(n, uf):
+    """Nome do arquivo -> (chave (UF, município, zona, seção), tipo) ou None se não for arquivo da urna.
+    Tipos: log, imgbu, rdv, bu, busa (boletim do Sistema de Apuração), vota (assinaturas)."""
+    if ANO == "2022":
+        m = NOME_2022.search(n)
+        if not m or m.group(5) not in TIPO_2022:
+            return None
+        return (uf, str(int(m.group(2))), str(int(m.group(3))), str(int(m.group(4)))), TIPO_2022[m.group(5)]
+    m = NOME.search(n)
+    if not m or m.group(6) not in ("log", "imgbu", "rdv", "bu", "vota", "busa"):
+        return None
+    return (m.group(2).upper(), str(int(m.group(3))), str(int(m.group(4))), str(int(m.group(5)))), m.group(6)
+
+
+def _parte_da_secao(chave):
+    """Número usado para dividir um estado grande em partes (mesma conta de antes: município, zona, seção)."""
+    return int(chave[1]) * 7919 + int(chave[2]) * 31 + int(chave[3])
 EVENTOS = {
     "computado": "O voto do eleitor foi computado",
     "conf_presidente": "Voto confirmado para [Presidente]",
@@ -55,17 +80,60 @@ EVENTOS = {
 }
 
 
-def linhas_do_log(dado):
-    """log.jez é um zip com logd.dat; se a urna foi reiniciada/trocada, traz também logs arquivados (.jez dentro do .jez)."""
+def _abre_log(dado):
+    """Devolve {nome: conteúdo} do pacote do log. 2026: zip. 2022: 7z (o leiame dos pacotes diz que o log vem em 7z)."""
+    if dado[:6] == b"7z\xbc\xaf'\x1c":
+        import py7zr
+        from py7zr.io import Py7zIO, WriterFactory
+
+        class _Mem(Py7zIO):  # grava o conteúdo extraído em memória
+            def __init__(self):
+                self.b = io.BytesIO()
+            def write(self, s):
+                return self.b.write(s)
+            def read(self, size=None):
+                return self.b.read() if size is None else self.b.read(size)
+            def seek(self, offset, whence=0):
+                return self.b.seek(offset, whence)
+            def flush(self):
+                pass
+            def size(self):
+                return len(self.b.getvalue())
+
+        class _Fabrica(WriterFactory):
+            def __init__(self):
+                self.itens = {}
+            def create(self, filename):
+                self.itens[filename] = _Mem()
+                return self.itens[filename]
+
+        fab = _Fabrica()
+        with py7zr.SevenZipFile(io.BytesIO(dado)) as z:
+            z.extractall(factory=fab)
+        return {k: v.b.getvalue() for k, v in fab.itens.items()}
     z = zipfile.ZipFile(io.BytesIO(dado))
-    linhas, n = [], 0
-    for nome in sorted(z.namelist(), key=lambda x: (x == "logd.dat", x)):  # arquivados primeiro, logd.dat por último
-        conteudo = z.read(nome)
-        if nome.endswith(".jez"):
+    return {k: z.read(k) for k in z.namelist()}
+
+
+def linhas_do_log(dado):
+    """log.jez é um zip (2022: 7z) com logd.dat; se a urna foi reiniciada/trocada, traz também logs arquivados
+    (.jez/.logjez dentro do pacote)."""
+    arqs = _abre_log(dado)
+    partes, n = [], 0
+    for nome in sorted(arqs, key=lambda x: (x == "logd.dat", x)):  # arquivados primeiro, logd.dat por último
+        conteudo = arqs[nome]
+        if nome.endswith((".jez", ".logjez")):
             sub, k = linhas_do_log(conteudo)
-            linhas += sub; n += k
+            partes.append(sub); n += k
         else:
-            linhas += conteudo.decode("latin1").splitlines(); n += 1
+            partes.append(conteudo.decode("latin1").splitlines()); n += 1
+    # Quando a urna reinicia, o log arquivado repete linhas que também estão nas outras partes: cada evento conta UMA vez.
+    # Só se descarta a linha já vista em PARTE ANTERIOR; repetições dentro da mesma parte são eventos reais e ficam.
+    # (Erro de 27/10: sem isto, urnas com log em várias partes tinham os votos contados em dobro; ver CATALOGO.)
+    vistas, linhas = set(), []
+    for parte in partes:
+        linhas += [l for l in parte if l not in vistas]
+        vistas.update(parte)
     return linhas, n
 
 
@@ -98,7 +166,7 @@ def ler_log(dado, turno=None):
     r["ultimo_voto"] = votos[-1] if votos else None
     r["arquivos_log"] = n_arquivos
     if turno in DIA:
-        r.update(seqlog.analisa(linhas, DIA[turno]))  # sequência eleitor a eleitor (T28–T31, T33)
+        r.update(seqlog.analisa(linhas, DIA[turno], ANO))  # sequência eleitor a eleitor (T28–T31, T33)
     r["ids_urna_log"] = ",".join(sorted(ids_voto))
     r["urnas_com_voto_no_log"] = len(ids_voto)
     return r, minutos
@@ -113,7 +181,8 @@ def ler_rdv(dado, turno):
     raiz, _ = der.ler(dado)
     corpo = raiz["f"][2]
     r = collections.Counter()
-    for ele in corpo["f"][4]["f"]:
+    # 2026: eleições em corpo.f[4]; 2022: o corpo tem 4 filhos e as eleições ficam no último (classe 2, etiqueta 0)
+    for ele in corpo["f"][3 if ANO == "2022" else 4]["f"]:
         if int.from_bytes(ele["f"][0]["v"], "big") != ELEICAO_PRES[turno]:
             continue
         for cargo in ele["f"][1]["f"]:
@@ -127,6 +196,9 @@ def ler_rdv(dado, turno):
                     r["rdv_branco"] += 1
                 elif tipo == 4:
                     r["rdv_nulo"] += 1
+                elif tipo == 6 and ANO == "2022":
+                    r["rdv_nulo"] += 1   # 2022: tipo 6 = nulo por suspensão do voto; também contado à parte em rdv_tipo6
+                    r["rdv_tipo6"] += 1
                 else:
                     r[f"rdv_tipo{tipo}"] += 1
     return dict(r)
@@ -150,7 +222,18 @@ def _verificador(cert_bytes):
         try:
             pub.verify(sig, h, ec.ECDSA(hashes.SHA512()))
             return True
-        except InvalidSignature:
+        except (InvalidSignature, ValueError):
+            pass
+        # 2022 (urnas antigas): r e s gravados com largura fixa (zero à esquerda sobrando), DER não canônico que a
+        # biblioteca recusa. Relê os dois inteiros e reconstrói a assinatura canônica (só se a primeira tentativa falhou).
+        try:
+            d, _ = der.ler(sig)
+            canonica = encode_dss_signature(int.from_bytes(d["f"][0]["v"], "big"), int.from_bytes(d["f"][1]["v"], "big"))
+            if canonica == sig:
+                return False
+            pub.verify(canonica, h, ec.ECDSA(hashes.SHA512()))
+            return True
+        except (InvalidSignature, ValueError, IndexError, KeyError):
             return False
     cn = cert.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
     emissor = cert.issuer.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
@@ -166,6 +249,8 @@ def ler_bu(dado, turno):
     bu, _ = der.ler(env["f"][4]["v"])
     num = lambda no: int.from_bytes(no["v"], "big")
     r = {}
+    if ANO == "2022":
+        return _ler_bu_2022(bu, turno, num)
     # os campos são localizados pelo conteúdo, não pela posição: no exterior não há o campo de habilitações
     # (sem biometria) e a lista de eleições fica uma posição antes
     hab = next((x for x in bu["f"] if x["c"] == 2 and x["t"] == 1 and x["k"] and len(x["f"]) == 3), None)
@@ -174,13 +259,42 @@ def ler_bu(dado, turno):
 
     def eh_lista_eleicoes(x):
         return (x["c"] == 0 and x["t"] == 16 and x["k"] and x["f"] and x["f"][0]["k"] and x["f"][0]["f"]
-                and not x["f"][0]["f"][0]["k"] and num(x["f"][0]["f"][0]) in set(ELEICAO_PRES.values()) | {6259, 6260, 546, 547})
+                and any(e["k"] and e["f"] and not e["f"][0]["k"] and num(e["f"][0]) in set(ELEICAO_PRES.values()) | {6259, 6260, 546, 547}
+                        for e in x["f"]))  # a lista pode trazer outras eleições antes da de Presidente (2º turno de governador)
     eleicoes = next((x for x in bu["f"] if eh_lista_eleicoes(x)), {"f": []})
     for ele in eleicoes["f"]:
         if num(ele["f"][0]) != ELEICAO_PRES[turno]:
             continue
         r["bu_aptos"] = num(ele["f"][1])
         for res in ele["f"][4]["f"]:
+            r["bu_comparecimento"] = num(res["f"][1])
+            for cargo in res["f"][2]["f"]:
+                if num(cargo["f"][0]) != 1:
+                    continue
+                for v in cargo["f"][2]["f"]:
+                    tipo, qtd = num(v["f"][0]), num(v["f"][1])
+                    if tipo == 1:
+                        r["bu_v" + str(num(v["f"][2]["f"][1]))] = qtd
+                    elif tipo == 2:
+                        r["bu_branco"] = qtd
+                    elif tipo == 3:
+                        r["bu_nulo"] = qtd
+                    else:
+                        r[f"bu_tipo{tipo}"] = qtd
+    return r
+
+
+def _ler_bu_2022(bu, turno, num):
+    """Boletim de 2022. As eleições ficam no filho (classe 2, etiqueta 3) do conteúdo; cada eleição é
+    (código, aptos, resultados: (tipo, comparecimento, cargos: (código; 1 = Presidente, ?, votáveis:
+    (tipo: classe 2 etiquetas 1 tipo de voto [1 nominal, 3 nulo], 2 quantidade, 3 (partido, número))))))."""
+    r = {}
+    lista = next((x for x in bu["f"] if x["c"] == 2 and x["t"] == 3 and x["k"]), {"f": []})
+    for ele in lista["f"]:
+        if num(ele["f"][0]) != ELEICAO_PRES[turno]:
+            continue
+        r["bu_aptos"] = num(ele["f"][1])
+        for res in ele["f"][2]["f"]:
             r["bu_comparecimento"] = num(res["f"][1])
             for cargo in res["f"][2]["f"]:
                 if num(cargo["f"][0]) != 1:
@@ -269,36 +383,36 @@ def processa(turno, uf, parte=0, partes=1):
     calculado = collections.defaultdict(dict)  # urna -> nome do arquivo -> (tamanho, sha512)
     assinado = {}                              # urna -> lista assinada pela urna
     for n in nomes:
-        m = NOME.search(n)
-        if not m or m.group(6) not in ("log", "imgbu", "rdv", "bu", "vota", "busa"):
+        a = analisa_nome(n, uf)
+        if not a:
             continue
-        chave = (m.group(2).upper(), str(int(m.group(3))), str(int(m.group(4))), str(int(m.group(5))))
-        if partes > 1 and (int(m.group(3)) * 7919 + int(m.group(4)) * 31 + int(m.group(5))) % partes != parte:
+        chave, tipo_arq = a
+        if partes > 1 and _parte_da_secao(chave) % partes != parte:
             continue
         u = urnas[chave]
         try:
             dado = ler(n)
-            if m.group(6) == "vota":
+            if tipo_arq == "vota":
                 assinado[chave] = ler_vsc(dado)
                 u.update(assinado[chave][1])
                 continue
             calculado[chave][n] = (len(dado), hashlib.sha512(dado).digest())
-            if m.group(6) == "log":
+            if tipo_arq == "log":
                 r, mins = ler_log(dado, turno)
                 u.update(r)
                 for k, v in mins.items():
                     minutos[(chave[1], k)] += v
-            elif m.group(6) == "rdv":
+            elif tipo_arq == "rdv":
                 try:
                     u.update(ler_rdv(dado, turno))
                 except (KeyError, IndexError):
                     u["rdv_vazio_ou_outro_formato"] = True  # seções do Sistema de Apuração: RDV sem votos
-            elif m.group(6) in ("bu", "busa"):
+            elif tipo_arq in ("bu", "busa"):
                 # busa: boletim do Sistema de Apuração (seção apurada fora da urna; o RDV vem vazio)
                 u.update(ler_bu(dado, turno))
-                if m.group(6) == "busa":
+                if tipo_arq == "busa":
                     u["origem"] = "sistema_de_apuracao"
-            elif m.group(6) == "imgbu":
+            elif tipo_arq == "imgbu":
                 r = ler_imgbu(dado)
                 if r:
                     u.update(r)
@@ -308,7 +422,7 @@ def processa(turno, uf, parte=0, partes=1):
         lista, _, verifica = assinado.get(chave, (None, None, None))
         u["tem_assinatura"] = lista is not None
         for nome, (tam, h) in calculado[chave].items():
-            tipo = NOME.search(nome).group(6)
+            tipo = analisa_nome(nome, uf)[1]
             item = lista.get(nome) if lista else None
             u[f"hash_ok_{tipo}"] = item is not None and item[:2] == (tam, h)
             u[f"assin_ok_{tipo}"] = item is not None and verifica(item[2], item[1])
@@ -317,7 +431,8 @@ def processa(turno, uf, parte=0, partes=1):
     df = pd.DataFrame([{"SG_UF": k[0], "CD_MUNICIPIO": k[1], "NR_ZONA": k[2], "NR_SECAO": k[3], **v} for k, v in urnas.items()])
     suf = f"_parte{parte}" if partes > 1 else ""
     df.to_parquet(os.path.join(saida, f"urnas_{uf}{suf}.parquet"))
-    mi = pd.DataFrame([{"SG_UF": uf, "CD_MUNICIPIO": k[0], "minuto": k[1], "votos": v} for k, v in minutos.items()])
+    mi = pd.DataFrame([{"SG_UF": uf, "CD_MUNICIPIO": k[0], "minuto": k[1], "votos": v} for k, v in minutos.items()],
+                      columns=["SG_UF", "CD_MUNICIPIO", "minuto", "votos"])
     mi.to_parquet(os.path.join(saida, f"minutos_{uf}{suf}.parquet"))
     return f"{uf}: {len(df)} urnas, {int(df.get('computado', pd.Series(dtype=int)).sum()):,} votos no log"
 
@@ -329,14 +444,17 @@ def juntar(turno, uf, partes):
     saida = os.path.join(AQUI, "brutos", f"{turno}t" if ANO == "2026" else f"{ANO}_{turno}t")
     for tipo in ("urnas", "minutos"):
         arqs = [os.path.join(saida, f"{tipo}_{uf}_parte{k}.parquet") for k in range(partes)]
-        df = pd.concat([pd.read_parquet(a) for a in arqs], ignore_index=True)
+        dfs = [pd.read_parquet(a) for a in arqs]
+        dfs = [d for d in dfs if len(d)] or dfs[:1]  # partes vazias (sem linhas nem colunas) quebram o parquet
+        df = pd.concat(dfs, ignore_index=True)
         if tipo == "minutos" and len(df):
             df = df.groupby(["SG_UF", "CD_MUNICIPIO", "minuto"], as_index=False)["votos"].sum()
         df.to_parquet(os.path.join(saida, f"{tipo}_{uf}.parquet"))
         for a in arqs:
             os.remove(a)
-    u = pd.read_parquet(os.path.join(saida, f"urnas_{uf}.parquet"), columns=["computado"])
-    return f"{uf}: {len(u)} urnas, {int(u['computado'].sum()):,} votos no log ({partes} partes)"
+    u = pd.read_parquet(os.path.join(saida, f"urnas_{uf}.parquet"))
+    votos = int(u["computado"].sum()) if "computado" in u else 0  # estado sem linhas ou sem log: sem a coluna
+    return f"{uf}: {len(u)} urnas, {votos:,} votos no log ({partes} partes)"
 
 
 if __name__ == "__main__":
