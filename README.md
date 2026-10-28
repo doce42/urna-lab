@@ -32,6 +32,12 @@ Ou peça a um agente de IA de qualquer modelo: *"Leia `AGENTS.md` e reproduza o 
 
 Tudo roda na máquina local: o projeto **não usa GitHub Actions nem Git LFS**.
 
-## Licença
+## Licença e contribuições
 
-A definir.
+Projeto **livre**: pode baixar, reproduzir, fazer fork, alterar e contradizer.
+
+- **Código:** [MIT](LICENSE)
+- **Documentação e resultados:** [CC BY 4.0](LICENSE-DOCS) (cite a fonte)
+- Componentes e dados de terceiros: [THIRD_PARTY.md](THIRD_PARTY.md)
+
+Para propor mudanças aqui: fork + pull request, validado por quem mantém. Detalhes em [CONTRIBUTING.md](CONTRIBUTING.md).
