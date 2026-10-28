@@ -1,0 +1,132 @@
+{
+ "pre_registro": "fase3/PREREG_BRANCOS_NULOS.md",
+ "a_2022": {
+  "nacional": {
+   "Lula": 0.1623,
+   "Adversário": 0.2775,
+   "Branco/nulo": 0.5405,
+   "Abstenção": 0.0197
+  },
+  "ufs_adversario_menor_5pct": 3,
+  "ufs": 27,
+  "por_uf_adversario": {
+   "AC": 0.401,
+   "AL": 0.113,
+   "AM": 0.276,
+   "AP": 0.125,
+   "BA": 0.087,
+   "CE": 0.255,
+   "DF": 0.456,
+   "ES": 0.297,
+   "GO": 0.364,
+   "MA": 0.001,
+   "MG": 0.274,
+   "MS": 0.269,
+   "MT": 0.287,
+   "PA": 0.321,
+   "PB": 0.072,
+   "PE": 0.138,
+   "PI": 0.038,
+   "PR": 0.465,
+   "RJ": 0.408,
+   "RN": 0.073,
+   "RO": 0.394,
+   "RR": 0.28,
+   "RS": 0.487,
+   "SC": 0.473,
+   "SE": 0.035,
+   "SP": 0.307,
+   "TO": 0.101
+  }
+ },
+ "a_2026": {
+  "nacional": {
+   "Lula": 0.6201,
+   "Adversário": 0.0141,
+   "Branco/nulo": 0.3613,
+   "Abstenção": 0.0045
+  },
+  "ufs_adversario_menor_5pct": 21,
+  "ufs": 27,
+  "por_uf_adversario": {
+   "AC": 0.16,
+   "AL": 0.0,
+   "AM": 0.0,
+   "AP": 0.0,
+   "BA": 0.0,
+   "CE": 0.015,
+   "DF": 0.004,
+   "ES": 0.018,
+   "GO": 0.054,
+   "MA": 0.0,
+   "MG": 0.0,
+   "MS": 0.085,
+   "MT": 0.043,
+   "PA": 0.0,
+   "PB": 0.0,
+   "PE": 0.0,
+   "PI": 0.0,
+   "PR": 0.078,
+   "RJ": 0.013,
+   "RN": 0.0,
+   "RO": 0.035,
+   "RR": 0.031,
+   "RS": 0.069,
+   "SC": 0.086,
+   "SE": 0.004,
+   "SP": 0.0,
+   "TO": 0.0
+  }
+ },
+ "b_2022": {
+  "1t": {
+   "brancos": 1964779,
+   "nulos": 3487874,
+   "soma": 5452653,
+   "pct_do_total": 0.04408593489782036
+  },
+  "2t": {
+   "brancos": 1769678,
+   "nulos": 3930765,
+   "soma": 5700443,
+   "pct_do_total": 0.04587778451279277
+  }
+ },
+ "b_2026": {
+  "1t": {
+   "brancos": 2300798,
+   "nulos": 3669003,
+   "soma": 5969801,
+   "pct_do_total": 0.04765325252072756
+  },
+  "2t": {
+   "brancos": 1430496,
+   "nulos": 2723305,
+   "soma": 4153801,
+   "pct_do_total": 0.03239182915097666
+  }
+ },
+ "c_pareadas": {
+  "secoes": 459706,
+  "excesso_1t_medio_pp": 0.4069626471123349,
+  "excesso_2t_medio_pp": -1.3014300339786884,
+  "inclinacao_exc1_por_lula22_dentro_mun": 0.015939161473140825,
+  "inclinacao_exc2_por_lula22_dentro_mun": -0.006810402493189242,
+  "exc1_por_quintil_lula22_pp": {
+   "Q1 (menos Lula)": -0.08,
+   "Q2": 0.2,
+   "Q3": 0.46,
+   "Q4": 0.72,
+   "Q5 (mais Lula)": 0.73
+  },
+  "exc2_por_quintil_lula22_pp": {
+   "Q1 (menos Lula)": -0.9,
+   "Q2": -1.11,
+   "Q3": -1.3,
+   "Q4": -1.53,
+   "Q5 (mais Lula)": -1.66
+  },
+  "votos_exc1_quintil5": 162334,
+  "votos_exc1_total": 467519
+ }
+}

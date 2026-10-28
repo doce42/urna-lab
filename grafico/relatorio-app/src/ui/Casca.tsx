@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 // Cabeçalho, navegação e rodapé.
 import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
@@ -60,6 +61,9 @@ export function Cabecalho({ rota, meta }: { rota: Rota; meta: Meta | null }) {
   );
 }
 
+// Crédito opcional do rodapé: arquivo local fora do git (credito.local.json); sem ele, o rodapé não mostra crédito.
+const CREDITO = Object.values(import.meta.glob<{ texto: string; url: string }>('../../credito.local.json', { eager: true, import: 'default' }))[0];
+
 export function Rodape({ meta }: { meta: Meta | null }) {
   const github = meta?.github || 'https://github.com/doce42/urna-lab';
   return (
@@ -94,6 +98,7 @@ export function Rodape({ meta }: { meta: Meta | null }) {
       <div className="container pb-10 flex flex-wrap items-center gap-3 text-xs text-subtle">
         <Urna tamanho={14} />
         <span>Nada aqui afirma ou nega fraude além do que os números sustentam. Significância estatística não é prova de manipulação, e ausência de achado não é prova de inexistência.</span>
+        {CREDITO && <a className="ml-auto text-muted hover:text-text" href={CREDITO.url} target="_blank" rel="noopener">{CREDITO.texto}</a>}
       </div>
     </footer>
   );

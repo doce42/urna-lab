@@ -127,4 +127,9 @@
 | T49 | S0 | 106 seções com zero para Flávio (14.860 votos de Lula) reproduzidas; eram 141 em 2022; mesmas regiões e seções que já votavam quase só em Lula; arquivos íntegros. |
 | T50 | S0 | Contagens da thread reproduzidas; voto de Lula menos concentrado em 2026 (35.591 seções > 80%) que em 2022 (40.046). |
 | T51 | S0 | Lula cresceu mais que Flávio em 93,8% dos municípios e nas 27 UFs; em 2022 Bolsonaro cresceu mais em 87,1% e nas 27 UFs; em proporção, 2022 foi até mais uniforme. |
+| T52 | S1 | Recebimento de BUs parado das 17:07 às 19:03 no 2º turno de 2026, só em 2026; volta junto com o fechamento das urnas prorrogadas; o conteúdo do BU é assinado na emissão e confere. |
+| T53 | S0 | Liberação sem biometria menor que em 2022 (6,8% × 8,1%) e com relação levemente negativa com a virada de Lula. |
+| T54 | S0 | Flávio perdeu votos em 937 municípios; em 2022 Lula perdeu em 981: mesmo padrão de 2º turno. |
+| T55 | S0 | Cabo Frio: ganho de Lula (+9.169) cabe nos 9.511 votos disponíveis; percentil 89 do país; 28 casos espelhados a favor de Bolsonaro em 2022. |
+| T56 | S1 | Brancos e nulos do 1º turno → Lula no estimador (C06); em parte explicado: excesso de brancos e nulos no 1º turno de 2026 onde Lula é forte (~0,47 de 1,82 mi); o resto é queda geral no 2º turno; fluxo individual não identificável. |
 | T44 | S3 | Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto. |

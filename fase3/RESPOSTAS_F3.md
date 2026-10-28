@@ -372,6 +372,177 @@
 - **Validação:** Encerrada no escopo.
 - **Evidências:** `fase2/resultados/P15.json`
 
+## Alegações públicas testadas
+
+### Q27. A live de 4/11/2022 dizia que urnas anteriores a 2020 deram mais votos a Lula. Isso é verdade?
+**Resposta:** A diferença existe, mas é de lugar, não de urna: no 1º turno de 2022 Lula teve 50,3% nas antigas e 46,0% nas UE2020, e a diferença persiste dentro do município; comparando urnas do mesmo local de votação, ela some (equivalente a zero em ±0,02 logit nos dois turnos).
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Dentro do local: ~600 votos (1º turno) e ~440 (2º), contra margem de 2,14 mi (2022).
+- **Números:** Conta da live (eleitorado < 77 mil): 54,5% × 52,3%, antigas maiores em 18 de 23 UFs. Dentro do município: +0,031 × −0,035 logit (fora da margem). Dentro do local: +0,008 [−0,002; 0,017] × −0,008. Calibração por permutação 0% fora; fraude sintética de 1% detectada.
+- **Demonstra:** Que o modelo de urna não muda o voto quando se compara o mesmo lugar.
+- **Não demonstra:** A causa da distribuição desigual dos modelos.
+- **Robustez:** Calibração e poder medidos; placebo de 2018 não rodado.
+- **Causa:** verificável: localização · **Alcance:** 2022, Brasil.
+- **O que mudaria a resposta:** Diferença persistente dentro do local de votação.
+- **Validação:** T47 (pré-registrado, emenda 7); P5/T20.
+- **Evidências:** `fase3/PREREG_LIVE_2022.md`, `fase3/live_2022.py`, `fase3/resultados/live_2022.json`, `docs/pesquisas/2026-10-28_live_cerimedo_2022.md`
+
+### Q28. O log das urnas antigas não identifica a urna, como alegou o PL em 2022?
+**Resposta:** O bug existe: nas 279.291 seções com urnas UE2009 a UE2015 o campo de identificação do log traz o valor fixo 67305985. Mas o log se liga ao boletim e ao RDV pela assinatura da urna e pelo número do certificado em 279.285 delas; as 6 restantes são trocas de urna e arquivos faltantes já catalogados. Em 2026 o bug não aparece.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** As 6 seções sem ligação completa somam menos de 2 mil votos.
+- **Números:** 2º turno de 2022: 279.291 com ID fixo; 279.285 com assinaturas válidas, certificado = urna efetivada e BU = RDV = tabela. 2026: 0 com ID fixo.
+- **Demonstra:** Que o log se liga ao BU apesar do bug.
+- **Não demonstra:** Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado.
+- **Robustez:** Correção única de artefato do comparador (ausente = 0).
+- **Causa:** não aplicável · **Alcance:** 2022 e 2026, dois turnos.
+- **O que mudaria a resposta:** Seção com ID fixo sem ligação e sem explicação.
+- **Validação:** T45 (emenda 7).
+- **Evidências:** `fase3/PREREG_LIVE_2022.md`, `fase3/live_2022.py`, `fase3/resultados/live_2022.json`, `docs/pesquisas/2026-10-28_live_cerimedo_2022.md`
+
+### Q29. Contando só as urnas UE2020, Bolsonaro teria vencido 2022 com 51,05%?
+**Resposta:** A conta está certa (51,0508%), mas mede o voto das cidades que tinham UE2020, não o efeito do modelo: 220 mil seções com urnas antigas estavam em municípios sem nenhuma UE2020. Comparando dentro do mesmo município, Lula continua vencendo (Bolsonaro 49,25%).
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Contrafactual dentro do município: −179 mil votos de Lula, menos que metade da margem de 2022 (1,07 mi).
+- **Números:** Só UE2020: Bolsonaro 26.189.721 × Lula 25.111.550. Contrafactual em 311 municípios com os dois grupos.
+- **Demonstra:** Que o 51,05% é efeito de seleção geográfica.
+- **Não demonstra:** O voto de quem não votou em UE2020.
+- **Robustez:** —
+- **Causa:** verificável: localização · **Alcance:** 2º turno de 2022.
+- **O que mudaria a resposta:** Contrafactual dentro do município invertendo o resultado.
+- **Validação:** T46 (emenda 7).
+- **Evidências:** `fase3/PREREG_LIVE_2022.md`, `fase3/live_2022.py`, `fase3/resultados/live_2022.json`, `docs/pesquisas/2026-10-28_live_cerimedo_2022.md`
+
+### Q30. Em 2022 havia dois softwares diferentes ou unanimidades ligadas ao modelo de urna?
+**Resposta:** Não: a mesma versão 8.26.0.0 em todas as seções de todos os modelos; as seções 100% de um candidato aparecem em cada modelo na proporção da sua presença nos mesmos municípios.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Unânimes de Lula: 16.418 votos (0,8% da margem de 2022).
+- **Números:** 141 seções 100% Lula no 2º turno (16.418 votos), 4 de Bolsonaro; UE2015 49 × 40,7 esperadas, UE2010 37 × 39,0, UE2020 11 × 13,0. 1 seção (SC) com versão antiga a mais no log.
+- **Demonstra:** Software único segundo o log; unanimidade sem relação com modelo.
+- **Não demonstra:** Versão lida do próprio log (compatível com o registro).
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** 2022.
+- **O que mudaria a resposta:** Versão diferente por modelo.
+- **Validação:** T48 (emenda 7).
+- **Evidências:** `fase3/PREREG_LIVE_2022.md`, `fase3/live_2022.py`, `fase3/resultados/live_2022.json`, `docs/pesquisas/2026-10-28_live_cerimedo_2022.md`
+
+### Q31. Flávio teve zero voto em 106 urnas no 2º turno de 2026. Isso é anormal?
+**Resposta:** O número está certo (106 seções, 14.860 votos de Lula), mas não é anormal: em 2022 foram 141 seções com Bolsonaro zerado; são aldeias e comunidades do Norte e do Nordeste que já votavam quase só em Lula em 2022 (nenhuma com Bolsonaro acima de 11%) e no 1º turno; os 106 boletins conferem com o RDV e têm assinaturas válidas.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** 14.860 votos (0,34% da margem de 2026).
+- **Números:** Norte 65, Nordeste 29, Centro-Oeste 6, Sudeste 3, Sul 3; 23 também zeradas em 2022; 50 com Flávio zerado no 1º turno. 211 municípios viraram para Lula; em 2022, 251 viraram para Bolsonaro. O '644 mil' no Rio não se reproduz (cidade: Lula +113 mil).
+- **Demonstra:** Continuidade e integridade das seções.
+- **Não demonstra:** Consistência interna: BU, RDV, imagem e log são gerados pela mesma urna e assinados pela mesma chave; tabela e totais vêm do mesmo TSE. A concordância não verifica de forma independente o que foi votado.
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** 2º turno de 2026 e 2022.
+- **O que mudaria a resposta:** Seção zerada sem histórico ou com divergência de arquivo.
+- **Validação:** T49 (emenda 8); Q15, Q20.
+- **Evidências:** `fase3/PREREG_ZEROS_FLAVIO.md`, `fase3/zeros_flavio.py`, `fase3/resultados/zeros_flavio.json`
+
+### Q32. O voto de Lula ficou mais concentrado em seções de mais de 80%?
+**Resposta:** Não, ficou menos: 35.591 seções com Lula acima de 80% em 2026, contra 40.046 em 2022; o saldo vindo dessas seções caiu de 6,19 mi para 5,56 mi. Os números da thread que levantou a pergunta se reproduzem.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Descritivo; não se traduz em votos suspeitos.
+- **Números:** 95,6% delas no Norte e Nordeste; 82% já acima de 80% em 2022; Lula venceu 250.108 seções, +19,28 mi; Flávio +14,88 mi; saldo 4,40 mi (4,43 mi com exterior).
+- **Demonstra:** As contagens.
+- **Não demonstra:** Fraude ou ausência dela (descritivo).
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** 2º turno, 2022 e 2026.
+- **O que mudaria a resposta:** —
+- **Validação:** T50 (emenda 9).
+- **Evidências:** `fase3/PREREG_THREAD_CONCENTRACAO.md`, `fase3/thread_concentracao.py`, `fase3/resultados/thread_concentracao.json`
+
+### Q33. Lula cresceu mais que Flávio em 93% dos municípios e em todos os estados. Isso é estatisticamente impossível?
+**Resposta:** Não: em 2022 Bolsonaro cresceu mais que Lula em 87,1% dos municípios e no agregado das 27 UFs; em proporção, 2022 foi até mais uniforme (98,0% dos municípios contra 97,1%). Crescimento quase universal do candidato que avança é o padrão do 2º turno. Em 2026 o candidato de trás precisava de 1,02 ponto e cresceu 2,80; em 2022 precisava de 2,85 e cresceu 1,95.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Descritivo; não se traduz em votos suspeitos.
+- **Números:** 2026: 5.228 de 5.571 municípios. 2022: 4.849 de 5.570 (Ceará é a única UF em que a maioria dos municípios foi para Lula).
+- **Demonstra:** Que a uniformidade se repete em 2022.
+- **Não demonstra:** Anos anteriores a 2022 (sem dados no projeto).
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** 2022 e 2026.
+- **O que mudaria a resposta:** Uniformidade só em 2026.
+- **Validação:** T51 (emenda 10); Q21, Q22.
+- **Evidências:** `fase3/PREREG_CRESCIMENTO_ENTRE_TURNOS.md`, `fase3/crescimento_turnos.py`, `fase3/resultados/crescimento_turnos.json`
+
+### Q34. Os boletins ficaram parados duas horas antes de chegar ao TSE no 2º turno de 2026?
+**Resposta:** Sim: o recebimento parou às 17:07 e voltou às 19:03 (116 minutos), só em 2026; voltou junto com o fechamento das urnas prorrogadas (99% fecharam até 19:10). Isso não muda votos: o boletim é assinado pela urna na emissão (mediana 17:03) e confere com a tabela e o RDV. A causa administrativa da pausa não está nos dados.
+**Classificação:** Parcialmente demonstrado
+**Em votos:** 34.327 votos depois das 17h (0,8% da margem); a pausa não altera votos.
+- **Números:** 2026: recebimento mediano 20:26 (2022: 18:26); 1.092 BUs antes das 19h (0,22%); 7.604 urnas prorrogadas; 34.327 votos depois das 17h (2022: 41.025).
+- **Demonstra:** O vazio e a coincidência com o fim da prorrogação.
+- **Não demonstra:** Quem decidiu a pausa e por quê.
+- **Robustez:** Fuso de cada campo decidido pelos dados.
+- **Causa:** compatível com suspensão durante a prorrogação · **Alcance:** 2º turno, Brasil.
+- **O que mudaria a resposta:** Documento do TSE sobre a recepção; BU recebido diferente do emitido.
+- **Validação:** T52 (emenda 11); T09, T16, Q1.
+- **Evidências:** `fase3/PREREG_POSTS_ARVOR.md`, `fase3/posts_arvor.py`, `fase3/resultados/posts_arvor.json`
+
+### Q35. Há fortes evidências de votos sem biometria em 2026?
+**Resposta:** Não no agregado: a liberação pelo código do mesário caiu de 8,1% (2022) para 6,8% (2026), e dentro do município, onde ela foi maior, Lula virou um pouco menos (correlação −0,058; em 2022, +0,056). Com o perfil do eleitorado o efeito é nulo (T12). Há 8 urnas com rajada sem biometria no fim do dia (99 votos), padrão também presente em 2022 (T28/P10).
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Sem votos suspeitos no agregado; rajadas do T28: 99 votos.
+- **Números:** Biometria 87,6% em 2026 contra 75,9% em 2022; 8,63 mi liberações pelo mesário contra 10,01 mi.
+- **Demonstra:** Que a liberação sem biometria não favorece Lula no agregado.
+- **Não demonstra:** Quem foi cada eleitor liberado (só ata e caderno).
+- **Robustez:** T12 com perfil; T28 com 2022.
+- **Causa:** não aplicável · **Alcance:** 2º turno, 2022 e 2026.
+- **O que mudaria a resposta:** Relação positiva e forte com a virada depois do perfil.
+- **Validação:** T53 (emenda 11); T12, T28, P10.
+- **Evidências:** `fase3/PREREG_POSTS_ARVOR.md`, `fase3/posts_arvor.py`, `fase3/resultados/posts_arvor.json`, `fase2/resultados/P10.json`
+
+### Q36. Flávio teve menos votos no 2º turno do que no 1º em 938 municípios. Isso é anormal?
+**Resposta:** Não: em 2022 aconteceu o espelho, de tamanho parecido; Lula perdeu votos em 981 municípios (114.916 votos) enquanto Bolsonaro ganhava 236.690 neles. O candidato que perde fôlego no 2º turno perde votos em cerca de mil municípios.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** 133.852 votos perdidos por Flávio (3% da margem), contra 114.916 de Lula em 2022.
+- **Números:** 2026: 937 municípios, 133.852 votos, 13,40 mi de aptos; Lula +486.832 neles; comparecimento caiu em 727. Lula perdeu em 79 (16.115).
+- **Demonstra:** Que o padrão se repete em 2022.
+- **Não demonstra:** Quem trocou de voto (Q26).
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** 2022 e 2026.
+- **O que mudaria a resposta:** Padrão só em 2026.
+- **Validação:** T54 (emenda 11); Q22, Q24.
+- **Evidências:** `fase3/PREREG_POSTS_ARVOR.md`, `fase3/posts_arvor.py`, `fase3/resultados/posts_arvor.json`
+
+### Q37. E o grupo atípico do algoritmo de mistura gaussiana, a totalização paralela e as pesquisas?
+**Resposta:** O grupo atípico (10.850 seções) não foi reproduzido aqui, mas o próprio dossiê que o criou mede que a fatia de Flávio nele não mudou (−0,05 ponto, IC −0,19 a +0,07) e que ele não se liga a região nem a modelo; nossos testes de locais atípicos (E02/I3) acham ~0,1% de locais sem causa demonstrada. A totalização paralela tem 286 boletins iguais ao TSE, como os nossos 0 de diferença; a amostra é de voluntários e o placar dela não estima nada. Pesquisas ficam fora do escopo (não são dado oficial).
+**Classificação:** Parcialmente demonstrado
+**Em votos:** Não se traduz em votos.
+- **Números:** Grupo atípico: 2,18% das seções, V de Cramér 0,044 (região) e 0,012 (modelo), segundo o autor.
+- **Demonstra:** Que nenhuma das três alegações aponta divergência nos dados.
+- **Não demonstra:** O modelo de mistura do autor (não rodado aqui).
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** 2º turno de 2026.
+- **O que mudaria a resposta:** Grupo com deslocamento de voto fora do intervalo; boletim de terceiro diferente.
+- **Validação:** Respondida com testes existentes (E02, I3, Q1, T39).
+- **Evidências:** `fase3/PREREG_POSTS_ARVOR.md`, `fase2/resultados/P17.json`, `fase3/resultados/rev_i3.json`
+
+### Q38. Cabo Frio, onde Lula ganhou 50 votos para cada 1 de Flávio no 2º turno, é estatisticamente impossível?
+**Resposta:** Não. Os números estão certos (Lula +9.169, Flávio +342), mas cabem exatamente nos votos que estavam disponíveis: 8.822 dos candidatos eliminados no 1º turno mais 1.229 de brancos e nulos a menos, menos 540 de comparecimento (9.511). Lula ficou com 96% disso; 11% dos municípios do país tiveram fração igual ou maior. Em 2022 houve 28 municípios fortemente de Lula em que Bolsonaro levou mais de 90% do ganho.
+**Classificação:** Demonstrado no escopo definido
+**Em votos:** Cabo Frio: 9.169 votos ganhos por Lula (0,2% da margem), todos cobertos pelos 9.511 disponíveis.
+- **Números:** Nenhum dos 5.571 municípios ganhou mais que o disponível. Campos: Lula +24.822, Flávio −1.389 (percentil 95). São Gonçalo: +45.217 × +8.156. Santana de Parnaíba: +9.244 × +4.825. 4.044 de 4.044 seções dessas cidades com arquivos íntegros.
+- **Demonstra:** Que o resultado é aritmeticamente possível e não é único.
+- **Não demonstra:** Quem eram os eleitores dos eliminados (Q26).
+- **Robustez:** —
+- **Causa:** não aplicável · **Alcance:** Municípios, 2022 e 2026.
+- **O que mudaria a resposta:** Ganho acima do disponível ou divergência de arquivo.
+- **Validação:** T55 (emenda 12); Q22, Q26.
+- **Evidências:** `fase3/PREREG_CABO_FRIO.md`, `fase3/cabo_frio.py`, `fase3/resultados/cabo_frio.json`
+
+### Q39. Os brancos e nulos do 1º turno foram quase todos para Lula em 2026? Isso é uma anomalia?
+**Resposta:** A direção se confirma no nosso estimador (C06): cerca de 62% para Lula e 1% para Flávio, contra 16% e 28% para Bolsonaro em 2022. Mas há uma pista no próprio 1º turno: nas mesmas seções, onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 (até +0,73 ponto), o que é compatível com eleitores de Lula que anularam no 1º turno e voltaram, ou com campanha entre quem rejeitava os dois, e não só com erro do estimador. Isso cobre cerca de 0,47 mi da queda de 1,82 mi; o restante é uma queda geral de brancos e nulos no 2º turno, maior onde Lula é forte, sem causa identificada. As contagens de brancos e nulos conferem nos boletins e no RDV.
+**Classificação:** Parcialmente demonstrado
+**Em votos:** Queda de brancos e nulos de 1,82 mi (41% da margem); ~0,47 mi com marca no 1º turno; o restante sem causa identificada.
+- **Números:** Totais: 2022, 5.452.653 → 5.700.443; 2026, 5.969.801 → 4.153.801. Excesso no 1º turno de 2026 sobre 2022 por quintil de Lula: −0,08, +0,20, +0,46, +0,72, +0,73 ponto; no 2º turno: −0,90 a −1,66.
+- **Demonstra:** A direção e a marca no 1º turno.
+- **Não demonstra:** Quem eram os eleitores (Q26); qual das explicações comportamentais vale.
+- **Robustez:** Magnitude por UF frágil (T37).
+- **Causa:** verificável em parte · **Alcance:** Seções pareadas, Brasil.
+- **O que mudaria a resposta:** Pesquisa de painel 1º→2º turno; boletins impressos de amostra aleatória.
+- **Validação:** T56 (emenda 13); C06, T37, Q22, Q24, Q26.
+- **Evidências:** `fase3/PREREG_BRANCOS_NULOS.md`, `fase3/brancos_nulos.py`, `fase3/resultados/brancos_nulos.json`, `analise/resultado_comportamento_2026.json`
+
 ## Matriz dos 33 itens do inventário
 
 | Id | Resposta direta | Em votos | Classificação | Perguntas |

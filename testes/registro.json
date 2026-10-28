@@ -6956,6 +6956,255 @@
           "versao": "pós-V1.3"
         }
       ]
+    },
+    {
+      "id": "T52",
+      "pergunta": "O boletim de urna ficou parado entre a emissão e o recebimento no 2º turno de 2026? Por quê?",
+      "modulo": "H",
+      "metodo": "Emissão, encerramento e recebimento do BU em hora de Brasília (fuso de cada campo decidido pelos dados); maior intervalo sem recebimento; fechamento das urnas prorrogadas; votos no log após 17h; 2026 × 2022",
+      "metodo_versao": 1,
+      "hipotese_nula": "A recepção ficou suspensa enquanto havia urnas abertas pela prorrogação",
+      "modelo_nulo": "—",
+      "afirmacao": "descritiva",
+      "natureza": "confirmatório",
+      "classe_evidencia": "A",
+      "independencia": "interna",
+      "pre_especificacao": "fase3/PREREG_POSTS_ARVOR.md",
+      "script": "fase3/posts_arvor.py",
+      "comando": ".venv/bin/python fase3/posts_arvor.py",
+      "saida": "fase3/resultados/posts_arvor.json",
+      "situacao": "concluido",
+      "evidencia": "2026 (Brasil): emissão mediana 17:03, recebimento mediana 20:26 (P10 19:38), 200 min de intervalo mediano; 1.092 BUs (0,22%) recebidos antes das 19h, o último às 17:07; nenhum recebimento das 17:07 às 19:03 (116 min); 7.604 urnas fecharam depois das 17h30 por prorrogação, 99% delas até 19:10; Sergipe recebeu o primeiro às 19:34. Log: 34.327 votos depois das 17h, de 127,9 mi. 2022: emissão mediana 17:03, recebimento mediana 18:26, 84% antes das 19h, nenhum vazio (maior intervalo 0,55 min); 41.025 votos depois das 17h. O recebimento está em hora de Brasília e a emissão em hora local (teste de fuso no resultado).",
+      "interpretacao": "O vazio existe e é exclusivo de 2026: o recebimento parou às 17:07 e voltou às 19:03, junto com o fechamento das urnas prorrogadas (99% até 19:10). É compatível com suspensão da recepção enquanto havia urna aberta; a causa administrativa não está nos dados. O atraso não mexe no conteúdo: o BU é assinado pela urna às 17:03 e confere com a tabela (Q1, T16). Votos depois das 17h foram poucos (34 mil), menos que em 2022 (41 mil).",
+      "resultado_atual": "S1: vazio de 116 min confirmado, coincide com o fim da prorrogação; sem efeito no conteúdo dos boletins.",
+      "impacto_votos": "34.327 votos depois das 17h (0,8% da margem); o atraso de transmissão não altera votos (BU assinado na emissão).",
+      "limitacoes": "Horários de sistema; não identifica quem decidiu a suspensão. Contagens do autor (2.260 antes das 19h) diferem das nossas (1.092, só Brasil e municípios com fuso definido).",
+      "pressupostos": "",
+      "referencia": "posts de @leonardodias no X e dossiê brasil.arvor.co (origem da pergunta, não fonte)",
+      "origem_fase3": "alegação de imprensa, 28/10/2026",
+      "anotacoes": [],
+      "mudancas": [],
+      "provas": [],
+      "revisoes": [],
+      "versoes": [
+        {
+          "data": "2026-10-28",
+          "classe_evidencia": "A",
+          "evidencia": "2026 (Brasil): emissão mediana 17:03, recebimento mediana 20:26 (P10 19:38), 200 min de intervalo mediano; 1.092 BUs (0,22%) recebidos antes das 19h, o último às 17:07; nenhum recebimento das 17:07 às 19:03 (116 min); 7.604 urnas fecharam depois das 17h30 por prorrogação, 99% delas até 19:10; Sergipe recebeu o primeiro às 19:34. Log: 34.327 votos depois das 17h, de 127,9 mi. 2022: emissão mediana 17:03, recebimento mediana 18:26, 84% antes das 19h, nenhum vazio (maior intervalo 0,55 min); 41.025 votos depois das 17h. O recebimento está em hora de Brasília e a emissão em hora local (teste de fuso no resultado).",
+          "interpretacao": "O vazio existe e é exclusivo de 2026: o recebimento parou às 17:07 e voltou às 19:03, junto com o fechamento das urnas prorrogadas (99% até 19:10). É compatível com suspensão da recepção enquanto havia urna aberta; a causa administrativa não está nos dados. O atraso não mexe no conteúdo: o BU é assinado pela urna às 17:03 e confere com a tabela (Q1, T16). Votos depois das 17h foram poucos (34 mil), menos que em 2022 (41 mil).",
+          "metodo_versao": 1,
+          "mudancas": [],
+          "natureza": "confirmatório",
+          "resultado": "S1: vazio de 116 min confirmado, coincide com o fim da prorrogação; sem efeito no conteúdo dos boletins.",
+          "rodada": 6,
+          "situacao": "concluido",
+          "versao": "pós-V1.3"
+        }
+      ]
+    },
+    {
+      "id": "T53",
+      "pergunta": "Há 'fortes evidências' de votos sem biometria no 2º turno de 2026?",
+      "modulo": "H",
+      "metodo": "Habilitações no log por tipo (biometria, código do mesário, outro), 2026 × 2022; inclinação, dentro do município, da virada de Lula sobre a fração liberada pelo mesário",
+      "metodo_versao": 1,
+      "hipotese_nula": "A liberação sem biometria não se liga à virada de Lula",
+      "modelo_nulo": "—",
+      "afirmacao": "estatística",
+      "natureza": "confirmatório",
+      "classe_evidencia": "B",
+      "independencia": "interna",
+      "pre_especificacao": "fase3/PREREG_POSTS_ARVOR.md",
+      "script": "fase3/posts_arvor.py",
+      "comando": ".venv/bin/python fase3/posts_arvor.py",
+      "saida": "fase3/resultados/posts_arvor.json",
+      "situacao": "concluido",
+      "evidencia": "Habilitações por biometria: 87,6% em 2026 contra 75,9% em 2022; pelo código do mesário: 6,8% (8,63 mi) contra 8,1% (10,01 mi). Dentro do município, correlação entre a fração sem biometria e a virada de Lula: −0,058 em 2026 (mais liberação sem biometria, menos virada de Lula) e +0,056 em 2022 (497.819 e 470.944 seções).",
+      "interpretacao": "Houve menos liberação sem biometria em 2026 que em 2022, e onde ela foi maior Lula virou um pouco menos, não mais. Com o perfil do eleitorado o T12 já mostrava efeito nulo; o T28/P10 acha 8 urnas com rajada no fim do dia (99 votos), padrão também presente em 2022.",
+      "resultado_atual": "S0: liberação sem biometria menor que em 2022 e sem relação positiva com a virada de Lula.",
+      "impacto_votos": "Não se traduz em votos suspeitos: a relação tem o sentido contrário ao alegado; T28: 99 votos.",
+      "limitacoes": "Correlação sem controle de perfil (o T12 tem); 'outro' inclui habilitações não classificadas pelo leitor.",
+      "pressupostos": "",
+      "referencia": "posts de @leonardodias no X e dossiê brasil.arvor.co (origem da pergunta, não fonte)",
+      "origem_fase3": "alegação de imprensa, 28/10/2026",
+      "anotacoes": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "causa": "codigo",
+          "descricao": "Correção única: seções sem contagem de habilitação no log davam NaN na correlação."
+        }
+      ],
+      "provas": [],
+      "revisoes": [],
+      "versoes": [
+        {
+          "data": "2026-10-28",
+          "classe_evidencia": "B",
+          "evidencia": "Habilitações por biometria: 87,6% em 2026 contra 75,9% em 2022; pelo código do mesário: 6,8% (8,63 mi) contra 8,1% (10,01 mi). Dentro do município, correlação entre a fração sem biometria e a virada de Lula: −0,058 em 2026 (mais liberação sem biometria, menos virada de Lula) e +0,056 em 2022 (497.819 e 470.944 seções).",
+          "interpretacao": "Houve menos liberação sem biometria em 2026 que em 2022, e onde ela foi maior Lula virou um pouco menos, não mais. Com o perfil do eleitorado o T12 já mostrava efeito nulo; o T28/P10 acha 8 urnas com rajada no fim do dia (99 votos), padrão também presente em 2022.",
+          "metodo_versao": 1,
+          "mudancas": [
+            {
+              "data": "2026-10-28",
+              "causa": "codigo",
+              "descricao": "Correção única: seções sem contagem de habilitação no log davam NaN na correlação."
+            }
+          ],
+          "natureza": "confirmatório",
+          "resultado": "S0: liberação sem biometria menor que em 2022 e sem relação positiva com a virada de Lula.",
+          "rodada": 6,
+          "situacao": "concluido",
+          "versao": "pós-V1.3"
+        }
+      ]
+    },
+    {
+      "id": "T54",
+      "pergunta": "Em 938 municípios Flávio teve menos votos no 2º turno que no 1º: isso é anormal?",
+      "modulo": "H",
+      "metodo": "Municípios em que cada finalista perdeu votos entre turnos, votos perdidos, aptos, ganho do rival e queda do comparecimento; 2026 × 2022",
+      "metodo_versao": 1,
+      "hipotese_nula": "Perda de votos do candidato que perde fôlego é padrão de 2º turno",
+      "modelo_nulo": "—",
+      "afirmacao": "descritiva",
+      "natureza": "confirmatório",
+      "classe_evidencia": "A",
+      "independencia": "interna",
+      "pre_especificacao": "fase3/PREREG_POSTS_ARVOR.md",
+      "script": "fase3/posts_arvor.py",
+      "comando": ".venv/bin/python fase3/posts_arvor.py",
+      "saida": "fase3/resultados/posts_arvor.json",
+      "situacao": "concluido",
+      "evidencia": "2026: Flávio perdeu votos em 937 municípios (133.852 votos; 13,40 mi de aptos), onde Lula ganhou 486.832 e o comparecimento caiu em 727; Lula perdeu em 79 (16.115). 2022: Lula perdeu votos em 981 municípios (114.916; 10,48 mi de aptos), onde Bolsonaro ganhou 236.690 e o comparecimento caiu em 783; Bolsonaro perdeu em 92 (9.852).",
+      "interpretacao": "Os números do post se reproduzem (937 × 938, por um município). O mesmo padrão aconteceu em 2022 no sentido oposto e em tamanho parecido: o candidato que perdeu fôlego no 2º turno perdeu votos em ~1 mil municípios. É comportamento de 2º turno, não sinal.",
+      "resultado_atual": "S0: reproduzido; espelho de 2022 de tamanho parecido.",
+      "impacto_votos": "133.852 votos perdidos por Flávio (3% da margem), contra 114.916 de Lula em 2022.",
+      "limitacoes": "Saldos municipais; não identificam eleitor nem motivo.",
+      "pressupostos": "",
+      "referencia": "posts de @leonardodias no X e dossiê brasil.arvor.co (origem da pergunta, não fonte)",
+      "origem_fase3": "alegação de imprensa, 28/10/2026",
+      "anotacoes": [],
+      "mudancas": [],
+      "provas": [],
+      "revisoes": [],
+      "versoes": [
+        {
+          "data": "2026-10-28",
+          "classe_evidencia": "A",
+          "evidencia": "2026: Flávio perdeu votos em 937 municípios (133.852 votos; 13,40 mi de aptos), onde Lula ganhou 486.832 e o comparecimento caiu em 727; Lula perdeu em 79 (16.115). 2022: Lula perdeu votos em 981 municípios (114.916; 10,48 mi de aptos), onde Bolsonaro ganhou 236.690 e o comparecimento caiu em 783; Bolsonaro perdeu em 92 (9.852).",
+          "interpretacao": "Os números do post se reproduzem (937 × 938, por um município). O mesmo padrão aconteceu em 2022 no sentido oposto e em tamanho parecido: o candidato que perdeu fôlego no 2º turno perdeu votos em ~1 mil municípios. É comportamento de 2º turno, não sinal.",
+          "metodo_versao": 1,
+          "mudancas": [],
+          "natureza": "confirmatório",
+          "resultado": "S0: reproduzido; espelho de 2022 de tamanho parecido.",
+          "rodada": 6,
+          "situacao": "concluido",
+          "versao": "pós-V1.3"
+        }
+      ]
+    },
+    {
+      "id": "T55",
+      "pergunta": "Cabo Frio (a cada 50 votos novos de Lula, 1 de Flávio) é estatisticamente impossível?",
+      "modulo": "H",
+      "metodo": "Reprodução; identidade dos votos disponíveis (eliminados + comparecimento − brancos e nulos); posição na distribuição nacional; espelho de 2022; integridade das seções",
+      "metodo_versao": 1,
+      "hipotese_nula": "O ganho cabe nos votos disponíveis e o município está dentro da distribuição nacional",
+      "modelo_nulo": "—",
+      "afirmacao": "determinística",
+      "natureza": "confirmatório",
+      "classe_evidencia": "A",
+      "independencia": "interna",
+      "pre_especificacao": "fase3/PREREG_CABO_FRIO.md",
+      "script": "fase3/cabo_frio.py",
+      "comando": ".venv/bin/python fase3/cabo_frio.py",
+      "saida": "fase3/resultados/cabo_frio.json",
+      "situacao": "concluido",
+      "evidencia": "Capturas reproduzidas: Cabo Frio, 1º turno Flávio 83.213 × Lula 39.944; 2º turno Lula 49.113 × Flávio 83.555 (Lula +9.169, Flávio +342). Votos disponíveis em Cabo Frio: 8.822 dos eliminados + 1.229 de brancos e nulos a menos − 540 de comparecimento = 9.511, exatamente o ganho somado; Lula ficou com 96,4%, percentil 89 do país (mediana nacional 73%). Em nenhum dos 5.571 municípios o ganho excede o disponível. 36 municípios com Flávio ≥ 60% no 1º turno em que Lula levou ≥ 90% do ganho; em 2022, 28 municípios com Lula ≥ 60% em que Bolsonaro levou ≥ 90%. Comentários: Santana de Parnaíba Lula +9.244, Flávio +4.825 (Lula 66%, percentil 31); Campos Lula +24.822, Flávio −1.389 (percentil 95); São Gonçalo Lula +45.217, Flávio +8.156 (percentil 70). Em 2022, Bolsonaro levou 66% a 68% do ganho nessas 4 cidades. Arquivos: 4.044 de 4.044 seções com assinaturas válidas e BU = RDV = tabela.",
+      "interpretacao": "Não é impossível: o ganho de Lula em Cabo Frio cabe nos votos dos candidatos eliminados e na queda de brancos e nulos, e a cidade está entre os 11% de municípios em que Lula ficou com mais do disponível, não fora da distribuição. Cidades fortemente de um lado em que o adversário leva quase todo o 2º turno também aconteceram em 2022, a favor de Bolsonaro (28 municípios). O que não se sabe, nem com estes dados nem com outros públicos, é quem eram os eleitores dos eliminados (Q26).",
+      "resultado_atual": "S0: reproduzido; cabe no disponível; percentil 89; espelho em 2022.",
+      "impacto_votos": "Cabo Frio: 9.169 votos de Lula ganhos no 2º turno (0,2% da margem), todos cobertos pelos votos disponíveis.",
+      "limitacoes": "Saldos municipais; não identificam eleitores (Q26).",
+      "pressupostos": "",
+      "referencia": "post de @leandroquerido no X e comentários (origem da pergunta, não fonte)",
+      "origem_fase3": "alegação de imprensa, 28/10/2026",
+      "anotacoes": [],
+      "mudancas": [
+        {
+          "data": "2026-10-28",
+          "causa": "codigo",
+          "descricao": "Correção única: validos_1 entrava como voto de eliminado."
+        }
+      ],
+      "provas": [],
+      "revisoes": [],
+      "versoes": [
+        {
+          "data": "2026-10-28",
+          "classe_evidencia": "A",
+          "evidencia": "Capturas reproduzidas: Cabo Frio, 1º turno Flávio 83.213 × Lula 39.944; 2º turno Lula 49.113 × Flávio 83.555 (Lula +9.169, Flávio +342). Votos disponíveis em Cabo Frio: 8.822 dos eliminados + 1.229 de brancos e nulos a menos − 540 de comparecimento = 9.511, exatamente o ganho somado; Lula ficou com 96,4%, percentil 89 do país (mediana nacional 73%). Em nenhum dos 5.571 municípios o ganho excede o disponível. 36 municípios com Flávio ≥ 60% no 1º turno em que Lula levou ≥ 90% do ganho; em 2022, 28 municípios com Lula ≥ 60% em que Bolsonaro levou ≥ 90%. Comentários: Santana de Parnaíba Lula +9.244, Flávio +4.825 (Lula 66%, percentil 31); Campos Lula +24.822, Flávio −1.389 (percentil 95); São Gonçalo Lula +45.217, Flávio +8.156 (percentil 70). Em 2022, Bolsonaro levou 66% a 68% do ganho nessas 4 cidades. Arquivos: 4.044 de 4.044 seções com assinaturas válidas e BU = RDV = tabela.",
+          "interpretacao": "Não é impossível: o ganho de Lula em Cabo Frio cabe nos votos dos candidatos eliminados e na queda de brancos e nulos, e a cidade está entre os 11% de municípios em que Lula ficou com mais do disponível, não fora da distribuição. Cidades fortemente de um lado em que o adversário leva quase todo o 2º turno também aconteceram em 2022, a favor de Bolsonaro (28 municípios). O que não se sabe, nem com estes dados nem com outros públicos, é quem eram os eleitores dos eliminados (Q26).",
+          "metodo_versao": 1,
+          "mudancas": [
+            {
+              "data": "2026-10-28",
+              "causa": "codigo",
+              "descricao": "Correção única: validos_1 entrava como voto de eliminado."
+            }
+          ],
+          "natureza": "confirmatório",
+          "resultado": "S0: reproduzido; cabe no disponível; percentil 89; espelho em 2022.",
+          "rodada": 6,
+          "situacao": "concluido",
+          "versao": "pós-V1.3"
+        }
+      ]
+    },
+    {
+      "id": "T56",
+      "pergunta": "Os brancos e nulos do 1º turno foram quase todos para Lula em 2026? Por quê?",
+      "modulo": "H",
+      "metodo": "Linha de brancos e nulos do C06 (Goodman por UF); totais por turno; excesso de brancos e nulos em seções pareadas 2022 × 2026 por força de Lula, dentro do município",
+      "metodo_versao": 1,
+      "hipotese_nula": "A ida de brancos e nulos para Lula é só artefato do estimador ecológico",
+      "modelo_nulo": "—",
+      "afirmacao": "estatística",
+      "natureza": "confirmatório",
+      "classe_evidencia": "B",
+      "independencia": "interna",
+      "pre_especificacao": "fase3/PREREG_BRANCOS_NULOS.md",
+      "script": "fase3/brancos_nulos.py",
+      "comando": ".venv/bin/python fase3/brancos_nulos.py",
+      "saida": "fase3/resultados/brancos_nulos.json",
+      "situacao": "concluido",
+      "evidencia": "C06 (já existente) reproduz a direção do post: brancos e nulos do 1º turno → Lula 62%, → Flávio 1,4% em 2026 (21 de 27 UFs com < 5% para Flávio); em 2022, → Lula 16%, → Bolsonaro 28%. Totais: 2022, 5.452.653 (1º) e 5.700.443 (2º); 2026, 5.969.801 (1º) e 4.153.801 (2º), queda de 1,82 mi. Nas 459.706 seções com o mesmo número nos dois anos: o 1º turno de 2026 teve +0,41 ponto de brancos e nulos sobre o de 2022, crescendo com a força de Lula (−0,08 no quintil com menos Lula, +0,73 no com mais; inclinação dentro do município +0,016), cerca de 468 mil votos; no 2º turno, 1,30 ponto abaixo de 2022, mais onde Lula é forte (−0,90 a −1,66).",
+      "interpretacao": "A direção da tabela se confirma no nosso estimador, mas a magnitude por UF é frágil (T37). Há uma marca independente no próprio 1º turno: onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 nas mesmas seções, o que favorece as explicações (1) eleitores de Lula que anularam no 1º turno e voltaram ou (2) campanha entre quem rejeitava os dois, e não só viés do estimador. Essa marca cobre cerca de 0,47 mi da queda de 1,82 mi; o restante é queda geral de brancos e nulos no 2º turno, maior onde Lula é forte. Os dados não distinguem (1) de (2) nem identificam eleitores; brancos e nulos conferem nos boletins e no RDV (Q1, Q2).",
+      "resultado_atual": "S1 em parte: direção confirmada; excesso de brancos e nulos no 1º turno onde Lula é forte explica ~0,47 de 1,82 mi; fluxo individual não identificável.",
+      "impacto_votos": "Queda de brancos e nulos: 1,82 mi (41% da margem de 2026); ~0,47 mi com marca no 1º turno; o restante sem causa identificada, com contagens conferidas nos boletins.",
+      "limitacoes": "Inferência ecológica (T37); pareamento por número de seção; não distingue (1) de (2).",
+      "pressupostos": "",
+      "referencia": "post de @calvete_pedro no X e comentários (origem da pergunta, não fonte)",
+      "origem_fase3": "alegação de imprensa, 28/10/2026",
+      "anotacoes": [],
+      "mudancas": [],
+      "provas": [],
+      "revisoes": [],
+      "versoes": [
+        {
+          "data": "2026-10-28",
+          "classe_evidencia": "B",
+          "evidencia": "C06 (já existente) reproduz a direção do post: brancos e nulos do 1º turno → Lula 62%, → Flávio 1,4% em 2026 (21 de 27 UFs com < 5% para Flávio); em 2022, → Lula 16%, → Bolsonaro 28%. Totais: 2022, 5.452.653 (1º) e 5.700.443 (2º); 2026, 5.969.801 (1º) e 4.153.801 (2º), queda de 1,82 mi. Nas 459.706 seções com o mesmo número nos dois anos: o 1º turno de 2026 teve +0,41 ponto de brancos e nulos sobre o de 2022, crescendo com a força de Lula (−0,08 no quintil com menos Lula, +0,73 no com mais; inclinação dentro do município +0,016), cerca de 468 mil votos; no 2º turno, 1,30 ponto abaixo de 2022, mais onde Lula é forte (−0,90 a −1,66).",
+          "interpretacao": "A direção da tabela se confirma no nosso estimador, mas a magnitude por UF é frágil (T37). Há uma marca independente no próprio 1º turno: onde Lula é forte houve mais brancos e nulos em 2026 do que em 2022 nas mesmas seções, o que favorece as explicações (1) eleitores de Lula que anularam no 1º turno e voltaram ou (2) campanha entre quem rejeitava os dois, e não só viés do estimador. Essa marca cobre cerca de 0,47 mi da queda de 1,82 mi; o restante é queda geral de brancos e nulos no 2º turno, maior onde Lula é forte. Os dados não distinguem (1) de (2) nem identificam eleitores; brancos e nulos conferem nos boletins e no RDV (Q1, Q2).",
+          "metodo_versao": 1,
+          "mudancas": [],
+          "natureza": "confirmatório",
+          "resultado": "S1 em parte: direção confirmada; excesso de brancos e nulos no 1º turno onde Lula é forte explica ~0,47 de 1,82 mi; fluxo individual não identificável.",
+          "rodada": 6,
+          "situacao": "concluido",
+          "versao": "pós-V1.3"
+        }
+      ]
     }
   ],
   "classes": {
