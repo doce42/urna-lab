@@ -801,7 +801,7 @@
    "independencia": "interna",
    "natureza": "confirmatório",
    "classe_evidencia": "G",
-   "resultado_atual": "1º turno: urna efetivada = urna do boletim em 499.206/499.206 seções; 31 por Sistema de Apuração e 50 por recuperação de dados; 43 certificados diferentes da urna declarada a investigar. 2º turno em andamento.",
+   "resultado_atual": "1º turno: urna efetivada = urna do boletim em 499.206/499.206 seções; origem do voto: 499.126 urna eletrônica, 50 por recuperação de dados (RED) e 31 por Sistema de Apuração; 3.060 seções com troca de urna declarada, 2.099 delas com as 2 urnas no log. 2º turno: 499.205/499.205 iguais; 499.162 urna eletrônica, 29 Sistema de Apuração, 14 RED em urna de seção e 2 RED em urna de contingência; 2.715 trocas declaradas, 1.416 com as 2 urnas no log. Certificado da urna diferente do declarado: 45 seções no 1º turno e 32 no 2º (inclui as de Sistema de Apuração, que não têm certificado de urna). As demais são tratadas no T36 (tipo c): 26 casos no 1º turno e 17 no 2º, todos com explicação operacional (troca de urna ou arquivo de log não publicado; 1 caso D1 em SP no 2º turno).",
    "anotacoes": [
     "1º turno: a urna efetivada é igual à do Boletim de Urna em 499.206 de 499.206 seções; 31 seções por 'Sistema de apuração' (cédula) e 50 por recuperação de dados.",
     "43 certificados diferentes da urna declarada, a investigar."
