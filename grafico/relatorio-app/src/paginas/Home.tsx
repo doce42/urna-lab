@@ -76,8 +76,11 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
       { nome: 'Flávio Bolsonaro, % dos válidos', cor: COR.adv, valores: ap.pct.c22 },
     ] };
     const ks = Object.keys(ap.pct).filter((k) => k[0] === 'c').slice(0, 4);
-    const cores = [COR.lula, COR.adv, COR.s2026, COR.aviso];
-    return { x, series: ks.map((k, i) => ({ nome: nomeCurto(ap.nomes[k] || k), cor: cores[i], valores: ap.pct[k] })) };
+    // a cor segue o candidato (número de urna), nunca a posição: no 1º turno Flávio liderou e herdava a cor do Lula
+    const outras = [COR.ref, COR.aviso];
+    let j = 0;
+    const corDe = (k: string) => (k === 'c13' ? COR.lula : k === 'c22' ? COR.adv : outras[j++ % outras.length]);
+    return { x, series: ks.map((k) => ({ nome: nomeCurto(ap.nomes[k] || k), cor: corDe(k), valores: ap.pct[k] })) };
   }, [ap, modoApur]);
   const urnasPct = ap.urnas.map((u) => (100 * u) / ap.total_urnas);
   const horasCheias = ap.min.map((m, i) => (m % 60 === 0 ? i : -1)).filter((i) => i >= 0);

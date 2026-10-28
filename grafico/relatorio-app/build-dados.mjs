@@ -179,6 +179,7 @@ gravar('geo.json', topo);
 // ---------- documentos (markdown → seções HTML) ----------
 const DOCS = [
   ['visao-geral', 'README.md', 'Visão geral', 'O que é o estudo, o que tem no repositório e como reproduzir.'],
+  ['conclusao', 'CONCLUSAO.md', 'Conclusão', 'A resposta do estudo em três níveis: provado, estatística com poder medido e limites dos dados públicos.'],
   ['diretriz', 'DIRETRIZ.md', 'Diretriz científica', 'Princípios, cinco níveis de investigação e classes de evidência A–G.'],
   ['protocolo', 'PROTOCOLO.md', 'Protocolo', 'Perguntas, modelos nulos, critérios fixados antes de rodar e emendas datadas.'],
   ['metodologia', 'METODOLOGIA.md', 'Metodologia matemática', 'A matemática de cada teste, camada por camada.'],

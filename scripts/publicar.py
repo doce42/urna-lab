@@ -138,7 +138,7 @@ def main():
     if git("diff", "--cached", "--quiet", check=False).returncode == 0:
         print("nada novo para publicar")
         return
-    git("commit", "-m", msg + "\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>")
+    git("commit", "-m", msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>")
     git("-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "push", "-u", "origin", "main")
     print("publicado:", REMOTO)
 

@@ -306,7 +306,7 @@
    "afirmacao": "estatística",
    "independencia": "—",
    "natureza": "confirmatório",
-   "classe_evidencia": "G",
+   "classe_evidencia": "A",
    "resultado_atual": "Poder do T28, 2º turno 2026 (1º turno parecido): sem fraude, 0 falsos positivos em 499.177 urnas (1º turno: 13 em 499.176, os mesmos 13 do T28 real). Com 10% dos votos dos últimos 30 min convertidos, o teste não detecta (recall ≈ 0%); com 30%, detecta 0,4% a 25% das urnas alteradas conforme a fração de urnas; com 50%, 18% a 72% (2º turno) e 80% a 88% com 5% a 20% das urnas (1º turno); com 100%, 76% a 95%. Conclusão: o T28 só enxerga rajadas grandes e concentradas; um desvio pequeno por urna não aparece (nem nesse teste nem 'nada encontrado' o exclui)."
   },
   {
@@ -318,7 +318,7 @@
    "script": "analise/processar_brutos.py",
    "comando": "make integridade",
    "saida": "analise/brutos/<t>t/urnas_<UF>.parquet",
-   "situacao": "em_andamento",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Votos no log = comparecimento; confirmações + nulos por suspensão = total",
    "pressupostos": "log completo (inclui arquivados)",
@@ -327,7 +327,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno 2026 completo (499.205 urnas): assinatura da lista válida em 100% das urnas eletrônicas com arquivos; RDV = bu.dat = imagem do BU = publicado; exterior: 1.281 urnas eletrônicas + 29 seções do Sistema de Apuração (RDV vazio; busa = publicado); divergências pontuais em T36 (resultado refeito após as correções de leitura, ver T36)",
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
    "anotacoes": [
     "No 2º turno o log.jez de cada urna traz o log do 1º turno arquivado dentro: as contagens passaram a usar só o dia da eleição (RJ dava 19,9 mi antes da correção).",
     "Urna reiniciada ou trocada guarda o log anterior dentro do arquivo: leitura recursiva.",
@@ -343,7 +343,7 @@
    "script": "analise/processar_brutos.py",
    "comando": "make integridade",
    "saida": "→ img_*",
-   "situacao": "em_andamento",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Boletim impresso = publicado",
    "pressupostos": "",
@@ -352,7 +352,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno 2026 completo (499.205 urnas): assinatura da lista válida em 100% das urnas eletrônicas com arquivos; RDV = bu.dat = imagem do BU = publicado; exterior: 1.281 urnas eletrônicas + 29 seções do Sistema de Apuração (RDV vazio; busa = publicado); divergências pontuais em T36"
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
   },
   {
    "id": "T16",
@@ -363,7 +363,7 @@
    "script": "analise/processar_brutos.py, analise/ed521.py, analise/der.py",
    "comando": "make integridade",
    "saida": "→ assin_*, hash_ok_*",
-   "situacao": "em_andamento",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Todo arquivo publicado é o que a urna assinou",
    "pressupostos": "chave da urna confiável (cadeia até a AC não verificada)",
@@ -372,7 +372,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno 2026 completo (499.205 urnas): assinatura da lista válida em 100% das urnas eletrônicas com arquivos; RDV = bu.dat = imagem do BU = publicado; exterior: 1.281 urnas eletrônicas + 29 seções do Sistema de Apuração (RDV vazio; busa = publicado); divergências pontuais em T36",
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36.",
    "anotacoes": [
     "Parâmetros do Ed521 (urnas UE2020/UE2022) inferidos dos arquivos, sem a especificação oficial; só uma combinação valida. Validado por controles negativos (T16c).",
     "Modelos antigos: bloco da urna em minúsculas (ueao) e certificado com bytes de preenchimento: 4.043 urnas apareciam 'sem assinatura' e 547 com erro de leitura antes da correção.",
@@ -411,7 +411,7 @@
    "script": "analise/processar_brutos.py",
    "comando": "make integridade",
    "saida": "→ rdv_*",
-   "situacao": "em_andamento",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Recontagem pelo RDV = BU",
    "pressupostos": "decodificação DER validada",
@@ -420,7 +420,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno 2026 completo (499.205 urnas): assinatura da lista válida em 100% das urnas eletrônicas com arquivos; RDV = bu.dat = imagem do BU = publicado; exterior: 1.281 urnas eletrônicas + 29 seções do Sistema de Apuração (RDV vazio; busa = publicado); divergências pontuais em T36"
+   "resultado_atual": "1º turno 2026: 499.176 urnas eletrônicas com arquivos; hash e assinatura do BU, do log e da lista válidos em todas; RDV no pacote e válido em 499.175 e o que faltava (MA 7846/74/228) baixado do site de resultados e verificado (hash, assinatura, Lula 158 = publicado); recontagem do RDV = boletim em 499.176; 31 seções do exterior por Sistema de Apuração (sem RDV de urna). 2º turno 2026: 499.178 urnas eletrônicas; hash e assinatura de BU, RDV, imagem do BU e lista válidos em todas; RDV = boletim em 499.180 (inclui RED); log válido em 499.177 (1 log de SP assinado pela urna e não publicado, D1 no T36); 29 seções do exterior por Sistema de Apuração conferem com o publicado. Algoritmos: Ed521 nas UE2020/UE2022 e ECDSA P-521 nas UE2013/UE2015. Divergências de contagem no log explicadas no T36."
   },
   {
    "id": "T17b",
@@ -440,7 +440,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno 2026: bu.dat = RDV = publicado em todas as urnas eletrônicas (499.178); no exterior, 29 seções apuradas pelo Sistema de Apuração (boletim próprio, RDV vazio) conferem com o publicado. 1º turno em releitura.",
+   "resultado_atual": "bu.dat = RDV = publicado em todas as urnas eletrônicas nos dois turnos de 2026 (1º: 499.176; 2º: 499.178), depois da correção do leitor (lista de eleições). Seções do exterior apuradas pelo Sistema de Apuração conferem com o publicado.",
    "anotacoes": [
     "bu.dat decodificado pela estrutura e conferido contra o RDV e o publicado. No exterior o bu.dat não tem o campo de habilitações e 29 seções foram apuradas pelo Sistema de Apuração (RDV vazio): o leitor foi ajustado."
    ]
@@ -477,7 +477,7 @@
    "script": "(a fazer)",
    "comando": "—",
    "saida": "—",
-   "situacao": "concluido_2t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Modelo de urna não se associa à virada (dentro do município)",
    "pressupostos": "",
@@ -566,7 +566,7 @@
    "script": "analise/processar_brutos.py",
    "comando": "make integridade",
    "saida": "→ urnas_com_voto_no_log, cert_igual_log",
-   "situacao": "em_andamento",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Urna substituída: votos nas duas urnas registrados",
    "pressupostos": "",
@@ -652,7 +652,7 @@
    "script": "analise/seqlog.py",
    "comando": "make integridade",
    "saida": "→ seq_ult30_*, seq_resto_*",
-   "situacao": "concluido_2t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Sem rajada de habilitações sem biometria no fim do dia",
    "pressupostos": "taxa de habilitação sem biometria estável no dia",
@@ -660,8 +660,8 @@
    "afirmacao": "estatística",
    "independencia": "criptográfica",
    "natureza": "confirmatório",
-   "classe_evidencia": "A",
-   "resultado_atual": "2º turno: 12,71% de habilitação sem biometria nos últimos 30 min contra 12,68% no resto do dia; 0 urnas com rajada após Benjamini-Hochberg (499.177 urnas).",
+   "classe_evidencia": "B",
+   "resultado_atual": "2º turno 2026: 12,71% de habilitação sem biometria nos últimos 30 min contra 12,68% no resto do dia; 0 urnas com rajada após Benjamini-Hochberg (499.177). 1º turno 2026: 12,15% contra 12,49%; 13 urnas acusadas (6 a 14 habilitações sem biometria cada, ≈ 140 votos no total), em 7 UFs, sem direção de voto (Lula na seção 51,5% em média contra 53,4% no município). Em 2022: 23 (1º) e 25 (2º turno) urnas acusadas. Anomalia estatística pequena e exploratória (classe B), no mesmo nível de 2022; poder medido no T13b.",
    "anotacoes": [
     "Nenhuma urna com rajada de habilitações sem biometria no fim do dia (12,71% nos últimos 30 minutos contra 12,68% no resto do dia). Explicações legítimas a descartar se aparecer: fila de idosos e falha de leitor."
    ]
@@ -675,7 +675,7 @@
    "script": "analise/seqlog.py",
    "comando": "make integridade",
    "saida": "→ seq_dur_*, seq_intervalo_min",
-   "situacao": "concluido_2t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Sem votos fisicamente rápidos demais",
    "pressupostos": "",
@@ -698,7 +698,7 @@
    "script": "analise/seqlog.py",
    "comando": "make integridade",
    "saida": "→ seq_votos_fora_dia",
-   "situacao": "concluido_2026",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Sem voto fora do dia/horário",
    "pressupostos": "",
@@ -722,7 +722,7 @@
    "script": "analise/seqlog.py",
    "comando": "make integridade",
    "saida": "→ seq_sem_habilitacao",
-   "situacao": "concluido_2t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Todo voto tem habilitação antes",
    "pressupostos": "",
@@ -731,7 +731,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas.",
+   "resultado_atual": "2º turno: 0 votos computados sem habilitação anterior em 499.177 urnas. 1º turno: 2 votos em 1 urna, a RJ 60011/8/61, cujo log tem linhas corrompidas pela própria urna (as linhas de habilitação se perderam; hash do arquivo, totais e assinatura conferem). Explicado.",
    "anotacoes": [
     "Nenhum voto computado sem habilitação anterior no 2º turno."
    ]
@@ -769,7 +769,7 @@
    "script": "analise/seqlog.py",
    "comando": "make integridade",
    "saida": "→ sw_*",
-   "situacao": "concluido_2t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Mesma versão de software e verificações com sucesso",
    "pressupostos": "",
@@ -778,7 +778,7 @@
    "independencia": "criptográfica",
    "natureza": "confirmatório",
    "classe_evidencia": "A",
-   "resultado_atual": "2º turno: mesma versão de software nas 499.177 urnas; 8 urnas com falha de verificação no dia (bloquearam, religadas, passaram); 154 só em datas de preparação.",
+   "resultado_atual": "Mesma versão do software de votação (10.23.0.0) em todas as urnas com log nos dois turnos (499.176 e 499.177). Verificações de assinatura do software sem sucesso: 146 em 128 urnas (1º turno) e 181 em 162 urnas (2º); as do dia da eleição são urnas que bloquearam, foram religadas e passaram; as demais em datas de preparação.",
    "anotacoes": [
     "Mesma versão de software nas 499.177 urnas. 8 urnas tiveram uma falha de verificação no dia: bloquearam ('Erro na validação de assinaturas'), foram desligadas, religadas e passaram nas verificações seguintes. Outras 154 só tiveram erro em datas de preparação."
    ]
@@ -792,7 +792,7 @@
    "script": "(a fazer)",
    "comando": "—",
    "saida": "—",
-   "situacao": "concluido_1t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Urna usada = urna preparada para a seção",
    "pressupostos": "",
@@ -800,7 +800,7 @@
    "afirmacao": "determinística",
    "independencia": "interna",
    "natureza": "confirmatório",
-   "classe_evidencia": "G",
+   "classe_evidencia": "A",
    "resultado_atual": "1º turno: urna efetivada = urna do boletim em 499.206/499.206 seções; origem do voto: 499.126 urna eletrônica, 50 por recuperação de dados (RED) e 31 por Sistema de Apuração; 3.060 seções com troca de urna declarada, 2.099 delas com as 2 urnas no log. 2º turno: 499.205/499.205 iguais; 499.162 urna eletrônica, 29 Sistema de Apuração, 14 RED em urna de seção e 2 RED em urna de contingência; 2.715 trocas declaradas, 1.416 com as 2 urnas no log. Certificado da urna diferente do declarado: 45 seções no 1º turno e 32 no 2º (inclui as de Sistema de Apuração, que não têm certificado de urna). As demais são tratadas no T36 (tipo c): 26 casos no 1º turno e 17 no 2º, todos com explicação operacional (troca de urna ou arquivo de log não publicado; 1 caso D1 em SP no 2º turno).",
    "anotacoes": [
     "1º turno: a urna efetivada é igual à do Boletim de Urna em 499.206 de 499.206 seções; 31 seções por 'Sistema de apuração' (cédula) e 50 por recuperação de dados.",
@@ -816,7 +816,7 @@
    "script": "(a fazer)",
    "comando": "—",
    "saida": "—",
-   "situacao": "concluido_1t",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "Toda urna usada tem carga registrada",
    "pressupostos": "",
@@ -859,7 +859,7 @@
    "script": "analise/relatorio_dados.py",
    "comando": "make relatorio",
    "saida": "grafico/web/logs.json",
-   "situacao": "em_andamento",
+   "situacao": "concluido",
    "referencia": "",
    "hipotese_nula": "(descritivo)",
    "pressupostos": "",
@@ -1075,7 +1075,7 @@
    "script": "analise/casos_integridade.py",
    "comando": ".venv/bin/python analise/casos_integridade.py <turno>",
    "saida": "analise/resultado_casos_integridade_<t>t.json",
-   "situacao": "concluido_2t",
+   "situacao": "concluido",
    "hipotese_nula": "toda divergência tem causa operacional verificável nos próprios registros",
    "pressupostos": "",
    "limitacoes": "E4 é inferida pelo padrão de contagem (mais fraca que E5, verificada no log)",
