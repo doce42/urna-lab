@@ -1,0 +1,78 @@
+{
+ "secoes": 470964,
+ "escala_z": 0.4408782202482249,
+ "E01": {
+  "local": {
+   "fracao_variancia_entre_grupos": 0.32220049722709854,
+   "grupos": 92318
+  },
+  "zona": {
+   "fracao_variancia_entre_grupos": 0.04843401448664709,
+   "grupos": 2636
+  },
+  "mun": {
+   "fracao_variancia_entre_grupos": 0.06523400315190317,
+   "grupos": 5570
+  },
+  "SG_UF": {
+   "fracao_variancia_entre_grupos": 0.00013082397491508837,
+   "grupos": 27
+  }
+ },
+ "E02": {
+  "local": {
+   "grupos": 56164,
+   "significativos_BH": 766,
+   "sig_pro_lula": 308,
+   "sig_pro_adversario": 458,
+   "dp_zg": 1.310054649068589,
+   "esperado_dp_sem_agrupamento": 1.0
+  },
+  "zona": {
+   "grupos": 2636,
+   "significativos_BH": 1050,
+   "sig_pro_lula": 488,
+   "sig_pro_adversario": 562,
+   "dp_zg": 3.0415887515800275,
+   "esperado_dp_sem_agrupamento": 1.0
+  },
+  "mun": {
+   "grupos": 5570,
+   "significativos_BH": 1220,
+   "sig_pro_lula": 580,
+   "sig_pro_adversario": 640,
+   "dp_zg": 2.4293893421311687,
+   "esperado_dp_sem_agrupamento": 1.0
+  }
+ }
+}
+
+== maiores divergências por mun
+  BA CALDEIRÃO GRANDE             BA-34096               seções   34 z  -24.1 virada obs -0.245 esp +0.176 | Lula 1º 0.79 órfão 0.05
+  MG JUIZ DE FORA                 MG-47333               seções 1230 z  +18.8 virada obs +0.141 esp +0.098 | Lula 1º 0.53 órfão 0.09
+  BA CAMPO FORMOSO                BA-34193               seções  187 z  -17.4 virada obs +0.015 esp +0.135 | Lula 1º 0.72 órfão 0.06
+  CE NOVA RUSSAS                  CE-14877               seções   97 z  -16.9 virada obs -0.038 esp +0.159 | Lula 1º 0.70 órfão 0.07
+  BA SAPEAÇU                      BA-38911               seções   48 z  -14.7 virada obs -0.025 esp +0.169 | Lula 1º 0.77 órfão 0.06
+  RS PELOTAS                      RS-87912               seções  754 z  +14.1 virada obs +0.184 esp +0.143 | Lula 1º 0.52 órfão 0.12
+  SP GUARULHOS                    SP-64777               seções 2772 z  -14.0 virada obs +0.151 esp +0.171 | Lula 1º 0.42 órfão 0.12
+  SC FLORIANÓPOLIS                SC-81051               seções 1102 z  +13.7 virada obs +0.178 esp +0.147 | Lula 1º 0.43 órfão 0.12
+
+== maiores divergências por zona
+  CE ARARENDÁ                     CE-48                  seções  134 z  -16.0 virada obs +0.004 esp +0.163 | Lula 1º 0.71 órfão 0.06
+  SP SÃO PAULO                    SP-1                   seções  449 z  +15.4 virada obs +0.307 esp +0.246 | Lula 1º 0.56 órfão 0.14
+  BA ANTÔNIO GONÇALVES            BA-53                  seções  220 z  -14.8 virada obs +0.039 esp +0.132 | Lula 1º 0.73 órfão 0.05
+  BA CALDEIRÃO GRANDE             BA-115                 seções  122 z  -13.3 virada obs -0.002 esp +0.122 | Lula 1º 0.74 órfão 0.05
+  PA PORTO DE MOZ                 PA-82                  seções   70 z  -12.2 virada obs -0.048 esp +0.092 | Lula 1º 0.65 órfão 0.04
+  RS PELOTAS                      RS-34                  seções  267 z  +12.1 virada obs +0.226 esp +0.164 | Lula 1º 0.52 órfão 0.12
+  MG BOM DESPACHO                 MG-45                  seções  181 z  -11.8 virada obs +0.008 esp +0.084 | Lula 1º 0.36 órfão 0.09
+  MG JUIZ DE FORA                 MG-152                 seções  304 z  +11.5 virada obs +0.168 esp +0.117 | Lula 1º 0.50 órfão 0.10
+
+== maiores divergências por local
+  BA CALDEIRÃO GRANDE             BA-34096-115-1058      seções    4 z  -15.8 virada obs -0.593 esp +0.200 | Lula 1º 0.87 órfão 0.04
+  BA CALDEIRÃO GRANDE             BA-34096-115-1082      seções    7 z  -12.8 virada obs -0.245 esp +0.173 | Lula 1º 0.72 órfão 0.07
+  BA CALDEIRÃO GRANDE             BA-34096-115-1066      seções    8 z  -10.4 virada obs -0.214 esp +0.179 | Lula 1º 0.80 órfão 0.05
+  BA CALDEIRÃO GRANDE             BA-34096-115-1015      seções    7 z  -10.3 virada obs -0.249 esp +0.182 | Lula 1º 0.74 órfão 0.06
+  CE NOVA RUSSAS                  CE-14877-48-1350       seções    3 z  -10.3 virada obs -0.480 esp +0.099 | Lula 1º 0.75 órfão 0.04
+  RN RIACHO DA CRUZ               RN-18112-63-1031       seções    5 z  -10.2 virada obs -0.288 esp +0.135 | Lula 1º 0.80 órfão 0.04
+  PR CURITIBA                     PR-75353-177-2160      seções    5 z  +10.0 virada obs +0.345 esp +0.038 | Lula 1º 0.58 órfão 0.07
+  PB SÃO JOSÉ DE PRINCESA         PB-19445-34-1015       seções    5 z   -9.5 virada obs -0.216 esp +0.222 | Lula 1º 0.84 órfão 0.05

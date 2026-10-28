@@ -1,0 +1,14 @@
+== 2022 C06 transferência (linhas: 1º turno; colunas: destino no 2º), %:
+                        Lula  Adversário  Branco/nulo  Abstenção
+Lula (1º)               96.3         0.0          1.0        2.6
+Adversário (1º)          0.0        99.9          0.0        0.0
+Simone Tebet (1º)       37.7        43.4         18.0        1.0
+Ciro Gomes (1º)         38.6        40.6         16.9        3.9
+Soraya Thronicke (1º)   22.7        49.7         22.8        4.8
+Felipe d'Ávila (1º)     20.0        61.8         15.0        3.3
+Outros candidatos (1º)  48.4        28.0         18.7        4.9
+Branco/nulo (1º)        16.2        27.8         54.0        2.0
+Abstenção (1º)           2.3         4.1          1.1       92.5
+conferência total previsto x observado: {'Lula': 60237496, 'Adversário': 58025725, 'Branco/nulo': 5662629, 'Abstenção': 31826722} {'Lula': 60191026, 'Adversário': 58059590, 'Branco/nulo': 5688224, 'Abstenção': 31813732}
+C08 região: {'Centro-Oeste': (np.float64(37.83), np.float64(39.79), np.float64(1.97)), 'Nordeste': (np.float64(66.76), np.float64(69.34), np.float64(2.58)), 'Norte': (np.float64(47.09), np.float64(48.97), np.float64(1.89)), 'Sudeste': (np.float64(42.63), np.float64(45.74), np.float64(3.11)), 'Sul': (np.float64(36.78), np.float64(38.16), np.float64(1.38))}
+C08 porte: {'até 10 mil eleitores': (np.float64(56.73), np.float64(1.24), np.float64(78.9)), '10–50 mil': (np.float64(56.99), np.float64(1.58), np.float64(77.74)), '50–200 mil': (np.float64(46.74), np.float64(2.07), np.float64(79.98)), '200 mil–1 milhão': (np.float64(45.14), np.float64(2.93), np.float64(81.08)), 'mais de 1 milhão': (np.float64(50.25), np.float64(4.38), np.float64(80.54))}

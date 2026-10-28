@@ -1,0 +1,70 @@
+.venv/lib/python3.13/site-packages/scipy/stats/_stats_py.py:1172: RuntimeWarning: invalid value encountered in subtract
+  a_zero_mean = a - mean
+
+======== 1. Virada por seção (Lula 2º − Lula 1º, % dos válidos), comparada com o próprio município
+seções analisadas 499,127; virada mediana 6.39 pp; desvio do resíduo 2.32 pp
+  |z|>3: pró-Lula 10  pró-Flávio 181  (simetria: 0.052)
+  |z|>4: pró-Lula 4  pró-Flávio 105  (simetria: 0.037)
+  |z|>5: pró-Lula 3  pró-Flávio 69  (simetria: 0.042)
+  |z|>6: pró-Lula 2  pró-Flávio 57  (simetria: 0.034)
+  assimetria (skew) do z: nan; curtose: nan
+  concentração dos |z|>5 por UF (top 5, % das seções da UF):
+    RR 0.26%, AM 0.23%, AC 0.13%, TO 0.11%, PA 0.07% | média nacional 0.01%
+
+======== 2. A virada depende da hora em que a urna chegou ao TSE? (dentro do município)
+  Spearman(resíduo da virada, ordem de chegada no 2º): r=-0.0002 p=0.87 (n=477,108)
+  Spearman(resíduo da virada, ordem de chegada no 1º): r=+0.0193 p=2e-40 (n=477,108)
+  resíduo médio da virada por décimo da ordem de chegada no 2º (pp): -0.05 +0.05 +0.09 +0.11 +0.12 +0.09 +0.08 +0.05 +0.03 +0.00
+  mesma seção chega em posição parecida nos dois turnos? Spearman=0.341
+
+======== 3. % do Lula x ordem de chegada dentro do estado, em cada turno
+  1º turno: correlação mediana entre UFs +0.068; positivas 18/28
+  2º turno: correlação mediana entre UFs +0.021; positivas 15/28
+  mesma direção nos dois turnos por UF: 23 de 28 ; correlação entre turnos 0.87
+
+======== 4. A forma da curva vem da ordem em que as regiões chegaram?
+  1º turno: 30 janelas de 10 min; correlação % Lula na janela x fatia do Nordeste 0.90; x % esperado só pela região 0.96
+  2º turno: 16 janelas de 10 min; correlação % Lula na janela x fatia do Nordeste -0.08; x % esperado só pela região 0.65
+  urnas por hora de chegada, 2º turno: {17: 1868, 19: 110033, 20: 330528, 21: 56659, 22: 115, 23: 2}
+  urnas por hora de chegada, 1º turno: {0: 8, 1: 6, 2: 1, 17: 75058, 18: 228486, 19: 126393, 20: 60721, 21: 7326, 22: 1080, 23: 126}
+
+======== 5. Seções que trocaram de urna entre os turnos
+  trocaram: 4,432 (0.9%); resíduo médio trocou +0.009 pp x não trocou +0.057 pp; Mann-Whitney p=0.19
+
+======== 6. Último dígito das contagens (≥ 100 votos), qui-quadrado contra uniforme
+  1º Lula   : n=258,120 p=0.000  dígitos 10.8 10.5 10.3 10.3 10.1 10.0 9.7 9.6 9.5 9.2
+  1º Flávio : n=307,492 p=0.000  dígitos 10.6 10.4 10.3 10.2 10.0 9.9 9.8 9.6 9.5 9.5
+  2º Lula   : n=347,454 p=0.000  dígitos 10.5 10.4 10.3 10.2 10.0 9.9 9.8 9.7 9.5 9.6
+  2º Flávio : n=328,991 p=0.000  dígitos 10.4 10.3 10.2 10.2 10.0 10.0 9.9 9.7 9.7 9.4
+
+======== 7. Mesmo número de votos na mesma seção nos dois turnos, comparado ao acaso
+  Lula: idênticas 2,429; ao acaso 4,709 ± 67 (embaralhando a mesma seção dentro do município)
+  Flávio: idênticas 18,797; ao acaso 6,156 ± 64 (embaralhando a mesma seção dentro do município)
+  1º turno: seções (≥100 votos) com resultado completo idêntico a outra seção: 42
+  2º turno: seções (≥100 votos) com resultado completo idêntico a outra seção: 117100
+
+======== 8. 'Impressão digital' da eleição: comparecimento alto + votação quase unânime
+  1º Lula  : seções com comparecimento ≥95% e ≥90% dos válidos: 61; ≥90% dos válidos (qualquer comparecimento): 3,619; correlação comparecimento x % +0.064
+  1º Flávio: seções com comparecimento ≥95% e ≥90% dos válidos: 3; ≥90% dos válidos (qualquer comparecimento): 180; correlação comparecimento x % -0.063
+  1º comparecimento > 100%: 0; = 100%: 9
+  2º Lula  : seções com comparecimento ≥95% e ≥90% dos válidos: 112; ≥90% dos válidos (qualquer comparecimento): 6,801; correlação comparecimento x % +0.066
+  2º Flávio: seções com comparecimento ≥95% e ≥90% dos válidos: 8; ≥90% dos válidos (qualquer comparecimento): 374; correlação comparecimento x % -0.066
+  2º comparecimento > 100%: 0; = 100%: 8
+
+======== 9. Eleitores liberados sem biometria x virada
+  mediana 6.1% do comparecimento; Spearman(sem biometria, resíduo da virada) r=-0.0667 p=0
+  1º: Spearman(sem biometria, % Lula) +0.030; seções com >50% sem biometria: 138
+  2º: Spearman(sem biometria, % Lula) +0.045; seções com >50% sem biometria: 97
+
+======== 10. Mudança de comparecimento x virada
+  comparecimento mudou +1.91 pp (mediana); Spearman com resíduo da virada r=+0.0135
+
+======== 11. Boletins emitidos antes do fim da votação
+  1º: encerradas antes do horário local esperado: 10; UFs: {'AM': 4, 'MS': 4, 'MT': 1, 'RO': 1}
+     exemplos: AM              ITACOATIARA  3 312 2026-10-04 08:21:46 2026-10-04 16:17:19 228 289
+              AM               MANACAPURU  6 213 2026-10-04 08:05:49 2026-10-04 16:00:53 178 223
+              AM SÃO GABRIEL DA CACHOEIRA 19 120 2026-10-04 08:14:44 2026-10-04 16:00:52 130 144
+  2º: encerradas antes do horário local esperado: 4; UFs: {'RO': 2, 'AM': 1, 'MS': 1}
+     exemplos: AM SÃO GABRIEL DA CACHOEIRA 19 120 2026-10-25 08:02:04 2026-10-25 16:01:07 127.0 144.0
+              MS              TRÊS LAGOAS 51  44 2026-10-25 08:13:13 2026-10-25 16:00:29 218.0 261.0
+              RO              PORTO VELHO  6 576 2026-10-25 08:04:46 2026-10-25 16:01:54  88.0 101.0

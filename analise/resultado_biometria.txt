@@ -1,0 +1,5 @@
+seções com perfil: 497,500
+sem controles             : coef sem biometria -0.2024 (erro 0.0138, t=-14.7); efeito de 1 desvio-padrão na virada: -0.0066 logit ≈ -0.164 pp
+com perfil do eleitorado  : coef sem biometria +0.0017 (erro 0.0065, t=+0.3); efeito de 1 desvio-padrão na virada: +0.0001 logit ≈ +0.001 pp
+  controles (t): p_idoso -24.3, p_jovem +17.3, p_baixa_esc +5.9, p_superior -9.5, p_mulher +16.0, p_biometria -0.7, p1 -4.5, orf +91.9, comp_var +12.8
+correlação dentro do município: sem biometria x idosos 0.398 | x baixa escolaridade 0.181 | x biometria cadastrada 0.025

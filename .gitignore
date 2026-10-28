@@ -1,0 +1,20 @@
+# ambiente
+.venv/
+__pycache__/
+*.pyc
+# dados oficiais (baixe com `make dados-do-zero`; ~250 GB)
+dados/*
+!dados/listas/
+dados/listas/*
+!dados/listas/*.txt
+dados/listas/sp_tmp/
+# intermediários grandes (regeneráveis)
+analise/brutos/
+analise/*.parquet
+grafico/web/dados.json
+grafico/web/logs.json
+grafico/web/relatorio.pdf
+!dados/listas/MANIFESTO.csv
+
+# termos pessoais bloqueados na publicação
+scripts/.privado.txt

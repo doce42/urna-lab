@@ -1,0 +1,47 @@
+dados reais (sem fraude): T1 33  T2 0.36 pp  T3 116  T4 2.05
+limiar de alarme:          T1 >62  T2 >1.09 pp  T3 >170  T4 >3.5
+
+== Troca de votos (Flávio -> Lula) em urnas sorteadas no país
+ 0.1% das urnas,  2% dos válidos               |     2,352 votos (0.00% dos válidos) | T1     33  -  | T2  0.36  -  | T3   116  -  | T4  2.06  -  | passou batido
+ 0.1% das urnas,  5% dos válidos               |     6,639 votos (0.01% dos válidos) | T1     39  -  | T2  0.37  -  | T3   117  -  | T4  2.01  -  | passou batido
+ 0.1% das urnas, 10% dos válidos               |    11,677 votos (0.01% dos válidos) | T1    210 SIM | T2  0.37  -  | T3   116  -  | T4  2.06  -  | DETECTADA
+ 0.1% das urnas, 20% dos válidos               |    24,901 votos (0.02% dos válidos) | T1    541 SIM | T2  0.39  -  | T3   116  -  | T4  2.04  -  | DETECTADA
+ 1.0% das urnas,  2% dos válidos               |    24,309 votos (0.02% dos válidos) | T1     35  -  | T2  0.36  -  | T3   116  -  | T4  2.04  -  | passou batido
+ 1.0% das urnas,  5% dos válidos               |    63,636 votos (0.05% dos válidos) | T1    111 SIM | T2  0.36  -  | T3   117  -  | T4  2.02  -  | DETECTADA
+ 1.0% das urnas, 10% dos válidos               |   124,743 votos (0.10% dos válidos) | T1   1962 SIM | T2  0.42  -  | T3   118  -  | T4  2.00  -  | DETECTADA
+ 1.0% das urnas, 20% dos válidos               |   250,367 votos (0.20% dos válidos) | T1   5088 SIM | T2  0.52  -  | T3   116  -  | T4  2.03  -  | DETECTADA
+ 5.0% das urnas,  2% dos válidos               |   124,579 votos (0.10% dos válidos) | T1     36  -  | T2  0.34  -  | T3   117  -  | T4  2.13  -  | passou batido
+ 5.0% das urnas,  5% dos válidos               |   309,241 votos (0.25% dos válidos) | T1    246 SIM | T2  0.43  -  | T3   119  -  | T4  2.08  -  | DETECTADA
+ 5.0% das urnas, 10% dos válidos               |   615,424 votos (0.50% dos válidos) | T1   6946 SIM | T2  0.65  -  | T3   126  -  | T4  1.98  -  | DETECTADA
+ 5.0% das urnas, 20% dos válidos               | 1,217,136 votos (0.98% dos válidos) | T1  24273 SIM | T2  1.10 SIM | T3   128  -  | T4  2.21  -  | DETECTADA
+20.0% das urnas,  2% dos válidos               |   496,895 votos (0.40% dos válidos) | T1     31  -  | T2  0.41  -  | T3   120  -  | T4  2.31  -  | passou batido
+20.0% das urnas,  5% dos válidos               | 1,241,878 votos (1.00% dos válidos) | T1     62 SIM | T2  0.74  -  | T3   128  -  | T4  2.77  -  | DETECTADA
+20.0% das urnas, 10% dos válidos               | 2,464,966 votos (1.99% dos válidos) | T1   3118 SIM | T2  1.69 SIM | T3   144  -  | T4  2.48  -  | DETECTADA
+20.0% das urnas, 20% dos válidos               | 4,881,766 votos (3.93% dos válidos) | T1  81685 SIM | T2  3.45 SIM | T3   162  -  | T4  2.62  -  | DETECTADA
+
+== Troca em todas as urnas de um estado
+todas as urnas de BA, 1% dos válidos           |    90,442 votos (0.07% dos válidos) | T1     34  -  | T2  0.36  -  | T3   117  -  | T4  2.54  -  | passou batido
+todas as urnas de BA, 2% dos válidos           |   181,934 votos (0.15% dos válidos) | T1     36  -  | T2  0.36  -  | T3   123  -  | T4  4.04 SIM | DETECTADA
+todas as urnas de BA, 5% dos válidos           |   453,967 votos (0.37% dos válidos) | T1     83 SIM | T2  0.36  -  | T3   134  -  | T4  9.98 SIM | DETECTADA
+todas as urnas de MG, 1% dos válidos           |   126,865 votos (0.10% dos válidos) | T1     34  -  | T2  0.36  -  | T3   116  -  | T4  2.40  -  | passou batido
+todas as urnas de MG, 2% dos válidos           |   252,026 votos (0.20% dos válidos) | T1     34  -  | T2  0.36  -  | T3   116  -  | T4  4.42 SIM | DETECTADA
+todas as urnas de MG, 5% dos válidos           |   629,520 votos (0.51% dos válidos) | T1     43  -  | T2  0.36  -  | T3   121  -  | T4 10.13 SIM | DETECTADA
+todas as urnas de SP, 1% dos válidos           |   266,207 votos (0.21% dos válidos) | T1     33  -  | T2  0.36  -  | T3   116  -  | T4  3.56 SIM | DETECTADA
+todas as urnas de SP, 2% dos válidos           |   525,687 votos (0.42% dos válidos) | T1     33  -  | T2  0.36  -  | T3   116  -  | T4  5.78 SIM | DETECTADA
+todas as urnas de SP, 5% dos válidos           | 1,312,908 votos (1.06% dos válidos) | T1     33  -  | T2  0.36  -  | T3   118  -  | T4  9.10 SIM | DETECTADA
+todas as urnas de PR, 1% dos válidos           |    69,359 votos (0.06% dos válidos) | T1     33  -  | T2  0.36  -  | T3   116  -  | T4  2.04  -  | passou batido
+todas as urnas de PR, 2% dos válidos           |   137,060 votos (0.11% dos válidos) | T1     33  -  | T2  0.36  -  | T3   116  -  | T4  3.70 SIM | DETECTADA
+todas as urnas de PR, 5% dos válidos           |   342,880 votos (0.28% dos válidos) | T1     34  -  | T2  0.36  -  | T3   116  -  | T4  7.79 SIM | DETECTADA
+
+== Troca uniforme no país inteiro
+todas as urnas, 0.5% dos válidos               |   568,151 votos (0.46% dos válidos) | T1     36  -  | T2  0.32  -  | T3   121  -  | T4  1.84  -  | passou batido
+todas as urnas, 1.0% dos válidos               | 1,248,013 votos (1.01% dos válidos) | T1     42  -  | T2  0.35  -  | T3   129  -  | T4  2.16  -  | passou batido
+todas as urnas, 2.0% dos válidos               | 2,482,040 votos (2.00% dos válidos) | T1     56  -  | T2  0.38  -  | T3   140  -  | T4  2.00  -  | passou batido
+
+== Enchimento de urna (eleitores que faltaram 'votando' no Lula)
+0.1% das urnas, 50% das abstenções             |    15,043 votos (0.01% dos válidos) | T1     56  -  | T2  0.40  -  | T3   117  -  | T4  2.04  -  | passou batido
+0.1% das urnas, 100% das abstenções            |    27,787 votos (0.02% dos válidos) | T1    218 SIM | T2  0.40  -  | T3   123  -  | T4  2.03  -  | DETECTADA
+1.0% das urnas, 50% das abstenções             |   155,663 votos (0.13% dos válidos) | T1    246 SIM | T2  0.41  -  | T3   126  -  | T4  2.06  -  | DETECTADA
+1.0% das urnas, 100% das abstenções            |   305,181 votos (0.25% dos válidos) | T1   1971 SIM | T2  0.62  -  | T3   234 SIM | T4  2.07  -  | DETECTADA
+5.0% das urnas, 50% das abstenções             |   761,672 votos (0.61% dos válidos) | T1    843 SIM | T2  1.44 SIM | T3   154  -  | T4  1.92  -  | DETECTADA
+5.0% das urnas, 100% das abstenções            | 1,526,886 votos (1.23% dos válidos) | T1   8130 SIM | T2  2.64 SIM | T3   674 SIM | T4  2.05  -  | DETECTADA

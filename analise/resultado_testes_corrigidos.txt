@@ -1,0 +1,20 @@
+seções 499,127; unânimes nos dois turnos (fora da escala): 30
+dispersão do z: 0.51 (1 seria só sorteio; >1 = eleitores diferentes entre turnos, normal)
+  |z robusto|>4: pró-Lula 192  pró-Flávio 54
+  |z robusto|>5: pró-Lula 33  pró-Flávio 13
+  |z robusto|>6: pró-Lula 11  pró-Flávio 6
+  assimetria do z: +0.160
+  as mais fora do padrão, por UF: {'SP': 7, 'AM': 6, 'PA': 6, 'AC': 4, 'CE': 4, 'MG': 3, 'PI': 3, 'MA': 2}
+  mudança de comparecimento mediana nessas seções: 0.0 eleitores | no Brasil: 6.0
+virada x ordem de chegada no 1º (dentro do município): Spearman +0.0291
+virada x ordem de chegada no 2º (dentro do município): Spearman +0.0043
+  resíduo médio por décimo da chegada no 2º: -0.002 +0.010 +0.013 +0.018 +0.017 +0.017 +0.018 +0.014 +0.009 +0.014 (em z)
+urna trocada: z médio -0.002 x +0.013; Mann-Whitney p=0.1
+sem biometria x virada: Spearman -0.0593; controlando pelo % do Lula no 1º: -0.0590
+virada por faixa do % do Lula no 1º (mediana do resíduo, logit): {Interval(-0.001, 0.2, closed='right'): 0.02, Interval(0.2, 0.4, closed='right'): 0.002, Interval(0.4, 0.6, closed='right'): -0.003, Interval(0.6, 0.8, closed='right'): -0.002, Interval(0.8, 0.95, closed='right'): -0.004, Interval(0.95, 1.0, closed='right'): 0.033}
+
+Último dígito: observado x esperado pela inclinação local (ajuste exponencial por janela), em pontos percentuais
+  1º Lula  : diferença por dígito 0-9: -0.02 -0.10 -0.12 +0.07 +0.01 +0.12 +0.01 -0.03 +0.09 -0.03  p=0.139
+  1º Flávio: diferença por dígito 0-9: +0.06 -0.05 -0.05 +0.07 +0.00 +0.02 +0.01 -0.05 -0.03 +0.02  p=0.771
+  2º Lula  : diferença por dígito 0-9: +0.00 -0.05 +0.01 -0.01 +0.00 -0.02 +0.01 +0.03 -0.06 +0.08  p=0.842
+  2º Flávio: diferença por dígito 0-9: -0.08 -0.01 -0.03 +0.10 -0.01 +0.02 +0.10 -0.03 +0.06 -0.13  p=0.050

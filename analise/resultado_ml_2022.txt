@@ -1,0 +1,35 @@
+{
+ "ano": "2022",
+ "secoes": 470964,
+ "auc_teste": 0.9187158248719266,
+ "limiar_1pct": 0.5145183034041843,
+ "poder_por_cenario": {
+  "enchimento 30% das abstenções": 0.5859238881247134,
+  "enchimento 60% das abstenções": 0.9901061995098485,
+  "troca 10%": 0.3541160841082963,
+  "troca 20%": 0.9605348086675888,
+  "troca 5%": 0.06254829764989318
+ },
+ "reais": {
+  "secoes_avaliadas": 219184,
+  "fracao_marcada": 0.0036179648149499964,
+  "esperado_sem_fraude": 0.01,
+  "marcadas": 793,
+  "marcadas_por_lado": {
+   "virada_maior_que_municipio": 419,
+   "virada_menor_que_municipio": 372
+  },
+  "marcadas_por_uf_top": {
+   "RJ": 153,
+   "MG": 78,
+   "BA": 73,
+   "SP": 68,
+   "MA": 61,
+   "PA": 54,
+   "CE": 48,
+   "RS": 36,
+   "AM": 25,
+   "GO": 23
+  }
+ }
+}

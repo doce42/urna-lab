@@ -1,0 +1,1419 @@
+{
+ "turno": 2,
+ "urnas_avaliadas": 499205,
+ "casos": 76,
+ "explicados_operacionais": 75,
+ "inconsistencias_de_publicacao_D1": 1,
+ "sem_explicacao": 0,
+ "por_tipo": {
+  "b_confirmacoes_x_total": 56,
+  "c_certificado_x_log": 17,
+  "a_log_x_comparecimento": 9,
+  "d_fora_do_bu": 2
+ },
+ "por_explicacao": {
+  "E4": 48,
+  "E2": 31,
+  "E3": 13,
+  "E5": 3,
+  "D1": 1
+ },
+ "casos_lista": [
+  {
+   "uf": "BA",
+   "municipio": "33634",
+   "zona": "75",
+   "secao": "137",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 235,
+   "comparecimento": 235,
+   "cert": "UEAO02240143",
+   "urnas_log": "02222131,02240143",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "34711",
+   "zona": "21",
+   "secao": "178",
+   "tipos": [
+    "a_log_x_comparecimento"
+   ],
+   "log": 233,
+   "comparecimento": 234,
+   "cert": "UEAO02179288",
+   "urnas_log": "02179288",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E5 queda de energia/reinício entre a confirmação e o registro do voto no log"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "35653",
+   "zona": "173",
+   "secao": "235",
+   "tipos": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total"
+   ],
+   "log": 204,
+   "comparecimento": 217,
+   "cert": "ueao01656557",
+   "urnas_log": "01656557",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "37311",
+   "zona": "50",
+   "secao": "156",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 184,
+   "comparecimento": 184,
+   "cert": "UEAO02267022",
+   "urnas_log": "02267022",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "37516",
+   "zona": "30",
+   "secao": "58",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 195,
+   "comparecimento": 195,
+   "cert": "ueao01841044",
+   "urnas_log": "01841044",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "37850",
+   "zona": "51",
+   "secao": "146",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 283,
+   "comparecimento": 283,
+   "cert": "ueao01676700",
+   "urnas_log": "01676700,01681984",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "38458",
+   "zona": "87",
+   "secao": "193",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 242,
+   "comparecimento": 242,
+   "cert": "UEAO02195558",
+   "urnas_log": "02129342",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "38490",
+   "zona": "4",
+   "secao": "210",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 364,
+   "comparecimento": 364,
+   "cert": "UEAO02413909",
+   "urnas_log": "02413909",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "BA",
+   "municipio": "39870",
+   "zona": "133",
+   "secao": "184",
+   "tipos": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total"
+   ],
+   "log": 413,
+   "comparecimento": 228,
+   "cert": "UEAO02176991",
+   "urnas_log": "02172386,02176991",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "CE",
+   "municipio": "13390",
+   "zona": "92",
+   "secao": "51",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 113,
+   "comparecimento": 113,
+   "cert": "UEAO02230371",
+   "urnas_log": "02230371",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "CE",
+   "municipio": "14192",
+   "zona": "40",
+   "secao": "1",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 134,
+   "comparecimento": 134,
+   "cert": "ueao01818648",
+   "urnas_log": "01818648",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "DF",
+   "municipio": "97012",
+   "zona": "19",
+   "secao": "226",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 272,
+   "comparecimento": 272,
+   "cert": "UEAO02230136",
+   "urnas_log": "02230136",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "ES",
+   "municipio": "57932",
+   "zona": "9",
+   "secao": "112",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 304,
+   "comparecimento": 304,
+   "cert": "ueao01758779",
+   "urnas_log": "01750820",
+   "origem_ceft": "BU gerado por RED em urna de contingência",
+   "explicacoes": [
+    "E2 CEFT: origem 'BU gerado por RED em urna de contingência', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "ES",
+   "municipio": "57932",
+   "zona": "9",
+   "secao": "85",
+   "tipos": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total",
+    "c_certificado_x_log"
+   ],
+   "log": 612,
+   "comparecimento": 308,
+   "cert": "ueao01758779",
+   "urnas_log": "01750820,01841837",
+   "origem_ceft": "BU gerado por RED em urna de seção",
+   "explicacoes": [
+    "E2 CEFT: origem 'BU gerado por RED em urna de seção', divergência 'nan'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "GO",
+   "municipio": "92274",
+   "zona": "145",
+   "secao": "168",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 329,
+   "comparecimento": 329,
+   "cert": "UEAO02301067",
+   "urnas_log": "02301067",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "GO",
+   "municipio": "92282",
+   "zona": "57",
+   "secao": "43",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 283,
+   "comparecimento": 283,
+   "cert": "UEAO02202827",
+   "urnas_log": "02202827",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MA",
+   "municipio": "8893",
+   "zona": "47",
+   "secao": "609",
+   "tipos": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total"
+   ],
+   "log": 188,
+   "comparecimento": 224,
+   "cert": "ueao01664037",
+   "urnas_log": "01664037",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MA",
+   "municipio": "9016",
+   "zona": "18",
+   "secao": "180",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 230,
+   "comparecimento": 230,
+   "cert": "ueao01809496",
+   "urnas_log": "01792822,01809496",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MA",
+   "municipio": "9210",
+   "zona": "3",
+   "secao": "494",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 195,
+   "comparecimento": 195,
+   "cert": "ueao01660277",
+   "urnas_log": "01660277",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "40282",
+   "zona": "63",
+   "secao": "180",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 275,
+   "comparecimento": 275,
+   "cert": "UEAO02133610",
+   "urnas_log": "02133610",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "40690",
+   "zona": "16",
+   "secao": "264",
+   "tipos": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total",
+    "c_certificado_x_log"
+   ],
+   "log": 160,
+   "comparecimento": 114,
+   "cert": "UEAO02092884",
+   "urnas_log": "02080602,02129190",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "41882",
+   "zona": "320",
+   "secao": "185",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 96,
+   "comparecimento": 96,
+   "cert": "UEAO02066579",
+   "urnas_log": "02079428",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "42196",
+   "zona": "222",
+   "secao": "356",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 205,
+   "comparecimento": 205,
+   "cert": "UEAO02084097",
+   "urnas_log": "02084097",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "44750",
+   "zona": "44",
+   "secao": "93",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 278,
+   "comparecimento": 278,
+   "cert": "UEAO02054072",
+   "urnas_log": "02054072",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "45993",
+   "zona": "46",
+   "secao": "32",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 242,
+   "comparecimento": 242,
+   "cert": "ueao01652806",
+   "urnas_log": "01652806,01674717,01777753",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "46698",
+   "zona": "139",
+   "secao": "34",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 158,
+   "comparecimento": 158,
+   "cert": "ueao01752112",
+   "urnas_log": "01752112",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "47015",
+   "zona": "147",
+   "secao": "126",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 79,
+   "comparecimento": 79,
+   "cert": "UEAO02070474",
+   "urnas_log": "02070474",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "47899",
+   "zona": "168",
+   "secao": "29",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 166,
+   "comparecimento": 166,
+   "cert": "UEAO02419341",
+   "urnas_log": "02270065,02419341",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "49379",
+   "zona": "219",
+   "secao": "138",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 328,
+   "comparecimento": 328,
+   "cert": "ueao01835526",
+   "urnas_log": "01835526",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "50393",
+   "zona": "223",
+   "secao": "4",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 295,
+   "comparecimento": 295,
+   "cert": "UEAO02062640",
+   "urnas_log": "02062640",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MG",
+   "municipio": "53511",
+   "zona": "167",
+   "secao": "211",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 248,
+   "comparecimento": 248,
+   "cert": "UEAO02413189",
+   "urnas_log": "02413189",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MS",
+   "municipio": "90514",
+   "zona": "53",
+   "secao": "21",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 260,
+   "comparecimento": 260,
+   "cert": "UEAO02447732",
+   "urnas_log": "02338080,02447732",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "MT",
+   "municipio": "90182",
+   "zona": "13",
+   "secao": "65",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 169,
+   "comparecimento": 169,
+   "cert": "UEAO02261861",
+   "urnas_log": "02261861",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PA",
+   "municipio": "4278",
+   "zona": "98",
+   "secao": "286",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 281,
+   "comparecimento": 281,
+   "cert": "UEAO02157245",
+   "urnas_log": "02157245",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PA",
+   "municipio": "4278",
+   "zona": "98",
+   "secao": "294",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 291,
+   "comparecimento": 291,
+   "cert": "UEAO02192172",
+   "urnas_log": "02156713",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PA",
+   "municipio": "5290",
+   "zona": "36",
+   "secao": "441",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 255,
+   "comparecimento": 255,
+   "cert": "ueao01808117",
+   "urnas_log": "01657575,01790728",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PA",
+   "municipio": "5835",
+   "zona": "106",
+   "secao": "289",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 295,
+   "comparecimento": 295,
+   "cert": "UEAO02148546",
+   "urnas_log": "02148546",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PB",
+   "municipio": "19933",
+   "zona": "3",
+   "secao": "259",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 240,
+   "comparecimento": 240,
+   "cert": "ueao01667313",
+   "urnas_log": "01799274",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PB",
+   "municipio": "21750",
+   "zona": "2",
+   "secao": "254",
+   "tipos": [
+    "a_log_x_comparecimento"
+   ],
+   "log": 303,
+   "comparecimento": 304,
+   "cert": "ueao01799994",
+   "urnas_log": "01799994",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E5 queda de energia/reinício entre a confirmação e o registro do voto no log"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PB",
+   "municipio": "21750",
+   "zona": "2",
+   "secao": "374",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 291,
+   "comparecimento": 291,
+   "cert": "ueao01799902",
+   "urnas_log": "01799902",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PE",
+   "municipio": "23515",
+   "zona": "54",
+   "secao": "68",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 291,
+   "comparecimento": 291,
+   "cert": "ueao01815624",
+   "urnas_log": "01815624",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PE",
+   "municipio": "23914",
+   "zona": "125",
+   "secao": "50",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 329,
+   "comparecimento": 329,
+   "cert": "UEAO02163849",
+   "urnas_log": "02163849",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PE",
+   "municipio": "24511",
+   "zona": "131",
+   "secao": "79",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 313,
+   "comparecimento": 313,
+   "cert": "UEAO02179698",
+   "urnas_log": "02179698",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PE",
+   "municipio": "24791",
+   "zona": "90",
+   "secao": "24",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 243,
+   "comparecimento": 243,
+   "cert": "UEAO02045402",
+   "urnas_log": "02184400",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PI",
+   "municipio": "11533",
+   "zona": "3",
+   "secao": "216",
+   "tipos": [
+    "a_log_x_comparecimento"
+   ],
+   "log": 258,
+   "comparecimento": 259,
+   "cert": "UEAO02233765",
+   "urnas_log": "02233765",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E5 queda de energia/reinício entre a confirmação e o registro do voto no log"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PR",
+   "municipio": "74322",
+   "zona": "144",
+   "secao": "23",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 217,
+   "comparecimento": 217,
+   "cert": "UEAO02020523",
+   "urnas_log": "02020523",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PR",
+   "municipio": "74594",
+   "zona": "48",
+   "secao": "21",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 270,
+   "comparecimento": 270,
+   "cert": "UEAO02090665",
+   "urnas_log": "02090665",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "PR",
+   "municipio": "75353",
+   "zona": "175",
+   "secao": "142",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 309,
+   "comparecimento": 309,
+   "cert": "UEAO02326566",
+   "urnas_log": "02326566",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RJ",
+   "municipio": "58394",
+   "zona": "105",
+   "secao": "74",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 251,
+   "comparecimento": 251,
+   "cert": "UEAO02438990",
+   "urnas_log": "02438990",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RJ",
+   "municipio": "58696",
+   "zona": "27",
+   "secao": "139",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 249,
+   "comparecimento": 249,
+   "cert": "UEAO02189420",
+   "urnas_log": "02179194",
+   "origem_ceft": "BU gerado por RED em urna de seção",
+   "explicacoes": [
+    "E2 CEFT: origem 'BU gerado por RED em urna de seção', divergência 'nan'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RJ",
+   "municipio": "58971",
+   "zona": "68",
+   "secao": "154",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 248,
+   "comparecimento": 248,
+   "cert": "UEAO02164896",
+   "urnas_log": "02226870",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RJ",
+   "municipio": "60011",
+   "zona": "17",
+   "secao": "415",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 302,
+   "comparecimento": 302,
+   "cert": "UEAO02206745",
+   "urnas_log": "02206745",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RJ",
+   "municipio": "60011",
+   "zona": "234",
+   "secao": "189",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 318,
+   "comparecimento": 318,
+   "cert": "UEAO02224900",
+   "urnas_log": "02224900",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RN",
+   "municipio": "17418",
+   "zona": "5",
+   "secao": "72",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 207,
+   "comparecimento": 207,
+   "cert": "UEAO02101323",
+   "urnas_log": "02101323",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RS",
+   "municipio": "84913",
+   "zona": "138",
+   "secao": "14",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 274,
+   "comparecimento": 274,
+   "cert": "UEAO02334491",
+   "urnas_log": "02282678",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RS",
+   "municipio": "86800",
+   "zona": "142",
+   "secao": "303",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 205,
+   "comparecimento": 205,
+   "cert": "ueao01802269",
+   "urnas_log": "01802269",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RS",
+   "municipio": "88153",
+   "zona": "163",
+   "secao": "388",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 338,
+   "comparecimento": 338,
+   "cert": "UEAO02244717",
+   "urnas_log": "02244717",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RS",
+   "municipio": "88412",
+   "zona": "41",
+   "secao": "206",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 218,
+   "comparecimento": 218,
+   "cert": "UEAO02163550",
+   "urnas_log": "02163550",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "RS",
+   "municipio": "89060",
+   "zona": "17",
+   "secao": "191",
+   "tipos": [
+    "a_log_x_comparecimento",
+    "b_confirmacoes_x_total"
+   ],
+   "log": 90,
+   "comparecimento": 92,
+   "cert": "UEAO02317450",
+   "urnas_log": "02317450,02320374",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SC",
+   "municipio": "80934",
+   "zona": "11",
+   "secao": "136",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 219,
+   "comparecimento": 219,
+   "cert": "ueao01830064",
+   "urnas_log": "01830064",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "61310",
+   "zona": "158",
+   "secao": "281",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 336,
+   "comparecimento": 336,
+   "cert": "UEAO02299987",
+   "urnas_log": "02299987",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "61654",
+   "zona": "14",
+   "secao": "250",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 259,
+   "comparecimento": 259,
+   "cert": "ueao01794345",
+   "urnas_log": "01786184",
+   "origem_ceft": "BU gerado por RED em urna de contingência",
+   "explicacoes": [
+    "E2 CEFT: origem 'BU gerado por RED em urna de contingência', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "62936",
+   "zona": "344",
+   "secao": "131",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 212,
+   "comparecimento": 212,
+   "cert": "UEAO02162051",
+   "urnas_log": "02068503",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "63231",
+   "zona": "40",
+   "secao": "7",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 258,
+   "comparecimento": 258,
+   "cert": "ueao01794637",
+   "urnas_log": "01794637",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "64653",
+   "zona": "151",
+   "secao": "27",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 283,
+   "comparecimento": 283,
+   "cert": "ueao01811149",
+   "urnas_log": "01811149",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "64750",
+   "zona": "310",
+   "secao": "303",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 280,
+   "comparecimento": 280,
+   "cert": "UEAO02146123",
+   "urnas_log": "02145779,02146123",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "64777",
+   "zona": "393",
+   "secao": "312",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 262,
+   "comparecimento": 262,
+   "cert": "UEAO02399743",
+   "urnas_log": "02396114",
+   "origem_ceft": "BU gerado por RED em urna de seção",
+   "explicacoes": [
+    "E2 CEFT: origem 'BU gerado por RED em urna de seção', divergência 'nan'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "64777",
+   "zona": "395",
+   "secao": "298",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": null,
+   "comparecimento": 268,
+   "cert": "ueao01811067",
+   "urnas_log": NaN,
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "D1 arquivo(s) ['log.jez'] na lista assinada pela urna, mas ausente(s) da publicação oficial"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "66397",
+   "zona": "399",
+   "secao": "48",
+   "tipos": [
+    "c_certificado_x_log"
+   ],
+   "log": 201,
+   "comparecimento": 201,
+   "cert": "UEAO02014724",
+   "urnas_log": "02143603",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "67890",
+   "zona": "315",
+   "secao": "70",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 254,
+   "comparecimento": 254,
+   "cert": "UEAO02211070",
+   "urnas_log": "02211070",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "70750",
+   "zona": "409",
+   "secao": "117",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 258,
+   "comparecimento": 258,
+   "cert": "UEAO02396757",
+   "urnas_log": "02396757",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "71072",
+   "zona": "381",
+   "secao": "91",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 260,
+   "comparecimento": 260,
+   "cert": "ueao01816307",
+   "urnas_log": "01816307",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "SP",
+   "municipio": "71579",
+   "zona": "324",
+   "secao": "310",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 339,
+   "comparecimento": 339,
+   "cert": "UEAO02137203",
+   "urnas_log": "02137203,02137721",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E2 CEFT: origem 'Urna Eletrônica', divergência 'C'",
+    "E3 urna substituída no meio do dia",
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "TO",
+   "municipio": "92410",
+   "zona": "1",
+   "secao": "282",
+   "tipos": [
+    "b_confirmacoes_x_total"
+   ],
+   "log": 248,
+   "comparecimento": 248,
+   "cert": "UEAO02256755",
+   "urnas_log": "02256755",
+   "origem_ceft": "Urna Eletrônica",
+   "explicacoes": [
+    "E4 uma confirmação sem voto computado (voto interrompido)"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "ZZ",
+   "municipio": "29564",
+   "zona": "1",
+   "secao": "91",
+   "tipos": [
+    "d_fora_do_bu"
+   ],
+   "log": null,
+   "comparecimento": null,
+   "cert": NaN,
+   "urnas_log": NaN,
+   "origem_ceft": "Sistema de apuração",
+   "explicacoes": [
+    "E2 CEFT: origem 'Sistema de apuração', divergência 'C'"
+   ],
+   "explicado": true
+  },
+  {
+   "uf": "ZZ",
+   "municipio": "30686",
+   "zona": "1",
+   "secao": "443",
+   "tipos": [
+    "d_fora_do_bu"
+   ],
+   "log": null,
+   "comparecimento": null,
+   "cert": NaN,
+   "urnas_log": NaN,
+   "origem_ceft": "Sistema de apuração",
+   "explicacoes": [
+    "E2 CEFT: origem 'Sistema de apuração', divergência 'C'"
+   ],
+   "explicado": true
+  }
+ ]
+}

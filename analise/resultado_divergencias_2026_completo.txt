@@ -1,0 +1,78 @@
+{
+ "secoes": 497830,
+ "escala_z": 0.44124477615707014,
+ "E01": {
+  "local": {
+   "fracao_variancia_entre_grupos": 0.30358758461590246,
+   "grupos": 94475
+  },
+  "zona": {
+   "fracao_variancia_entre_grupos": 0.04722538391446829,
+   "grupos": 2640
+  },
+  "mun": {
+   "fracao_variancia_entre_grupos": 0.06556772060229217,
+   "grupos": 5571
+  },
+  "SG_UF": {
+   "fracao_variancia_entre_grupos": 9.018923875581925e-05,
+   "grupos": 27
+  }
+ },
+ "E02": {
+  "local": {
+   "grupos": 59885,
+   "significativos_BH": 683,
+   "sig_pro_lula": 390,
+   "sig_pro_adversario": 293,
+   "dp_zg": 1.2980379455070072,
+   "esperado_dp_sem_agrupamento": 1.0
+  },
+  "zona": {
+   "grupos": 2640,
+   "significativos_BH": 1076,
+   "sig_pro_lula": 567,
+   "sig_pro_adversario": 509,
+   "dp_zg": 3.0623637285204515,
+   "esperado_dp_sem_agrupamento": 1.0
+  },
+  "mun": {
+   "grupos": 5571,
+   "significativos_BH": 1303,
+   "sig_pro_lula": 663,
+   "sig_pro_adversario": 640,
+   "dp_zg": 2.4840528413974745,
+   "esperado_dp_sem_agrupamento": 1.0
+  }
+ }
+}
+
+== maiores divergências por mun
+  AL BELO MONTE                   AL-27170               seções   16 z  -26.1 virada obs -0.263 esp +0.242 | Lula 1º 0.68 órfão 0.04
+  PI SANTO ANTÔNIO DE LISBOA      PI-11878               seções   24 z  -22.4 virada obs -0.234 esp +0.192 | Lula 1º 0.74 órfão 0.03
+  CE CRATEÚS                      CE-13838               seções  212 z  -16.9 virada obs +0.099 esp +0.208 | Lula 1º 0.71 órfão 0.03
+  SP SANTOS                       SP-70718               seções 1076 z  +16.2 virada obs +0.363 esp +0.323 | Lula 1º 0.40 órfão 0.11
+  MG JUIZ DE FORA                 MG-47333               seções 1256 z  +15.7 virada obs +0.329 esp +0.294 | Lula 1º 0.50 órfão 0.09
+  BA CALDEIRÃO GRANDE             BA-34096               seções   34 z  -15.2 virada obs -0.081 esp +0.157 | Lula 1º 0.67 órfão 0.04
+  RJ CAMPOS DOS GOYTACAZES        RJ-58190               seções 1190 z  +14.7 virada obs +0.372 esp +0.336 | Lula 1º 0.34 órfão 0.07
+  MG BELO HORIZONTE               MG-41238               seções 4927 z  -14.6 virada obs +0.316 esp +0.332 | Lula 1º 0.41 órfão 0.10
+
+== maiores divergências por zona
+  CE IPAPORANGA                   CE-20                  seções  250 z  -18.4 virada obs +0.100 esp +0.210 | Lula 1º 0.72 órfão 0.03
+  CE MADALENA                     CE-63                  seções  211 z  +13.2 virada obs +0.411 esp +0.307 | Lula 1º 0.74 órfão 0.06
+  PA ORIXIMINÁ                    PA-38                  seções  195 z  +12.2 virada obs +0.293 esp +0.201 | Lula 1º 0.52 órfão 0.04
+  RJ CAMPOS DOS GOYTACAZES        RJ-75                  seções  358 z  +11.6 virada obs +0.393 esp +0.343 | Lula 1º 0.35 órfão 0.07
+  SP SANTOS                       SP-118                 seções  393 z  +11.6 virada obs +0.405 esp +0.356 | Lula 1º 0.45 órfão 0.11
+  BA PRESIDENTE TANCREDO NEVES    BA-197                 seções  156 z  -11.4 virada obs +0.110 esp +0.189 | Lula 1º 0.64 órfão 0.04
+  BA CAMAÇARI                     BA-170                 seções  265 z  -11.2 virada obs +0.287 esp +0.340 | Lula 1º 0.62 órfão 0.07
+  BA VITÓRIA DA CONQUISTA         BA-39                  seções  291 z  -11.0 virada obs +0.261 esp +0.311 | Lula 1º 0.51 órfão 0.07
+
+== maiores divergências por local
+  AL BELO MONTE                   AL-27170-29-1015       seções    5 z  -17.0 virada obs -0.320 esp +0.251 | Lula 1º 0.67 órfão 0.04
+  SP SÃO PAULO                    SP-71072-2-1546        seções    7 z  -14.0 virada obs -0.109 esp +0.295 | Lula 1º 0.57 órfão 0.11
+  AL BELO MONTE                   AL-27170-29-1023       seções    6 z  -13.8 virada obs -0.198 esp +0.247 | Lula 1º 0.68 órfão 0.04
+  PI SANTO ANTÔNIO DE LISBOA      PI-11878-28-1031       seções    5 z  -12.9 virada obs -0.345 esp +0.155 | Lula 1º 0.73 órfão 0.02
+  AL BELO MONTE                   AL-27170-29-1040       seções    3 z  -12.0 virada obs -0.345 esp +0.205 | Lula 1º 0.69 órfão 0.03
+  SP SÃO PAULO                    SP-71072-2-1090        seções   31 z  -11.0 virada obs +0.140 esp +0.295 | Lula 1º 0.38 órfão 0.12
+  CE CAUCAIA                      CE-13730-120-1562      seções   12 z  +10.8 virada obs +0.514 esp +0.246 | Lula 1º 0.59 órfão 0.04
+  CE SÃO GONÇALO DO AMARANTE      CE-15490-36-1155       seções    9 z   +9.5 virada obs +0.522 esp +0.275 | Lula 1º 0.51 órfão 0.06

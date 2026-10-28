@@ -1,0 +1,20 @@
+== 2026 C06 transferência (linhas: 1º turno; colunas: destino no 2º), %:
+                        Lula  Adversário  Branco/nulo  Abstenção
+Lula (1º)               98.9         0.0          0.2        1.0
+Adversário (1º)          0.2        98.8          0.3        0.7
+Augusto Cury (1º)       52.8        28.2         14.9        4.1
+Renan Santos (1º)       39.3        34.9         16.9        8.8
+Ronaldo Caiado (1º)     33.3        51.2         11.6        3.9
+Romeu Zema (1º)          5.1        81.0         10.6        3.3
+Outros candidatos (1º)  84.0         8.2          6.7        1.1
+Branco/nulo (1º)        62.0         1.4         36.1        0.4
+Abstenção (1º)           9.7         2.4          1.1       86.8
+conferência total previsto x observado: {'Lula': 64058055, 'Adversário': 59700706, 'Branco/nulo': 4110984, 'Abstenção': 29950287} {'Lula': 64051735, 'Adversário': 59652488, 'Branco/nulo': 4143777, 'Abstenção': 29972032}
+C08 região: {'Centro-Oeste': (np.float64(32.62), np.float64(39.99), np.float64(7.37)), 'Nordeste': (np.float64(63.77), np.float64(69.37), np.float64(5.6)), 'Norte': (np.float64(44.65), np.float64(50.0), np.float64(5.36)), 'Sudeste': (np.float64(39.68), np.float64(47.24), np.float64(7.56)), 'Sul': (np.float64(31.28), np.float64(37.42), np.float64(6.15))}
+C08 porte: {'até 10 mil eleitores': (np.float64(54.06), np.float64(5.01), np.float64(80.49)), '10–50 mil': (np.float64(56.21), np.float64(5.45), np.float64(80.4)), '50–200 mil': (np.float64(47.66), np.float64(6.83), np.float64(81.34)), '200 mil–1 milhão': (np.float64(47.88), np.float64(7.55), np.float64(81.69)), 'mais de 1 milhão': (np.float64(53.37), np.float64(8.01), np.float64(81.03))}
+perfil lula_1t {'60 anos ou mais': np.float64(-9.33), 'até 24 anos': np.float64(18.06), 'até fundamental incompleto': np.float64(37.15), 'superior (completo ou incompleto)': np.float64(2.56), 'mulheres': np.float64(10.31)}
+perfil lula_2t {'60 anos ou mais': np.float64(-10.94), 'até 24 anos': np.float64(20.65), 'até fundamental incompleto': np.float64(33.37), 'superior (completo ou incompleto)': np.float64(-2.24), 'mulheres': np.float64(14.1)}
+perfil comparecimento_1t {'60 anos ou mais': np.float64(-14.44), 'até 24 anos': np.float64(-4.88), 'até fundamental incompleto': np.float64(1.89), 'superior (completo ou incompleto)': np.float64(8.52), 'mulheres': np.float64(1.21)}
+perfil comparecimento_2t {'60 anos ou mais': np.float64(-11.26), 'até 24 anos': np.float64(-6.38), 'até fundamental incompleto': np.float64(3.47), 'superior (completo ou incompleto)': np.float64(7.07), 'mulheres': np.float64(4.46)}
+perfil virada {'60 anos ou mais': np.float64(-1.61), 'até 24 anos': np.float64(2.59), 'até fundamental incompleto': np.float64(-3.78), 'superior (completo ou incompleto)': np.float64(-4.8), 'mulheres': np.float64(3.78)}
+perfil mudanca_comparecimento {'60 anos ou mais': np.float64(3.18), 'até 24 anos': np.float64(-1.5), 'até fundamental incompleto': np.float64(1.58), 'superior (completo ou incompleto)': np.float64(-1.45), 'mulheres': np.float64(3.25)}

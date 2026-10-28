@@ -1,0 +1,35 @@
+{
+ "ano": "2026",
+ "secoes": 497830,
+ "auc_teste": 0.9128662407888477,
+ "limiar_1pct": 0.49010367961918705,
+ "poder_por_cenario": {
+  "enchimento 30% das abstenções": 0.4115253934191702,
+  "enchimento 60% das abstenções": 0.9699725006653065,
+  "troca 10%": 0.38494500154614125,
+  "troca 20%": 0.9693539727988547,
+  "troca 5%": 0.07049469964664311
+ },
+ "reais": {
+  "secoes_avaliadas": 225227,
+  "fracao_marcada": 0.0034631727101990437,
+  "esperado_sem_fraude": 0.01,
+  "marcadas": 780,
+  "marcadas_por_lado": {
+   "virada_maior_que_municipio": 412,
+   "virada_menor_que_municipio": 361
+  },
+  "marcadas_por_uf_top": {
+   "BA": 102,
+   "MG": 70,
+   "MA": 54,
+   "MS": 51,
+   "CE": 50,
+   "PA": 49,
+   "SP": 46,
+   "RS": 43,
+   "AL": 42,
+   "AM": 36
+  }
+ }
+}

@@ -1,0 +1,43 @@
+minutos com urnas chegando: 213; urnas 499,205
+% do Lula na curva acumulada: começou 58.59%, mín 49.48% às 20:02:00, máx 58.59% às 17:05:00, final 51.79%
+
+== Reversões da curva acumulada (mudança de direção de pelo menos 0,05 pp, depois das 19h)
+  0 reversões
+
+== Cada minuto: o lote votou como o 1º turno dele indicava?
+  erro da previsão por minuto (pp do Lula), previsão pelo município: mediana 0.08, pior 3.92
+  previsão pelo município: minutos com |z|>3: 10 de 213 (ao acaso ~1); |z|>4: 4; desvio do z 1.44
+  previsão pelo estado: minutos com |z|>3: 46 de 213 (ao acaso ~1); |z|>4: 18; desvio do z 2.38
+  correlação entre o erro do minuto e a hora (tendência ao longo da noite): 0.099
+
+  10 minutos mais fora do previsto (previsão pelo município):
+   21:08:00 urnas  5385 | Lula  52.7% previsto  52.8% (erro -0.17 pp, z -6.0) | RJ 2809, SP 1356, BA 436
+   21:50:00 urnas    31 | Lula  62.0% previsto  63.8% (erro -1.80 pp, z -5.1) | BA 23, MG 6, MA 1
+   21:06:00 urnas  5498 | Lula  52.5% previsto  52.3% (erro +0.14 pp, z +4.9) | RJ 1905, SP 1517, BA 567
+   21:39:00 urnas    45 | Lula  69.7% previsto  70.8% (erro -1.14 pp, z -4.4) | BA 44, MA 1
+   21:32:00 urnas    26 | Lula  58.7% previsto  60.1% (erro -1.47 pp, z -3.7) | SP 16, MA 3, ZZ 2
+   20:56:00 urnas  5371 | Lula  53.7% previsto  53.6% (erro +0.10 pp, z +3.4) | SP 1606, MG 806, RJ 797
+   20:53:00 urnas  5529 | Lula  55.0% previsto  54.9% (erro +0.09 pp, z +3.2) | SP 1852, MG 648, RJ 642
+   20:58:00 urnas  5585 | Lula  55.0% previsto  55.1% (erro -0.10 pp, z -3.1) | SP 1557, RJ 1094, MG 790
+   21:05:00 urnas  5390 | Lula  53.7% previsto  53.8% (erro -0.09 pp, z -3.0) | SP 1835, RJ 1798, MG 527
+   21:54:00 urnas    17 | Lula  69.1% previsto  70.4% (erro -1.28 pp, z -3.0) | BA 16, PA 1
+
+mudanças de direção minuto a minuto depois das 19h: real 29; simulado com votos previstos + ruído: 28 ± 2
+== Curva real x curva prevista pelo 1º turno de cada urna (mesma ordem de chegada)
+  diferença real − prevista (município): máx 0.08 pp, mediana 0.00 pp
+  diferença real − prevista (só virada do estado): máx 0.32 pp
+  correlação dos movimentos minuto a minuto (real x previsto): 0.999
+  17:05  real 58.59%  previsto 58.67%  | votos apurados até aqui por região: {'CO': 0.02, 'EX': 0.78, 'N': 0.13, 'NE': 0.02, 'S': 0.04, 'SE': 0.01}
+  19:05  real 52.18%  previsto 52.27%  | votos apurados até aqui por região: {'CO': 0.13, 'EX': 0.12, 'N': 0.32, 'NE': 0.14, 'S': 0.22, 'SE': 0.07}
+  19:30  real 50.88%  previsto 50.93%  | votos apurados até aqui por região: {'CO': 0.15, 'EX': 0.03, 'N': 0.27, 'NE': 0.21, 'S': 0.23, 'SE': 0.1}
+  20:00  real 49.52%  previsto 49.55%  | votos apurados até aqui por região: {'CO': 0.14, 'EX': 0.01, 'N': 0.2, 'NE': 0.25, 'S': 0.24, 'SE': 0.16}
+  20:02  real 49.48%  previsto 49.51%  | votos apurados até aqui por região: {'CO': 0.14, 'EX': 0.01, 'N': 0.19, 'NE': 0.25, 'S': 0.24, 'SE': 0.17}
+  20:15  real 49.72%  previsto 49.74%  | votos apurados até aqui por região: {'CO': 0.12, 'EX': 0.01, 'N': 0.15, 'NE': 0.27, 'S': 0.24, 'SE': 0.21}
+  20:30  real 50.37%  previsto 50.38%  | votos apurados até aqui por região: {'CO': 0.11, 'EX': 0.0, 'N': 0.12, 'NE': 0.29, 'S': 0.21, 'SE': 0.27}
+  21:00  real 51.55%  previsto 51.55%  | votos apurados até aqui por região: {'CO': 0.08, 'EX': 0.0, 'N': 0.09, 'NE': 0.29, 'S': 0.16, 'SE': 0.37}
+  21:30  real 51.77%  previsto 51.77%  | votos apurados até aqui por região: {'CO': 0.08, 'EX': 0.0, 'N': 0.08, 'NE': 0.28, 'S': 0.15, 'SE': 0.41}
+  23:21  real 51.79%  previsto 51.79%  | votos apurados até aqui por região: {'CO': 0.08, 'EX': 0.0, 'N': 0.08, 'NE': 0.28, 'S': 0.15, 'SE': 0.41}
+
+== Reversões (zigue-zague de pelo menos 0,05 pp na curva acumulada, depois das 19h)
+  1 reversões
+  20:02:00 fundo 49.48% | 5 min seguintes: Lula 49.8%, previsto 49.8% | PR 513, SP 458, MG 437

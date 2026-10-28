@@ -1,0 +1,544 @@
+{
+ "turno": 2,
+ "urnas": 499207,
+ "urnas_com_sequencia": 499177,
+ "T28": {
+  "urnas_com_votos_nos_ultimos_30min": 499177,
+  "taxa_sem_biometria_resto_do_dia": 0.12682864995621107,
+  "taxa_sem_biometria_ultimos_30min": 0.12713999374301022,
+  "urnas_significativas_BH": 0,
+  "z28_percentis": {
+   "50": -0.34073543096289577,
+   "90": 1.4531693044123355,
+   "99": 3.126664530827804,
+   "99.9": 4.681095055169235
+  },
+  "exemplos": []
+ },
+ "T29": {
+  "duracao_min_global_s": 2.0,
+  "duracao_min_p01_s": 3.0,
+  "urnas_com_algum_voto_abaixo_5s": 273451,
+  "votos_abaixo_5s": 1120679,
+  "intervalo_min_entre_votos_s_p01": 22.0,
+  "intervalo_min_entre_votos_s_min": -31051.0
+ },
+ "T30": {
+  "votos_fora_do_dia": 124888884,
+  "urnas_com_votos_fora_do_dia": 497587
+ },
+ "T31": {
+  "votos_sem_habilitacao": 0,
+  "urnas": 0
+ },
+ "T33": {
+  "versoes": {
+   "10.23.0.0 - Praia da Barra do Cahy": 499177
+  },
+  "urnas_com_verificacao_sem_sucesso": 162,
+  "verificacoes_sem_sucesso": 181,
+  "verificacoes_ok": 173747299
+ },
+ "T20": {
+  "UE2013": {
+   "urnas": 11570,
+   "residuo_medio": 0.0031478912880934773,
+   "ic95": [
+    0.001160947558836356,
+    0.005134835017350599
+   ]
+  },
+  "UE2015": {
+   "urnas": 88336,
+   "residuo_medio": -0.0005437412331564591,
+   "ic95": [
+    -0.0012538844757530357,
+    0.0001664020094401176
+   ]
+  },
+  "UE2020": {
+   "urnas": 200509,
+   "residuo_medio": -0.0003121999377055807,
+   "ic95": [
+    -0.0007914527190875575,
+    0.00016705284367639605
+   ]
+  },
+  "UE2022": {
+   "urnas": 198694,
+   "residuo_medio": 0.0003734874766136657,
+   "ic95": [
+    -0.0001377687755222911,
+    0.0008847437287496226
+   ]
+  },
+  "kruskal_p": 0.014454095326616798
+ },
+ "CONF_T02": {
+  "cauda_pro_lula_z>5": {
+   "secoes": 33,
+   "eleitores_mediana": 274.0,
+   "frac_sem_biometria_mediana": 0.11403508771929824,
+   "z28_mediana": -0.4962916669854652,
+   "urnas_sig28": 0,
+   "duracao_mediana_s": 12.0,
+   "votos_abaixo_5s": 19,
+   "urna_substituida": 0,
+   "lula_2t_mediana": 0.8898678414096917,
+   "modelos": {
+    "UE2022": 15,
+    "UE2020": 13,
+    "UE2015": 4,
+    "UE2013": 1
+   }
+  },
+  "cauda_pro_adversario_z<-5": {
+   "secoes": 13,
+   "eleitores_mediana": 339.0,
+   "frac_sem_biometria_mediana": 0.10526315789473684,
+   "z28_mediana": -0.4817096624472335,
+   "urnas_sig28": 0,
+   "duracao_mediana_s": 12.0,
+   "votos_abaixo_5s": 9,
+   "urna_substituida": 0,
+   "lula_2t_mediana": 0.5483870967741935,
+   "modelos": {
+    "UE2015": 6,
+    "UE2022": 4,
+    "UE2020": 3
+   }
+  },
+  "demais": {
+   "secoes": 499063,
+   "eleitores_mediana": 327.0,
+   "frac_sem_biometria_mediana": 0.10752688172043011,
+   "z28_mediana": -0.3406827416649269,
+   "urnas_sig28": 0,
+   "duracao_mediana_s": 10.0,
+   "votos_abaixo_5s": 1120639,
+   "urna_substituida": 1417,
+   "lula_2t_mediana": 0.502092050209205,
+   "modelos": {
+    "UE2020": 200493,
+    "UE2022": 198675,
+    "UE2015": 88326,
+    "UE2013": 11569
+   }
+  },
+  "zona_klimek_lula_90_90": {
+   "secoes": 760,
+   "eleitores_mediana": 220.5,
+   "frac_sem_biometria_mediana": 0.10815241470979176,
+   "z28_mediana": -0.35431030407360453,
+   "urnas_sig28": 0,
+   "duracao_mediana_s": 11.0,
+   "votos_abaixo_5s": 532,
+   "urna_substituida": 2,
+   "lula_2t_mediana": 0.9375,
+   "modelos": {
+    "UE2022": 343,
+    "UE2020": 298,
+    "UE2015": 106,
+    "UE2013": 13
+   }
+  }
+ },
+ "CONF_T02_lista": [
+  {
+   "SG_UF": "AM",
+   "CD_MUNICIPIO": "2097",
+   "NR_ZONA": "18",
+   "NR_SECAO": "37",
+   "z": 12.583327187632154,
+   "QT_APTOS_2": 377.0,
+   "sem_bio_frac": 0.05263157894736842,
+   "z28": -0.4212656984996457,
+   "seq_dur_mediana": 28.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "AC",
+   "CD_MUNICIPIO": "1031",
+   "NR_ZONA": "3",
+   "NR_SECAO": "95",
+   "z": 11.472275210123913,
+   "QT_APTOS_2": 337.0,
+   "sem_bio_frac": 0.11403508771929824,
+   "z28": -0.36264810442449563,
+   "seq_dur_mediana": 24.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "AM",
+   "CD_MUNICIPIO": "2399",
+   "NR_ZONA": "45",
+   "NR_SECAO": "63",
+   "z": 10.039751960245955,
+   "QT_APTOS_2": 335.0,
+   "sem_bio_frac": 0.20812182741116753,
+   "z28": 1.9657562236615702,
+   "seq_dur_mediana": 27.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "AC",
+   "CD_MUNICIPIO": "1139",
+   "NR_ZONA": "7",
+   "NR_SECAO": "67",
+   "z": 8.738690162729663,
+   "QT_APTOS_2": 155.0,
+   "sem_bio_frac": 0.2465753424657534,
+   "z28": -1.634045009411768,
+   "seq_dur_mediana": 26.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "PA",
+   "CD_MUNICIPIO": "4723",
+   "NR_ZONA": "80",
+   "NR_SECAO": "254",
+   "z": 7.435121524259696,
+   "QT_APTOS_2": 238.0,
+   "sem_bio_frac": 0.1419753086419753,
+   "z28": 6.915820372780906,
+   "seq_dur_mediana": 16.0,
+   "modelo": "UE2015"
+  },
+  {
+   "SG_UF": "AP",
+   "CD_MUNICIPIO": "6041",
+   "NR_ZONA": "10",
+   "NR_SECAO": "408",
+   "z": 6.441035773018936,
+   "QT_APTOS_2": 210.0,
+   "sem_bio_frac": 0.1510791366906475,
+   "z28": -0.9732094141944229,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "ES",
+   "CD_MUNICIPIO": "56111",
+   "NR_ZONA": "20",
+   "NR_SECAO": "156",
+   "z": 6.4378673044627455,
+   "QT_APTOS_2": 287.0,
+   "sem_bio_frac": 0.5201612903225806,
+   "z28": -0.8489944342818951,
+   "seq_dur_mediana": 18.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "MA",
+   "CD_MUNICIPIO": "8974",
+   "NR_ZONA": "70",
+   "NR_SECAO": "403",
+   "z": 6.3981563456635415,
+   "QT_APTOS_2": 166.0,
+   "sem_bio_frac": 0.17829457364341086,
+   "z28": -1.3815315565068955,
+   "seq_dur_mediana": 12.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "AM",
+   "CD_MUNICIPIO": "2755",
+   "NR_ZONA": "22",
+   "NR_SECAO": "70",
+   "z": 6.3923833191088,
+   "QT_APTOS_2": 195.0,
+   "sem_bio_frac": 0.059782608695652176,
+   "z28": 4.064948895596293,
+   "seq_dur_mediana": 20.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "MG",
+   "CD_MUNICIPIO": "43753",
+   "NR_ZONA": "94",
+   "NR_SECAO": "130",
+   "z": 6.160816213261541,
+   "QT_APTOS_2": 128.0,
+   "sem_bio_frac": 0.18556701030927836,
+   "z28": -0.4962916669854652,
+   "seq_dur_mediana": 12.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "AM",
+   "CD_MUNICIPIO": "2577",
+   "NR_ZONA": "16",
+   "NR_SECAO": "57",
+   "z": 6.001382350523269,
+   "QT_APTOS_2": 274.0,
+   "sem_bio_frac": 0.04950495049504951,
+   "z28": -0.4077093485913217,
+   "seq_dur_mediana": 20.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "GO",
+   "CD_MUNICIPIO": "93599",
+   "NR_ZONA": "11",
+   "NR_SECAO": "147",
+   "z": 5.973022412008706,
+   "QT_APTOS_2": 144.0,
+   "sem_bio_frac": 0.1,
+   "z28": -1.0768050902804962,
+   "seq_dur_mediana": 13.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "CE",
+   "CD_MUNICIPIO": "98574",
+   "NR_ZONA": "65",
+   "NR_SECAO": "197",
+   "z": 5.93655103036871,
+   "QT_APTOS_2": 300.0,
+   "sem_bio_frac": 0.164,
+   "z28": -0.7764699408266,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2015"
+  },
+  {
+   "SG_UF": "ZZ",
+   "CD_MUNICIPIO": "30341",
+   "NR_ZONA": "1",
+   "NR_SECAO": "1894",
+   "z": 5.888093888683107,
+   "QT_APTOS_2": 797.0,
+   "sem_bio_frac": 1.0,
+   "z28": 0.12977713690460982,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2013"
+  },
+  {
+   "SG_UF": "BA",
+   "CD_MUNICIPIO": "34134",
+   "NR_ZONA": "170",
+   "NR_SECAO": "262",
+   "z": 5.818293285947559,
+   "QT_APTOS_2": 68.0,
+   "sem_bio_frac": 0.03225806451612903,
+   "z28": -0.3611575592573076,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2015"
+  },
+  {
+   "SG_UF": "MA",
+   "CD_MUNICIPIO": "8133",
+   "NR_ZONA": "74",
+   "NR_SECAO": "66",
+   "z": 5.665474740383378,
+   "QT_APTOS_2": 299.0,
+   "sem_bio_frac": 0.0815450643776824,
+   "z28": -0.6087251582527095,
+   "seq_dur_mediana": 10.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "MT",
+   "CD_MUNICIPIO": "91510",
+   "NR_ZONA": "46",
+   "NR_SECAO": "380",
+   "z": 5.500506889099262,
+   "QT_APTOS_2": 369.0,
+   "sem_bio_frac": 0.06513409961685823,
+   "z28": -0.8177957012097811,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "AC",
+   "CD_MUNICIPIO": "1040",
+   "NR_ZONA": "4",
+   "NR_SECAO": "223",
+   "z": 5.3218017218641664,
+   "QT_APTOS_2": 270.0,
+   "sem_bio_frac": 0.16535433070866143,
+   "z28": -0.45143268511962314,
+   "seq_dur_mediana": 20.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "AM",
+   "CD_MUNICIPIO": "2577",
+   "NR_ZONA": "16",
+   "NR_SECAO": "33",
+   "z": 5.2973116729925485,
+   "QT_APTOS_2": 179.0,
+   "sem_bio_frac": 0.02857142857142857,
+   "z28": -0.5292973096694771,
+   "seq_dur_mediana": 18.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "AM",
+   "CD_MUNICIPIO": "2216",
+   "NR_ZONA": "21",
+   "NR_SECAO": "76",
+   "z": 5.295928521549761,
+   "QT_APTOS_2": 364.0,
+   "sem_bio_frac": 0.1037037037037037,
+   "z28": -0.6913663438320149,
+   "seq_dur_mediana": 16.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "PI",
+   "CD_MUNICIPIO": "11339",
+   "NR_ZONA": "61",
+   "NR_SECAO": "349",
+   "z": 5.285920243089235,
+   "QT_APTOS_2": 268.0,
+   "sem_bio_frac": 0.11312217194570136,
+   "z28": -0.15396792668922835,
+   "seq_dur_mediana": 10.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "SP",
+   "CD_MUNICIPIO": "71072",
+   "NR_ZONA": "373",
+   "NR_SECAO": "752",
+   "z": 5.256069542876043,
+   "QT_APTOS_2": 389.0,
+   "sem_bio_frac": 0.13003095975232198,
+   "z28": -1.434478343921801,
+   "seq_dur_mediana": 10.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "PA",
+   "CD_MUNICIPIO": "5150",
+   "NR_ZONA": "44",
+   "NR_SECAO": "141",
+   "z": 5.248928926649413,
+   "QT_APTOS_2": 222.0,
+   "sem_bio_frac": 0.0880503144654088,
+   "z28": -0.5525062514530825,
+   "seq_dur_mediana": 13.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "PA",
+   "CD_MUNICIPIO": "4049",
+   "NR_ZONA": "100",
+   "NR_SECAO": "315",
+   "z": 5.248448635442381,
+   "QT_APTOS_2": 302.0,
+   "sem_bio_frac": 0.008771929824561403,
+   "z28": -0.2823590825184092,
+   "seq_dur_mediana": 12.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "SE",
+   "CD_MUNICIPIO": "31216",
+   "NR_ZONA": "8",
+   "NR_SECAO": "93",
+   "z": 5.177385931191774,
+   "QT_APTOS_2": 307.0,
+   "sem_bio_frac": 0.11904761904761904,
+   "z28": 0.9846540541598862,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "MG",
+   "CD_MUNICIPIO": "40762",
+   "NR_ZONA": "94",
+   "NR_SECAO": "136",
+   "z": 5.157347290553884,
+   "QT_APTOS_2": 141.0,
+   "sem_bio_frac": 0.20909090909090908,
+   "z28": 1.9720265943665385,
+   "seq_dur_mediana": 12.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "CE",
+   "CD_MUNICIPIO": "13730",
+   "NR_ZONA": "120",
+   "NR_SECAO": "361",
+   "z": 5.14262094227411,
+   "QT_APTOS_2": 349.0,
+   "sem_bio_frac": 0.10223642172523961,
+   "z28": -0.8413108775835909,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "MT",
+   "CD_MUNICIPIO": "90352",
+   "NR_ZONA": "9",
+   "NR_SECAO": "432",
+   "z": 5.13319008739553,
+   "QT_APTOS_2": 299.0,
+   "sem_bio_frac": 0.08264462809917356,
+   "z28": -0.43120881610178174,
+   "seq_dur_mediana": 13.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "SE",
+   "CD_MUNICIPIO": "32158",
+   "NR_ZONA": "4",
+   "NR_SECAO": "183",
+   "z": 5.131813170647882,
+   "QT_APTOS_2": 212.0,
+   "sem_bio_frac": 0.10179640718562874,
+   "z28": -0.9239364353597957,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2020"
+  },
+  {
+   "SG_UF": "PA",
+   "CD_MUNICIPIO": "4170",
+   "NR_ZONA": "52",
+   "NR_SECAO": "133",
+   "z": 5.103605292941599,
+   "QT_APTOS_2": 200.0,
+   "sem_bio_frac": 0.14193548387096774,
+   "z28": -0.298394356630506,
+   "seq_dur_mediana": 12.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "CE",
+   "CD_MUNICIPIO": "13064",
+   "NR_ZONA": "79",
+   "NR_SECAO": "168",
+   "z": 5.101016981545737,
+   "QT_APTOS_2": 255.0,
+   "sem_bio_frac": 0.2374429223744292,
+   "z28": -0.2071292510657802,
+   "seq_dur_mediana": 13.0,
+   "modelo": "UE2015"
+  },
+  {
+   "SG_UF": "CE",
+   "CD_MUNICIPIO": "15490",
+   "NR_ZONA": "36",
+   "NR_SECAO": "54",
+   "z": 5.096531206589645,
+   "QT_APTOS_2": 335.0,
+   "sem_bio_frac": 0.11469534050179211,
+   "z28": -0.7306715428226008,
+   "seq_dur_mediana": 11.0,
+   "modelo": "UE2022"
+  },
+  {
+   "SG_UF": "PR",
+   "CD_MUNICIPIO": "77518",
+   "NR_ZONA": "73",
+   "NR_SECAO": "307",
+   "z": 5.0867630747799035,
+   "QT_APTOS_2": 313.0,
+   "sem_bio_frac": 0.05363984674329502,
+   "z28": -0.6959471100293803,
+   "seq_dur_mediana": 9.0,
+   "modelo": "UE2020"
+  }
+ ]
+}
