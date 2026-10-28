@@ -9,6 +9,11 @@
 > - Não parte de suspeita nem de acusação: parte dos dados. A pergunta sobre fraude é uma das perguntas que os testes respondem, a mais feita pelo público; não é a premissa nem o motivo do estudo.
 > - É independente, não é auditoria oficial e não é veredito sobre a eleição. Anomalia estatística não é fraude, e ausência de sinal não prova ausência onde os dados públicos não alcançam.
 
+> [!NOTE]
+> **Nota do autor**
+>
+> Não quero provar nem desprovar nada. A gente vê muita coisa sobre urna na internet e quase ninguém para e analisa os dados de verdade. Então eu fiz essa análise até onde os dados públicos permitiram ir. Daqui em diante é com vocês: em vez de reclamar, usem o projeto, rodem os dados, coloquem nos seus agentes de IA, contribuam com o que encontrarem e tirem as suas próprias conclusões.
+
 **Site:** [urna-lab.web.app](https://urna-lab.web.app) · **Versão:** V1.3, Fase 3 concluída e congelada em 28/10/2026 (tag [`v1.3`](https://github.com/doce42/urna-lab/releases/tag/v1.3))
 
 ![Página inicial do site](docs/img/home_topo.jpg)

@@ -72,6 +72,7 @@ AVISO = {
    "Não parte de suspeita nem de acusação: parte dos dados. A pergunta sobre fraude é uma das perguntas que os testes respondem, a mais feita pelo público; não é a premissa nem o motivo do estudo.",
    "É independente, não é auditoria oficial e não é veredito sobre a eleição. Anomalia estatística não é fraude, e ausência de sinal não prova ausência onde os dados públicos não alcançam.",
  ],
+ "nota_autor": "Não quero provar nem desprovar nada. A gente vê muita coisa sobre urna na internet e quase ninguém para e analisa os dados de verdade. Então eu fiz essa análise até onde os dados públicos permitiram ir. Daqui em diante é com vocês: em vez de reclamar, usem o projeto, rodem os dados, coloquem nos seus agentes de IA, contribuam com o que encontrarem e tirem as suas próprias conclusões.",
 }
 RESPOSTA = {
  "aviso": AVISO,
@@ -98,7 +99,7 @@ RESPOSTA = {
 }
 OUT = {"gerado": "2026-10-28", "situacao": "F3 em revisão; não congelado", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
 json.dump(OUT, open(R + "/fase3/veredito_2026.json", "w"), ensure_ascii=False, indent=1)
-L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
+L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Nota do autor:** {AVISO['nota_autor']}", "", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
      "## Hipóteses de fraude examinadas", "", "| Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |", "|---|---|---|---|---|---|"]
 L += [f"| {h['id']} | {h['mecanismo']} | {h['o_que_deixaria']} | {h['resultado']} | **{h['status']}** | {h['em_votos']} |" for h in HIP]
 L += ["", "## Anomalias reais em 2026", "", "| O que | Votos | Sinal | Teste |", "|---|---|---|---|"] + [f"| {a['o_que']} | {a['votos']} | {a['sinal']} | {a['teste']} |" for a in RESPOSTA["anomalias_2026"]]

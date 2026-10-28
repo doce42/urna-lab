@@ -5,7 +5,7 @@ export type Nivel = { id: string; nome: string; cor: string; o_que_e: string };
 export type Hipotese = { id: string; mecanismo: string; o_que_deixaria: string; escala_necessaria: string; testes: string[]; resultado: string; status: string; em_votos: string };
 export type Veredito = {
   margem_2026: number; votos_para_inverter: number; niveis: Nivel[]; sinal_por_teste: Record<string, { nivel: string; motivo: string }>; hipoteses: Hipotese[];
-  resposta_central: { aviso?: { titulo: string; itens: string[] }; pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[] };
+  resposta_central: { aviso?: { titulo: string; itens: string[]; nota_autor?: string }; pergunta: string; resposta: string; deducao: string[]; o_que_seria_preciso: string; anomalias_2026: { o_que: string; votos: string; sinal: string; teste: string }[] };
 };
 
 export const COR_SINAL: Record<string, string> = {
@@ -31,12 +31,13 @@ export function SeloStatus({ s }: { s: string }) {
 }
 
 // Aviso antes da pergunta: o estudo é auditoria metodológica dos dados; a pergunta sobre fraude é testada, não é a premissa.
-export function AvisoEstudo({ aviso }: { aviso: { titulo: string; itens: string[] } }) {
+export function AvisoEstudo({ aviso }: { aviso: { titulo: string; itens: string[]; nota_autor?: string } }) {
   return (
     <div className="cartao p-5 md:p-6 border-l-[3px]" style={{ borderLeftColor: 'var(--accent)' }}>
       <div className="text-[12px] font-mono uppercase tracking-wider text-accent-text">Aviso</div>
       <h2 className="t-h3 mt-1">{aviso.titulo}</h2>
       <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted list-disc pl-5">{aviso.itens.map((a) => <li key={a}>{a}</li>)}</ul>
+      {aviso.nota_autor && <div className="mt-4 pt-4 border-t border-border"><div className="text-[12px] font-mono uppercase tracking-wider text-muted">Nota do autor</div><p className="mt-1.5 text-[15px] leading-relaxed text-text italic">“{aviso.nota_autor}”</p></div>}
     </div>
   );
 }
