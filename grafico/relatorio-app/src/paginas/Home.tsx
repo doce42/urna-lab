@@ -33,6 +33,14 @@ function EstadoPesquisa() {
   const atual = lt.fases.find((f) => f.status === 'em_andamento') || [...lt.fases].reverse().find((f) => f.status === 'concluida');
   const cont: Record<string, number> = {};
   lt.fase2.forEach((q) => { const k = q.situacao || 'aberta'; cont[k] = (cont[k] || 0) + 1; });
+  const filaF3 = lt.fase2.filter((q) => (q.situacao || 'aberta') === 'aberta' && q.f3).length;
+  // Fase 3: inventário (fase3/inventario.json), contado pelo estado final dos itens trabalhados na F3
+  const f3 = lt.fases.find((f) => f.id === 'F3');
+  const f3Itens = lt.fase3 || [];
+  const f3Ativos = f3Itens.filter((i) => i.estado_inicial_f3 !== 'respondida');
+  const f3Bloq = f3Ativos.filter((i) => /bloquead/.test(i.estado_final));
+  const nF3 = (re: RegExp) => f3Ativos.filter((i) => re.test(i.estado_final)).length;
+  const f3Partes = [[nF3(/^respondida$/), 'respondida', 'respondidas'], [nF3(/parcialmente/), 'em parte', 'em parte'], [nF3(/identific/), 'não identificável com estes dados', 'não identificáveis com estes dados']] as const;
   return (
     <section id="estado" className="container mt-12 md:mt-16 scroll-mt-20">
       <div className="cartao p-5 md:p-6">
@@ -43,16 +51,17 @@ function EstadoPesquisa() {
             <li key={f.id} className={`min-h-7 py-1 px-3 rounded-full border text-xs font-medium inline-flex items-center ${f.status === 'em_andamento' ? 'border-accent text-accent' : f.status === 'concluida' ? 'border-border-strong text-text' : 'border-border text-subtle'}`}>{f.versao || f.id} · {f.titulo} · {ST_ROT[f.status]}</li>
           ))}
         </ol>
-        {lt.fase2.length > 0 && <p className="mt-3 text-[14px] text-muted"><b className="font-medium text-text">Fase 2:</b> {lt.fase2.length - (cont.aberta || 0)} perguntas tratadas · {Object.keys(F2_ROT).filter((k) => k !== 'aberta' && cont[k]).map((k) => `${cont[k]} ${cont[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2_ROT[k] + 's' : F2_ROT[k]}`).join(' · ')}{cont.aberta ? ` · ${cont.aberta} novas na fila` : ''}.</p>}
+        {lt.fase2.length > 0 && <p className="mt-3 text-[14px] text-muted"><b className="font-medium text-text">Fase 2:</b> {lt.fase2.length - (cont.aberta || 0)} perguntas tratadas · {Object.keys(F2_ROT).filter((k) => k !== 'aberta' && cont[k]).map((k) => `${cont[k]} ${cont[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2_ROT[k] + 's' : F2_ROT[k]}`).join(' · ')}{cont.aberta ? (filaF3 === cont.aberta ? ` · ${cont.aberta} novas levadas à Fase 3` : ` · ${cont.aberta} novas na fila`) : ''}.</p>}
+        {f3Itens.length > 0 && <p className="mt-1.5 text-[14px] text-muted"><b className="font-medium text-text">Fase 3{f3?.versao ? ` (${f3.versao})` : ''}:</b> {f3Itens.length} itens inventariados · {f3Partes.filter(([n]) => n).map(([n, um, varios]) => `${n} ${n > 1 ? varios : um}`).join(' · ')}{f3Bloq.length ? <> · <b className="font-medium text-text">{f3Bloq.length} {f3Bloq.length > 1 ? 'pendências bloqueadas' : 'pendência bloqueada'} por fonte externa</b> ({f3Bloq.map((i) => i.id).join(', ')})</> : null}{f3Itens.length > f3Ativos.length ? ` · ${f3Itens.length - f3Ativos.length} da Fase 2, não reabertas` : ''}.</p>}
         {(lt.conclusoes_recentes || []).length > 0 && (
           <div className="mt-5">
-            <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Conclusões da Fase 2</div>
+            <div className="text-[11px] font-mono uppercase tracking-wider text-muted">{f3Itens.length ? 'Conclusões das Fases 2 e 3' : 'Conclusões da Fase 2'}</div>
             <ul className="mt-2 grid gap-2.5 md:grid-cols-2 xl:grid-cols-3">
               {lt.conclusoes_recentes!.map((c) => <li key={c.titulo}><a href={c.teste ? `#/testes/${c.teste}` : '#/linha-do-tempo'} className="block h-full rounded-lg border border-border p-3 hover:border-border-strong transition-colors"><div className="text-[14.5px] font-medium text-text leading-snug">{c.titulo}{c.teste ? <span className="ml-2 font-mono text-xs text-subtle">{c.teste}</span> : null}</div><p className="mt-1 text-[13.5px] text-muted leading-relaxed line-clamp-4">{c.texto}</p><span className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-medium text-accent-text">ver o teste <ArrowRight size={13} /></span></a></li>)}
             </ul>
           </div>
         )}
-        <a className="mt-4 inline-flex items-center gap-1 min-h-9 py-1.5 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">Linha do tempo e perguntas da Fase 2 <ArrowRight size={15} /></a>
+        <a className="mt-4 inline-flex items-center gap-1 min-h-9 py-1.5 px-3 rounded-full border border-border text-sm font-medium hover:border-border-strong" href="#/linha-do-tempo">{f3Itens.length ? 'Linha do tempo e perguntas das Fases 2 e 3' : 'Linha do tempo e perguntas da Fase 2'} <ArrowRight size={15} /></a>
       </div>
     </section>
   );
@@ -212,7 +221,7 @@ export function Home({ h, reg, meta }: { h: HomeDados; reg: Registro; meta: Meta
           <div className="grid gap-3 lg:grid-cols-3">
             {[
               { t: '1. Prova determinística', cor: 'var(--cA)', p: r2 ? <>Assinatura da lista de arquivos válida em <b>{N(r2.assin_lista_ok)}</b> das <b>{N(base2)}</b> urnas do 2º turno com arquivos; recontagem do RDV igual ao boletim em <b>{N(r2.rdv_igual_boletim)}</b> de <b>{N(r2.urnas_com_rdv)}</b>; log fecha com o comparecimento em <b>{N(r2.log_igual_comparecimento)}</b> de <b>{N(r2.urnas)}</b>. Boletim de Urna e votação por seção iguais voto a voto nos dois turnos (T01).</> : 'Processamento dos arquivos do 2º turno ainda não terminou.', ids: ['T01', 'T16', 'T17'] },
-              { t: '2. Evidência estatística, com poder medido', cor: 'var(--cB)', p: <>{N(h.z_hist.acima5_lula + h.z_hist.acima5_flavio)} seções de {N(h.z_hist.n)} ficaram além de 5 desvios ({h.z_hist.acima5_lula} pró-Lula, {h.z_hist.acima5_flavio} pró-Flávio): anomalia estatística registrada (classe B), com excesso pró-Lula que também aparece em 2022, sem prova de causa. A curva real da apuração difere da prevista em no máximo {P(h.curva_max_desvio.depois_19h, 2)} pp depois das 19h. Dos {h.poder.cenarios} cenários de fraude simulada, {h.poder.detectados} foram detectados; o maior que passou despercebido move {N(h.poder.maior_passou_votos)} votos, contra uma margem de {N(h.margem_votos)}. Esses cenários só deslocam votos a favor de Lula; na Fase 2, o mesmo teste não viu o deslocamento no sentido contrário.</>, ids: ['T02', 'T10', 'T13'] },
+              { t: '2. Evidência estatística, com poder medido', cor: 'var(--cB)', p: <>{N(h.z_hist.acima5_lula + h.z_hist.acima5_flavio)} seções de {N(h.z_hist.n)} ficaram além de 5 desvios ({h.z_hist.acima5_lula} pró-Lula, {h.z_hist.acima5_flavio} pró-Flávio): anomalia estatística registrada (classe B), com excesso pró-Lula que também aparece em 2022, sem prova de causa. A curva real da apuração difere da prevista em no máximo {P(h.curva_max_desvio.depois_19h, 2)} pp depois das 19h. Dos {h.poder.cenarios} cenários de fraude simulada, {h.poder.detectados} foram detectados; o maior que passou despercebido move {N(h.poder.maior_passou_votos)} votos, contra uma margem de {N(h.margem_votos)}. Esses cenários só deslocam votos a favor de Lula; na Fase 2, o mesmo teste não via o deslocamento no sentido contrário, e na Fase 3, com a regra de duas caudas, passou a ver os dois sentidos (P18).</>, ids: ['T02', 'T10', 'T13'] },
               { t: '3. Limite dos dados públicos', cor: 'var(--cG)', p: <>Uma troca pequena e uniforme no país inteiro, ou qualquer falha no software da urna que gere arquivos consistentes e assinados, não deixa rastro nos dados públicos. Resultados nulos não provam ausência. {falta.length ? <>{falta.length === 1 ? 'Falta 1 teste' : `Faltam ${falta.length} testes`} ({falta.map((t) => t.id).join(', ')}).</> : null}</>, ids: ['C06b', 'T13b'] },
             ].map((f) => (
               <div key={f.t} className="cartao p-5 border-l-4" style={{ borderLeftColor: f.cor }}>

@@ -1,5 +1,5 @@
 // Evolução da pesquisa. Visível: o caminho em etapas, as fases com o estado atual, as versões congeladas, as perguntas
-// da Fase 2 com situação e resposta e a fila do que ficou para depois. Recolhido: revisão R1, critérios da baseline, comparação teste a teste, contestações e marcos.
+// da Fase 2 com situação e resposta, e o inventário da Fase 3 com o estado final de cada item. Recolhido: revisão R1, critérios da baseline, comparação teste a teste, contestações e marcos.
 import { useMemo, useState } from 'react';
 import { clsx } from 'clsx';
 import { Check, CircleDot, Circle, Clock, GitBranch, ExternalLink, FileText } from 'lucide-react';
@@ -27,6 +27,13 @@ const F2: Record<string, { rot: string; cor: string }> = {
   respondida: { rot: 'respondida', cor: 'var(--ok)' }, parcial: { rot: 'em parte', cor: 'var(--accent)' }, inventariada: { rot: 'inventariada', cor: 'var(--accent)' },
   adiada: { rot: 'adiada', cor: 'var(--warn)' }, 'sem_avanço': { rot: 'sem avanço', cor: 'var(--warn)' }, aberta: { rot: 'aberta', cor: 'var(--text-subtle)' },
 };
+// estado final dos itens da Fase 3 (fase3/inventario.json)
+const F3: Record<string, { rot: string; cor: string }> = {
+  respondida: { rot: 'respondida', cor: 'var(--ok)' }, 'respondida (revisada pelo P18)': { rot: 'respondida (revisada)', cor: 'var(--ok)' },
+  'respondida parcialmente': { rot: 'em parte', cor: 'var(--accent)' }, 'não identificável com estes dados': { rot: 'não identificável', cor: 'var(--text-subtle)' },
+  'bloqueada por evidência externa': { rot: 'bloqueada (fonte externa)', cor: 'var(--warn)' },
+};
+const f3st = (e: string) => F3[e] || { rot: e, cor: 'var(--text-subtle)' };
 const PRIO: Record<string, string> = { alta: 'alta', media_alta: 'média/alta', media: 'média', informativo: 'informativo', pergunta: 'pergunta' };
 
 const Sec = ({ id, eyebrow, titulo, lead, children, fechado }: { id: string; eyebrow: string; titulo: string; lead?: string; children: React.ReactNode; fechado?: boolean }) => fechado ? (
@@ -76,6 +83,17 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
   const fila = lt.fase2.filter((q) => (q.situacao || 'aberta') === 'aberta');
   const feitas = lt.fase2.filter((q) => (q.situacao || 'aberta') !== 'aberta');
   const v0 = lt.rodadas[0];
+  const fase3 = lt.fase3 || [];
+  const f3 = lt.fases.find((f) => f.id === 'F3');
+  const f3Ativos = fase3.filter((i) => i.estado_inicial_f3 !== 'respondida');
+  const f3Herdados = fase3.filter((i) => i.estado_inicial_f3 === 'respondida');
+  const contF3: Record<string, number> = {};
+  f3Ativos.forEach((i) => { const k = f3st(i.estado_final).rot; contF3[k] = (contF3[k] || 0) + 1; });
+  const corF3 = (rot: string) => Object.values(F3).find((x) => x.rot === rot)?.cor || 'var(--text-subtle)';
+  const bloqueadas = f3Ativos.filter((i) => /bloquead/.test(i.estado_final));
+  const pergF2 = (id: string) => lt.fase2.find((q) => q.id === id)?.pergunta;
+  const concluidas = lt.fases.filter((f) => /^F\d+$/.test(f.id) && f.status === 'concluida' && f.id !== 'F1');
+  const emAndamento = lt.fases.find((f) => f.status === 'em_andamento');
 
   return (
     <div className="container pb-24">
@@ -87,7 +105,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
 
       {/* caminho em etapas */}
       <nav aria-label="Etapas da pesquisa" className="mt-10">
-        <ol className="grid gap-2 grid-cols-2 lg:grid-cols-4">
+        <ol className={clsx('grid gap-2 grid-cols-2', etapas.length >= 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4')}>
           {etapas.map((e, i) => {
             const s = ST[e.status] || ST.planejada;
             return (
@@ -105,8 +123,8 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </nav>
 
       {/* fases */}
-      <Sec id="fases" eyebrow="Fases" titulo="Onde a pesquisa está" lead={`O levantamento da Fase 1 foi congelado como V1.0-rc1, revisado (R1) e aprovado como baseline V1.0. ${lt.fases.some((f) => f.id === 'F2' && f.status === 'concluida') ? 'A Fase 2 foi concluída e congelada como V1.1.' : 'A Fase 2 está em andamento.'}`}>
-        <ol className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <Sec id="fases" eyebrow="Fases" titulo="Onde a pesquisa está" lead={`O levantamento da Fase 1 foi congelado como V1.0-rc1, revisado (R1) e aprovado como baseline V1.0. ${concluidas.map((f) => `A ${f.id.replace('F', 'Fase ')} foi concluída e congelada como ${f.versao}.`).join(' ')}${emAndamento ? ` ${emAndamento.titulo}: em andamento.` : ''}`}>
+        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {lt.fases.map((f: Fase) => {
             const s = ST[f.status] || ST.planejada;
             return (
@@ -143,7 +161,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       </Sec>
       {/* fase 2 */}
       <Sec id="fase2" eyebrow={`Fase 2 · ${ST[f2?.status || 'em_andamento']?.rot || ''}`} titulo="O que a Fase 2 respondeu" lead="Cada pergunta foi registrada antes de rodar e tenta derrubar um método ou uma conclusão. Abaixo, a resposta em poucas palavras e o que ela representa em votos; o detalhe técnico fica recolhido.">
-        <div className="mb-3 flex flex-wrap gap-1.5">{Object.keys(F2).filter((k) => k !== 'aberta' && contF2[k]).map((k) => <Selo key={k} cor={F2[k].cor}>{contF2[k]} {contF2[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2[k].rot + 's' : F2[k].rot}</Selo>)}{fila.length > 0 && <Selo cor="var(--text-subtle)">{fila.length} na fila</Selo>}</div>
+        <div className="mb-3 flex flex-wrap gap-1.5">{Object.keys(F2).filter((k) => k !== 'aberta' && contF2[k]).map((k) => <Selo key={k} cor={F2[k].cor}>{contF2[k]} {contF2[k] > 1 && !['parcial', 'sem_avanço'].includes(k) ? F2[k].rot + 's' : F2[k].rot}</Selo>)}{fila.length > 0 && <Selo cor="var(--text-subtle)">{fila.length} {fila.every((q) => q.f3) ? 'levadas à Fase 3' : 'na fila'}</Selo>}</div>
         <ul className="cartao divide-y divide-border">
           {feitas.map((q) => {
             const st = F2[q.situacao || 'aberta'] || F2.aberta;
@@ -175,19 +193,68 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
           })}
         </ul>
         {fila.length > 0 && <div className="mt-8">
-          <h3 className="t-h3">O que ficou para depois</h3>
-          <p className="text-muted text-[15px] mt-1 max-w-[48rem]">Perguntas que nasceram dos resultados da Fase 2. Estão registradas, ainda sem resposta.</p>
+          <h3 className="t-h3">{fila.every((q) => q.f3) ? 'O que ficou para a Fase 3' : 'O que ficou para depois'}</h3>
+          <p className="text-muted text-[15px] mt-1 max-w-[48rem]">Perguntas que nasceram dos resultados da Fase 2. {fila.some((q) => q.f3) ? <>Foram levadas à Fase 3; o estado final está abaixo e o detalhe, <a href="#fase3" onClick={irPara('#fase3')} className="text-accent-text underline underline-offset-4">na seção da Fase 3</a>.</> : 'Estão registradas, ainda sem resposta.'}</p>
           <ul className="mt-3 cartao divide-y divide-border">
             {fila.map((q) => (
               <li key={q.id} className="p-3 md:p-4 flex items-start gap-3">
                 <span className="font-mono text-sm font-semibold w-9 shrink-0 pt-0.5">{q.id}</span>
-                <div className="flex-1 min-w-0"><div className="text-[15px] text-text leading-snug">{q.pergunta}</div><div className="mt-1 text-[13px] text-muted"><b className="font-medium text-text">Como responder:</b> {q.teste} <span className="text-subtle">· nasceu de {q.origem}</span></div></div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-start gap-x-3 gap-y-1.5"><span className="text-[15px] text-text leading-snug flex-1 min-w-[14rem]">{q.pergunta}</span>{q.f3 && <Selo cor={f3st(q.f3.estado_final).cor}>Fase 3 · {f3st(q.f3.estado_final).rot}</Selo>}</div>
+                  {q.f3 ? <p className="mt-1.5 text-[14px] text-muted leading-relaxed">{q.f3.resposta}</p> : <div className="mt-1 text-[13px] text-muted"><b className="font-medium text-text">Como responder:</b> {q.teste} <span className="text-subtle">· nasceu de {q.origem}</span></div>}
+                </div>
               </li>
             ))}
           </ul>
         </div>}
-        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13.5px]"><a href="#/docs/fase2" className="text-accent-text underline underline-offset-4">FASE2.md completo</a><a href="#/testes" className="text-accent-text underline underline-offset-4">Testes da Fase 2 (módulo G)</a></div>
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13.5px]"><a href="#/docs/fase2" className="text-accent-text underline underline-offset-4">FASE2.md completo</a><a href="#/testes?modulo=G" className="text-accent-text underline underline-offset-4">Testes da Fase 2 (módulo G)</a></div>
       </Sec>
+
+      {/* fase 3 */}
+      {fase3.length > 0 && <Sec id="fase3" eyebrow={`Fase 3 · ${f3?.versao || ''} · ${ST[f3?.status || 'em_andamento']?.rot || ''}`} titulo="O que a Fase 3 resolveu" lead={`${fase3.length} itens inventariados: as pendências da Fase 2, a fila P18 a P21 e perguntas novas sobre curvas, zeros e reconciliação externa. Cada item tem o estado final e a resposta, ou o motivo de não ter resposta.`}>
+        <div className="mb-3 flex flex-wrap gap-1.5">{Object.keys(contF3).map((k) => <Selo key={k} cor={corF3(k)}>{contF3[k]} {k}</Selo>)}<Selo cor="var(--text-subtle)">{f3Herdados.length} da Fase 2, não reabertas</Selo></div>
+        {bloqueadas.length > 0 && <div className="mb-3 rounded-lg border-l-4 p-3 md:p-4 text-[14px] text-muted" style={{ borderColor: 'var(--warn)', background: 'var(--warn-soft)' }}><b className="font-medium text-text">{bloqueadas.length} pendências bloqueadas por fonte externa ({bloqueadas.map((i) => i.id).join(', ')}).</b> Só andam com dado que o estudo não tem: {[...new Set(bloqueadas.map((i) => i.proxima_evidencia.replace(/\.$/, '')))].join('; ')}.</div>}
+        <ul className="cartao divide-y divide-border">
+          {f3Ativos.map((i) => {
+            const st = f3st(i.estado_final);
+            return (
+              <li key={i.id} className="p-3 md:p-4">
+                <div className="flex items-start gap-3">
+                  <span className="font-mono text-sm font-semibold w-12 shrink-0 pt-0.5">{i.id}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-start gap-x-3 gap-y-1.5"><span className="text-[15px] text-text font-medium leading-snug flex-1 min-w-[14rem]">{i.pergunta}</span><Selo cor={st.cor}>{st.rot}</Selo></div>
+                    <p className="mt-1.5 text-[14.5px] text-muted leading-relaxed">{i.resposta_ou_motivo}</p>
+                    {i.alcance_em_votos && i.alcance_em_votos !== 'n/a' && <div className="mt-1.5 text-[13px]"><b className="font-medium text-text">Em votos:</b> <span className="text-muted">{i.alcance_em_votos}</span></div>}
+                    <details className="mt-1.5 group/q">
+                      <summary className="cursor-pointer list-none text-[12.5px] text-subtle hover:text-text"><span className="group-open/q:hidden">detalhe técnico</span><span className="hidden group-open/q:inline">recolher</span></summary>
+                      <div className="mt-2 text-[13.5px] text-muted grid gap-1.5">
+                        <div><b className="font-medium text-text">Trabalho na Fase 3: </b>{i.trabalho_na_f3}</div>
+                        {i.o_que_a_f2_demonstrou && <div><b className="font-medium text-text">O que a Fase 2 já mostrava: </b>{i.o_que_a_f2_demonstrou}</div>}
+                        {i.hipoteses_concorrentes && <div><b className="font-medium text-text">Distingue: </b>{i.hipoteses_concorrentes}</div>}
+                        {i.criterio_de_encerramento && <div><b className="font-medium text-text">Critério de encerramento: </b>{i.criterio_de_encerramento}</div>}
+                        <div><b className="font-medium text-text">Próxima evidência: </b>{i.proxima_evidencia}</div>
+                        <div className="text-xs text-subtle">estado no início da Fase 3: {i.estado_inicial_f3} · origem: {i.origem}</div>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        {f3Herdados.length > 0 && <details className="mt-3 cartao group/h">
+          <summary className="cursor-pointer list-none p-3 md:p-4 text-[14px] font-medium text-text flex items-center gap-2">{f3Herdados.length} perguntas respondidas na Fase 2, não reabertas<span className="ml-auto text-xs text-subtle group-open/h:hidden">abrir</span><span className="ml-auto text-xs text-subtle hidden group-open/h:inline">fechar</span></summary>
+          <ul className="divide-y divide-border border-t border-border">
+            {f3Herdados.map((i) => (
+              <li key={i.id} className="p-3 md:p-4 flex items-start gap-3">
+                <span className="font-mono text-sm font-semibold w-12 shrink-0 pt-0.5">{i.id}</span>
+                <div className="flex-1 min-w-0"><div className="flex flex-wrap items-start gap-x-3 gap-y-1.5"><span className="text-[14.5px] text-text leading-snug flex-1 min-w-[14rem]">{pergF2(i.id) || i.pergunta}</span><Selo cor={f3st(i.estado_final).cor}>{f3st(i.estado_final).rot}</Selo></div><p className="mt-1 text-[13.5px] text-muted leading-relaxed">{i.resposta_ou_motivo}</p>{i.trabalho_na_f3 !== 'não reaberta' && <p className="mt-1 text-xs text-subtle">{i.trabalho_na_f3}</p>}</div>
+              </li>
+            ))}
+          </ul>
+        </details>}
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[13.5px]"><a href="#/docs/fase3" className="text-accent-text underline underline-offset-4">Relatório da Fase 3</a><a href="#/docs/fase3-inventario" className="text-accent-text underline underline-offset-4">Inventário completo</a><a href="#/testes?modulo=H" className="text-accent-text underline underline-offset-4">Testes da Fase 3 (módulo H)</a></div>
+      </Sec>}
 
       {/* detalhe e história, recolhidos */}
       <div className="mt-16 md:mt-20 max-w-[48rem]"><Eyebrow>Detalhe e história</Eyebrow><h2 className="t-h2 mt-2">Como chegamos até aqui</h2><p className="t-lead mt-3 text-[17px]">A revisão, a aprovação da baseline, o que mudou em cada teste e os marcos. Abra o que interessar.</p></div>
@@ -250,7 +317,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
           {mudaram.map((t) => {
             const v = (t.versoes || [])[0];
             const pr = t.provas || [];
-            const pior = (['caiu', 'em_andamento', 'ajustado', 'resistiu'] as const).find((r) => pr.some((p) => p.resultado === r));
+            const pior = (['caiu', 'em_andamento', 'em_revisao', 'ajustado', 'inalterado', 'resistiu'] as const).find((r) => pr.some((p) => p.resultado === r));
             return (
               <a key={t.id} href={`#/testes/${t.id}`} className="cartao p-4 md:p-5 grid gap-3 hover:border-border-strong transition-colors">
                 <div className="flex flex-wrap items-center gap-2"><span className="font-mono text-sm font-semibold">{t.id}</span><span className="text-[15px] text-text flex-1 min-w-[12rem]">{t.pergunta}</span>{pior && <SeloProva r={pior} />}</div>
@@ -268,7 +335,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
       {/* provas */}
       <Sec fechado id="provas" eyebrow="Contestações" titulo="Todas as tentativas de derrubar os testes" lead="Revisão de método, replicação, dado independente, sensibilidade ou revisão externa. O resultado fica no próprio teste e não apaga o que ele dizia antes.">
         <div className="grid gap-2">
-          {(['caiu', 'em_andamento', 'ajustado', 'resistiu'] as const).flatMap((r) => provas.filter((p) => p.resultado === r)).map((p, i) => (
+          {(['caiu', 'em_andamento', 'em_revisao', 'ajustado', 'inalterado', 'resistiu'] as const).flatMap((r) => provas.filter((p) => p.resultado === r)).map((p, i) => (
             <a key={i} href={`#/testes/${p.id}`} className="cartao p-3.5 md:p-4 flex flex-wrap items-start gap-x-3 gap-y-1.5 hover:border-border-strong">
               <SeloProva r={p.resultado} /><span className="font-mono text-sm font-semibold">{p.id}</span>
               <span className="text-[14px] text-muted flex-1 min-w-[16rem]">{p.descricao}</span>
@@ -276,7 +343,7 @@ export function LinhaDoTempo({ reg }: { reg: Registro }) {
             </a>
           ))}
         </div>
-        <Nota className="mt-4">Contagem: {(['resistiu', 'ajustado', 'caiu', 'em_andamento'] as const).map((r) => `${contaProva(r)} ${PROVA_ROT[r]}`).join(' · ')}.</Nota>
+        <Nota className="mt-4">Contagem: {(['resistiu', 'inalterado', 'ajustado', 'caiu', 'em_andamento', 'em_revisao'] as const).filter((r) => contaProva(r)).map((r) => `${contaProva(r)} ${PROVA_ROT[r]}`).join(' · ')}.</Nota>
       </Sec>
 
       {/* marcos */}

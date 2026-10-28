@@ -81,7 +81,19 @@ gravar('registro.json', { descricao: registro.descricao, modelos_nulos: registro
   }
   const rf = path.join(RAIZ, 'fase2', 'respostas.json');
   if (fs.existsSync(rf)) { const R = ler(rf); fase2.forEach((q) => Object.assign(q, R.respostas[q.id] || { situacao: 'aberta' })); R.novas.forEach((q) => fase2.push(q)); }
-  gravar('linha-do-tempo.json', { descricao: lt.descricao, situacao_atual: lt.situacao_atual || null, caminho: lt.etapas_do_caminho || [], fases: lt.fases, marcos: lt.marcos, conclusoes_recentes: lt.conclusoes_recentes || [], rodadas, revisoes, fase2, github: 'https://github.com/doce42/urna-lab' });
+  // Fase 3: inventário (fase3/inventario.json) com o estado final de cada item; as perguntas da F2 retomadas na F3 levam o estado final junto
+  const fi = path.join(RAIZ, 'fase3', 'inventario.json');
+  const fase3 = fs.existsSync(fi) ? ler(fi).itens.map((i) => Object.fromEntries(Object.entries(i).map(([k, v]) => [k, typeof v === 'string' ? sanear(v) : v]))) : [];
+  const f3ids = new Map(fase3.filter((i) => i.estado_inicial_f3 !== 'respondida').map((i) => [i.id, i]));
+  fase2.forEach((q) => { const i = f3ids.get(q.id); if (i) q.f3 = { estado_final: i.estado_final, resposta: i.resposta_ou_motivo }; });
+  // caminho: fases numeradas (F3 em diante) que ainda não têm etapa própria entram antes das comparações
+  const caminho = [...(lt.etapas_do_caminho || [])];
+  for (const f of lt.fases.filter((f) => /^F\d+$/.test(f.id) && +f.id.slice(1) >= 3)) {
+    if (caminho.some((e) => e.id === f.id.toLowerCase() || (f.versao && e.versao === f.versao))) continue;
+    const pos = caminho.findIndex((e) => e.status === 'disponivel' || e.status === 'vivo');
+    caminho.splice(pos < 0 ? caminho.length : pos, 0, { id: f.id.toLowerCase(), titulo: f.titulo, status: f.status, versao: f.versao || f.id, texto: f.resumo.split(/(?<=\.)\s/)[0], link: '#fase' + f.id.slice(1) });
+  }
+  gravar('linha-do-tempo.json', { descricao: lt.descricao, situacao_atual: lt.situacao_atual || null, caminho, fases: lt.fases, marcos: lt.marcos, conclusoes_recentes: lt.conclusoes_recentes || [], rodadas, revisoes, fase2, fase3, github: 'https://github.com/doce42/urna-lab' });
 }
 
 // ---------- dados do relatório (118 MB local) → testes.json (enxuto) ----------
@@ -214,6 +226,8 @@ const DOCS = [
   ['revisoes', 'revisoes/README.md', 'Revisões independentes', 'Como cada revisão é guardada e respondida; critérios para aprovar a baseline.'],
   ['revisao-r1', 'revisoes/R1-codex/README.md', 'Revisão R1 (Codex)', 'A primeira auditoria externa da Fase 1 e o que conferimos antes de responder.'],
   ['fase2', 'FASE2.md', 'Fase 2', 'Perguntas registradas antes dos resultados, com a hipótese concorrente que cada uma distingue.'],
+  ['fase3', 'RELATORIO_F3.md', 'Fase 3', 'Pendências, curvas e zeros: o que foi feito, o estado final de cada item e o que ficou bloqueado.'],
+  ['fase3-inventario', 'fase3/INVENTARIO.md', 'Inventário da Fase 3', 'Os 27 itens da Fase 3, com estado inicial, trabalho feito, estado final e a próxima evidência.'],
   ['diretriz', 'DIRETRIZ.md', 'Diretriz científica', 'Princípios, cinco níveis de investigação e classes de evidência A–G.'],
   ['protocolo', 'PROTOCOLO.md', 'Protocolo', 'Perguntas, modelos nulos, critérios fixados antes de rodar e emendas datadas.'],
   ['metodologia', 'METODOLOGIA.md', 'Metodologia matemática', 'A matemática de cada teste, camada por camada.'],

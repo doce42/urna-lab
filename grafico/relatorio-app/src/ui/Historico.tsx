@@ -5,8 +5,8 @@ import { useDados } from '@/lib/dados';
 import { dataBR } from '@/lib/formato';
 import { SeloClasse } from './base';
 
-export const PROVA_ROT: Record<Prova['resultado'], string> = { resistiu: 'resistiu', caiu: 'caiu', ajustado: 'ajustado', em_andamento: 'em andamento' };
-export const PROVA_COR: Record<Prova['resultado'], string> = { resistiu: 'var(--ok)', caiu: 'var(--erro)', ajustado: 'var(--warn)', em_andamento: 'var(--text-subtle)' };
+export const PROVA_ROT: Record<Prova['resultado'], string> = { resistiu: 'resistiu', caiu: 'caiu', ajustado: 'ajustado', em_andamento: 'em andamento', em_revisao: 'em revisão', inalterado: 'inalterado' };
+export const PROVA_COR: Record<Prova['resultado'], string> = { resistiu: 'var(--ok)', caiu: 'var(--erro)', ajustado: 'var(--warn)', em_andamento: 'var(--text-subtle)', em_revisao: 'var(--accent)', inalterado: 'var(--ok)' };
 export const CAUSA_ROT: Record<string, string> = { dados: 'dados', codigo: 'código', metodo: 'método', nova_evidencia: 'nova evidência', interpretacao: 'interpretação', redacao: 'redação', rastreabilidade: 'rastreabilidade' };
 const ALVO_ROT: Record<string, string> = { evidencia: 'evidência', metodo: 'método', interpretacao: 'interpretação', redacao: 'redação', rastreabilidade: 'rastreabilidade' };
 const SIT = (s: string) => s.replace(/_/g, ' ').replace('concluido', 'concluído');
@@ -59,7 +59,7 @@ export function HistoriaCientifica({ t }: { t: Teste }) {
               </li>
             );
           })}</ul>
-        ) : <p className="text-[14px]">Ainda não foi contestado. Cada contestação fica registrada aqui com o resultado: resistiu, ajustado, caiu ou em andamento.</p>}
+        ) : <p className="text-[14px]">Ainda não foi contestado. Cada contestação fica registrada aqui com o resultado: resistiu, ajustado, caiu, em andamento, em revisão ou inalterado.</p>}
       </Passo>
       {mud.length > 0 && (
         <Passo n={versoes.length + 2} titulo="Mudanças e justificativas" cor="var(--accent)">

@@ -25,10 +25,10 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
   const [busca, setBusca] = useState(q0.get('q') || '');
   const [classes, setClasses] = useState<Set<string>>(() => new Set(q0.get('classe') ? [q0.get('classe')!] : []));
   const [estados, setEstados] = useState<Set<string>>(() => new Set(q0.get('estado') ? [q0.get('estado')!] : []));
-  const [modulos, setModulos] = useState<Set<string>>(new Set());
+  const [modulos, setModulos] = useState<Set<string>>(() => new Set(q0.get('modulo') ? [q0.get('modulo')!] : []));
   const [natureza, setNatureza] = useState<string | null>(null);
   const aberto = partes[0] || null;
-  useEffect(() => { const q = new URLSearchParams(location.hash.split('?')[1] || ''); if (q.get('classe')) setClasses(new Set([q.get('classe')!])); if (q.get('estado')) setEstados(new Set([q.get('estado')!])); if (q.get('q') != null) setBusca(q.get('q')!); }, [location.hash.split('?')[1]]);
+  useEffect(() => { const q = new URLSearchParams(location.hash.split('?')[1] || ''); if (q.get('classe')) setClasses(new Set([q.get('classe')!])); if (q.get('estado')) setEstados(new Set([q.get('estado')!])); if (q.get('modulo')) setModulos(new Set([q.get('modulo')!])); if (q.get('q') != null) setBusca(q.get('q')!); }, [location.hash.split('?')[1]]);
   const testeAberto = aberto ? reg.testes.find((t) => t.id === aberto) || null : null;
   const alternar = (set: Set<string>, k: string, f: (s: Set<string>) => void) => { const n = new Set(set); n.has(k) ? n.delete(k) : n.add(k); f(n); };
   const limpar = () => { setBusca(''); setClasses(new Set()); setEstados(new Set()); setModulos(new Set()); setNatureza(null); };
@@ -45,7 +45,7 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
       <div className="max-w-[52rem]">
         <Eyebrow>Testes · {reg.testes.length} registrados</Eyebrow>
         <h1 className="t-h1 mt-2">Cada teste com pergunta, hipótese nula, resultado e limite.</h1>
-        <p className="t-lead mt-4">Organizados em sete módulos, do dado bruto à forense estatística e às investigações da Fase 2. Clique num cartão para abrir o detalhe: como ler o gráfico, método, o que o teste não consegue ver, anotações e como reproduzir.</p>
+        <p className="t-lead mt-4">Organizados em {NUM[Object.keys(contMod).length] || Object.keys(contMod).length} módulos, do dado bruto à forense estatística e às investigações das Fases 2 e 3. Clique num cartão para abrir o detalhe: como ler o gráfico, método, o que o teste não consegue ver, anotações e como reproduzir.</p>
       </div>
 
       {/* filtros */}
@@ -105,7 +105,7 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
   const cat = categoria(t), proc = emProc(t), { s } = sentencaDe(t);
   const parc = (t.resultado_atual.match(/\((AP:[^)]*)\)/) || [])[1];
   const prelim = preliminar(t) && !proc;
-  const f2 = faseDois(t);
+  const f2 = faseRecente(t);
   return (
     <article id={`t-${t.id}`} className="cartao cartao-hover overflow-hidden flex flex-col min-w-0 scroll-mt-28" style={{ ['--cor' as string]: CLASSE_COR[t.classe_evidencia] }}>
       <a href={`#/testes/${t.id}`} className="block p-5 pb-4 group" aria-label={`${t.id}: ${t.pergunta}`}>
@@ -121,7 +121,7 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
           <div className="text-[11px] font-mono uppercase tracking-wider text-muted">Resultado</div>
           <p className="text-[15px] font-medium leading-snug mt-0.5">{proc ? 'Ainda sem resultado desta versão.' : s || 'Sem resultado registrado.'}</p>
         </div>
-        {f2 && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><span className="inline-flex align-middle mr-1.5"><SeloProva r={f2.resultado} /></span><b className="font-medium text-text">Fase 2 ({vRod(t, 3)}):</b> {f2.texto}</p>}
+        {f2 && <p className="mt-2.5 text-[13.5px] text-muted leading-snug line-clamp-3"><span className="inline-flex align-middle mr-1.5"><SeloProva r={f2.resultado} /></span><b className="font-medium text-text">Fase {f2.rodada - 1} ({vRod(t, f2.rodada)}):</b> {f2.texto}</p>}
         {t.impacto_votos && !proc && <p className="mt-2 text-[13.5px] text-muted leading-snug line-clamp-3"><b className="font-medium text-text">Em votos:</b> {t.impacto_votos}</p>}
       </a>
       <div className="px-5 pb-5 relative">
@@ -136,14 +136,16 @@ function Cartao({ t, reg, d }: { t: Teste; reg: Registro; d: TestesDados }) {
   );
 }
 
-// a contestação mais recente da rodada 3 (Fase 2) e a justificativa da mudança, se a versão V1.1 registrou uma
+// a contestação da fase mais recente (rodada 3 = Fase 2/V1.1, rodada 4 = Fase 3/V1.2...) e a justificativa da mudança, se a versão registrou uma
+const NUM: Record<number, string> = { 6: 'seis', 7: 'sete', 8: 'oito', 9: 'nove', 10: 'dez' };
 const vRod = (t: Teste, r: number) => (t.versoes || []).find((v) => v.rodada === r)?.versao || `rodada ${r}`;
-function faseDois(t: Teste) {
-  const ps = (t.provas || []).filter((p) => p.rodada === 3);
+function faseRecente(t: Teste) {
+  const rodada = Math.max(0, ...(t.provas || []).map((p) => p.rodada).filter((r) => r >= 3));
+  const ps = (t.provas || []).filter((p) => p.rodada === rodada);
   if (!ps.length) return null;
-  const pior = (['caiu', 'ajustado', 'em_andamento', 'resistiu'] as const).find((r) => ps.some((p) => p.resultado === r))!;
-  const m = (t.versoes || []).find((v) => v.rodada === 3)?.mudancas?.[0];
-  return { resultado: pior, texto: m?.justificativa || ps.filter((p) => p.resultado === pior).slice(-1)[0].descricao };
+  const pior = (['caiu', 'ajustado', 'em_andamento', 'em_revisao', 'inalterado', 'resistiu'] as const).find((r) => ps.some((p) => p.resultado === r))!;
+  const m = (t.versoes || []).find((v) => v.rodada === rodada)?.mudancas?.[0];
+  return { rodada, resultado: pior, texto: m?.justificativa || ps.filter((p) => p.resultado === pior).slice(-1)[0].descricao };
 }
 
 function Bloco({ titulo, children, aberto }: { titulo: string; children: ReactNode; aberto?: boolean }) {
