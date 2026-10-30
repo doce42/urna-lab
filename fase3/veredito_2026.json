@@ -1,6 +1,6 @@
 {
  "gerado": "2026-10-28",
- "situacao": "Rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56), sobre a V1.5 congelada",
+ "situacao": "Rodada 8 em aberto, não congelada (T66 a T71, Q51 a Q57), sobre a V1.5 congelada",
  "margem_2026": 4430191,
  "votos_para_inverter": 2215096,
  "niveis": [
@@ -378,6 +378,10 @@
    "nivel": "S1",
    "motivo": "Benford do primeiro dígito: desvio explicado pelo limite das contagens; cabe entre as referências simuladas; teste sem poder neste dado."
   },
+  "T71": {
+   "nivel": "S1",
+   "motivo": "Curvas dos dois turnos sobrepostas: semelhança esperada pela ordem geográfica de chegada (repete entre turnos) e pelo voto estável por seção; menor que em 2022; a projeção 53% × 46% é o deslocamento visual de 5,25 pontos."
+  },
   "T70": {
    "nivel": "PC",
    "motivo": "Disponibilidade dos microdados: arquivos por urna publicados na noite de 25/10; CSV BWeb não testável aqui."
@@ -635,8 +639,8 @@
   ],
   "alegacoes": {
    "titulo": "Alegações públicas testadas",
-   "frase": "As alegações públicas testadas (a live de 2022, o vídeo dos \"votos extras\" e o relatório pericial) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q56).",
-   "situacao": "Q51 a Q56 e T66 a T70 são da rodada 8, em aberto: registro vivo, ainda não congelado.",
+   "frase": "As alegações públicas testadas (a live de 2022, o vídeo dos \"votos extras\", o relatório pericial e o vídeo das curvas sobrepostas) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q57).",
+   "situacao": "Q51 a Q57 e T66 a T71 são da rodada 8, em aberto: registro vivo, ainda não congelado.",
    "itens": [
     {
      "alegacao": "Houve duas eleições no mesmo dia: Flávio venceu até as 17h00 e Lula virou na prorrogação.",
@@ -715,6 +719,16 @@
      ],
      "testes": [
       "T52"
+     ]
+    },
+    {
+     "alegacao": "As curvas do 1º e do 2º turno, deslocadas, ficam iguais e projetam 53% para Flávio e 46% para Lula.",
+     "resposta": "A projeção é o resultado oficial com o deslocamento de 5,25 pontos escolhido no botão do gráfico (6,5 mi de votos de cada lado). As curvas se parecem porque as urnas chegam numa ordem geográfica que se repete entre turnos e cada seção vota no 2º turno como no 1º; em 2022 eram ainda mais parecidas.",
+     "perguntas": [
+      "Q57"
+     ],
+     "testes": [
+      "T71"
      ]
     },
     {

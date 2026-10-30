@@ -1183,7 +1183,7 @@
   },
   {
    "id": "pericial",
-   "titulo": "Relatório pericial: hora de encerramento, biometria, unanimidade, Benford",
+   "titulo": "Relatório pericial e curvas sobrepostas: hora de encerramento, biometria, unanimidade, Benford, forma da curva",
    "perguntas": [
     {
      "id": "Q51",
@@ -1328,9 +1328,31 @@
      "por_ano": {},
      "reabertura": "",
      "em_votos": "Não se traduz em votos."
+    },
+    {
+     "id": "Q57",
+     "pergunta": "As curvas acumuladas do 1º e do 2º turno, 'torcidas' em 5,25 pontos, ficam semelhantes demais e projetam 53% para Flávio e 46% para Lula?",
+     "resposta": "Não. A 'projeção' é o resultado oficial (Lula 51,79%, Flávio 48,21%) com o deslocamento de 5,25 pontos escolhido no botão do gráfico, que o próprio gráfico diz não alterar os dados; ele equivale a mover 6,5 mi de votos de Lula para Flávio. A semelhança das curvas é esperada: as urnas não chegam em ordem aleatória (a mesma seção chega em posição parecida nos dois turnos, Spearman 0,56, e o Sudeste é 67% das últimas urnas), e cada seção vota no 2º turno como no 1º (correlação 0,99). Um modelo em que cada seção repete o 1º turno mais uma virada nacional reproduz a curva real do 2º turno a no máximo 0,30 ponto. Em 2022 as curvas eram ainda mais parecidas (0,94 contra 0,90).",
+     "classificacao": "Refutado no escopo definido",
+     "evidencias": [
+      "fase3/PREREG_CURVAS_SOBREPOSTAS.md",
+      "fase3/curvas_sobrepostas.py",
+      "fase3/resultados/curvas_sobrepostas.json"
+     ],
+     "numeros": "Spearman da ordem 0,56 (2022: 0,64); Pearson das curvas 0,905 (2022: 0,941); contrafactual a 0,30 ponto (2022: 0,29); deslocamento = 6.514.319 votos de cada lado.",
+     "demonstra": "Que a projeção é o deslocamento visual e que a semelhança vem da ordem geográfica de chegada e do voto estável por seção, igual a 2022.",
+     "nao_demonstra": "Opinião pública e confiança nas instituições, citadas no vídeo, não são dado do TSE.",
+     "robustez": "Reprodução; 200 ordens aleatórias independentes; contrafactual estrutural; 2022 como referência.",
+     "causa": "—",
+     "alcance": "2026 e 2022, 1º e 2º turnos, todas as seções com boletim recebido.",
+     "mudaria": "Semelhança maior que a de 2022 com a curva real afastada do contrafactual além de 2022.",
+     "validacao": "T71 (rodada 8, aberta); T03, T10, T40",
+     "por_ano": {},
+     "reabertura": "",
+     "em_votos": "Não se traduz em votos; o deslocamento do vídeo equivale a mover 6,51 mi de votos de Lula para Flávio (2,9 vezes a margem)."
     }
    ],
-   "descricao": "Q51 a Q56 (rodada 8, em aberto, ainda não congelada): as alegações de um relatório divulgado em imagens, testadas com pré-registro."
+   "descricao": "Q51 a Q57 (rodada 8, em aberto, ainda não congelada): as alegações de um relatório divulgado em imagens e de um vídeo com as curvas dos dois turnos sobrepostas, testadas com pré-registro."
   }
  ],
  "inventario": [

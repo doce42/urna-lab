@@ -10,7 +10,7 @@ ALVOS = {  # id da fase -> (arquivo, onde ler o detalhe)
     "F3": ("fase3.md", ["RELATORIO_F3.md", "fase3/VEREDITO_2026.md", "fase3/RESPOSTAS_F3.md"]),
     "AP": ("rodada-6.md", ["fase3/RESPOSTAS_F3.md", "testes/registro.json"]),
     "OV": ("rodada-7.md", ["operacao_veracidade/OPERACAO_VERACIDADE_GERAL.md", "operacao_veracidade/REPRODUCAO.md"]),
-    "RP": ("rodada-8.md", ["fase3/PREREG_RELATORIO_PERICIAL.md", "fase3/resultados/relatorio_pericial.json", "fase3/resultados/relatorio_pericial_r2b.json"]),
+    "RP": ("rodada-8.md", ["fase3/PREREG_RELATORIO_PERICIAL.md", "fase3/resultados/relatorio_pericial.json", "fase3/resultados/relatorio_pericial_r2b.json", "fase3/PREREG_CURVAS_SOBREPOSTAS.md", "fase3/resultados/curvas_sobrepostas.json"]),
 }
 ROT = {"concluida": "concluída", "em_andamento": "EM ABERTO (não congelada)"}
 ind = ["# Relatórios por fase e rodada", "",

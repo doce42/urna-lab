@@ -201,19 +201,19 @@
    "titulo": "Relatório Pericial Independente (rodada 8)",
    "status": "em_andamento",
    "inicio": "2026-10-28",
-   "resumo": "Rodada 8, aberta em 28/10/2026 e não congelada: análise de um relatório divulgado em imagens (divisão dos votos por hora de encerramento das urnas, liberação sem biometria, unanimidade e Benford). As alegações viram pré-registro (fase3/PREREG_RELATORIO_PERICIAL.md, emenda 17) e são testadas só com dados do TSE; o que não é dado do TSE fica fora do escopo e é dito. Nada é congelado sem aprovação explícita do responsável.",
+   "resumo": "Rodada 8, aberta em 28/10/2026 e não congelada: análise de um relatório divulgado em imagens (divisão dos votos por hora de encerramento das urnas, liberação sem biometria, unanimidade e Benford). As alegações viram pré-registro (fase3/PREREG_RELATORIO_PERICIAL.md, emenda 17) e são testadas só com dados do TSE; o que não é dado do TSE fica fora do escopo e é dito. Nada é congelado sem aprovação explícita do responsável. Em 30/10/2026 entrou a alegação de um vídeo no Instagram (curvas do 1º e do 2º turno sobrepostas), com pré-registro próprio (fase3/PREREG_CURVAS_SOBREPOSTAS.md, emenda 18): T71 e Q57.",
    "etapas": [
     {
      "titulo": "Pré-registro",
      "texto": "Alegações R1 a R10 e a leitura fixada antes de rodar (fase3/PREREG_RELATORIO_PERICIAL.md, emenda 17)."
     },
     {
-     "titulo": "Testes T66 a T70",
-     "texto": "Hora de encerramento, liberação sem biometria, unanimidade, Benford e disponibilidade dos microdados; R2b e a conferência de fuso são exploratórios."
+     "titulo": "Testes T66 a T71",
+     "texto": "Hora de encerramento, liberação sem biometria, unanimidade, Benford e disponibilidade dos microdados; R2b e a conferência de fuso são exploratórios. T71: curvas dos dois turnos sobrepostas (emenda 18)."
     },
     {
-     "titulo": "Perguntas Q51 a Q56",
-     "texto": "Respostas no site, capítulo próprio em Respostas; a prorrogação de fato (depois das 17:30) deu +228.095 votos de vantagem a Lula (5,1% da margem)."
+     "titulo": "Perguntas Q51 a Q57",
+     "texto": "Respostas no site, capítulo próprio em Respostas; a prorrogação de fato (depois das 17:30) deu +228.095 votos de vantagem a Lula (5,1% da margem). Q57: a 'projeção 53% × 46%' do vídeo é o deslocamento visual de 5,25 pontos; a semelhança das curvas é a esperada e menor que em 2022."
     },
     {
      "titulo": "Revisão do site e novo PDF",
@@ -491,7 +491,7 @@
    "titulo": "Relatório Pericial",
    "status": "em_andamento",
    "versao": "rodada 8, em aberto",
-   "texto": "Análise das alegações de um relatório em imagens (hora de encerramento, biometria, unanimidade, Benford) com pré-registro (T66 a T70, Q51 a Q56); rodada aberta, não congelada.",
+   "texto": "Análise das alegações de um relatório em imagens (hora de encerramento, biometria, unanimidade, Benford) e de um vídeo com as curvas sobrepostas, com pré-registro (T66 a T71, Q51 a Q57); rodada aberta, não congelada.",
    "link": "#/respostas/pericial"
   },
   {
@@ -512,6 +512,11 @@
   }
  ],
  "conclusoes_recentes": [
+  {
+   "titulo": "Curvas sobrepostas: a 'projeção' é o deslocamento",
+   "texto": "O 53% × 46% do vídeo é o resultado oficial com 5,25 pontos deslocados à mão (6,5 mi de votos de cada lado). As curvas dos dois turnos se parecem porque a ordem de chegada é geográfica e se repete e cada seção vota como no 1º turno; em 2022 eram ainda mais parecidas (rodada 8, em aberto).",
+   "teste": "T71"
+  },
   {
    "titulo": "A prorrogação de fato deu 5,1% da margem",
    "texto": "Encerramento depois das 17:30: 7.604 seções e 2,21 mi de votantes, +228.095 votos de vantagem a Lula; sem essas seções, Lula lidera por 4.202.096. O corte das 17h00 do relatório mistura fusos e o encerramento de rotina (rodada 8, em aberto).",

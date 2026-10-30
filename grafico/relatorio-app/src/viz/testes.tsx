@@ -186,7 +186,7 @@ export const MODS: Record<string, [string, string]> = {
   D: ['Forense estatística', 'Testes clássicos de padrões em números de votos, sempre com a medida de quanto cada teste consegue (ou não) enxergar.'],
   E: ['Divergências e agrupamento', 'Seções ou locais que fogem do esperado, se se agrupam no espaço e que explicações existem.'],
   F: ['Referência: 2022', 'A mesma bateria no pleito de 2022, para saber se um número de 2026 é incomum.'],
-  H: ['Fase 3, alegações públicas, Operação Veracidade e relatório pericial', 'Investigações da Fase 3 (T40 a T44), alegações públicas testadas e seus desdobramentos (T45 a T59), a Operação Veracidade Geral (T60a a T65) e o relatório pericial da rodada 8, em aberto (T66 a T70), com nulos explícitos e o que significam em votos.'],
+  H: ['Fase 3, alegações públicas, Operação Veracidade e relatório pericial', 'Investigações da Fase 3 (T40 a T44), alegações públicas testadas e seus desdobramentos (T45 a T59), a Operação Veracidade Geral (T60a a T65) e o relatório pericial e as curvas sobrepostas da rodada 8, em aberto (T66 a T71), com nulos explícitos e o que significam em votos.'],
   G: ['Fase 2: investigações aprofundadas', 'Testes novos, com pré-registro, que tentam derrubar métodos e conclusões anteriores. Cada um traz o que significa em número de votos.'],
 };
 // rótulo curto do módulo para filtros e selos

@@ -49,7 +49,7 @@ function AlegacoesHome() {
       <div className="mt-2"><AlegacoesResumo a={a} max={4} /></div>
       <div className="mt-5 flex flex-wrap gap-3">
         <BotaoLink href="#/respostas/alegacoes"><ArrowRight size={17} />Alegações de 2022 e posts (Q27 a Q41)</BotaoLink>
-        <BotaoLink href="#/respostas/pericial"><ArrowRight size={17} />Relatório pericial (Q51 a Q56, rodada 8)</BotaoLink>
+        <BotaoLink href="#/respostas/pericial"><ArrowRight size={17} />Relatório pericial e curvas (Q51 a Q57, rodada 8)</BotaoLink>
       </div>
     </section>
   );

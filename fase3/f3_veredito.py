@@ -63,6 +63,7 @@ SINAL = {
  "T67": S("S1", "Liberação sem biometria: 8.632.488 (6,73%), menor que em 2022 (8,06%); relação com Lula igual no 1º turno e em 2022 e nula dentro do município."),
  "T68": S("S1", "Unanimidade: 106 contra 4 reproduzido; razão menor que em 2022; concentrada no Norte e Nordeste."),
  "T69": S("S1", "Benford do primeiro dígito: desvio explicado pelo limite das contagens; cabe entre as referências simuladas; teste sem poder neste dado."),
+ "T71": S("S1", "Curvas dos dois turnos sobrepostas: semelhança esperada pela ordem geográfica de chegada (repete entre turnos) e pelo voto estável por seção; menor que em 2022; a projeção 53% × 46% é o deslocamento visual de 5,25 pontos."),
  "T70": S("PC", "Disponibilidade dos microdados: arquivos por urna publicados na noite de 25/10; CSV BWeb não testável aqui."),
  "T44": S("S3", "Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto."),
 }
@@ -165,11 +166,11 @@ OPERACAO = {
  ],
 }
 # Alegações públicas testadas (rodadas 6 a 8): uma frase de síntese e a resposta curta das mais comuns. Números de fase3/RESPOSTAS_F3.md
-# (Q27 a Q30, Q34, Q35, Q42, Q51 a Q56) e de testes/registro.json (T45 a T47, T52, T53, T65 a T70). Usado na Home, em Respostas, no VEREDITO e no PDF.
+# (Q27 a Q30, Q34, Q35, Q42, Q51 a Q57) e de testes/registro.json (T45 a T47, T52, T53, T65 a T71). Usado na Home, em Respostas, no VEREDITO e no PDF.
 ALEGACOES = {
  "titulo": "Alegações públicas testadas",
- "frase": "As alegações públicas testadas (a live de 2022, o vídeo dos \"votos extras\" e o relatório pericial) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q56).",
- "situacao": "Q51 a Q56 e T66 a T70 são da rodada 8, em aberto: registro vivo, ainda não congelado.",
+ "frase": "As alegações públicas testadas (a live de 2022, o vídeo dos \"votos extras\", o relatório pericial e o vídeo das curvas sobrepostas) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q57).",
+ "situacao": "Q51 a Q57 e T66 a T71 são da rodada 8, em aberto: registro vivo, ainda não congelado.",
  "itens": [
    {"alegacao": "Houve duas eleições no mesmo dia: Flávio venceu até as 17h00 e Lula virou na prorrogação.",
     "resposta": "Os números se reproduzem, mas o corte das 17h00 mistura fusos (as 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h) e conta como prorrogação o encerramento de rotina (17:01 a 17:15; 98% das seções fecham até 17:15). A prorrogação de fato (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228.095 votos de vantagem, 5,1% da margem de 4.430.191; sem essas seções, Lula lidera por 4.202.096.",
@@ -192,6 +193,9 @@ ALEGACOES = {
    {"alegacao": "Os boletins ficaram parados duas horas antes de chegar ao TSE no 2º turno de 2026.",
     "resposta": "É fato medido: nenhum recebimento das 17:07 às 19:03 (116 minutos), só em 2026, coincidindo com a prorrogação. O conteúdo do boletim é assinado na emissão e confere; a causa da pausa não está nos dados.",
     "perguntas": ["Q34"], "testes": ["T52"]},
+   {"alegacao": "As curvas do 1º e do 2º turno, deslocadas, ficam iguais e projetam 53% para Flávio e 46% para Lula.",
+    "resposta": "A projeção é o resultado oficial com o deslocamento de 5,25 pontos escolhido no botão do gráfico (6,5 mi de votos de cada lado). As curvas se parecem porque as urnas chegam numa ordem geográfica que se repete entre turnos e cada seção vota no 2º turno como no 1º; em 2022 eram ainda mais parecidas.",
+    "perguntas": ["Q57"], "testes": ["T71"]},
    {"alegacao": "Os microdados das urnas ficaram trancados por 72 horas.",
     "resposta": "Para os arquivos por urna, não: estavam publicados na noite de 25/10. Para o CSV BWeb, este projeto não tem registro da primeira publicação; não é testável aqui.",
     "perguntas": ["Q56"], "testes": ["T70"]},
@@ -217,7 +221,7 @@ RESUMO = {
 }
 RESPOSTA["resumo"] = RESUMO
 RESPOSTA["operacao"] = OPERACAO
-OUT = {"gerado": "2026-10-28", "situacao": "Rodada 8 em aberto, não congelada (T66 a T70, Q51 a Q56), sobre a V1.5 congelada", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
+OUT = {"gerado": "2026-10-28", "situacao": "Rodada 8 em aberto, não congelada (T66 a T71, Q51 a Q57), sobre a V1.5 congelada", "margem_2026": MARGEM_2026, "votos_para_inverter": PRECISO, "niveis": NIVEIS, "sinal_por_teste": SINAL, "hipoteses": HIP, "resposta_central": RESPOSTA}
 json.dump(OUT, open(R + "/fase3/veredito_2026.json", "w"), ensure_ascii=False, indent=1)
 L = ["# Apuração de 2026: o que os dados públicos mostram", "", f"> **{AVISO['titulo']}**", ">"] + [f"> - {a}" for a in AVISO["itens"]] + ["", f"**Nota do autor:** {AVISO['nota_autor']}", "", f"**Pergunta testada:** {RESPOSTA['pergunta']}", "", f"**Resposta:** {RESPOSTA['resposta']}", "", "**Leia junto com os resultados:**", ""] + [f"- {x}" for x in RESPOSTA["avisos"]] + ["", "## Dedução", ""] + [f"{i+1}. {d}" for i, d in enumerate(RESPOSTA["deducao"])] + ["", f"**O que fecharia o que resta:** {RESPOSTA['o_que_seria_preciso']}", "",
      "## Hipóteses de fraude examinadas", "", "| Id | Mecanismo | O que deixaria | Resultado | Situação | Em votos |", "|---|---|---|---|---|---|"]

@@ -47,9 +47,9 @@
 
 ## Alegações públicas testadas
 
-As alegações públicas testadas (a live de 2022, o vídeo dos "votos extras" e o relatório pericial) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q56).
+As alegações públicas testadas (a live de 2022, o vídeo dos "votos extras", o relatório pericial e o vídeo das curvas sobrepostas) reproduzem quase todos os números, mas as conclusões não se sustentam (Q27 a Q30, Q42, Q51 a Q57).
 
-_Q51 a Q56 e T66 a T70 são da rodada 8, em aberto: registro vivo, ainda não congelado._
+_Q51 a Q57 e T66 a T71 são da rodada 8, em aberto: registro vivo, ainda não congelado._
 
 - **Houve duas eleições no mesmo dia: Flávio venceu até as 17h00 e Lula virou na prorrogação.** Os números se reproduzem, mas o corte das 17h00 mistura fusos (as 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h) e conta como prorrogação o encerramento de rotina (17:01 a 17:15; 98% das seções fecham até 17:15). A prorrogação de fato (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228.095 votos de vantagem, 5,1% da margem de 4.430.191; sem essas seções, Lula lidera por 4.202.096. (Q51, Q52, T66, T09, T52)
 - **98,12% dos "votos extras" do 2º turno foram para Lula, o que não fecha.** A aritmética está certa, mas o 98% é a premissa de 60% devolvida: é o mínimo possível e deixa Flávio sem nenhum voto dos extras. O mesmo método dá 370% para Bolsonaro em 2022. (Q42, T65)
@@ -58,6 +58,7 @@ _Q51 a Q56 e T66 a T70 são da rodada 8, em aberto: registro vivo, ainda não co
 - **O teste de Benford do primeiro dígito acusa manipulação.** Em contagens de poucas centenas por seção, o primeiro dígito não segue Benford; o desvio observado cabe nas referências simuladas sem manipulação. O teste não discrimina neste dado. (Q55, T69)
 - **Urnas anteriores a 2020 deram mais votos a Lula em 2022 (live de 4/11/2022).** Deram mais (50,3% contra 46,0% no 1º turno de 2022), também dentro do município; dentro do mesmo local de votação a diferença é equivalente a zero: é localização, não modelo de urna. O 51,05% de Bolsonaro só nas UE2020 é o voto das cidades que tinham UE2020. (Q27, Q29, T47, T46)
 - **Os boletins ficaram parados duas horas antes de chegar ao TSE no 2º turno de 2026.** É fato medido: nenhum recebimento das 17:07 às 19:03 (116 minutos), só em 2026, coincidindo com a prorrogação. O conteúdo do boletim é assinado na emissão e confere; a causa da pausa não está nos dados. (Q34, T52)
+- **As curvas do 1º e do 2º turno, deslocadas, ficam iguais e projetam 53% para Flávio e 46% para Lula.** A projeção é o resultado oficial com o deslocamento de 5,25 pontos escolhido no botão do gráfico (6,5 mi de votos de cada lado). As curvas se parecem porque as urnas chegam numa ordem geográfica que se repete entre turnos e cada seção vota no 2º turno como no 1º; em 2022 eram ainda mais parecidas. (Q57, T71)
 - **Os microdados das urnas ficaram trancados por 72 horas.** Para os arquivos por urna, não: estavam publicados na noite de 25/10. Para o CSV BWeb, este projeto não tem registro da primeira publicação; não é testável aqui. (Q56, T70)
 
 ## Anomalias reais em 2026
@@ -192,5 +193,6 @@ Perguntas Q42 a Q50 em `fase3/RESPOSTAS_F3.md`; documentos em `operacao_veracida
 | T67 | S1 | Liberação sem biometria: 8.632.488 (6,73%), menor que em 2022 (8,06%); relação com Lula igual no 1º turno e em 2022 e nula dentro do município. |
 | T68 | S1 | Unanimidade: 106 contra 4 reproduzido; razão menor que em 2022; concentrada no Norte e Nordeste. |
 | T69 | S1 | Benford do primeiro dígito: desvio explicado pelo limite das contagens; cabe entre as referências simuladas; teste sem poder neste dado. |
+| T71 | S1 | Curvas dos dois turnos sobrepostas: semelhança esperada pela ordem geográfica de chegada (repete entre turnos) e pelo voto estável por seção; menor que em 2022; a projeção 53% × 46% é o deslocamento visual de 5,25 pontos. |
 | T70 | PC | Disponibilidade dos microdados: arquivos por urna publicados na noite de 25/10; CSV BWeb não testável aqui. |
 | T44 | S3 | Salvador: virada de Lula ~30 mil votos acima do previsto, em todas as 19 zonas; única capital desviante entre as 27 (z 6,1); não explicada pelo perfil do eleitorado; Fortaleza tem desvio por seção de tamanho parecido no sentido oposto. |

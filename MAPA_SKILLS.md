@@ -36,6 +36,7 @@ Cada skill (`.agents/skills/<nome>/SKILL.md`) cobre um domínio do estudo. Este 
 | apuracao-integridade | Operação Veracidade | T60a, T60b, T61, T62 | `operacao_veracidade/scripts/cert_extrai.py`, `cert_analise.py`, `cadeia.py`, `controles_mutacao.py`, `ed521_unitarios.py`, `terceiros_qr.py`, `republicacao_bu.py`, `identificabilidade.py`, `caso_ES.py` |
 | apuracao-forense | Operação Veracidade | T63, T64, T65 | `operacao_veracidade/scripts/sim_adversarial.py`, `sim_fabricacao_v2.py`, `zeros_contagens.py`, `hipotese_video.py` |
 | apuracao-forense | rodada 8 (aberta) | T66–T70, Q51–Q56 | `fase3/PREREG_RELATORIO_PERICIAL.md`, `fase3/relatorio_pericial.py`, `fase3/relatorio_pericial_r2b.py` |
+| apuracao-forense | rodada 8 (aberta), emenda 18 | T71, Q57 | `fase3/PREREG_CURVAS_SOBREPOSTAS.md`, `fase3/curvas_sobrepostas.py` |
 | apuracao-versoes | governança | (todas as versões) | `scripts/rodada.py`, `rodadas/`, `scripts/publicar.py`, `scripts/manifesto.py`, `scripts/carimbo.py`, `scripts/dados_leves.py`, `DADOS_PRESERVACAO.md` |
 
 ## Por tarefa

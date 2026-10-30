@@ -2,7 +2,7 @@
 
 > Votos de simulações são sintéticos. Concordância entre registros da mesma origem é consistência interna, não verificação independente. Nenhuma resposta é veredito global sobre fraude.
 > Margem do 2º turno: 4.430.191 votos em 2026 e 2.139.645 em 2022.
-> Rodada 8 em aberto (relatório pericial, Q51 a Q56), sobre a V1.5 (rodada 7, Operação Veracidade Geral) congelada em 28/10/2026. A rodada 8 está em aberto (registro vivo, não congelado).
+> Rodada 8 em aberto (relatório pericial e curvas sobrepostas, Q51 a Q57), sobre a V1.5 (rodada 7, Operação Veracidade Geral) congelada em 28/10/2026. A rodada 8 está em aberto (registro vivo, não congelado).
 
 ## Integridade dos resultados oficiais
 
@@ -700,9 +700,9 @@ _Q42 a Q50 (rodada 7, V1.5): auditoria adversarial dos dados e do próprio vered
 - **Validação:** Interna (certificado da AC, tabela e log têm origens parcialmente distintas)
 - **Evidências:** `operacao_veracidade/resultados/casos_certificado.csv`, `operacao_veracidade/resultados/casos_A_relidos_por_id_e_data.csv`, `operacao_veracidade/evidencia/caso_ES_57932_9_85_112.json`, `operacao_veracidade/06_ANOMALIAS_E_LOGS.md`
 
-## Relatório pericial: hora de encerramento, biometria, unanimidade, Benford
+## Relatório pericial e curvas sobrepostas: hora de encerramento, biometria, unanimidade, Benford, forma da curva
 
-_Q51 a Q56 (rodada 8, em aberto, ainda não congelada): as alegações de um relatório divulgado em imagens, testadas com pré-registro._
+_Q51 a Q57 (rodada 8, em aberto, ainda não congelada): as alegações de um relatório divulgado em imagens e de um vídeo com as curvas dos dois turnos sobrepostas, testadas com pré-registro._
 
 ### Q51. A eleição de 2026 teve duas eleições no mesmo dia, uma vencida por Flávio até as 17h00 e outra por Lula depois, na prorrogação?
 **Resposta:** Os números do relatório se reproduzem, mas a divisão não separa o que ele diz. Em hora local, até 17:00:59 Flávio teve 52,39% e 1,75 mi de frente (150.771 seções), e depois Lula teve +6,18 mi. Só que 98% das seções fecham até 17:15 (mediana 17:01), e o grupo 'depois das 17h00' inclui 339.593 seções de encerramento de rotina (88 mi de votantes). Com o corte em 17:02:59, Lula já lidera o grupo de antes (+0,82 mi). As 32.025 seções encerradas antes das 17h00 locais estão em MT, AM, MS, RO, AC e RR, onde o horário legal local é 16h ou 15h, as 17h de Brasília; em hora de Brasília, até 17:00:59 Flávio tem 50,99% e 0,61 mi de frente. A prorrogação de fato (depois das 17:30: 7.604 seções, 2,21 mi de votantes) deu a Lula +228 mil, 5% da margem; sem elas, Lula lidera por 4,20 mi. Dentro do mesmo município, seções que fecharam depois e antes diferem em 0,2 ponto.
@@ -781,6 +781,19 @@ _Q51 a Q56 (rodada 8, em aberto, ainda não congelada): as alegações de um rel
 - **O que mudaria a resposta:** Registro de primeira publicação do CSV.
 - **Validação:** T70 (rodada 8, aberta)
 - **Evidências:** `fase3/PREREG_RELATORIO_PERICIAL.md`, `fase3/relatorio_pericial.py`, `fase3/relatorio_pericial_r2b.py`, `fase3/resultados/relatorio_pericial.json`, `fase3/resultados/relatorio_pericial_r2b.json`
+
+### Q57. As curvas acumuladas do 1º e do 2º turno, 'torcidas' em 5,25 pontos, ficam semelhantes demais e projetam 53% para Flávio e 46% para Lula?
+**Resposta:** Não. A 'projeção' é o resultado oficial (Lula 51,79%, Flávio 48,21%) com o deslocamento de 5,25 pontos escolhido no botão do gráfico, que o próprio gráfico diz não alterar os dados; ele equivale a mover 6,5 mi de votos de Lula para Flávio. A semelhança das curvas é esperada: as urnas não chegam em ordem aleatória (a mesma seção chega em posição parecida nos dois turnos, Spearman 0,56, e o Sudeste é 67% das últimas urnas), e cada seção vota no 2º turno como no 1º (correlação 0,99). Um modelo em que cada seção repete o 1º turno mais uma virada nacional reproduz a curva real do 2º turno a no máximo 0,30 ponto. Em 2022 as curvas eram ainda mais parecidas (0,94 contra 0,90).
+**Classificação:** Refutado no escopo definido
+**Em votos:** Não se traduz em votos; o deslocamento do vídeo equivale a mover 6,51 mi de votos de Lula para Flávio (2,9 vezes a margem).
+- **Números:** Spearman da ordem 0,56 (2022: 0,64); Pearson das curvas 0,905 (2022: 0,941); contrafactual a 0,30 ponto (2022: 0,29); deslocamento = 6.514.319 votos de cada lado.
+- **Demonstra:** Que a projeção é o deslocamento visual e que a semelhança vem da ordem geográfica de chegada e do voto estável por seção, igual a 2022.
+- **Não demonstra:** Opinião pública e confiança nas instituições, citadas no vídeo, não são dado do TSE.
+- **Robustez:** Reprodução; 200 ordens aleatórias independentes; contrafactual estrutural; 2022 como referência.
+- **Causa:** — · **Alcance:** 2026 e 2022, 1º e 2º turnos, todas as seções com boletim recebido.
+- **O que mudaria a resposta:** Semelhança maior que a de 2022 com a curva real afastada do contrafactual além de 2022.
+- **Validação:** T71 (rodada 8, aberta); T03, T10, T40
+- **Evidências:** `fase3/PREREG_CURVAS_SOBREPOSTAS.md`, `fase3/curvas_sobrepostas.py`, `fase3/resultados/curvas_sobrepostas.json`
 
 ## Matriz dos 33 itens do inventário
 

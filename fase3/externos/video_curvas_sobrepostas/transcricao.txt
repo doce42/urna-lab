@@ -1,0 +1,22 @@
+[   0.0-   9.7] Se nós somarmos as urnas acumuladas em percentual do Flávio com o Lula, não dá 100% no primeiro
+[   9.7-  15.0] turno, porque tem a terceira via e é por isso que a média dos dois vai ficar abaixo
+[  15.0-  21.7] do 50%, mas aí eu criei um fator de correção linear que eu consigo levar os dois para
+[  21.7-  32.3] cima igualmente até a média 50%, isso garante que a soma dos votos do Flávio como os votos
+[  32.3-  38.2] do Lula em percentuais sempre vão totalizar o 100% até o final.
+[  38.2-  45.8] O mais interessante aqui é quando a gente coloca o segundo turno junto, o gráfico
+[  45.8-  50.9] aqui ele é bem diferente o comportamento aparentemente do segundo turno em relação
+[  50.9-  56.5] ao primeiro, teve duas inversões, aqui teve uma inversão, aqui teve outra, e olha que legal,
+[  56.5-  63.1] agora como nós estamos no segundo turno o gráfico já vem centrado em 50%, o que faz todo sentido,
+[  63.1-  68.2] só que nós conseguimos aqui também criar um botãozinho que vai fazer uma torção nos
+[  68.2-  73.5] gráficos ou distorção, interprete como você quiser, nós vamos garantir que essa soma sempre
+[  73.5-  79.8] seja 100% dos votos acumulados e vamos movimentar essa curva, vamos mexer nessa curva,
+[  79.8-  87.6] alterando aqui ela um para cima e outro para baixo, até chegar neste resultado bem aqui.
+[  87.6-  95.0] Olha que curioso, os gráficos ficam extremamente semelhantes, nós temos lá no final a seguinte
+[  95.0- 104.4] projeção 53% para o Flávio e 46% para o Lula, pelo amor de Deus pessoal eu sou só
+[ 104.4- 109.6] um mil de cidadão querendo ter a certeza de que eu posso confiar nas instituições,
+[ 109.6- 114.3] não tem nada de mal aqui, eu tô checando o dado oficial, tô validando, tô vendo,
+[ 114.3- 120.0] é o meu direito ver se tudo bate, não é minimamente curioso num país continental do
+[ 120.0- 123.3] tamanho do Brasil, ainda mais que metade da população tá com a pulga atrás da orelha,
+[ 123.3- 128.7] as pessoas chegam em ordem aleatória, as urnas são enviadas em ordem aleatória e a gente
+[ 128.7- 133.6] vê processos tão similares, eu só não sei pessoal, eu quero saber a sua opinião,
+[ 133.6- 138.4] o que você achou desse resultado aqui, qual é a sua ideia sobre isso.

@@ -242,6 +242,7 @@ add(f"""<table><thead><tr><th style="width:42%">Comando</th><th>Para quê</th></
 <tr><td><code>make teste T=&lt;id&gt;</code></td><td>roda um teste do registro (o comando de cada um está em <code>testes/registro.json</code>)</td></tr>
 <tr><td><code>make veracidade-certs</code>, <code>veracidade-sim</code>, <code>veracidade-zeros</code>, <code>veracidade-externo</code></td><td>testes da Operação Veracidade (T60a a T65)</td></tr>
 <tr><td><code>.venv/bin/python fase3/relatorio_pericial.py</code></td><td>testes da rodada 8 (T66 a T70); o R2b em <code>fase3/relatorio_pericial_r2b.py</code></td></tr>
+<tr><td><code>.venv/bin/python fase3/curvas_sobrepostas.py</code></td><td>T71 (rodada 8, emenda 18): curvas dos dois turnos sobrepostas</td></tr>
 <tr><td><code>make pdf</code></td><td>monta este PDF a partir dos JSON (<code>grafico/montar_relatorio_pdf.py</code>)</td></tr>
 </tbody></table><p>Código: <a href="{GITHUB}">{GITHUB.replace('https://', '')}</a> (MIT). Documentação e resultados: CC BY 4.0. Manual para pessoas e agentes de IA: <code>AGENTS.md</code>; ordem de execução: <code>PIPELINE.md</code>.</p>""")
 

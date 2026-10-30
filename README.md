@@ -90,7 +90,7 @@ As demais (unanimidades, Benford, microdados, urnas antigas de 2022, boletins pa
 
 ![Resposta em número de votos](docs/img/resposta_em_votos.jpg)
 
-**83 testes com escala de sinal, e 56 perguntas respondidas** (a V1.5, rodada 7, congelou 78 testes e 50 perguntas; a rodada 8, em aberto, acrescenta T66 a T70 e Q51 a Q56). Os testes não são "verdes" ou "vermelhos". Cada um tem um nível de suspeita:
+**84 testes com escala de sinal, e 57 perguntas respondidas** (a V1.5, rodada 7, congelou 78 testes e 50 perguntas; a rodada 8, em aberto, acrescenta T66 a T71 e Q51 a Q57). Os testes não são "verdes" ou "vermelhos". Cada um tem um nível de suspeita:
 
 | Nível | Significado |
 |---|---|

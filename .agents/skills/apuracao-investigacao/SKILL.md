@@ -47,6 +47,6 @@ Ao investigar uma anomalia ou hipótese, ao propor um teste novo, ao atualizar a
 - **Rodada 8 está aberta** (hipótese do "Relatório Pericial Independente"): pré-registro e testes entram no registro vivo; **não congelar sem aprovação explícita**.
 
 ## Atualização da rodada 8 (aberta, 28/10/2026)
-- **Rodada 8 está aberta:** "Relatório Pericial Independente" (T66 a T70, Q51 a Q56). Fluxo que funcionou: **reproduzir primeiro os números da alegação** (quase todos se reproduziram) e depois testar o que ela conclui (o agrupamento, o corte, a comparação sem controle de geografia). O que não é dado do TSE (decisões judiciais, política externa, fiscalização partidária) vai para "fora do escopo", sem testar e sem afirmar.
+- **Rodada 8 está aberta:** "Relatório Pericial Independente" (T66 a T70, Q51 a Q56) e curvas sobrepostas (T71, Q57, emenda 18). Fluxo que funcionou: **reproduzir primeiro os números da alegação** (quase todos se reproduziram) e depois testar o que ela conclui (o agrupamento, o corte, a comparação sem controle de geografia). O que não é dado do TSE (decisões judiciais, política externa, fiscalização partidária) vai para "fora do escopo", sem testar e sem afirmar.
 - A prorrogação de fato (> 17:30, 7.604 seções) deu +228 mil a Lula (5% da margem): é a resposta curta à pergunta pública mais comum.
 - **Não congelar a rodada 8 sem aprovação explícita.**
