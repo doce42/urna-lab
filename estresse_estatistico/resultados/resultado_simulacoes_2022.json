@@ -1,0 +1,113 @@
+{
+ "ano": "2022",
+ "baseline": {
+  "digitos_2t": 459.42996982184167,
+  "dispersao_local_2t": 0.03003476129742166,
+  "scan_max_2t": 122.97631907927044,
+  "r2_turnos": 0.888718217015098
+ },
+ "cenarios": {
+  "troca_dispersa_pro_lula_50k": {
+   "tipo": "dispersa",
+   "direcao": "lula",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 455.24770473742194,
+    "dispersao_local_2t": 0.028959411808837873,
+    "scan_max_2t": 122.79252912055286,
+    "r2_turnos": 0.883338982073029
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "troca_dispersa_contra_lula_50k": {
+   "tipo": "dispersa",
+   "direcao": "adversario",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 459.8175697437234,
+    "dispersao_local_2t": 0.029134468702328258,
+    "scan_max_2t": 122.91281525161824,
+    "r2_turnos": 0.8845336808069032
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "troca_concentrada_pro_lula_50k": {
+   "tipo": "concentrada",
+   "direcao": "lula",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 458.4752783009478,
+    "dispersao_local_2t": 0.03000975316978018,
+    "scan_max_2t": 122.97631907927044,
+    "r2_turnos": 0.8885388565875263
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "troca_concentrada_contra_lula_50k": {
+   "tipo": "concentrada",
+   "direcao": "adversario",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 458.16015157925716,
+    "dispersao_local_2t": 0.03000975316978018,
+    "scan_max_2t": 123.84804423447244,
+    "r2_turnos": 0.8885134367158449
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "suavizacao_forcada": {
+   "tipo": "suavizacao",
+   "direcao": null,
+   "magnitude_votos": 0,
+   "medidas": {
+    "digitos_2t": 429.52822027125137,
+    "dispersao_local_2t": 0.3038487508440243,
+    "scan_max_2t": 134.4043553194909,
+    "r2_turnos": 0.8194967326598099
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ALARME",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "algoritmo_proporcional": {
+   "tipo": "proporcional",
+   "direcao": null,
+   "magnitude_votos": 0,
+   "medidas": {
+    "digitos_2t": 415.61080119049393,
+    "dispersao_local_2t": 0.9233500887788532,
+    "scan_max_2t": 245.96170384248092,
+    "r2_turnos": 0.02816524512341856
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ALARME",
+    "scan_max_2t": "ALARME",
+    "r2_turnos": "ALARME"
+   }
+  }
+ }
+}

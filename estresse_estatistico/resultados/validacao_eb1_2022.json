@@ -1,0 +1,21 @@
+{
+ "ano": "2022",
+ "2t_rho_UF": {
+  "total": 39987,
+  "sub_bh": 38012,
+  "frac_sub_bh": 0.9506,
+  "frac_p001": 0.8162
+ },
+ "2t_rho_zona": {
+  "total": 39987,
+  "sub_bh": 19659,
+  "frac_sub_bh": 0.4916,
+  "frac_p001": 0.367
+ },
+ "2t_rho_local": {
+  "total": 39987,
+  "sub_bh": 7,
+  "frac_sub_bh": 0.0002,
+  "frac_p001": 0.0745
+ }
+}

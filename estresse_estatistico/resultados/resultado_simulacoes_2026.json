@@ -1,0 +1,113 @@
+{
+ "ano": "2026",
+ "baseline": {
+  "digitos_2t": 348.9426927980891,
+  "dispersao_local_2t": 0.029174861852580312,
+  "scan_max_2t": 128.85151309590398,
+  "r2_turnos": 0.8814292880606031
+ },
+ "cenarios": {
+  "troca_dispersa_pro_lula_50k": {
+   "tipo": "dispersa",
+   "direcao": "lula",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 349.1554198121362,
+    "dispersao_local_2t": 0.02837875807811183,
+    "scan_max_2t": 128.46759243091802,
+    "r2_turnos": 0.875853260071218
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "troca_dispersa_contra_lula_50k": {
+   "tipo": "dispersa",
+   "direcao": "adversario",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 351.48052818243775,
+    "dispersao_local_2t": 0.028472417345696357,
+    "scan_max_2t": 128.8416857792116,
+    "r2_turnos": 0.8768668261933265
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "troca_concentrada_pro_lula_50k": {
+   "tipo": "concentrada",
+   "direcao": "lula",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 347.95542639011427,
+    "dispersao_local_2t": 0.029174861852580312,
+    "scan_max_2t": 128.96293623227297,
+    "r2_turnos": 0.8814046958680574
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "troca_concentrada_contra_lula_50k": {
+   "tipo": "concentrada",
+   "direcao": "adversario",
+   "magnitude_votos": 50000,
+   "medidas": {
+    "digitos_2t": 347.9026548672567,
+    "dispersao_local_2t": 0.029151447035684182,
+    "scan_max_2t": 128.78262599392548,
+    "r2_turnos": 0.8814046958680574
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ok",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "suavizacao_forcada": {
+   "tipo": "suavizacao",
+   "direcao": null,
+   "magnitude_votos": 0,
+   "medidas": {
+    "digitos_2t": 341.3200535635262,
+    "dispersao_local_2t": 0.3486466235834036,
+    "scan_max_2t": 135.70608440791668,
+    "r2_turnos": 0.8215793485463518
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ALARME",
+    "scan_max_2t": "ok",
+    "r2_turnos": "ok"
+   }
+  },
+  "algoritmo_proporcional": {
+   "tipo": "proporcional",
+   "direcao": null,
+   "magnitude_votos": 0,
+   "medidas": {
+    "digitos_2t": 511.39919497711065,
+    "dispersao_local_2t": 0.9838906059754613,
+    "scan_max_2t": 283.24545510726546,
+    "r2_turnos": 0.02311646979270998
+   },
+   "alarmes": {
+    "digitos_2t": "ok",
+    "dispersao_local_2t": "ALARME",
+    "scan_max_2t": "ALARME",
+    "r2_turnos": "ALARME"
+   }
+  }
+ }
+}

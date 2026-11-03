@@ -1,0 +1,21 @@
+{
+ "ano": "2026",
+ "2t_rho_UF": {
+  "total": 42708,
+  "sub_bh": 39800,
+  "frac_sub_bh": 0.9319,
+  "frac_p001": 0.7858
+ },
+ "2t_rho_zona": {
+  "total": 42708,
+  "sub_bh": 19752,
+  "frac_sub_bh": 0.4625,
+  "frac_p001": 0.3468
+ },
+ "2t_rho_local": {
+  "total": 42708,
+  "sub_bh": 2,
+  "frac_sub_bh": 0.0,
+  "frac_p001": 0.0713
+ }
+}
