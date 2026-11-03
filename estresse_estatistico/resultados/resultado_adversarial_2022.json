@@ -1,0 +1,144 @@
+{
+ "ano": "2022",
+ "premissa": "dados fabricados",
+ "P1": {
+  "1t": {
+   "secoes_excedentes": 0,
+   "total_secoes": 471010,
+   "frac": 0.0,
+   "max_excesso": 0
+  },
+  "2t": {
+   "secoes_excedentes": 0,
+   "total_secoes": 471010,
+   "frac": 0.0,
+   "max_excesso": 0
+  }
+ },
+ "P2": {
+  "secoes_z_gt5": 1765,
+  "frac": 0.0037,
+  "z_max": 68.95,
+  "delta_comp_p99": 0.0782
+ },
+ "Q1": {
+  "chi2": 6266.35,
+  "p": 0.0,
+  "n": 403483,
+  "obs": [
+   110890,
+   62007,
+   52789,
+   45867,
+   38758,
+   31874,
+   25500,
+   19969,
+   15829
+  ],
+  "esperado": [
+   121460.5,
+   71049.8,
+   50410.7,
+   39101.5,
+   31948.3,
+   27011.9,
+   23398.8,
+   20639.2,
+   18462.4
+  ]
+ },
+ "Q2": {
+  "chi2": 1009.2,
+  "p": 0.0,
+  "n": 470345,
+  "obs": [
+   53277,
+   45850,
+   46281,
+   47947,
+   46372,
+   46020,
+   46100,
+   46863,
+   46243,
+   45392
+  ]
+ },
+ "Q3": {
+  "chi2_lula": 10.99,
+  "p_lula": 0.202163,
+  "chi2_adv": 11.03,
+  "p_adv": 0.200011
+ },
+ "R1": {
+  "corr": -0.005822,
+  "p": 0.0,
+  "n": 470966
+ },
+ "R2": {
+  "corr_residuo_delta_vs_p13": 0.03065,
+  "n": 470934,
+  "delta_s_mediana": 130.0,
+  "delta_s_p99": 342.0
+ },
+ "R3": {
+  "mesma_urna_n": 458455,
+  "diff_urna_n": 12509,
+  "mesma_swing_med": -0.000221,
+  "diff_swing_med": -0.000109,
+  "U": 2870853637.5,
+  "p": 0.818285
+ },
+ "T_alpha": {
+  "corr_mediana_emissao_recepcao": 0.0734,
+  "corr_p05": -0.3095,
+  "corr_p95": 0.4402,
+  "n_mun": 5169,
+  "lat_mediana_s": 5113.0,
+  "lat_p99_s": 11156.1
+ },
+ "T_beta": {
+  "corr_tamanho_tempo_bu": -0.0263,
+  "cv_delta": 0.4431,
+  "mediana_s": 130.0,
+  "p01_s": 18.0,
+  "p99_s": 342.0,
+  "n": 470978
+ },
+ "U1": {
+  "taylor_expoente": -0.1603,
+  "r2": 0.0048,
+  "n_mun": 5169,
+  "intercept": -5.6844
+ },
+ "U2": {
+  "ks_stat": 0.1245,
+  "ks_p": 0.0,
+  "maha_mediana": 1.6188,
+  "maha_p99": 5.075,
+  "n": 470966,
+  "k": 4
+ },
+ "W1": {
+  "corr_delta_comp_vs_delta_p13": 0.027122,
+  "p": 0.0,
+  "perm_media": 4.8e-05,
+  "perm_dp": 0.001561,
+  "n": 470964,
+  "corr_comp1_comp2": 0.9023,
+  "corr_p13_1_p13_2": 0.9566
+ },
+ "W2": {
+  "var_pc1": 0.4362,
+  "var_pc2": 0.3012,
+  "var_pc3": 0.2626,
+  "n": 470966
+ },
+ "V1": {
+  "nota": "Família V só roda na comparação (ANO=2026)"
+ },
+ "V2": {
+  "nota": "Família V só roda na comparação (ANO=2026)"
+ }
+}

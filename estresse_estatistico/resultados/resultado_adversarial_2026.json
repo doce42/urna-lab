@@ -1,0 +1,148 @@
+{
+ "ano": "2026",
+ "premissa": "dados fabricados",
+ "P1": {
+  "1t": {
+   "secoes_excedentes": 0,
+   "total_secoes": 497897,
+   "frac": 0.0,
+   "max_excesso": 0
+  },
+  "2t": {
+   "secoes_excedentes": 0,
+   "total_secoes": 497897,
+   "frac": 0.0,
+   "max_excesso": 0
+  }
+ },
+ "P2": {
+  "secoes_z_gt5": 968,
+  "frac": 0.0019,
+  "z_max": 106.55,
+  "delta_comp_p99": 0.0917
+ },
+ "Q1": {
+  "chi2": 8163.23,
+  "p": 0.0,
+  "n": 432453,
+  "obs": [
+   119662,
+   62081,
+   54435,
+   48092,
+   41979,
+   35040,
+   29058,
+   23423,
+   18683
+  ],
+  "esperado": [
+   130181.3,
+   76151.2,
+   54030.1,
+   41909.0,
+   34242.2,
+   28951.3,
+   25078.8,
+   22121.1,
+   19788.0
+  ]
+ },
+ "Q2": {
+  "chi2": 1140.26,
+  "p": 0.0,
+  "n": 497252,
+  "obs": [
+   56723,
+   48690,
+   48941,
+   49528,
+   48807,
+   48711,
+   49225,
+   49621,
+   49168,
+   47838
+  ]
+ },
+ "Q3": {
+  "chi2_lula": 4.91,
+  "p_lula": 0.767584,
+  "chi2_adv": 4.17,
+  "p_adv": 0.841872
+ },
+ "R1": {
+  "corr": 0.012104,
+  "p": 0.0,
+  "n": 497831
+ },
+ "R2": {
+  "corr_residuo_delta_vs_p13": 0.009142,
+  "n": 497463,
+  "delta_s_mediana": 120.0,
+  "delta_s_p99": 306.0
+ },
+ "R3": {
+  "mesma_urna_n": 493417,
+  "diff_urna_n": 4413,
+  "mesma_swing_med": -0.000574,
+  "diff_swing_med": -0.001246,
+  "U": 1101688023.5,
+  "p": 0.172587
+ },
+ "T_alpha": {
+  "corr_mediana_emissao_recepcao": 0.0617,
+  "corr_p05": -0.3056,
+  "corr_p95": 0.4286,
+  "n_mun": 5241,
+  "lat_mediana_s": 12264.0,
+  "lat_p99_s": 16686.0
+ },
+ "T_beta": {
+  "corr_tamanho_tempo_bu": 0.008,
+  "cv_delta": 0.702,
+  "mediana_s": 120.0,
+  "p01_s": 14.0,
+  "p99_s": 306.0,
+  "n": 497529
+ },
+ "U1": {
+  "taylor_expoente": -0.0686,
+  "r2": 0.001,
+  "n_mun": 5241,
+  "intercept": -5.6442
+ },
+ "U2": {
+  "ks_stat": 0.1222,
+  "ks_p": 0.0,
+  "maha_mediana": 1.6241,
+  "maha_p99": 5.0398,
+  "n": 497831,
+  "k": 4
+ },
+ "W1": {
+  "corr_delta_comp_vs_delta_p13": 0.006547,
+  "p": 0.0,
+  "perm_media": -2.5e-05,
+  "perm_dp": 0.00132,
+  "n": 497830,
+  "corr_comp1_comp2": 0.8661,
+  "corr_p13_1_p13_2": 0.9537
+ },
+ "W2": {
+  "var_pc1": 0.4076,
+  "var_pc2": 0.3189,
+  "var_pc3": 0.2735,
+  "n": 497831
+ },
+ "V1": {
+  "corr_residuo_2022_2026": 0.9159,
+  "n_secoes_pareadas": 460246
+ },
+ "V2": {
+  "rank_corr_mediana": 0.8382,
+  "rank_corr_p05": 0.5429,
+  "rank_corr_p95": 0.9471,
+  "n_mun": 5125
+ }
+}

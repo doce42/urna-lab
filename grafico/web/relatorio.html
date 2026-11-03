@@ -13,7 +13,7 @@
     --bg: #f3f5f8; --surface: #ffffff; --surface2: #f5f7fa; --borda: #d8dee6; --texto: #171c22; --texto2: #3b444f; --fraco: #626d79;
     --grade: #e6eaef; --lula: #dc2626; --flavio: #2563eb; --terc: #0d9488; --ref: #8a94a0; --ruim: #c0392b; --ok-bg: #0d94881a; --nao-bg: #626d7914;
     --aviso: #b45309; --aviso-bg: #b4530922;
-    --cA: #1a7f37; --cB: #946300; --cC: #bc4c00; --cD: #be185d; --cE: #6d28d9; --cF: #a40e26; --cG: #5f6b78; --cS: #0369a1;
+    --cA: #1a7f37; --cB: #946300; --cC: #bc4c00; --cD: #be185d; --cE: #6d28d9; --cF: #a40e26; --cG: #5f6b78; --cS: #0369a1; --cX: #9f1239;
     --marca: #0f766e; --marca-texto: #ffffff; --foco: #2563eb;
     --sombra: 0 1px 2px rgba(16, 24, 40, .05), 0 1px 3px rgba(16, 24, 40, .07);
     --raio: 12px; --topo: 60px; --lateral: 280px; --fs: 15px; --fs-card: 14.5px;
@@ -23,7 +23,7 @@
       --bg: #0c1117; --surface: #141a21; --surface2: #1a212a; --borda: #2a333e; --texto: #e8edf3; --texto2: #b6bfc9; --fraco: #8d98a5;
       --grade: #212934; --lula: #ef4444; --flavio: #3b82f6; --terc: #14a89a; --ref: #8d98a5; --ruim: #e66767; --ok-bg: #14a89a1f; --nao-bg: #8d98a51f;
       --aviso: #c98500; --aviso-bg: #c9850026;
-      --cA: #3fb950; --cB: #d4a72c; --cC: #f0883e; --cD: #f472b6; --cE: #c084fc; --cF: #ff7b72; --cG: #8b949e; --cS: #38bdf8;
+      --cA: #3fb950; --cB: #d4a72c; --cC: #f0883e; --cD: #f472b6; --cE: #c084fc; --cF: #ff7b72; --cG: #8b949e; --cS: #38bdf8; --cX: #fb7185;
       --marca: #2dd4bf; --marca-texto: #0c1117; --foco: #79b8ff; --sombra: none;
     }
   }
@@ -31,7 +31,7 @@
     --bg: #0c1117; --surface: #141a21; --surface2: #1a212a; --borda: #2a333e; --texto: #e8edf3; --texto2: #b6bfc9; --fraco: #8d98a5;
     --grade: #212934; --lula: #ef4444; --flavio: #3b82f6; --terc: #14a89a; --ref: #8d98a5; --ruim: #e66767; --ok-bg: #14a89a1f; --nao-bg: #8d98a51f;
     --aviso: #c98500; --aviso-bg: #c9850026;
-    --cA: #3fb950; --cB: #d4a72c; --cC: #f0883e; --cD: #f472b6; --cE: #c084fc; --cF: #ff7b72; --cG: #8b949e; --cS: #38bdf8;
+    --cA: #3fb950; --cB: #d4a72c; --cC: #f0883e; --cD: #f472b6; --cE: #c084fc; --cF: #ff7b72; --cG: #8b949e; --cS: #38bdf8; --cX: #fb7185;
     --marca: #2dd4bf; --marca-texto: #0c1117; --foco: #79b8ff; --sombra: none;
   }
   @media (max-width: 700px) { :root { --fs: 16px; --fs-card: 16px; --topo: 56px; } }
@@ -655,7 +655,7 @@ function generico(c) { const t = c.t; return { ler: 'Se não houver nada anormal
 
 // âncoras do método (prefixo do número do título em METODOLOGIA.md)
 const MET = { T01: '2.5', T32: '2.5', T14: '2.2', T15: '2.2', T16: '2.2', T16c: '2.3', T17: '2.2', T17b: '2.2', T24: '2.2', T34: '2.4', T35: '2.4', T02: '3.1', T10: '3.2', T11: '3.2', C06: '3.3', C06b: '3.3', E01: '3.4', E02: '3.4', E03: '3.4', T03: '3.5', T04: '3.5', T05: '4.1', T27: '4.1', T26: '4.2', T21: '4.3', T07: '4.4', T22: '4.4', T25: '4.4', T13: '4.5', T13b: '4.5', T23: '4.6', T28: '4.7', T29: '4.7', T30: '4.7', T31: '4.7', T33: '4.7', T20: '4.8', T12: '4.9', T36: '2.2' };
-const MODS = { A: ['Integridade dos arquivos e da contagem', 'O dado é íntegro? Os arquivos das urnas, o boletim e o total oficial dizem a mesma coisa? Conferências exatas, sem estatística.'], B: ['Comportamento do eleitor e da votação', 'Como o eleitorado se comportou: hora do voto, comparecimento, perfil e a prorrogação.'], C: ['Mudança entre os turnos', 'Cada seção tem quase o mesmo eleitorado nos dois turnos: o 1º turno serve de régua para o 2º.'], D: ['Forense estatística', 'Testes clássicos de padrões em números de votos, sempre com a medida de quanto cada teste consegue (ou não) enxergar.'], E: ['Divergências e agrupamento', 'Seções ou locais que fogem do esperado, se se agrupam no espaço e que explicações existem.'], F: ['Referência: 2022', 'A mesma bateria no pleito de 2022, para saber se um número de 2026 é incomum.'], S: ['Estresse Estatístico', 'Busca por impressões digitais de geração artificial: dígitos, suavidade, dependências, varredura territorial, turnos, temporalidade, simulações adversariais e anomalias (Isolation Forest). 2022 e 2026.'] };
+const MODS = { A: ['Integridade dos arquivos e da contagem', 'O dado é íntegro? Os arquivos das urnas, o boletim e o total oficial dizem a mesma coisa? Conferências exatas, sem estatística.'], B: ['Comportamento do eleitor e da votação', 'Como o eleitorado se comportou: hora do voto, comparecimento, perfil e a prorrogação.'], C: ['Mudança entre os turnos', 'Cada seção tem quase o mesmo eleitorado nos dois turnos: o 1º turno serve de régua para o 2º.'], D: ['Forense estatística', 'Testes clássicos de padrões em números de votos, sempre com a medida de quanto cada teste consegue (ou não) enxergar.'], E: ['Divergências e agrupamento', 'Seções ou locais que fogem do esperado, se se agrupam no espaço e que explicações existem.'], F: ['Referência: 2022', 'A mesma bateria no pleito de 2022, para saber se um número de 2026 é incomum.'], S: ['Estresse Estatístico', 'Busca por impressões digitais de geração artificial: dígitos, suavidade, dependências, varredura territorial, turnos, temporalidade, simulações adversariais e anomalias (Isolation Forest). 2022 e 2026.'], X: ['Operação Adversarial', 'Assumindo que os dados são fabricados: phantom voters, aritmética de dígitos, relações cruzadas (biometria, timestamps, modelo de urna), consistência temporal, universalidade estatística, verificação cruzada 2022×2026, worst-case.'] };
 const CLASSE = { A: 'O dado se comporta como esperado.', B: 'Algo fora do esperado estatístico, sem prova de que seja problema.', C: 'Anomalia que resiste a controles e alternativas.', D: 'Uma conta que deveria fechar não fecha, e dá para verificar.', E: 'Evidência de possível irregularidade.', F: 'Evidência de manipulação.', G: 'Ainda sem resultado ou inconclusivo.' };
 const ESTADO = { concluido: 'concluído', em_andamento: 'em andamento', a_fazer: 'a fazer', concluido_excluido_da_conclusao: 'concluído, excluído da conclusão', concluido_2t: 'concluído (2º turno)', concluido_1t: 'concluído (1º turno)', concluido_2026: 'concluído (2026)' };
 const AVISO_RE = /incidente|erro meu|inv[aá]lid|corrigid|trocad|falso|errad|cortad|artefato/i;
@@ -739,7 +739,7 @@ function montarLateral(reg) {
   const link = (h, r, extra = '') => `<a class="sec" href="${h}">${r}${extra}</a>`;
   const movel = matchMedia('(max-width: 960px)').matches;
   $('#nav-secoes').innerHTML = link('#resumo', 'Resumo') + link('#trilha', 'Trilha de verificação') + link('#conclusao', 'Conclusão em 3 níveis') +
-    'ABCDEFS'.split('').map(m => { const q = porMod(m); if (!q.length) return ''; return `<details ${movel ? '' : 'open'}><summary>${link('#mod-' + m, `<span class="mod-letra">${m}</span><span>${esc(MODS[m][0])}</span>`, `<span class="cont">${q.length}</span>`)}</summary><div class="testes">${q.map(t => `<a href="#t-${t.id}" title="${esc(t.pergunta)}">${t.id}</a>`).join('')}</div></details>`; }).join('') +
+    'ABCDEFSX'.split('').map(m => { const q = porMod(m); if (!q.length) return ''; return `<details ${movel ? '' : 'open'}><summary>${link('#mod-' + m, `<span class="mod-letra">${m}</span><span>${esc(MODS[m][0])}</span>`, `<span class="cont">${q.length}</span>`)}</summary><div class="testes">${q.map(t => `<a href="#t-${t.id}" title="${esc(t.pergunta)}">${t.id}</a>`).join('')}</div></details>`; }).join('') +
     link('#metodologia', 'Metodologia') + link('#catalogo', 'Catálogo');
   const cont = {}; ts.forEach(t => { cont[t.classe_evidencia] = (cont[t.classe_evidencia] || 0) + 1; });
   $('#filtro-classe').innerHTML = 'ABCDEFG'.split('').map(k => `<button type="button" class="chip" data-classe="${k}" aria-pressed="false" style="--cor:var(--c${k})" title="${esc(CLASSE[k])}"><i></i>${k} <span class="fr">${esc(reg.classes[k])}</span> · ${cont[k] || 0}</button>`).join('');
@@ -811,7 +811,7 @@ function montar(reg, d) {
 
   // cartões por módulo
   const box = document.getElementById('modulos'), pos = [];
-  for (const m of 'ABCDEFS') {
+  for (const m of 'ABCDEFSX') {
     const ts = reg.testes.filter(t => t.modulo === m); if (!ts.length) continue;
     const cs = ts.map(t => cartao(t, ctx));
     box.insertAdjacentHTML('beforeend', `<section class="bloco" id="mod-${m}"><h2><span class="mod-letra">${m}</span>${MODS[m][0]}<span class="cont">${ts.length} testes</span></h2><p class="intro">${MODS[m][1]}</p><div class="cartoes">${cs.map(x => x.html).join('')}</div></section>`);
