@@ -9940,7 +9940,7 @@
       "classe_evidencia": "A",
       "resultado_atual": "2026: 0 seções (0%) em ambos os turnos. 2022: idem. Teto perfeitamente respeitado.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Zero: nenhuma seção excede o teto",
+      "impacto_votos": "Zero: nenhuma seção excede o teto de aptos em ~1 milhão de seções-turno. Phantom voters = 0 votos (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -9968,7 +9968,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: 968 seções (0,19%), z_max=107. 2022: 1.765 (0,37%). Cauda natural, diminui com biometria.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: taxa de outliers compatível com cauda natural",
+      "impacto_votos": "Nenhum: 968 seções com z>5 (0,19%) são cauda natural, não excesso de votos. Se todos os outliers fossem phantoms no pior caso: ~48k votos (2% da margem), mas são flutuação legítima (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -9996,7 +9996,7 @@
       "classe_evidencia": "C",
       "resultado_atual": "2026: χ²=8163, p≈0. 2022: χ²=6266, p≈0. Artefato discreto idêntico em ambas eleições.",
       "interpretacao": "Artefato: resíduos com amplitude limitada violam premissa de Benford",
-      "impacto_votos": "Zero: desvio é artefato de modelagem",
+      "impacto_votos": "Zero: o desvio de Benford é artefato de amplitude limitada dos resíduos, não assinatura de gerador. Mesmo padrão em 2022 (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10024,7 +10024,7 @@
       "classe_evidencia": "C",
       "resultado_atual": "2026: χ²=1140, p≈0 (excesso no 0). 2022: χ²=1009. Artefato de arredondamento inteiro.",
       "interpretacao": "Artefato: inteiros produzem razões com dígitos não-uniformes",
-      "impacto_votos": "Zero: artefato aritmético",
+      "impacto_votos": "Zero: o excesso no dígito 0 é artefato de arredondamento de inteiros (50/100 = 0,5000). Não indica votos alterados (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10052,7 +10052,7 @@
       "classe_evidencia": "A",
       "resultado_atual": "2026: Lula p=0,77, Adv p=0,84. 2022: ambos p≈0,20. Sem viés mod 9.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: sem assinatura de multiplicação",
+      "impacto_votos": "Zero: digital root uniforme mod 9 em ambos os candidatos. Sem assinatura de multiplicação por proporção. Se houvesse viés, afetaria todos os ~60M de votos (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10080,7 +10080,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: r=0,012, p≈0. 2022: r=−0,006, p≈0. Sinal troca entre eleições = relação real.",
       "interpretacao": "Sinal real fraco, inconsistente com fabricação (sinal muda entre eleições)",
-      "impacto_votos": "Nenhum: correlação < 2%",
+      "impacto_votos": "Nenhum: correlação biometria×voto <2%, troca de sinal entre eleições. Mesmo no pior cenário, r=0,012 × ~500k seções não se traduz em votos desviados (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10108,7 +10108,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: r=0,009. 2022: r=0,031. Negligível em ambos.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: correlação < 3%",
+      "impacto_votos": "Nenhum: correlação tempo×voto <1%. Timestamps consistentes com tempo de impressão real (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10136,7 +10136,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: p=0,17 (4.413 trocas). 2022: p=0,82 (12.509 trocas). Sem efeito.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: sem diferença significativa",
+      "impacto_votos": "Nenhum: troca de urna entre turnos (4.413 seções) sem efeito no resultado (p=0,17). Se houvesse efeito, no máximo ~220k votos nas seções com troca (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10164,7 +10164,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: mediana r=0,062 (p5=−0,31, p95=0,43). 2022: mediana r=0,073. Padrão intermediário real.",
       "interpretacao": "Consistente com topologia real (nem zero nem copiado)",
-      "impacto_votos": "Nenhum: teste de consistência de timestamps",
+      "impacto_votos": "Teste de consistência temporal, não de magnitude em votos. A correlação intermediária (r=0,06) entre emissão e recepção é compatível com topologia real (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10192,7 +10192,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: mediana 120s, CV=0,70. 2022: mediana 130s, CV=0,44. Plausível fisicamente.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: teste de plausibilidade temporal",
+      "impacto_votos": "Teste de plausibilidade física. Mediana de 120s de impressão do BU não indica votos alterados (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10220,7 +10220,7 @@
       "classe_evidencia": "C",
       "resultado_atual": "2026: exp=−0,07, R²=0,001. 2022: exp=−0,16, R²=0,005. Indiagnóstico: modelo não se aplica.",
       "interpretacao": "Indiagnóstico",
-      "impacto_votos": "Nenhum: teste inadequado para proporções",
+      "impacto_votos": "Indiagnóstico: Taylor's Law não se aplica a proporções. Não traduzível em votos (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10248,7 +10248,7 @@
       "classe_evidencia": "C",
       "resultado_atual": "2026: KS D=0,12, p≈0. 2022: KS D=0,12. Desvio idêntico = estrutura de cauda, não fabricação.",
       "interpretacao": "Artefato: caudas pesadas violam premissa de normalidade",
-      "impacto_votos": "Nenhum: desvio é estrutural",
+      "impacto_votos": "Zero: desvio de χ² é estrutural (caudas pesadas), idêntico em 2022. Não indica votos fabricados (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10276,7 +10276,7 @@
       "classe_evidencia": "A",
       "resultado_atual": "r=0,916 (460.246 seções). Consistente com mesmos eleitores e turnover natural.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: estabilidade confirma identidade real dos eleitores",
+      "impacto_votos": "Teste de identidade dos eleitores. r=0,916 entre 460k seções pareadas confirma os mesmos eleitores em 2022 e 2026. Fabricação independente destruiria a correlação em ~60M de votos (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10304,7 +10304,7 @@
       "classe_evidencia": "A",
       "resultado_atual": "Mediana r=0,838 (p5=0,54, p95=0,95). Estabilidade calibrada por tamanho.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: teste de consistência inter-eleitoral",
+      "impacto_votos": "Teste de consistência de ranking. Mediana Spearman=0,838 é natural. Fabricação destruiria ou copiaria a ordenação de ~60M de votos (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     },
     {
@@ -10332,7 +10332,7 @@
       "classe_evidencia": "B",
       "resultado_atual": "2026: r=0,007, p≈0. 2022: r=0,027, p≈0. Sinal real fraco: Δcomp e Δvoto não são independentes.",
       "interpretacao": "H0 compatível",
-      "impacto_votos": "Nenhum: correlação < 3%",
+      "impacto_votos": "Correlação Δcomp×Δvoto = 0,007 é sinal real (p≈0 por permutação). Fabricação separada de comparecimento e voto quebraria essa relação em ~60M de votos (margem do 2t 2026: ~2,2 mi votos).",
       "modulo": "X"
     }
   ],
