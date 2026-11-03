@@ -1,0 +1,131 @@
+{
+ "ano": "2022",
+ "achado1": {
+  "corr_intra_mun": 0.156723,
+  "corr_intra_mun_modelo": 0.149771,
+  "corr_1t": 0.32341,
+  "corr_por_uf": {
+   "AC": 0.0891,
+   "AL": 0.2148,
+   "AM": 0.2974,
+   "AP": 0.1394,
+   "BA": 0.2852,
+   "CE": 0.1378,
+   "DF": -0.0065,
+   "ES": 0.2472,
+   "GO": 0.1251,
+   "MA": 0.2104,
+   "MG": 0.1157,
+   "MS": 0.3014,
+   "MT": 0.1224,
+   "PA": 0.1253,
+   "PB": 0.2611,
+   "PE": 0.2358,
+   "PI": 0.1766,
+   "PR": 0.1141,
+   "RJ": 0.0349,
+   "RN": 0.0487,
+   "RO": 0.1894,
+   "RR": 0.2445,
+   "RS": 0.138,
+   "SC": 0.1366,
+   "SE": 0.214,
+   "SP": 0.1434,
+   "TO": 0.2141
+  },
+  "diff_p13_q1_q4": -0.0458,
+  "votos_q1": 34163422,
+  "impacto_maximo_votos": 1563613
+ },
+ "achado2": {
+  "F_zona": 60.2,
+  "p_zona": 0.0
+ },
+ "achado3": {
+  "hash_ok_log": {
+   "n_falhas": 4,
+   "ufs": {
+    "BA": 1,
+    "DF": 1,
+    "RS": 1,
+    "SC": 1
+   },
+   "votos_total": 0
+  },
+  "assin_ok_log": {
+   "n_falhas": 4,
+   "ufs": {
+    "BA": 1,
+    "DF": 1,
+    "RS": 1,
+    "SC": 1
+   },
+   "votos_total": 0
+  },
+  "hash_ok_rdv": {
+   "n_falhas": 10,
+   "ufs": {
+    "PA": 4,
+    "BA": 1,
+    "DF": 1,
+    "GO": 1,
+    "PE": 1,
+    "RS": 1,
+    "SC": 1
+   },
+   "votos_total": 0
+  },
+  "assin_ok_rdv": {
+   "n_falhas": 10,
+   "ufs": {
+    "PA": 4,
+    "BA": 1,
+    "DF": 1,
+    "GO": 1,
+    "PE": 1,
+    "RS": 1,
+    "SC": 1
+   },
+   "votos_total": 0
+  }
+ },
+ "achado4": {
+  "n_divergencias": 49,
+  "delta_medio": -12.2,
+  "delta_mediana": -1.0,
+  "votos_afetados": 12470,
+  "ufs": {
+   "SP": 17,
+   "MA": 4,
+   "PE": 4,
+   "PR": 4,
+   "RJ": 4,
+   "BA": 3,
+   "ES": 2,
+   "MG": 2,
+   "RS": 2,
+   "AM": 1,
+   "CE": 1,
+   "DF": 1,
+   "PA": 1,
+   "SC": 1,
+   "SE": 1,
+   "TO": 1
+  }
+ },
+ "achado5": {
+  "votos_antes_7h_vpm": 76388,
+  "urnas_com_voto_antes_7h": 2615,
+  "votos_antes_7h_log": 76388,
+  "por_uf": {
+   "AC": 56847,
+   "AM": 19541
+  }
+ },
+ "achado6": {
+  "total_dia": 123938745,
+  "total_fora": 122408961,
+  "total_bu": 123938116,
+  "soma_dia_fora": 246347706
+ }
+}

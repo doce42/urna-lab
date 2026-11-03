@@ -1,0 +1,218 @@
+{
+ "ano": "2022",
+ "premissa": "dados brutos sob prova",
+ "D1a": {
+  "media_mediana_s": 14.55,
+  "dp_mediana_s": 3.68,
+  "cv": 0.2527,
+  "p01_s": 8.0,
+  "p99_s": 23.0,
+  "log_shapiro_stat": 0.9635,
+  "log_shapiro_p": 0.0,
+  "n": 470814
+ },
+ "D1b": {
+  "frac_media": 0.0022,
+  "frac_p50": 0.0,
+  "frac_p99": 0.0361,
+  "urnas_com_zero_rapidos": 389387,
+  "frac_urnas_zero": 0.8271
+ },
+ "D1c": {
+  "corr_duracao_vs_p13": 0.156723,
+  "n": 470814
+ },
+ "D2a": {
+  "diff_media": 0.005,
+  "diff_mediana": -0.0038,
+  "t_stat": 16.49,
+  "p": 0.0,
+  "n": 154589,
+  "frac_ult30_media": 0.2475,
+  "frac_resto_media": 0.2425
+ },
+ "D2b": {
+  "nota": "Coluna bu_hab_sem_biometria não disponível"
+ },
+ "D3a": {
+  "skewness": 0.4222,
+  "curtose": -0.9616,
+  "hora_pico": 8.2,
+  "total_votos": 124247599
+ },
+ "D3b": {
+  "cv_medio_entre_mun": 3.1255,
+  "cv_min": 0.093,
+  "cv_max": 21.4873,
+  "n_mun": 5680
+ },
+ "D3c": {
+  "autocorr_1min": 0.999,
+  "autocorr_5min": 0.9835,
+  "autocorr_30min": 0.8271
+ },
+ "D4a": {
+  "modelos": [
+   {
+    "modelo": "UE2009",
+    "n": 43989,
+    "dur_med": 14.0,
+    "dur_p25": 12.0,
+    "dur_p75": 18.0
+   },
+   {
+    "modelo": "UE2010",
+    "n": 94667,
+    "dur_med": 16.0,
+    "dur_p25": 12.0,
+    "dur_p75": 18.0
+   },
+   {
+    "modelo": "UE2011",
+    "n": 28148,
+    "dur_med": 16.0,
+    "dur_p25": 13.0,
+    "dur_p75": 18.0
+   },
+   {
+    "modelo": "UE2013",
+    "n": 25361,
+    "dur_med": 17.0,
+    "dur_p25": 12.0,
+    "dur_p75": 19.0
+   },
+   {
+    "modelo": "UE2015",
+    "n": 85987,
+    "dur_med": 17.0,
+    "dur_p25": 13.0,
+    "dur_p75": 19.0
+   },
+   {
+    "modelo": "UE2020",
+    "n": 192662,
+    "dur_med": 13.0,
+    "dur_p25": 10.0,
+    "dur_p75": 16.0
+   }
+  ],
+  "n_modelos": 6,
+  "kruskal_H": 69107.74,
+  "kruskal_p": 0.0
+ },
+ "D4b": {
+  "F": 53.63,
+  "p": 0.0,
+  "n": 470814
+ },
+ "D5": {
+  "detalhes": {
+   "hash_ok_bu": {
+    "ok": 471000,
+    "fail": 0,
+    "na": 10,
+    "total": 471010
+   },
+   "assin_ok_bu": {
+    "ok": 471000,
+    "fail": 0,
+    "na": 10,
+    "total": 471010
+   },
+   "hash_ok_rdv": {
+    "ok": 471000,
+    "fail": 10,
+    "na": 0,
+    "total": 471010
+   },
+   "assin_ok_rdv": {
+    "ok": 471000,
+    "fail": 10,
+    "na": 0,
+    "total": 471010
+   },
+   "hash_ok_imgbu": {
+    "ok": 470999,
+    "fail": 0,
+    "na": 11,
+    "total": 471010
+   },
+   "assin_ok_imgbu": {
+    "ok": 470999,
+    "fail": 0,
+    "na": 11,
+    "total": 471010
+   },
+   "hash_ok_log": {
+    "ok": 470995,
+    "fail": 4,
+    "na": 11,
+    "total": 471010
+   },
+   "assin_ok_log": {
+    "ok": 470995,
+    "fail": 4,
+    "na": 11,
+    "total": 471010
+   }
+  },
+  "total_checks": 3768016,
+  "total_fail": 28,
+  "taxa_falha": 7.43e-06
+ },
+ "D6": {
+  "bu_vs_rdv_v13_diff": 0,
+  "bu_vs_img_v13_diff": 0,
+  "bu_vs_log_comp_diff": 49,
+  "total_urnas": 470851,
+  "total_log": 470995
+ },
+ "D7a": {
+  "urnas_voto_fora_dia": 467131,
+  "votos_fora_dia_total": 122409515,
+  "urnas_antes_7h": 2615,
+  "votos_antes_7h_total": 76388,
+  "urnas_sem_habilitacao": 0,
+  "votos_sem_hab_total": 0,
+  "total_urnas": 470995
+ },
+ "D7b": {
+  "urnas_intervalo_lt3s": 0,
+  "frac": 0.0,
+  "intervalo_min_p01": 20.0,
+  "intervalo_min_p05": 23.0,
+  "intervalo_min_mediana": 30.0
+ },
+ "D8a": {
+  "corr_duracao_1t_2t": NaN,
+  "n": 470946
+ },
+ "D8b": {
+  "mesma_modelo_delta_dur_med": -37.0,
+  "diff_modelo_delta_dur_med": -35.0,
+  "U": NaN,
+  "p": NaN,
+  "n_mesma": 469621,
+  "n_diff": 1325
+ },
+ "D8c": {
+  "corr_bio_1t_2t": NaN,
+  "n": 470946
+ },
+ "D9": {
+  "urnas_com_verif": 470999,
+  "urnas_com_falha_sw": 1,
+  "frac_falha": 2e-06,
+  "versoes": {
+   "8.26.0.0 - Onça-pintada": 470998,
+   "8.10.0.1 - Sabiá|8.26.0.0 - Onça-pintada": 1
+  }
+ },
+ "D10": {
+  "entropia_media": 3.8487,
+  "entropia_mediana": 3.8443,
+  "entropia_p05": 2.8424,
+  "entropia_p95": 4.9068,
+  "n_mun": 5168
+ }
+}

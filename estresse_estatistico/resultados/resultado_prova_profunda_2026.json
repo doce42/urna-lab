@@ -1,0 +1,204 @@
+{
+ "ano": "2026",
+ "premissa": "dados brutos sob prova",
+ "D1a": {
+  "media_mediana_s": 10.83,
+  "dp_mediana_s": 2.32,
+  "cv": 0.2146,
+  "p01_s": 7.0,
+  "p99_s": 19.0,
+  "log_shapiro_stat": 0.9313,
+  "log_shapiro_p": 0.0,
+  "n": 497730
+ },
+ "D1b": {
+  "frac_media": 0.0084,
+  "frac_p50": 0.0036,
+  "frac_p99": 0.0653,
+  "urnas_com_zero_rapidos": 224486,
+  "frac_urnas_zero": 0.451
+ },
+ "D1c": {
+  "corr_duracao_vs_p13": 0.101682,
+  "n": 497730
+ },
+ "D2a": {
+  "diff_media": 0.0006,
+  "diff_mediana": -0.0114,
+  "t_stat": 2.41,
+  "p": 0.015798,
+  "n": 135944,
+  "frac_ult30_media": 0.122,
+  "frac_resto_media": 0.1213
+ },
+ "D2b": {
+  "corr_sem_bio_vs_p13": 0.008582,
+  "n": 497730
+ },
+ "D3a": {
+  "skewness": 0.4024,
+  "curtose": -0.9414,
+  "hora_pico": 8.12,
+  "total_votos": 128235225
+ },
+ "D3b": {
+  "cv_medio_entre_mun": 4.1702,
+  "cv_min": 0.113,
+  "cv_max": 34.8932,
+  "n_mun": 5688
+ },
+ "D3c": {
+  "autocorr_1min": 0.9984,
+  "autocorr_5min": 0.9772,
+  "autocorr_30min": 0.8136
+ },
+ "D4a": {
+  "modelos": [
+   {
+    "modelo": "UE2013",
+    "n": 10539,
+    "dur_med": 12.0,
+    "dur_p25": 11.0,
+    "dur_p75": 13.0
+   },
+   {
+    "modelo": "UE2015",
+    "n": 88085,
+    "dur_med": 12.0,
+    "dur_p25": 11.0,
+    "dur_p75": 13.0
+   },
+   {
+    "modelo": "UE2020",
+    "n": 200484,
+    "dur_med": 10.0,
+    "dur_p25": 9.0,
+    "dur_p75": 11.0
+   },
+   {
+    "modelo": "UE2022",
+    "n": 198622,
+    "dur_med": 10.0,
+    "dur_p25": 9.0,
+    "dur_p75": 11.0
+   }
+  ],
+  "n_modelos": 4,
+  "kruskal_H": 89267.31,
+  "kruskal_p": 0.0
+ },
+ "D4b": {
+  "F": 15.91,
+  "p": 0.0,
+  "n": 497730
+ },
+ "D5": {
+  "detalhes": {
+   "hash_ok_bu": {
+    "ok": 497897,
+    "fail": 0,
+    "na": 0,
+    "total": 497897
+   },
+   "assin_ok_bu": {
+    "ok": 497897,
+    "fail": 0,
+    "na": 0,
+    "total": 497897
+   },
+   "hash_ok_rdv": {
+    "ok": 497897,
+    "fail": 0,
+    "na": 0,
+    "total": 497897
+   },
+   "assin_ok_rdv": {
+    "ok": 497897,
+    "fail": 0,
+    "na": 0,
+    "total": 497897
+   },
+   "hash_ok_imgbu": {
+    "ok": 497897,
+    "fail": 0,
+    "na": 0,
+    "total": 497897
+   },
+   "assin_ok_imgbu": {
+    "ok": 497897,
+    "fail": 0,
+    "na": 0,
+    "total": 497897
+   },
+   "hash_ok_log": {
+    "ok": 497896,
+    "fail": 0,
+    "na": 1,
+    "total": 497897
+   },
+   "assin_ok_log": {
+    "ok": 497896,
+    "fail": 0,
+    "na": 1,
+    "total": 497897
+   }
+  },
+  "total_checks": 3983174,
+  "total_fail": 0,
+  "taxa_falha": 0.0
+ },
+ "D6": {
+  "bu_vs_rdv_v13_diff": 0,
+  "bu_vs_img_v13_diff": 0,
+  "bu_vs_log_comp_diff": 7,
+  "total_urnas": 497786,
+  "total_log": 497896
+ },
+ "D7a": {
+  "urnas_voto_fora_dia": 496306,
+  "votos_fora_dia_total": 124544133,
+  "urnas_antes_7h": 2826,
+  "votos_antes_7h_total": 94295,
+  "urnas_sem_habilitacao": 0,
+  "votos_sem_hab_total": 0,
+  "total_urnas": 497896
+ },
+ "D7b": {
+  "urnas_intervalo_lt3s": 0,
+  "frac": 0.0,
+  "intervalo_min_p01": 22.0,
+  "intervalo_min_p05": 24.0,
+  "intervalo_min_mediana": 29.0
+ },
+ "D8a": {
+  "corr_duracao_1t_2t": NaN,
+  "n": 497837
+ },
+ "D8b": {
+  "mesma_modelo_delta_dur_med": -44.0,
+  "diff_modelo_delta_dur_med": -45.0,
+  "U": NaN,
+  "p": NaN,
+  "n_mesma": 497440,
+  "n_diff": 397
+ },
+ "D8c": {
+  "corr_bio_1t_2t": NaN,
+  "n": 497837
+ },
+ "D9": {
+  "urnas_com_verif": 497896,
+  "urnas_com_falha_sw": 162,
+  "frac_falha": 0.000325,
+  "versoes": {
+   "10.23.0.0 - Praia da Barra do Cahy": 497896
+  }
+ },
+ "D10": {
+  "entropia_media": 3.8706,
+  "entropia_mediana": 3.8671,
+  "entropia_p05": 2.8551,
+  "entropia_p95": 4.916,
+  "n_mun": 5240
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "ano": "2026",
+ "achado1": {
+  "corr_intra_mun": 0.101682,
+  "corr_intra_mun_modelo": 0.109994,
+  "corr_1t": 0.390484,
+  "corr_por_uf": {
+   "AC": 0.1284,
+   "AL": 0.1201,
+   "AM": 0.1858,
+   "AP": 0.0325,
+   "BA": 0.1305,
+   "CE": 0.1323,
+   "DF": -0.0889,
+   "ES": 0.2363,
+   "GO": 0.116,
+   "MA": 0.1823,
+   "MG": 0.1152,
+   "MS": 0.1681,
+   "MT": 0.1078,
+   "PA": 0.0942,
+   "PB": 0.1037,
+   "PE": 0.0855,
+   "PI": 0.1777,
+   "PR": 0.135,
+   "RJ": 0.1123,
+   "RN": 0.1755,
+   "RO": 0.0764,
+   "RR": 0.1435,
+   "RS": 0.0442,
+   "SC": 0.0717,
+   "SE": 0.0711,
+   "SP": 0.0388,
+   "TO": 0.3787
+  },
+  "diff_p13_q1_q4": -0.0604,
+  "votos_q1": 38854410,
+  "impacto_maximo_votos": 2348526
+ },
+ "achado2": {
+  "F_zona": 28.18,
+  "p_zona": 0.0
+ },
+ "achado3": {},
+ "achado4": {
+  "n_divergencias": 7,
+  "delta_medio": 35.7,
+  "delta_mediana": -1.0,
+  "votos_afetados": 1603,
+  "ufs": {
+   "BA": 2,
+   "ES": 1,
+   "MA": 1,
+   "PB": 1,
+   "PI": 1,
+   "RS": 1
+  }
+ },
+ "achado5": {
+  "votos_antes_7h_vpm": 94295,
+  "urnas_com_voto_antes_7h": 2826,
+  "votos_antes_7h_log": 94295,
+  "por_uf": {
+   "AC": 68331,
+   "AM": 25964
+  }
+ },
+ "achado6": {
+  "total_dia": 127854613,
+  "total_fora": 124544133,
+  "total_bu": 127854363,
+  "soma_dia_fora": 252398746
+ }
+}
