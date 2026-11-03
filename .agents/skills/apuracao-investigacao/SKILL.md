@@ -50,3 +50,13 @@ Ao investigar uma anomalia ou hipótese, ao propor um teste novo, ao atualizar a
 - **Rodada 8 está aberta:** "Relatório Pericial Independente" (T66 a T70, Q51 a Q56) e curvas sobrepostas (T71, Q57, emenda 18). Fluxo que funcionou: **reproduzir primeiro os números da alegação** (quase todos se reproduziram) e depois testar o que ela conclui (o agrupamento, o corte, a comparação sem controle de geografia). O que não é dado do TSE (decisões judiciais, política externa, fiscalização partidária) vai para "fora do escopo", sem testar e sem afirmar.
 - A prorrogação de fato (> 17:30, 7.604 seções) deu +228 mil a Lula (5% da margem): é a resposta curta à pergunta pública mais comum.
 - **Não congelar a rodada 8 sem aprovação explícita.**
+
+## Estresse Estatístico — resolução do Achado 1 (03/11/2026)
+- **Achado 1 resolvido:** a correlação duração × resultado (r=0,10–0,39), o sinal mais forte do estudo, foi decomposta em três componentes:
+  1. ~55% explicado por escolaridade e idade (E1, correlação parcial com `statsmodels`);
+  2. ~35% explicado por variáveis demográficas não observadas que seguem padrão geográfico (H1: 89% das UFs com resíduo positivo);
+  3. ~10% resíduo genuíno (~0,02 pp) que não varia por modelo de urna (H2: F=0,42, p=0,74) e não correlaciona com Δduração entre turnos (I2: r=−0,006).
+- **E3 é o teste decisivo:** em seções de alta escolaridade (quartil superior), a correlação cai para r=0,006 — indistinguível de zero. A correlação bruta é confundimento demográfico, não fraude.
+- **Swing entre turnos normal:** distribuição centrada em +7pp (I1), outliers negligíveis (I3: 16k votos = 0,7% da margem).
+- **Três fontes independentes confirmam a integridade:** bweb CSV (F1), totalização ao vivo (G1, G2, G3, J1) e BU da urna concordam.
+- Scripts e relatórios: `estresse_estatistico/scripts/prova_profunda_{2,3}.py`, `estresse_estatistico/RELATORIO_PROFUNDA{2,3}.md`.

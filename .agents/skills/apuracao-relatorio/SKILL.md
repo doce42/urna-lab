@@ -53,3 +53,9 @@ Atualizar o gráfico ou o relatório, acrescentar uma seção, gerar o PDF.
 
 - `relatorios/` tem um relatório por fase ou rodada (`fase1.md` a `rodada-8.md`, com `README.md` de índice), gerado por `python scripts/gerar_relatorios.py` a partir de `rodadas/linha_do_tempo.json`. Regerar sempre que a linha do tempo mudar; a rodada 8 aparece como em aberto.
 - Medição de acessos: Google Analytics (Firebase) carregado **só depois do aceite** na faixa de privacidade (`grafico/relatorio-app/src/ui/Consentimento.tsx`); sem aceite ou com Do Not Track nada do Google é baixado. Texto em `PRIVACIDADE.md` (aba Docs). Não gravar o aceite em arquivo versionado; qualquer novo rastreador passa pelo mesmo consentimento.
+
+## Estresse Estatístico — módulo Y no site (03/11/2026)
+- **Módulo Y** ("Prova Profunda 2"): 13 testes (YE1–YJ1) no `testes/registro.json`, exibidos no site React e no relatório HTML estático.
+- **Site React (`relatorio-app`):** `src/viz/testes.tsx` tem `Y: ['Prova Profunda 2', '...']` em `MODS` e `MOD_CURTO`; `src/paginas/Testes.tsx` inclui Y nos filtros e no agrupamento (`'ABCDEFGHSXY'`).
+- **Relatório HTML estático (`grafico/web/relatorio.html`):** cor `--cY: #0e7490` (claro) / `--cY: #22d3ee` (escuro); Y em `MODS`, na navegação lateral e no loop de renderização de cards.
+- **Total no site:** 124 testes em 11 módulos (A, B, C, D, E, F, G, H, S, X, Y).

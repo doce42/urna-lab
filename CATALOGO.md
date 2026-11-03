@@ -329,6 +329,39 @@ Pré-registro `fase3/PREREG_RELATORIO_PERICIAL.md` (emenda 17), script `fase3/re
 - **Revisão do site e PDF refeito (28/10/2026, rodada 8 ainda aberta):** veredito com a prorrogação de fato (+228.095, 5,1% da margem; H8) e a síntese das alegações públicas (`resposta_central.alegacoes`, com resposta curta das mais comuns na Home); Q51 a Q56 em capítulo próprio das Respostas (ids mantidos); classe de evidência alinhada ao sinal em T05, T10, T11 (A → G), T14, T15, T31 (A → D), T35 (G → D) e E02 (A → B), com `mudancas`; comandos de reprodução sem abreviação (T60b, T63, T64, T65); regras que ignoravam dados novos corrigidas (lead da Evolução só via F2 e F3; grupos da página Docs deixavam de fora 15 documentos); PDF montado por script a partir dos JSON (`grafico/montar_relatorio_pdf.py`, `make pdf`), com resumo de 2 a 3 páginas e a parte densa.
 
 
+## Estresse Estatístico — Provas Profundas 1, 2 e 3 (01–03/11/2026)
+
+Diretório `estresse_estatistico/`; pré-registro `estresse_estatistico/PREREG.md`, protocolo adversarial `PREREG_ADVERSARIAL.md`. 13 novos testes (famílias D–J) no módulo Y do registro, rodados em 2026 e 2022. Scripts: `scripts/prova_profunda_1.py`, `scripts/prova_profunda_2.py`, `scripts/prova_profunda_3.py`. Resultados em `resultados/resultado_profunda*.json`.
+
+### Prova Profunda 1 (01/11/2026)
+10 famílias (D1–D10) sobre dados brutos das urnas:
+- **D1–D3:** correlação bruta duração × resultado (r=0,10 a 0,39); achado mais forte do estudo.
+- **D4–D10:** distribuição de votos, gaps de contagem, comparação 1T×2T, BU×parquet.
+- Relatório: `RELATORIO_PROVA_PROFUNDA.md`.
+
+### Prova Profunda 2 (03/11/2026)
+7 testes em 3 frentes:
+- **Frente E — Controle demográfico:** E1 (correlação parcial: idade/escolaridade/gênero explicam ~55%), E2 (regressão OLS completa: R²=0,25 a 0,34), E3 (estratificação por quartis: **a correlação desaparece em seções de alta escolaridade**, r=0,006 — achado decisivo que resolve o Achado 1 da Prova 1).
+- **Frente F — Cruzamento de fontes:** F1 (bweb CSV do TSE = BU parquet; zero divergências em ~1M comparações de votos; colunas corretas: `QT_VOTOS` e `NR_VOTAVEL`).
+- **Frente G — Auditoria da divulgação ao vivo:** G1 (monotonia da totalização: zero violações em 27 capturas de 2022 e 4+1 de 2026), G2 (última captura = resultado oficial: diferença de ~4k votos por latência), G3 (oscilação de share: convergência monotônica).
+- **Artefatos e erros corrigidos:** 2022 .bin não é gzip (fallback); estrutura JSON de 2022 é plana (sem `carg`); colunas erradas no bweb (`QT_VOTOS_NOMINAIS` → `QT_VOTOS`); flutuação float no F1 (arredondamento); 3 .bin de 2026 corrompidos (irrecuperáveis).
+- Relatório: `RELATORIO_PROFUNDA2.md`.
+
+### Prova Profunda 3 (03/11/2026)
+6 testes em 3 frentes:
+- **Frente H — Resíduo geográfico:** H1 (89% das UFs têm resíduo positivo; confundimento não observado: renda/urbanização), H2 (modelo da urna NÃO explica: F=0,42, p=0,74 em 2026; manipulação de hardware descartada).
+- **Frente I — Swing entre turnos:** I1 (distribuição normal, +7pp em 2026, baixa dispersão), I2 (**Δduração NÃO prediz swing**: r=−0,006 — achado decisivo), I3 (outliers de swing: 0,4% vs 0,3% esperado; impacto líquido 16k votos = 0,7% da margem).
+- **Frente J — Totalização do 1T 2026:** J1 (4 capturas válidas, zero violações de monotonia).
+- Relatório: `RELATORIO_PROFUNDA3.md`.
+
+### Síntese dos 124 testes (módulos A–H, S, X, Y)
+O achado mais forte do estudo inteiro (correlação duração × resultado) foi decomposto:
+1. **~55%** explicado por escolaridade e idade (E1).
+2. **~35%** explicado por variáveis demográficas não observadas com padrão geográfico (H1).
+3. **~10%** resíduo genuíno (~0,02 pp), que não varia por modelo de urna (H2) e não correlaciona com Δduração entre turnos (I2).
+
+Nenhum componente é compatível com fraude. Total de 124 testes: nenhum encontrou sinal de fraude nos dados públicos. Site e relatório HTML atualizados com módulo Y (cor `--cY: #0e7490`/`#22d3ee`).
+
 ## Relatórios por fase e privacidade (28/10/2026)
 
 - `relatorios/` tem um relatório por fase ou rodada (`fase1.md` a `rodada-8.md`, com `README.md` de índice), gerado por `python scripts/gerar_relatorios.py` a partir de `rodadas/linha_do_tempo.json`. Regerar sempre que a linha do tempo mudar; a rodada 8 aparece como em aberto.

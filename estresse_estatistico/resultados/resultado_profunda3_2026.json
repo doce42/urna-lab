@@ -1,0 +1,213 @@
+{
+  "H1": {
+    "teste": "H1",
+    "ano": 2026,
+    "por_uf": {
+      "TO": {
+        "r_residual": 0.261104,
+        "p": 0.0,
+        "n": 4374
+      },
+      "DF": {
+        "r_residual": -0.140394,
+        "p": 0.0,
+        "n": 6961
+      },
+      "ES": {
+        "r_residual": 0.105917,
+        "p": 0.0,
+        "n": 9828
+      },
+      "RR": {
+        "r_residual": 0.102043,
+        "p": 7e-05,
+        "n": 1514
+      },
+      "MS": {
+        "r_residual": 0.091321,
+        "p": 0.0,
+        "n": 7095
+      },
+      "AL": {
+        "r_residual": 0.091012,
+        "p": 0.0,
+        "n": 7097
+      },
+      "PI": {
+        "r_residual": 0.081661,
+        "p": 0.0,
+        "n": 10208
+      },
+      "ZZ": {
+        "r_residual": 0.081522,
+        "p": 0.003503,
+        "n": 1281
+      },
+      "MA": {
+        "r_residual": 0.068917,
+        "p": 0.0,
+        "n": 18051
+      },
+      "PR": {
+        "r_residual": 0.067761,
+        "p": 0.0,
+        "n": 27139
+      },
+      "PB": {
+        "r_residual": 0.058664,
+        "p": 0.0,
+        "n": 10690
+      },
+      "SC": {
+        "r_residual": 0.057138,
+        "p": 0.0,
+        "n": 17304
+      },
+      "AM": {
+        "r_residual": 0.056402,
+        "p": 0.0,
+        "n": 8155
+      },
+      "CE": {
+        "r_residual": 0.05616,
+        "p": 0.0,
+        "n": 23754
+      },
+      "RJ": {
+        "r_residual": 0.054931,
+        "p": 0.0,
+        "n": 37675
+      },
+      "BA": {
+        "r_residual": 0.052671,
+        "p": 0.0,
+        "n": 35457
+      },
+      "MG": {
+        "r_residual": 0.051266,
+        "p": 0.0,
+        "n": 52048
+      },
+      "RN": {
+        "r_residual": 0.049209,
+        "p": 9e-06,
+        "n": 8113
+      },
+      "GO": {
+        "r_residual": 0.04636,
+        "p": 0.0,
+        "n": 15676
+      },
+      "PA": {
+        "r_residual": 0.043798,
+        "p": 0.0,
+        "n": 20815
+      },
+      "MT": {
+        "r_residual": 0.035777,
+        "p": 0.001128,
+        "n": 8282
+      },
+      "PE": {
+        "r_residual": 0.035642,
+        "p": 0.0,
+        "n": 21377
+      },
+      "SP": {
+        "r_residual": 0.034478,
+        "p": 0.0,
+        "n": 103593
+      },
+      "RS": {
+        "r_residual": 0.0329,
+        "p": 0.0,
+        "n": 27515
+      },
+      "AC": {
+        "r_residual": -0.028002,
+        "p": 0.182309,
+        "n": 2270
+      },
+      "AP": {
+        "r_residual": -0.019554,
+        "p": 0.392927,
+        "n": 1911
+      },
+      "RO": {
+        "r_residual": 0.011876,
+        "p": 0.416011,
+        "n": 4693
+      },
+      "SE": {
+        "r_residual": 0.005919,
+        "p": 0.649208,
+        "n": 5908
+      }
+    },
+    "pct_uf_positivo": 89.285714,
+    "n_ufs": 28,
+    "impacto_votos": "Se o resíduo for aleatório (50/50 positivo/negativo entre UFs), é ruído. Se >80% tiver o mesmo sinal, pode ser confundimento não observado."
+  },
+  "H2": {
+    "teste": "H2",
+    "ano": 2026,
+    "F_anova_residual": 0.424469,
+    "p_anova": 0.735457,
+    "por_modelo": {
+      "UE2013": {
+        "media_residuo": -0.000295,
+        "std": 0.056189,
+        "n": 11525
+      },
+      "UE2015": {
+        "media_residuo": -0.000139,
+        "std": 0.063292,
+        "n": 88281
+      },
+      "UE2020": {
+        "media_residuo": 0.00011,
+        "std": 0.065082,
+        "n": 200410
+      },
+      "UE2022": {
+        "media_residuo": -3.2e-05,
+        "std": 0.065531,
+        "n": 198568
+      }
+    },
+    "impacto_votos": "Se o resíduo NÃO varia por modelo, o modelo não é causa. Se varia, o modelo pode ser proxy de algo não controlado (ex: zona rural)."
+  },
+  "I1": {
+    "teste": "I1",
+    "ano": 2026,
+    "n_secoes": 499197,
+    "swing_media": 0.069988,
+    "swing_mediana": 0.069484,
+    "swing_std": 0.029535,
+    "swing_p05": 0.022874,
+    "swing_p95": 0.119042,
+    "r_1t_2t": null,
+    "p_1t_2t": null,
+    "secoes_inverteram": 85,
+    "impacto_votos": "Correlação 1T-2T: r=nan. Swing médio: 7.0pp. 85 seções com swing > 20pp."
+  },
+  "I2": {
+    "teste": "I2",
+    "ano": 2026,
+    "n_secoes": 499162,
+    "r_delta_dur_swing": -0.006328,
+    "p": 8e-06,
+    "delta_dur_media": -45.401218,
+    "impacto_votos": "Correlação mudança-de-duração × swing (intra-mun): r=-0.0063. Se fraude acelerasse urnas pró-candidato, o swing seria correlacionado com Δduração."
+  },
+  "I3": {
+    "teste": "I3",
+    "ano": 2026,
+    "n_secoes": 499197,
+    "n_outliers_3std": 1997,
+    "pct_outliers": 0.400042,
+    "swing_medio_outliers": 0.034687,
+    "votos_liquidos_outliers": 16036,
+    "impacto_votos": "1997 seções com swing > 3σ da média municipal. Impacto líquido: 16036 votos. Esperado em distribuição normal: ~0,3% = ~1497."
+  }
+}

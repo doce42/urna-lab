@@ -64,3 +64,10 @@ Um resultado abaixo de 100% é, primeiro, suspeita de erro de leitura (aconteceu
 
 ## Atualização da rodada 8 (aberta, 28/10/2026)
 - **Disponibilidade dos arquivos:** a primeira conferência de terceiro contra o arquivo publicado pelo TSE (19:10 de 25/10) mostra que os arquivos por urna estavam disponíveis na noite da eleição; o CSV BWeb não tem registro de primeira publicação no projeto (T70).
+
+## Estresse Estatístico — cruzamento de fontes e divulgação ao vivo (03/11/2026)
+- **F1 (bweb CSV × BU parquet):** `estresse_estatistico/scripts/prova_profunda_2.py`. Lê os 28 CSVs por UF do bweb (`dados/2turno/` para 2026, `dados/2022/2turno/` para 2022), pivota por seção/candidato (`NR_VOTAVEL`), compara com votos do parquet. Zero divergências em ~1M comparações (2026 e 2022). Colunas: `QT_VOTOS` (não `QT_VOTOS_NOMINAIS`), `NR_VOTAVEL`; separador `;`, encoding `latin1`.
+- **G1 (monotonia da totalização):** capturas de divulgação ao vivo (`.bin` em `dados/capturas/`). Formatos diferentes: 2026 gzip-JSON aninhado (`carg` → `agr`/`fed` → `par` → `cand`), 2022 JSON plano (`st`, `s`, `tv`, `cand`). Zero violações em 27 capturas (2022) e 4+1 (2026). 3 capturas de 2026 corrompidas (irrecuperáveis).
+- **G2 (última captura = oficial):** diferença de ~4k votos por latência de download.
+- **G3 (oscilação de share):** convergência monotônica da fração de votos.
+- **J1 (1T 2026):** 4 capturas válidas do 1º turno de 2026, zero violações de monotonia.

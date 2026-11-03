@@ -37,6 +37,9 @@ Cada skill (`.agents/skills/<nome>/SKILL.md`) cobre um domínio do estudo. Este 
 | apuracao-forense | Operação Veracidade | T63, T64, T65 | `operacao_veracidade/scripts/sim_adversarial.py`, `sim_fabricacao_v2.py`, `zeros_contagens.py`, `hipotese_video.py` |
 | apuracao-forense | rodada 8 (aberta) | T66–T70, Q51–Q56 | `fase3/PREREG_RELATORIO_PERICIAL.md`, `fase3/relatorio_pericial.py`, `fase3/relatorio_pericial_r2b.py` |
 | apuracao-forense | rodada 8 (aberta), emenda 18 | T71, Q57 | `fase3/PREREG_CURVAS_SOBREPOSTAS.md`, `fase3/curvas_sobrepostas.py` |
+| apuracao-forense | estresse estatístico (módulo Y) | YE1–YE3, YH1–YH2, YI1–YI3 | `estresse_estatistico/scripts/prova_profunda_{2,3}.py` (controle demográfico, resíduo geográfico, swing) |
+| apuracao-integridade | estresse estatístico (módulo Y) | YF1, YG1–YG3, YJ1 | `estresse_estatistico/scripts/prova_profunda_{2,3}.py` (bweb CSV × BU, divulgação ao vivo, monotonia) |
+| apuracao-investigacao | estresse estatístico (módulo Y) | (resolução do Achado 1) | `estresse_estatistico/RELATORIO_PROFUNDA{2,3}.md` (correlação duração×resultado decomposta) |
 | apuracao-versoes | governança | (todas as versões) | `scripts/rodada.py`, `rodadas/`, `scripts/publicar.py`, `scripts/manifesto.py`, `scripts/carimbo.py`, `scripts/dados_leves.py`, `DADOS_PRESERVACAO.md` |
 
 ## Por tarefa

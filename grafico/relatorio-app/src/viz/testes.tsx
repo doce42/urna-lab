@@ -190,9 +190,10 @@ export const MODS: Record<string, [string, string]> = {
   G: ['Fase 2: investigações aprofundadas', 'Testes novos, com pré-registro, que tentam derrubar métodos e conclusões anteriores. Cada um traz o que significa em número de votos.'],
   S: ['Estresse Estatístico', 'Busca por impressões digitais de geração artificial: dígitos, suavidade, dependências, varredura territorial, turnos, temporalidade, simulações adversariais e anomalias (Isolation Forest). 2022 e 2026.'],
   X: ['Operação Adversarial', 'Assumindo que os dados são fabricados: phantom voters, aritmética de dígitos, relações cruzadas (biometria, timestamps, modelo de urna), consistência temporal, universalidade estatística, verificação cruzada 2022×2026, worst-case.'],
+  Y: ['Prova Profunda 2', 'Três fontes independentes: controle demográfico da correlação duração×resultado, cruzamento bweb CSV×BU, e auditoria da divulgação ao vivo durante a noite da eleição.'],
 };
 // rótulo curto do módulo para filtros e selos
-export const MOD_CURTO: Record<string, string> = { A: 'integridade', B: 'comportamento', C: 'entre turnos', D: 'forense', E: 'divergências', F: 'referência 2022', G: 'Fase 2', H: 'Fase 3, alegações e veracidade', S: 'estresse estatístico', X: 'adversarial' };
+export const MOD_CURTO: Record<string, string> = { A: 'integridade', B: 'comportamento', C: 'entre turnos', D: 'forense', E: 'divergências', F: 'referência 2022', G: 'Fase 2', H: 'Fase 3, alegações e veracidade', S: 'estresse estatístico', X: 'adversarial', Y: 'prova profunda 2' };
 export const ESTADO_TXT: Record<string, string> = { concluido: 'concluído', em_andamento: 'em andamento', a_fazer: 'a fazer', concluido_excluido_da_conclusao: 'concluído, excluído da conclusão', concluido_2t: 'concluído (2º turno)', concluido_1t: 'concluído (1º turno)', concluido_2026: 'concluído (2026)' };
 // testes baseados nos logs das urnas: em reprocessamento (resultado preliminar) enquanto o reprocessamento não termina
 export const EM_REPROCESSAMENTO = new Set<string>(); // reprocessamento dos logs concluído em 28/10/2026; use para marcar testes de novo se algo voltar a ser reprocessado

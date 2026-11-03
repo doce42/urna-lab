@@ -45,3 +45,11 @@ Troca uniforme no país inteiro não deixa diferença entre urnas: nenhum teste 
 - **Corte arbitrário:** quando uma alegação divide a apuração em dois grupos (hora, liberação manual, tarde × cedo), mostre a **sensibilidade do corte** (17:00:59 a 19:00:00) e a diferença **dentro do município**; quase sempre a diferença é composição geográfica. No T66, mover o corte em dois minutos inverte o resultado do grupo "de antes".
 - **Benford do primeiro dígito** não vale para contagens limitadas (o dígito 1 aparece em ~61% das seções, contra 30%): compare com referências simuladas sem manipulação (binomial e beta-binomial) e diga que o teste não discrimina neste dado (T69).
 - **Unanimidade e liberação manual:** compare sempre com 2022 e com o 1º turno antes de ler como efeito do 2º turno de 2026 (T67, T68).
+
+## Estresse Estatístico — Provas Profundas (03/11/2026)
+- **Módulo Y** no registro (`testes/registro.json`), 13 testes (YE1–YJ1). Scripts em `estresse_estatistico/scripts/prova_profunda_{1,2,3}.py`, resultados em `estresse_estatistico/resultados/`.
+- **E1–E3 (controle demográfico):** correlação parcial (E1: ~55% explicada por idade/escolaridade/gênero), regressão OLS (E2: R²=0,25–0,34), estratificação por quartis (E3: **r=0,006 em alta escolaridade** — resolve o Achado 1 da Prova 1). Usa `statsmodels` (OLS) e perfil do eleitorado por seção do TSE.
+- **H1–H2 (resíduo pós-controle):** resíduo geográfico por UF (H1: 89% positivas, confundimento não observado renda/urbanização), modelo da urna (H2: F=0,42 p=0,74 em 2026 — hardware descartado).
+- **I1–I3 (swing entre turnos):** distribuição (I1: +7pp em 2026), Δduração vs swing (I2: r=−0,006 — descarta manipulação seletiva), outliers (I3: 0,4% vs 0,3% esperado, impacto 16k votos).
+- **Lição do F1 (bweb CSV):** as colunas corretas são `QT_VOTOS` e `NR_VOTAVEL` (não `QT_VOTOS_NOMINAIS`); comparar com arredondamento a 0 casas e tolerância > 0,5; 28 arquivos CSV por UF, separador `;`, encoding `latin1`.
+- **Capturas de divulgação ao vivo:** 2026 são `.bin` comprimidos em gzip (JSON com estrutura aninhada `carg` → `agr`/`fed` → `par` → `cand`); 2022 são `.bin` em JSON puro (estrutura plana com `st`, `s`, `tv`, lista `cand`). Tentar gzip primeiro, fallback para `json.loads(raw)`.

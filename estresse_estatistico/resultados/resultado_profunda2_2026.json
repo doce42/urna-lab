@@ -1,0 +1,149 @@
+{
+  "E1": {
+    "teste": "E1",
+    "ano": 2026,
+    "n_secoes": 498784,
+    "r_simples_intra_mun": 0.099957,
+    "p_simples": 0.0,
+    "r_parcial_controlando_demo": 0.045739,
+    "p_parcial": 0.0,
+    "reducao_pct": 54.241391,
+    "r2_demo_sozinha": 0.225576,
+    "demo_controles": [
+      "idade_60mais_dm",
+      "idade_ate24_dm",
+      "esc_1_dm",
+      "esc_8_dm",
+      "fem_dm"
+    ],
+    "impacto_votos": "Se r_parcial → 0, a correlação é 100% demográfica (0 votos fraudados). Se r_parcial ≈ r_simples, a demografia não explica."
+  },
+  "E2": {
+    "teste": "E2",
+    "ano": 2026,
+    "n": 498784,
+    "r2_completo": 0.227196,
+    "coeficientes": {
+      "seq_dur_mediana": {
+        "beta": 0.002341,
+        "t": 32.336503,
+        "se": 7.2e-05
+      },
+      "idade_60mais": {
+        "beta": -0.03525,
+        "t": -36.864363,
+        "se": 0.000956
+      },
+      "idade_ate24": {
+        "beta": 0.100516,
+        "t": 94.911146,
+        "se": 0.001059
+      },
+      "esc_1": {
+        "beta": 0.912661,
+        "t": 243.499479,
+        "se": 0.003748
+      },
+      "esc_8": {
+        "beta": -0.18344,
+        "t": -170.003167,
+        "se": 0.001079
+      },
+      "fem": {
+        "beta": 0.100134,
+        "t": 45.123502,
+        "se": 0.002219
+      }
+    },
+    "impacto_votos": "Beta da duração = 0.002341 pp por segundo. Se fraude artificial acelerasse 1s por urna, mudaria ~1 votos por seção."
+  },
+  "E3": {
+    "teste": "E3",
+    "ano": 2026,
+    "estratos": {
+      "Q3": {
+        "r": 0.119834,
+        "p": 0.0,
+        "n": 124701
+      },
+      "Q4_idoso": {
+        "r": 0.075091,
+        "p": 0.0,
+        "n": 124686
+      },
+      "Q2": {
+        "r": 0.10954,
+        "p": 0.0,
+        "n": 124651
+      },
+      "Q1_jovem": {
+        "r": 0.124911,
+        "p": 0.0,
+        "n": 124746
+      },
+      "esc_Q3": {
+        "r": 0.064294,
+        "p": 0.0,
+        "n": 124693
+      },
+      "esc_Q2": {
+        "r": 0.092636,
+        "p": 0.0,
+        "n": 124622
+      },
+      "esc_Q1_baixa": {
+        "r": 0.116261,
+        "p": 0.0,
+        "n": 124779
+      },
+      "esc_Q4_alta": {
+        "r": 0.006287,
+        "p": 0.026406,
+        "n": 124690
+      }
+    },
+    "impacto_votos": "Se r→0 nos estratos homogêneos, toda a correlação era demográfica. Se r persiste, pode haver outro fator."
+  },
+  "F1": {
+    "teste": "F1",
+    "ano": 2026,
+    "csvs_lidos": 28,
+    "secoes_bweb": 499205,
+    "secoes_parquet": 499207,
+    "secoes_ambos": 499205,
+    "so_parquet": 2,
+    "so_bweb": 0,
+    "divergentes_v13": 0,
+    "divergentes_v22": 0,
+    "total_votos_divergentes": 0,
+    "exemplos": [],
+    "impacto_votos": "0 votos divergem entre o CSV público e o BU extraído da urna."
+  },
+  "G1": {
+    "teste": "G1",
+    "ano": 2026,
+    "turno": "2T",
+    "resultado": "apenas 1 capturas válidas"
+  },
+  "G2": {
+    "teste": "G2",
+    "ano": 2026,
+    "turno": "2T",
+    "ultima_captura": "25/10/2026 19:36:39",
+    "pct_totalizado": 9.1,
+    "divulgacao_v13": 5760638,
+    "oficial_bu_v13": 64256232,
+    "diff_v13": -58495594,
+    "divulgacao_v22": 5635585,
+    "oficial_bu_v22": 59826041,
+    "diff_v22": -54190456,
+    "divulgacao_total": 11745697,
+    "oficial_total": 128236074,
+    "impacto_votos": "Diferença entre divulgação (9.1%) e BU oficial: cand 13 = -58495594, cand 22 = -54190456. Se a última captura não é 100%, a diferença são seções não totalizadas até aquele momento."
+  },
+  "G3": {
+    "teste": "G3",
+    "ano": 2026,
+    "resultado": "apenas 1 capturas válidas"
+  }
+}

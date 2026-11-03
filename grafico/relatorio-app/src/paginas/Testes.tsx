@@ -43,7 +43,7 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
   }), [reg, busca, classes, estados, modulos, natureza, sinais, ver]);
   const contClasse: Record<string, number> = {}, contEstado: Record<string, number> = {}, contMod: Record<string, number> = {};
   reg.testes.forEach((t) => { contClasse[t.classe_evidencia] = (contClasse[t.classe_evidencia] || 0) + 1; contEstado[categoria(t)] = (contEstado[categoria(t)] || 0) + 1; contMod[t.modulo] = (contMod[t.modulo] || 0) + 1; });
-  const porModulo = 'ABCDEFGHSX'.split('').map((m) => ({ m, ts: visiveis.filter((t) => t.modulo === m) })).filter((x) => x.ts.length);
+  const porModulo = 'ABCDEFGHSXY'.split('').map((m) => ({ m, ts: visiveis.filter((t) => t.modulo === m) })).filter((x) => x.ts.length);
   return (
     <div className="container pt-10 md:pt-16 pb-8">
       <div className="max-w-[52rem]">
@@ -73,7 +73,7 @@ export function Testes({ reg, meta, partes }: { reg: Registro; meta: Meta | null
         <div className="mt-2 flex flex-wrap gap-1.5">
           {'ABCDEFG'.split('').map((k) => <Chip key={k} ativo={classes.has(k)} onClick={() => alternar(classes, k, setClasses)} cor={CLASSE_COR[k]} title={CLASSE_EXPL[k]}><b className="font-semibold">{k}</b> <span className="hidden sm:inline">{reg.classes[k].split(' / ')[0]}</span> · {contClasse[k] || 0}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
-          {'ABCDEFGHSX'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)} title={MODS[m]?.[1]}>módulo {m}: {MOD_CURTO[m] || MODS[m]?.[0]} · {contMod[m]}</Chip>)}
+          {'ABCDEFGHSXY'.split('').filter((m) => contMod[m]).map((m) => <Chip key={m} ativo={modulos.has(m)} onClick={() => alternar(modulos, m, setModulos)} title={MODS[m]?.[1]}>módulo {m}: {MOD_CURTO[m] || MODS[m]?.[0]} · {contMod[m]}</Chip>)}
           <span className="w-px h-6 bg-border mx-1 self-center hidden md:block" />
           {['confirmatório', 'exploratório'].map((n) => <Chip key={n} ativo={natureza === n} onClick={() => setNatureza(natureza === n ? null : n)}>{n}</Chip>)}
         </div></details>
